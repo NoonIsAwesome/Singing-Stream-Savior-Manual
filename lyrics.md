@@ -86,9 +86,9 @@ translation_key: lyrics
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}">
-    <img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="歌詞即時預覽顯示原文與羅馬拼音，當前句以亮色醒目顯示">
+    <img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="最新版完整模式的歌詞設定、歌詞視窗按鈕與 OBS 即時預覽">
   </a>
-  <figcaption>羅馬拼音會顯示在原文下方；即時預覽會使用與 OBS 相同的版面與醒目效果。</figcaption>
+  <figcaption>歌詞頁可選擇日文讀音、開啟「歌詞視窗」，並以和 OBS 相同的版面顯示即時預覽；選擇羅馬拼音時，讀音會顯示在原文下方。</figcaption>
 </figure>
 
 ## 時間校正

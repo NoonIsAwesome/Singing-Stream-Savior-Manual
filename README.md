@@ -12,10 +12,10 @@ translation_key: home
 本說明適用於 **2.0.0.0** 版。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}">
-    <img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="歌回救星 2.0 完整模式，左側為歌詞設定，中央為 OBS 歌詞預覽，右側為播放器與待播清單">
+  <a href="{{ '/assets/images/full-workspace.png' | relative_url }}">
+    <img src="{{ '/assets/images/full-workspace.png' | relative_url }}" alt="歌回救星 2.0 完整模式，左側為歌曲庫，右側為播放器與待播清單">
   </a>
-  <figcaption>完整模式會顯示所有設定與即時預覽，適合在開播前整理歌曲、歌詞及 OBS 畫面。點圖片可查看原尺寸。</figcaption>
+  <figcaption>完整模式可管理歌曲、播放器與待播清單，並可切換到歌詞或歌單外觀頁進行設定。點圖片可查看原尺寸。</figcaption>
 </figure>
 
 ## 第一次使用，從這裡開始

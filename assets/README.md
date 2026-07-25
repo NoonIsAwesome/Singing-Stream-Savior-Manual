@@ -3,6 +3,7 @@
 `images/` 內的畫面截圖隨說明書一起部署，避免網站引用本機暫存檔。
 
 - `compact-workspace.png`：精簡模式與主要播放器配置
+- `full-workspace.png`：完整模式的歌曲庫、播放器與待播清單
 - `cover-dialog.png`：嵌入封面
 - `lyrics-manager.png`：管理歌詞
 - `lyrics-manager-linked.png`：管理歌詞的匯入與取消連結狀態

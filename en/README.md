@@ -119,14 +119,15 @@ Use the top-right mode button or `Ctrl + Shift + M`:
 
 - **Full:** all library fields, lyric/theme previews, and settings. Best for preparation.
 - **Compact:** keeps song selection, players, queue, and history while hiding wide source columns and large previews.
-- **Mini:** hides the library and BGM player; keeps karaoke controls, Lyrics window button, queue, and history.
+- **Mini:** best when the songs and stream visuals are already prepared before going live. It hides the library and BGM player, leaving the karaoke controls, queue, history, and Lyrics Window button. Choose the next song directly from the prepared queue. The separate Lyrics Window can be moved and its text size adjusted to fit around other streaming tools.
 
 <div class="figure-grid">
+  <figure class="manual-figure"><a href="{{ '/assets/images/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/full-workspace.png' | relative_url }}" alt="Full workspace"></a><figcaption>Full mode keeps the complete library, players, and queue for preparation.</figcaption></figure>
   <figure class="manual-figure"><a href="{{ '/assets/images/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/compact-workspace.png' | relative_url }}" alt="Compact workspace"></a><figcaption>Compact mode keeps song selection and live controls.</figcaption></figure>
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/mini-workspace.png' | relative_url }}" alt="Mini workspace"></a><figcaption>Mini mode leaves more vertical space for the queue.</figcaption></figure>
 </div>
 
-Switching modes does not stop playback, change the queue, or affect OBS output. Each mode remembers its window size and layout.
+Switching modes only changes which controls are visible. A song already playing continues, and the existing queue order and OBS scene are not reset. Each mode remembers its window size and layout.
 
 <a id="settings-and-troubleshooting"></a>
 ## 07 · Settings and troubleshooting

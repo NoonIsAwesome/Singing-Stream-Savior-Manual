@@ -20,10 +20,10 @@ translation_key: workspace-modes
 - 適合管理歌曲、封面、歌詞及 OBS 畫面。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}">
-    <img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="完整模式顯示歌詞設定、OBS 即時預覽、背景音樂、歌唱伴奏與待播清單">
+  <a href="{{ '/assets/images/full-workspace.png' | relative_url }}">
+    <img src="{{ '/assets/images/full-workspace.png' | relative_url }}" alt="完整模式顯示歌曲庫、背景音樂、歌唱伴奏與待播清單">
   </a>
-  <figcaption>完整模式保留所有設定及大型預覽；畫面中的歌詞分頁同時顯示 OBS 效果與播放控制。</figcaption>
+  <figcaption>完整模式的歌曲頁保留完整歌曲資料、播放器與待播清單；也可切換到歌詞或歌單外觀頁進行設定。</figcaption>
 </figure>
 
 ## 精簡模式
@@ -44,21 +44,20 @@ translation_key: workspace-modes
 
 ## 迷你模式
 
-適合開播前已完成歌曲與主題設定的主播：
+適合在開播前已完成待唱歌曲與畫面設定，並已將歌曲排入待播清單的主播。這個模式把畫面縮到最精簡，直播中只要從待播清單選擇下一首歌曲播放即可。
 
 - 隱藏歌曲庫、歌單編輯及背景音樂播放器。
-- 保留歌唱伴奏播放器。
-- 保留速度、音高及音量控制。
-- 保留待播／已唱清單。
-- 保留「歌詞視窗」按鈕。
+- 保留歌唱伴奏播放器，以及速度、音高和音量控制。
+- 保留待播／已唱清單，方便依照預先安排的順序播放。
+- 保留「歌詞視窗」按鈕。歌詞視窗可自由移動及調整文字大小，方便依照直播螢幕上的其他軟體自行安排位置。
 
-迷你模式不會停止目前播放、不會改變待播順序，也不會影響 OBS 輸出。
+從完整或精簡模式切換到迷你模式時，只會收起不常用的介面；正在播放的歌曲會繼續播放，原本的待播順序與 OBS 畫面也不會被重設。
 
 <figure class="manual-figure manual-figure--portrait">
   <a href="{{ '/assets/images/mini-workspace.png' | relative_url }}">
     <img src="{{ '/assets/images/mini-workspace.png' | relative_url }}" alt="迷你模式只顯示歌唱伴奏播放器與待播已唱清單">
   </a>
-  <figcaption>迷你模式隱藏 BGM 與歌曲庫，把垂直空間留給待播和已唱清單。</figcaption>
+  <figcaption>迷你模式隱藏 BGM 與歌曲庫，把空間留給歌唱伴奏、待播和已唱清單；需要閱讀歌詞時可另外開啟「歌詞視窗」。</figcaption>
 </figure>
 
 ## 視窗配置記憶
