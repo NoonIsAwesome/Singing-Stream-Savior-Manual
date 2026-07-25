@@ -10,7 +10,6 @@ zh-TW:
   stream_tip: 直播前建議
   stream_tip_text: 先播放一首測試歌曲，確認音訊、歌詞、歌單與 OBS 畫面。
   meta: 歌回直播整合工具
-  project: GitHub 專案
   footer: 歌回救星 2.0 使用說明
   back_home: 回到首頁
   language: 語言
@@ -36,7 +35,6 @@ zh-CN:
   stream_tip: 直播前建议
   stream_tip_text: 先播放一首测试歌曲，确认音频、歌词、歌单与 OBS 画面。
   meta: 歌回直播整合工具
-  project: GitHub 项目
   footer: 歌回救星 2.0 使用说明
   back_home: 返回首页
   language: 语言
@@ -62,7 +60,6 @@ en:
   stream_tip: Before going live
   stream_tip_text: Play one test song and check audio, lyrics, set list, and the OBS output.
   meta: Singing-stream production tool
-  project: GitHub project
   footer: Singing Stream Savior 2.0 User Manual
   back_home: Back to top
   language: Language
@@ -88,7 +85,6 @@ ja:
   stream_tip: 配信前の確認
   stream_tip_text: テスト曲を再生し、音声・歌詞・セットリスト・OBS 画面を確認してください。
   meta: 歌枠配信統合ツール
-  project: GitHub プロジェクト
   footer: Singing Stream Savior 2.0 ユーザーマニュアル
   back_home: トップへ戻る
   language: 言語
@@ -114,7 +110,6 @@ ko:
   stream_tip: 방송 전 확인
   stream_tip_text: 테스트 곡을 재생하고 오디오, 가사, 세트리스트와 OBS 화면을 확인하세요.
   meta: 노래 방송 통합 도구
-  project: GitHub 프로젝트
   footer: Singing Stream Savior 2.0 사용자 설명서
   back_home: 맨 위로
   language: 언어
