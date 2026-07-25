@@ -596,13 +596,15 @@ button:focus-visible {
 
 .intro-layout .guide-content {
   padding-top: 38px;
+  padding-right: clamp(24px, 3.8vw, 64px);
+  padding-left: clamp(24px, 3.8vw, 64px);
 }
 
 .intro-hero {
   display: grid;
   align-items: center;
   gap: clamp(30px, 5vw, 68px);
-  grid-template-columns: minmax(0, 0.88fr) minmax(440px, 1.12fr);
+  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
   min-height: min(720px, calc(100vh - 160px));
   padding: clamp(28px, 4vw, 54px) 0 clamp(48px, 6vw, 76px);
 }
@@ -625,7 +627,7 @@ button:focus-visible {
   max-width: 650px;
   margin: 0;
   padding: 0;
-  font-size: clamp(2.65rem, 5.4vw, 5.15rem);
+  font-size: clamp(2.55rem, 4vw, 4.5rem);
   line-height: 1.06;
   letter-spacing: -0.055em;
 }
