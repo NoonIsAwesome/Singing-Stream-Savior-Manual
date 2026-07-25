@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0b1728">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: '2.0.0.0' }}">
     <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}/{% if section != 'home' %}{{ section }}.html{% endif %}">
     <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh-CN/{% if section != 'home' %}guide.html#{{ section }}{% endif %}">
     <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/{% if section != 'home' %}guide.html#{{ section }}{% endif %}">
@@ -96,6 +96,6 @@
       </main>
     </div>
 
-    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.github.build_revision | default: '2.0.0.0' }}" defer></script>
   </body>
 </html>
