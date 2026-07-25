@@ -22,14 +22,14 @@ translation_key: home
 </div>
 
 <section class="origin-story" id="why">
-  <div><p class="section-kicker">为什么制作这个软件？</p><h2>它从歌回里最常发生的小失误开始</h2><p>我在歌回直播时，常常忘记在演唱前关闭 BGM、唱完后再打开 BGM，也会忘记把刚唱完的歌曲补到 OBS 画面上的歌单。这些事情并不难，却很容易在唱歌、聊天和寻找下一首歌时遗漏。</p><p>因此制作了 Singing Stream Savior：播放伴奏时可以自动暂停 BGM，伴奏暂停或结束时再恢复 BGM；歌单 Overlay 会跟随歌曲状态更新，不需要每唱一首就回到 OBS 手动修改文字。</p></div>
+  <div><p class="section-kicker">为什么制作这个软件？</p><h2>它从歌回里最常发生的小失误开始</h2><p>我在歌回直播时，常常忘记在演唱前关闭 BGM、唱完后再打开 BGM，也会忘记把刚唱完的歌曲补到 OBS 画面上的歌单。这些事情并不难，却很容易在唱歌、聊天和寻找下一首歌时遗漏。</p><p>因此制作了 Singing Stream Savior：先选择 BGM 并开始播放，之后播放伴奏时会自动暂停 BGM；伴奏停止或播放完毕后，会自动恢复原来的 BGM。歌单 Overlay 也会跟随歌曲状态更新，不需要每唱一首就回到 OBS 手动修改文字。</p></div>
   <div class="stream-sequence" aria-label="背景音乐与歌唱伴奏自动切换流程"><div class="stream-step"><span>BGM</span><strong>直播空档播放</strong></div><div class="stream-arrow"><span>播放伴奏</span></div><div class="stream-step stream-step--active"><span>歌唱伴奏</span><strong>BGM 自动暂停</strong></div><div class="stream-arrow"><span>暂停或结束</span></div><div class="stream-step"><span>BGM</span><strong>自动恢复播放</strong></div></div>
 </section>
 
 <section class="feature-section" id="features">
   <div class="section-heading"><p class="section-kicker">主要功能</p><h2>按照一场歌回真正会用到的流程设计</h2><p>从准备歌曲、开始演唱到更新 OBS 画面，是同一条连续的工作流程。</p></div>
   <div class="feature-grid">
-    <article class="feature-card feature-card--signal"><span class="feature-card__label">播放协调</span><h3>BGM 与伴奏自动交接</h3><p>播放歌唱伴奏时自动暂停 BGM；伴奏暂停或停止后，再恢复原来的背景音乐。</p></article>
+    <article class="feature-card feature-card--signal"><span class="feature-card__label">播放协调</span><h3>BGM 与伴奏自动交接</h3><p>请先选择 BGM 并开始播放。之后播放歌唱伴奏时会自动暂停 BGM；伴奏停止或播放完毕后，会自动恢复原来的背景音乐。</p></article>
     <article class="feature-card"><span class="feature-card__label">歌曲与待播</span><h3>整理歌曲，也保留临场弹性</h3><p>建立歌曲库、自定义歌单、收藏与待播顺序。可以从待播选歌，也能双击歌曲立即播放。</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS 歌单</span><h3>切换主题，不必手动重打歌单</h3><p>选择 Default、透明、Card、CD 或精致主题并拖入 OBS；Now Singing、Set List、Reserve 与 Next On 会跟随播放状态更新。</p></article>
     <article class="feature-card"><span class="feature-card__label">歌词</span><h3>自己阅读，也能显示给观众</h3><p>搜索或导入同步歌词，使用可移动的“歌词窗口”阅读，也能建立 OBS 歌词画面。日文歌词可选择平假名或罗马拼音辅助。</p></article>

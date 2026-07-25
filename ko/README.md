@@ -16,14 +16,14 @@ translation_key: home
 </div>
 
 <section class="origin-story" id="why">
-  <div><p class="section-kicker">왜 만들었나요?</p><h2>노래 방송에서 자주 생기는 작은 실수에서 시작했습니다</h2><p>노래를 시작하기 전에 BGM을 끄거나, 노래가 끝난 뒤 다시 켜는 것을 자주 잊었습니다. 방금 부른 곡을 OBS 세트리스트에 추가하는 일도 놓치기 쉬웠습니다. 어려운 일은 아니지만 노래, 채팅과 다음 곡을 동시에 챙기다 보면 빠뜨리기 쉽습니다.</p><p>그래서 Singing Stream Savior를 만들었습니다. 반주를 재생하면 BGM을 자동으로 일시 정지하고, 반주를 일시 정지하거나 끝내면 BGM을 다시 재생할 수 있습니다. 세트리스트 Overlay도 곡 상태에 따라 갱신되어 OBS에서 매번 제목을 다시 입력할 필요가 없습니다.</p></div>
+  <div><p class="section-kicker">왜 만들었나요?</p><h2>노래 방송에서 자주 생기는 작은 실수에서 시작했습니다</h2><p>노래를 시작하기 전에 BGM을 끄거나, 노래가 끝난 뒤 다시 켜는 것을 자주 잊었습니다. 방금 부른 곡을 OBS 세트리스트에 추가하는 일도 놓치기 쉬웠습니다. 어려운 일은 아니지만 노래, 채팅과 다음 곡을 동시에 챙기다 보면 빠뜨리기 쉽습니다.</p><p>그래서 Singing Stream Savior를 만들었습니다. 먼저 BGM을 선택해 재생하면 반주 시작 시 해당 BGM을 자동으로 일시 정지하고, 반주를 정지하거나 끝까지 재생한 뒤 원래 BGM을 자동으로 다시 재생합니다. 세트리스트 Overlay도 곡 상태에 따라 갱신되어 OBS에서 매번 제목을 다시 입력할 필요가 없습니다.</p></div>
   <div class="stream-sequence" aria-label="BGM과 반주의 자동 전환"><div class="stream-step"><span>BGM</span><strong>곡 사이에 재생</strong></div><div class="stream-arrow"><span>반주 시작</span></div><div class="stream-step stream-step--active"><span>반주</span><strong>BGM 자동 정지</strong></div><div class="stream-arrow"><span>일시 정지·종료</span></div><div class="stream-step"><span>BGM</span><strong>자동 재생 재개</strong></div></div>
 </section>
 
 <section class="feature-section" id="features">
   <div class="section-heading"><p class="section-kicker">주요 기능</p><h2>실제 노래 방송 흐름에 맞춘 설계</h2><p>곡 준비, 노래, OBS 갱신을 하나의 연속된 작업 흐름으로 다룹니다.</p></div>
   <div class="feature-grid">
-    <article class="feature-card feature-card--signal"><span class="feature-card__label">재생 연동</span><h3>BGM과 반주를 자동 전환</h3><p>반주가 시작되면 BGM을 자동으로 일시 정지하고, 반주를 일시 정지하거나 끝내면 원래 BGM을 다시 재생합니다.</p></article>
+    <article class="feature-card feature-card--signal"><span class="feature-card__label">재생 연동</span><h3>BGM과 반주를 자동 전환</h3><p>먼저 BGM을 선택해 재생하세요. 반주 시작 시 해당 BGM을 자동으로 일시 정지하고, 반주를 정지하거나 끝까지 재생한 뒤 원래 BGM을 자동으로 다시 재생합니다.</p></article>
     <article class="feature-card"><span class="feature-card__label">곡과 예약</span><h3>미리 준비하고 현장 선곡에도 대응</h3><p>곡 라이브러리, 재생목록, 즐겨찾기와 예약 순서를 관리합니다. 예약에서 고르거나 원하는 곡을 두 번 클릭해 바로 재생할 수 있습니다.</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS 세트리스트</span><h3>테마를 바꾸고 곡명 입력은 줄이기</h3><p>Default, 투명, Card, CD 또는 장식 테마를 골라 OBS로 드래그합니다. Now Singing, Set List, Reserve와 Next On이 재생 상태를 따릅니다.</p></article>
     <article class="feature-card"><span class="feature-card__label">가사</span><h3>진행자가 읽거나 시청자에게 표시</h3><p>동기화 가사를 검색·가져오고 이동 가능한 ‘가사 창’에서 읽거나 OBS 가사 화면으로 표시합니다. 일본어는 히라가나와 로마자 읽기 보조를 지원합니다.</p></article>

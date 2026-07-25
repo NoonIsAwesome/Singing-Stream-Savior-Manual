@@ -26,7 +26,7 @@ translation_key: home
     <p class="section-kicker">為什麼做這個軟體？</p>
     <h2>它從歌回裡最常發生的小失誤開始</h2>
     <p>我在歌回直播時，常常會忘記在演唱前關掉 BGM、唱完後再把 BGM 打開，也會忘記把剛唱完的歌曲補到 OBS 畫面上的歌單。這些事情都不難，卻很容易在忙著唱歌、聊天和找下一首歌時漏掉。</p>
-    <p>因此做了 Singing Stream Savior：播放伴奏時可以自動暫停 BGM，伴奏暫停或結束時再恢復 BGM；歌單 Overlay 則隨歌曲狀態更新，不需要每唱一首就回到 OBS 手動改字。</p>
+    <p>因此做了 Singing Stream Savior：先選擇 BGM 並開始播放，之後播放伴奏時會自動暫停 BGM；伴奏停止或播放完畢後，會自動恢復原本的 BGM。歌單 Overlay 也會隨歌曲狀態更新，不需要每唱一首就回到 OBS 手動改字。</p>
   </div>
   <div class="stream-sequence" aria-label="背景音樂與歌唱伴奏的自動切換流程">
     <div class="stream-step"><span>BGM</span><strong>直播空檔播放</strong></div>
@@ -47,7 +47,7 @@ translation_key: home
     <article class="feature-card feature-card--signal">
       <span class="feature-card__label">播放協調</span>
       <h3>BGM 與伴奏自動交接</h3>
-      <p>開始播放歌唱伴奏時自動暫停 BGM；伴奏暫停或停止後，再恢復原本的背景音樂。</p>
+      <p>請先選擇 BGM 並開始播放。之後播放歌唱伴奏時會自動暫停 BGM；伴奏停止或播放完畢後，會自動恢復原本的背景音樂。</p>
     </article>
     <article class="feature-card">
       <span class="feature-card__label">歌曲與待播</span>
