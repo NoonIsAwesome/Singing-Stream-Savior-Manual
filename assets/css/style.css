@@ -603,8 +603,8 @@ button:focus-visible {
 .intro-hero {
   display: grid;
   align-items: center;
-  gap: clamp(30px, 5vw, 68px);
-  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
+  gap: clamp(24px, 3vw, 42px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
   min-height: min(720px, calc(100vh - 160px));
   padding: clamp(28px, 4vw, 54px) 0 clamp(48px, 6vw, 76px);
 }
