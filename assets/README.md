@@ -5,8 +5,11 @@
 - `compact-workspace.png`：精簡模式與主要播放器配置
 - `cover-dialog.png`：嵌入封面
 - `lyrics-manager.png`：管理歌詞
+- `lyrics-manager-linked.png`：管理歌詞的匯入與取消連結狀態
 - `lyrics-reading-preview.png`：日文讀音與 OBS 歌詞預覽
 - `theme-workspace.png`：歌單外觀與主題預覽
+- `card-theme-cover.png`：Card 主題的封面效果
+- `cd-theme-cover.png`：CD 主題的封面效果
 - `obs-websocket-settings.png`：OBS WebSocket 進階設定
 - `mini-workspace.png`：迷你模式
 - `qt-platform-error.png`：Qt 外掛錯誤

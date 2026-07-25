@@ -17,6 +17,13 @@ title: 完整、精簡與迷你模式
 - 顯示歌單外觀即時預覽與主題指南。
 - 適合管理歌曲、封面、歌詞及 OBS 畫面。
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}">
+    <img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="完整模式顯示歌詞設定、OBS 即時預覽、背景音樂、歌唱伴奏與待播清單">
+  </a>
+  <figcaption>完整模式保留所有設定及大型預覽；畫面中的歌詞分頁同時顯示 OBS 效果與播放控制。</figcaption>
+</figure>
+
 ## 精簡模式
 
 適合直播進行中、仍需要選歌與調整內容時：

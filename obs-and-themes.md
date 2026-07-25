@@ -25,6 +25,40 @@ title: 歌單外觀、歌詞畫面與 OBS
 
 其他主題可能支援封面、Reserve、Next On、固定版面、動畫或直向設計。右側「主題指南」會說明目前主題的特性及可調整項目。
 
+### 切換與預覽主題
+
+1. 在上方主題列點選主題卡片。
+2. 查看中央預覽中的 Now Singing、Set List 與 Next On／Reserve。
+3. 依主題指南調整字型、大小、顏色、待播數量或版面位置。
+4. 切換「演唱／已唱／待播／版面配置」檢查不同狀態。
+5. 確認後再將「拖曳至 OBS」拖入 OBS。
+
+切換主題只會改變顯示方式，不會修改歌曲、待播順序或已唱紀錄。完整模式最適合比較主題，因為主題列、設定、預覽及指南可以同時顯示。
+
+## Card 與 CD：封面效果
+
+封面不是必填資料。Card 與 CD 是兩個會特別利用歌曲封面的基本主題：
+
+- **Card：** 把封面放入直向卡片，並在卡片下方顯示歌曲名稱。
+- **CD：** 將封面裁成唱片視覺，歌曲名稱顯示在下方標籤。
+
+未設定封面時仍可播放歌曲及使用其他主題；只有想使用這兩種歌曲專屬效果時，才需要另外整理封面。
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/card-theme-cover.png' | relative_url }}">
+      <img src="{{ '/assets/images/card-theme-cover.png' | relative_url }}" alt="Card 主題在透明背景上顯示直向歌曲封面卡片與歌名">
+    </a>
+    <figcaption>Card：以歌曲封面製作直向卡片。</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/cd-theme-cover.png' | relative_url }}">
+      <img src="{{ '/assets/images/cd-theme-cover.png' | relative_url }}" alt="CD 主題在透明背景上顯示圓形唱片與下方歌名">
+    </a>
+    <figcaption>CD：將歌曲封面轉為圓形唱片視覺。</figcaption>
+  </figure>
+</div>
+
 ## 預覽背景
 
 Default 主題預設使用白色預覽背景；透明主題與精緻主題可使用透明格，方便判斷半透明與留白效果。
@@ -64,6 +98,6 @@ Default 主題預設使用白色預覽背景；透明主題與精緻主題可使
 
 ## 歌詞畫面
 
-歌詞 Overlay 與歌單 Overlay 是兩個獨立 Browser Source。可分別放置、縮放與顯示，歌詞畫面的設定請參考[歌詞章節](lyrics.md)。
+歌詞 Overlay 是選用畫面，與歌單 Overlay 屬於兩個獨立 Browser Source，可分別放置、縮放與顯示。主播也能只使用獨立歌詞視窗而不輸出給觀眾；詳細設定請參考[歌詞章節](lyrics.md)。
 
 [上一頁：歌詞、同步歌詞與日文讀音](lyrics.md) · [下一頁：OBS WebSocket 與直播時間戳](obs-websocket.md)

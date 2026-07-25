@@ -10,10 +10,10 @@ description: Singing Stream Savior 2.0.0.0 繁體中文使用說明
 本說明適用於 **2.0.0.0** 版。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/compact-workspace.png' | relative_url }}">
-    <img src="{{ '/assets/images/compact-workspace.png' | relative_url }}" alt="歌回救星 2.0 精簡模式主畫面，左側為歌曲庫，右側為播放器與待播清單">
+  <a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}">
+    <img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="歌回救星 2.0 完整模式，左側為歌詞設定，中央為 OBS 歌詞預覽，右側為播放器與待播清單">
   </a>
-  <figcaption>歌回救星 2.0 將歌曲庫、播放器、待播清單與歌詞控制整合在同一個直播工作區。點圖片可查看原尺寸。</figcaption>
+  <figcaption>完整模式會顯示所有設定與即時預覽，適合在開播前整理歌曲、歌詞及 OBS 畫面。點圖片可查看原尺寸。</figcaption>
 </figure>
 
 ## 第一次使用，從這裡開始
@@ -30,21 +30,27 @@ description: Singing Stream Savior 2.0.0.0 繁體中文使用說明
 
 1. 建立或開啟 `.bgmsproj` 專案。
 2. 將本機伴奏或 YouTube 歌曲加入歌曲庫。
-3. 填寫直播時要顯示的歌名，並依需要加入歌詞與封面。
+3. 填寫直播時要顯示的歌名；封面與歌詞可依直播需求選用。
 4. 把預計演唱的歌曲加入「待播」並排好順序。
 5. 到「歌單外觀」選擇主題，再將「拖曳至 OBS」拖入 OBS。
-6. 若需要直播時間戳，到「設定 > 進階設定」啟用 OBS WebSocket。
+6. 若要測試直播時間戳，到「設定 > 進階設定」啟用 OBS WebSocket。
 7. 開播前播放一首測試歌曲，確認聲音、歌詞、歌單與 OBS 畫面。
 8. 開播後可切換到精簡或迷你模式，保留最常用的直播操作。
 
 > **重要：** 日文平假名與羅馬拼音由離線字典自動產生，僅供閱讀參考，可能與歌手實際唱法不同。
+
+## 哪些功能是選用的？
+
+- **封面：** 一般播放與多數歌單主題不要求封面。Card 與 CD 主題會在設定封面後呈現歌曲專屬的卡片或唱片效果。
+- **歌詞：** 不設定歌詞也能播放歌曲。設定後可供主播在獨立歌詞視窗閱讀，也能另外建立 OBS 歌詞畫面給觀眾觀看。
+- **OBS WebSocket：** 目前仍在測試，主要用來讀取 OBS 直播時間並記錄歌曲開始的時間戳。一般歌單與歌詞 Overlay 不需要 WebSocket 也能使用。
 
 ## 系統需求
 
 - Windows 10 或 Windows 11，64 位元
 - 可用的音訊輸出裝置
 - 使用 YouTube、線上歌詞或封面搜尋時需要網路連線
-- OBS 整合建議使用 OBS Studio 28 或更新版本
+- 使用測試中的 OBS WebSocket 時，建議使用 OBS Studio 28 或更新版本
 
 ## 名詞說明
 

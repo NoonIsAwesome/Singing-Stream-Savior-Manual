@@ -47,6 +47,24 @@ Singing Stream Savior 2.0.0.0/
 5. 到「歌單外觀」確認 Default 主題預覽。
 6. 若使用 OBS，再依後續章節加入歌單與歌詞畫面。
 
+## 認識完整模式
+
+完整模式是預設的準備工作區，會依目前分頁顯示完整設定：
+
+- 左側：歌曲資料、歌詞或畫面設定。
+- 中央：歌曲表格、歌詞預覽或歌單主題預覽。
+- 右側：背景音樂、歌唱伴奏、待播與已唱清單。
+- 右上角：完整、精簡與迷你模式切換。
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}">
+    <img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="完整模式的歌詞分頁，畫面同時顯示歌詞設定、OBS 預覽、播放器及待播清單">
+  </a>
+  <figcaption>完整模式的歌詞分頁：中央即時預覽與 OBS 輸出相同，右側播放控制與待播清單仍可同時操作。</figcaption>
+</figure>
+
+準備直播時建議先使用完整模式；完成歌曲、主題與歌詞設定後，再視需要切換成精簡或迷你模式。
+
 ## 儲存與關閉
 
 視窗標題出現 `*` 代表專案有尚未儲存的變更。切換模式、播放音訊或打開獨立歌詞視窗不會清除目前專案狀態。

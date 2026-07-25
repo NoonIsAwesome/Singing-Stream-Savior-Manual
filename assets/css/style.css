@@ -454,6 +454,24 @@ button:focus-visible {
   width: min(100%, 450px);
 }
 
+.figure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 1.8em 0 2.2em;
+}
+
+.figure-grid .manual-figure {
+  width: 100%;
+  margin: 0;
+}
+
+.figure-grid .manual-figure img {
+  aspect-ratio: 1540 / 1087;
+  object-fit: contain;
+  object-position: top center;
+}
+
 .manual-article table {
   display: block;
   width: 100%;
@@ -548,6 +566,15 @@ button:focus-visible {
 
   .manual-figure {
     margin-inline: -8px;
+  }
+
+  .figure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .figure-grid .manual-figure {
+    margin-inline: -8px;
+    width: calc(100% + 16px);
   }
 }
 

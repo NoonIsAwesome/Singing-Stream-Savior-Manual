@@ -4,6 +4,11 @@ title: 歌詞、同步歌詞與日文讀音
 
 # 歌詞、同步歌詞與日文讀音
 
+歌詞是選用功能，不設定歌詞也能正常播放伴奏。設定歌詞後有兩種主要用途：
+
+1. 主播可開啟獨立的「歌詞視窗」，移到最容易閱讀的位置。
+2. 可將歌詞 Overlay 拖曳到 OBS，讓觀眾看到同步歌詞。
+
 ## 支援的歌詞
 
 程式支援同步與非同步歌詞，包括：
@@ -33,7 +38,22 @@ title: 歌詞、同步歌詞與日文讀音
   <a href="{{ '/assets/images/lyrics-manager.png' | relative_url }}">
     <img src="{{ '/assets/images/lyrics-manager.png' | relative_url }}" alt="管理歌詞視窗，左側為歌詞預覽，右側為線上搜尋結果">
   </a>
-  <figcaption>管理歌詞會集中提供線上搜尋、預覽、匯入 LRC 與取消關聯等功能。</figcaption>
+  <figcaption>尚未附加歌詞時，可在右側搜尋同步歌詞並於左側確認內容。</figcaption>
+</figure>
+
+### 匯入 LRC 與取消歌詞連結
+
+- **選擇 LRC 檔案：** 從電腦匯入自行準備的 LRC、SRT、VTT 或純文字歌詞。
+- **取消歌詞連結：** 移除目前歌曲與歌詞檔的關聯，不會刪除原始音訊。
+- **附加歌詞：** 選取並預覽線上結果後，將該份歌詞連結到歌曲。
+
+當歌曲已經附加歌詞時，管理視窗會明確顯示目前狀態，並提供「取消歌詞連結」。因此不需要回到主畫面尋找重複功能。
+
+<figure class="manual-figure manual-figure--medium">
+  <a href="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}">
+    <img src="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}" alt="已有歌詞的管理歌詞視窗，左下角提供選擇 LRC 檔案與取消歌詞連結">
+  </a>
+  <figcaption>已有歌詞時，左下角可重新匯入檔案或取消目前的歌詞連結。</figcaption>
 </figure>
 
 ## 自動搜尋
@@ -45,6 +65,8 @@ title: 歌詞、同步歌詞與日文讀音
 歌詞頁的即時預覽使用與 OBS 相同的版面、字型、顏色與日文讀音設定，用來確認 OBS 實際顯示效果。
 
 「歌詞視窗」則是可自由移動的獨立視窗，適合放到主播容易閱讀的位置。它擁有自己的日文讀音選項，不必和 OBS 使用相同設定。
+
+如果只需要自己看歌詞，不必把歌詞 Overlay 加入 OBS；如果只想讓觀眾看，也可以維持歌詞視窗關閉。
 
 ## 日文讀音
 
