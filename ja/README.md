@@ -9,9 +9,9 @@ translation_key: home
 
 Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、OBS オーバーレイを一つの操作画面にまとめます。本書は **2.0.0.0** に対応しています。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと原寸で確認できます。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと原寸で確認できます。</figcaption></figure>
 
-まず `.bgmsproj` を作成または開き、曲を登録して表示名を整えます。「セットリスト外観」でテーマを選び、「OBS へドラッグ」を OBS にドロップしてください。待機リスト、ジャケット、歌詞、OBS WebSocket は任意です。
+まず `.bgmsproj` を作成または開き、曲を登録して表示名を整えます。「プレイリスト外観」でテーマを選び、「OBSへドラッグ」を OBS にドロップしてください。待機リスト、ジャケット、歌詞、OBS WebSocket は任意です。
 
 <a id="getting-started"></a>
 ## 01 · はじめに
@@ -29,11 +29,11 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 
 ジャケットは必須ではなく、Card と CD テーマで特に効果を発揮します。曲のメニューから「ジャケットを埋め込む」を開き、検索結果またはローカル画像を選び、プレビューの読み込み後に「埋め込む」を押します。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/cover-dialog.png' | relative_url }}" alt="ジャケット埋め込み画面"></a><figcaption>選択した画像のプレビューが読み込まれると、埋め込み操作が有効になります。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}" alt="ジャケット埋め込み画面"></a><figcaption>選択した画像のプレビューが読み込まれると、埋め込み操作が有効になります。</figcaption></figure>
 
 BGM とカラオケ音源は別々に再生・音量・シークを操作できます。カラオケ側では速度と半音単位のピッチも変更でき、元ファイルは書き換えません。
 
-待機リストを使わなくても、曲テーブルの曲をダブルクリックすればすぐに再生できます。待機リストは視聴者からのリクエストや後で歌う予定の曲を管理するための任意機能です。対応テーマでは最初の待機曲を **Next On**、複数の待機曲を **Reserve** に表示できます。
+「予約」を使わなくても、曲テーブルの曲をダブルクリックすればすぐに再生できます。「予約」は視聴者からのリクエストや後で歌う予定の曲を管理するための任意機能です。対応テーマでは最初の予約曲を **Next On**、複数の予約曲を **Reserve** に表示できます。再生を終えた曲は「履歴」に移動します。
 
 <a id="lyrics"></a>
 ## 03 · 歌詞機能
@@ -42,29 +42,29 @@ BGM とカラオケ音源は別々に再生・音量・シークを操作でき�
 
 「歌詞を管理…」では、オンライン検索、ローカル歌詞の読み込み、検索結果の関連付け、現在の関連付け解除ができます。最大 50 件を表示し、同期歌詞と音源時間に近い候補を優先します。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}" alt="LRC 読み込みと歌詞リンク解除を表示した歌詞管理画面"></a><figcaption>歌詞を設定済みでも、左下から別ファイルの読み込みや関連付け解除ができます。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-manager-linked.png' | relative_url }}" alt="歌詞ファイルの読み込みと歌詞リンク解除を表示した歌詞管理画面"></a><figcaption>歌詞を設定済みでも、左下から別ファイルの読み込みや関連付け解除ができます。</figcaption></figure>
 
 日本語読みはオフ、漢字の上の小さなひらがな、原文下の空白区切りローマ字から選べます。辞書による自動生成のため、固有名詞や歌手独自の読み方とは異なる場合があります。
 
 <a id="obs-and-themes"></a>
-## 04 · セットリストテーマと OBS
+## 04 · プレイリスト外観と OBS
 
-「セットリスト外観」でテーマを選び、Now Singing、Set List、Next On、Reserve をプレビューします。基本テーマは Default、Transparent Black、Transparent White、Card、CD の順で、その後に装飾テーマが並びます。
+「プレイリスト外観」でテーマを選び、Now Singing、Set List、Next On、Reserve をプレビューします。基本テーマは Default、Transparent Black、Transparent White、Card、CD の順で、その後に装飾テーマが並びます。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/theme-workspace.png' | relative_url }}" alt="テーマカード、設定、プレビュー、テーマガイドを表示した画面"></a><figcaption>フルモードではテーマ比較、設定、OBS 表示確認を同時に行えます。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/theme-workspace.png' | relative_url }}" alt="テーマカード、設定、プレビュー、テーマガイドを表示した画面"></a><figcaption>フルモードではテーマ比較、設定、OBS 表示確認を同時に行えます。</figcaption></figure>
 
-「OBS へドラッグ」を OBS にドロップするとローカル Browser Source が作成されます。この操作に WebSocket は不要です。Card は縦型ジャケットカード、CD は円盤風の表示になります。
+「OBSへドラッグ」を OBS にドロップするとローカル Browser Source が作成されます。この操作に WebSocket は不要です。Card は縦型ジャケットカード、CD は円盤風の表示になります。
 
 「画面設定」には 4 つのタブがあります。
 
 | タブ | 設定できる内容 |
 | --- | --- |
 | **歌唱中** | Now Singing のフォント、サイズ、色、太字／斜体／下線、配置、長い曲名のマーキー速度 |
-| **歌唱済み** | Set List のフォント、サイズ、色、番号、文字スタイル、配置、リストのスクロール速度 |
-| **待機** | Reserve／Next On 専用のフォント、サイズ、色、番号、文字スタイル、配置 |
+| **履歴** | Set List のフォント、サイズ、色、番号、文字スタイル、配置、リストのスクロール速度 |
+| **予約** | Reserve／Next On 専用のフォント、サイズ、色、番号、文字スタイル、配置 |
 | **レイアウト** | プロジェクト固有レイアウトを有効にし、Now Singing・履歴・Reserve の見出し／内容ブロックの X、Y、幅、高さを調整、またはテーマ配置へ復元 |
 
-OBS に待機曲を表示するか、最大 1～10 曲の表示数も設定できます。OBS WebSocket を有効にした場合のみ Set List のタイムスタンプ設定が表示され、Reserve／Next On には時刻を付けません。
+OBS に予約曲を表示するか、最大 1～10 曲の表示数も設定できます。OBS WebSocket を有効にした場合のみ Set List のタイムスタンプ設定が表示され、Reserve／Next On には時刻を付けません。
 
 プレビュー背景は透明、暗色、明色、任意色、画像から選べ、画像はフィット／フィル／ストレッチに対応します。プレビューの配置調整はアプリ内の確認表示だけに作用し、OBS 出力は変わりません。固定デザインのテーマでは一部の文字・配置設定がロックされるため、右側のテーマガイドを確認してください。
 
@@ -75,7 +75,7 @@ OBS に待機曲を表示するか、最大 1～10 曲の表示数も設定で�
 
 OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き、サーバーを有効にしてポート（通常 `4455`）とパスワードを確認します。アプリの「設定 > 詳細設定」で WebSocket を有効にし、`127.0.0.1`、同じポートとパスワードを入力して「接続」を押します。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}" alt="OBS WebSocket の説明と接続項目を表示した詳細設定"></a><figcaption>WebSocket を有効にした場合のみ、接続操作と状態表示を使用できます。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/ja/obs-websocket-settings.png' | relative_url }}" alt="OBS WebSocket の説明と接続項目を表示した詳細設定"></a><figcaption>WebSocket を有効にした場合のみ、接続操作と状態表示を使用できます。</figcaption></figure>
 
 右下の緑は接続済み、黄は接続または再接続中、赤は未接続です。本番前にテスト配信でタイムスタンプを確認してください。
 
@@ -83,10 +83,16 @@ OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き�
 ## 06 · ワークスペース
 
 - **フルモード：** 全データ、設定、大きなプレビューを表示。配信準備向け。
-- **コンパクトモード：** 選曲、プレイヤー、待機・歌唱済みを残し、幅を取る列と大型プレビューを非表示。
-- **ミニモード：** 配信前に歌唱予定曲と画面設定を準備し、待機リストまで並べ終えた配信者向けです。ライブラリと BGM を隠し、カラオケ操作、待機・歌唱済み、［歌詞ウィンドウ］だけを表示します。配信中は準備済みの待機リストから曲を選んで再生できます。歌詞ウィンドウは自由に移動でき、文字サイズも調整できます。
+- **コンパクトモード：** 選曲、プレイヤー、「予約」と「履歴」を残し、幅を取る列と大型プレビューを非表示。
+- **ミニモード：** 配信前に歌唱予定曲と画面設定を準備し、「予約」まで並べ終えた配信者向けです。ライブラリと BGM を隠し、カラオケ操作、「予約」「履歴」、［歌詞ウィンドウ］だけを表示します。配信中は準備済みの予約リストから曲を選んで再生できます。歌詞ウィンドウは自由に移動でき、文字サイズも調整できます。
 
-`Ctrl + Shift + M` で切り替えられます。切り替わるのは表示する操作項目だけです。再生中の曲はそのまま続き、既存の待機順と OBS 画面もリセットされません。各モードのウィンドウ配置は個別に記憶されます。
+`Ctrl + Shift + M` で切り替えられます。切り替わるのは表示する操作項目だけです。再生中の曲はそのまま続き、既存の予約順と OBS 画面もリセットされません。各モードのウィンドウ配置は個別に記憶されます。
+
+<div class="figure-grid">
+  <figure class="manual-figure"><a href="{{ '/assets/images/ja/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/full-workspace.png' | relative_url }}" alt="日本語のフルモード"></a><figcaption>フルモードは曲ライブラリ、プレイヤー、予約リストをすべて表示します。</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/ja/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/compact-workspace.png' | relative_url }}" alt="日本語のコンパクトモード"></a><figcaption>コンパクトモードは選曲と配信中の操作を残します。</figcaption></figure>
+  <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/ja/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/mini-workspace.png' | relative_url }}" alt="日本語のミニモード"></a><figcaption>ミニモードは予約リストの表示領域を広く取れます。</figcaption></figure>
+</div>
 
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 設定とトラブル対処

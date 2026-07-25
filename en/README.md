@@ -10,7 +10,7 @@ translation_key: home
 Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, and OBS overlays in one workflow. This manual covers version **2.0.0.0**.
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
+  <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
   <figcaption>Full mode shows all settings and the live OBS preview. Select an image to view it at full size.</figcaption>
 </figure>
 
@@ -20,7 +20,7 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
 2. Add local tracks or YouTube songs to the library.
 3. Enter the title you want viewers to see. Cover art and lyrics are optional.
 4. Optionally add requests or planned songs to the queue. You can also double-click any song to play it immediately.
-5. Choose a theme under **Set-list appearance**, then drag **Drag to OBS** into OBS.
+5. Choose a theme under **Playlist Appearance**, then drag **Drag to OBS** into OBS.
 6. Play one test song before going live.
 7. Use Compact or Mini mode during the stream if you need less screen space.
 
@@ -47,13 +47,13 @@ The **Display title** is used by the queue and OBS. If it is blank, the app fall
 Cover art is optional. It becomes especially useful with the **Card** and **CD** themes. Open **Embed cover** from a local song’s context menu, select an online result or local image, wait for the preview to load, and choose **Embed**.
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/cover-dialog.png' | relative_url }}" alt="Embed cover window with preview and search results"></a>
+  <a href="{{ '/assets/images/en/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/en/cover-dialog.png' | relative_url }}" alt="Embed cover window with preview and search results"></a>
   <figcaption>The Embed button becomes available after the selected cover preview has loaded.</figcaption>
 </figure>
 
 The BGM and karaoke players have separate play, pause, stop, loop, mute, volume, and seek controls. Karaoke playback also supports speed and semitone pitch adjustment without modifying the source file.
 
-The queue is optional: double-click a song in the table to play it immediately. Use **Queue** when managing viewer requests or songs you plan to sing later. Supported themes show the first queued song in **Next On**, or several queued songs in **Reserve**. Completed songs move to **Sung**.
+The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** when managing viewer requests or songs you plan to sing later. Supported themes show the first reserved song in **Next On**, or several reserved songs in **Reserve**. Completed songs move to **History**.
 
 <a id="lyrics"></a>
 ## 03 · Lyrics
@@ -63,7 +63,7 @@ Lyrics are optional. They can be used in a movable host-only **Lyrics window**, 
 Open **Manage lyrics…** to search online, import a local lyric file, attach a result, or unlink the current lyrics. Search returns up to 50 results, prioritizing synchronized lyrics and versions closest to the karaoke track’s duration.
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}" alt="Manage lyrics window showing Import LRC and Unlink lyrics controls"></a>
+  <a href="{{ '/assets/images/en/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-manager-linked.png' | relative_url }}" alt="Manage lyrics window showing Import lyrics file and Unlink lyrics controls"></a>
   <figcaption>When lyrics are linked, the lower-left controls let you import another file or unlink the current one.</figcaption>
 </figure>
 
@@ -72,12 +72,12 @@ The embedded preview uses the same layout, font, color, highlight, and Japanese-
 Use the lyric offset controls if timing is early or late: negative values show lyrics sooner; positive values show them later.
 
 <a id="obs-and-themes"></a>
-## 04 · Set-list themes and OBS
+## 04 · Playlist appearance and OBS
 
-Under **Set-list appearance**, select a theme card and inspect Now Singing, Set List, Next On, and Reserve in the preview. Basic themes appear first: Default, Transparent Black, Transparent White, Card, and CD; illustrated themes follow.
+Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set List, Next On, and Reserve in the preview. Basic themes appear first: Default, Transparent Black, Transparent White, Card, and CD; illustrated themes follow.
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/theme-workspace.png' | relative_url }}" alt="Set-list appearance workspace with theme cards, settings, preview, and guide"></a>
+  <a href="{{ '/assets/images/en/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/theme-workspace.png' | relative_url }}" alt="Playlist Appearance workspace with theme cards, settings, preview, and guide"></a>
   <figcaption>Full mode keeps theme selection, controls, preview, and the theme guide visible together.</figcaption>
 </figure>
 
@@ -106,7 +106,7 @@ OBS WebSocket is optional, disabled by default, and currently experimental. Its 
 In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable the server, keep port `4455` unless you changed it, and copy the password. In Singing Stream Savior, open **Settings > Advanced**, enable OBS WebSocket, enter `127.0.0.1`, the matching port and password, then choose **Connect**.
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}" alt="Advanced settings showing OBS WebSocket instructions and connection fields"></a>
+  <a href="{{ '/assets/images/en/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/en/obs-websocket-settings.png' | relative_url }}" alt="Advanced settings showing OBS WebSocket instructions and connection fields"></a>
   <figcaption>Connection controls remain disabled until OBS WebSocket is enabled.</figcaption>
 </figure>
 
@@ -118,13 +118,13 @@ The status indicator appears at the lower-right only when enabled: green means c
 Use the top-right mode button or `Ctrl + Shift + M`:
 
 - **Full:** all library fields, lyric/theme previews, and settings. Best for preparation.
-- **Compact:** keeps song selection, players, queue, and history while hiding wide source columns and large previews.
-- **Mini:** best when the songs and stream visuals are already prepared before going live. It hides the library and BGM player, leaving the karaoke controls, queue, history, and Lyrics Window button. Choose the next song directly from the prepared queue. The separate Lyrics Window can be moved and its text size adjusted to fit around other streaming tools.
+- **Compact:** keeps song selection, players, Reserve, and History while hiding wide source columns and large previews.
+- **Mini:** best when the songs and stream visuals are already prepared before going live. It hides the library and BGM player, leaving the karaoke controls, Reserve, History, and Lyrics Window button. Choose the next song directly from the prepared Reserve list. The separate Lyrics Window can be moved and its text size adjusted to fit around other streaming tools.
 
 <div class="figure-grid">
-  <figure class="manual-figure"><a href="{{ '/assets/images/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/full-workspace.png' | relative_url }}" alt="Full workspace"></a><figcaption>Full mode keeps the complete library, players, and queue for preparation.</figcaption></figure>
-  <figure class="manual-figure"><a href="{{ '/assets/images/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/compact-workspace.png' | relative_url }}" alt="Compact workspace"></a><figcaption>Compact mode keeps song selection and live controls.</figcaption></figure>
-  <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/mini-workspace.png' | relative_url }}" alt="Mini workspace"></a><figcaption>Mini mode leaves more vertical space for the queue.</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/en/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/full-workspace.png' | relative_url }}" alt="Full workspace"></a><figcaption>Full mode keeps the complete library, players, and queue for preparation.</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/en/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/compact-workspace.png' | relative_url }}" alt="Compact workspace"></a><figcaption>Compact mode keeps song selection and live controls.</figcaption></figure>
+  <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/en/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/mini-workspace.png' | relative_url }}" alt="Mini workspace"></a><figcaption>Mini mode leaves more vertical space for the queue.</figcaption></figure>
 </div>
 
 Switching modes only changes which controls are visible. A song already playing continues, and the existing queue order and OBS scene are not reset. Each mode remembers its window size and layout.

@@ -9,9 +9,9 @@ translation_key: home
 
 歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词和 OBS 画面整合在同一套流程中。本说明适用于 **2.0.0.0**。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可查看原尺寸。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可查看原尺寸。</figcaption></figure>
 
-建议先建立或打开 `.bgmsproj`，加入歌曲并填写显示歌名，再到“歌单外观”选择主题并把“拖曳至 OBS”拖入 OBS。待播、封面、歌词与 OBS WebSocket 都是选用功能。
+建议先建立或打开 `.bgmsproj`，加入歌曲并填写显示歌名，再到“歌单外观”选择主题并把“拖放至 OBS”拖入 OBS。待播、封面、歌词与 OBS WebSocket 都是选用功能。
 
 <a id="getting-started"></a>
 ## 01 · 开始使用
@@ -29,7 +29,7 @@ translation_key: home
 
 封面不是必需，仅在 Card 与 CD 主题下有特别效果。在歌曲菜单打开“嵌入封面”，选择搜索结果或本地图片，等待预览完成后按“嵌入”。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/cover-dialog.png' | relative_url }}" alt="嵌入封面窗口"></a><figcaption>封面预览载入完成后即可嵌入。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}" alt="嵌入封面窗口"></a><figcaption>封面预览载入完成后即可嵌入。</figcaption></figure>
 
 BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调整速度和半音音高，不会修改原文件。
 
@@ -42,7 +42,7 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调�
 
 “管理歌词…”可以搜索、导入本地歌词、附加结果或取消歌词关联。搜索最多 50 条，优先显示同步歌词以及长度最接近伴奏的版本。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}" alt="管理歌词窗口中的导入 LRC 和取消歌词关联"></a><figcaption>已有歌词时，左下角仍可导入其他文件或取消当前关联。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-manager-linked.png' | relative_url }}" alt="管理歌词窗口中的导入歌词文件和取消歌词关联"></a><figcaption>已有歌词时，左下角仍可导入其他文件或取消当前关联。</figcaption></figure>
 
 日文读音可关闭、在汉字上方显示小平假名，或在原文下方显示带空格的罗马拼音。自动读音仅供参考，特殊读法与演唱方式可能和原曲不同。
 
@@ -51,9 +51,9 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调�
 
 在“歌单外观”选择主题，并检查 Now Singing、Set List、Next On 与 Reserve。基本主题依次为 Default、Transparent Black、Transparent White、Card、CD，之后才是精致主题。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/theme-workspace.png' | relative_url }}" alt="歌单外观页面的主题卡片、设置、预览和说明"></a><figcaption>完整模式可同时比较主题、调整设置并查看 OBS 效果。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/theme-workspace.png' | relative_url }}" alt="歌单外观页面的主题卡片、设置、预览和说明"></a><figcaption>完整模式可同时比较主题、调整设置并查看 OBS 效果。</figcaption></figure>
 
-用“拖曳至 OBS”建立本地 Browser Source，不需要启用 WebSocket。Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正常播放不要求封面。
+用“拖放至 OBS”建立本地 Browser Source，不需要启用 WebSocket。Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正常播放不要求封面。
 
 “画面设置”提供四个分页：
 
@@ -75,7 +75,7 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调�
 
 在 OBS Studio 28 以上版本打开“工具 > WebSocket 服务器设置”，启用服务器并确认端口（通常为 `4455`）与密码。再到软件“设置 > 高级设置”，启用 WebSocket，填写 `127.0.0.1`、端口和密码后按“连接”。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}" alt="高级设置中的 OBS WebSocket 说明和连接资料"></a><figcaption>启用选项后，连接按钮与状态显示才会出现。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/obs-websocket-settings.png' | relative_url }}" alt="高级设置中的 OBS WebSocket 说明和连接资料"></a><figcaption>启用选项后，连接按钮与状态显示才会出现。</figcaption></figure>
 
 右下角绿灯为已连接，黄灯为连接中，红灯为未连接。正式直播前请先用测试直播确认时间戳。
 
@@ -87,6 +87,12 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调�
 - **迷你模式：** 适合开播前已经完成待唱歌曲与画面设置，并已排好待播列表的主播。它会隐藏歌曲库与 BGM，只保留伴奏、待播、已唱和“歌词窗口”按钮；直播中可直接从待播列表选择歌曲播放。歌词窗口可以自由移动并调整文字大小，方便配合其他直播软件安排位置。
 
 快捷键为 `Ctrl + Shift + M`。切换模式只会改变画面上显示的控制项目；正在播放的歌曲会继续播放，原有待播顺序与 OBS 画面不会被重置。每种模式会记住各自的窗口配置。
+
+<div class="figure-grid">
+  <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/full-workspace.png' | relative_url }}" alt="简体中文完整模式"></a><figcaption>完整模式保留完整歌曲库、播放器和待播列表。</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/compact-workspace.png' | relative_url }}" alt="简体中文精简模式"></a><figcaption>精简模式保留选歌与直播时常用控制。</figcaption></figure>
+  <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/zh-CN/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/mini-workspace.png' | relative_url }}" alt="简体中文迷你模式"></a><figcaption>迷你模式把更多垂直空间留给待播列表。</figcaption></figure>
+</div>
 
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 设置与疑难解答

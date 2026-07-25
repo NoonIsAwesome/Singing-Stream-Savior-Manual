@@ -9,9 +9,9 @@ translation_key: home
 
 Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사와 OBS 오버레이를 하나의 흐름으로 관리합니다. 이 설명서는 **2.0.0.0** 버전을 기준으로 합니다.
 
-<figure class="manual-figure"><a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 원본 크기로 볼 수 있습니다.</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 원본 크기로 볼 수 있습니다.</figcaption></figure>
 
-먼저 `.bgmsproj` 프로젝트를 만들거나 열고 곡을 추가한 뒤 표시 제목을 정리하세요. **세트리스트 모양**에서 테마를 고르고 **OBS로 드래그**를 OBS에 놓으면 됩니다. 대기 목록, 표지, 가사와 OBS WebSocket은 선택 기능입니다.
+먼저 `.bgmsproj` 프로젝트를 만들거나 열고 곡을 추가한 뒤 표시 제목을 정리하세요. **재생목록 외관**에서 테마를 고르고 **Drag로OBS** 버튼을 OBS에 놓으면 됩니다. 대기 목록, 표지, 가사와 OBS WebSocket은 선택 기능입니다.
 
 <a id="getting-started"></a>
 ## 01 · 시작하기
@@ -29,11 +29,11 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 
 표지는 필수가 아니며 Card와 CD 테마에서 특별히 활용됩니다. 곡 메뉴에서 **표지 삽입**을 열고 검색 결과나 로컬 이미지를 선택한 뒤 미리보기 로딩이 끝나면 삽입하세요.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/cover-dialog.png' | relative_url }}" alt="표지 미리보기와 검색 결과가 있는 표지 삽입 창"></a><figcaption>선택한 표지 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}" alt="표지 미리보기와 검색 결과가 있는 표지 삽입 창"></a><figcaption>선택한 표지 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
 
 BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 원본 파일을 바꾸지 않고 속도와 반음 단위 음높이도 조절할 수 있습니다.
 
-대기 목록은 선택 기능이며, 곡 표에서 곡을 두 번 클릭하면 바로 재생할 수 있습니다. 대기 목록은 시청자 신청곡이나 나중에 부를 예정인 곡을 관리할 때 사용합니다. 지원 테마는 첫 대기 곡을 **Next On**에, 여러 곡을 **Reserve**에 표시할 수 있습니다. 재생을 마친 곡은 **부른 곡**으로 이동합니다.
+**예약**은 선택 기능이며, 곡 표에서 곡을 두 번 클릭하면 바로 재생할 수 있습니다. 예약은 시청자 신청곡이나 나중에 부를 예정인 곡을 관리할 때 사용합니다. 지원 테마는 첫 예약 곡을 **Next On**에, 여러 곡을 **Reserve**에 표시할 수 있습니다. 재생을 마친 곡은 **연혁**으로 이동합니다.
 
 <a id="lyrics"></a>
 ## 03 · 가사 기능
@@ -42,18 +42,18 @@ BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 
 
 **가사 관리…**에서 온라인 검색, 로컬 가사 가져오기, 결과 연결 또는 현재 가사 연결 해제를 할 수 있습니다. 최대 50개 결과를 표시하며 동기화 가사와 반주 길이에 가까운 버전을 우선합니다.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}" alt="LRC 가져오기와 가사 연결 해제가 표시된 가사 관리 창"></a><figcaption>가사가 연결된 뒤에도 왼쪽 아래에서 다른 파일을 가져오거나 연결을 해제할 수 있습니다.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-manager-linked.png' | relative_url }}" alt="가사 파일 가져오기와 가사 연결 해제가 표시된 가사 관리 창"></a><figcaption>가사가 연결된 뒤에도 왼쪽 아래에서 다른 파일을 가져오거나 연결을 해제할 수 있습니다.</figcaption></figure>
 
 일본어 읽기는 끄기, 한자 위의 작은 히라가나, 원문 아래의 단어 간격 로마자 중에서 선택합니다. 자동 생성 결과는 참고용이며 고유명사나 가수의 실제 발음과 다를 수 있습니다.
 
 <a id="obs-and-themes"></a>
-## 04 · 세트리스트 테마와 OBS
+## 04 · 재생목록 외관과 OBS
 
-**세트리스트 모양**에서 테마를 선택하고 Now Singing, Set List, Next On과 Reserve를 미리 봅니다. 기본 테마는 Default, Transparent Black, Transparent White, Card, CD 순서이며 그 뒤에 장식 테마가 표시됩니다.
+**재생목록 외관**에서 테마를 선택하고 Now Singing, Set List, Next On과 Reserve를 미리 봅니다. 기본 테마는 Default, Transparent Black, Transparent White, Card, CD 순서이며 그 뒤에 장식 테마가 표시됩니다.
 
-<figure class="manual-figure"><a href="{{ '/assets/images/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/theme-workspace.png' | relative_url }}" alt="테마 카드, 설정, 미리보기와 테마 안내가 있는 화면"></a><figcaption>전체 모드에서는 테마 비교, 설정과 OBS 결과 확인을 동시에 할 수 있습니다.</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/theme-workspace.png' | relative_url }}" alt="테마 카드, 설정, 미리보기와 테마 안내가 있는 화면"></a><figcaption>전체 모드에서는 테마 비교, 설정과 OBS 결과 확인을 동시에 할 수 있습니다.</figcaption></figure>
 
-**OBS로 드래그**를 OBS에 놓으면 로컬 Browser Source가 만들어집니다. 이 작업에는 WebSocket이 필요 없습니다. Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니다.
+현재 한국어 인터페이스의 **Drag로OBS** 버튼을 OBS에 놓으면 로컬 Browser Source가 만들어집니다. 이 작업에는 WebSocket이 필요 없습니다. Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니다.
 
 **화면 설정**에는 네 개의 탭이 있습니다.
 
@@ -75,7 +75,7 @@ OBS 대기 목록 표시 여부와 1–10곡 표시 한도도 정할 수 있습�
 
 OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버를 켠 뒤 포트(보통 `4455`)와 비밀번호를 확인합니다. 앱의 **설정 > 고급 설정**에서 WebSocket을 켜고 `127.0.0.1`, 같은 포트와 비밀번호를 입력한 다음 **연결**을 누르세요.
 
-<figure class="manual-figure"><a href="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}" alt="OBS WebSocket 안내와 연결 정보를 표시한 고급 설정"></a><figcaption>WebSocket을 켠 경우에만 연결 버튼과 상태가 활성화됩니다.</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/ko/obs-websocket-settings.png' | relative_url }}" alt="OBS WebSocket 안내와 연결 정보를 표시한 고급 설정"></a><figcaption>WebSocket을 켠 경우에만 연결 버튼과 상태가 활성화됩니다.</figcaption></figure>
 
 오른쪽 아래 녹색은 연결됨, 노란색은 연결 또는 재연결 중, 빨간색은 연결되지 않음을 뜻합니다. 실제 방송 전에 테스트 방송으로 타임스탬프를 확인하세요.
 
@@ -83,10 +83,16 @@ OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버
 ## 06 · 작업 공간 모드
 
 - **전체 모드:** 모든 정보, 설정과 큰 미리보기. 방송 준비에 적합합니다.
-- **간단 모드:** 곡 선택, 플레이어, 대기와 부른 곡을 유지하고 넓은 열과 큰 미리보기를 숨깁니다.
-- **미니 모드:** 방송 전에 부를 곡과 화면 설정을 마치고 대기 목록까지 준비한 스트리머에게 적합합니다. 라이브러리와 BGM을 숨기고 반주, 대기·부른 곡, ‘가사 창’ 버튼만 표시합니다. 방송 중에는 준비한 대기 목록에서 곡을 골라 바로 재생할 수 있습니다. 별도 가사 창은 자유롭게 이동하고 글자 크기를 조절할 수 있습니다.
+- **간단 모드:** 곡 선택, 플레이어, **예약**과 **연혁**을 유지하고 넓은 열과 큰 미리보기를 숨깁니다.
+- **미니 모드:** 방송 전에 부를 곡과 화면 설정을 마치고 **예약** 목록까지 준비한 스트리머에게 적합합니다. 라이브러리와 BGM을 숨기고 반주, **예약**, **연혁**, ‘가사 창’ 버튼만 표시합니다. 방송 중에는 준비한 예약 목록에서 곡을 골라 바로 재생할 수 있습니다. 별도 가사 창은 자유롭게 이동하고 글자 크기를 조절할 수 있습니다.
 
 `Ctrl + Shift + M`으로 전환할 수 있습니다. 모드 전환은 화면에 보이는 조작 항목만 바꿉니다. 재생 중인 곡은 계속 재생되고 기존 대기 순서와 OBS 화면도 초기화되지 않습니다. 각 모드의 창 배치는 따로 기억합니다.
+
+<div class="figure-grid">
+  <figure class="manual-figure"><a href="{{ '/assets/images/ko/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/full-workspace.png' | relative_url }}" alt="한국어 전체 모드"></a><figcaption>전체 모드는 전체 라이브러리, 플레이어와 대기 목록을 표시합니다.</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/ko/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/compact-workspace.png' | relative_url }}" alt="한국어 간단 모드"></a><figcaption>간단 모드는 곡 선택과 방송 중 조작 기능을 유지합니다.</figcaption></figure>
+  <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}" alt="한국어 미니 모드"></a><figcaption>미니 모드는 대기 목록을 위한 세로 공간을 더 확보합니다.</figcaption></figure>
+</div>
 
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 설정 및 문제 해결
