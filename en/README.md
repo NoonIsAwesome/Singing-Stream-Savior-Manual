@@ -1,139 +1,37 @@
 ---
-title: Singing Stream Savior 2.0 User Manual
-description: English manual for Singing Stream Savior 2.0.0.0
+title: Singing Stream Savior｜Playback, set lists, and lyrics for singing streams
+description: Why Singing Stream Savior was created and what it can do
 lang: en
 translation_key: home
 ---
 
-# Singing Stream Savior 2.0 User Manual
-
-Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, and OBS overlays in one workflow. This manual covers version **2.0.0.0**.
-
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
-  <figcaption>Full mode shows all settings and the live OBS preview. Select an image to view it at full size.</figcaption>
-</figure>
-
-## Recommended setup
-
-1. Create or open a `.bgmsproj` project.
-2. Add local tracks or YouTube songs to the library.
-3. Enter the title you want viewers to see. Cover art and lyrics are optional.
-4. Optionally add requests or planned songs to the queue. You can also double-click any song to play it immediately.
-5. Choose a theme under **Playlist Appearance**, then drag **Drag to OBS** into OBS.
-6. Play one test song before going live.
-7. Use Compact or Mini mode during the stream if you need less screen space.
-
-> Japanese furigana and romaji are generated from an offline dictionary. They are reading aids and may differ from the singer’s pronunciation.
-
-<a id="getting-started"></a>
-## 01 · Getting started
-
-Extract the entire ZIP to a normal folder. In the outermost folder, double-click the `Singing Stream Savior.exe` with the app icon shown below. This is the only file you need to open; do not run the app inside the ZIP or look for another EXE inside the data folders.
-
-<div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior app icon"><div><strong>Singing Stream Savior.exe</strong><span>Open this app to start</span></div></div>
-
-Create a project from **File > New project**, add songs, then save the `.bgmsproj` file. A project stores songs, display titles, queue order, history, lyric links, theme, and display settings. An asterisk in the window title means there are unsaved changes.
-
-Full mode is the default preparation workspace: content and settings on the left, previews in the center, and players plus queue on the right.
-
-<a id="library-and-playback"></a>
-## 02 · Library and playback
-
-The library contains **All songs**, **Favorites**, **Recently played**, and removable custom playlists. You can import a YouTube video, a YouTube playlist, or local songs/karaoke tracks in `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection and the bundled `yt-dlp` helper.
-
-The **Display title** is used by the queue and OBS. If it is blank, the app falls back to the file name or YouTube title.
-
-Cover art is optional. It becomes especially useful with the **Card** and **CD** themes. Open **Embed cover** from a local song’s context menu, select an online result or local image, wait for the preview to load, and choose **Embed**.
-
-<figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/en/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/en/cover-dialog.png' | relative_url }}" alt="Embed cover window with preview and search results"></a>
-  <figcaption>The Embed button becomes available after the selected cover preview has loaded.</figcaption>
-</figure>
-
-The BGM and karaoke players have separate play, pause, stop, loop, mute, volume, and seek controls. Karaoke playback also supports speed and semitone pitch adjustment without modifying the source file.
-
-The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** when managing viewer requests or songs you plan to sing later. Supported themes show the first reserved song in **Next On**, or several reserved songs in **Reserve**. Completed songs move to **History**.
-
-<a id="lyrics"></a>
-## 03 · Lyrics
-
-Lyrics are optional. They can be used in a movable host-only **Lyrics window**, as an OBS lyric overlay for viewers, or both. Supported sources include LRC, SRT, VTT, plain text, YouTube captions, and LRCLIB.
-
-Open **Manage lyrics…** to search online, import a local lyric file, attach a result, or unlink the current lyrics. Search returns up to 50 results, prioritizing synchronized lyrics and versions closest to the karaoke track’s duration.
-
-<figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/en/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-manager-linked.png' | relative_url }}" alt="Manage lyrics window showing Import lyrics file and Unlink lyrics controls"></a>
-  <figcaption>When lyrics are linked, the lower-left controls let you import another file or unlink the current one.</figcaption>
-</figure>
-
-The embedded preview uses the same layout, font, color, highlight, and Japanese-reading option as OBS. The independent Lyrics window has its own reading option. Available Japanese readings are off, small hiragana above kanji, or word-spaced romaji below the original line.
-
-Use the lyric offset controls if timing is early or late: negative values show lyrics sooner; positive values show them later.
-
-<a id="obs-and-themes"></a>
-## 04 · Playlist appearance and OBS
-
-Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set List, Next On, and Reserve in the preview. Basic themes appear first: Default, Transparent Black, Transparent White, Card, and CD; illustrated themes follow.
-
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/en/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/theme-workspace.png' | relative_url }}" alt="Playlist Appearance workspace with theme cards, settings, preview, and guide"></a>
-  <figcaption>Full mode keeps theme selection, controls, preview, and the theme guide visible together.</figcaption>
-</figure>
-
-Card places cover art in a vertical card; CD crops it into a disc. Cover art is not required for playback or other themes. Use **Drag to OBS** to create a local Browser Source. This does not require OBS WebSocket.
-
-Default uses a white preview background. Transparent and illustrated themes can use the checkerboard preview to make transparency visible. The preview background itself is not sent to OBS.
-
-Available appearance controls:
-
-| Tab | Controls |
-| --- | --- |
-| **Current** | Now Singing font, size, color, bold/italic/underline, alignment, and long-title marquee speed |
-| **History** | Set List font, size, color, numbering, bold/italic/underline, alignment, and list scroll speed |
-| **Reserve** | Separate Reserve/Next On font, size, color, numbering, style, and alignment |
-| **Layout** | Optional project layout for the Now Singing, History, and Reserve labels/lists; adjust X, Y, width, and height or restore the theme layout |
-
-You can also enable Reserve, choose a 1–10 song display limit, and—when OBS WebSocket is enabled—show timestamps before sung songs in supported Set Lists. Timestamps are not added to Reserve or Next On.
-
-Preview-only tools provide transparent, dark, light, custom-color, or image backgrounds; image fit/fill/stretch; and temporary source sizing/positioning. They never change the transparent OBS output. Fixed-design themes may lock typography or layout controls, so check the Theme Guide for the selected theme.
-
-<a id="obs-websocket"></a>
-## 05 · OBS WebSocket (experimental)
-
-OBS WebSocket is optional, disabled by default, and currently experimental. Its primary purpose is to read the live OBS timer, record when a karaoke track starts, and show timestamps before songs in supported Set Lists. Normal set-list and lyric overlays work without it.
-
-In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable the server, keep port `4455` unless you changed it, and copy the password. In Singing Stream Savior, open **Settings > Advanced**, enable OBS WebSocket, enter `127.0.0.1`, the matching port and password, then choose **Connect**.
-
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/en/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/en/obs-websocket-settings.png' | relative_url }}" alt="Advanced settings showing OBS WebSocket instructions and connection fields"></a>
-  <figcaption>Connection controls remain disabled until OBS WebSocket is enabled.</figcaption>
-</figure>
-
-The status indicator appears at the lower-right only when enabled: green means connected, yellow means connecting/reconnecting, and red means disconnected. Test timestamps with a private test stream before relying on them live.
-
-<a id="workspace-modes"></a>
-## 06 · Workspace modes
-
-Use the top-right mode button or `Ctrl + Shift + M`:
-
-- **Full:** all library fields, lyric/theme previews, and settings. Best for preparation.
-- **Compact:** keeps song selection, players, Reserve, and History while hiding wide source columns and large previews.
-- **Mini:** best when the songs and stream visuals are already prepared before going live. It hides the library and BGM player, leaving the karaoke controls, Reserve, History, and Lyrics Window button. Choose the next song directly from the prepared Reserve list. The separate Lyrics Window can be moved and its text size adjusted to fit around other streaming tools.
-
-<div class="figure-grid">
-  <figure class="manual-figure"><a href="{{ '/assets/images/en/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/full-workspace.png' | relative_url }}" alt="Full workspace"></a><figcaption>Full mode keeps the complete library, players, and queue for preparation.</figcaption></figure>
-  <figure class="manual-figure"><a href="{{ '/assets/images/en/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/compact-workspace.png' | relative_url }}" alt="Compact workspace"></a><figcaption>Compact mode keeps song selection and live controls.</figcaption></figure>
-  <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/en/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/mini-workspace.png' | relative_url }}" alt="Mini workspace"></a><figcaption>Mini mode leaves more vertical space for the queue.</figcaption></figure>
+<div class="intro-hero">
+  <div class="intro-hero__copy">
+    <p class="intro-kicker">SINGING STREAM SAVIOR · LIVE CONTROL DESK</p>
+    <h1>Let the app remember the stream chores</h1>
+    <p class="intro-lead">Prepare and control BGM, karaoke tracks, Reserve, OBS set lists, and lyrics from one workspace. Keep your attention on singing and chat instead of rearranging windows between songs.</p>
+    <div class="intro-actions"><a class="intro-button intro-button--primary" href="{{ '/en/guide.html#getting-started' | relative_url }}">Get started</a><a class="intro-button" href="#features">Explore the features</a></div>
+  </div>
+  <figure class="intro-hero__visual"><img src="{{ '/assets/images/en/full-workspace.png' | relative_url }}" alt="English Full Mode with the library, BGM, karaoke player, and Reserve"><figcaption>Song selection, playback, and stream visuals in one workspace.</figcaption></figure>
 </div>
 
-Switching modes only changes which controls are visible. A song already playing continues, and the existing queue order and OBS scene are not reset. Each mode remembers its window size and layout.
+<section class="origin-story" id="why">
+  <div><p class="section-kicker">Why was it made?</p><h2>It began with the small mistakes that happen during singing streams</h2><p>I often forgot to turn BGM off before singing, turn it back on afterward, or add the song I had just finished to the set list shown in OBS. None of these tasks is difficult, but they are easy to miss while singing, talking to chat, and finding the next track.</p><p>Singing Stream Savior was built to handle that rhythm: starting karaoke can pause BGM automatically, pausing or finishing the track can resume it, and the set-list overlay follows song status without retyping every title in OBS.</p></div>
+  <div class="stream-sequence" aria-label="Automatic handoff between BGM and karaoke"><div class="stream-step"><span>BGM</span><strong>Plays between songs</strong></div><div class="stream-arrow"><span>Start karaoke</span></div><div class="stream-step stream-step--active"><span>Karaoke</span><strong>BGM pauses</strong></div><div class="stream-arrow"><span>Pause or finish</span></div><div class="stream-step"><span>BGM</span><strong>Playback resumes</strong></div></div>
+</section>
 
-<a id="settings-and-troubleshooting"></a>
-## 07 · Settings and troubleshooting
+<section class="feature-section" id="features">
+  <div class="section-heading"><p class="section-kicker">Core features</p><h2>Designed around the real flow of a singing stream</h2><p>Preparing songs, performing, and updating OBS are parts of one continuous workflow.</p></div>
+  <div class="feature-grid">
+    <article class="feature-card feature-card--signal"><span class="feature-card__label">Playback handoff</span><h3>BGM and karaoke work together</h3><p>Starting a karaoke track pauses BGM automatically. Pausing or stopping karaoke restores the background music that was playing.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Library & Reserve</span><h3>Plan ahead without losing flexibility</h3><p>Organize a library, playlists, favorites, and Reserve order. Pick from Reserve or double-click any song to play it immediately.</p></article>
+    <article class="feature-card"><span class="feature-card__label">OBS set list</span><h3>Change themes, not text after every song</h3><p>Choose Default, transparent, Card, CD, or illustrated themes and drag the overlay into OBS. Now Singing, Set List, Reserve, and Next On follow playback status.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Lyrics</span><h3>Read them yourself or show the audience</h3><p>Search or import synchronized lyrics, open a movable Lyrics Window, or create an OBS lyric overlay. Japanese lyrics can include hiragana or spaced romaji aids.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Cover art</span><h3>Give Card and CD themes a song identity</h3><p>Cover art and lyrics are optional. When cover art is embedded, Card and CD can present the current song as a card or disc.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Workspace</span><h3>Full, Compact, and Mini modes</h3><p>Prepare in Full Mode, then reduce the window for the stream. Mini Mode keeps karaoke, Reserve, History, and the Lyrics Window close at hand.</p></article>
+  </div>
+</section>
 
-Settings cover interface language, project/media folders, YouTube download format, and experimental OBS WebSocket controls. Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
+<aside class="experimental-note"><span>Experimental</span><div><strong>OBS WebSocket stream timestamps</strong><p>The app can read OBS’s live timer, record when karaoke starts, and show timestamps in supported Set Lists. Normal set-list and lyric overlays do not require WebSocket.</p></div></aside>
 
-If the app reports that no Qt platform plug-in could be initialized, extract a fresh copy of the complete ZIP and launch only the outer `Singing Stream Savior.exe`. You do not need to inspect or open anything in the data folders. For desktop access, create a Windows shortcut to that outer EXE instead of moving it.
-
-If lyrics cannot be found, shorten the search terms, check title/artist spelling, prefer synchronized results close to the track duration, or import LRC/SRT/VTT/plain text. If an OBS overlay does not update, reload the app preview and refresh the Browser Source in OBS.
+<section class="intro-next"><p class="section-kicker">Ready to begin</p><h2>Import one song and complete a test playback</h2><p>The guide begins with extracting the app, launching it, and creating your first project.</p><a class="intro-button intro-button--primary" href="{{ '/en/guide.html#getting-started' | relative_url }}">Open the user guide</a></section>

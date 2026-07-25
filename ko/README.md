@@ -1,104 +1,37 @@
 ---
-title: Singing Stream Savior 2.0 사용자 설명서
-description: Singing Stream Savior 2.0.0.0 한국어 설명서
+title: Singing Stream Savior｜노래 방송의 재생, 세트리스트와 가사 관리
+description: Singing Stream Savior를 만든 이유와 주요 기능
 lang: ko
 translation_key: home
 ---
 
-# Singing Stream Savior 2.0 사용자 설명서
-
-Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사와 OBS 오버레이를 하나의 흐름으로 관리합니다. 이 설명서는 **2.0.0.0** 버전을 기준으로 합니다.
-
-<figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 원본 크기로 볼 수 있습니다.</figcaption></figure>
-
-먼저 `.bgmsproj` 프로젝트를 만들거나 열고 곡을 추가한 뒤 표시 제목을 정리하세요. **재생목록 외관**에서 테마를 고르고 **Drag로OBS** 버튼을 OBS에 놓으면 됩니다. 대기 목록, 표지, 가사와 OBS WebSocket은 선택 기능입니다.
-
-<a id="getting-started"></a>
-## 01 · 시작하기
-
-ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴더에서 아래 아이콘의 `Singing Stream Savior.exe`를 두 번 클릭하면 됩니다. 사용자가 열어야 하는 파일은 이것뿐이며, ZIP 안에서 직접 실행하거나 데이터 폴더 안의 다른 EXE를 찾을 필요가 없습니다.
-
-<div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 앱 아이콘"><div><strong>Singing Stream Savior.exe</strong><span>평소에는 이 앱만 실행하세요</span></div></div>
-
-**파일 > 새 프로젝트**에서 `.bgmsproj`를 만듭니다. 곡, 표시 제목, 대기 순서, 부른 곡 기록, 가사 연결과 테마 설정이 저장됩니다. 창 제목의 `*`는 저장하지 않은 변경 사항을 뜻합니다.
-
-<a id="library-and-playback"></a>
-## 02 · 곡 라이브러리와 재생
-
-라이브러리에는 모든 곡, 즐겨찾기, 최근 재생과 사용자 재생목록이 있습니다. YouTube 동영상/재생목록과 함께 `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, `WMA` 형식의 로컬 곡과 반주를 추가할 수 있습니다. **표시 제목**은 대기 목록과 OBS에 사용되며, 비어 있으면 파일명이나 YouTube 제목을 사용합니다.
-
-표지는 필수가 아니며 Card와 CD 테마에서 특별히 활용됩니다. 곡 메뉴에서 **표지 삽입**을 열고 검색 결과나 로컬 이미지를 선택한 뒤 미리보기 로딩이 끝나면 삽입하세요.
-
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}" alt="표지 미리보기와 검색 결과가 있는 표지 삽입 창"></a><figcaption>선택한 표지 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
-
-BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 원본 파일을 바꾸지 않고 속도와 반음 단위 음높이도 조절할 수 있습니다.
-
-**예약**은 선택 기능이며, 곡 표에서 곡을 두 번 클릭하면 바로 재생할 수 있습니다. 예약은 시청자 신청곡이나 나중에 부를 예정인 곡을 관리할 때 사용합니다. 지원 테마는 첫 예약 곡을 **Next On**에, 여러 곡을 **Reserve**에 표시할 수 있습니다. 재생을 마친 곡은 **연혁**으로 이동합니다.
-
-<a id="lyrics"></a>
-## 03 · 가사 기능
-
-가사는 선택 기능입니다. 진행자 전용 **가사 창**, 시청자용 OBS 가사 오버레이 또는 둘 다 사용할 수 있습니다. LRC, SRT, VTT, 일반 텍스트, YouTube 자막과 LRCLIB를 지원합니다.
-
-**가사 관리…**에서 온라인 검색, 로컬 가사 가져오기, 결과 연결 또는 현재 가사 연결 해제를 할 수 있습니다. 최대 50개 결과를 표시하며 동기화 가사와 반주 길이에 가까운 버전을 우선합니다.
-
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-manager-linked.png' | relative_url }}" alt="가사 파일 가져오기와 가사 연결 해제가 표시된 가사 관리 창"></a><figcaption>가사가 연결된 뒤에도 왼쪽 아래에서 다른 파일을 가져오거나 연결을 해제할 수 있습니다.</figcaption></figure>
-
-일본어 읽기는 끄기, 한자 위의 작은 히라가나, 원문 아래의 단어 간격 로마자 중에서 선택합니다. 자동 생성 결과는 참고용이며 고유명사나 가수의 실제 발음과 다를 수 있습니다.
-
-<a id="obs-and-themes"></a>
-## 04 · 재생목록 외관과 OBS
-
-**재생목록 외관**에서 테마를 선택하고 Now Singing, Set List, Next On과 Reserve를 미리 봅니다. 기본 테마는 Default, Transparent Black, Transparent White, Card, CD 순서이며 그 뒤에 장식 테마가 표시됩니다.
-
-<figure class="manual-figure"><a href="{{ '/assets/images/ko/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/theme-workspace.png' | relative_url }}" alt="테마 카드, 설정, 미리보기와 테마 안내가 있는 화면"></a><figcaption>전체 모드에서는 테마 비교, 설정과 OBS 결과 확인을 동시에 할 수 있습니다.</figcaption></figure>
-
-현재 한국어 인터페이스의 **Drag로OBS** 버튼을 OBS에 놓으면 로컬 Browser Source가 만들어집니다. 이 작업에는 WebSocket이 필요 없습니다. Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니다.
-
-**화면 설정**에는 네 개의 탭이 있습니다.
-
-| 탭 | 설정 항목 |
-| --- | --- |
-| **현재 곡** | Now Singing 글꼴, 크기, 색상, 굵게/기울임/밑줄, 정렬과 긴 제목의 흐르는 속도 |
-| **부른 곡** | Set List 글꼴, 크기, 색상, 번호, 글자 스타일, 정렬과 목록 스크롤 속도 |
-| **대기** | Reserve/Next On 전용 글꼴, 크기, 색상, 번호, 글자 스타일과 정렬 |
-| **레이아웃** | 프로젝트 사용자 레이아웃을 켠 뒤 Now Singing, 기록, Reserve 제목/내용 블록의 X, Y, 너비와 높이를 조절하거나 테마 배치로 복원 |
-
-OBS 대기 목록 표시 여부와 1–10곡 표시 한도도 정할 수 있습니다. OBS WebSocket을 켠 경우에만 Set List 타임스탬프 옵션이 나타나며, Reserve/Next On에는 시간이 붙지 않습니다.
-
-미리보기 배경은 투명, 어두운색, 밝은색, 사용자 색상 또는 이미지 중에서 선택하며 이미지는 맞춤/채우기/늘이기를 지원합니다. 미리보기 배치 조정은 앱 안의 확인 화면에만 적용되고 OBS 출력은 바꾸지 않습니다. 고정 디자인 테마는 일부 글자나 레이아웃 설정을 잠글 수 있으므로 오른쪽 테마 안내를 확인하세요.
-
-<a id="obs-websocket"></a>
-## 05 · OBS WebSocket(시험 기능)
-
-기본값은 꺼짐입니다. 현재 주요 목적은 OBS 방송 시간을 읽고 반주 시작 시각을 기록하여 Set List의 곡 이름 앞에 타임스탬프를 표시하는 것입니다. 일반 세트리스트와 가사 오버레이에는 필요하지 않습니다.
-
-OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버를 켠 뒤 포트(보통 `4455`)와 비밀번호를 확인합니다. 앱의 **설정 > 고급 설정**에서 WebSocket을 켜고 `127.0.0.1`, 같은 포트와 비밀번호를 입력한 다음 **연결**을 누르세요.
-
-<figure class="manual-figure"><a href="{{ '/assets/images/ko/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/ko/obs-websocket-settings.png' | relative_url }}" alt="OBS WebSocket 안내와 연결 정보를 표시한 고급 설정"></a><figcaption>WebSocket을 켠 경우에만 연결 버튼과 상태가 활성화됩니다.</figcaption></figure>
-
-오른쪽 아래 녹색은 연결됨, 노란색은 연결 또는 재연결 중, 빨간색은 연결되지 않음을 뜻합니다. 실제 방송 전에 테스트 방송으로 타임스탬프를 확인하세요.
-
-<a id="workspace-modes"></a>
-## 06 · 작업 공간 모드
-
-- **전체 모드:** 모든 정보, 설정과 큰 미리보기. 방송 준비에 적합합니다.
-- **간단 모드:** 곡 선택, 플레이어, **예약**과 **연혁**을 유지하고 넓은 열과 큰 미리보기를 숨깁니다.
-- **미니 모드:** 방송 전에 부를 곡과 화면 설정을 마치고 **예약** 목록까지 준비한 스트리머에게 적합합니다. 라이브러리와 BGM을 숨기고 반주, **예약**, **연혁**, ‘가사 창’ 버튼만 표시합니다. 방송 중에는 준비한 예약 목록에서 곡을 골라 바로 재생할 수 있습니다. 별도 가사 창은 자유롭게 이동하고 글자 크기를 조절할 수 있습니다.
-
-`Ctrl + Shift + M`으로 전환할 수 있습니다. 모드 전환은 화면에 보이는 조작 항목만 바꿉니다. 재생 중인 곡은 계속 재생되고 기존 대기 순서와 OBS 화면도 초기화되지 않습니다. 각 모드의 창 배치는 따로 기억합니다.
-
-<div class="figure-grid">
-  <figure class="manual-figure"><a href="{{ '/assets/images/ko/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/full-workspace.png' | relative_url }}" alt="한국어 전체 모드"></a><figcaption>전체 모드는 전체 라이브러리, 플레이어와 대기 목록을 표시합니다.</figcaption></figure>
-  <figure class="manual-figure"><a href="{{ '/assets/images/ko/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/compact-workspace.png' | relative_url }}" alt="한국어 간단 모드"></a><figcaption>간단 모드는 곡 선택과 방송 중 조작 기능을 유지합니다.</figcaption></figure>
-  <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}" alt="한국어 미니 모드"></a><figcaption>미니 모드는 대기 목록을 위한 세로 공간을 더 확보합니다.</figcaption></figure>
+<div class="intro-hero">
+  <div class="intro-hero__copy">
+    <p class="intro-kicker">SINGING STREAM SAVIOR · 노래 방송 컨트롤 데스크</p>
+    <h1>방송 중 잊기 쉬운 작업은 앱에 맡기세요</h1>
+    <p class="intro-lead">BGM, 반주, 예약 곡, OBS 세트리스트와 가사를 한 화면에서 준비하고 조작합니다. 곡 사이에 여러 창을 정리하는 대신 노래와 시청자에게 집중할 수 있습니다.</p>
+    <div class="intro-actions"><a class="intro-button intro-button--primary" href="{{ '/ko/guide.html#getting-started' | relative_url }}">시작하기</a><a class="intro-button" href="#features">주요 기능 보기</a></div>
+  </div>
+  <figure class="intro-hero__visual"><img src="{{ '/assets/images/ko/full-workspace.png' | relative_url }}" alt="한국어 전체 모드의 라이브러리, BGM, 반주와 예약 목록"><figcaption>선곡, 재생과 방송 화면을 하나의 작업 공간에서 관리합니다.</figcaption></figure>
 </div>
 
-<a id="settings-and-troubleshooting"></a>
-## 07 · 설정 및 문제 해결
+<section class="origin-story" id="why">
+  <div><p class="section-kicker">왜 만들었나요?</p><h2>노래 방송에서 자주 생기는 작은 실수에서 시작했습니다</h2><p>노래를 시작하기 전에 BGM을 끄거나, 노래가 끝난 뒤 다시 켜는 것을 자주 잊었습니다. 방금 부른 곡을 OBS 세트리스트에 추가하는 일도 놓치기 쉬웠습니다. 어려운 일은 아니지만 노래, 채팅과 다음 곡을 동시에 챙기다 보면 빠뜨리기 쉽습니다.</p><p>그래서 Singing Stream Savior를 만들었습니다. 반주를 재생하면 BGM을 자동으로 일시 정지하고, 반주를 일시 정지하거나 끝내면 BGM을 다시 재생할 수 있습니다. 세트리스트 Overlay도 곡 상태에 따라 갱신되어 OBS에서 매번 제목을 다시 입력할 필요가 없습니다.</p></div>
+  <div class="stream-sequence" aria-label="BGM과 반주의 자동 전환"><div class="stream-step"><span>BGM</span><strong>곡 사이에 재생</strong></div><div class="stream-arrow"><span>반주 시작</span></div><div class="stream-step stream-step--active"><span>반주</span><strong>BGM 자동 정지</strong></div><div class="stream-arrow"><span>일시 정지·종료</span></div><div class="stream-step"><span>BGM</span><strong>자동 재생 재개</strong></div></div>
+</section>
 
-설정에는 화면 언어, 프로젝트/미디어 경로, YouTube 형식과 시험 중인 WebSocket이 있습니다. 다른 PC로 옮기기 전에 `.bgmsproj`, 로컬 미디어와 가져온 가사를 함께 백업하세요.
+<section class="feature-section" id="features">
+  <div class="section-heading"><p class="section-kicker">주요 기능</p><h2>실제 노래 방송 흐름에 맞춘 설계</h2><p>곡 준비, 노래, OBS 갱신을 하나의 연속된 작업 흐름으로 다룹니다.</p></div>
+  <div class="feature-grid">
+    <article class="feature-card feature-card--signal"><span class="feature-card__label">재생 연동</span><h3>BGM과 반주를 자동 전환</h3><p>반주가 시작되면 BGM을 자동으로 일시 정지하고, 반주를 일시 정지하거나 끝내면 원래 BGM을 다시 재생합니다.</p></article>
+    <article class="feature-card"><span class="feature-card__label">곡과 예약</span><h3>미리 준비하고 현장 선곡에도 대응</h3><p>곡 라이브러리, 재생목록, 즐겨찾기와 예약 순서를 관리합니다. 예약에서 고르거나 원하는 곡을 두 번 클릭해 바로 재생할 수 있습니다.</p></article>
+    <article class="feature-card"><span class="feature-card__label">OBS 세트리스트</span><h3>테마를 바꾸고 곡명 입력은 줄이기</h3><p>Default, 투명, Card, CD 또는 장식 테마를 골라 OBS로 드래그합니다. Now Singing, Set List, Reserve와 Next On이 재생 상태를 따릅니다.</p></article>
+    <article class="feature-card"><span class="feature-card__label">가사</span><h3>진행자가 읽거나 시청자에게 표시</h3><p>동기화 가사를 검색·가져오고 이동 가능한 ‘가사 창’에서 읽거나 OBS 가사 화면으로 표시합니다. 일본어는 히라가나와 로마자 읽기 보조를 지원합니다.</p></article>
+    <article class="feature-card"><span class="feature-card__label">표지</span><h3>Card와 CD 테마에 곡의 개성 추가</h3><p>표지와 가사는 선택 사항입니다. 표지를 설정하면 Card와 CD 테마에서 현재 곡을 카드나 디스크로 보여 줄 수 있습니다.</p></article>
+    <article class="feature-card"><span class="feature-card__label">작업 공간</span><h3>전체, 간단, 미니의 세 가지 모드</h3><p>준비할 때는 전체 모드, 방송 중에는 간단 또는 미니 모드를 사용해 반주, 예약, 연혁과 가사 창 같은 필수 조작만 남깁니다.</p></article>
+  </div>
+</section>
 
-Qt platform plugin 오류가 나오면 ZIP을 다시 내려받아 완전히 압축 해제하고 가장 바깥쪽 `Singing Stream Savior.exe`만 실행하세요. 데이터 폴더 안의 파일을 확인하거나 열 필요는 없습니다. 바탕 화면에는 이 바깥쪽 EXE의 Windows 바로가기를 만드세요.
+<aside class="experimental-note"><span>시험 기능</span><div><strong>OBS WebSocket 방송 타임스탬프</strong><p>OBS의 실제 방송 시간을 읽고 반주 시작 시각을 기록하여 지원 Set List에 표시할 수 있습니다. 일반 세트리스트와 가사 화면에는 WebSocket이 필요하지 않습니다.</p></div></aside>
 
-가사를 찾지 못하면 검색어를 줄이고 곡명/가수 표기를 확인하거나 반주 길이에 가까운 동기화 결과를 선택하세요. LRC/SRT/VTT/텍스트를 직접 가져올 수도 있습니다.
+<section class="intro-next"><p class="section-kicker">준비 시작</p><h2>먼저 한 곡을 가져와 테스트 재생하세요</h2><p>사용자 설명서는 압축 해제, 앱 실행과 첫 프로젝트 만들기부터 안내합니다.</p><a class="intro-button intro-button--primary" href="{{ '/ko/guide.html#getting-started' | relative_url }}">사용자 설명서 열기</a></section>

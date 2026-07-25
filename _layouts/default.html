@@ -5,6 +5,7 @@
   {% assign language_home = '/' %}
 {% else %}
   {% capture language_home %}/{{ current_lang }}/{% endcapture %}
+  {% capture language_guide %}/{{ current_lang }}/guide.html{% endcapture %}
 {% endif %}
 <!doctype html>
 <html lang="{{ current_lang }}">
@@ -14,13 +15,13 @@
     <meta name="theme-color" content="#0b1728">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}/{% if section != 'home' %}{{ section }}.html{% endif %}">
-    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh-CN/{% if section != 'home' %}#{{ section }}{% endif %}">
-    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/{% if section != 'home' %}#{{ section }}{% endif %}">
-    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ site.baseurl }}/ja/{% if section != 'home' %}#{{ section }}{% endif %}">
-    <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ site.baseurl }}/ko/{% if section != 'home' %}#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh-CN/{% if section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/{% if section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ site.baseurl }}/ja/{% if section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ site.baseurl }}/ko/{% if section != 'home' %}guide.html#{{ section }}{% endif %}">
     {% seo %}
   </head>
-  <body>
+  <body class="{% if section == 'home' and page.manual_bundle != true %}intro-layout{% endif %}">
     <a class="skip-link" href="#guide-content">{{ t.skip }}</a>
 
     <header class="site-header">
@@ -38,11 +39,11 @@
         <label class="language-control">
           <span>{{ t.language }}</span>
           <select data-language-switcher aria-label="{{ t.language }}">
-            <option data-lang="zh-TW" value="{{ '/' | relative_url }}{% if section != 'home' %}{{ section }}.html{% endif %}" {% if current_lang == 'zh-TW' %}selected{% endif %}>繁體中文</option>
-            <option data-lang="zh-CN" value="{{ '/zh-CN/' | relative_url }}{% if section != 'home' %}#{{ section }}{% endif %}" {% if current_lang == 'zh-CN' %}selected{% endif %}>简体中文</option>
-            <option data-lang="en" value="{{ '/en/' | relative_url }}{% if section != 'home' %}#{{ section }}{% endif %}" {% if current_lang == 'en' %}selected{% endif %}>English</option>
-            <option data-lang="ja" value="{{ '/ja/' | relative_url }}{% if section != 'home' %}#{{ section }}{% endif %}" {% if current_lang == 'ja' %}selected{% endif %}>日本語</option>
-            <option data-lang="ko" value="{{ '/ko/' | relative_url }}{% if section != 'home' %}#{{ section }}{% endif %}" {% if current_lang == 'ko' %}selected{% endif %}>한국어</option>
+            <option data-lang="zh-TW" value="{{ '/' | relative_url }}{% if section != 'home' and page.manual_bundle != true %}{{ section }}.html{% endif %}" {% if current_lang == 'zh-TW' %}selected{% endif %}>繁體中文</option>
+            <option data-lang="zh-CN" value="{{ '/zh-CN/' | relative_url }}{% if section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'zh-CN' %}selected{% endif %}>简体中文</option>
+            <option data-lang="en" value="{{ '/en/' | relative_url }}{% if section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'en' %}selected{% endif %}>English</option>
+            <option data-lang="ja" value="{{ '/ja/' | relative_url }}{% if section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'ja' %}selected{% endif %}>日本語</option>
+            <option data-lang="ko" value="{{ '/ko/' | relative_url }}{% if section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'ko' %}selected{% endif %}>한국어</option>
           </select>
         </label>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav">
@@ -64,7 +65,7 @@
               {% if current_lang == 'zh-TW' %}
                 {% if key == 'home' %}{% assign target = '/' %}{% else %}{% capture target %}/{{ key }}.html{% endcapture %}{% endif %}
               {% else %}
-                {% if key == 'home' %}{% assign target = language_home %}{% else %}{% capture target %}{{ language_home }}#{{ key }}{% endcapture %}{% endif %}
+                {% if key == 'home' %}{% assign target = language_home %}{% else %}{% capture target %}{{ language_guide }}#{{ key }}{% endcapture %}{% endif %}
               {% endif %}
               <li>
                 <a href="{{ target | relative_url }}" {% if section == key %}aria-current="page"{% endif %}>

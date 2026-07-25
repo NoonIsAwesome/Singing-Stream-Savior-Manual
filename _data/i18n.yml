@@ -14,7 +14,7 @@ zh-TW:
   back_home: 回到首頁
   language: 語言
   nav:
-    home: 說明書首頁
+    home: 軟體介紹
     getting_started: 開始使用
     library: 歌曲庫與播放
     lyrics: 歌詞功能
@@ -39,7 +39,7 @@ zh-CN:
   back_home: 返回首页
   language: 语言
   nav:
-    home: 说明书首页
+    home: 软件介绍
     getting_started: 开始使用
     library: 歌曲库与播放
     lyrics: 歌词功能
@@ -64,11 +64,11 @@ en:
   back_home: Back to top
   language: Language
   nav:
-    home: Manual home
+    home: About the app
     getting_started: Getting started
     library: Library and playback
     lyrics: Lyrics
-    themes: Set-list themes
+    themes: Playlist Appearance
     websocket: OBS WebSocket
     modes: Workspace modes
     settings: Settings and help
@@ -89,11 +89,11 @@ ja:
   back_home: トップへ戻る
   language: 言語
   nav:
-    home: マニュアルトップ
+    home: アプリ紹介
     getting_started: はじめに
     library: 曲ライブラリと再生
     lyrics: 歌詞機能
-    themes: セットリストテーマ
+    themes: プレイリスト外観
     websocket: OBS WebSocket
     modes: ワークスペース
     settings: 設定とトラブル対処
@@ -114,11 +114,11 @@ ko:
   back_home: 맨 위로
   language: 언어
   nav:
-    home: 설명서 홈
+    home: 앱 소개
     getting_started: 시작하기
     library: 곡 라이브러리와 재생
     lyrics: 가사 기능
-    themes: 세트리스트 테마
+    themes: 재생목록 외관
     websocket: OBS WebSocket
     modes: 작업 공간 모드
     settings: 설정 및 문제 해결
