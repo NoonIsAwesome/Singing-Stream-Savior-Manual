@@ -85,6 +85,19 @@ Card places cover art in a vertical card; CD crops it into a disc. Cover art is 
 
 Default uses a white preview background. Transparent and illustrated themes can use the checkerboard preview to make transparency visible. The preview background itself is not sent to OBS.
 
+Available appearance controls:
+
+| Tab | Controls |
+| --- | --- |
+| **Current** | Now Singing font, size, color, bold/italic/underline, alignment, and long-title marquee speed |
+| **History** | Set List font, size, color, numbering, bold/italic/underline, alignment, and list scroll speed |
+| **Reserve** | Separate Reserve/Next On font, size, color, numbering, style, and alignment |
+| **Layout** | Optional project layout for the Now Singing, History, and Reserve labels/lists; adjust X, Y, width, and height or restore the theme layout |
+
+You can also enable Reserve, choose a 1–10 song display limit, and—when OBS WebSocket is enabled—show timestamps before sung songs in supported Set Lists. Timestamps are not added to Reserve or Next On.
+
+Preview-only tools provide transparent, dark, light, custom-color, or image backgrounds; image fit/fill/stretch; and temporary source sizing/positioning. They never change the transparent OBS output. Fixed-design themes may lock typography or layout controls, so check the Theme Guide for the selected theme.
+
 <a id="obs-websocket"></a>
 ## 05 · OBS WebSocket (experimental)
 
