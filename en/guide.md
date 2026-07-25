@@ -86,6 +86,8 @@ Card places cover art in a vertical card; CD crops it into a disc. Cover art is 
 
 Default uses a white preview background. Transparent and illustrated themes can use the checkerboard preview to make transparency visible. The preview background itself is not sent to OBS.
 
+The theme canvas does not restrict how the Browser Source must be used. In OBS, freely resize, crop, and position it to fit your own stream layout. Default is especially suitable as a flexible base: use the dashed text-area guides in the preview to crop out the Now Singing, Set List, or other blocks you want, then place them over your own background. Transparent and illustrated themes may be kept as a complete composition or cropped to selected parts. OBS cropping changes only that scene source; it does not modify the theme or song data.
+
 Available appearance controls:
 
 | Tab | Controls |
