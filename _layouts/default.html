@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-TW' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1728">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% seo %}
+  </head>
+  <body>
+    <a class="skip-link" href="#guide-content">跳至主要內容</a>
+
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="回到使用說明首頁">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="brand-copy">
+          <strong>歌回救星</strong>
+          <small>Singing Stream Savior · 使用說明</small>
+        </span>
+      </a>
+      <span class="version-chip">2.0.0.0</span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        章節
+      </button>
+    </header>
+
+    <div class="guide-shell">
+      <aside class="guide-sidebar" id="guide-nav">
+        <nav aria-label="說明書章節">
+          <p class="nav-label">使用流程</p>
+          <ol class="chapter-list">
+            <li>
+              <a href="{{ '/' | relative_url }}" {% if page.url == '/' or page.url == '/README.html' %}aria-current="page"{% endif %}>
+                <span>00</span>說明書首頁
+              </a>
+            </li>
+            <li>
+              <a href="{{ '/getting-started.html' | relative_url }}" {% if page.url contains 'getting-started' %}aria-current="page"{% endif %}>
+                <span>01</span>開始使用
+              </a>
+            </li>
+            <li>
+              <a href="{{ '/library-and-playback.html' | relative_url }}" {% if page.url contains 'library-and-playback' %}aria-current="page"{% endif %}>
+                <span>02</span>歌曲庫與播放
+              </a>
+            </li>
+            <li>
+              <a href="{{ '/lyrics.html' | relative_url }}" {% if page.url contains 'lyrics' %}aria-current="page"{% endif %}>
+                <span>03</span>歌詞功能
+              </a>
+            </li>
+            <li>
+              <a href="{{ '/obs-and-themes.html' | relative_url }}" {% if page.url contains 'obs-and-themes' %}aria-current="page"{% endif %}>
+                <span>04</span>歌單外觀與主題
+              </a>
+            </li>
+            <li>
+              <a href="{{ '/obs-websocket.html' | relative_url }}" {% if page.url contains 'obs-websocket' %}aria-current="page"{% endif %}>
+                <span>05</span>OBS WebSocket
+              </a>
+            </li>
+            <li>
+              <a href="{{ '/workspace-modes.html' | relative_url }}" {% if page.url contains 'workspace-modes' %}aria-current="page"{% endif %}>
+                <span>06</span>工作區模式
+              </a>
+            </li>
+            <li>
+              <a href="{{ '/settings-and-troubleshooting.html' | relative_url }}" {% if page.url contains 'settings-and-troubleshooting' %}aria-current="page"{% endif %}>
+                <span>07</span>設定與疑難排解
+              </a>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="sidebar-note">
+          <strong>直播前建議</strong>
+          <p>先播放一首測試歌曲，確認音訊、歌詞、歌單與 OBS 畫面。</p>
+        </div>
+      </aside>
+
+      <main class="guide-content" id="guide-content">
+        <div class="content-meta">
+          <span>歌回直播整合工具</span>
+          <a href="https://github.com/NoonIsAwesome/Singing-Stream-Savior">GitHub 專案</a>
+        </div>
+        <article class="manual-article">
+          {{ content }}
+        </article>
+        <footer class="page-footer">
+          <span>歌回救星 2.0 使用說明</span>
+          <a href="{{ '/' | relative_url }}">回到首頁</a>
+        </footer>
+      </main>
+    </div>
+
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  </body>
+</html>

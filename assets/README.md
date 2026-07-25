@@ -1,0 +1,24 @@
+# 說明書圖片
+
+`images/` 內的畫面截圖隨說明書一起部署，避免網站引用本機暫存檔。
+
+- `compact-workspace.png`：精簡模式與主要播放器配置
+- `cover-dialog.png`：嵌入封面
+- `lyrics-manager.png`：管理歌詞
+- `lyrics-reading-preview.png`：日文讀音與 OBS 歌詞預覽
+- `theme-workspace.png`：歌單外觀與主題預覽
+- `obs-websocket-settings.png`：OBS WebSocket 進階設定
+- `mini-workspace.png`：迷你模式
+- `qt-platform-error.png`：Qt 外掛錯誤
+
+截圖應與當前公開版本一致；介面有明顯變更時，請以相同檔名更新圖片，避免文件連結失效。
+
+此資料夾預留給 GitHub Pages 說明書使用的介面截圖。
+
+建議圖片規格：
+
+- PNG 或 WebP。
+- 視窗截圖寬度 1400–1800 px。
+- 避免包含個人檔案路徑、OBS 密碼、私人歌單或未公開主題。
+- 檔名使用英文小寫及連字號，例如 `live-workspace-full.png`。
+- 每張圖片在 Markdown 中提供清楚的替代文字。

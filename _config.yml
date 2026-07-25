@@ -1,0 +1,35 @@
+title: 歌回救星 2.0 使用說明
+description: Singing Stream Savior 2.0.0.0 繁體中文使用說明
+lang: zh-TW
+timezone: Asia/Taipei
+url: https://noonisawesome.github.io
+baseurl: /Singing-Stream-Savior-Manual
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-relative-links
+  - jekyll-readme-index
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+relative_links:
+  enabled: true
+  collections: true
+
+readme_index:
+  enabled: true
+  remove_originals: false
+  with_frontmatter: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - assets/README.md
