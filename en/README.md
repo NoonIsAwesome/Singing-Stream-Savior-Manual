@@ -29,7 +29,9 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
 <a id="getting-started"></a>
 ## 01 · Getting started
 
-Extract the entire ZIP to a normal folder, then launch the outer `Singing Stream Savior.exe`. Do not run the app inside the ZIP or move individual EXE/DLL files—the Qt plug-ins, WebEngine, FFmpeg, themes, and reading dictionary rely on their original relative locations.
+Extract the entire ZIP to a normal folder. In the outermost folder, double-click the `Singing Stream Savior.exe` with the app icon shown below. This is the only file you need to open; do not run the app inside the ZIP or look for another EXE inside the data folders.
+
+<div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior app icon"><div><strong>Singing Stream Savior.exe</strong><span>Open this app to start</span></div></div>
 
 Create a project from **File > New project**, add songs, then save the `.bgmsproj` file. A project stores songs, display titles, queue order, history, lyric links, theme, and display settings. An asterisk in the window title means there are unsaved changes.
 
@@ -118,6 +120,6 @@ Switching modes does not stop playback, change the queue, or affect OBS output. 
 
 Settings cover interface language, project/media folders, YouTube download format, and experimental OBS WebSocket controls. Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
 
-If the app reports that no Qt platform plug-in could be initialized, fully extract the ZIP, launch the outer EXE, and confirm the inner `Singing Stream Savior/platforms/qwindows.dll` still exists. Do not copy only the main EXE to the desktop; create a Windows shortcut to the outer launcher instead.
+If the app reports that no Qt platform plug-in could be initialized, extract a fresh copy of the complete ZIP and launch only the outer `Singing Stream Savior.exe`. You do not need to inspect or open anything in the data folders. For desktop access, create a Windows shortcut to that outer EXE instead of moving it.
 
 If lyrics cannot be found, shorten the search terms, check title/artist spelling, prefer synchronized results close to the track duration, or import LRC/SRT/VTT/plain text. If an OBS overlay does not update, reload the app preview and refresh the Browser Source in OBS.

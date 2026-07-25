@@ -55,9 +55,9 @@ translation_key: settings-and-troubleshooting
 
 1. 確認 ZIP 已完整解壓縮。
 2. 從最外層 `Singing Stream Savior.exe` 啟動。
-3. 確認內層資料夾仍名為 `Singing Stream Savior`。
-4. 確認內層存在 `platforms/qwindows.dll`。
-5. 不要只複製主程式 EXE 到桌面；需要捷徑時，請建立外層啟動器的 Windows 捷徑。
+3. 不需要進入其他資料夾或嘗試開啟裡面的程式。
+4. 如果仍然無法啟動，請刪除這份不完整的解壓縮結果，重新下載 ZIP 並再次完整解壓縮。
+5. 需要桌面捷徑時，請替最外層的 `Singing Stream Savior.exe` 建立 Windows 捷徑，不要直接移動檔案。
 
 ## YouTube 無法解析或播放
 

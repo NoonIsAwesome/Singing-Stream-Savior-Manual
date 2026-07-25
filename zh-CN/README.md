@@ -16,7 +16,9 @@ translation_key: home
 <a id="getting-started"></a>
 ## 01 · 开始使用
 
-将 ZIP 完整解压后，打开最外层的 `Singing Stream Savior.exe`。不要直接在 ZIP 中运行，也不要单独移动 EXE 或 DLL；Qt、FFmpeg、主题与日文读音字典需要保持原目录结构。
+将 ZIP 完整解压到普通文件夹。在最外层找到下图图标的 `Singing Stream Savior.exe`，双击即可启动。这是唯一需要打开的程序；不要直接在 ZIP 中运行，也不需要进入其他资料文件夹寻找 EXE。
+
+<div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 软件图标"><div><strong>Singing Stream Savior.exe</strong><span>平时只需要打开这个程序</span></div></div>
 
 从“文件 > 新建项目”建立项目并保存 `.bgmsproj`。项目会保存歌曲、显示歌名、待播顺序、已唱记录、歌词关联和主题设置。标题栏出现 `*` 表示还有未保存的更改。
 
@@ -78,6 +80,6 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调�
 
 设置包含界面语言、项目/媒体路径、YouTube 下载格式与测试中的 WebSocket。搬到其他电脑前，请备份 `.bgmsproj`、本地媒体和自行导入的歌词。
 
-若出现 Qt platform plugin 错误，请完整解压 ZIP、从外层 EXE 启动，并确认内层有 `platforms/qwindows.dll`。不要只复制主程序到桌面；请建立外层启动器的快捷方式。
+若出现 Qt platform plugin 错误，请重新下载并完整解压 ZIP，只打开最外层的 `Singing Stream Savior.exe`。不需要检查或打开资料文件夹中的内容。需要桌面入口时，请为这个外层 EXE 建立 Windows 快捷方式，不要移动文件本身。
 
 找不到歌词时可缩短关键词、检查歌名/歌手、选择同步且长度接近的结果，或导入 LRC/SRT/VTT/纯文本。OBS 画面未更新时，请重新载入软件预览并刷新 OBS Browser Source。

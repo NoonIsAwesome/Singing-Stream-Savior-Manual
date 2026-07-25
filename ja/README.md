@@ -16,7 +16,9 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
 <a id="getting-started"></a>
 ## 01 · はじめに
 
-ZIP を通常のフォルダーへ完全に展開し、外側の `Singing Stream Savior.exe` を起動します。ZIP 内から直接実行したり、EXE や DLL だけを移動したりしないでください。Qt、FFmpeg、テーマ、日本語読み辞書は元の配置を必要とします。
+ZIP を通常のフォルダーへ完全に展開します。一番外側のフォルダーにある、下のアイコンの `Singing Stream Savior.exe` をダブルクリックしてください。起動に必要なのはこのファイルだけです。ZIP 内から直接実行したり、データフォルダー内で別の EXE を探したりする必要はありません。
+
+<div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior のアプリアイコン"><div><strong>Singing Stream Savior.exe</strong><span>通常はこのアプリだけを起動します</span></div></div>
 
 「ファイル > 新規プロジェクト」から `.bgmsproj` を作成します。曲、表示名、待機順、歌唱履歴、歌詞の関連付け、テーマ設定が保存されます。タイトルバーの `*` は未保存の変更を表します。
 
@@ -78,6 +80,6 @@ OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き�
 
 設定には表示言語、プロジェクト／メディア保存先、YouTube 形式、テスト中の WebSocket が含まれます。他の PC へ移す前に `.bgmsproj`、ローカル音源、読み込んだ歌詞をバックアップしてください。
 
-Qt platform plugin エラーが出る場合は ZIP を完全に展開し、外側の EXE から起動して、内側に `platforms/qwindows.dll` があることを確認します。デスクトップには EXE 単体ではなく外側ランチャーのショートカットを作成してください。
+Qt platform plugin エラーが出る場合は ZIP を再ダウンロードして完全に展開し、一番外側の `Singing Stream Savior.exe` だけを起動してください。データフォルダーの中を確認したり開いたりする必要はありません。デスクトップには、その外側 EXE の Windows ショートカットを作成してください。
 
 歌詞が見つからない場合は検索語を短くし、曲名・歌手名を確認するか、音源時間に近い同期歌詞を選びます。LRC/SRT/VTT/テキストの手動読み込みも可能です。

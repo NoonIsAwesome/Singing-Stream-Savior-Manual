@@ -9,23 +9,23 @@ translation_key: getting-started
 ## 解壓縮與啟動
 
 1. 將下載的 ZIP 完整解壓縮到一般資料夾。
-2. 開啟最外層的 `Singing Stream Savior.exe`。
-3. 外層啟動器會自動尋找內層同名資料夾中的主程式。
+2. 在解壓縮後最外層的資料夾中，找到下圖圖示的 `Singing Stream Savior.exe`。
+3. 雙擊它即可啟動歌回救星。
 
-請勿只把內層主程式或 DLL 個別移到其他位置。Qt 外掛、WebEngine、FFmpeg、主題及日文讀音字典都必須維持原本的相對位置。
+<div class="launch-target">
+  <img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 軟體圖示">
+  <div>
+    <strong>Singing Stream Savior.exe</strong>
+    <span>平常只需要開啟這個程式</span>
+  </div>
+</div>
 
 ```text
 Singing Stream Savior 2.0.0.0/
-├─ Singing Stream Savior.exe        ← 平常開啟這個
-└─ Singing Stream Savior/
-   ├─ Singing Stream Savior.exe     ← 實際主程式
-   ├─ DLL 與 Qt 外掛
-   ├─ Themes/
-   ├─ JapaneseReading/
-   └─ yt-dlp/
+└─ Singing Stream Savior.exe        ← 平常開啟這個
 ```
 
-> 不要直接在 ZIP 壓縮檔預覽視窗中執行程式。請先完整解壓縮。
+> 不要直接在 ZIP 壓縮檔預覽視窗中執行程式，也不需要進入其他資料夾尋找主程式。請先完整解壓縮，再開啟最外層這一個 `Singing Stream Savior.exe`。
 
 ## 建立新專案
 

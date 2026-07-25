@@ -16,7 +16,9 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 <a id="getting-started"></a>
 ## 01 · 시작하기
 
-ZIP을 일반 폴더에 완전히 압축 해제한 다음 바깥쪽 `Singing Stream Savior.exe`를 실행하세요. ZIP 안에서 바로 실행하거나 EXE/DLL만 따로 옮기면 안 됩니다. Qt, FFmpeg, 테마와 일본어 읽기 사전은 원래 폴더 구조가 필요합니다.
+ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴더에서 아래 아이콘의 `Singing Stream Savior.exe`를 두 번 클릭하면 됩니다. 사용자가 열어야 하는 파일은 이것뿐이며, ZIP 안에서 직접 실행하거나 데이터 폴더 안의 다른 EXE를 찾을 필요가 없습니다.
+
+<div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 앱 아이콘"><div><strong>Singing Stream Savior.exe</strong><span>평소에는 이 앱만 실행하세요</span></div></div>
 
 **파일 > 새 프로젝트**에서 `.bgmsproj`를 만듭니다. 곡, 표시 제목, 대기 순서, 부른 곡 기록, 가사 연결과 테마 설정이 저장됩니다. 창 제목의 `*`는 저장하지 않은 변경 사항을 뜻합니다.
 
@@ -78,6 +80,6 @@ OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버
 
 설정에는 화면 언어, 프로젝트/미디어 경로, YouTube 형식과 시험 중인 WebSocket이 있습니다. 다른 PC로 옮기기 전에 `.bgmsproj`, 로컬 미디어와 가져온 가사를 함께 백업하세요.
 
-Qt platform plugin 오류가 나오면 ZIP을 완전히 압축 해제하고 바깥쪽 EXE로 실행한 뒤 안쪽에 `platforms/qwindows.dll`이 있는지 확인하세요. EXE만 바탕 화면에 복사하지 말고 바깥쪽 실행기의 Windows 바로가기를 만드세요.
+Qt platform plugin 오류가 나오면 ZIP을 다시 내려받아 완전히 압축 해제하고 가장 바깥쪽 `Singing Stream Savior.exe`만 실행하세요. 데이터 폴더 안의 파일을 확인하거나 열 필요는 없습니다. 바탕 화면에는 이 바깥쪽 EXE의 Windows 바로가기를 만드세요.
 
 가사를 찾지 못하면 검색어를 줄이고 곡명/가수 표기를 확인하거나 반주 길이에 가까운 동기화 결과를 선택하세요. LRC/SRT/VTT/텍스트를 직접 가져올 수도 있습니다.
