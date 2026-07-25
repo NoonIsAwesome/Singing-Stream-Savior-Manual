@@ -52,6 +52,7 @@ translation_key: home
 
 - Windows 10 或 Windows 11，64 位元
 - 可用的音訊輸出裝置
+- 本機歌曲／歌唱伴奏支援 MP3、WAV、FLAC、M4A、MP4、AAC、OGG、OPUS 與 WMA
 - 使用 YouTube、線上歌詞或封面搜尋時需要網路連線
 - 使用測試中的 OBS WebSocket 時，建議使用 OBS Studio 28 或更新版本
 

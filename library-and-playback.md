@@ -28,9 +28,13 @@ translation_key: library-and-playback
 
 可加入：
 
-- 本機 MP3、WAV 等支援的音訊檔案。
+- 本機音訊檔案。
 - 單一 YouTube 影片連結。
 - YouTube 播放清單。
+
+本機歌曲／歌唱伴奏支援以下格式：
+
+`MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA`
 
 本機歌曲可多選匯入。YouTube 內容需要網路與隨程式提供的 `yt-dlp` 輔助程式；首次解析可能需要稍候。
 

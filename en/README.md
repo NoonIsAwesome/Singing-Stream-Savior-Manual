@@ -40,7 +40,7 @@ Full mode is the default preparation workspace: content and settings on the left
 <a id="library-and-playback"></a>
 ## 02 · Library and playback
 
-The library contains **All songs**, **Favorites**, **Recently played**, and removable custom playlists. You can import supported local audio files, a YouTube video, or a YouTube playlist. YouTube import requires an internet connection and the bundled `yt-dlp` helper.
+The library contains **All songs**, **Favorites**, **Recently played**, and removable custom playlists. You can import a YouTube video, a YouTube playlist, or local songs/karaoke tracks in `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection and the bundled `yt-dlp` helper.
 
 The **Display title** is used by the queue and OBS. If it is blank, the app falls back to the file name or YouTube title.
 
