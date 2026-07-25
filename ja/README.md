@@ -11,7 +11,7 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
 
 <figure class="manual-figure"><a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと原寸で確認できます。</figcaption></figure>
 
-まず `.bgmsproj` を作成または開き、曲を登録して表示名と待機順を整えます。「セットリスト外観」でテーマを選び、「OBS へドラッグ」を OBS にドロップしてください。ジャケット、歌詞、OBS WebSocket は任意です。
+まず `.bgmsproj` を作成または開き、曲を登録して表示名を整えます。「セットリスト外観」でテーマを選び、「OBS へドラッグ」を OBS にドロップしてください。待機リスト、ジャケット、歌詞、OBS WebSocket は任意です。
 
 <a id="getting-started"></a>
 ## 01 · はじめに
@@ -30,6 +30,8 @@ ZIP を通常のフォルダーへ完全に展開し、外側の `Singing Stream
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/cover-dialog.png' | relative_url }}" alt="ジャケット埋め込み画面"></a><figcaption>選択した画像のプレビューが読み込まれると、埋め込み操作が有効になります。</figcaption></figure>
 
 BGM とカラオケ音源は別々に再生・音量・シークを操作できます。カラオケ側では速度と半音単位のピッチも変更でき、元ファイルは書き換えません。
+
+待機リストを使わなくても、曲テーブルの曲をダブルクリックすればすぐに再生できます。待機リストは視聴者からのリクエストや後で歌う予定の曲を管理するための任意機能です。対応テーマでは最初の待機曲を **Next On**、複数の待機曲を **Reserve** に表示できます。
 
 <a id="lyrics"></a>
 ## 03 · 歌詞機能
@@ -79,4 +81,3 @@ OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き�
 Qt platform plugin エラーが出る場合は ZIP を完全に展開し、外側の EXE から起動して、内側に `platforms/qwindows.dll` があることを確認します。デスクトップには EXE 単体ではなく外側ランチャーのショートカットを作成してください。
 
 歌詞が見つからない場合は検索語を短くし、曲名・歌手名を確認するか、音源時間に近い同期歌詞を選びます。LRC/SRT/VTT/テキストの手動読み込みも可能です。
-

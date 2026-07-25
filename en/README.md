@@ -19,7 +19,7 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
 1. Create or open a `.bgmsproj` project.
 2. Add local tracks or YouTube songs to the library.
 3. Enter the title you want viewers to see. Cover art and lyrics are optional.
-4. Add planned songs to the queue and arrange their order.
+4. Optionally add requests or planned songs to the queue. You can also double-click any song to play it immediately.
 5. Choose a theme under **Set-list appearance**, then drag **Drag to OBS** into OBS.
 6. Play one test song before going live.
 7. Use Compact or Mini mode during the stream if you need less screen space.
@@ -49,7 +49,9 @@ Cover art is optional. It becomes especially useful with the **Card** and **CD**
   <figcaption>The Embed button becomes available after the selected cover preview has loaded.</figcaption>
 </figure>
 
-The BGM and karaoke players have separate play, pause, stop, loop, mute, volume, and seek controls. Karaoke playback also supports speed and semitone pitch adjustment without modifying the source file. Drag songs into **Queue**; completed songs move to **Sung**.
+The BGM and karaoke players have separate play, pause, stop, loop, mute, volume, and seek controls. Karaoke playback also supports speed and semitone pitch adjustment without modifying the source file.
+
+The queue is optional: double-click a song in the table to play it immediately. Use **Queue** when managing viewer requests or songs you plan to sing later. Supported themes show the first queued song in **Next On**, or several queued songs in **Reserve**. Completed songs move to **Sung**.
 
 <a id="lyrics"></a>
 ## 03 · Lyrics
@@ -119,4 +121,3 @@ Settings cover interface language, project/media folders, YouTube download forma
 If the app reports that no Qt platform plug-in could be initialized, fully extract the ZIP, launch the outer EXE, and confirm the inner `Singing Stream Savior/platforms/qwindows.dll` still exists. Do not copy only the main EXE to the desktop; create a Windows shortcut to the outer launcher instead.
 
 If lyrics cannot be found, shorten the search terms, check title/artist spelling, prefer synchronized results close to the track duration, or import LRC/SRT/VTT/plain text. If an OBS overlay does not update, reload the app preview and refresh the Browser Source in OBS.
-

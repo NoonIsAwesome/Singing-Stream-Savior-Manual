@@ -11,7 +11,7 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 
 <figure class="manual-figure"><a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 원본 크기로 볼 수 있습니다.</figcaption></figure>
 
-먼저 `.bgmsproj` 프로젝트를 만들거나 열고 곡을 추가한 뒤 표시 제목과 대기 순서를 정리하세요. **세트리스트 모양**에서 테마를 고르고 **OBS로 드래그**를 OBS에 놓으면 됩니다. 표지, 가사와 OBS WebSocket은 선택 기능입니다.
+먼저 `.bgmsproj` 프로젝트를 만들거나 열고 곡을 추가한 뒤 표시 제목을 정리하세요. **세트리스트 모양**에서 테마를 고르고 **OBS로 드래그**를 OBS에 놓으면 됩니다. 대기 목록, 표지, 가사와 OBS WebSocket은 선택 기능입니다.
 
 <a id="getting-started"></a>
 ## 01 · 시작하기
@@ -29,7 +29,9 @@ ZIP을 일반 폴더에 완전히 압축 해제한 다음 바깥쪽 `Singing Str
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/cover-dialog.png' | relative_url }}" alt="표지 미리보기와 검색 결과가 있는 표지 삽입 창"></a><figcaption>선택한 표지 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
 
-BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 원본 파일을 바꾸지 않고 속도와 반음 단위 음높이도 조절할 수 있습니다. 곡을 **대기**에 넣으면 완료 후 **부른 곡**으로 이동합니다.
+BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 원본 파일을 바꾸지 않고 속도와 반음 단위 음높이도 조절할 수 있습니다.
+
+대기 목록은 선택 기능이며, 곡 표에서 곡을 두 번 클릭하면 바로 재생할 수 있습니다. 대기 목록은 시청자 신청곡이나 나중에 부를 예정인 곡을 관리할 때 사용합니다. 지원 테마는 첫 대기 곡을 **Next On**에, 여러 곡을 **Reserve**에 표시할 수 있습니다. 재생을 마친 곡은 **부른 곡**으로 이동합니다.
 
 <a id="lyrics"></a>
 ## 03 · 가사 기능

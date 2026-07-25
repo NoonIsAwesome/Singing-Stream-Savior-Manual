@@ -11,7 +11,7 @@ translation_key: home
 
 <figure class="manual-figure"><a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可查看原尺寸。</figcaption></figure>
 
-建议先建立或打开 `.bgmsproj`，加入歌曲、填写显示歌名、整理待播，再到“歌单外观”选择主题并把“拖曳至 OBS”拖入 OBS。封面、歌词与 OBS WebSocket 都是选用功能。
+建议先建立或打开 `.bgmsproj`，加入歌曲并填写显示歌名，再到“歌单外观”选择主题并把“拖曳至 OBS”拖入 OBS。待播、封面、歌词与 OBS WebSocket 都是选用功能。
 
 <a id="getting-started"></a>
 ## 01 · 开始使用
@@ -29,7 +29,9 @@ translation_key: home
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/cover-dialog.png' | relative_url }}" alt="嵌入封面窗口"></a><figcaption>封面预览载入完成后即可嵌入。</figcaption></figure>
 
-BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调整速度和半音音高，不会修改原文件。将歌曲拖到“待播”，完成后会移入“已唱”。
+BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调整速度和半音音高，不会修改原文件。
+
+待播不是播放歌曲的必要步骤；在歌曲表格中双击歌曲即可直接播放。待播适合管理观众点歌或之后预定演唱的歌曲，支持的主题会将第一首显示在 **Next On**，或将数首显示在 **Reserve**。播放完成的歌曲会移入“已唱”。
 
 <a id="lyrics"></a>
 ## 03 · 歌词功能
