@@ -1,0 +1,81 @@
+---
+title: Singing Stream Savior 2.0 사용자 설명서
+description: Singing Stream Savior 2.0.0.0 한국어 설명서
+lang: ko
+translation_key: home
+---
+
+# Singing Stream Savior 2.0 사용자 설명서
+
+Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사와 OBS 오버레이를 하나의 흐름으로 관리합니다. 이 설명서는 **2.0.0.0** 버전을 기준으로 합니다.
+
+<figure class="manual-figure"><a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 원본 크기로 볼 수 있습니다.</figcaption></figure>
+
+먼저 `.bgmsproj` 프로젝트를 만들거나 열고 곡을 추가한 뒤 표시 제목과 대기 순서를 정리하세요. **세트리스트 모양**에서 테마를 고르고 **OBS로 드래그**를 OBS에 놓으면 됩니다. 표지, 가사와 OBS WebSocket은 선택 기능입니다.
+
+<a id="getting-started"></a>
+## 01 · 시작하기
+
+ZIP을 일반 폴더에 완전히 압축 해제한 다음 바깥쪽 `Singing Stream Savior.exe`를 실행하세요. ZIP 안에서 바로 실행하거나 EXE/DLL만 따로 옮기면 안 됩니다. Qt, FFmpeg, 테마와 일본어 읽기 사전은 원래 폴더 구조가 필요합니다.
+
+**파일 > 새 프로젝트**에서 `.bgmsproj`를 만듭니다. 곡, 표시 제목, 대기 순서, 부른 곡 기록, 가사 연결과 테마 설정이 저장됩니다. 창 제목의 `*`는 저장하지 않은 변경 사항을 뜻합니다.
+
+<a id="library-and-playback"></a>
+## 02 · 곡 라이브러리와 재생
+
+라이브러리에는 모든 곡, 즐겨찾기, 최근 재생과 사용자 재생목록이 있습니다. 로컬 오디오, YouTube 동영상 또는 재생목록을 추가할 수 있습니다. **표시 제목**은 대기 목록과 OBS에 사용되며, 비어 있으면 파일명이나 YouTube 제목을 사용합니다.
+
+표지는 필수가 아니며 Card와 CD 테마에서 특별히 활용됩니다. 곡 메뉴에서 **표지 삽입**을 열고 검색 결과나 로컬 이미지를 선택한 뒤 미리보기 로딩이 끝나면 삽입하세요.
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/cover-dialog.png' | relative_url }}" alt="표지 미리보기와 검색 결과가 있는 표지 삽입 창"></a><figcaption>선택한 표지 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
+
+BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 원본 파일을 바꾸지 않고 속도와 반음 단위 음높이도 조절할 수 있습니다. 곡을 **대기**에 넣으면 완료 후 **부른 곡**으로 이동합니다.
+
+<a id="lyrics"></a>
+## 03 · 가사 기능
+
+가사는 선택 기능입니다. 진행자 전용 **가사 창**, 시청자용 OBS 가사 오버레이 또는 둘 다 사용할 수 있습니다. LRC, SRT, VTT, 일반 텍스트, YouTube 자막과 LRCLIB를 지원합니다.
+
+**가사 관리…**에서 온라인 검색, 로컬 가사 가져오기, 결과 연결 또는 현재 가사 연결 해제를 할 수 있습니다. 최대 50개 결과를 표시하며 동기화 가사와 반주 길이에 가까운 버전을 우선합니다.
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}" alt="LRC 가져오기와 가사 연결 해제가 표시된 가사 관리 창"></a><figcaption>가사가 연결된 뒤에도 왼쪽 아래에서 다른 파일을 가져오거나 연결을 해제할 수 있습니다.</figcaption></figure>
+
+일본어 읽기는 끄기, 한자 위의 작은 히라가나, 원문 아래의 단어 간격 로마자 중에서 선택합니다. 자동 생성 결과는 참고용이며 고유명사나 가수의 실제 발음과 다를 수 있습니다.
+
+<a id="obs-and-themes"></a>
+## 04 · 세트리스트 테마와 OBS
+
+**세트리스트 모양**에서 테마를 선택하고 Now Singing, Set List, Next On과 Reserve를 미리 봅니다. 기본 테마는 Default, Transparent Black, Transparent White, Card, CD 순서이며 그 뒤에 장식 테마가 표시됩니다.
+
+<figure class="manual-figure"><a href="{{ '/assets/images/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/theme-workspace.png' | relative_url }}" alt="테마 카드, 설정, 미리보기와 테마 안내가 있는 화면"></a><figcaption>전체 모드에서는 테마 비교, 설정과 OBS 결과 확인을 동시에 할 수 있습니다.</figcaption></figure>
+
+**OBS로 드래그**를 OBS에 놓으면 로컬 Browser Source가 만들어집니다. 이 작업에는 WebSocket이 필요 없습니다. Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니다.
+
+<a id="obs-websocket"></a>
+## 05 · OBS WebSocket(시험 기능)
+
+기본값은 꺼짐입니다. 현재 주요 목적은 OBS 방송 시간을 읽고 반주 시작 시각을 기록하여 Set List의 곡 이름 앞에 타임스탬프를 표시하는 것입니다. 일반 세트리스트와 가사 오버레이에는 필요하지 않습니다.
+
+OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버를 켠 뒤 포트(보통 `4455`)와 비밀번호를 확인합니다. 앱의 **설정 > 고급 설정**에서 WebSocket을 켜고 `127.0.0.1`, 같은 포트와 비밀번호를 입력한 다음 **연결**을 누르세요.
+
+<figure class="manual-figure"><a href="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}" alt="OBS WebSocket 안내와 연결 정보를 표시한 고급 설정"></a><figcaption>WebSocket을 켠 경우에만 연결 버튼과 상태가 활성화됩니다.</figcaption></figure>
+
+오른쪽 아래 녹색은 연결됨, 노란색은 연결 또는 재연결 중, 빨간색은 연결되지 않음을 뜻합니다. 실제 방송 전에 테스트 방송으로 타임스탬프를 확인하세요.
+
+<a id="workspace-modes"></a>
+## 06 · 작업 공간 모드
+
+- **전체 모드:** 모든 정보, 설정과 큰 미리보기. 방송 준비에 적합합니다.
+- **간단 모드:** 곡 선택, 플레이어, 대기와 부른 곡을 유지하고 넓은 열과 큰 미리보기를 숨깁니다.
+- **미니 모드:** 라이브러리와 BGM을 숨기고 반주, 가사 창 버튼, 대기와 부른 곡만 표시합니다.
+
+`Ctrl + Shift + M`으로 전환할 수 있습니다. 모드 전환은 재생, 대기 순서와 OBS 출력에 영향을 주지 않으며 각 모드의 창 배치를 따로 기억합니다.
+
+<a id="settings-and-troubleshooting"></a>
+## 07 · 설정 및 문제 해결
+
+설정에는 화면 언어, 프로젝트/미디어 경로, YouTube 형식과 시험 중인 WebSocket이 있습니다. 다른 PC로 옮기기 전에 `.bgmsproj`, 로컬 미디어와 가져온 가사를 함께 백업하세요.
+
+Qt platform plugin 오류가 나오면 ZIP을 완전히 압축 해제하고 바깥쪽 EXE로 실행한 뒤 안쪽에 `platforms/qwindows.dll`이 있는지 확인하세요. EXE만 바탕 화면에 복사하지 말고 바깥쪽 실행기의 Windows 바로가기를 만드세요.
+
+가사를 찾지 못하면 검색어를 줄이고 곡명/가수 표기를 확인하거나 반주 길이에 가까운 동기화 결과를 선택하세요. LRC/SRT/VTT/텍스트를 직접 가져올 수도 있습니다.

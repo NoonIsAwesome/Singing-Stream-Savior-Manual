@@ -1,5 +1,7 @@
 ---
 title: 設定、備份與疑難排解
+lang: zh-TW
+translation_key: settings-and-troubleshooting
 ---
 
 # 設定、備份與疑難排解

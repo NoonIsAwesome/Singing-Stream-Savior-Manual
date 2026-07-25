@@ -1,5 +1,7 @@
 ---
 title: 歌詞、同步歌詞與日文讀音
+lang: zh-TW
+translation_key: lyrics
 ---
 
 # 歌詞、同步歌詞與日文讀音

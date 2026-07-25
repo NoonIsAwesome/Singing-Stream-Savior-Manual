@@ -1,0 +1,129 @@
+zh-TW:
+  language_name: 繁體中文
+  skip: 跳至主要內容
+  home_aria: 回到使用說明首頁
+  product: 歌回救星
+  manual: 使用說明
+  chapters: 章節
+  nav_aria: 說明書章節
+  flow: 使用流程
+  stream_tip: 直播前建議
+  stream_tip_text: 先播放一首測試歌曲，確認音訊、歌詞、歌單與 OBS 畫面。
+  meta: 歌回直播整合工具
+  project: GitHub 專案
+  footer: 歌回救星 2.0 使用說明
+  back_home: 回到首頁
+  language: 語言
+  nav:
+    home: 說明書首頁
+    getting_started: 開始使用
+    library: 歌曲庫與播放
+    lyrics: 歌詞功能
+    themes: 歌單外觀與主題
+    websocket: OBS WebSocket
+    modes: 工作區模式
+    settings: 設定與疑難排解
+
+zh-CN:
+  language_name: 简体中文
+  skip: 跳到主要内容
+  home_aria: 返回使用说明首页
+  product: 歌回救星
+  manual: 使用说明
+  chapters: 章节
+  nav_aria: 说明书章节
+  flow: 使用流程
+  stream_tip: 直播前建议
+  stream_tip_text: 先播放一首测试歌曲，确认音频、歌词、歌单与 OBS 画面。
+  meta: 歌回直播整合工具
+  project: GitHub 项目
+  footer: 歌回救星 2.0 使用说明
+  back_home: 返回首页
+  language: 语言
+  nav:
+    home: 说明书首页
+    getting_started: 开始使用
+    library: 歌曲库与播放
+    lyrics: 歌词功能
+    themes: 歌单外观与主题
+    websocket: OBS WebSocket
+    modes: 工作区模式
+    settings: 设置与疑难解答
+
+en:
+  language_name: English
+  skip: Skip to main content
+  home_aria: Go to the manual home page
+  product: Singing Stream Savior
+  manual: User Manual
+  chapters: Chapters
+  nav_aria: Manual chapters
+  flow: Guide
+  stream_tip: Before going live
+  stream_tip_text: Play one test song and check audio, lyrics, set list, and the OBS output.
+  meta: Singing-stream production tool
+  project: GitHub project
+  footer: Singing Stream Savior 2.0 User Manual
+  back_home: Back to top
+  language: Language
+  nav:
+    home: Manual home
+    getting_started: Getting started
+    library: Library and playback
+    lyrics: Lyrics
+    themes: Set-list themes
+    websocket: OBS WebSocket
+    modes: Workspace modes
+    settings: Settings and help
+
+ja:
+  language_name: 日本語
+  skip: 本文へ移動
+  home_aria: マニュアルのトップへ戻る
+  product: Singing Stream Savior
+  manual: ユーザーマニュアル
+  chapters: 目次
+  nav_aria: マニュアルの章
+  flow: 使用ガイド
+  stream_tip: 配信前の確認
+  stream_tip_text: テスト曲を再生し、音声・歌詞・セットリスト・OBS 画面を確認してください。
+  meta: 歌枠配信統合ツール
+  project: GitHub プロジェクト
+  footer: Singing Stream Savior 2.0 ユーザーマニュアル
+  back_home: トップへ戻る
+  language: 言語
+  nav:
+    home: マニュアルトップ
+    getting_started: はじめに
+    library: 曲ライブラリと再生
+    lyrics: 歌詞機能
+    themes: セットリストテーマ
+    websocket: OBS WebSocket
+    modes: ワークスペース
+    settings: 設定とトラブル対処
+
+ko:
+  language_name: 한국어
+  skip: 본문으로 이동
+  home_aria: 설명서 홈으로 돌아가기
+  product: Singing Stream Savior
+  manual: 사용자 설명서
+  chapters: 목차
+  nav_aria: 설명서 목차
+  flow: 사용 안내
+  stream_tip: 방송 전 확인
+  stream_tip_text: 테스트 곡을 재생하고 오디오, 가사, 세트리스트와 OBS 화면을 확인하세요.
+  meta: 노래 방송 통합 도구
+  project: GitHub 프로젝트
+  footer: Singing Stream Savior 2.0 사용자 설명서
+  back_home: 맨 위로
+  language: 언어
+  nav:
+    home: 설명서 홈
+    getting_started: 시작하기
+    library: 곡 라이브러리와 재생
+    lyrics: 가사 기능
+    themes: 세트리스트 테마
+    websocket: OBS WebSocket
+    modes: 작업 공간 모드
+    settings: 설정 및 문제 해결

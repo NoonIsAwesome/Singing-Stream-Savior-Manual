@@ -1,5 +1,7 @@
 ---
 title: 安裝、啟動與建立專案
+lang: zh-TW
+translation_key: getting-started
 ---
 
 # 安裝、啟動與建立專案

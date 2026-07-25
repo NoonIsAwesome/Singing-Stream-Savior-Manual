@@ -1,5 +1,7 @@
 ---
 title: 歌曲庫、歌單與播放器
+lang: zh-TW
+translation_key: library-and-playback
 ---
 
 # 歌曲庫、歌單與播放器

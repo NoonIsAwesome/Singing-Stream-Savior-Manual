@@ -1,5 +1,7 @@
 ---
 title: 歌單外觀、歌詞畫面與 OBS
+lang: zh-TW
+translation_key: obs-and-themes
 ---
 
 # 歌單外觀、歌詞畫面與 OBS

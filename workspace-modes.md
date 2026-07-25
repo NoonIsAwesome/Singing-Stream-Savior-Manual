@@ -1,5 +1,7 @@
 ---
 title: 完整、精簡與迷你模式
+lang: zh-TW
+translation_key: workspace-modes
 ---
 
 # 完整、精簡與迷你模式

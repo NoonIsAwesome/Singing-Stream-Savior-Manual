@@ -1,97 +1,97 @@
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign t = site.data.i18n[current_lang] %}
+{% assign section = page.translation_key | default: 'home' %}
+{% if current_lang == 'zh-TW' %}
+  {% assign language_home = '/' %}
+{% else %}
+  {% capture language_home %}/{{ current_lang }}/{% endcapture %}
+{% endif %}
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: 'zh-TW' }}">
+<html lang="{{ current_lang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0b1728">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}/{% if section != 'home' %}{{ section }}.html{% endif %}">
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh-CN/{% if section != 'home' %}#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/{% if section != 'home' %}#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ site.baseurl }}/ja/{% if section != 'home' %}#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ site.baseurl }}/ko/{% if section != 'home' %}#{{ section }}{% endif %}">
     {% seo %}
   </head>
   <body>
-    <a class="skip-link" href="#guide-content">跳至主要內容</a>
+    <a class="skip-link" href="#guide-content">{{ t.skip }}</a>
 
     <header class="site-header">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="回到使用說明首頁">
+      <a class="brand" href="{{ language_home | relative_url }}" aria-label="{{ t.home_aria }}">
         <span class="brand-mark" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
         <span class="brand-copy">
-          <strong>歌回救星</strong>
-          <small>Singing Stream Savior · 使用說明</small>
+          <strong>{{ t.product }}</strong>
+          <small>Singing Stream Savior · {{ t.manual }}</small>
         </span>
       </a>
-      <span class="version-chip">2.0.0.0</span>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav">
-        <span class="nav-toggle-icon" aria-hidden="true"></span>
-        章節
-      </button>
+      <div class="header-actions">
+        <span class="version-chip">2.0.0.0</span>
+        <label class="language-control">
+          <span>{{ t.language }}</span>
+          <select data-language-switcher aria-label="{{ t.language }}">
+            <option data-lang="zh-TW" value="{{ '/' | relative_url }}{% if section != 'home' %}{{ section }}.html{% endif %}" {% if current_lang == 'zh-TW' %}selected{% endif %}>繁體中文</option>
+            <option data-lang="zh-CN" value="{{ '/zh-CN/' | relative_url }}{% if section != 'home' %}#{{ section }}{% endif %}" {% if current_lang == 'zh-CN' %}selected{% endif %}>简体中文</option>
+            <option data-lang="en" value="{{ '/en/' | relative_url }}{% if section != 'home' %}#{{ section }}{% endif %}" {% if current_lang == 'en' %}selected{% endif %}>English</option>
+            <option data-lang="ja" value="{{ '/ja/' | relative_url }}{% if section != 'home' %}#{{ section }}{% endif %}" {% if current_lang == 'ja' %}selected{% endif %}>日本語</option>
+            <option data-lang="ko" value="{{ '/ko/' | relative_url }}{% if section != 'home' %}#{{ section }}{% endif %}" {% if current_lang == 'ko' %}selected{% endif %}>한국어</option>
+          </select>
+        </label>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+          {{ t.chapters }}
+        </button>
+      </div>
     </header>
 
     <div class="guide-shell">
       <aside class="guide-sidebar" id="guide-nav">
-        <nav aria-label="說明書章節">
-          <p class="nav-label">使用流程</p>
+        <nav aria-label="{{ t.nav_aria }}">
+          <p class="nav-label">{{ t.flow }}</p>
           <ol class="chapter-list">
-            <li>
-              <a href="{{ '/' | relative_url }}" {% if page.url == '/' or page.url == '/README.html' %}aria-current="page"{% endif %}>
-                <span>00</span>說明書首頁
-              </a>
-            </li>
-            <li>
-              <a href="{{ '/getting-started.html' | relative_url }}" {% if page.url contains 'getting-started' %}aria-current="page"{% endif %}>
-                <span>01</span>開始使用
-              </a>
-            </li>
-            <li>
-              <a href="{{ '/library-and-playback.html' | relative_url }}" {% if page.url contains 'library-and-playback' %}aria-current="page"{% endif %}>
-                <span>02</span>歌曲庫與播放
-              </a>
-            </li>
-            <li>
-              <a href="{{ '/lyrics.html' | relative_url }}" {% if page.url contains 'lyrics' %}aria-current="page"{% endif %}>
-                <span>03</span>歌詞功能
-              </a>
-            </li>
-            <li>
-              <a href="{{ '/obs-and-themes.html' | relative_url }}" {% if page.url contains 'obs-and-themes' %}aria-current="page"{% endif %}>
-                <span>04</span>歌單外觀與主題
-              </a>
-            </li>
-            <li>
-              <a href="{{ '/obs-websocket.html' | relative_url }}" {% if page.url contains 'obs-websocket' %}aria-current="page"{% endif %}>
-                <span>05</span>OBS WebSocket
-              </a>
-            </li>
-            <li>
-              <a href="{{ '/workspace-modes.html' | relative_url }}" {% if page.url contains 'workspace-modes' %}aria-current="page"{% endif %}>
-                <span>06</span>工作區模式
-              </a>
-            </li>
-            <li>
-              <a href="{{ '/settings-and-troubleshooting.html' | relative_url }}" {% if page.url contains 'settings-and-troubleshooting' %}aria-current="page"{% endif %}>
-                <span>07</span>設定與疑難排解
-              </a>
-            </li>
+            {% assign nav_keys = "home,getting-started,library-and-playback,lyrics,obs-and-themes,obs-websocket,workspace-modes,settings-and-troubleshooting" | split: "," %}
+            {% assign nav_labels = "home,getting_started,library,lyrics,themes,websocket,modes,settings" | split: "," %}
+            {% for key in nav_keys %}
+              {% assign label_key = nav_labels[forloop.index0] %}
+              {% if current_lang == 'zh-TW' %}
+                {% if key == 'home' %}{% assign target = '/' %}{% else %}{% capture target %}/{{ key }}.html{% endcapture %}{% endif %}
+              {% else %}
+                {% if key == 'home' %}{% assign target = language_home %}{% else %}{% capture target %}{{ language_home }}#{{ key }}{% endcapture %}{% endif %}
+              {% endif %}
+              <li>
+                <a href="{{ target | relative_url }}" {% if section == key %}aria-current="page"{% endif %}>
+                  <span>0{{ forloop.index0 }}</span>{{ t.nav[label_key] }}
+                </a>
+              </li>
+            {% endfor %}
           </ol>
         </nav>
 
         <div class="sidebar-note">
-          <strong>直播前建議</strong>
-          <p>先播放一首測試歌曲，確認音訊、歌詞、歌單與 OBS 畫面。</p>
+          <strong>{{ t.stream_tip }}</strong>
+          <p>{{ t.stream_tip_text }}</p>
         </div>
       </aside>
 
       <main class="guide-content" id="guide-content">
         <div class="content-meta">
-          <span>歌回直播整合工具</span>
-          <a href="https://github.com/NoonIsAwesome/Singing-Stream-Savior">GitHub 專案</a>
+          <span>{{ t.meta }}</span>
+          <a href="https://github.com/NoonIsAwesome/Singing-Stream-Savior">{{ t.project }}</a>
         </div>
         <article class="manual-article">
           {{ content }}
         </article>
         <footer class="page-footer">
-          <span>歌回救星 2.0 使用說明</span>
-          <a href="{{ '/' | relative_url }}">回到首頁</a>
+          <span>{{ t.footer }}</span>
+          <a href="{{ language_home | relative_url }}">{{ t.back_home }}</a>
         </footer>
       </main>
     </div>

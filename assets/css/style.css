@@ -140,12 +140,47 @@ button:focus-visible {
 }
 
 .version-chip {
-  margin-left: auto;
   padding: 3px 10px;
   color: #a9c9e8;
   border: 1px solid #38506c;
   border-radius: 999px;
   font: 600 0.76rem/1.6 ui-monospace, "Cascadia Mono", monospace;
+}
+
+.header-actions {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #aebed1;
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.language-control select {
+  min-width: 126px;
+  padding: 8px 32px 8px 11px;
+  color: #fff;
+  background-color: #152a42;
+  border: 1px solid #3b5d7e;
+  border-radius: 7px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.language-control select:hover {
+  border-color: #66b8f2;
+}
+
+.language-control select:focus-visible {
+  outline: 3px solid #f4b942;
+  outline-offset: 2px;
 }
 
 .nav-toggle {
@@ -526,7 +561,24 @@ button:focus-visible {
 
   .nav-toggle {
     display: inline-flex;
-    margin-left: auto;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .language-control > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .language-control select {
+    min-width: 112px;
+    max-width: 128px;
   }
 
   .guide-shell {
@@ -575,6 +627,33 @@ button:focus-visible {
   .figure-grid .manual-figure {
     margin-inline: -8px;
     width: calc(100% + 16px);
+  }
+}
+
+@media (max-width: 590px) {
+  .site-header {
+    gap: 8px;
+    padding-inline: 14px;
+  }
+
+  .brand-copy {
+    display: none;
+  }
+
+  .header-actions {
+    min-width: 0;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .language-control select {
+    width: clamp(104px, 32vw, 124px);
+    min-width: 0;
+  }
+
+  .nav-toggle {
+    flex: 0 0 auto;
+    padding-inline: 9px;
   }
 }
 

@@ -1,6 +1,8 @@
 ---
 title: 歌回救星 2.0 使用說明
 description: Singing Stream Savior 2.0.0.0 繁體中文使用說明
+lang: zh-TW
+translation_key: home
 ---
 
 # 歌回救星 2.0 使用說明

@@ -1,5 +1,7 @@
 ---
 title: OBS WebSocket（測試功能）與直播時間戳
+lang: zh-TW
+translation_key: obs-websocket
 ---
 
 # OBS WebSocket（測試功能）與直播時間戳

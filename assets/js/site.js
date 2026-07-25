@@ -1,4 +1,40 @@
 (() => {
+  const languageSwitcher = document.querySelector("[data-language-switcher]");
+  if (languageSwitcher) {
+    languageSwitcher.addEventListener("change", () => {
+      const target = new URL(languageSwitcher.value, window.location.href);
+      const selectedLanguage = languageSwitcher.selectedOptions[0]?.dataset.lang;
+      const section = window.location.hash.replace(/^#/, "");
+
+      if (section && !target.hash) {
+        if (selectedLanguage === "zh-TW") {
+          target.pathname = `${target.pathname}${section}.html`;
+        } else {
+          target.hash = section;
+        }
+      }
+      window.location.assign(target.href);
+    });
+  }
+
+  const syncCurrentChapter = () => {
+    if (!window.location.hash) {
+      return;
+    }
+
+    document.querySelectorAll(".chapter-list a").forEach((link) => {
+      const active = new URL(link.href, window.location.href).hash === window.location.hash;
+      if (active) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  syncCurrentChapter();
+  window.addEventListener("hashchange", syncCurrentChapter);
+
   const button = document.querySelector(".nav-toggle");
   const navigation = document.querySelector(".guide-sidebar");
 
