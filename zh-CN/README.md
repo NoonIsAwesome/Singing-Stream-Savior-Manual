@@ -33,7 +33,7 @@ translation_key: home
     <article class="feature-card"><span class="feature-card__label">歌曲与待播</span><h3>整理歌曲，也保留临场弹性</h3><p>建立歌曲库、自定义歌单、收藏与待播顺序。可以从待播选歌，也能双击歌曲立即播放。</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS 歌单</span><h3>切换主题，不必手动重打歌单</h3><p>选择 Default、透明、Card、CD 或精致主题并拖入 OBS；Now Singing、Set List、Reserve 与 Next On 会跟随播放状态更新。</p></article>
     <article class="feature-card"><span class="feature-card__label">歌词</span><h3>自己阅读，也能显示给观众</h3><p>搜索或导入同步歌词，使用可移动的“歌词窗口”阅读，也能建立 OBS 歌词画面。日文歌词可选择平假名或罗马拼音辅助。</p></article>
-    <article class="feature-card"><span class="feature-card__label">封面</span><h3>让 Card 与 CD 主题更有歌曲特色</h3><p>封面和歌词都不是播放必需条件；设置封面后，Card 与 CD 主题能以卡片或唱片形式显示当前歌曲。</p></article>
+    <article class="feature-card"><span class="feature-card__label">伴奏来源</span><h3>本地音频与 YouTube 伴奏，放在同一个播放器</h3><p>伴奏可能是自行消除人声、录制或下载的本地文件，也可能是临时在 YouTube 找到的版本。Singing Stream Savior 同时支持两者，不必在播放器与浏览器之间来回切换。</p></article>
     <article class="feature-card"><span class="feature-card__label">工作区</span><h3>完整、精简、迷你三种模式</h3><p>准备直播时使用完整模式；开播后可缩为精简或迷你模式，只保留播放器、待播／已唱和歌词窗口等常用操作。</p></article>
   </div>
 </section>

@@ -65,9 +65,9 @@ translation_key: home
       <p>搜尋或匯入同步歌詞，使用可自由移動的「歌詞視窗」閱讀，也能建立 OBS 歌詞畫面。日文歌詞可選擇平假名或羅馬拼音輔助。</p>
     </article>
     <article class="feature-card">
-      <span class="feature-card__label">封面</span>
-      <h3>讓 Card 與 CD 主題更有歌曲特色</h3>
-      <p>封面與歌詞都不是播放必要條件；設定封面後，Card 與 CD 主題能以卡片或唱片形式呈現目前歌曲。</p>
+      <span class="feature-card__label">伴奏來源</span>
+      <h3>本機音檔與 YouTube 伴奏，放在同一個播放器</h3>
+      <p>伴奏可能是自行消除人聲、錄製或下載的本機檔案，也可能是臨時在 YouTube 找到的版本。Singing Stream Savior 同時支援兩者，不必在播放器與瀏覽器之間來回切換。</p>
     </article>
     <article class="feature-card">
       <span class="feature-card__label">工作區</span>

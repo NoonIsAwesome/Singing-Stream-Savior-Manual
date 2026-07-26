@@ -27,7 +27,7 @@ translation_key: home
     <article class="feature-card"><span class="feature-card__label">曲と予約</span><h3>準備しながら、その場の選曲にも対応</h3><p>曲ライブラリ、プレイリスト、お気に入り、予約順を管理できます。予約から選ぶほか、曲をダブルクリックしてすぐ再生できます。</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS セットリスト</span><h3>テーマを選び、曲名の手入力を減らす</h3><p>Default、透明、Card、CD、装飾テーマを選んで OBS へドラッグ。Now Singing、Set List、Reserve、Next On が再生状態に合わせて更新されます。</p></article>
     <article class="feature-card"><span class="feature-card__label">歌詞</span><h3>配信者用にも、視聴者用にも</h3><p>同期歌詞を検索・読み込みし、移動できる「歌詞ウィンドウ」で読むか、OBS 歌詞画面として表示できます。日本語はひらがな・ローマ字補助にも対応します。</p></article>
-    <article class="feature-card"><span class="feature-card__label">ジャケット</span><h3>Card と CD に曲ごとの表情を加える</h3><p>ジャケットと歌詞は任意です。ジャケットを設定すると、Card と CD テーマで現在の曲をカードや円盤として表示できます。</p></article>
+    <article class="feature-card"><span class="feature-card__label">伴奏の追加元</span><h3>ローカル音源と YouTube 伴奏を一つのプレイヤーで</h3><p>ボーカルを除去した音源、自分で録音した伴奏、ダウンロード済みのファイルも、その場で YouTube から見つけた伴奏も使用できます。Singing Stream Savior なら両方を扱えるため、プレイヤーとブラウザを行き来する必要がありません。</p></article>
     <article class="feature-card"><span class="feature-card__label">ワークスペース</span><h3>フル・コンパクト・ミニの 3 モード</h3><p>準備はフルモード、配信中はコンパクトまたはミニモードへ。カラオケ、予約、履歴、歌詞ウィンドウなど必要な操作だけを残せます。</p></article>
   </div>
 </section>

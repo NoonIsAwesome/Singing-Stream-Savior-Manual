@@ -27,7 +27,7 @@ translation_key: home
     <article class="feature-card"><span class="feature-card__label">곡과 예약</span><h3>미리 준비하고 현장 선곡에도 대응</h3><p>곡 라이브러리, 재생목록, 즐겨찾기와 예약 순서를 관리합니다. 예약에서 고르거나 원하는 곡을 두 번 클릭해 바로 재생할 수 있습니다.</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS 세트리스트</span><h3>테마를 바꾸고 곡명 입력은 줄이기</h3><p>Default, 투명, Card, CD 또는 장식 테마를 골라 OBS로 드래그합니다. Now Singing, Set List, Reserve와 Next On이 재생 상태를 따릅니다.</p></article>
     <article class="feature-card"><span class="feature-card__label">가사</span><h3>진행자가 읽거나 시청자에게 표시</h3><p>동기화 가사를 검색·가져오고 이동 가능한 ‘가사 창’에서 읽거나 OBS 가사 화면으로 표시합니다. 일본어는 히라가나와 로마자 읽기 보조를 지원합니다.</p></article>
-    <article class="feature-card"><span class="feature-card__label">표지</span><h3>Card와 CD 테마에 곡의 개성 추가</h3><p>표지와 가사는 선택 사항입니다. 표지를 설정하면 Card와 CD 테마에서 현재 곡을 카드나 디스크로 보여 줄 수 있습니다.</p></article>
+    <article class="feature-card"><span class="feature-card__label">반주 소스</span><h3>로컬 음원과 YouTube 반주를 하나의 플레이어에서</h3><p>보컬을 제거하거나 직접 녹음하고 내려받은 로컬 파일도, 그 자리에서 YouTube로 찾은 반주도 사용할 수 있습니다. Singing Stream Savior는 두 방식을 모두 지원하므로 미디어 플레이어와 브라우저를 번갈아 열 필요가 없습니다.</p></article>
     <article class="feature-card"><span class="feature-card__label">작업 공간</span><h3>전체, 간단, 미니의 세 가지 모드</h3><p>준비할 때는 전체 모드, 방송 중에는 간단 또는 미니 모드를 사용해 반주, 예약, 연혁과 가사 창 같은 필수 조작만 남깁니다.</p></article>
   </div>
 </section>
