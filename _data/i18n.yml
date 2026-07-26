@@ -22,6 +22,7 @@ zh-TW:
     websocket: OBS WebSocket
     modes: 工作區模式
     settings: 設定與疑難排解
+    resources: 下載與主題
 
 zh-CN:
   language_name: 简体中文
@@ -47,6 +48,7 @@ zh-CN:
     websocket: OBS WebSocket
     modes: 工作区模式
     settings: 设置与疑难解答
+    resources: 下载与主题
 
 en:
   language_name: English
@@ -72,6 +74,7 @@ en:
     websocket: OBS WebSocket
     modes: Workspace modes
     settings: Settings and help
+    resources: Downloads & themes
 
 ja:
   language_name: 日本語
@@ -97,6 +100,7 @@ ja:
     websocket: OBS WebSocket
     modes: ワークスペース
     settings: 設定とトラブル対処
+    resources: ダウンロード
 
 ko:
   language_name: 한국어
@@ -122,3 +126,4 @@ ko:
     websocket: OBS WebSocket
     modes: 작업 공간 모드
     settings: 설정 및 문제 해결
+    resources: 다운로드 및 테마

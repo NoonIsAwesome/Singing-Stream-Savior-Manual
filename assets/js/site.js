@@ -35,6 +35,28 @@
   syncCurrentChapter();
   window.addEventListener("hashchange", syncCurrentChapter);
 
+  document.querySelectorAll("[data-video-embed]").forEach((placeholder) => {
+    placeholder.addEventListener("click", () => {
+      const embedUrl = placeholder.dataset.videoEmbed;
+      if (!embedUrl) {
+        return;
+      }
+
+      const frame = document.createElement("div");
+      frame.className = "video-frame";
+
+      const iframe = document.createElement("iframe");
+      iframe.src = embedUrl;
+      iframe.title = placeholder.dataset.videoTitle || "Tutorial video";
+      iframe.loading = "lazy";
+      iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+
+      frame.appendChild(iframe);
+      placeholder.replaceWith(frame);
+    }, { once: true });
+  });
+
   const button = document.querySelector(".nav-toggle");
   const navigation = document.querySelector(".guide-sidebar");
 

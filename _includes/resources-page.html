@@ -1,0 +1,172 @@
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign resources = site.data.resources %}
+{% if current_lang == 'zh-TW' %}
+  {% assign eyebrow = 'DOWNLOADS · VIDEOS · THEMES' %}
+  {% assign title = '下載、教學影片與主題' %}
+  {% assign lead = '軟體、操作教學與主題資源會集中在這裡。下載前可先閱讀版本資訊；影片只會在你點擊後載入，不會自動播放。' %}
+  {% assign software_title = '下載 Singing Stream Savior' %}
+  {% assign software_text = '下載 ZIP 並解壓縮後，只需要開啟最外層的「Singing Stream Savior.exe」。請勿單獨移動內部 DLL 或資料夾。' %}
+  {% assign download_label = '下載最新版' %}
+  {% assign coming_soon = '正式下載連結準備中' %}
+  {% assign video_title = '操作影片' %}
+  {% assign video_text = '影片會依實際軟體介面錄製，適合搭配文字說明快速熟悉操作。' %}
+  {% assign video_empty = '操作影片準備中。之後會加入第一次設定、OBS 畫面與歌詞等教學。' %}
+  {% assign watch_label = '播放教學影片' %}
+  {% assign theme_title = '免費與付費主題' %}
+  {% assign theme_text = '主題會與主程式分開提供。免費主題可直接下載；付費主題會連到獨立販售頁，不需要公開主程式原始碼。' %}
+  {% assign theme_empty = '主題資料庫建置中。現有內建主題仍可照常使用。' %}
+  {% assign free_label = '免費' %}
+  {% assign paid_label = '付費' %}
+  {% assign theme_action = '查看主題' %}
+{% elsif current_lang == 'zh-CN' %}
+  {% assign eyebrow = 'DOWNLOADS · VIDEOS · THEMES' %}
+  {% assign title = '下载、教学视频与主题' %}
+  {% assign lead = '软件、操作教学与主题资源都会集中在这里。视频只会在点击后加载，不会自动播放。' %}
+  {% assign software_title = '下载 Singing Stream Savior' %}
+  {% assign software_text = '下载 ZIP 并解压后，只需打开最外层的“Singing Stream Savior.exe”。请勿单独移动内部 DLL 或文件夹。' %}
+  {% assign download_label = '下载最新版' %}
+  {% assign coming_soon = '正式下载链接准备中' %}
+  {% assign video_title = '操作视频' %}
+  {% assign video_text = '视频会依照实际软件界面录制，方便搭配文字说明快速上手。' %}
+  {% assign video_empty = '操作视频准备中，之后会加入初次设置、OBS 画面与歌词教学。' %}
+  {% assign watch_label = '播放教学视频' %}
+  {% assign theme_title = '免费与付费主题' %}
+  {% assign theme_text = '主题会与主程序分开提供；付费主题会链接到独立销售页面。' %}
+  {% assign theme_empty = '主题资料库建设中。现有内置主题仍可正常使用。' %}
+  {% assign free_label = '免费' %}
+  {% assign paid_label = '付费' %}
+  {% assign theme_action = '查看主题' %}
+{% elsif current_lang == 'ja' %}
+  {% assign eyebrow = 'DOWNLOADS · VIDEOS · THEMES' %}
+  {% assign title = 'ダウンロード・動画・テーマ' %}
+  {% assign lead = 'アプリ、操作動画、追加テーマをこのページにまとめます。動画はクリック後に読み込まれ、自動再生されません。' %}
+  {% assign software_title = 'Singing Stream Savior をダウンロード' %}
+  {% assign software_text = 'ZIP を展開し、最上位にある「Singing Stream Savior.exe」を起動してください。内部の DLL やフォルダーは移動しないでください。' %}
+  {% assign download_label = '最新版をダウンロード' %}
+  {% assign coming_soon = '正式なダウンロードを準備中' %}
+  {% assign video_title = '操作動画' %}
+  {% assign video_text = '実際のアプリ画面を使い、初期設定や OBS、歌詞機能を紹介します。' %}
+  {% assign video_empty = '操作動画は準備中です。' %}
+  {% assign watch_label = '動画を再生' %}
+  {% assign theme_title = '無料・有料テーマ' %}
+  {% assign theme_text = '追加テーマはアプリ本体とは別に配布します。' %}
+  {% assign theme_empty = 'テーマライブラリーは準備中です。内蔵テーマは引き続き利用できます。' %}
+  {% assign free_label = '無料' %}
+  {% assign paid_label = '有料' %}
+  {% assign theme_action = 'テーマを見る' %}
+{% elsif current_lang == 'ko' %}
+  {% assign eyebrow = 'DOWNLOADS · VIDEOS · THEMES' %}
+  {% assign title = '다운로드, 사용 영상 및 테마' %}
+  {% assign lead = '앱과 사용 영상, 추가 테마를 한곳에서 제공합니다. 영상은 클릭한 뒤에만 불러오며 자동 재생하지 않습니다.' %}
+  {% assign software_title = 'Singing Stream Savior 다운로드' %}
+  {% assign software_text = 'ZIP 압축을 푼 뒤 최상위의 “Singing Stream Savior.exe”만 실행하세요. 내부 DLL이나 폴더를 따로 이동하지 마세요.' %}
+  {% assign download_label = '최신 버전 다운로드' %}
+  {% assign coming_soon = '정식 다운로드 준비 중' %}
+  {% assign video_title = '사용 영상' %}
+  {% assign video_text = '실제 앱 화면을 기준으로 초기 설정, OBS 화면과 가사 기능을 안내합니다.' %}
+  {% assign video_empty = '사용 영상을 준비하고 있습니다.' %}
+  {% assign watch_label = '영상 재생' %}
+  {% assign theme_title = '무료 및 유료 테마' %}
+  {% assign theme_text = '추가 테마는 앱 본체와 분리하여 제공합니다.' %}
+  {% assign theme_empty = '테마 라이브러리를 준비하고 있습니다. 기본 테마는 계속 사용할 수 있습니다.' %}
+  {% assign free_label = '무료' %}
+  {% assign paid_label = '유료' %}
+  {% assign theme_action = '테마 보기' %}
+{% else %}
+  {% assign eyebrow = 'DOWNLOADS · VIDEOS · THEMES' %}
+  {% assign title = 'Downloads, tutorials, and themes' %}
+  {% assign lead = 'Find the app, operation videos, and additional themes in one place. Videos load only after you choose to play them and never autoplay.' %}
+  {% assign software_title = 'Download Singing Stream Savior' %}
+  {% assign software_text = 'Extract the ZIP, then open “Singing Stream Savior.exe” in the top-level folder. Do not move the internal DLLs or folders separately.' %}
+  {% assign download_label = 'Download latest version' %}
+  {% assign coming_soon = 'Official download coming soon' %}
+  {% assign video_title = 'Operation videos' %}
+  {% assign video_text = 'Short videos based on the actual app interface will cover first-time setup, OBS output, and lyrics.' %}
+  {% assign video_empty = 'Operation videos are being prepared.' %}
+  {% assign watch_label = 'Play tutorial' %}
+  {% assign theme_title = 'Free and paid themes' %}
+  {% assign theme_text = 'Additional themes are distributed separately from the app. Paid themes can link to an independent storefront.' %}
+  {% assign theme_empty = 'The theme library is being prepared. All built-in themes remain available.' %}
+  {% assign free_label = 'Free' %}
+  {% assign paid_label = 'Paid' %}
+  {% assign theme_action = 'View theme' %}
+{% endif %}
+
+<header class="resource-hero">
+  <p class="resource-eyebrow">{{ eyebrow }}</p>
+  <h1>{{ title }}</h1>
+  <p>{{ lead }}</p>
+</header>
+
+<section class="resource-section" aria-labelledby="software-download">
+  <div class="resource-section__heading">
+    <span class="resource-index">01</span>
+    <div>
+      <h2 id="software-download">{{ software_title }}</h2>
+      <p>{{ software_text }}</p>
+    </div>
+  </div>
+  <article class="download-panel">
+    <div class="download-panel__mark" aria-hidden="true"><span></span></div>
+    <div class="download-panel__copy">
+      <strong>Singing Stream Savior</strong>
+      <span>Windows · {{ resources.software.version }}</span>
+      {% if resources.software.file_size != '' %}<small>{{ resources.software.file_size }}</small>{% endif %}
+    </div>
+    {% if resources.software.download_url != '' %}
+      <a class="resource-action resource-action--primary" href="{{ resources.software.download_url }}" rel="noopener">{{ download_label }}</a>
+    {% else %}
+      <span class="resource-status">{{ coming_soon }}</span>
+    {% endif %}
+  </article>
+</section>
+
+<section class="resource-section" aria-labelledby="operation-videos">
+  <div class="resource-section__heading">
+    <span class="resource-index">02</span>
+    <div>
+      <h2 id="operation-videos">{{ video_title }}</h2>
+      <p>{{ video_text }}</p>
+    </div>
+  </div>
+  <div class="video-grid">
+    {% for video in resources.videos %}
+      <article class="video-card">
+        <button class="video-placeholder" type="button" data-video-embed="{{ video.embed_url }}" data-video-title="{{ video.title }}">
+          {% if video.poster %}<img src="{{ video.poster | relative_url }}" alt="">{% endif %}
+          <span class="video-play" aria-hidden="true"></span>
+          <strong>{{ watch_label }}</strong>
+        </button>
+        <h3>{{ video.title }}</h3>
+        <p>{{ video.description }}</p>
+      </article>
+    {% else %}
+      <div class="resource-empty"><span aria-hidden="true">▶</span><p>{{ video_empty }}</p></div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="resource-section" aria-labelledby="theme-library">
+  <div class="resource-section__heading">
+    <span class="resource-index">03</span>
+    <div>
+      <h2 id="theme-library">{{ theme_title }}</h2>
+      <p>{{ theme_text }}</p>
+    </div>
+  </div>
+  <div class="theme-grid">
+    {% for theme in resources.themes %}
+      <article class="theme-card">
+        {% if theme.image %}<img src="{{ theme.image | relative_url }}" alt="{{ theme.name }}">{% endif %}
+        <div class="theme-card__body">
+          <span class="theme-badge theme-badge--{{ theme.type }}">{% if theme.type == 'free' %}{{ free_label }}{% else %}{{ paid_label }}{% endif %}</span>
+          <h3>{{ theme.name }}</h3>
+          <p>{{ theme.description }}</p>
+          <a class="resource-action" href="{{ theme.download_url }}" rel="noopener">{{ theme_action }}</a>
+        </div>
+      </article>
+    {% else %}
+      <div class="resource-empty"><span aria-hidden="true">◇</span><p>{{ theme_empty }}</p></div>
+    {% endfor %}
+  </div>
+</section>

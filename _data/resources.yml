@@ -1,0 +1,14 @@
+# 發布正式檔案後，只要更新這裡的連結與版本即可。
+software:
+  version: "2.0.0.0"
+  download_url: ""
+  file_size: ""
+  updated_at: ""
+
+# embed_url 範例：
+# Google Drive: https://drive.google.com/file/d/FILE_ID/preview
+# YouTube: https://www.youtube-nocookie.com/embed/VIDEO_ID
+videos: []
+
+# type 可填 free 或 paid；download_url 可連到雲端檔案或販售頁。
+themes: []
