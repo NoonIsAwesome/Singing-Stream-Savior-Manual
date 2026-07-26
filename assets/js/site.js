@@ -71,15 +71,35 @@
   };
 
   if (chapterLinks.length) {
-    if (window.location.hash) {
-      setCurrentChapter(window.location.hash);
+    const initialChapter = chapterLinks.find(
+      (chapter) => chapter.hash === window.location.hash
+    );
+    let scrollSpyReady = !initialChapter;
+
+    if (initialChapter) {
+      setCurrentChapter(initialChapter.hash);
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          const root = document.documentElement;
+          const previousScrollBehavior = root.style.scrollBehavior;
+          root.style.scrollBehavior = "auto";
+          initialChapter.target.scrollIntoView({ block: "start" });
+          root.style.scrollBehavior = previousScrollBehavior;
+          setCurrentChapter(initialChapter.hash);
+
+          window.setTimeout(() => {
+            scrollSpyReady = true;
+            syncChapterFromScroll();
+          }, 120);
+        });
+      });
     } else {
       setCurrentChapter(chapterLinks[0].hash);
     }
 
     let chapterFrame = 0;
     window.addEventListener("scroll", () => {
-      if (chapterFrame) {
+      if (!scrollSpyReady || chapterFrame) {
         return;
       }
       chapterFrame = window.requestAnimationFrame(() => {
