@@ -8,12 +8,12 @@ translation_key: home
 <div class="intro-hero">
   <div class="intro-hero__copy">
     <p class="intro-kicker">SINGING STREAM SAVIOR · 歌回直播控制台</p>
-    <h1>把容易忘記的直播雜務，交給歌回救星</h1>
+    <h1>把容易忘記的歌回直播雜務，交給歌回救星</h1>
     <p class="intro-lead">從背景音樂、歌唱伴奏、待播歌曲，到 OBS 上的歌單與歌詞，都在同一個畫面準備與操作。你可以把注意力留給演唱與觀眾，不必在每首歌之間反覆整理視窗。</p>
     <div class="intro-actions">
       <a class="intro-button intro-button--primary" href="{{ '/getting-started.html' | relative_url }}">開始使用</a>
       <a class="intro-button" href="#features">先看主要功能</a>
-      <a class="intro-button" href="{{ '/resources.html' | relative_url }}">下載與主題</a>
+      <a class="intro-button" href="{{ '/resources.html' | relative_url }}">軟體下載</a>
     </div>
   </div>
   <figure class="intro-hero__visual">

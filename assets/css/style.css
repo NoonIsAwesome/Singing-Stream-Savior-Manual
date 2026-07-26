@@ -1198,6 +1198,31 @@ body {
   border-color: #2d4055;
 }
 
+.manual-article pre {
+  color: #e7f3ff;
+  background: #101923;
+  border-color: #2c4057;
+}
+
+.manual-article pre code {
+  color: inherit;
+  background: transparent;
+}
+
+.intro-button--primary {
+  color: #fff;
+  background: #1479b8;
+  border-color: #35a8ec;
+  box-shadow: 0 8px 24px rgba(20, 121, 184, 0.28);
+}
+
+.intro-button--primary:hover {
+  color: #fff;
+  background: #1b8ed3;
+  border-color: #67c5fb;
+  box-shadow: 0 10px 28px rgba(20, 121, 184, 0.38);
+}
+
 .manual-article blockquote,
 .intro-next {
   background: var(--blue-soft);

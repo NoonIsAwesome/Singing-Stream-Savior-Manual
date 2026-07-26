@@ -40,7 +40,7 @@
           {% capture resources_target %}/{{ current_lang }}/resources.html{% endcapture %}
         {% endif %}
         <a class="resource-shortcut" href="{{ resources_target | relative_url }}">{{ t.nav.resources }}</a>
-        <span class="version-chip">2.0.0.0</span>
+        <span class="version-chip">{{ t.version }} 2.0.0.0</span>
         <label class="language-control">
           <span>{{ t.language }}</span>
           <select data-language-switcher aria-label="{{ t.language }}">

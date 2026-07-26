@@ -13,6 +13,7 @@ zh-TW:
   footer: 歌回救星 2.0 使用說明
   back_home: 回到首頁
   language: 語言
+  version: 版本
   nav:
     home: 軟體介紹
     getting_started: 開始使用
@@ -22,7 +23,7 @@ zh-TW:
     websocket: OBS WebSocket
     modes: 工作區模式
     settings: 設定與疑難排解
-    resources: 下載與主題
+    resources: 軟體下載
 
 zh-CN:
   language_name: 简体中文
@@ -39,6 +40,7 @@ zh-CN:
   footer: 歌回救星 2.0 使用说明
   back_home: 返回首页
   language: 语言
+  version: 版本
   nav:
     home: 软件介绍
     getting_started: 开始使用
@@ -48,7 +50,7 @@ zh-CN:
     websocket: OBS WebSocket
     modes: 工作区模式
     settings: 设置与疑难解答
-    resources: 下载与主题
+    resources: 软件下载
 
 en:
   language_name: English
@@ -65,6 +67,7 @@ en:
   footer: Singing Stream Savior 2.0 User Manual
   back_home: Back to top
   language: Language
+  version: Version
   nav:
     home: About the app
     getting_started: Getting started
@@ -74,7 +77,7 @@ en:
     websocket: OBS WebSocket
     modes: Workspace modes
     settings: Settings and help
-    resources: Downloads & themes
+    resources: Software download
 
 ja:
   language_name: 日本語
@@ -91,6 +94,7 @@ ja:
   footer: Singing Stream Savior 2.0 ユーザーマニュアル
   back_home: トップへ戻る
   language: 言語
+  version: バージョン
   nav:
     home: アプリ紹介
     getting_started: はじめに
@@ -100,7 +104,7 @@ ja:
     websocket: OBS WebSocket
     modes: ワークスペース
     settings: 設定とトラブル対処
-    resources: ダウンロード
+    resources: アプリをダウンロード
 
 ko:
   language_name: 한국어
@@ -117,6 +121,7 @@ ko:
   footer: Singing Stream Savior 2.0 사용자 설명서
   back_home: 맨 위로
   language: 언어
+  version: 버전
   nav:
     home: 앱 소개
     getting_started: 시작하기
@@ -126,4 +131,4 @@ ko:
     websocket: OBS WebSocket
     modes: 작업 공간 모드
     settings: 설정 및 문제 해결
-    resources: 다운로드 및 테마
+    resources: 앱 다운로드

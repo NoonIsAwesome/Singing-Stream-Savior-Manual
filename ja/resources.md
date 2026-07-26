@@ -1,6 +1,6 @@
 ---
-title: ダウンロード・動画・テーマ｜Singing Stream Savior
-description: Singing Stream Savior のダウンロード、操作動画、追加テーマ。
+title: アプリをダウンロード｜Singing Stream Savior
+description: Singing Stream Savior のダウンロードと操作動画。
 lang: ja
 translation_key: resources
 ---

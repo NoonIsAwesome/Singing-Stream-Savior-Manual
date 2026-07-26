@@ -1,6 +1,6 @@
 ---
-title: Downloads, tutorials, and themes | Singing Stream Savior
-description: Download Singing Stream Savior, watch operation tutorials, and find free or paid themes.
+title: Software download | Singing Stream Savior
+description: Download Singing Stream Savior and find operation tutorials.
 lang: en
 translation_key: resources
 ---
