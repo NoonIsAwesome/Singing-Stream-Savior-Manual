@@ -12,7 +12,17 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 원본 크기로 볼 수 있습니다.</figcaption></figure>
 
-먼저 `.bgmsproj` 프로젝트를 만들거나 열고 곡을 추가한 뒤 표시 제목을 정리하세요. **재생목록 외관**에서 테마를 고르고 **Drag로OBS** 버튼을 OBS에 놓으면 됩니다. 대기 목록, 표지, 가사와 OBS WebSocket은 선택 기능입니다.
+## 처음 사용할 때 권장 설정 순서
+
+1. 방송에서 사용할 BGM을 선택하고 방송에 알맞은 음량으로 조절합니다.
+2. 이번 방송에 필요한 반주를 라이브러리나 재생목록에 추가합니다.
+3. 각 곡의 **표시 제목**을 수정합니다. 이 제목이 대기 목록과 OBS 세트리스트에 표시됩니다.
+4. **재생목록 외관**을 열어 **OBS로 드래그** 버튼을 OBS에 놓은 다음 원하는 테마를 선택합니다.
+5. 반주 한 곡을 시험 재생하고, 정지한 뒤 BGM이 자동으로 다시 재생되는지 확인합니다.
+6. 곡 선택, 재생, 정지 과정을 한 번 조작하여 방송 중 사용할 흐름을 익힙니다.
+7. 프로젝트를 저장하면 첫 설정이 완료됩니다.
+
+> 처음부터 인터페이스 언어나 프로젝트/미디어 폴더 위치를 설정하거나 시험용 대기 목록을 만들 필요는 없습니다. 대기 목록, 표지, 가사와 OBS WebSocket은 방송에 필요할 때 나중에 설정할 수 있습니다.
 
 <a id="getting-started"></a>
 ## 01 · 시작하기

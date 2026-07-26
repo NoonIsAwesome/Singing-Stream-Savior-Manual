@@ -12,7 +12,17 @@ manual_bundle: true
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可查看原尺寸。</figcaption></figure>
 
-建议先建立或打开 `.bgmsproj`，加入歌曲并填写显示歌名，再到“歌单外观”选择主题并把“拖放至 OBS”拖入 OBS。待播、封面、歌词与 OBS WebSocket 都是选用功能。
+## 第一次使用的建议流程
+
+1. 选择直播时要播放的 BGM，并将音量调整到适合直播的大小。
+2. 将这次直播需要的伴奏加入歌曲库或歌单。
+3. 逐一修改歌曲的“显示歌名”；这个名称会显示在待播列表与 OBS 歌单画面中。
+4. 前往“歌单外观”，将“拖放至 OBS”按钮拖入 OBS，再选择想使用的主题。
+5. 测试播放一首伴奏，停止后确认 BGM 会自动恢复播放。
+6. 实际操作一次选歌、播放与停止流程，熟悉直播时会使用的操作方式。
+7. 保存项目，即完成第一次设置。
+
+> 第一次使用不必先调整界面语言、项目／媒体文件夹位置，也不必建立测试待播列表。待播、封面、歌词与 OBS WebSocket 都可以在直播需要时再设置。
 
 <a id="getting-started"></a>
 ## 01 · 开始使用

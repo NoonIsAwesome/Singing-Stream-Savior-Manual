@@ -17,13 +17,15 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
 
 ## Recommended setup
 
-1. Create or open a `.bgmsproj` project.
-2. Add local tracks or YouTube songs to the library.
-3. Enter the title you want viewers to see. Cover art and lyrics are optional.
-4. Optionally add requests or planned songs to the queue. You can also double-click any song to play it immediately.
-5. Choose a theme under **Playlist Appearance**, then drag **Drag to OBS** into OBS.
-6. Play one test song before going live.
-7. Use Compact or Mini mode during the stream if you need less screen space.
+1. Select the BGM you want to use during the stream and adjust it to a suitable volume.
+2. Add the karaoke tracks needed for the stream to the library or a playlist.
+3. Edit each track’s **Display title**. This is the name shown in Reserve and the OBS set list.
+4. Open **Playlist Appearance**, drag the **Drag to OBS** button into OBS, then choose the theme you want to use.
+5. Play one karaoke track as a test. Stop it and confirm that the BGM resumes automatically.
+6. Practice selecting, playing, and stopping a song once so the live workflow feels familiar.
+7. Save the project to complete the initial setup.
+
+> You do not need to configure the interface language or project/media folder locations first, and you do not need to create a test Reserve list. Reserve, cover art, lyrics, and OBS WebSocket can all be set up later when your stream needs them.
 
 > Japanese furigana and romaji are generated from an offline dictionary. They are reading aids and may differ from the singer’s pronunciation.
 
