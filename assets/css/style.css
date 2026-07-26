@@ -685,18 +685,6 @@ button:focus-visible {
   transform: rotate(0.7deg);
 }
 
-.intro-hero__visual::before {
-  position: absolute;
-  z-index: -1;
-  right: -22px;
-  bottom: -22px;
-  width: 74%;
-  height: 74%;
-  background: #d9ecfa;
-  border-radius: 18px;
-  content: "";
-}
-
 .manual-article .intro-hero__visual img {
   width: 100%;
   border: 0;
