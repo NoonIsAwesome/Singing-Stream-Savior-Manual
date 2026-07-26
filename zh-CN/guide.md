@@ -36,11 +36,23 @@ manual_bundle: true
 <a id="library-and-playback"></a>
 ## 02 · 歌曲库与播放
 
-歌曲库包含全部歌曲、我的最爱、最近播放与自定义歌单。可以加入 YouTube 单曲、播放列表，或导入 `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` 格式的本地歌曲／歌唱伴奏。“显示歌名”会用于待播与 OBS；未填写时会使用文件名或 YouTube 标题。
+歌曲库包含全部歌曲、我的最爱、最近播放与自定义歌单。固定分类无法删除；自定义歌单可依直播企划、曲风或活动分类。
+
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/song-library.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/song-library.png' | relative_url }}" alt="完整歌曲库，左侧显示全部歌曲、我的最爱、最近播放与自定义歌单，右侧显示歌曲表格"></a><figcaption>在左侧选择分类后，右侧表格与搜索范围会一起切换。</figcaption></figure>
+
+要将歌曲加入分类，先选择一首或多首歌曲，按鼠标右键，展开“加入歌单”，再选择“我的最爱”或自定义歌单。这不会复制音频，也不会将歌曲移出“全部歌曲”；同一首歌可以加入多个歌单。
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}" alt="歌曲右键菜单展开加入歌单并显示我的最爱"></a><figcaption>同一个右键菜单也可以将歌曲加入待播。</figcaption></figure>
+
+可以加入 YouTube 单曲、播放列表，或导入 `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` 格式的本地歌曲／歌唱伴奏。
+
+“显示歌名”会用于待播、已唱与 OBS；未填写时会使用文件名或 YouTube 标题。双击“显示歌名”栏，或对歌曲按右键并选择“编辑显示歌名”即可修改；按 `Enter` 套用，按 `Esc` 取消。这个操作不会更改原始音频文件名。
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}" alt="歌曲表格中的显示歌名栏进入编辑状态"></a><figcaption>只修改直播会显示的名称，左侧原始文件名保持不变。</figcaption></figure>
 
 封面不是必需，仅在 Card 与 CD 主题下有特别效果。在歌曲菜单打开“嵌入封面”，选择搜索结果或本地图片，等待预览完成后按“嵌入”。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}" alt="嵌入封面窗口"></a><figcaption>封面预览载入完成后即可嵌入。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}" alt="显示真实线上结果与封面预览的嵌入封面窗口"></a><figcaption>这是选择真实搜索结果后的画面；左侧封面预览载入完成后即可嵌入。</figcaption></figure>
 
 BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调整速度和半音音高，不会修改原文件。
 

@@ -36,11 +36,23 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 <a id="library-and-playback"></a>
 ## 02 · 곡 라이브러리와 재생
 
-라이브러리에는 모든 곡, 즐겨찾기, 최근 재생과 사용자 재생목록이 있습니다. YouTube 동영상/재생목록과 함께 `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, `WMA` 형식의 로컬 곡과 반주를 추가할 수 있습니다. **표시 제목**은 대기 목록과 OBS에 사용되며, 비어 있으면 파일명이나 YouTube 제목을 사용합니다.
+라이브러리에는 모든 곡, 즐겨찾기, 최근 재생과 사용자 재생목록이 있습니다. 고정 분류는 삭제할 수 없으며, 사용자 재생목록은 방송 기획, 장르나 이벤트별로 곡을 정리할 때 사용합니다.
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/song-library.png' | relative_url }}"><img src="{{ '/assets/images/ko/song-library.png' | relative_url }}" alt="모든 곡, 즐겨찾기, 최근 재생, 사용자 재생목록과 곡 표가 보이는 전체 라이브러리"></a><figcaption>왼쪽에서 분류를 선택하면 오른쪽 표와 검색 대상이 함께 바뀝니다.</figcaption></figure>
+
+곡을 분류하려면 한 곡 또는 여러 곡을 선택해 마우스 오른쪽 버튼을 누르고 **재생목록에 추가**에서 **즐겨찾기** 또는 사용자 재생목록을 고르세요. 음원은 복제되지 않고 모든 곡에서도 사라지지 않으며, 한 곡을 여러 재생목록에 넣을 수 있습니다.
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/ko/add-to-playlist-menu.png' | relative_url }}" alt="곡 오른쪽 클릭 메뉴에서 재생목록에 추가와 즐겨찾기를 연 화면"></a><figcaption>같은 메뉴에서 예약 목록에도 곡을 추가할 수 있습니다.</figcaption></figure>
+
+YouTube 동영상/재생목록과 함께 `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, `WMA` 형식의 로컬 곡과 반주를 추가할 수 있습니다.
+
+**표시 제목**은 예약, 연혁과 OBS에 사용되며, 비어 있으면 파일명이나 YouTube 제목을 사용합니다. 표시 제목 셀을 두 번 클릭하거나 곡을 오른쪽 클릭해 **표시 곡명 편집**을 선택하세요. `Enter`로 적용하고 `Esc`로 취소할 수 있으며 원본 음원 파일명은 바뀌지 않습니다.
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}" alt="표시 제목 셀을 직접 편집하는 화면"></a><figcaption>방송에 표시할 제목만 편집하며 왼쪽 원본 파일명은 유지됩니다.</figcaption></figure>
 
 표지는 필수가 아니며 Card와 CD 테마에서 특별히 활용됩니다. 곡 메뉴에서 **표지 삽입**을 열고 검색 결과나 로컬 이미지를 선택한 뒤 미리보기 로딩이 끝나면 삽입하세요.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}" alt="표지 미리보기와 검색 결과가 있는 표지 삽입 창"></a><figcaption>선택한 표지 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}" alt="실제 온라인 결과와 불러온 표지 미리보기가 있는 표지 삽입 창"></a><figcaption>실제 검색 결과를 선택한 화면입니다. 왼쪽 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
 
 BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 원본 파일을 바꾸지 않고 속도와 반음 단위 음높이도 조절할 수 있습니다.
 

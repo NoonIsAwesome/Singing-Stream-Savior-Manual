@@ -36,11 +36,23 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 <a id="library-and-playback"></a>
 ## 02 · 曲ライブラリと再生
 
-ライブラリには「すべての曲」「お気に入り」「最近再生した曲」とカスタムプレイリストがあります。YouTube 動画／プレイリストのほか、`MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` 形式のローカル曲・カラオケ音源を追加できます。「表示曲名」は待機リストと OBS に使用され、空欄ならファイル名または YouTube タイトルが使われます。
+ライブラリには「すべての曲」「お気に入り」「最近再生した曲」とカスタムプレイリストがあります。固定分類は削除できません。カスタムプレイリストは配信企画、ジャンル、イベントごとの整理に使用できます。
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/song-library.png' | relative_url }}"><img src="{{ '/assets/images/ja/song-library.png' | relative_url }}" alt="すべての曲、お気に入り、最近再生した曲、カスタムプレイリストと曲テーブルを表示した曲ライブラリ"></a><figcaption>左側で分類を選ぶと、右側のテーブルと検索対象が切り替わります。</figcaption></figure>
+
+曲を分類するには、1 曲または複数曲を選択して右クリックし、「プレイリストに追加」から「お気に入り」またはカスタムプレイリストを選びます。音源は複製されず、「すべての曲」からも削除されません。同じ曲を複数のプレイリストに登録できます。
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/ja/add-to-playlist-menu.png' | relative_url }}" alt="曲の右クリックメニューでプレイリストに追加からお気に入りを表示"></a><figcaption>同じ右クリックメニューから予約への追加も行えます。</figcaption></figure>
+
+YouTube 動画／プレイリストのほか、`MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` 形式のローカル曲・カラオケ音源を追加できます。
+
+「表示曲名」は予約、履歴、OBS に使用され、空欄ならファイル名または YouTube タイトルが使われます。「表示曲名」セルをダブルクリックするか、曲を右クリックして「表示曲名を編集」を選びます。`Enter` で確定し、`Esc` でキャンセルします。元の音源ファイル名は変更されません。
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}" alt="表示曲名セルを直接編集している画面"></a><figcaption>配信に表示する曲名だけを編集し、左側の元ファイル名は維持します。</figcaption></figure>
 
 ジャケットは必須ではなく、Card と CD テーマで特に効果を発揮します。曲のメニューから「ジャケットを埋め込む」を開き、検索結果またはローカル画像を選び、プレビューの読み込み後に「埋め込む」を押します。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}" alt="ジャケット埋め込み画面"></a><figcaption>選択した画像のプレビューが読み込まれると、埋め込み操作が有効になります。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}" alt="オンライン検索結果と読み込み済みジャケットを表示した埋め込み画面"></a><figcaption>実際の検索結果を選択した画面です。左側のプレビューが読み込まれると、埋め込み操作が有効になります。</figcaption></figure>
 
 BGM とカラオケ音源は別々に再生・音量・シークを操作できます。カラオケ側では速度と半音単位のピッチも変更でき、元ファイルは書き換えません。
 

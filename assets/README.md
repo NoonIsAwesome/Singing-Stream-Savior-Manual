@@ -4,6 +4,9 @@
 
 - `compact-workspace.png`：精簡模式與主要播放器配置
 - `full-workspace.png`：完整模式的歌曲庫、播放器與待播清單
+- `song-library.png`：完整歌曲庫分類、搜尋與歌曲表格
+- `display-title-edit.png`：顯示歌名的重點區域編輯畫面
+- `add-to-playlist-menu.png`：歌曲右鍵加入我的最愛／自訂歌單
 - `cover-dialog.png`：嵌入封面
 - `lyrics-manager.png`：管理歌詞
 - `lyrics-manager-linked.png`：管理歌詞的匯入與取消連結狀態

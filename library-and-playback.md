@@ -7,10 +7,10 @@ translation_key: library-and-playback
 # 歌曲庫、歌單與播放器
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/compact-workspace.png' | relative_url }}">
-    <img src="{{ '/assets/images/compact-workspace.png' | relative_url }}" alt="精簡模式中的歌曲表格、背景音樂播放器、歌唱伴奏播放器與待播清單">
+  <a href="{{ '/assets/images/full-workspace.png' | relative_url }}">
+    <img src="{{ '/assets/images/full-workspace.png' | relative_url }}" alt="完整模式中的歌曲庫、歌曲表格、背景音樂、歌唱伴奏與待播清單">
   </a>
-  <figcaption>精簡模式仍保留選歌、播放及待播管理；來源檔名欄會隱藏，讓歌曲表格更容易閱讀。</figcaption>
+  <figcaption>完整模式會同時顯示歌曲庫分類、歌曲資料、兩個播放器，以及待播／已唱清單。</figcaption>
 </figure>
 
 ## 歌曲庫分類
@@ -20,9 +20,31 @@ translation_key: library-and-playback
 - **全部歌曲**：所有已加入的歌曲。
 - **我的最愛**：標記為最愛的歌曲。
 - **最近播放**：最近播放過的歌曲。
-- **自訂歌單**：自行建立、重新命名與排序的分類。
+- **自訂歌單**：自行建立的歌曲分類；同一首歌也可以加入多個歌單。
 
 固定分類無法刪除；自訂歌單可依直播主題或歌回企劃分組。
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/song-library.png' | relative_url }}">
+    <img src="{{ '/assets/images/song-library.png' | relative_url }}" alt="完整歌曲庫，左側顯示全部歌曲、我的最愛、最近播放與兩個自訂歌單，右側顯示歌曲表格">
+  </a>
+  <figcaption>左側切換歌曲來源，右側會顯示該分類中的歌曲；搜尋欄只篩選目前選取的分類。</figcaption>
+</figure>
+
+### 將歌曲加入我的最愛或自訂歌單
+
+1. 在歌曲表格選取一首或多首歌曲。
+2. 按滑鼠右鍵，展開「加入歌單」。
+3. 選擇「我的最愛」或其中一個自訂歌單。
+
+這項操作只會建立分類關係，不會複製音訊，也不會把歌曲從「全部歌曲」移除。同一首歌可以同時存在於我的最愛及多個自訂歌單。
+
+<figure class="manual-figure manual-figure--medium">
+  <a href="{{ '/assets/images/add-to-playlist-menu.png' | relative_url }}">
+    <img src="{{ '/assets/images/add-to-playlist-menu.png' | relative_url }}" alt="歌曲右鍵選單展開加入歌單，子選單顯示我的最愛">
+  </a>
+  <figcaption>右鍵選單可直接加入待播或加入歌單；圖中示範加入「我的最愛」。</figcaption>
+</figure>
 
 ## 加入歌曲
 
@@ -44,6 +66,15 @@ translation_key: library-and-playback
 
 完整模式可查看來源或檔名；精簡模式會隱藏較佔寬度的來源欄位。
 
+要修改名稱，可雙擊歌曲的「顯示歌名」欄位；也可以對歌曲按右鍵，選擇「編輯顯示歌名」。輸入完成後按 `Enter` 套用，按 `Esc` 則取消這次編輯。這只會修改直播及清單使用的名稱，不會重新命名原始音訊檔案。
+
+<figure class="manual-figure manual-figure--medium">
+  <a href="{{ '/assets/images/display-title-edit.png' | relative_url }}">
+    <img src="{{ '/assets/images/display-title-edit.png' | relative_url }}" alt="歌曲表格的顯示歌名欄位進入編輯狀態，火燒的寂寞文字已被選取">
+  </a>
+  <figcaption>編輯框只出現在「顯示歌名」欄；左側檔案名稱維持不變。</figcaption>
+</figure>
+
 ## 封面
 
 封面是選用資料，不影響歌曲播放、待播排序或一般歌單顯示。若準備使用 Card 或 CD 主題，設定封面可以得到歌曲專屬的視覺效果。
@@ -59,7 +90,7 @@ translation_key: library-and-playback
   <a href="{{ '/assets/images/cover-dialog.png' | relative_url }}">
     <img src="{{ '/assets/images/cover-dialog.png' | relative_url }}" alt="嵌入封面視窗，左側顯示封面預覽，右側顯示搜尋結果">
   </a>
-  <figcaption>選取搜尋結果後，等左側預覽載入完成，「嵌入」按鈕就會啟用。</figcaption>
+  <figcaption>實際搜尋「髮如雪」後的畫面。選取右側結果並等左側預覽載入完成，「嵌入」按鈕就會啟用。</figcaption>
 </figure>
 
 YouTube 歌曲預設使用影片縮圖，也可設定自訂封面或恢復預設縮圖。

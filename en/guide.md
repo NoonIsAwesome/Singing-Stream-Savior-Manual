@@ -43,15 +43,25 @@ Full mode is the default preparation workspace: content and settings on the left
 <a id="library-and-playback"></a>
 ## 02 · Library and playback
 
-The library contains **All songs**, **Favorites**, **Recently played**, and removable custom playlists. You can import a YouTube video, a YouTube playlist, or local songs/karaoke tracks in `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection and the bundled `yt-dlp` helper.
+The library contains **All songs**, **Favorites**, **Recently played**, and removable custom playlists. Fixed collections cannot be deleted; use custom playlists to group songs by stream, genre, or event.
 
-The **Display title** is used by the queue and OBS. If it is blank, the app falls back to the file name or YouTube title.
+<figure class="manual-figure"><a href="{{ '/assets/images/en/song-library.png' | relative_url }}"><img src="{{ '/assets/images/en/song-library.png' | relative_url }}" alt="Complete song library with All songs, Favorites, Recently played, custom playlists, and a populated song table"></a><figcaption>Select a collection on the left; the table and search field work within that selection.</figcaption></figure>
+
+To place songs in a collection, select one or more rows, right-click, open **Add to playlist**, and choose **Favorites** or a custom playlist. This does not duplicate the audio or remove it from All songs, and one song can belong to several playlists.
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}" alt="Song context menu with Add to playlist expanded to Favorites"></a><figcaption>The same context menu also provides Add to Reserve for planned songs.</figcaption></figure>
+
+You can import a YouTube video, a YouTube playlist, or local songs/karaoke tracks in `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection and the bundled `yt-dlp` helper.
+
+The **Display title** is used by Reserve, History, and OBS. If it is blank, the app falls back to the file name or YouTube title. Double-click the Display title cell, or right-click the song and choose **Edit display song name**. Press `Enter` to apply or `Esc` to cancel. This never renames the source audio file.
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/en/display-title-edit.png' | relative_url }}" alt="Display title cell open for inline editing"></a><figcaption>Only the viewer-facing Display title changes; the source name remains intact.</figcaption></figure>
 
 Cover art is optional. It becomes especially useful with the **Card** and **CD** themes. Open **Embed cover** from a local song’s context menu, select an online result or local image, wait for the preview to load, and choose **Embed**.
 
 <figure class="manual-figure manual-figure--medium">
   <a href="{{ '/assets/images/en/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/en/cover-dialog.png' | relative_url }}" alt="Embed cover window with preview and search results"></a>
-  <figcaption>The Embed button becomes available after the selected cover preview has loaded.</figcaption>
+  <figcaption>A real online result is selected. Embed becomes available after its cover preview has loaded.</figcaption>
 </figure>
 
 The BGM and karaoke players have separate play, pause, stop, loop, mute, volume, and seek controls. Karaoke playback also supports speed and semitone pitch adjustment without modifying the source file.
