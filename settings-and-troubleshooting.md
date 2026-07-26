@@ -47,8 +47,8 @@ translation_key: settings-and-troubleshooting
 若看到「no Qt platform plugin could be initialized」：
 
 <figure class="manual-figure manual-figure--small">
-  <a href="{{ '/assets/images/qt-platform-error.png' | relative_url }}">
-    <img src="{{ '/assets/images/qt-platform-error.png' | relative_url }}" alt="Singing Stream Savior 無法初始化 Qt platform plugin 的錯誤視窗">
+  <a href="assets/images/qt-platform-error.png">
+    <img src="assets/images/qt-platform-error.png" alt="Singing Stream Savior 無法初始化 Qt platform plugin 的錯誤視窗">
   </a>
   <figcaption>這通常代表主程式和 Qt 外掛被分開、資料夾不完整，或直接從 ZIP 內啟動。</figcaption>
 </figure>

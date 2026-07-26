@@ -7,8 +7,8 @@ translation_key: obs-and-themes
 # 歌單外觀、歌詞畫面與 OBS
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/theme-workspace.png' | relative_url }}">
-    <img src="{{ '/assets/images/theme-workspace.png' | relative_url }}" alt="歌單外觀頁，頂部為主題選擇，中央為 Summer Chime 主題即時預覽">
+  <a href="assets/images/theme-workspace.png">
+    <img src="assets/images/theme-workspace.png" alt="歌單外觀頁，頂部為主題選擇，中央為 Summer Chime 主題即時預覽">
   </a>
   <figcaption>歌單外觀頁會同時顯示主題卡片、畫面設定、即時預覽與主題指南。</figcaption>
 </figure>
@@ -43,14 +43,14 @@ translation_key: obs-and-themes
 
 <div class="figure-grid">
   <figure class="manual-figure">
-    <a href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
-      <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="在歌單外觀頁選擇 Transparent Black v2 並檢查即時預覽" loading="lazy" decoding="async">
+    <a href="assets/images/demo-theme-preview.png">
+      <img src="assets/images/demo-theme-preview.png" alt="在歌單外觀頁選擇 Transparent Black v2 並檢查即時預覽" loading="lazy" decoding="async">
     </a>
     <figcaption>軟體內：先選擇主題，確認 Now Singing、Set List 與 Next On 的配置。</figcaption>
   </figure>
   <figure class="manual-figure">
-    <a href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
-      <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS 將 Transparent Black v2 歌單和同步歌詞疊在直播背景上" loading="lazy" decoding="async">
+    <a href="assets/images/demo-obs-result.png">
+      <img src="assets/images/demo-obs-result.png" alt="OBS 將 Transparent Black v2 歌單和同步歌詞疊在直播背景上" loading="lazy" decoding="async">
     </a>
     <figcaption>OBS 中：歌單與歌詞可各自縮放、裁切和移動，搭配自己的直播背景。</figcaption>
   </figure>
@@ -101,14 +101,14 @@ translation_key: obs-and-themes
 
 <div class="figure-grid">
   <figure class="manual-figure">
-    <a href="{{ '/assets/images/card-theme-cover.png' | relative_url }}">
-      <img src="{{ '/assets/images/card-theme-cover.png' | relative_url }}" alt="Card 主題在透明背景上顯示直向歌曲封面卡片與歌名">
+    <a href="assets/images/card-theme-cover.png">
+      <img src="assets/images/card-theme-cover.png" alt="Card 主題在透明背景上顯示直向歌曲封面卡片與歌名">
     </a>
     <figcaption>Card：以歌曲封面製作直向卡片。</figcaption>
   </figure>
   <figure class="manual-figure">
-    <a href="{{ '/assets/images/cd-theme-cover.png' | relative_url }}">
-      <img src="{{ '/assets/images/cd-theme-cover.png' | relative_url }}" alt="CD 主題在透明背景上顯示圓形唱片與下方歌名">
+    <a href="assets/images/cd-theme-cover.png">
+      <img src="assets/images/cd-theme-cover.png" alt="CD 主題在透明背景上顯示圓形唱片與下方歌名">
     </a>
     <figcaption>CD：將歌曲封面轉為圓形唱片視覺。</figcaption>
   </figure>

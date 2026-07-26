@@ -39,8 +39,8 @@ OBS WebSocket 是選用功能，預設關閉。目前的測試重點包括：
 只有勾選啟用 WebSocket 後，「連線」按鈕才可使用。取消勾選會立即停用連線及 WebSocket 專用功能。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}">
-    <img src="{{ '/assets/images/obs-websocket-settings.png' | relative_url }}" alt="進階設定中的 OBS WebSocket 說明、啟用開關、主機、連接埠、密碼與連線按鈕">
+  <a href="assets/images/obs-websocket-settings.png">
+    <img src="assets/images/obs-websocket-settings.png" alt="進階設定中的 OBS WebSocket 說明、啟用開關、主機、連接埠、密碼與連線按鈕">
   </a>
   <figcaption>進階設定內含 OBS 端啟用步驟與連線資料；WebSocket 預設為關閉。</figcaption>
 </figure>

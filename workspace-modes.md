@@ -20,8 +20,8 @@ translation_key: workspace-modes
 - 適合管理歌曲、封面、歌詞及 OBS 畫面。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/full-workspace.png' | relative_url }}">
-    <img src="{{ '/assets/images/full-workspace.png' | relative_url }}" alt="完整模式顯示歌曲庫、背景音樂、歌唱伴奏與待播清單">
+  <a href="assets/images/full-workspace.png">
+    <img src="assets/images/full-workspace.png" alt="完整模式顯示歌曲庫、背景音樂、歌唱伴奏與待播清單">
   </a>
   <figcaption>完整模式的歌曲頁保留完整歌曲資料、播放器與待播清單；也可切換到歌詞或歌單外觀頁進行設定。</figcaption>
 </figure>
@@ -36,8 +36,8 @@ translation_key: workspace-modes
 - 仍可切換到歌詞頁並開啟「歌詞視窗」。
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/compact-workspace.png' | relative_url }}">
-    <img src="{{ '/assets/images/compact-workspace.png' | relative_url }}" alt="精簡模式主畫面">
+  <a href="assets/images/compact-workspace.png">
+    <img src="assets/images/compact-workspace.png" alt="精簡模式主畫面">
   </a>
   <figcaption>精簡模式保留歌曲庫與直播操作，同時縮小工作區寬度。</figcaption>
 </figure>
@@ -54,8 +54,8 @@ translation_key: workspace-modes
 從完整或精簡模式切換到迷你模式時，只會收起不常用的介面；正在播放的歌曲會繼續播放，原本的待播順序與 OBS 畫面也不會被重設。
 
 <figure class="manual-figure manual-figure--portrait">
-  <a href="{{ '/assets/images/mini-workspace.png' | relative_url }}">
-    <img src="{{ '/assets/images/mini-workspace.png' | relative_url }}" alt="迷你模式只顯示歌唱伴奏播放器與待播已唱清單">
+  <a href="assets/images/mini-workspace.png">
+    <img src="assets/images/mini-workspace.png" alt="迷你模式只顯示歌唱伴奏播放器與待播已唱清單">
   </a>
   <figcaption>迷你模式隱藏 BGM 與歌曲庫，把空間留給歌唱伴奏、待播和已唱清單；需要閱讀歌詞時可另外開啟「歌詞視窗」。</figcaption>
 </figure>

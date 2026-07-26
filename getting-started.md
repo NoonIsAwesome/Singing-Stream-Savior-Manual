@@ -13,7 +13,7 @@ translation_key: getting-started
 3. 雙擊它即可啟動歌回救星。
 
 <div class="launch-target">
-  <img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 軟體圖示">
+  <img src="assets/images/singing-stream-savior.ico" alt="Singing Stream Savior 軟體圖示">
   <div>
     <strong>Singing Stream Savior.exe</strong>
     <span>平常只需要開啟這個程式</span>
@@ -62,8 +62,8 @@ Singing Stream Savior 2.0.0.0/
 - 右上角：完整、精簡與迷你模式切換。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}">
-    <img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="完整模式的歌詞分頁，畫面同時顯示歌詞設定、OBS 預覽、播放器及待播清單">
+  <a href="assets/images/lyrics-reading-preview.png">
+    <img src="assets/images/lyrics-reading-preview.png" alt="完整模式的歌詞分頁，畫面同時顯示歌詞設定、OBS 預覽、播放器及待播清單">
   </a>
   <figcaption>完整模式的歌詞分頁：中央即時預覽與 OBS 輸出相同，右側播放控制與待播清單仍可同時操作。</figcaption>
 </figure>

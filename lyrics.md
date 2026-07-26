@@ -37,8 +37,8 @@ translation_key: lyrics
 選取搜尋結果後，待預覽載入完成即可直接按「附加歌詞」，不需要先按另一個採用按鈕。
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/lyrics-manager.png' | relative_url }}">
-    <img src="{{ '/assets/images/lyrics-manager.png' | relative_url }}" alt="管理歌詞視窗，左側為歌詞預覽，右側為線上搜尋結果">
+  <a href="assets/images/lyrics-manager.png">
+    <img src="assets/images/lyrics-manager.png" alt="管理歌詞視窗，左側為歌詞預覽，右側為線上搜尋結果">
   </a>
   <figcaption>尚未附加歌詞時，可在右側搜尋同步歌詞並於左側確認內容。</figcaption>
 </figure>
@@ -52,8 +52,8 @@ translation_key: lyrics
 當歌曲已經附加歌詞時，管理視窗會明確顯示目前狀態，並提供「取消歌詞連結」。因此不需要回到主畫面尋找重複功能。
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}">
-    <img src="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}" alt="已有歌詞的管理歌詞視窗，左下角提供選擇 LRC 檔案與取消歌詞連結">
+  <a href="assets/images/lyrics-manager-linked.png">
+    <img src="assets/images/lyrics-manager-linked.png" alt="已有歌詞的管理歌詞視窗，左下角提供選擇 LRC 檔案與取消歌詞連結">
   </a>
   <figcaption>已有歌詞時，左下角可重新匯入檔案或取消目前的歌詞連結。</figcaption>
 </figure>
@@ -71,8 +71,8 @@ translation_key: lyrics
 如果只需要自己看歌詞，不必把歌詞 Overlay 加入 OBS；如果只想讓觀眾看，也可以維持歌詞視窗關閉。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
-    <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="播放伴奏時，歌詞頁即時預覽同步顯示目前句與前後歌詞" loading="lazy" decoding="async">
+  <a href="assets/images/demo-lyrics-preview.png">
+    <img src="assets/images/demo-lyrics-preview.png" alt="播放伴奏時，歌詞頁即時預覽同步顯示目前句與前後歌詞" loading="lazy" decoding="async">
   </a>
   <figcaption>實際播放伴奏時，即時預覽會依進度醒目顯示目前句；這裡看到的字型、顏色與版面也會套用到 OBS 歌詞畫面。</figcaption>
 </figure>
@@ -92,8 +92,8 @@ translation_key: lyrics
 > **讀音僅供參考：** 自動讀音依離線字典與斷詞結果產生。人名、特殊讀法、歌詞省略、外來語及歌手刻意改變的唱法，可能與原曲不同。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}">
-    <img src="{{ '/assets/images/lyrics-reading-preview.png' | relative_url }}" alt="最新版完整模式的歌詞設定、歌詞視窗按鈕與 OBS 即時預覽">
+  <a href="assets/images/lyrics-reading-preview.png">
+    <img src="assets/images/lyrics-reading-preview.png" alt="最新版完整模式的歌詞設定、歌詞視窗按鈕與 OBS 即時預覽">
   </a>
   <figcaption>歌詞頁可選擇日文讀音、開啟「歌詞視窗」，並以和 OBS 相同的版面顯示即時預覽；選擇羅馬拼音時，讀音會顯示在原文下方。</figcaption>
 </figure>

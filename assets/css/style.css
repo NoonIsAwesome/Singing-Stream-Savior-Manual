@@ -426,6 +426,20 @@ button:focus-visible {
   border: 0;
 }
 
+.manual-chapter {
+  padding-top: 24px;
+  padding-bottom: 70px;
+  scroll-margin-top: 84px;
+}
+
+.manual-chapter + .manual-chapter {
+  border-top: 1px solid var(--line);
+}
+
+.manual-chapter > h2:first-child {
+  margin-top: 0;
+}
+
 .manual-article img {
   display: block;
   max-width: 100%;

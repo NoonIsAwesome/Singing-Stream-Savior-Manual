@@ -7,8 +7,8 @@ translation_key: library-and-playback
 # 歌曲庫、歌單與播放器
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/full-workspace.png' | relative_url }}">
-    <img src="{{ '/assets/images/full-workspace.png' | relative_url }}" alt="完整模式中的歌曲庫、歌曲表格、背景音樂、歌唱伴奏與待播清單">
+  <a href="assets/images/full-workspace.png">
+    <img src="assets/images/full-workspace.png" alt="完整模式中的歌曲庫、歌曲表格、背景音樂、歌唱伴奏與待播清單">
   </a>
   <figcaption>完整模式會同時顯示歌曲庫分類、歌曲資料、兩個播放器，以及待播／已唱清單。</figcaption>
 </figure>
@@ -25,8 +25,8 @@ translation_key: library-and-playback
 固定分類無法刪除；自訂歌單可依直播主題或歌回企劃分組。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/song-library.png' | relative_url }}">
-    <img src="{{ '/assets/images/song-library.png' | relative_url }}" alt="完整歌曲庫，左側顯示全部歌曲、我的最愛、最近播放與兩個自訂歌單，右側顯示歌曲表格">
+  <a href="assets/images/song-library.png">
+    <img src="assets/images/song-library.png" alt="完整歌曲庫，左側顯示全部歌曲、我的最愛、最近播放與兩個自訂歌單，右側顯示歌曲表格">
   </a>
   <figcaption>左側切換歌曲來源，右側會顯示該分類中的歌曲；搜尋欄只篩選目前選取的分類。</figcaption>
 </figure>
@@ -40,8 +40,8 @@ translation_key: library-and-playback
 這項操作只會建立分類關係，不會複製音訊，也不會把歌曲從「全部歌曲」移除。同一首歌可以同時存在於我的最愛及多個自訂歌單。
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/add-to-playlist-menu.png' | relative_url }}">
-    <img src="{{ '/assets/images/add-to-playlist-menu.png' | relative_url }}" alt="歌曲右鍵選單展開加入歌單，子選單顯示我的最愛">
+  <a href="assets/images/add-to-playlist-menu.png">
+    <img src="assets/images/add-to-playlist-menu.png" alt="歌曲右鍵選單展開加入歌單，子選單顯示我的最愛">
   </a>
   <figcaption>右鍵選單可直接加入待播或加入歌單；圖中示範加入「我的最愛」。</figcaption>
 </figure>
@@ -69,8 +69,8 @@ translation_key: library-and-playback
 要修改名稱，可雙擊歌曲的「顯示歌名」欄位；也可以對歌曲按右鍵，選擇「編輯顯示歌名」。輸入完成後按 `Enter` 套用，按 `Esc` 則取消這次編輯。這只會修改直播及清單使用的名稱，不會重新命名原始音訊檔案。
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/display-title-edit.png' | relative_url }}">
-    <img src="{{ '/assets/images/display-title-edit.png' | relative_url }}" alt="歌曲表格的顯示歌名欄位進入編輯狀態，火燒的寂寞文字已被選取">
+  <a href="assets/images/display-title-edit.png">
+    <img src="assets/images/display-title-edit.png" alt="歌曲表格的顯示歌名欄位進入編輯狀態，火燒的寂寞文字已被選取">
   </a>
   <figcaption>編輯框只出現在「顯示歌名」欄；左側檔案名稱維持不變。</figcaption>
 </figure>
@@ -87,8 +87,8 @@ translation_key: library-and-playback
 4. 按「嵌入」寫入音訊標籤。
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/cover-dialog.png' | relative_url }}">
-    <img src="{{ '/assets/images/cover-dialog.png' | relative_url }}" alt="嵌入封面視窗，左側顯示封面預覽，右側顯示搜尋結果">
+  <a href="assets/images/cover-dialog.png">
+    <img src="assets/images/cover-dialog.png" alt="嵌入封面視窗，左側顯示封面預覽，右側顯示搜尋結果">
   </a>
   <figcaption>實際搜尋「髮如雪」後的畫面。選取右側結果並等左側預覽載入完成，「嵌入」按鈕就會啟用。</figcaption>
 </figure>

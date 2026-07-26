@@ -8,7 +8,10 @@
 
       if (section && !target.hash) {
         if (selectedLanguage === "zh-TW") {
-          target.pathname = `${target.pathname}${section}.html`;
+          if (!target.pathname.endsWith("/guide.html")) {
+            target.pathname = `${target.pathname.replace(/\/?$/, "/")}guide.html`;
+          }
+          target.hash = section;
         } else {
           target.hash = section;
         }
@@ -17,23 +20,78 @@
     });
   }
 
-  const syncCurrentChapter = () => {
-    if (!window.location.hash) {
+  const chapterLinks = [...document.querySelectorAll(".chapter-list a")]
+    .map((link) => {
+      const url = new URL(link.href, window.location.href);
+      const target = url.hash ? document.getElementById(url.hash.slice(1)) : null;
+      return target ? { link, target, hash: url.hash } : null;
+    })
+    .filter(Boolean);
+
+  const setCurrentChapter = (hash, updateAddress = false) => {
+    if (!hash || !chapterLinks.some((chapter) => chapter.hash === hash)) {
       return;
     }
 
-    document.querySelectorAll(".chapter-list a").forEach((link) => {
-      const active = new URL(link.href, window.location.href).hash === window.location.hash;
-      if (active) {
+    chapterLinks.forEach(({ link, hash: linkHash }) => {
+      if (linkHash === hash) {
         link.setAttribute("aria-current", "page");
       } else {
         link.removeAttribute("aria-current");
       }
     });
+
+    if (updateAddress && window.location.hash !== hash) {
+      window.history.replaceState(null, "", hash);
+    }
   };
 
-  syncCurrentChapter();
-  window.addEventListener("hashchange", syncCurrentChapter);
+  const syncChapterFromScroll = () => {
+    if (!chapterLinks.length) {
+      return;
+    }
+
+    const header = document.querySelector(".site-header");
+    const readingLine = (header?.getBoundingClientRect().height || 0) + 48;
+    let current = chapterLinks[0];
+
+    chapterLinks.forEach((chapter) => {
+      if (chapter.target.getBoundingClientRect().top <= readingLine) {
+        current = chapter;
+      }
+    });
+
+    const reachedPageEnd =
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    if (reachedPageEnd) {
+      current = chapterLinks[chapterLinks.length - 1];
+    }
+
+    setCurrentChapter(current.hash, true);
+  };
+
+  if (chapterLinks.length) {
+    if (window.location.hash) {
+      setCurrentChapter(window.location.hash);
+    } else {
+      setCurrentChapter(chapterLinks[0].hash);
+    }
+
+    let chapterFrame = 0;
+    window.addEventListener("scroll", () => {
+      if (chapterFrame) {
+        return;
+      }
+      chapterFrame = window.requestAnimationFrame(() => {
+        syncChapterFromScroll();
+        chapterFrame = 0;
+      });
+    }, { passive: true });
+
+    window.addEventListener("hashchange", () => {
+      setCurrentChapter(window.location.hash);
+    });
+  }
 
   document.querySelectorAll("[data-video-embed]").forEach((placeholder) => {
     placeholder.addEventListener("click", () => {
