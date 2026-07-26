@@ -70,6 +70,13 @@ translation_key: lyrics
 
 如果只需要自己看歌詞，不必把歌詞 Overlay 加入 OBS；如果只想讓觀眾看，也可以維持歌詞視窗關閉。
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
+    <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="播放伴奏時，歌詞頁即時預覽同步顯示目前句與前後歌詞" loading="lazy" decoding="async">
+  </a>
+  <figcaption>實際播放伴奏時，即時預覽會依進度醒目顯示目前句；這裡看到的字型、顏色與版面也會套用到 OBS 歌詞畫面。</figcaption>
+</figure>
+
 ## 日文讀音
 
 讀音選項包括：

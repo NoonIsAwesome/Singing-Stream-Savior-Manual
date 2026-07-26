@@ -38,6 +38,46 @@ translation_key: home
   </div>
 </section>
 
+<section class="demo-flow" aria-labelledby="demo-flow-title">
+  <div class="section-heading">
+    <p class="section-kicker">從軟體到直播畫面</p>
+    <h2 id="demo-flow-title">先在歌回救星確認，再把成果交給 OBS</h2>
+    <p>歌單主題與歌詞都能先在軟體裡預覽。加入 OBS 後，兩個畫面會跟著歌曲與播放進度更新，並可疊在自己的直播背景上。</p>
+  </div>
+  <div class="demo-flow__track">
+    <article class="demo-flow__step">
+      <header>
+        <span class="demo-flow__number">01</span>
+        <div><strong>選擇歌單主題</strong><span>歌單外觀</span></div>
+      </header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
+        <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="歌單外觀頁選擇 Transparent Black v2，並預覽 Now Singing、Set List 與 Next On" loading="lazy" decoding="async">
+      </a>
+      <p>從主題列選擇外觀，先確認目前歌曲、已唱清單和下一首歌的配置。</p>
+    </article>
+    <article class="demo-flow__step">
+      <header>
+        <span class="demo-flow__number">02</span>
+        <div><strong>確認同步歌詞</strong><span>歌詞即時預覽</span></div>
+      </header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
+        <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="歌詞頁即時預覽目前同步歌詞、字型、顏色與高亮效果" loading="lazy" decoding="async">
+      </a>
+      <p>播放伴奏時，預覽會顯示和 OBS 相同的歌詞版面、文字樣式與目前句高亮。</p>
+    </article>
+    <article class="demo-flow__step">
+      <header>
+        <span class="demo-flow__number">03</span>
+        <div><strong>在 OBS 自由編排</strong><span>觀眾看到的成果</span></div>
+      </header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
+        <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS 畫面將 Transparent Black v2 歌單與同步歌詞疊在直播背景上" loading="lazy" decoding="async">
+      </a>
+      <p>歌單與歌詞是獨立來源，可各自縮放、裁切和移動，搭配自己的直播背景。</p>
+    </article>
+  </div>
+</section>
+
 <section class="feature-section" id="features">
   <div class="section-heading">
     <p class="section-kicker">主要功能</p>

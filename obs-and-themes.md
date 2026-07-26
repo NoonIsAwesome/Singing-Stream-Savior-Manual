@@ -37,6 +37,25 @@ translation_key: obs-and-themes
 
 切換主題只會改變顯示方式，不會修改歌曲、待播順序或已唱紀錄。完整模式最適合比較主題，因為主題列、設定、預覽及指南可以同時顯示。
 
+### 從即時預覽到 OBS 實際畫面
+
+程式內的即時預覽用來確認主題結構與內容；加入 OBS 後，透明主題會直接疊在直播背景上。歌單與歌詞是兩個獨立來源，因此可以分別安排大小及位置。
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
+      <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="在歌單外觀頁選擇 Transparent Black v2 並檢查即時預覽" loading="lazy" decoding="async">
+    </a>
+    <figcaption>軟體內：先選擇主題，確認 Now Singing、Set List 與 Next On 的配置。</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
+      <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS 將 Transparent Black v2 歌單和同步歌詞疊在直播背景上" loading="lazy" decoding="async">
+    </a>
+    <figcaption>OBS 中：歌單與歌詞可各自縮放、裁切和移動，搭配自己的直播背景。</figcaption>
+  </figure>
+</div>
+
 ## 可以設定的項目
 
 左側「畫面設定」分為四個分頁。設定會儲存在目前專案中；實際可調整範圍仍以所選主題右側的「主題指南」為準。
