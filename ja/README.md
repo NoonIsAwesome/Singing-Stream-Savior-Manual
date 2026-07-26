@@ -17,7 +17,7 @@ translation_key: home
 
 <section class="origin-story" id="why">
   <div><p class="section-kicker">なぜ作ったのか</p><h2>歌枠で起こりやすい、小さな操作忘れが出発点です</h2><p>歌い始める前に BGM を止めること、歌い終えた後に BGM を戻すこと、そして歌った曲を OBS のセットリストへ追加することを、配信中によく忘れていました。難しい操作ではありませんが、歌やコメント、次の曲に気を配っていると抜けやすい作業です。</p><p>そこで Singing Stream Savior を作りました。最初に BGM を選んで再生しておくと、カラオケ開始時にその BGM を自動で一時停止し、カラオケを停止または最後まで再生した後に元の BGM を自動で再開します。セットリスト Overlay も曲の状態に合わせて更新されるため、毎回 OBS で曲名を入力し直す必要がありません。</p></div>
-  <div class="stream-sequence" aria-label="BGM とカラオケの自動切り替え"><div class="stream-step"><span>BGM</span><strong>曲間に再生</strong></div><div class="stream-arrow"><span>カラオケ開始</span></div><div class="stream-step stream-step--active"><span>カラオケ</span><strong>BGM を自動停止</strong></div><div class="stream-arrow"><span>一時停止・終了</span></div><div class="stream-step"><span>BGM</span><strong>自動で再開</strong></div></div>
+  <div class="stream-sequence" aria-label="BGM とカラオケの自動切り替え"><div class="stream-step stream-step--playing"><span>BGM</span><strong>曲間に再生</strong></div><div class="stream-arrow"><span>カラオケ開始</span></div><div class="stream-step stream-step--active stream-step--paused"><span>カラオケ</span><strong>BGM を自動停止</strong></div><div class="stream-arrow"><span>一時停止・終了</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>自動で再開</strong></div></div>
 </section>
 
 <section class="feature-section" id="features">

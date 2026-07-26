@@ -30,11 +30,11 @@ translation_key: home
     <p>因此做了 Singing Stream Savior：先選擇 BGM 並開始播放，之後播放伴奏時會自動暫停 BGM；伴奏停止或播放完畢後，會自動恢復原本的 BGM。歌單 Overlay 也會隨歌曲狀態更新，不需要每唱一首就回到 OBS 手動改字。</p>
   </div>
   <div class="stream-sequence" aria-label="背景音樂與歌唱伴奏的自動切換流程">
-    <div class="stream-step"><span>BGM</span><strong>直播空檔播放</strong></div>
+    <div class="stream-step stream-step--playing"><span>BGM</span><strong>直播空檔播放</strong></div>
     <div class="stream-arrow"><span>播放伴奏</span></div>
-    <div class="stream-step stream-step--active"><span>歌唱伴奏</span><strong>BGM 自動暫停</strong></div>
+    <div class="stream-step stream-step--active stream-step--paused"><span>歌唱伴奏</span><strong>BGM 自動暫停</strong></div>
     <div class="stream-arrow"><span>暫停或結束</span></div>
-    <div class="stream-step"><span>BGM</span><strong>自動恢復播放</strong></div>
+    <div class="stream-step stream-step--playing"><span>BGM</span><strong>自動恢復播放</strong></div>
   </div>
 </section>
 

@@ -737,7 +737,7 @@ button:focus-visible {
   bottom: 34px;
   left: 17px;
   width: 2px;
-  background: linear-gradient(var(--amber), #54b8f0, var(--amber));
+  background: linear-gradient(#45d19a, #f3ad45, #45d19a);
   content: "";
 }
 
@@ -773,8 +773,18 @@ button:focus-visible {
 }
 
 .stream-step--active::before {
-  background: #79ceff;
-  box-shadow: 0 0 0 5px rgba(121, 206, 255, 0.12);
+  background: #f3ad45;
+  box-shadow: 0 0 0 5px rgba(243, 173, 69, 0.14);
+}
+
+.stream-step--playing::before {
+  background: #45d19a;
+  box-shadow: 0 0 0 5px rgba(69, 209, 154, 0.13);
+}
+
+.stream-step--paused::before {
+  background: #f3ad45;
+  box-shadow: 0 0 0 5px rgba(243, 173, 69, 0.14);
 }
 
 .stream-step span {
