@@ -78,21 +78,36 @@
 
     if (initialChapter) {
       setCurrentChapter(initialChapter.hash);
+
+      const alignInitialChapter = () => {
+        if (window.location.hash !== initialChapter.hash) {
+          scrollSpyReady = true;
+          return;
+        }
+
+        const root = document.documentElement;
+        const previousScrollBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = "auto";
+        initialChapter.target.scrollIntoView({ block: "start", behavior: "auto" });
+        setCurrentChapter(initialChapter.hash);
+        window.requestAnimationFrame(() => {
+          root.style.scrollBehavior = previousScrollBehavior;
+        });
+      };
+
       window.requestAnimationFrame(() => {
         window.requestAnimationFrame(() => {
-          const root = document.documentElement;
-          const previousScrollBehavior = root.style.scrollBehavior;
-          root.style.scrollBehavior = "auto";
-          initialChapter.target.scrollIntoView({ block: "start" });
-          root.style.scrollBehavior = previousScrollBehavior;
-          setCurrentChapter(initialChapter.hash);
-
-          window.setTimeout(() => {
-            scrollSpyReady = true;
-            syncChapterFromScroll();
-          }, 120);
+          alignInitialChapter();
         });
       });
+      window.addEventListener("load", alignInitialChapter, { once: true });
+      [250, 750, 1500].forEach((delay) => {
+        window.setTimeout(alignInitialChapter, delay);
+      });
+      window.setTimeout(() => {
+        scrollSpyReady = true;
+        syncChapterFromScroll();
+      }, 1700);
     } else {
       setCurrentChapter(chapterLinks[0].hash);
     }
