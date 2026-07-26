@@ -26,6 +26,31 @@ translation_key: home
   <div class="stream-sequence" aria-label="背景音乐与歌唱伴奏自动切换流程"><div class="stream-step stream-step--playing"><span>BGM</span><strong>直播空档播放</strong></div><div class="stream-arrow"><span>播放伴奏</span></div><div class="stream-step stream-step--active stream-step--paused"><span>歌唱伴奏</span><strong>BGM 自动暂停</strong></div><div class="stream-arrow"><span>暂停或结束</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>自动恢复播放</strong></div></div>
 </section>
 
+<section class="demo-flow" aria-labelledby="demo-flow-title">
+  <div class="section-heading">
+    <p class="section-kicker">从设置到直播画面</p>
+    <h2 id="demo-flow-title">先在歌回救星中确认，再把效果显示到 OBS</h2>
+    <p>截图使用繁体中文界面，但各支持语言的操作流程和控件位置相同。</p>
+  </div>
+  <div class="demo-flow__track">
+    <article class="demo-flow__step">
+      <header><span>01</span><div><strong>选择歌单主题</strong><small>歌单外观</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}"><img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="繁体中文歌单外观页面选择 Transparent Black v2 的画面" loading="lazy" decoding="async"></a>
+      <p>选择主题后，在软件内预览 Now Singing、Song List 与 Next On 的版面。</p>
+    </article>
+    <article class="demo-flow__step">
+      <header><span>02</span><div><strong>检查同步歌词</strong><small>歌词预览</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}"><img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="繁体中文歌词页面在播放中显示同步歌词预览" loading="lazy" decoding="async"></a>
+      <p>播放伴奏时确认当前歌词、字体、颜色、强调效果与时间同步。</p>
+    </article>
+    <article class="demo-flow__step">
+      <header><span>03</span><div><strong>确认 OBS 效果</strong><small>直播画面</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-obs-result.png' | relative_url }}"><img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS 在直播背景上显示透明歌单与同步歌词的效果" loading="lazy" decoding="async"></a>
+      <p>歌单与歌词在 OBS 中是独立来源，可分别缩放、裁切与移动到合适位置。</p>
+    </article>
+  </div>
+</section>
+
 <section class="feature-section" id="features">
   <div class="section-heading"><p class="section-kicker">主要功能</p><h2>按照一场歌回真正会用到的流程设计</h2><p>从准备歌曲、开始演唱到更新 OBS 画面，是同一条连续的工作流程。</p></div>
   <div class="feature-grid">

@@ -82,6 +82,13 @@ Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song�
 
 The embedded preview uses the same layout, font, color, highlight, and Japanese-reading option as OBS. The independent Lyrics window has its own reading option. Available Japanese readings are off, small hiragana above kanji, or word-spaced romaji below the original line.
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
+    <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="Traditional Chinese Lyrics page highlighting the current synchronized line during karaoke playback" loading="lazy" decoding="async">
+  </a>
+  <figcaption>This demonstration uses the Traditional Chinese interface. The preview shows the same lyric layout, font, color, and highlight that will appear in OBS.</figcaption>
+</figure>
+
 Use the lyric offset controls if timing is early or late: negative values show lyrics sooner; positive values show them later.
 
 <a id="obs-and-themes"></a>
@@ -93,6 +100,21 @@ Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set 
   <a href="{{ '/assets/images/en/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/theme-workspace.png' | relative_url }}" alt="Playlist Appearance workspace with theme cards, settings, preview, and guide"></a>
   <figcaption>Full mode keeps theme selection, controls, preview, and the theme guide visible together.</figcaption>
 </figure>
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
+      <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="Traditional Chinese Playlist Appearance page previewing Transparent Black v2" loading="lazy" decoding="async">
+    </a>
+    <figcaption>In the app: choose a theme and check the Now Singing, Song List, and Next On layout. The interface shown here is Traditional Chinese.</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
+      <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS showing the Transparent Black v2 set list and synchronized lyrics over a stream background" loading="lazy" decoding="async">
+    </a>
+    <figcaption>In OBS: resize, crop, and position the set-list and lyric sources independently over your own background.</figcaption>
+  </figure>
+</div>
 
 Card places cover art in a vertical card; CD crops it into a disc. Cover art is not required for playback or other themes. Use **Drag to OBS** to create a local Browser Source. This does not require OBS WebSocket.
 

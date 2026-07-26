@@ -20,6 +20,31 @@ translation_key: home
   <div class="stream-sequence" aria-label="BGM とカラオケの自動切り替え"><div class="stream-step stream-step--playing"><span>BGM</span><strong>曲間に再生</strong></div><div class="stream-arrow"><span>カラオケ開始</span></div><div class="stream-step stream-step--active stream-step--paused"><span>カラオケ</span><strong>BGM を自動停止</strong></div><div class="stream-arrow"><span>一時停止・終了</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>自動で再開</strong></div></div>
 </section>
 
+<section class="demo-flow" aria-labelledby="demo-flow-title">
+  <div class="section-heading">
+    <p class="section-kicker">設定から配信画面まで</p>
+    <h2 id="demo-flow-title">Singing Stream Savior で確認してから、OBS に表示</h2>
+    <p>スクリーンショットの画面表示は繁体字中国語ですが、操作手順と各コントロールの位置は、対応するすべての言語で共通です。</p>
+  </div>
+  <div class="demo-flow__track">
+    <article class="demo-flow__step">
+      <header><span>01</span><div><strong>セットリストテーマを選ぶ</strong><small>プレイリスト外観</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}"><img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="繁体字中国語のプレイリスト外観画面で Transparent Black v2 を選択した状態" loading="lazy" decoding="async"></a>
+      <p>テーマを選択し、内蔵プレビューで Now Singing、Song List、Next On の配置を確認します。</p>
+    </article>
+    <article class="demo-flow__step">
+      <header><span>02</span><div><strong>同期歌詞を確認する</strong><small>歌詞プレビュー</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}"><img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="繁体字中国語の歌詞画面で再生中の同期歌詞をプレビューしている状態" loading="lazy" decoding="async"></a>
+      <p>カラオケ再生中に、現在行、フォント、色、ハイライト、タイミングを確認できます。</p>
+    </article>
+    <article class="demo-flow__step">
+      <header><span>03</span><div><strong>OBS の表示を確認する</strong><small>配信画面</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-obs-result.png' | relative_url }}"><img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS の配信背景に透明なセットリストと同期歌詞を重ねた表示" loading="lazy" decoding="async"></a>
+      <p>セットリストと歌詞は OBS で別々のソースとして、自由に拡大縮小・クロップ・配置できます。</p>
+    </article>
+  </div>
+</section>
+
 <section class="feature-section" id="features">
   <div class="section-heading"><p class="section-kicker">主な機能</p><h2>実際の歌枠の流れに合わせた設計</h2><p>曲の準備、歌唱、OBS の更新を一つの連続した作業として扱います。</p></div>
   <div class="feature-grid">

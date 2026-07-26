@@ -69,12 +69,34 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调�
 
 日文读音可关闭、在汉字上方显示小平假名，或在原文下方显示带空格的罗马拼音。自动读音仅供参考，特殊读法与演唱方式可能和原曲不同。
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
+    <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="繁体中文歌词页面在伴奏播放时强调当前同步歌词" loading="lazy" decoding="async">
+  </a>
+  <figcaption>此示例使用繁体中文界面。预览中的歌词版面、字体、颜色与强调效果也会套用到 OBS。</figcaption>
+</figure>
+
 <a id="obs-and-themes"></a>
 ## 04 · 歌单外观与主题
 
 在“歌单外观”选择主题，并检查 Now Singing、Set List、Next On 与 Reserve。基本主题依次为 Default、Transparent Black、Transparent White、Card、CD，之后才是精致主题。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/theme-workspace.png' | relative_url }}" alt="歌单外观页面的主题卡片、设置、预览和说明"></a><figcaption>完整模式可同时比较主题、调整设置并查看 OBS 效果。</figcaption></figure>
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
+      <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="繁体中文歌单外观页面预览 Transparent Black v2" loading="lazy" decoding="async">
+    </a>
+    <figcaption>软件内：选择主题，检查 Now Singing、Song List 与 Next On 的版面。截图界面为繁体中文。</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
+      <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS 在直播背景上显示 Transparent Black v2 歌单与同步歌词" loading="lazy" decoding="async">
+    </a>
+    <figcaption>OBS 中：歌单与歌词可以分别缩放、裁切与移动，搭配自己的直播背景。</figcaption>
+  </figure>
+</div>
 
 用“拖放至 OBS”建立本地 Browser Source，不需要启用 WebSocket。Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正常播放不要求封面。
 

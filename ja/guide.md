@@ -69,12 +69,34 @@ BGM とカラオケ音源は別々に再生・音量・シークを操作でき�
 
 日本語読みはオフ、漢字の上の小さなひらがな、原文下の空白区切りローマ字から選べます。辞書による自動生成のため、固有名詞や歌手独自の読み方とは異なる場合があります。
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
+    <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="繁体字中国語の歌詞画面で、カラオケ再生中の現在行を強調した同期歌詞プレビュー" loading="lazy" decoding="async">
+  </a>
+  <figcaption>この操作例は繁体字中国語の画面です。プレビューで確認した歌詞の配置、フォント、色、ハイライトが OBS にも反映されます。</figcaption>
+</figure>
+
 <a id="obs-and-themes"></a>
 ## 04 · プレイリスト外観と OBS
 
 「プレイリスト外観」でテーマを選び、Now Singing、Set List、Next On、Reserve をプレビューします。基本テーマは Default、Transparent Black、Transparent White、Card、CD の順で、その後に装飾テーマが並びます。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/theme-workspace.png' | relative_url }}" alt="テーマカード、設定、プレビュー、テーマガイドを表示した画面"></a><figcaption>フルモードではテーマ比較、設定、OBS 表示確認を同時に行えます。</figcaption></figure>
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
+      <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="繁体字中国語のプレイリスト外観画面で Transparent Black v2 をプレビューした状態" loading="lazy" decoding="async">
+    </a>
+    <figcaption>アプリ内：テーマを選び、Now Singing、Song List、Next On の配置を確認します。画面表示は繁体字中国語です。</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
+      <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS の配信背景に Transparent Black v2 のセットリストと同期歌詞を重ねた状態" loading="lazy" decoding="async">
+    </a>
+    <figcaption>OBS 内：セットリストと歌詞を別々に拡大縮小・クロップ・移動し、自分の背景へ合わせられます。</figcaption>
+  </figure>
+</div>
 
 「OBSへドラッグ」を OBS にドロップするとローカル Browser Source が作成されます。この操作に WebSocket は不要です。Card は縦型ジャケットカード、CD は円盤風の表示になります。
 

@@ -69,12 +69,34 @@ BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 
 
 일본어 읽기는 끄기, 한자 위의 작은 히라가나, 원문 아래의 단어 간격 로마자 중에서 선택합니다. 자동 생성 결과는 참고용이며 고유명사나 가수의 실제 발음과 다를 수 있습니다.
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
+    <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="번체 중국어 가사 화면에서 반주 재생 중 현재 동기화 가사를 강조한 미리보기" loading="lazy" decoding="async">
+  </a>
+  <figcaption>이 예시는 번체 중국어 인터페이스입니다. 미리보기에서 확인한 가사 배치, 글꼴, 색상과 강조가 OBS에도 적용됩니다.</figcaption>
+</figure>
+
 <a id="obs-and-themes"></a>
 ## 04 · 재생목록 외관과 OBS
 
 **재생목록 외관**에서 테마를 선택하고 Now Singing, Set List, Next On과 Reserve를 미리 봅니다. 기본 테마는 Default, Transparent Black, Transparent White, Card, CD 순서이며 그 뒤에 장식 테마가 표시됩니다.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/theme-workspace.png' | relative_url }}" alt="테마 카드, 설정, 미리보기와 테마 안내가 있는 화면"></a><figcaption>전체 모드에서는 테마 비교, 설정과 OBS 결과 확인을 동시에 할 수 있습니다.</figcaption></figure>
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
+      <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="번체 중국어 재생목록 외관 화면에서 Transparent Black v2를 미리 보는 모습" loading="lazy" decoding="async">
+    </a>
+    <figcaption>앱에서: 테마를 고르고 Now Singing, Song List와 Next On 배치를 확인합니다. 화면 언어는 번체 중국어입니다.</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
+      <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS 방송 배경 위에 Transparent Black v2 세트리스트와 동기화 가사를 표시한 모습" loading="lazy" decoding="async">
+    </a>
+    <figcaption>OBS에서: 세트리스트와 가사 소스를 각각 크기 조절, 자르기와 이동하여 자신의 배경에 맞춥니다.</figcaption>
+  </figure>
+</div>
 
 현재 한국어 인터페이스의 **Drag로OBS** 버튼을 OBS에 놓으면 로컬 Browser Source가 만들어집니다. 이 작업에는 WebSocket이 필요 없습니다. Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니다.
 

@@ -20,6 +20,31 @@ translation_key: home
   <div class="stream-sequence" aria-label="Automatic handoff between BGM and karaoke"><div class="stream-step stream-step--playing"><span>BGM</span><strong>Plays between songs</strong></div><div class="stream-arrow"><span>Start karaoke</span></div><div class="stream-step stream-step--active stream-step--paused"><span>Karaoke</span><strong>BGM pauses</strong></div><div class="stream-arrow"><span>Pause or finish</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>Playback resumes</strong></div></div>
 </section>
 
+<section class="demo-flow" aria-labelledby="demo-flow-title">
+  <div class="section-heading">
+    <p class="section-kicker">From setup to live output</p>
+    <h2 id="demo-flow-title">Preview the result in Singing Stream Savior, then use it in OBS</h2>
+    <p>These screenshots use the Traditional Chinese interface, but the workflow and control locations are the same in every supported language.</p>
+  </div>
+  <div class="demo-flow__track">
+    <article class="demo-flow__step">
+      <header><span>01</span><div><strong>Choose a set-list theme</strong><small>Playlist Appearance</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}"><img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="Traditional Chinese Playlist Appearance page with Transparent Black v2 selected" loading="lazy" decoding="async"></a>
+      <p>Select a theme and check the Now Singing, Song List, and Next On layout in the built-in preview.</p>
+    </article>
+    <article class="demo-flow__step">
+      <header><span>02</span><div><strong>Check synchronized lyrics</strong><small>Lyrics preview</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}"><img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="Traditional Chinese Lyrics page showing synchronized lyric preview during playback" loading="lazy" decoding="async"></a>
+      <p>Confirm the current line, font, color, highlight, and timing while the karaoke track is playing.</p>
+    </article>
+    <article class="demo-flow__step">
+      <header><span>03</span><div><strong>Confirm the OBS result</strong><small>Live output</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-obs-result.png' | relative_url }}"><img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS showing a transparent set list and synchronized lyrics over a stream background" loading="lazy" decoding="async"></a>
+      <p>The set list and lyrics are independent sources in OBS, so each can be resized, cropped, and positioned for your scene.</p>
+    </article>
+  </div>
+</section>
+
 <section class="feature-section" id="features">
   <div class="section-heading"><p class="section-kicker">Core features</p><h2>Designed around the real flow of a singing stream</h2><p>Preparing songs, performing, and updating OBS are parts of one continuous workflow.</p></div>
   <div class="feature-grid">

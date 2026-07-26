@@ -20,6 +20,31 @@ translation_key: home
   <div class="stream-sequence" aria-label="BGM과 반주의 자동 전환"><div class="stream-step stream-step--playing"><span>BGM</span><strong>곡 사이에 재생</strong></div><div class="stream-arrow"><span>반주 시작</span></div><div class="stream-step stream-step--active stream-step--paused"><span>반주</span><strong>BGM 자동 정지</strong></div><div class="stream-arrow"><span>일시 정지·종료</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>자동 재생 재개</strong></div></div>
 </section>
 
+<section class="demo-flow" aria-labelledby="demo-flow-title">
+  <div class="section-heading">
+    <p class="section-kicker">설정에서 방송 화면까지</p>
+    <h2 id="demo-flow-title">Singing Stream Savior에서 미리 확인한 뒤 OBS에 표시하세요</h2>
+    <p>스크린샷은 번체 중국어 인터페이스를 사용하지만, 작업 흐름과 컨트롤 위치는 지원하는 모든 언어에서 같습니다.</p>
+  </div>
+  <div class="demo-flow__track">
+    <article class="demo-flow__step">
+      <header><span>01</span><div><strong>세트리스트 테마 선택</strong><small>재생목록 외관</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}"><img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="번체 중국어 재생목록 외관 화면에서 Transparent Black v2를 선택한 모습" loading="lazy" decoding="async"></a>
+      <p>테마를 선택하고 내장 미리보기에서 Now Singing, Song List와 Next On 배치를 확인합니다.</p>
+    </article>
+    <article class="demo-flow__step">
+      <header><span>02</span><div><strong>동기화 가사 확인</strong><small>가사 미리보기</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}"><img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="번체 중국어 가사 화면에서 재생 중인 동기화 가사를 미리 보는 모습" loading="lazy" decoding="async"></a>
+      <p>반주를 재생하면서 현재 줄, 글꼴, 색상, 강조와 타이밍을 확인할 수 있습니다.</p>
+    </article>
+    <article class="demo-flow__step">
+      <header><span>03</span><div><strong>OBS 결과 확인</strong><small>방송 화면</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/demo-obs-result.png' | relative_url }}"><img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS 방송 배경 위에 투명 세트리스트와 동기화 가사를 표시한 모습" loading="lazy" decoding="async"></a>
+      <p>세트리스트와 가사는 OBS의 독립된 소스이므로 각각 크기, 자르기와 위치를 자유롭게 조정할 수 있습니다.</p>
+    </article>
+  </div>
+</section>
+
 <section class="feature-section" id="features">
   <div class="section-heading"><p class="section-kicker">주요 기능</p><h2>실제 노래 방송 흐름에 맞춘 설계</h2><p>곡 준비, 노래, OBS 갱신을 하나의 연속된 작업 흐름으로 다룹니다.</p></div>
   <div class="feature-grid">
