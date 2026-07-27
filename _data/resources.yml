@@ -5,10 +5,25 @@ software:
   file_size: ""
   updated_at: ""
 
-# embed_url 範例：
+# file_url 可放網站內的 MP4；embed_url 可使用下列外部影片：
 # Google Drive: https://drive.google.com/file/d/FILE_ID/preview
 # YouTube: https://www.youtube-nocookie.com/embed/VIDEO_ID
-videos: []
+videos:
+  - file_url: "/assets/videos/singing-stream-savior-demo.mp4"
+    poster: "/assets/images/demo-video-poster.jpg"
+    duration: "01:44"
+    title:
+      zh-TW: "歌回救星 × OBS 完整操作示範"
+      zh-CN: "Singing Stream Savior × OBS 完整操作演示"
+      ja: "Singing Stream Savior × OBS 操作デモ"
+      ko: "Singing Stream Savior × OBS 사용 데모"
+      en: "Singing Stream Savior × OBS workflow demo"
+    description:
+      zh-TW: "實際示範播放伴奏、切換歌單主題、同步歌詞，以及 OBS 中呈現的最終畫面。"
+      zh-CN: "实际演示播放伴奏、切换歌单主题、同步歌词，以及 OBS 中显示的最终画面。"
+      ja: "伴奏再生、テーマ切り替え、同期歌詞、OBS での最終表示を実際の画面で紹介します。"
+      ko: "반주 재생, 세트리스트 테마 전환, 동기화 가사와 OBS 최종 출력을 실제 화면으로 보여 줍니다."
+      en: "A real workflow showing karaoke playback, theme switching, synchronized lyrics, and the final OBS output."
 
 # type 可填 free 或 paid；download_url 可連到雲端檔案或販售頁。
 themes: []

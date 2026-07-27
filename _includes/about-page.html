@@ -1,5 +1,6 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign author = site.data.author %}
+{% assign support_encouragement = '有bug是正常的，蘋果的系統都會有bug了，我自己做的軟體怎麼可能沒問題呢？不用害怕，請和我回報問題吧！' %}
 {% if current_lang == 'zh-TW' %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
   {% assign role = 'Singing Stream Savior 作者 · VTuber' %}
@@ -26,6 +27,7 @@
   {% assign collaboration_text = '請填寫古德文創聯絡表單，由相關人員統一處理。軟體問題請使用上方 Email，避免訊息分流後延誤處理。' %}
   {% assign collaboration_action = '開啟合作表單' %}
 {% elsif current_lang == 'zh-CN' %}
+  {% assign support_encouragement = '有 Bug 是正常的，苹果的系统都会有 Bug 了，我自己做的软件怎么可能没问题呢？不用害怕，请向我反馈问题吧！' %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
   {% assign role = 'Singing Stream Savior 作者 · VTuber' %}
   {% assign title = '我是一名喜欢唱歌、弹吉他和玩游戏的 VTuber' %}
@@ -51,6 +53,7 @@
   {% assign collaboration_text = '请填写古德文创联系表单，由相关人员统一处理。软件问题请使用上方 Email，以免分流后延误处理。' %}
   {% assign collaboration_action = '打开合作表单' %}
 {% elsif current_lang == 'ja' %}
+  {% assign support_encouragement = 'バグがあるのは普通のことです。Apple のシステムにもバグがあるのですから、私が一人で作ったソフトに問題がないはずはありません。遠慮せず、ぜひ問題を報告してください！' %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
   {% assign role = 'Singing Stream Savior 制作者 · VTuber' %}
   {% assign title = '歌とギター、ゲームが好きな VTuber です' %}
@@ -76,6 +79,7 @@
   {% assign collaboration_text = '古德文創のお問い合わせフォームにご記入ください。アプリの不具合は上記のメールアドレスへお送りください。' %}
   {% assign collaboration_action = 'お問い合わせフォームを開く' %}
 {% elsif current_lang == 'ko' %}
+  {% assign support_encouragement = '버그가 있는 것은 자연스러운 일입니다. Apple 시스템에도 버그가 있는데, 제가 혼자 만든 소프트웨어에 문제가 전혀 없을 수는 없으니까요. 걱정하지 말고 문제를 알려 주세요!' %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
   {% assign role = 'Singing Stream Savior 제작자 · VTuber' %}
   {% assign title = '노래와 기타 연주, 게임을 좋아하는 VTuber입니다' %}
@@ -101,6 +105,7 @@
   {% assign collaboration_text = '古德文創 협업 문의 양식을 작성해 주세요. 앱 문제는 위 이메일 주소로 보내 주세요.' %}
   {% assign collaboration_action = '협업 문의 양식 열기' %}
 {% else %}
+  {% assign support_encouragement = 'Bugs are normal—even Apple systems have them, so software I made by myself cannot possibly be flawless. Please do not hesitate to tell me when you find a problem!' %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
   {% assign role = 'Creator of Singing Stream Savior · VTuber' %}
   {% assign title = 'I’m a VTuber who loves singing, playing guitar, and gaming' %}
@@ -154,6 +159,7 @@
     <div>
       <h3>{{ author.support_email }}</h3>
       <p>{{ support_text }}</p>
+      <p class="support-encouragement">{{ support_encouragement }}</p>
     </div>
     <a class="creator-link" href="mailto:{{ author.support_email }}">{{ support_action }}<span aria-hidden="true">↗</span></a>
   </article>

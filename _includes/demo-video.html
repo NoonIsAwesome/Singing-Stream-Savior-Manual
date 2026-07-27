@@ -1,0 +1,46 @@
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% if current_lang == 'zh-TW' %}
+  {% assign demo_kicker = '實際操作示範 · 01:44' %}
+  {% assign demo_title = '從歌回救星到 OBS，一段影片看完整個流程' %}
+  {% assign demo_text = '影片會依序示範歌曲播放、歌單主題、同步歌詞，以及 OBS 中實際呈現的畫面。按下播放後才會載入影片內容。' %}
+  {% assign demo_caption = '操作介面與 OBS 輸出同步呈現；影片中的介面為繁體中文。' %}
+  {% assign demo_aria = '播放歌回救星與 OBS 的完整操作示範' %}
+{% elsif current_lang == 'zh-CN' %}
+  {% assign demo_kicker = '实际操作演示 · 01:44' %}
+  {% assign demo_title = '从 Singing Stream Savior 到 OBS，一段视频看完整个流程' %}
+  {% assign demo_text = '视频会依次演示歌曲播放、歌单主题、同步歌词，以及 OBS 中的实际显示效果。点击播放后才会加载视频内容。' %}
+  {% assign demo_caption = '软件界面与 OBS 输出同步呈现；视频中的界面为繁体中文。' %}
+  {% assign demo_aria = '播放 Singing Stream Savior 与 OBS 的完整操作演示' %}
+{% elsif current_lang == 'ja' %}
+  {% assign demo_kicker = '操作デモ · 01:44' %}
+  {% assign demo_title = 'Singing Stream Savior から OBS までを、一本の動画で紹介' %}
+  {% assign demo_text = '曲の再生、セットリストテーマ、同期歌詞、OBS での実際の表示を順番に確認できます。動画データは再生を選んだ後に読み込まれます。' %}
+  {% assign demo_caption = 'アプリ画面と OBS 出力を同時に紹介します。動画内の UI は繁体字中国語です。' %}
+  {% assign demo_aria = 'Singing Stream Savior と OBS の操作デモを再生' %}
+{% elsif current_lang == 'ko' %}
+  {% assign demo_kicker = '실제 사용 데모 · 01:44' %}
+  {% assign demo_title = 'Singing Stream Savior부터 OBS까지 한 영상으로 확인하세요' %}
+  {% assign demo_text = '곡 재생, 세트리스트 테마, 동기화 가사와 OBS의 실제 출력 화면을 차례로 보여 줍니다. 재생을 누른 뒤에만 영상 데이터를 불러옵니다.' %}
+  {% assign demo_caption = '앱 화면과 OBS 출력을 함께 보여 줍니다. 영상 속 UI는 번체 중국어입니다.' %}
+  {% assign demo_aria = 'Singing Stream Savior와 OBS 전체 사용 데모 재생' %}
+{% else %}
+  {% assign demo_kicker = 'WORKFLOW DEMO · 01:44' %}
+  {% assign demo_title = 'See the complete path from Singing Stream Savior to OBS' %}
+  {% assign demo_text = 'The video moves through playback, set-list themes, synchronized lyrics, and the final OBS output. Video data loads only after you choose to play it.' %}
+  {% assign demo_caption = 'The app and its OBS output are shown side by side. The interface in the video is Traditional Chinese.' %}
+  {% assign demo_aria = 'Play the complete Singing Stream Savior and OBS workflow demo' %}
+{% endif %}
+
+<section class="demo-video-showcase" id="demo-video" aria-labelledby="demo-video-title">
+  <div class="demo-video-showcase__copy">
+    <p class="section-kicker">{{ demo_kicker }}</p>
+    <h2 id="demo-video-title">{{ demo_title }}</h2>
+    <p>{{ demo_text }}</p>
+  </div>
+  <figure class="demo-video-showcase__player">
+    <video controls preload="none" playsinline poster="{{ '/assets/images/demo-video-poster.jpg' | relative_url }}" aria-label="{{ demo_aria }}">
+      <source src="{{ '/assets/videos/singing-stream-savior-demo.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <figcaption>{{ demo_caption }}</figcaption>
+  </figure>
+</section>

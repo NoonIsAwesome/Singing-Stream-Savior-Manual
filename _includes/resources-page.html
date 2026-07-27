@@ -131,14 +131,25 @@
   </div>
   <div class="video-grid">
     {% for video in resources.videos %}
+      {% assign localized_video_title = video.title[current_lang] | default: video.title.en %}
+      {% assign localized_video_description = video.description[current_lang] | default: video.description.en %}
       <article class="video-card">
-        <button class="video-placeholder" type="button" data-video-embed="{{ video.embed_url }}" data-video-title="{{ video.title }}">
-          {% if video.poster %}<img src="{{ video.poster | relative_url }}" alt="">{% endif %}
-          <span class="video-play" aria-hidden="true"></span>
-          <strong>{{ watch_label }}</strong>
-        </button>
-        <h3>{{ video.title }}</h3>
-        <p>{{ video.description }}</p>
+        {% if video.file_url %}
+          <div class="video-local">
+            <video controls preload="none" playsinline {% if video.poster %}poster="{{ video.poster | relative_url }}"{% endif %} aria-label="{{ localized_video_title }}">
+              <source src="{{ video.file_url | relative_url }}" type="video/mp4">
+            </video>
+            {% if video.duration %}<span class="video-duration">{{ video.duration }}</span>{% endif %}
+          </div>
+        {% else %}
+          <button class="video-placeholder" type="button" data-video-embed="{{ video.embed_url }}" data-video-title="{{ localized_video_title }}">
+            {% if video.poster %}<img src="{{ video.poster | relative_url }}" alt="">{% endif %}
+            <span class="video-play" aria-hidden="true"></span>
+            <strong>{{ watch_label }}</strong>
+          </button>
+        {% endif %}
+        <h3>{{ localized_video_title }}</h3>
+        <p>{{ localized_video_description }}</p>
       </article>
     {% else %}
       <div class="resource-empty"><span aria-hidden="true">▶</span><p>{{ video_empty }}</p></div>

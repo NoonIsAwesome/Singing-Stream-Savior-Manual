@@ -15,6 +15,8 @@ translation_key: home
   <figure class="intro-hero__visual"><img src="{{ '/assets/images/ko/full-workspace.png' | relative_url }}" alt="한국어 전체 모드의 라이브러리, BGM, 반주와 예약 목록"><figcaption>선곡, 재생과 방송 화면을 하나의 작업 공간에서 관리합니다.</figcaption></figure>
 </div>
 
+{% include demo-video.html %}
+
 <section class="origin-story" id="why">
   <div><p class="section-kicker">왜 만들었나요?</p><h2>노래 방송에서 자주 생기는 작은 실수에서 시작했습니다</h2><p>노래를 시작하기 전에 BGM을 끄거나, 노래가 끝난 뒤 다시 켜는 것을 자주 잊었습니다. 방금 부른 곡을 OBS 세트리스트에 추가하는 일도 놓치기 쉬웠습니다. 어려운 일은 아니지만 노래, 채팅과 다음 곡을 동시에 챙기다 보면 빠뜨리기 쉽습니다.</p><p>그래서 Singing Stream Savior를 만들었습니다. 먼저 BGM을 선택해 재생하면 반주 시작 시 해당 BGM을 자동으로 일시 정지하고, 반주를 정지하거나 끝까지 재생한 뒤 원래 BGM을 자동으로 다시 재생합니다. 세트리스트 Overlay도 곡 상태에 따라 갱신되어 OBS에서 매번 제목을 다시 입력할 필요가 없습니다.</p></div>
   <div class="stream-sequence" aria-label="BGM과 반주의 자동 전환"><div class="stream-step stream-step--playing"><span>BGM</span><strong>곡 사이에 재생</strong></div><div class="stream-arrow"><span>반주 시작</span></div><div class="stream-step stream-step--active stream-step--paused"><span>반주</span><strong>BGM 자동 정지</strong></div><div class="stream-arrow"><span>일시 정지·종료</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>자동 재생 재개</strong></div></div>

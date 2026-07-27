@@ -22,6 +22,8 @@ translation_key: home
   </figure>
 </div>
 
+{% include demo-video.html %}
+
 <section class="origin-story" id="why">
   <div>
     <p class="section-kicker">為什麼做這個軟體？</p>

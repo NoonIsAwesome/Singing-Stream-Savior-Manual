@@ -835,6 +835,72 @@ body.has-image-lightbox {
   line-height: 1.5;
 }
 
+.demo-video-showcase {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  align-items: center;
+  gap: clamp(24px, 4vw, 52px);
+  grid-template-columns: minmax(230px, 0.7fr) minmax(0, 1.3fr);
+  margin: 0 0 90px;
+  padding: clamp(24px, 4vw, 42px);
+  background:
+    linear-gradient(110deg, rgba(62, 155, 219, 0.12), transparent 48%),
+    #0b131e;
+  border: 1px solid #29425b;
+  border-radius: 18px;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.2);
+}
+
+.demo-video-showcase::before {
+  position: absolute;
+  top: 0;
+  right: 12%;
+  left: 12%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #51b7f5 32%, #f0b855 72%, transparent);
+  content: "";
+}
+
+.manual-article .demo-video-showcase h2 {
+  margin: 0;
+  color: #f4f8fc;
+  font-size: clamp(1.65rem, 3vw, 2.45rem);
+  line-height: 1.28;
+}
+
+.demo-video-showcase__copy > p:last-child {
+  margin: 18px 0 0;
+  color: #b9c9da;
+  line-height: 1.8;
+}
+
+.demo-video-showcase__player {
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  background: #05080d;
+  border: 1px solid #304b67;
+  border-radius: 13px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+}
+
+.demo-video-showcase__player video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1084 / 430;
+  background: #05080d;
+  border-radius: 7px;
+  object-fit: contain;
+}
+
+.demo-video-showcase__player figcaption {
+  padding: 10px 5px 3px;
+  color: #8fa4ba;
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
 .origin-story {
   display: grid;
   align-items: center;
@@ -1486,7 +1552,7 @@ body {
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16);
 }
 
-.manual-article a:not(.intro-button):not(.resource-action) {
+.manual-article a:not(.intro-button):not(.resource-action):not(.creator-link) {
   color: var(--blue-strong);
 }
 
@@ -1772,6 +1838,10 @@ body {
   border-radius: 12px;
 }
 
+.video-card:only-child {
+  grid-column: 1 / -1;
+}
+
 .video-placeholder {
   position: relative;
   display: grid;
@@ -1830,6 +1900,32 @@ body {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.video-local {
+  position: relative;
+  background: #05080d;
+}
+
+.video-local video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1084 / 430;
+  background: #05080d;
+  object-fit: contain;
+}
+
+.video-duration {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 7px;
+  color: #f4f8fc;
+  background: rgba(3, 8, 14, 0.82);
+  border: 1px solid rgba(151, 187, 218, 0.42);
+  border-radius: 5px;
+  font: 750 0.7rem/1 ui-monospace, "Cascadia Mono", monospace;
+  pointer-events: none;
 }
 
 .video-card h3,
@@ -2144,6 +2240,13 @@ body {
   color: var(--ink-500);
 }
 
+.support-path .support-encouragement {
+  margin-top: 10px;
+  color: var(--ink-300);
+  font-weight: 650;
+  line-height: 1.7;
+}
+
 .support-path .creator-link {
   justify-self: start;
 }
@@ -2298,12 +2401,28 @@ body {
   color: #1a1306;
   background: #f2c35d;
   border-color: #f2c35d;
+  box-shadow: 0 8px 22px rgba(242, 195, 93, 0.18);
 }
 
 .manual-article .creator-link--collaboration:hover {
   color: #110d05;
   background: #ffda82;
   border-color: #ffda82;
+  box-shadow: 0 10px 26px rgba(242, 195, 93, 0.26);
+}
+
+.manual-article .creator-link--collaboration:visited,
+.manual-article .creator-link--collaboration span {
+  color: #1a1306;
+}
+
+.manual-article .creator-link--collaboration:hover span {
+  color: #110d05;
+}
+
+.manual-article .creator-link--collaboration:focus-visible {
+  outline-color: #8fd3ff;
+  outline-offset: 4px;
 }
 
 @media (max-width: 820px) {
@@ -2318,6 +2437,10 @@ body {
   .resource-shortcut {
     min-height: 38px;
     padding-inline: 11px;
+  }
+
+  .demo-video-showcase {
+    grid-template-columns: 1fr;
   }
 
   .creator-hero {
@@ -2335,6 +2458,17 @@ body {
   .resource-hero {
     margin-inline: -8px;
     padding: 25px 22px;
+  }
+
+  .demo-video-showcase {
+    margin-inline: -8px;
+    padding: 24px 18px 18px;
+    border-radius: 14px;
+  }
+
+  .demo-video-showcase__player {
+    margin-inline: -7px;
+    padding: 5px;
   }
 
   .resource-section__heading {
