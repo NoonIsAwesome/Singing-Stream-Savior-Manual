@@ -1,0 +1,43 @@
+name: Feature or improvement suggestion
+description: Suggest a new feature, workflow improvement, or theme idea.
+title: "[Idea] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the streaming problem first. Understanding the situation helps us evaluate the best solution.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is difficult today?
+      description: Tell us when this happens and what you currently have to do.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to change?
+      description: Describe your preferred result. A rough idea is enough.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Related area
+      options:
+        - Song library and playback
+        - Lyrics
+        - Cover art
+        - OBS overlay and themes
+        - OBS WebSocket and timeline
+        - Website or documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or examples
+      description: Optional examples, references, or workarounds you already use.

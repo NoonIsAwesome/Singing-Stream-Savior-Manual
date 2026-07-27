@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a crash, broken feature, visual problem, or unexpected result.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Singing Stream Savior. Do not include passwords, OBS WebSocket credentials, API keys, or private media files.
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Find this in the title bar or the downloaded ZIP name.
+      placeholder: "2.0.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Song library and playback
+        - Lyrics
+        - Cover art
+        - OBS overlay and themes
+        - OBS WebSocket and timeline
+        - Settings, startup, or shutdown
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the shortest sequence that causes the problem.
+      placeholder: |
+        1. Open…
+        2. Select…
+        3. The app…
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual result
+      placeholder: "Expected: …\nActual: …"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: You may attach a screenshot after removing private information.

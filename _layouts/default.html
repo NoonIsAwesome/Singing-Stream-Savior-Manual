@@ -15,14 +15,14 @@
     <meta name="theme-color" content="#090d14">
     <link rel="icon" href="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" sizes="any">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: '2.0.0.0' }}">
-    <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}/{% if section == 'resources' %}resources.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}">
-    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh-CN/{% if section == 'resources' %}resources.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
-    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/{% if section == 'resources' %}resources.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
-    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ site.baseurl }}/ja/{% if section == 'resources' %}resources.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
-    <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ site.baseurl }}/ko/{% if section == 'resources' %}resources.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}/{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}">
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh-CN/{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ site.baseurl }}/ja/{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ site.baseurl }}/ko/{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
     {% seo %}
   </head>
-  <body class="{% if section == 'home' and page.manual_bundle != true %}intro-layout{% endif %}">
+  <body class="{% if section == 'home' and page.manual_bundle != true %}intro-layout{% elsif section == 'about' %}creator-layout{% endif %}">
     <a class="skip-link" href="#guide-content">{{ t.skip }}</a>
 
     <header class="site-header">
@@ -44,11 +44,11 @@
         <label class="language-control">
           <span>{{ t.language }}</span>
           <select data-language-switcher aria-label="{{ t.language }}">
-            <option data-lang="zh-TW" value="{{ '/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'zh-TW' %}selected{% endif %}>繁體中文</option>
-            <option data-lang="zh-CN" value="{{ '/zh-CN/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'zh-CN' %}selected{% endif %}>简体中文</option>
-            <option data-lang="en" value="{{ '/en/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'en' %}selected{% endif %}>English</option>
-            <option data-lang="ja" value="{{ '/ja/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'ja' %}selected{% endif %}>日本語</option>
-            <option data-lang="ko" value="{{ '/ko/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'ko' %}selected{% endif %}>한국어</option>
+            <option data-lang="zh-TW" value="{{ '/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'zh-TW' %}selected{% endif %}>繁體中文</option>
+            <option data-lang="zh-CN" value="{{ '/zh-CN/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'zh-CN' %}selected{% endif %}>简体中文</option>
+            <option data-lang="en" value="{{ '/en/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'en' %}selected{% endif %}>English</option>
+            <option data-lang="ja" value="{{ '/ja/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'ja' %}selected{% endif %}>日本語</option>
+            <option data-lang="ko" value="{{ '/ko/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'ko' %}selected{% endif %}>한국어</option>
           </select>
         </label>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav">
@@ -63,8 +63,8 @@
         <nav aria-label="{{ t.nav_aria }}">
           <p class="nav-label">{{ t.flow }}</p>
           <ol class="chapter-list">
-            {% assign nav_keys = "home,getting-started,library-and-playback,lyrics,obs-and-themes,obs-websocket,workspace-modes,settings-and-troubleshooting,resources" | split: "," %}
-            {% assign nav_labels = "home,getting_started,library,lyrics,themes,websocket,modes,settings,resources" | split: "," %}
+            {% assign nav_keys = "home,getting-started,library-and-playback,lyrics,obs-and-themes,obs-websocket,workspace-modes,settings-and-troubleshooting,resources,about" | split: "," %}
+            {% assign nav_labels = "home,getting_started,library,lyrics,themes,websocket,modes,settings,resources,about" | split: "," %}
             {% for key in nav_keys %}
               {% assign label_key = nav_labels[forloop.index0] %}
               {% if current_lang == 'zh-TW' %}
@@ -72,6 +72,8 @@
                   {% assign target = '/' %}
                 {% elsif key == 'resources' %}
                   {% assign target = '/resources.html' %}
+                {% elsif key == 'about' %}
+                  {% assign target = '/about.html' %}
                 {% else %}
                   {% capture target %}/guide.html#{{ key }}{% endcapture %}
                 {% endif %}
@@ -80,6 +82,8 @@
                   {% assign target = language_home %}
                 {% elsif key == 'resources' %}
                   {% capture target %}/{{ current_lang }}/resources.html{% endcapture %}
+                {% elsif key == 'about' %}
+                  {% capture target %}/{{ current_lang }}/about.html{% endcapture %}
                 {% else %}
                   {% capture target %}{{ language_guide }}#{{ key }}{% endcapture %}
                 {% endif %}

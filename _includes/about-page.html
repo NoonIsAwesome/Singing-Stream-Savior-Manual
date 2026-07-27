@@ -1,0 +1,203 @@
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign author = site.data.author %}
+{% if current_lang == 'zh-TW' %}
+  {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
+  {% assign role = 'Singing Stream Savior 作者 · VTuber' %}
+  {% assign title = '讓歌回少一點手忙腳亂，多一點好好唱歌的時間' %}
+  {% assign bio = 'Good afterNoon！我是沐橙，曾經是一個替路過冒險者派發任務的 NPC。現在除了直播與創作，也把自己在歌回遇到的麻煩整理成 Singing Stream Savior，希望讓每一場歌回更容易準備、更安心開唱。' %}
+  {% assign profile_label = '查看完整作者連結' %}
+  {% assign support_kicker = '軟體支援' %}
+  {% assign support_title = '遇到問題，或想到更好的做法？' %}
+  {% assign support_text = '請依照內容選擇入口。表單會引導你附上版本與重現方式，讓問題更容易確認；不需要公開個人資料。' %}
+  {% assign bug_title = '回報 Bug' %}
+  {% assign bug_text = '軟體閃退、功能無法使用、畫面異常或結果不如預期。' %}
+  {% assign bug_action = '開啟問題回報表單' %}
+  {% assign idea_title = '提供建議' %}
+  {% assign idea_text = '提出新功能、操作流程、主題或其他改善想法。' %}
+  {% assign idea_action = '開啟建議表單' %}
+  {% assign github_note = '送出表單需要登入 GitHub。請勿附上密碼、OBS WebSocket 密碼、API 金鑰或私人檔案。' %}
+  {% assign social_kicker = '直播與近況' %}
+  {% assign social_title = '在這些地方找到 Noon' %}
+  {% assign social_text = 'YouTube 是主要直播與影片平台；第一手近況通常會發布在 X，也歡迎加入 Discord 社群。' %}
+  {% assign primary_label = '主要平台' %}
+  {% assign community_label = '社群' %}
+  {% assign more_label = '其他平台' %}
+  {% assign collaboration_kicker = '合作邀約' %}
+  {% assign collaboration_title = '商業合作與正式邀約' %}
+  {% assign collaboration_text = '請填寫古德文創聯絡表單，由相關人員統一處理。軟體問題請使用上方回報表單，避免訊息分流後延誤處理。' %}
+  {% assign collaboration_action = '開啟合作表單' %}
+{% elsif current_lang == 'zh-CN' %}
+  {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
+  {% assign role = 'Singing Stream Savior 作者 · VTuber' %}
+  {% assign title = '让歌回少一点手忙脚乱，多一点专心唱歌的时间' %}
+  {% assign bio = 'Good afterNoon！我是沐橙，曾经是一名为路过冒险者发布任务的 NPC。现在除了直播与创作，也把自己在歌回遇到的麻烦整理成 Singing Stream Savior，希望每一场歌回都更容易准备、更安心开唱。' %}
+  {% assign profile_label = '查看完整作者链接' %}
+  {% assign support_kicker = '软件支持' %}
+  {% assign support_title = '遇到问题，或有更好的想法？' %}
+  {% assign support_text = '请依照内容选择入口。表单会引导你填写版本与重现步骤；不需要公开个人资料。' %}
+  {% assign bug_title = '报告 Bug' %}
+  {% assign bug_text = '软件崩溃、功能无法使用、画面异常或结果不符合预期。' %}
+  {% assign bug_action = '打开问题报告表单' %}
+  {% assign idea_title = '提供建议' %}
+  {% assign idea_text = '提出新功能、操作流程、主题或其他改进想法。' %}
+  {% assign idea_action = '打开建议表单' %}
+  {% assign github_note = '提交表单需要登录 GitHub。请勿附上密码、OBS WebSocket 密码、API 密钥或私人文件。' %}
+  {% assign social_kicker = '直播与动态' %}
+  {% assign social_title = '在这些平台找到 Noon' %}
+  {% assign social_text = 'YouTube 是主要直播与视频平台；最新动态通常发布在 X，也欢迎加入 Discord 社区。' %}
+  {% assign primary_label = '主要平台' %}
+  {% assign community_label = '社区' %}
+  {% assign more_label = '其他平台' %}
+  {% assign collaboration_kicker = '合作邀请' %}
+  {% assign collaboration_title = '商业合作与正式邀请' %}
+  {% assign collaboration_text = '请填写古德文创联系表单，由相关人员统一处理。软件问题请使用上方表单，以免分流后延误处理。' %}
+  {% assign collaboration_action = '打开合作表单' %}
+{% elsif current_lang == 'ja' %}
+  {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
+  {% assign role = 'Singing Stream Savior 制作者 · VTuber' %}
+  {% assign title = '歌枠の慌ただしさを減らし、歌う時間をもっと大切に' %}
+  {% assign bio = 'Good afterNoon！沐橙 Noon です。かつては冒険者にクエストを渡す NPC でした。現在は配信や創作をしながら、歌枠で感じた困りごとを Singing Stream Savior にまとめ、準備しやすく安心して歌える環境を目指しています。' %}
+  {% assign profile_label = 'クリエイターのリンクを見る' %}
+  {% assign support_kicker = 'アプリサポート' %}
+  {% assign support_title = '不具合や改善アイデアがありますか？' %}
+  {% assign support_text = '内容に合う窓口を選んでください。フォームではバージョンや再現手順を順番に入力できます。個人情報の公開は不要です。' %}
+  {% assign bug_title = '不具合を報告' %}
+  {% assign bug_text = 'クラッシュ、機能しない操作、表示の不具合、想定外の結果を報告します。' %}
+  {% assign bug_action = '不具合報告フォームを開く' %}
+  {% assign idea_title = '改善案を送る' %}
+  {% assign idea_text = '新機能、操作フロー、テーマなどのアイデアを提案します。' %}
+  {% assign idea_action = '提案フォームを開く' %}
+  {% assign github_note = '送信には GitHub へのログインが必要です。パスワード、OBS WebSocket のパスワード、API キー、個人ファイルは添付しないでください。' %}
+  {% assign social_kicker = '配信と最新情報' %}
+  {% assign social_title = 'Noon の活動場所' %}
+  {% assign social_text = 'YouTube が主な配信・動画プラットフォームです。最新情報は主に X で発信し、Discord コミュニティにも参加できます。' %}
+  {% assign primary_label = 'メイン' %}
+  {% assign community_label = 'コミュニティ' %}
+  {% assign more_label = 'その他' %}
+  {% assign collaboration_kicker = 'お仕事のご相談' %}
+  {% assign collaboration_title = '企業・商業コラボレーション' %}
+  {% assign collaboration_text = '古德文創のお問い合わせフォームにご記入ください。アプリの不具合は上の報告フォームをご利用ください。' %}
+  {% assign collaboration_action = 'お問い合わせフォームを開く' %}
+{% elsif current_lang == 'ko' %}
+  {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
+  {% assign role = 'Singing Stream Savior 제작자 · VTuber' %}
+  {% assign title = '노래 방송의 분주함은 줄이고, 노래에 집중하는 시간은 늘리기' %}
+  {% assign bio = 'Good afterNoon! 모청 Noon입니다. 한때는 지나가는 모험가에게 퀘스트를 주던 NPC였습니다. 지금은 방송과 창작을 하며 노래 방송에서 겪은 불편을 Singing Stream Savior에 담아, 준비는 더 쉽고 노래는 더 편안하게 할 수 있도록 만들고 있습니다.' %}
+  {% assign profile_label = '제작자 전체 링크 보기' %}
+  {% assign support_kicker = '앱 지원' %}
+  {% assign support_title = '문제가 있거나 더 좋은 아이디어가 있나요?' %}
+  {% assign support_text = '내용에 맞는 창구를 선택하세요. 양식에서 버전과 재현 절차를 순서대로 작성할 수 있으며 개인 정보를 공개할 필요는 없습니다.' %}
+  {% assign bug_title = '버그 신고' %}
+  {% assign bug_text = '앱 종료, 작동하지 않는 기능, 화면 이상 또는 예상과 다른 결과를 신고합니다.' %}
+  {% assign bug_action = '버그 신고 양식 열기' %}
+  {% assign idea_title = '개선 의견 보내기' %}
+  {% assign idea_text = '새 기능, 사용 흐름, 테마 또는 기타 개선 아이디어를 제안합니다.' %}
+  {% assign idea_action = '제안 양식 열기' %}
+  {% assign github_note = '제출하려면 GitHub 로그인이 필요합니다. 비밀번호, OBS WebSocket 비밀번호, API 키 또는 개인 파일을 첨부하지 마세요.' %}
+  {% assign social_kicker = '방송과 소식' %}
+  {% assign social_title = 'Noon을 만날 수 있는 곳' %}
+  {% assign social_text = 'YouTube가 주요 방송 및 영상 플랫폼입니다. 최신 소식은 주로 X에 게시하며 Discord 커뮤니티에도 참여할 수 있습니다.' %}
+  {% assign primary_label = '주요 플랫폼' %}
+  {% assign community_label = '커뮤니티' %}
+  {% assign more_label = '기타 플랫폼' %}
+  {% assign collaboration_kicker = '협업 문의' %}
+  {% assign collaboration_title = '비즈니스 및 공식 협업' %}
+  {% assign collaboration_text = '古德文創 협업 문의 양식을 작성해 주세요. 앱 문제는 위의 신고 양식을 이용해 주세요.' %}
+  {% assign collaboration_action = '협업 문의 양식 열기' %}
+{% else %}
+  {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
+  {% assign role = 'Creator of Singing Stream Savior · VTuber' %}
+  {% assign title = 'Less stream juggling, more time to sing' %}
+  {% assign bio = 'Good afterNoon! I’m Noon, once an NPC who handed quests to passing adventurers. Alongside streaming and creating, I turned the problems I met during singing streams into Singing Stream Savior—so each show can be easier to prepare and calmer to perform.' %}
+  {% assign profile_label = 'View all creator links' %}
+  {% assign support_kicker = 'App support' %}
+  {% assign support_title = 'Found a problem or have a better idea?' %}
+  {% assign support_text = 'Choose the path that matches your message. Each form asks for the version and useful details in order; you do not need to publish personal information.' %}
+  {% assign bug_title = 'Report a bug' %}
+  {% assign bug_text = 'Use this for crashes, broken controls, visual problems, or unexpected results.' %}
+  {% assign bug_action = 'Open the bug report form' %}
+  {% assign idea_title = 'Share a suggestion' %}
+  {% assign idea_text = 'Suggest a feature, workflow improvement, theme idea, or another change.' %}
+  {% assign idea_action = 'Open the suggestion form' %}
+  {% assign github_note = 'Submitting a form requires a GitHub account. Never attach passwords, OBS WebSocket credentials, API keys, or private files.' %}
+  {% assign social_kicker = 'Streams and updates' %}
+  {% assign social_title = 'Find Noon online' %}
+  {% assign social_text = 'YouTube is the main home for streams and videos. Updates usually appear first on X, and the Discord community is open to join.' %}
+  {% assign primary_label = 'Main channel' %}
+  {% assign community_label = 'Community' %}
+  {% assign more_label = 'More platforms' %}
+  {% assign collaboration_kicker = 'Business contact' %}
+  {% assign collaboration_title = 'Commercial and official collaborations' %}
+  {% assign collaboration_text = 'Please use the Good Culture contact form so the appropriate team can respond. For app problems, use the support form above.' %}
+  {% assign collaboration_action = 'Open the collaboration form' %}
+{% endif %}
+
+<header class="creator-hero">
+  <div class="creator-portrait">
+    <span class="creator-portrait__orbit" aria-hidden="true"></span>
+    <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" width="400" height="400">
+  </div>
+  <div class="creator-hero__copy">
+    <p class="creator-eyebrow">{{ eyebrow }}</p>
+    <p class="creator-role">{{ role }}</p>
+    <h1>{{ author.name }}</h1>
+    <h2>{{ title }}</h2>
+    <p>{{ bio }}</p>
+    <a class="creator-link creator-link--profile" href="{{ author.profile_url }}" rel="noopener">
+      {{ profile_label }}<span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</header>
+
+<section class="creator-section" aria-labelledby="creator-support-title">
+  <div class="creator-section__heading">
+    <p class="creator-eyebrow">{{ support_kicker }}</p>
+    <h2 id="creator-support-title">{{ support_title }}</h2>
+    <p>{{ support_text }}</p>
+  </div>
+  <div class="support-paths">
+    <article class="support-path support-path--bug">
+      <span class="support-path__mark" aria-hidden="true">!</span>
+      <div>
+        <h3>{{ bug_title }}</h3>
+        <p>{{ bug_text }}</p>
+      </div>
+      <a class="creator-link" href="{{ author.bug_report_url }}" rel="noopener">{{ bug_action }}<span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="support-path support-path--idea">
+      <span class="support-path__mark" aria-hidden="true">＋</span>
+      <div>
+        <h3>{{ idea_title }}</h3>
+        <p>{{ idea_text }}</p>
+      </div>
+      <a class="creator-link" href="{{ author.suggestion_url }}" rel="noopener">{{ idea_action }}<span aria-hidden="true">↗</span></a>
+    </article>
+  </div>
+  <p class="support-privacy"><span aria-hidden="true">i</span>{{ github_note }}</p>
+</section>
+
+<section class="creator-section" aria-labelledby="creator-social-title">
+  <div class="creator-section__heading">
+    <p class="creator-eyebrow">{{ social_kicker }}</p>
+    <h2 id="creator-social-title">{{ social_title }}</h2>
+    <p>{{ social_text }}</p>
+  </div>
+  <div class="social-links">
+    <a href="{{ author.youtube_url }}" rel="noopener"><span class="social-links__code">YT</span><span><strong>YouTube</strong><small>{{ primary_label }}</small></span><b aria-hidden="true">↗</b></a>
+    <a href="{{ author.x_url }}" rel="noopener"><span class="social-links__code">X</span><span><strong>X</strong><small>{{ primary_label }}</small></span><b aria-hidden="true">↗</b></a>
+    <a href="{{ author.discord_url }}" rel="noopener"><span class="social-links__code">DC</span><span><strong>Discord</strong><small>{{ community_label }}</small></span><b aria-hidden="true">↗</b></a>
+    <a href="{{ author.twitch_url }}" rel="noopener"><span class="social-links__code">TW</span><span><strong>Twitch</strong><small>{{ more_label }}</small></span><b aria-hidden="true">↗</b></a>
+    <a href="{{ author.instagram_url }}" rel="noopener"><span class="social-links__code">IG</span><span><strong>Instagram</strong><small>{{ more_label }}</small></span><b aria-hidden="true">↗</b></a>
+    <a href="{{ author.threads_url }}" rel="noopener"><span class="social-links__code">TH</span><span><strong>Threads</strong><small>{{ more_label }}</small></span><b aria-hidden="true">↗</b></a>
+    <a href="{{ author.tiktok_url }}" rel="noopener"><span class="social-links__code">TT</span><span><strong>TikTok</strong><small>{{ more_label }}</small></span><b aria-hidden="true">↗</b></a>
+  </div>
+</section>
+
+<aside class="collaboration-panel">
+  <div>
+    <p class="creator-eyebrow">{{ collaboration_kicker }}</p>
+    <h2>{{ collaboration_title }}</h2>
+    <p>{{ collaboration_text }}</p>
+  </div>
+  <a class="creator-link creator-link--collaboration" href="{{ author.collaboration_url }}" rel="noopener">{{ collaboration_action }}<span aria-hidden="true">↗</span></a>
+</aside>

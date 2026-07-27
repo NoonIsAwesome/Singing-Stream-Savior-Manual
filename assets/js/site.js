@@ -150,6 +150,140 @@
     }, { once: true });
   });
 
+  const imagePreviewLabels = {
+    "zh-TW": {
+      dialog: "圖片放大預覽",
+      open: "放大預覽",
+      close: "關閉",
+    },
+    "zh-CN": {
+      dialog: "图片放大预览",
+      open: "放大预览",
+      close: "关闭",
+    },
+    en: {
+      dialog: "Enlarged image preview",
+      open: "Enlarge image",
+      close: "Close",
+    },
+    ja: {
+      dialog: "画像の拡大プレビュー",
+      open: "拡大表示",
+      close: "閉じる",
+    },
+    ko: {
+      dialog: "이미지 확대 미리보기",
+      open: "크게 보기",
+      close: "닫기",
+    },
+  };
+  const imagePreviewLanguage = document.documentElement.lang;
+  const imagePreviewText =
+    imagePreviewLabels[imagePreviewLanguage] || imagePreviewLabels.en;
+  const imagePreviewLinks = [...document.querySelectorAll(".manual-article a[href]")]
+    .filter((link) => {
+      const image = link.querySelector(":scope > img");
+      if (!image) {
+        return false;
+      }
+      try {
+        return /\.(?:avif|gif|jpe?g|png|webp)$/i.test(
+          new URL(link.href, window.location.href).pathname
+        );
+      } catch {
+        return false;
+      }
+    });
+
+  if (imagePreviewLinks.length && typeof HTMLDialogElement !== "undefined") {
+    const dialog = document.createElement("dialog");
+    dialog.className = "image-lightbox";
+    dialog.setAttribute("aria-label", imagePreviewText.dialog);
+
+    const closeButton = document.createElement("button");
+    closeButton.className = "image-lightbox__close";
+    closeButton.type = "button";
+    closeButton.setAttribute("aria-label", imagePreviewText.close);
+    closeButton.innerHTML = `
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+        <path d="M6 6l12 12M18 6L6 18"></path>
+      </svg>
+      <span>${imagePreviewText.close}</span>
+    `;
+
+    const stage = document.createElement("div");
+    stage.className = "image-lightbox__stage";
+
+    const previewImage = document.createElement("img");
+    previewImage.className = "image-lightbox__image";
+    previewImage.decoding = "async";
+
+    const caption = document.createElement("p");
+    caption.className = "image-lightbox__caption";
+    caption.id = "image-lightbox-caption";
+    dialog.setAttribute("aria-describedby", caption.id);
+
+    stage.append(previewImage, caption);
+    dialog.append(closeButton, stage);
+    document.body.append(dialog);
+
+    let imagePreviewTrigger = null;
+
+    const closeImagePreview = () => {
+      if (dialog.open) {
+        dialog.close();
+      }
+    };
+
+    closeButton.addEventListener("click", closeImagePreview);
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) {
+        closeImagePreview();
+      }
+    });
+    dialog.addEventListener("close", () => {
+      document.body.classList.remove("has-image-lightbox");
+      previewImage.removeAttribute("src");
+      imagePreviewTrigger?.focus();
+      imagePreviewTrigger = null;
+    });
+
+    imagePreviewLinks.forEach((link) => {
+      const thumbnail = link.querySelector(":scope > img");
+      const description =
+        thumbnail.getAttribute("alt")?.trim() || imagePreviewText.dialog;
+
+      link.classList.add("image-preview-trigger");
+      link.setAttribute("aria-haspopup", "dialog");
+      link.setAttribute(
+        "aria-label",
+        `${description} — ${imagePreviewText.open}`
+      );
+
+      link.addEventListener("click", (event) => {
+        if (
+          event.defaultPrevented ||
+          event.button !== 0 ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        imagePreviewTrigger = link;
+        previewImage.src = link.href;
+        previewImage.alt = "";
+        caption.textContent = description;
+        document.body.classList.add("has-image-lightbox");
+        dialog.showModal();
+        closeButton.focus();
+      });
+    });
+  }
+
   const button = document.querySelector(".nav-toggle");
   const navigation = document.querySelector(".guide-sidebar");
 

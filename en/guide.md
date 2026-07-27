@@ -12,7 +12,7 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
-  <figcaption>Full mode shows all settings and the live OBS preview. Select an image to view it at full size.</figcaption>
+  <figcaption>Full mode shows all settings and the live OBS preview. Select an image to open an enlarged preview.</figcaption>
 </figure>
 
 ## Recommended setup
