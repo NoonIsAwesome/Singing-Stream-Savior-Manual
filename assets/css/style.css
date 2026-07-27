@@ -2045,6 +2045,13 @@ body {
   border-color: #75c7ff;
 }
 
+.manual-article .creator-link--profile {
+  max-width: 660px;
+  justify-content: flex-start;
+  line-height: 1.55;
+  text-align: left;
+}
+
 .creator-link span {
   color: #91d2ff;
   font-size: 0.9em;
@@ -2095,6 +2102,14 @@ body {
   border-top: 3px solid #69bdf5;
 }
 
+.support-path--email {
+  min-height: 0;
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  grid-template-rows: auto;
+  align-items: center;
+  border-top: 3px solid #69bdf5;
+}
+
 .support-path__mark {
   display: grid;
   width: 42px;
@@ -2105,6 +2120,12 @@ body {
   border: 1px solid #3e607e;
   border-radius: 50%;
   font: 800 1.15rem/1 ui-monospace, monospace;
+}
+
+.support-path__mark svg {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
 }
 
 .support-path--bug .support-path__mark {
@@ -2156,8 +2177,8 @@ body {
 
 .manual-article .social-links a {
   display: grid;
-  min-height: 74px;
-  grid-template-columns: 42px minmax(0, 1fr) auto;
+  min-height: 88px;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
   gap: 13px;
   align-items: center;
   padding: 13px 15px;
@@ -2177,14 +2198,52 @@ body {
 
 .social-links__code {
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   place-items: center;
   color: #a8dcff;
   background: #172b3e;
   border: 1px solid #365a77;
   border-radius: 9px;
   font: 800 0.72rem/1 ui-monospace, "Cascadia Mono", monospace;
+}
+
+.social-links__code svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.social-links__code--youtube {
+  color: #fff;
+  background: #c9262d;
+  border-color: #f05a60;
+}
+
+.social-links__code--x,
+.social-links__code--threads,
+.social-links__code--tiktok {
+  color: #fff;
+  background: #090b0f;
+  border-color: #4d5663;
+}
+
+.social-links__code--discord {
+  color: #fff;
+  background: #5865f2;
+  border-color: #8791ff;
+}
+
+.social-links__code--twitch {
+  color: #fff;
+  background: #9146ff;
+  border-color: #b984ff;
+}
+
+.social-links__code--instagram {
+  color: #fff;
+  background: linear-gradient(135deg, #6548d7, #d62976 50%, #f8a33a);
+  border-color: #ef7fae;
 }
 
 .social-links a > span:nth-child(2) {
@@ -2201,6 +2260,7 @@ body {
   margin-top: 3px;
   color: var(--ink-500);
   font-size: 0.75rem;
+  line-height: 1.45;
 }
 
 .social-links b {
@@ -2325,6 +2385,14 @@ body {
 
   .support-path {
     min-height: 0;
+  }
+
+  .support-path--email {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .support-path--email .creator-link {
+    grid-column: 1 / -1;
   }
 
   .support-path .creator-link {
