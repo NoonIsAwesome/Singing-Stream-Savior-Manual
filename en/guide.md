@@ -51,7 +51,7 @@ To place songs in a collection, select one or more rows, right-click, open **Add
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}" alt="Song context menu with Add to playlist expanded to Favorites"></a><figcaption>The same context menu also provides Add to Reserve for planned songs.</figcaption></figure>
 
-You can import a YouTube video, a YouTube playlist, or local songs/karaoke tracks in `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection and the bundled `yt-dlp` helper.
+In addition to choosing files from the import dialog, you can drag one or more local audio files directly into the app. Paste or drag in a single YouTube video URL to add one song. You can also drag in a YouTube playlist URL: the app recognizes its videos and imports them into a corresponding custom playlist, so you do not need to add every link individually. Supported local formats include `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection and the bundled `yt-dlp` helper.
 
 The **Display title** is used by Reserve, History, and OBS. If it is blank, the app falls back to the file name or YouTube title. Double-click the Display title cell, or right-click the song and choose **Edit display song name**. Press `Enter` to apply or `Esc` to cancel. This never renames the source audio file.
 
@@ -64,7 +64,9 @@ Cover art is optional. It becomes especially useful with the **Card** and **CD**
   <figcaption>A real online result is selected. Embed becomes available after its cover preview has loaded.</figcaption>
 </figure>
 
-The BGM and karaoke players have separate play, pause, stop, loop, mute, volume, and seek controls. Karaoke playback also supports speed and semitone pitch adjustment without modifying the source file.
+The BGM and karaoke players have separate play, pause, stop, loop, mute, volume, and seek controls. Karaoke playback also provides speed control and semitone key transposition—particularly useful for slowing down a difficult song, matching a comfortable practice tempo, or moving a track whose range is too high or too low without preparing another audio file.
+
+The app remembers the adjusted speed and key separately for every song. When you switch away and return, that song’s preferred settings are restored; use the reset controls to return to `100%` speed and `0` semitones. These adjustments affect playback only and never rewrite or reduce the quality of the source file.
 
 The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** when managing viewer requests or songs you plan to sing later. Supported themes show the first reserved song in **Next On**, or several reserved songs in **Reserve**. Completed songs move to **History**.
 

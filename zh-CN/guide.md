@@ -44,7 +44,7 @@ manual_bundle: true
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}" alt="歌曲右键菜单展开加入歌单并显示我的最爱"></a><figcaption>同一个右键菜单也可以将歌曲加入待播。</figcaption></figure>
 
-可以加入 YouTube 单曲、播放列表，或导入 `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` 格式的本地歌曲／歌唱伴奏。
+除了通过文件选择窗口导入，也可以把一首或多首本地音频直接拖进软件。单个 YouTube 视频网址可以粘贴或拖入并加入为一首歌曲；YouTube 播放列表网址也可以直接拖入，软件会识别其中的歌曲并导入为对应的自定义歌单，不必逐首粘贴网址。本地歌曲／歌唱伴奏支持 `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` 格式。YouTube 导入需要网络连接。
 
 “显示歌名”会用于待播、已唱与 OBS；未填写时会使用文件名或 YouTube 标题。双击“显示歌名”栏，或对歌曲按右键并选择“编辑显示歌名”即可修改；按 `Enter` 套用，按 `Esc` 取消。这个操作不会更改原始音频文件名。
 
@@ -54,7 +54,9 @@ manual_bundle: true
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}" alt="显示真实线上结果与封面预览的嵌入封面窗口"></a><figcaption>这是选择真实搜索结果后的画面；左侧封面预览载入完成后即可嵌入。</figcaption></figure>
 
-BGM 与歌唱伴奏拥有独立播放、音量与进度控制；伴奏还可调整速度和半音音高，不会修改原文件。
+BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还可以调整播放速度，并以半音为单位升降 Key：可放慢较难掌握的歌曲、配合练习节奏，或把音域太高／太低的伴奏调到更适合演唱的位置，不需要另外制作不同版本的音频。
+
+软件会为每首歌曲分别记住调整过的速度与音高。切换歌曲后再次回来时会恢复该歌曲的设置；需要回到原始状态时，可重置为 `100%` 速度和 `0` 半音。这些调整只影响播放，不会修改原始文件或降低其音频质量。
 
 待播不是播放歌曲的必要步骤；在歌曲表格中双击歌曲即可直接播放。待播适合管理观众点歌或之后预定演唱的歌曲，支持的主题会将第一首显示在 **Next On**，或将数首显示在 **Reserve**。播放完成的歌曲会移入“已唱”。
 

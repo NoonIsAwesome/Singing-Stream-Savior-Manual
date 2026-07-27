@@ -44,7 +44,7 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/ko/add-to-playlist-menu.png' | relative_url }}" alt="곡 오른쪽 클릭 메뉴에서 재생목록에 추가와 즐겨찾기를 연 화면"></a><figcaption>같은 메뉴에서 예약 목록에도 곡을 추가할 수 있습니다.</figcaption></figure>
 
-YouTube 동영상/재생목록과 함께 `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, `WMA` 형식의 로컬 곡과 반주를 추가할 수 있습니다.
+파일 선택 창에서 가져오는 것뿐 아니라 하나 이상의 로컬 오디오 파일을 소프트웨어로 바로 끌어다 놓을 수 있습니다. YouTube 단일 동영상 URL은 붙여넣거나 끌어다 놓으면 한 곡으로 추가됩니다. YouTube 재생목록 URL도 바로 끌어다 놓을 수 있으며, 포함된 동영상을 인식해 해당 사용자 재생목록으로 가져오므로 링크를 하나씩 추가할 필요가 없습니다. 로컬 곡과 반주는 `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, `WMA` 형식을 지원합니다. YouTube 가져오기에는 인터넷 연결이 필요합니다.
 
 **표시 제목**은 예약, 연혁과 OBS에 사용되며, 비어 있으면 파일명이나 YouTube 제목을 사용합니다. 표시 제목 셀을 두 번 클릭하거나 곡을 오른쪽 클릭해 **표시 곡명 편집**을 선택하세요. `Enter`로 적용하고 `Esc`로 취소할 수 있으며 원본 음원 파일명은 바뀌지 않습니다.
 
@@ -54,7 +54,9 @@ YouTube 동영상/재생목록과 함께 `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AA
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}" alt="실제 온라인 결과와 불러온 표지 미리보기가 있는 표지 삽입 창"></a><figcaption>실제 검색 결과를 선택한 화면입니다. 왼쪽 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
 
-BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 원본 파일을 바꾸지 않고 속도와 반음 단위 음높이도 조절할 수 있습니다.
+BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 재생 속도와 반음 단위 키도 조절할 수 있습니다. 어려운 곡을 천천히 연습하거나 라이브에서 편안한 템포에 맞출 때, 음역이 너무 높거나 낮은 반주를 자신에게 맞는 키로 옮길 때 유용하며 별도의 반주 파일을 만들 필요가 없습니다.
+
+조절한 속도와 키는 곡마다 따로 기억됩니다. 다른 곡으로 전환했다가 돌아와도 해당 곡에 맞춘 설정이 복원되며, 필요하면 `100%` 속도와 `0` 반음으로 초기화할 수 있습니다. 이 설정은 재생에만 적용되고 원본 파일이나 음질을 변경하지 않습니다.
 
 **예약**은 선택 기능이며, 곡 표에서 곡을 두 번 클릭하면 바로 재생할 수 있습니다. 예약은 시청자 신청곡이나 나중에 부를 예정인 곡을 관리할 때 사용합니다. 지원 테마는 첫 예약 곡을 **Next On**에, 여러 곡을 **Reserve**에 표시할 수 있습니다. 재생을 마친 곡은 **연혁**으로 이동합니다.
 
