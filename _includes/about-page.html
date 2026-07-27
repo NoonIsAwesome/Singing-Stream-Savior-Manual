@@ -23,7 +23,7 @@
   {% assign tiktok_description = '用來發布短影片。' %}
   {% assign collaboration_kicker = '合作邀約' %}
   {% assign collaboration_title = '商業合作與正式邀約' %}
-  {% assign collaboration_text = '請填寫古德文創聯絡表單，由相關人員統一處理。軟體問題請使用上方回報表單，避免訊息分流後延誤處理。' %}
+  {% assign collaboration_text = '請填寫古德文創聯絡表單，由相關人員統一處理。軟體問題請使用上方 Email，避免訊息分流後延誤處理。' %}
   {% assign collaboration_action = '開啟合作表單' %}
 {% elsif current_lang == 'zh-CN' %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
@@ -48,7 +48,7 @@
   {% assign tiktok_description = '用来发布短视频。' %}
   {% assign collaboration_kicker = '合作邀请' %}
   {% assign collaboration_title = '商业合作与正式邀请' %}
-  {% assign collaboration_text = '请填写古德文创联系表单，由相关人员统一处理。软件问题请使用上方表单，以免分流后延误处理。' %}
+  {% assign collaboration_text = '请填写古德文创联系表单，由相关人员统一处理。软件问题请使用上方 Email，以免分流后延误处理。' %}
   {% assign collaboration_action = '打开合作表单' %}
 {% elsif current_lang == 'ja' %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
@@ -73,7 +73,7 @@
   {% assign tiktok_description = 'ショート動画を投稿しています。' %}
   {% assign collaboration_kicker = 'お仕事のご相談' %}
   {% assign collaboration_title = '企業・商業コラボレーション' %}
-  {% assign collaboration_text = '古德文創のお問い合わせフォームにご記入ください。アプリの不具合は上の報告フォームをご利用ください。' %}
+  {% assign collaboration_text = '古德文創のお問い合わせフォームにご記入ください。アプリの不具合は上記のメールアドレスへお送りください。' %}
   {% assign collaboration_action = 'お問い合わせフォームを開く' %}
 {% elsif current_lang == 'ko' %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
@@ -98,7 +98,7 @@
   {% assign tiktok_description = '짧은 영상을 올리는 곳입니다.' %}
   {% assign collaboration_kicker = '협업 문의' %}
   {% assign collaboration_title = '비즈니스 및 공식 협업' %}
-  {% assign collaboration_text = '古德文創 협업 문의 양식을 작성해 주세요. 앱 문제는 위의 신고 양식을 이용해 주세요.' %}
+  {% assign collaboration_text = '古德文創 협업 문의 양식을 작성해 주세요. 앱 문제는 위 이메일 주소로 보내 주세요.' %}
   {% assign collaboration_action = '협업 문의 양식 열기' %}
 {% else %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
@@ -123,7 +123,7 @@
   {% assign tiktok_description = 'A home for short videos.' %}
   {% assign collaboration_kicker = 'Business contact' %}
   {% assign collaboration_title = 'Commercial and official collaborations' %}
-  {% assign collaboration_text = 'Please use the Good Culture contact form so the appropriate team can respond. For app problems, use the support form above.' %}
+  {% assign collaboration_text = 'Please use the Good Culture contact form so the appropriate team can respond. For app problems, use the email address above.' %}
   {% assign collaboration_action = 'Open the collaboration form' %}
 {% endif %}
 
@@ -148,7 +148,6 @@
   <div class="creator-section__heading">
     <p class="creator-eyebrow">{{ support_kicker }}</p>
     <h2 id="creator-support-title">{{ support_title }}</h2>
-    <p>{{ support_text }}</p>
   </div>
   <article class="support-path support-path--email">
     <span class="support-path__mark" aria-hidden="true">{% include social-icon.html platform='email' %}</span>
