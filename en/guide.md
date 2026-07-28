@@ -53,9 +53,11 @@ To place songs in a collection, select one or more rows, right-click, open **Add
 
 In addition to choosing files from the import dialog, you can drag one or more local audio files directly into the app. Paste or drag in a single YouTube video URL to add one song. You can also drag in a YouTube playlist URL: the app recognizes its videos and imports them into a corresponding custom playlist, so you do not need to add every link individually. Supported local formats include `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection and the bundled `yt-dlp` helper.
 
-The **Display title** is used by Reserve, History, and OBS. If it is blank, the app falls back to the file name or YouTube title. Double-click the Display title cell, or right-click the song and choose **Edit display song name**. Press `Enter` to apply or `Esc` to cancel. This never renames the source audio file.
+The **Display title** is used by Reserve, History, and OBS. If it is blank, the app falls back to the file name or YouTube title. Double-clicking a song row loads and plays it; it never opens text editing. To rename the viewer-facing title, right-click the song and choose the first item, **Edit display song name**. Press `Enter` to apply or `Esc` to cancel. This never renames the source audio file.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/en/display-title-edit.png' | relative_url }}" alt="Display title cell open for inline editing"></a><figcaption>Only the viewer-facing Display title changes; the source name remains intact.</figcaption></figure>
+The song context menu is arranged for quick live use: **Edit display song name**, **Add to Reserve**, **Add to playlist** (Favorites or a custom playlist), then the delete/remove action appropriate to the selected collection.
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/en/display-title-edit.png' | relative_url }}" alt="Display title cell open for inline editing from the song context menu"></a><figcaption>Choose the first context-menu item to edit only the viewer-facing Display title; the source name remains intact.</figcaption></figure>
 
 Cover art is optional. It becomes especially useful with the **Card** and **CD** themes. Open **Embed cover** from a local song’s context menu, select an online result or local image, wait for the preview to load, and choose **Embed**.
 

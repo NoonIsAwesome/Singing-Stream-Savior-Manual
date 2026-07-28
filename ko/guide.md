@@ -46,9 +46,11 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 
 파일 선택 창에서 가져오는 것뿐 아니라 하나 이상의 로컬 오디오 파일을 소프트웨어로 바로 끌어다 놓을 수 있습니다. YouTube 단일 동영상 URL은 붙여넣거나 끌어다 놓으면 한 곡으로 추가됩니다. YouTube 재생목록 URL도 바로 끌어다 놓을 수 있으며, 포함된 동영상을 인식해 해당 사용자 재생목록으로 가져오므로 링크를 하나씩 추가할 필요가 없습니다. 로컬 곡과 반주는 `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, `WMA` 형식을 지원합니다. YouTube 가져오기에는 인터넷 연결이 필요합니다.
 
-**표시 제목**은 예약, 연혁과 OBS에 사용되며, 비어 있으면 파일명이나 YouTube 제목을 사용합니다. 표시 제목 셀을 두 번 클릭하거나 곡을 오른쪽 클릭해 **표시 곡명 편집**을 선택하세요. `Enter`로 적용하고 `Esc`로 취소할 수 있으며 원본 음원 파일명은 바뀌지 않습니다.
+**표시 제목**은 예약, 연혁과 OBS에 사용되며, 비어 있으면 파일명이나 YouTube 제목을 사용합니다. 곡 행을 두 번 클릭하면 곡을 불러와 바로 재생하며 텍스트 편집으로 들어가지 않습니다. 표시 제목을 바꾸려면 곡을 오른쪽 클릭하고 첫 항목인 **표시 곡명 편집**을 선택하세요. `Enter`로 적용하고 `Esc`로 취소할 수 있으며 원본 음원 파일명은 바뀌지 않습니다.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}" alt="표시 제목 셀을 직접 편집하는 화면"></a><figcaption>방송에 표시할 제목만 편집하며 왼쪽 원본 파일명은 유지됩니다.</figcaption></figure>
+곡 오른쪽 클릭 메뉴는 **표시 곡명 편집**, **대기 목록에 추가**, **재생목록에 추가**(즐겨찾기 또는 사용자 재생목록), 현재 분류에 맞는 삭제/분류에서 제거 순서로 제공됩니다.
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}" alt="오른쪽 클릭 메뉴에서 표시 제목 셀을 편집하는 화면"></a><figcaption>오른쪽 클릭 메뉴의 첫 항목으로 방송에 표시할 제목만 편집하며, 왼쪽 원본 파일명은 유지됩니다.</figcaption></figure>
 
 표지는 필수가 아니며 Card와 CD 테마에서 특별히 활용됩니다. 곡 메뉴에서 **표지 삽입**을 열고 검색 결과나 로컬 이미지를 선택한 뒤 미리보기 로딩이 끝나면 삽입하세요.
 

@@ -46,9 +46,11 @@ manual_bundle: true
 
 除了通过文件选择窗口导入，也可以把一首或多首本地音频直接拖进软件。单个 YouTube 视频网址可以粘贴或拖入并加入为一首歌曲；YouTube 播放列表网址也可以直接拖入，软件会识别其中的歌曲并导入为对应的自定义歌单，不必逐首粘贴网址。本地歌曲／歌唱伴奏支持 `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` 格式。YouTube 导入需要网络连接。
 
-“显示歌名”会用于待播、已唱与 OBS；未填写时会使用文件名或 YouTube 标题。双击“显示歌名”栏，或对歌曲按右键并选择“编辑显示歌名”即可修改；按 `Enter` 套用，按 `Esc` 取消。这个操作不会更改原始音频文件名。
+“显示歌名”会用于待播、已唱与 OBS；未填写时会使用文件名或 YouTube 标题。双击歌曲列会直接载入并播放歌曲，不会进入文字编辑。要修改名称，请对歌曲按右键，选择第一项“编辑显示歌名”；按 `Enter` 套用，按 `Esc` 取消。这个操作不会更改原始音频文件名。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}" alt="歌曲表格中的显示歌名栏进入编辑状态"></a><figcaption>只修改直播会显示的名称，左侧原始文件名保持不变。</figcaption></figure>
+歌曲右键菜单依次提供“编辑显示歌名”“加入待播”“加入歌单”（我的最爱或自定义歌单），以及符合当前分类的删除／从分类移除操作。
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}" alt="通过歌曲右键菜单编辑显示歌名"></a><figcaption>从右键菜单第一项打开编辑，只修改直播会显示的名称；左侧原始文件名保持不变。</figcaption></figure>
 
 封面不是必需，仅在 Card 与 CD 主题下有特别效果。在歌曲菜单打开“嵌入封面”，选择搜索结果或本地图片，等待预览完成后按“嵌入”。
 

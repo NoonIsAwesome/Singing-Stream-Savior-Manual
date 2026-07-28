@@ -46,9 +46,11 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 
 ファイル選択画面から読み込むほか、1 曲または複数のローカル音源をソフトへ直接ドラッグ＆ドロップできます。YouTube の単一動画 URL は貼り付けまたはドラッグで 1 曲として追加できます。YouTube プレイリストの URL もそのままドラッグでき、収録動画を認識して対応するカスタムプレイリストとして読み込むため、URL を 1 件ずつ追加する必要はありません。ローカル音源は `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` に対応します。YouTube の読み込みにはインターネット接続が必要です。
 
-「表示曲名」は予約、履歴、OBS に使用され、空欄ならファイル名または YouTube タイトルが使われます。「表示曲名」セルをダブルクリックするか、曲を右クリックして「表示曲名を編集」を選びます。`Enter` で確定し、`Esc` でキャンセルします。元の音源ファイル名は変更されません。
+「表示曲名」は予約、履歴、OBS に使用され、空欄ならファイル名または YouTube タイトルが使われます。曲の行をダブルクリックすると、その曲を読み込んですぐ再生し、文字編集には入りません。表示名を変更するには曲を右クリックし、先頭の「表示曲名を編集」を選びます。`Enter` で確定し、`Esc` でキャンセルします。元の音源ファイル名は変更されません。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}" alt="表示曲名セルを直接編集している画面"></a><figcaption>配信に表示する曲名だけを編集し、左側の元ファイル名は維持します。</figcaption></figure>
+曲の右クリックメニューは、「表示曲名を編集」「待機リストに追加」「プレイリストに追加」（お気に入り／カスタムプレイリスト）、現在の分類に応じた削除／分類から除外の順に並びます。
+
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}" alt="右クリックメニューから表示曲名セルを編集している画面"></a><figcaption>右クリックメニューの先頭項目から、配信に表示する曲名だけを編集します。左側の元ファイル名は維持されます。</figcaption></figure>
 
 ジャケットは必須ではなく、Card と CD テーマで特に効果を発揮します。曲のメニューから「ジャケットを埋め込む」を開き、検索結果またはローカル画像を選び、プレビューの読み込み後に「埋め込む」を押します。
 
