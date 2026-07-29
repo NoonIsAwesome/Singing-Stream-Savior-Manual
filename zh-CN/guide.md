@@ -71,7 +71,9 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-manager-linked.png' | relative_url }}" alt="管理歌词窗口中的导入歌词文件和取消歌词关联"></a><figcaption>已有歌词时，左下角仍可导入其他文件或取消当前关联。</figcaption></figure>
 
-日文读音可关闭、在汉字上方显示小平假名，或在原文下方显示带空格的罗马拼音。自动读音仅供参考，特殊读法与演唱方式可能和原曲不同。
+日文读音可关闭、在汉字上方显示小平假名，或在原文下方显示带空格的罗马拼音。读音由内置的离线日文分析与分词引擎生成，不需要把歌词上传到网络。自动读音仅供参考，特殊读法与演唱方式可能和原曲不同。
+
+在独立“歌词窗口”中，点击有时间戳的任一行歌词，可让伴奏跳到该行的时间点。此功能只适用于 LRC 等同步歌词；纯文本歌词没有可跳转的时间。调整歌词偏移后，即使伴奏处于暂停状态，预览、歌词窗口和 OBS 歌词数据也会立即同步。
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
@@ -150,6 +152,10 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 设置包含界面语言、项目/媒体路径、YouTube 下载格式与测试中的 WebSocket。搬到其他电脑前，请备份 `.bgmsproj`、本地媒体和自行导入的歌词。
 
+最外层的 `Singing Stream Savior.exe` 会检查后续版本，并在深色状态窗口显示进度。发现更新时会先询问是否下载和安装；选择不更新仍可继续打开当前版本。请保持外层启动器、`current.json` 和内部文件夹的相对位置不变。如果更新要求较新的启动器或无法完成，请下载最新版完整 ZIP，不要混合覆盖不同版本的 DLL。
+
 若出现 Qt platform plugin 错误，请重新下载并完整解压 ZIP，只打开最外层的 `Singing Stream Savior.exe`。不需要检查或打开资料文件夹中的内容。需要桌面入口时，请为这个外层 EXE 建立 Windows 快捷方式，不要移动文件本身。
 
 找不到歌词时可缩短关键词、检查歌名/歌手、选择同步且长度接近的结果，或导入 LRC/SRT/VTT/纯文本。OBS 画面未更新时，请重新载入软件预览并刷新 OBS Browser Source。
+
+若最近项目中的 `.bgmsproj` 已被移动或删除，该失效项目会自动从列表移除。

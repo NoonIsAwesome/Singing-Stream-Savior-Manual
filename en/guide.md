@@ -86,6 +86,8 @@ Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song�
 
 The embedded preview uses the same layout, font, color, highlight, and Japanese-reading option as OBS. The independent Lyrics window has its own reading option. Available Japanese readings are off, small hiragana above kanji, or word-spaced romaji below the original line.
 
+In the independent Lyrics window, choose any timestamped line to seek the karaoke track to that line. This works with synchronized lyrics such as LRC; plain-text lyrics have no seek positions. Japanese readings are generated locally by the bundled offline analyzer, so lyrics do not need to be uploaded.
+
 <figure class="manual-figure">
   <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
     <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="Traditional Chinese Lyrics page highlighting the current synchronized line during karaoke playback" loading="lazy" decoding="async">
@@ -93,7 +95,7 @@ The embedded preview uses the same layout, font, color, highlight, and Japanese-
   <figcaption>This demonstration uses the Traditional Chinese interface. The preview shows the same lyric layout, font, color, and highlight that will appear in OBS.</figcaption>
 </figure>
 
-Use the lyric offset controls if timing is early or late: negative values show lyrics sooner; positive values show them later.
+Use the lyric offset controls if timing is early or late: negative values show lyrics sooner; positive values show them later. Offset changes are reflected immediately in the preview, independent Lyrics window, and OBS lyric data, even while playback is paused.
 
 <a id="obs-and-themes"></a>
 ## 04 · Playlist appearance and OBS
@@ -175,6 +177,10 @@ Switching modes only changes which controls are visible. A song already playing 
 
 Settings cover interface language, project/media folders, YouTube download format, and experimental OBS WebSocket controls. Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
 
+The outer `Singing Stream Savior.exe` checks for future releases and shows its progress in a dark status window. When an update is available, it asks before downloading or installing it; declining still opens the installed version. Keep the outer launcher, `current.json`, and the internal folders together. If the launcher requires a newer launcher or cannot complete an update, download a fresh complete ZIP instead of mixing DLLs from different versions.
+
 If the app reports that no Qt platform plug-in could be initialized, extract a fresh copy of the complete ZIP and launch only the outer `Singing Stream Savior.exe`. You do not need to inspect or open anything in the data folders. For desktop access, create a Windows shortcut to that outer EXE instead of moving it.
 
 If lyrics cannot be found, shorten the search terms, check title/artist spelling, prefer synchronized results close to the track duration, or import LRC/SRT/VTT/plain text. If an OBS overlay does not update, reload the app preview and refresh the Browser Source in OBS.
+
+The Recent Projects list automatically removes entries whose `.bgmsproj` file has been moved or deleted.
