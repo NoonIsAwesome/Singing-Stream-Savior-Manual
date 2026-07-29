@@ -12,6 +12,10 @@
   --blue-soft: #e8f3fd;
   --amber: #f3a71a;
   --code: #ecf1f7;
+  --table-heading-text: #0b1728;
+  --table-heading-background: #eaf1f8;
+  --table-cell-background: #ffffff;
+  --table-cell-stripe: #f7faff;
   --content-width: 760px;
   color-scheme: light;
 }
@@ -687,8 +691,17 @@ body.has-image-lightbox {
 }
 
 .manual-article th {
-  color: var(--ink-900);
-  background: #eaf1f8;
+  color: var(--table-heading-text);
+  background: var(--table-heading-background);
+}
+
+.manual-article td {
+  color: var(--ink-800);
+  background: var(--table-cell-background);
+}
+
+.manual-article tbody tr:nth-child(even) td {
+  background: var(--table-cell-stripe);
 }
 
 .manual-article > p:last-child {
@@ -1479,6 +1492,10 @@ body.has-image-lightbox {
   --blue-soft: #10283c;
   --amber: #f2b84b;
   --code: #172331;
+  --table-heading-text: #eaf6ff;
+  --table-heading-background: #17304a;
+  --table-cell-background: #0f1722;
+  --table-cell-stripe: #121e2b;
   color-scheme: dark;
 }
 
