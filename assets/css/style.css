@@ -1745,26 +1745,22 @@ body {
   width: 52px;
   height: 52px;
   place-items: center;
-  background: #153a57;
+  background: linear-gradient(145deg, #173f5e, #12334d);
   border: 1px solid #3279a9;
   border-radius: 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 6px 16px rgba(0, 0, 0, 0.16);
 }
 
-.download-panel__mark::before {
-  width: 15px;
-  height: 18px;
-  border-right: 3px solid #9ed9ff;
-  border-bottom: 3px solid #9ed9ff;
-  content: "";
-  transform: rotate(45deg) translate(-3px, -3px);
-}
-
-.download-panel__mark span {
-  width: 24px;
-  height: 3px;
-  margin-top: -8px;
-  background: #9ed9ff;
-  border-radius: 2px;
+.download-panel__mark svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: #a9ddff;
+  stroke-width: 2.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .download-panel__copy {
