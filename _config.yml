@@ -5,6 +5,10 @@ timezone: Asia/Taipei
 url: https://noonisawesome.github.io
 baseurl: /Singing-Stream-Savior-Manual
 
+analytics:
+  production_host: noonisawesome.github.io
+  pageview_endpoint: https://api.counterapi.dev/v1/noonisawesome-singing-stream-savior-manual/pageviews/up
+
 markdown: kramdown
 kramdown:
   input: GFM
@@ -33,3 +37,4 @@ defaults:
 
 exclude:
   - assets/README.md
+  - scripts

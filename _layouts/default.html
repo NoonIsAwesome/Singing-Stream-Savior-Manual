@@ -22,7 +22,11 @@
     <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ site.baseurl }}/ko/{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
     {% seo %}
   </head>
-  <body class="{% if section == 'home' and page.manual_bundle != true %}intro-layout{% elsif section == 'about' %}creator-layout{% endif %}">
+  <body
+    class="{% if section == 'home' and page.manual_bundle != true %}intro-layout{% elsif section == 'about' %}creator-layout{% endif %}"
+    data-analytics-host="{{ site.analytics.production_host | escape }}"
+    data-pageview-endpoint="{{ site.analytics.pageview_endpoint | escape }}"
+  >
     <a class="skip-link" href="#guide-content">{{ t.skip }}</a>
 
     <header class="site-header">

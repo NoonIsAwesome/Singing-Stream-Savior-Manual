@@ -1,4 +1,32 @@
 (() => {
+  const recordProductionPageview = () => {
+    const expectedHost = document.body.dataset.analyticsHost;
+    const endpoint = document.body.dataset.pageviewEndpoint;
+
+    if (
+      !expectedHost ||
+      !endpoint ||
+      window.location.hostname !== expectedHost ||
+      navigator.webdriver
+    ) {
+      return;
+    }
+
+    // Aggregate page-view counting only. The opaque request keeps the counter
+    // independent from the visible interface and does not set a site cookie.
+    window
+      .fetch(endpoint, {
+        method: "GET",
+        mode: "no-cors",
+        cache: "no-store",
+        credentials: "omit",
+        keepalive: true,
+      })
+      .catch(() => {});
+  };
+
+  recordProductionPageview();
+
   const languageSwitcher = document.querySelector("[data-language-switcher]");
   if (languageSwitcher) {
     languageSwitcher.addEventListener("change", () => {
