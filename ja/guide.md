@@ -31,7 +31,7 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior のアプリアイコン"><div><strong>Singing Stream Savior.exe</strong><span>通常はこのアプリだけを起動します</span></div></div>
 
-「ファイル > 新規プロジェクト」から `.bgmsproj` を作成します。曲、表示名、待機順、歌唱履歴、歌詞の関連付け、テーマ設定が保存されます。タイトルバーの `*` は未保存の変更を表します。
+「ファイル > 新規プロジェクト」から `.bgmsproj` を作成します。曲、表示名、待機順、歌詞の関連付け、テーマ設定が保存されます。歌唱履歴は当日の配信セッション用で、通常のプロジェクト保存には含まれません。アプリが異常終了した場合は、再起動時に復元スナップショットから待機リストと歌唱履歴を戻せます。タイトルバーの `*` は未保存の変更を表します。
 
 <a id="library-and-playback"></a>
 ## 02 · 曲ライブラリと再生
@@ -42,7 +42,7 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 
 曲を分類するには、1 曲または複数曲を選択して右クリックし、「プレイリストに追加」から「お気に入り」またはカスタムプレイリストを選びます。音源は複製されず、「すべての曲」からも削除されません。同じ曲を複数のプレイリストに登録できます。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/ja/add-to-playlist-menu.png' | relative_url }}" alt="曲の右クリックメニューでプレイリストに追加からお気に入りを表示"></a><figcaption>同じ右クリックメニューから予約への追加も行えます。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/ja/add-to-playlist-menu.png' | relative_url }}" alt="表示曲名の編集、予約へ追加、プレイリストに追加、曲の削除を表示した右クリックメニュー"></a><figcaption>表示曲名の編集を先頭に置き、同じメニューから予約やプレイリストへの追加も行えます。</figcaption></figure>
 
 ファイル選択画面から読み込むほか、1 曲または複数のローカル音源をソフトへ直接ドラッグ＆ドロップできます。YouTube の単一動画 URL は貼り付けまたはドラッグで 1 曲として追加できます。YouTube プレイリストの URL もそのままドラッグでき、収録動画を認識して対応するカスタムプレイリストとして読み込むため、URL を 1 件ずつ追加する必要はありません。ローカル音源は `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` に対応します。YouTube の読み込みにはインターネット接続が必要です。
 
@@ -54,13 +54,13 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 
 ジャケットは必須ではなく、Card と CD テーマで特に効果を発揮します。曲のメニューから「ジャケットを埋め込む」を開き、検索結果またはローカル画像を選び、プレビューの読み込み後に「埋め込む」を押します。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}" alt="オンライン検索結果と読み込み済みジャケットを表示した埋め込み画面"></a><figcaption>実際の検索結果を選択した画面です。左側のプレビューが読み込まれると、埋め込み操作が有効になります。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}" alt="オンライン検索結果と読み込み済みジャケットを表示した埋め込み画面"></a><figcaption>検索結果を選択し、左側のプレビューが読み込まれると埋め込み操作が有効になります。</figcaption></figure>
 
 BGM とカラオケ音源は別々に再生・音量・シークを操作できます。カラオケ側では再生速度と半音単位のキーを調整できます。難しい曲をゆっくり練習したいとき、当日の歌いやすいテンポに合わせたいとき、音域が高すぎる／低すぎる伴奏を自分に合うキーへ移したいときに便利で、別バージョンの音源を用意する必要はありません。
 
 調整した速度とキーは曲ごとに記憶されます。別の曲へ切り替えてから戻っても、その曲に合う設定が復元されます。元に戻す場合は速度を `100%`、キーを `0` 半音にリセットできます。変更は再生時だけに適用され、元の音源ファイルや音質を書き換えません。
 
-「予約」を使わなくても、曲テーブルの曲をダブルクリックすればすぐに再生できます。「予約」は視聴者からのリクエストや後で歌う予定の曲を管理するための任意機能です。対応テーマでは最初の予約曲を **Next On**、複数の予約曲を **Reserve** に表示できます。再生を終えた曲は「履歴」に移動します。
+「予約」を使わなくても、曲テーブルの曲をダブルクリックすればすぐに再生できます。「予約」は視聴者からのリクエストや後で歌う予定の曲を管理するための任意機能です。対応テーマでは最初の予約曲を **Next On**、複数の予約曲を **Reserve** に表示できます。再生を終えた曲は「履歴」に移動します。通常終了後は履歴を次回へ持ち越しませんが、異常終了時は復元スナップショットから当日の予約と履歴を復元できます。
 
 <a id="lyrics"></a>
 ## 03 · 歌詞機能
@@ -83,7 +83,7 @@ BGM とカラオケ音源は別々に再生・音量・シークを操作でき�
 <a id="obs-and-themes"></a>
 ## 04 · プレイリスト外観と OBS
 
-「プレイリスト外観」でテーマを選び、Now Singing、Set List、Next On、Reserve をプレビューします。基本テーマは Default、Transparent Black、Transparent White、Card、CD の順で、その後に装飾テーマが並びます。
+「プレイリスト外観」でテーマを選び、Now Singing、Set List、Next On、Reserve をプレビューします。基本テーマは Default、Transparent Black、Transparent White、Transparent Black v2、Transparent White v2、Card、CD、Signal Line、Stage Caption の順で、その後に装飾テーマが並びます。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/theme-workspace.png' | relative_url }}" alt="テーマカード、設定、プレビュー、テーマガイドを表示した画面"></a><figcaption>フルモードではテーマ比較、設定、OBS 表示確認を同時に行えます。</figcaption></figure>
 
@@ -106,18 +106,18 @@ BGM とカラオケ音源は別々に再生・音量・シークを操作でき�
 
 テーマのキャンバスは、OBS での使い方を制限するものではありません。自分の配信レイアウトに合わせて、Browser Source を自由に拡大縮小・クロップ・配置できます。Default は特に自由な組み合わせに向いています。プレビューの破線で示された文字領域を目安に、Now Singing や Set List など必要な部分を OBS で切り出し、自作背景の好きな位置に配置してください。透明・装飾テーマも、全体構図のまま使うか一部だけを切り出すかを自由に選べます。OBS のクロップはそのシーン内の表示範囲だけを変え、テーマや曲データは変更しません。
 
-「画面設定」には 4 つのタブがあります。
+「レイアウト」は画面設定の一番左にあります。アプリはテーマが宣言した機能を読み取り、実際に使用できるタブと設定項目だけを表示します。
 
 | タブ | 設定できる内容 |
 | --- | --- |
+| **レイアウト** | 対応テーマのテーマ色、背景透明度、またはプロジェクト固有ブロック位置を調整し、テーマ既定値へ復元 |
 | **歌唱中** | Now Singing のフォント、サイズ、色、太字／斜体／下線、配置、長い曲名のマーキー速度 |
 | **履歴** | Set List のフォント、サイズ、色、番号、文字スタイル、配置、リストのスクロール速度 |
 | **予約** | Reserve／Next On 専用のフォント、サイズ、色、番号、文字スタイル、配置 |
-| **レイアウト** | プロジェクト固有レイアウトを有効にし、Now Singing・履歴・Reserve の見出し／内容ブロックの X、Y、幅、高さを調整、またはテーマ配置へ復元 |
 
 OBS に予約曲を表示するか、最大 1～10 曲の表示数も設定できます。OBS WebSocket を有効にした場合のみ Set List のタイムスタンプ設定が表示され、Reserve／Next On には時刻を付けません。
 
-プレビュー背景は透明、暗色、明色、任意色、画像から選べ、画像はフィット／フィル／ストレッチに対応します。プレビューの配置調整はアプリ内の確認表示だけに作用し、OBS 出力は変わりません。固定デザインのテーマでは一部の文字・配置設定がロックされるため、右側のテーマガイドを確認してください。
+プレビュー背景は透明、暗色、明色、任意色、画像から選べ、画像はフィット／フィル／ストレッチに対応します。プレビューの配置調整はアプリ内の確認表示だけに作用し、OBS 出力は変わりません。対応しない設定項目は無効表示ではなく非表示になります。Default は最も多くの文字・配置設定に対応し、旧 Transparent Black／White は歌唱中と履歴の文字設定を維持します。v2、Signal Line、Stage Caption では対応する色と透明度を調整できます。
 
 <a id="obs-websocket"></a>
 ## 05 · OBS WebSocket（テスト機能）

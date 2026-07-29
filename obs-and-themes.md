@@ -8,7 +8,7 @@ translation_key: obs-and-themes
 
 <figure class="manual-figure">
   <a href="assets/images/theme-workspace.png">
-    <img src="assets/images/theme-workspace.png" alt="歌單外觀頁，頂部為主題選擇，中央為 Summer Chime 主題即時預覽">
+    <img src="assets/images/theme-workspace.png" alt="歌單外觀頁，頂部為主題選擇，中央為 Default 主題即時預覽">
   </a>
   <figcaption>歌單外觀頁會同時顯示主題卡片、畫面設定、即時預覽與主題指南。</figcaption>
 </figure>
@@ -22,8 +22,12 @@ translation_key: obs-and-themes
 1. Default
 2. Transparent Black
 3. Transparent White
-4. Card
-5. CD
+4. Transparent Black v2
+5. Transparent White v2
+6. Card
+7. CD
+8. Signal Line
+9. Stage Caption
 
 其他主題可能支援封面、Reserve、Next On、固定版面、動畫或直向設計。右側「主題指南」會說明目前主題的特性及可調整項目。
 
@@ -31,8 +35,8 @@ translation_key: obs-and-themes
 
 1. 在上方主題列點選主題卡片。
 2. 查看中央預覽中的 Now Singing、Set List 與 Next On／Reserve。
-3. 依主題指南調整字型、大小、顏色、待播數量或版面位置。
-4. 切換「演唱／已唱／待播／版面配置」檢查不同狀態。
+3. 先查看最左側的「版面配置」，再依主題指南調整該主題實際支援的顏色、透明度、字型或版面位置。
+4. 切換「演唱／已唱／待播」檢查主題支援的其他狀態；不支援的分頁或控制項會直接隱藏。
 5. 確認後再將「拖曳至 OBS」拖入 OBS。
 
 切換主題只會改變顯示方式，不會修改歌曲、待播順序或已唱紀錄。完整模式最適合比較主題，因為主題列、設定、預覽及指南可以同時顯示。
@@ -58,19 +62,21 @@ translation_key: obs-and-themes
 
 ## 可以設定的項目
 
-左側「畫面設定」分為四個分頁。設定會儲存在目前專案中；實際可調整範圍仍以所選主題右側的「主題指南」為準。
+左側「畫面設定」會把「版面配置」放在最左邊，之後才是演唱、已唱與待播。設定會儲存在目前專案中；程式會依主題宣告的能力，只顯示真正可用的分頁與控制項。
 
 | 分頁 | 影響的 OBS 區域 | 可以調整 |
 | --- | --- | --- |
+| **版面配置** | 主題整體外觀或各文字區域 | 依主題支援項目顯示主題顏色、背景透明度或自訂區塊位置；「恢復主題預設值／版面」可回到原始設計 |
 | **演唱** | Now Singing／目前歌曲 | 字型、字體大小、文字顏色、粗體、斜體、底線、靠左／置中／靠右，以及長歌名的跑馬燈速度 |
 | **已唱** | Set List／History | 字型、字體大小、文字顏色、是否顯示編號、粗體、斜體、底線、文字對齊，以及清單捲動速度 |
 | **待播** | Reserve／Next On | 可與已唱清單分開設定字型、大小、顏色、編號、粗體、斜體、底線與文字對齊 |
-| **版面配置** | Now Singing、Set List、Reserve 的標題與內容區 | 啟用專案自訂版面後，可選擇區塊並調整 X、Y、寬度與高度；「恢復主題版面」可回到主題預設值 |
 
 ### 主題可能限制部分選項
 
-- 標示為**可調整**的主題會套用程式中的文字與版面設定。
-- 標示為**固定設計**的主題會優先保留美術排版，部分字型、顏色、對齊或版面位置可能無法修改。
+- 標示為**可調整**的主題只會顯示它宣告支援的控制項。
+- 標示為**固定設計**的主題會隱藏不適用的字型、顏色、對齊與版面設定，避免使用者誤以為按鈕故障。
+- Default 支援最多文字與區塊設定；舊版 Transparent Black／White 支援演唱與已唱的字型、大小、顏色、樣式及對齊。
+- Transparent Black／White v2 支援主題顏色與背景透明度；Signal Line 與 Stage Caption 也支援主題顏色、背景透明度與指定區域的字型選擇。
 - 不支援 Reserve 的主題不會顯示待播內容。
 - 部分美術主題的 Next On／Reserve 是版面必要元素，待播顯示可能固定開啟。
 - 調整前可先查看右側「主題指南」，確認該主題支援哪些功能。

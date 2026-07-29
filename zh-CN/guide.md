@@ -31,7 +31,7 @@ manual_bundle: true
 
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 软件图标"><div><strong>Singing Stream Savior.exe</strong><span>平时只需要打开这个程序</span></div></div>
 
-从“文件 > 新建项目”建立项目并保存 `.bgmsproj`。项目会保存歌曲、显示歌名、待播顺序、已唱记录、歌词关联和主题设置。标题栏出现 `*` 表示还有未保存的更改。
+从“文件 > 新建项目”建立项目并保存 `.bgmsproj`。项目会保存歌曲、显示歌名、待播顺序、歌词关联和主题设置。已唱记录属于本次直播，不会写入普通项目存档；如果软件异常中断，重新启动时可从恢复快照找回待播与已唱进度。标题栏出现 `*` 表示还有未保存的更改。
 
 <a id="library-and-playback"></a>
 ## 02 · 歌曲库与播放
@@ -42,7 +42,7 @@ manual_bundle: true
 
 要将歌曲加入分类，先选择一首或多首歌曲，按鼠标右键，展开“加入歌单”，再选择“我的最爱”或自定义歌单。这不会复制音频，也不会将歌曲移出“全部歌曲”；同一首歌可以加入多个歌单。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}" alt="歌曲右键菜单展开加入歌单并显示我的最爱"></a><figcaption>同一个右键菜单也可以将歌曲加入待播。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}" alt="歌曲右键菜单包含编辑显示歌名、加入待播、加入歌单与删除歌曲"></a><figcaption>编辑显示歌名位于第一项，同一个菜单也可将歌曲加入待播或其他歌单。</figcaption></figure>
 
 除了通过文件选择窗口导入，也可以把一首或多首本地音频直接拖进软件。单个 YouTube 视频网址可以粘贴或拖入并加入为一首歌曲；YouTube 播放列表网址也可以直接拖入，软件会识别其中的歌曲并导入为对应的自定义歌单，不必逐首粘贴网址。本地歌曲／歌唱伴奏支持 `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` 格式。YouTube 导入需要网络连接。
 
@@ -54,13 +54,13 @@ manual_bundle: true
 
 封面不是必需，仅在 Card 与 CD 主题下有特别效果。在歌曲菜单打开“嵌入封面”，选择搜索结果或本地图片，等待预览完成后按“嵌入”。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}" alt="显示真实线上结果与封面预览的嵌入封面窗口"></a><figcaption>这是选择真实搜索结果后的画面；左侧封面预览载入完成后即可嵌入。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}" alt="显示搜索结果与封面预览的嵌入封面窗口"></a><figcaption>选择搜索结果并等待左侧封面预览载入完成后，即可嵌入。</figcaption></figure>
 
 BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还可以调整播放速度，并以半音为单位升降 Key：可放慢较难掌握的歌曲、配合练习节奏，或把音域太高／太低的伴奏调到更适合演唱的位置，不需要另外制作不同版本的音频。
 
 软件会为每首歌曲分别记住调整过的速度与音高。切换歌曲后再次回来时会恢复该歌曲的设置；需要回到原始状态时，可重置为 `100%` 速度和 `0` 半音。这些调整只影响播放，不会修改原始文件或降低其音频质量。
 
-待播不是播放歌曲的必要步骤；在歌曲表格中双击歌曲即可直接播放。待播适合管理观众点歌或之后预定演唱的歌曲，支持的主题会将第一首显示在 **Next On**，或将数首显示在 **Reserve**。播放完成的歌曲会移入“已唱”。
+待播不是播放歌曲的必要步骤；在歌曲表格中双击歌曲即可直接播放。待播适合管理观众点歌或之后预定演唱的歌曲，支持的主题会将第一首显示在 **Next On**，或将数首显示在 **Reserve**。播放完成的歌曲会移入“已唱”。正常关闭软件后，已唱记录不会带到下一次直播；若软件异常中断，则可从恢复快照恢复本次直播的待播与已唱进度。
 
 <a id="lyrics"></a>
 ## 03 · 歌词功能
@@ -83,7 +83,7 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 <a id="obs-and-themes"></a>
 ## 04 · 歌单外观与主题
 
-在“歌单外观”选择主题，并检查 Now Singing、Set List、Next On 与 Reserve。基本主题依次为 Default、Transparent Black、Transparent White、Card、CD，之后才是精致主题。
+在“歌单外观”选择主题，并检查 Now Singing、Set List、Next On 与 Reserve。基本主题依次为 Default、Transparent Black、Transparent White、Transparent Black v2、Transparent White v2、Card、CD、Signal Line、Stage Caption，之后才是精致主题。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/theme-workspace.png' | relative_url }}" alt="歌单外观页面的主题卡片、设置、预览和说明"></a><figcaption>完整模式可同时比较主题、调整设置并查看 OBS 效果。</figcaption></figure>
 
@@ -106,18 +106,18 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 主题画布不会限制 Browser Source 的使用方式。可以在 OBS 中按照自己的直播版面自由缩放、裁切与定位。Default 特别适合作为可自由组合的基础版面：参考预览中的虚线文字区域，沿虚线裁切想保留的 Now Singing、Set List 等区块，再放到自制背景的合适位置。透明与精致主题可以保留完整构图，也可以只裁取需要的部分。OBS 裁切只会改变当前场景中来源的显示范围，不会修改主题或歌曲资料。
 
-“画面设置”提供四个分页：
+“版面配置”位于画面设置最左侧。软件会读取主题声明的能力，只显示该主题真正可用的分页和控制项：
 
 | 分页 | 可调整项目 |
 | --- | --- |
+| **版面配置** | 依主题支持情况调整主题颜色、背景透明度或项目自定义区块位置，并可恢复主题默认值 |
 | **演唱** | Now Singing 的字体、大小、颜色、粗体／斜体／下划线、对齐和长歌名跑马灯速度 |
 | **已唱** | Set List 的字体、大小、颜色、编号、文字样式、对齐和列表滚动速度 |
 | **待播** | Reserve／Next On 独立的字体、大小、颜色、编号、文字样式与对齐 |
-| **版面配置** | 启用项目自定义版面后，调整 Now Singing、已唱和待播标题／内容区的 X、Y、宽度与高度，或恢复主题版面 |
 
 还可设置是否在 OBS 显示待播以及 1–10 首显示上限。启用 OBS WebSocket 后，才会出现 Set List 时间戳选项；时间不会显示在 Reserve／Next On 前。
 
-预览背景可选透明、深色、浅色、自定义颜色或图片；图片支持符合、填满、拉伸。“调整预览”只改变软件内检查画面的大小与位置，不会改变 OBS 输出。固定设计主题可能锁定部分文字或版面选项，请以右侧“主题指南”为准。
+预览背景可选透明、深色、浅色、自定义颜色或图片；图片支持符合、填满、拉伸。“调整预览”只改变软件内检查画面的大小与位置，不会改变 OBS 输出。不支持的控制项会直接隐藏，而不是以锁定状态保留。Default 提供最多文字与版面设置；旧版 Transparent Black／White 保留演唱与已唱文字设置；v2、Signal Line 与 Stage Caption 可调整各自支持的颜色和背景透明度。
 
 <a id="obs-websocket"></a>
 ## 05 · OBS WebSocket（测试功能）

@@ -36,7 +36,7 @@ Extract the entire ZIP to a normal folder. In the outermost folder, double-click
 
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior app icon"><div><strong>Singing Stream Savior.exe</strong><span>Open this app to start</span></div></div>
 
-Create a project from **File > New project**, add songs, then save the `.bgmsproj` file. A project stores songs, display titles, queue order, history, lyric links, theme, and display settings. An asterisk in the window title means there are unsaved changes.
+Create a project from **File > New project**, add songs, then save the `.bgmsproj` file. A project stores songs, display titles, queue order, lyric links, theme, and display settings. Sung history belongs to the current live session and is not written to a normal project save. If the app is interrupted unexpectedly, a recovery snapshot can restore the live-session progress when you restart. An asterisk in the window title means there are unsaved changes.
 
 Full mode is the default preparation workspace: content and settings on the left, previews in the center, and players plus queue on the right.
 
@@ -49,7 +49,7 @@ The library contains **All songs**, **Favorites**, **Recently played**, and remo
 
 To place songs in a collection, select one or more rows, right-click, open **Add to playlist**, and choose **Favorites** or a custom playlist. This does not duplicate the audio or remove it from All songs, and one song can belong to several playlists.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}" alt="Song context menu with Add to playlist expanded to Favorites"></a><figcaption>The same context menu also provides Add to Reserve for planned songs.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}" alt="Song context menu with Edit display title, Add to Reserve, Add to playlist, and Delete track"></a><figcaption>The menu keeps display-title editing first and also provides Add to Reserve and playlist organization.</figcaption></figure>
 
 In addition to choosing files from the import dialog, you can drag one or more local audio files directly into the app. Paste or drag in a single YouTube video URL to add one song. You can also drag in a YouTube playlist URL: the app recognizes its videos and imports them into a corresponding custom playlist, so you do not need to add every link individually. Supported local formats include `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection and the bundled `yt-dlp` helper.
 
@@ -63,14 +63,14 @@ Cover art is optional. It becomes especially useful with the **Card** and **CD**
 
 <figure class="manual-figure manual-figure--medium">
   <a href="{{ '/assets/images/en/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/en/cover-dialog.png' | relative_url }}" alt="Embed cover window with preview and search results"></a>
-  <figcaption>A real online result is selected. Embed becomes available after its cover preview has loaded.</figcaption>
+  <figcaption>Select a search result and wait for the preview on the left; Embed then becomes available.</figcaption>
 </figure>
 
 The BGM and karaoke players have separate play, pause, stop, loop, mute, volume, and seek controls. Karaoke playback also provides speed control and semitone key transposition—particularly useful for slowing down a difficult song, matching a comfortable practice tempo, or moving a track whose range is too high or too low without preparing another audio file.
 
 The app remembers the adjusted speed and key separately for every song. When you switch away and return, that song’s preferred settings are restored; use the reset controls to return to `100%` speed and `0` semitones. These adjustments affect playback only and never rewrite or reduce the quality of the source file.
 
-The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** when managing viewer requests or songs you plan to sing later. Supported themes show the first reserved song in **Next On**, or several reserved songs in **Reserve**. Completed songs move to **History**.
+The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** when managing viewer requests or songs you plan to sing later. Supported themes show the first reserved song in **Next On**, or several reserved songs in **Reserve**. Completed songs move to **History**. History is cleared after a normal app exit; after an unexpected interruption, the recovery snapshot can restore the queue and History for that live session.
 
 <a id="lyrics"></a>
 ## 03 · Lyrics
@@ -98,7 +98,7 @@ Use the lyric offset controls if timing is early or late: negative values show l
 <a id="obs-and-themes"></a>
 ## 04 · Playlist appearance and OBS
 
-Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set List, Next On, and Reserve in the preview. Basic themes appear first: Default, Transparent Black, Transparent White, Card, and CD; illustrated themes follow.
+Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set List, Next On, and Reserve in the preview. Basic themes appear first: Default, Transparent Black, Transparent White, Transparent Black v2, Transparent White v2, Card, CD, Signal Line, and Stage Caption; illustrated themes follow.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/theme-workspace.png' | relative_url }}" alt="Playlist Appearance workspace with theme cards, settings, preview, and guide"></a>
@@ -126,18 +126,18 @@ Default uses a white preview background. Transparent and illustrated themes can 
 
 The theme canvas does not restrict how the Browser Source must be used. In OBS, freely resize, crop, and position it to fit your own stream layout. Default is especially suitable as a flexible base: use the dashed text-area guides in the preview to crop out the Now Singing, Set List, or other blocks you want, then place them over your own background. Transparent and illustrated themes may be kept as a complete composition or cropped to selected parts. OBS cropping changes only that scene source; it does not modify the theme or song data.
 
-Available appearance controls:
+**Layout** is the leftmost appearance tab. The app reads each theme's declared capabilities and shows only controls that actually work with that theme.
 
 | Tab | Controls |
 | --- | --- |
+| **Layout** | Theme color, background opacity, or optional project block positions when supported; restore the theme defaults at any time |
 | **Current** | Now Singing font, size, color, bold/italic/underline, alignment, and long-title marquee speed |
 | **History** | Set List font, size, color, numbering, bold/italic/underline, alignment, and list scroll speed |
 | **Reserve** | Separate Reserve/Next On font, size, color, numbering, style, and alignment |
-| **Layout** | Optional project layout for the Now Singing, History, and Reserve labels/lists; adjust X, Y, width, and height or restore the theme layout |
 
 You can also enable Reserve, choose a 1–10 song display limit, and—when OBS WebSocket is enabled—show timestamps before sung songs in supported Set Lists. Timestamps are not added to Reserve or Next On.
 
-Preview-only tools provide transparent, dark, light, custom-color, or image backgrounds; image fit/fill/stretch; and temporary source sizing/positioning. They never change the transparent OBS output. Fixed-design themes may lock typography or layout controls, so check the Theme Guide for the selected theme.
+Preview-only tools provide transparent, dark, light, custom-color, or image backgrounds; image fit/fill/stretch; and temporary source sizing/positioning. They never change the transparent OBS output. Unsupported controls are hidden rather than merely disabled. Default exposes the broadest typography and layout controls; legacy Transparent Black/White retain Current and History typography controls; both v2 themes, Signal Line, and Stage Caption expose their supported color/opacity controls.
 
 <a id="obs-websocket"></a>
 ## 05 · OBS WebSocket (experimental)

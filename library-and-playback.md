@@ -41,7 +41,7 @@ translation_key: library-and-playback
 
 <figure class="manual-figure manual-figure--medium">
   <a href="assets/images/add-to-playlist-menu.png">
-    <img src="assets/images/add-to-playlist-menu.png" alt="歌曲右鍵選單展開加入歌單，子選單顯示我的最愛">
+    <img src="assets/images/add-to-playlist-menu.png" alt="歌曲右鍵選單，包含編輯顯示歌名、加入待播、加入歌單與刪除歌曲">
   </a>
   <figcaption>右鍵選單可直接加入待播或加入歌單；圖中示範加入「我的最愛」。</figcaption>
 </figure>
@@ -78,7 +78,7 @@ translation_key: library-and-playback
 
 <figure class="manual-figure manual-figure--medium">
   <a href="assets/images/display-title-edit.png">
-    <img src="assets/images/display-title-edit.png" alt="歌曲表格的顯示歌名欄位進入編輯狀態，火燒的寂寞文字已被選取">
+    <img src="assets/images/display-title-edit.png" alt="歌曲表格的顯示歌名欄位進入編輯狀態">
   </a>
   <figcaption>從右鍵選單第一項開啟編輯後，編輯框只出現在「顯示歌名」欄；左側檔案名稱維持不變。</figcaption>
 </figure>
@@ -98,7 +98,7 @@ translation_key: library-and-playback
   <a href="assets/images/cover-dialog.png">
     <img src="assets/images/cover-dialog.png" alt="嵌入封面視窗，左側顯示封面預覽，右側顯示搜尋結果">
   </a>
-  <figcaption>實際搜尋「髮如雪」後的畫面。選取右側結果並等左側預覽載入完成，「嵌入」按鈕就會啟用。</figcaption>
+  <figcaption>選取右側搜尋結果並等待左側預覽載入完成後，「嵌入」按鈕就會啟用。</figcaption>
 </figure>
 
 YouTube 歌曲預設使用影片縮圖，也可設定自訂封面或恢復預設縮圖。
@@ -132,6 +132,8 @@ BGM 播放器有獨立的播放、暫停、停止、循環、靜音、音量與�
 待播清單是選用的直播管理功能，不是開始播放的必要步驟。直接在歌曲表格中雙擊歌曲，就能立即載入並播放。
 
 若有觀眾點歌、臨時加歌，或已經預定接下來要唱的曲目，可將歌曲拖曳或使用右鍵選單加入「待播」。待播歌曲可以重新排序；播放完成後會進入「已唱」。
+
+「已唱」是當次直播的暫存進度，正常關閉軟體後不會留到下一場直播。若直播中程式異常中斷，軟體會以復原快照保存待播與已唱進度，重新啟動時可選擇恢復。
 
 使用待播時，建議：
 
