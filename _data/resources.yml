@@ -26,6 +26,21 @@ videos:
       ja: "伴奏再生、テーマ切り替え、同期歌詞、OBS での最終表示を実際の画面で紹介します。"
       ko: "반주 재생, 세트리스트 테마 전환, 동기화 가사와 OBS 최종 출력을 실제 화면으로 보여 줍니다."
       en: "A real workflow showing karaoke playback, theme switching, synchronized lyrics, and the final OBS output."
+  - file_url: "/assets/videos/lyrics-practice-demo.mp4"
+    poster: "/assets/images/lyrics-practice-demo-poster.jpg"
+    duration: "00:32"
+    title:
+      zh-TW: "你甚至可以用它來練歌"
+      zh-CN: "你甚至可以用它来练歌"
+      ja: "歌の練習にも使えます"
+      ko: "노래 연습에도 활용할 수 있어요"
+      en: "You can even use it to practise songs"
+    description:
+      zh-TW: "在歌詞視窗直接點選想練的歌詞，伴奏就會跳到對應時間；不用再拖著播放器時間軸猜段落位置。示範影片已靜音。"
+      zh-CN: "在歌词窗口直接点击想练的歌词，伴奏就会跳到对应时间；不用再拖着播放器时间轴猜段落位置。演示视频已静音。"
+      ja: "練習したい歌詞を歌詞ウィンドウで直接選ぶと、伴奏がその時刻へ移動します。プレーヤーのタイムラインで位置を探す必要はありません。デモ動画は無音です。"
+      ko: "가사 창에서 연습할 가사를 직접 선택하면 반주가 해당 시점으로 이동합니다. 플레이어 타임라인에서 구간을 찾을 필요가 없습니다. 데모 영상은 무음입니다."
+      en: "Select the lyric you want to practise and the karaoke track jumps to its timestamp—no more guessing the section on the player timeline. This demo is silent."
 
 # type 可填 free 或 paid；download_url 可連到雲端檔案或販售頁。
 themes: []

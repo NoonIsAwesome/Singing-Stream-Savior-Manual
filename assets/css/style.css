@@ -2133,7 +2133,7 @@ body {
 .video-local video {
   display: block;
   width: 100%;
-  aspect-ratio: 1084 / 430;
+  aspect-ratio: 16 / 9;
   background: #05080d;
   object-fit: contain;
 }
