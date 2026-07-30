@@ -6,6 +6,7 @@
   {% assign lead = '在這裡取得 Singing Stream Savior，並查看之後加入的操作教學。下載前可先閱讀版本資訊；影片只會在你點擊後載入，不會自動播放。' %}
   {% assign software_title = '下載 Singing Stream Savior' %}
   {% assign software_text = '下載 ZIP 並解壓縮後，只需要開啟最外層的「Singing Stream Savior.exe」。它也會顯示版本檢查狀態，未來有更新時會先詢問是否安裝。請勿單獨移動內部 DLL 或資料夾。' %}
+  {% assign launcher_note = '完整包已更新為啟動器 1.0.0.1。啟動器本身不會被舊版自動更新；已安裝 2.0.1.0、但仍使用舊啟動器的使用者，請重新下載完整 ZIP。' %}
   {% assign download_label = '下載最新版' %}
   {% assign coming_soon = '正式下載連結準備中' %}
   {% assign video_title = '操作影片' %}
@@ -18,6 +19,7 @@
   {% assign lead = '在这里获取 Singing Stream Savior，并查看之后加入的操作教学。视频只会在点击后加载，不会自动播放。' %}
   {% assign software_title = '下载 Singing Stream Savior' %}
   {% assign software_text = '下载 ZIP 并解压后，只需打开最外层的“Singing Stream Savior.exe”。它也会显示版本检查状态，今后发现更新时会先询问是否安装。请勿单独移动内部 DLL 或文件夹。' %}
+  {% assign launcher_note = '完整包已更新为启动器 1.0.0.1。旧版不会自动更新启动器本身；已安装 2.0.1.0 但仍使用旧启动器的用户，请重新下载完整 ZIP。' %}
   {% assign download_label = '下载最新版' %}
   {% assign coming_soon = '正式下载链接准备中' %}
   {% assign video_title = '操作视频' %}
@@ -30,6 +32,7 @@
   {% assign lead = 'Singing Stream Savior と今後追加する操作動画をこのページにまとめます。動画はクリック後に読み込まれ、自動再生されません。' %}
   {% assign software_title = 'Singing Stream Savior をダウンロード' %}
   {% assign software_text = 'ZIP を展開し、最上位にある「Singing Stream Savior.exe」を起動してください。更新確認の状態も表示され、今後新しい版がある場合はインストール前に確認します。内部の DLL やフォルダーは移動しないでください。' %}
+  {% assign launcher_note = 'フルパッケージのランチャーを 1.0.0.1 に更新しました。旧ランチャーからランチャー本体は自動更新されないため、2.0.1.0 を導入済みでも旧ランチャーを使用している場合は ZIP を再ダウンロードしてください。' %}
   {% assign download_label = '最新版をダウンロード' %}
   {% assign coming_soon = '正式なダウンロードを準備中' %}
   {% assign video_title = '操作動画' %}
@@ -42,6 +45,7 @@
   {% assign lead = 'Singing Stream Savior와 추후 추가할 사용 영상을 한곳에서 제공합니다. 영상은 클릭한 뒤에만 불러오며 자동 재생하지 않습니다.' %}
   {% assign software_title = 'Singing Stream Savior 다운로드' %}
   {% assign software_text = 'ZIP 압축을 푼 뒤 최상위의 “Singing Stream Savior.exe”만 실행하세요. 버전 확인 상태를 표시하고 이후 새 버전이 있으면 설치 전에 먼저 확인합니다. 내부 DLL이나 폴더를 따로 이동하지 마세요.' %}
+  {% assign launcher_note = '전체 패키지의 런처가 1.0.0.1로 업데이트되었습니다. 기존 런처는 런처 자체를 자동 업데이트하지 않으므로, 2.0.1.0을 설치했지만 이전 런처를 사용 중이라면 ZIP을 다시 다운로드하세요.' %}
   {% assign download_label = '최신 버전 다운로드' %}
   {% assign coming_soon = '정식 다운로드 준비 중' %}
   {% assign video_title = '사용 영상' %}
@@ -54,6 +58,7 @@
   {% assign lead = 'Get Singing Stream Savior here and find operation videos as they become available. Videos load only after you choose to play them and never autoplay.' %}
   {% assign software_title = 'Download Singing Stream Savior' %}
   {% assign software_text = 'Extract the ZIP, then open “Singing Stream Savior.exe” in the top-level folder. It also shows the version-check status and asks before installing a future update. Do not move the internal DLLs or folders separately.' %}
+  {% assign launcher_note = 'The full package now includes launcher 1.0.0.1. Older launchers cannot update themselves, so users who already installed 2.0.1.0 with the previous launcher should download the full ZIP again.' %}
   {% assign download_label = 'Download latest version' %}
   {% assign coming_soon = 'Official download coming soon' %}
   {% assign video_title = 'Operation videos' %}
@@ -86,7 +91,7 @@
     </div>
     <div class="download-panel__copy">
       <strong>Singing Stream Savior</strong>
-      <span>Windows · {{ resources.software.version }}</span>
+      <span>Windows · {{ resources.software.version }} · Launcher {{ resources.software.launcher_version }}</span>
       {% if resources.software.file_size != '' %}<small>{{ resources.software.file_size }}</small>{% endif %}
     </div>
     {% if resources.software.download_url != '' %}
@@ -95,6 +100,7 @@
       <span class="resource-status">{{ coming_soon }}</span>
     {% endif %}
   </article>
+  <p class="resource-note">{{ launcher_note }}</p>
 </section>
 
 <section class="resource-section" aria-labelledby="operation-videos">

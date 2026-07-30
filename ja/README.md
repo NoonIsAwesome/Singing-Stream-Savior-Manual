@@ -25,7 +25,7 @@ translation_key: home
       <article><span class="release-log__index">01</span><div><strong>再生ステータス</strong><p>下部に BGM とカラオケの連携状態を表示。BGM のフェードアウトを選べ、音の重なりも防ぎます。</p></div></article>
       <article><span class="release-log__index">02</span><div><strong>テーマの自動デモ</strong><p>サンプル曲で長い Set List、タイムスタンプ、Reserve、Next On を巡回表示。プロジェクトや OBS は変更しません。</p></div></article>
       <article><span class="release-log__index">03</span><div><strong>分かりやすい歌詞補正</strong><p>「歌詞が早い／遅い」、前後行数スライダー、ひらがな＋ローマ字、歌詞ウィンドウの同期改善を追加。</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>操作と更新の安定性</strong><p>速度・音程・シーク、数値入力、ボタンと hover を改善。更新は SHA-256 で検証し、失敗時に戻せます。</p></div></article>
+      <article><span class="release-log__index">04</span><div><strong>操作と更新の安定性</strong><p>速度・音程・シーク、数値入力、ボタンと hover を改善。フルパッケージにランチャー 1.0.0.1 を収録し、更新確認をダーク表示に統一して完了後は自動起動します。</p></div></article>
     </div>
     <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.0">2.0.1.0 の更新内容を見る <span aria-hidden="true">→</span></a>
   </div>

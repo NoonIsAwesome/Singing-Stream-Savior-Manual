@@ -36,7 +36,7 @@ translation_key: home
       <article><span class="release-log__index">01</span><div><strong>自動播放狀態</strong><p>底部狀態區會說明 BGM 與伴奏正在如何協調；BGM 也可選擇淡出轉場，並避免與伴奏重疊。</p></div></article>
       <article><span class="release-log__index">02</span><div><strong>全自動主題展示</strong><p>用範例歌曲循環展示 Now Singing、長歌單、時間戳、Reserve 與 Next On，不會改動專案或 OBS。</p></div></article>
       <article><span class="release-log__index">03</span><div><strong>更直覺的歌詞校正</strong><p>以「歌詞太早／太晚」直接調整，並加入前後句數滑桿、平假名＋羅馬拼音及歌詞視窗同步修正。</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>操作與更新更穩定</strong><p>改善速度、音高與跳播反應，統一數值欄位、按鈕與 hover；更新器會驗證 SHA-256，失敗時可回復舊版。</p></div></article>
+      <article><span class="release-log__index">04</span><div><strong>操作與更新更穩定</strong><p>改善速度、音高與跳播反應，統一數值欄位、按鈕與 hover；完整包內含啟動器 1.0.0.1，改用深色更新確認並在完成後直接啟動。</p></div></article>
     </div>
     <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.0">查看 2.0.1.0 完整更新內容 <span aria-hidden="true">→</span></a>
   </div>

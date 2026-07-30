@@ -25,7 +25,7 @@ translation_key: home
       <article><span class="release-log__index">01</span><div><strong>재생 상태</strong><p>하단 상태 영역에서 BGM과 반주 연동을 설명합니다. BGM 페이드아웃을 선택하고 반주와의 겹침을 막을 수 있습니다.</p></div></article>
       <article><span class="release-log__index">02</span><div><strong>자동 테마 데모</strong><p>샘플 곡으로 긴 Set List, 타임스탬프, Reserve와 Next On을 순환 표시하며 프로젝트와 OBS는 변경하지 않습니다.</p></div></article>
       <article><span class="release-log__index">03</span><div><strong>쉬운 가사 보정</strong><p>‘가사가 너무 빠름/느림’, 앞뒤 줄 슬라이더, 히라가나＋로마자와 가사 창 동기화 개선을 제공합니다.</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>조작과 업데이트 안정성</strong><p>속도, 음정, 탐색, 숫자 입력, 버튼과 hover를 개선했습니다. 업데이트는 SHA-256 검증과 롤백을 지원합니다.</p></div></article>
+      <article><span class="release-log__index">04</span><div><strong>조작과 업데이트 안정성</strong><p>속도, 음정, 탐색, 숫자 입력, 버튼과 hover를 개선했습니다. 전체 패키지에는 어두운 업데이트 확인과 완료 후 자동 실행을 지원하는 런처 1.0.0.1이 포함됩니다.</p></div></article>
     </div>
     <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.0">2.0.1.0 전체 업데이트 보기 <span aria-hidden="true">→</span></a>
   </div>

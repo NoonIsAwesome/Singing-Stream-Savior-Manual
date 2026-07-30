@@ -1936,6 +1936,17 @@ body {
   color: var(--ink-500);
 }
 
+.resource-note {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  color: var(--ink-700);
+  background: rgba(121, 201, 255, 0.07);
+  border-left: 3px solid #79c9ff;
+  border-radius: 0 7px 7px 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
 .resource-action {
   display: inline-flex;
   min-height: 44px;

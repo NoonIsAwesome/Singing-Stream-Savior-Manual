@@ -25,7 +25,7 @@ translation_key: home
       <article><span class="release-log__index">01</span><div><strong>Playback status</strong><p>The bottom status area explains BGM and karaoke coordination. Optional BGM fading avoids overlap when karaoke starts.</p></div></article>
       <article><span class="release-log__index">02</span><div><strong>Automatic theme demo</strong><p>Sample songs cycle through Now Singing, a long Set List, timestamps, Reserve, and Next On without changing your project or OBS.</p></div></article>
       <article><span class="release-log__index">03</span><div><strong>Clearer lyric timing</strong><p>Use “lyrics too early/late,” before-and-after line sliders, Hiragana + Romaji, and improved Lyrics Window synchronization.</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>Smoother controls and updates</strong><p>Speed, pitch, seeking, numeric controls, buttons, and hover states are refined. Updates use SHA-256 verification and rollback.</p></div></article>
+      <article><span class="release-log__index">04</span><div><strong>Smoother controls and updates</strong><p>Speed, pitch, seeking, numeric controls, buttons, and hover states are refined. The full package includes launcher 1.0.0.1 with a dark update prompt and automatic launch after completion.</p></div></article>
     </div>
     <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.0">Read the full 2.0.1.0 release notes <span aria-hidden="true">→</span></a>
   </div>
