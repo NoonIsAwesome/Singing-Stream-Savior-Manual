@@ -17,20 +17,6 @@ translation_key: home
 
 {% include demo-video.html %}
 
-<section class="release-log" aria-labelledby="release-201-title">
-  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.1</strong></div>
-  <div class="release-log__body">
-    <div class="section-heading"><p class="section-kicker">今回の更新</p><h2 id="release-201-title">自動化を見える形にし、プレビューを配信に近づけました</h2><p>再生連携、テーマの各状態、歌詞タイミングを、配信前に分かりやすく確認できます。</p></div>
-    <div class="release-log__grid">
-      <article><span class="release-log__index">01</span><div><strong>再生ステータス</strong><p>下部に BGM とカラオケの連携状態を表示。BGM のフェードアウトを選べ、音の重なりも防ぎます。</p></div></article>
-      <article><span class="release-log__index">02</span><div><strong>テーマの自動デモ</strong><p>サンプル曲で長い Set List、タイムスタンプ、Reserve、Next On を巡回表示。プロジェクトや OBS は変更しません。</p></div></article>
-      <article><span class="release-log__index">03</span><div><strong>分かりやすい歌詞補正</strong><p>「歌詞が早い／遅い」、前後行数スライダー、ひらがな＋ローマ字、歌詞ウィンドウの同期改善を追加。</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>ランチャーも自動更新</strong><p>アプリが外側のランチャーをバックグラウンドで検証・更新します。再確認や ZIP の再ダウンロードは不要で、進行状況はダーク表示の下部ステータスだけに表示します。</p></div></article>
-    </div>
-    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.1">2.0.1.1 の更新内容を見る <span aria-hidden="true">→</span></a>
-  </div>
-</section>
-
 <section class="origin-story" id="why">
   <div><p class="section-kicker">なぜ作ったのか</p><h2>歌枠で起こりやすい、小さな操作忘れが出発点です</h2><p>歌い始める前に BGM を止めること、歌い終えた後に BGM を戻すこと、そして歌った曲を OBS のセットリストへ追加することを、配信中によく忘れていました。難しい操作ではありませんが、歌やコメント、次の曲に気を配っていると抜けやすい作業です。</p><p>そこで Singing Stream Savior を作りました。最初に BGM を選んで再生しておくと、カラオケ開始時にその BGM を自動で一時停止し、カラオケを停止または最後まで再生した後に元の BGM を自動で再開します。セットリスト Overlay も曲の状態に合わせて更新されるため、毎回 OBS で曲名を入力し直す必要がありません。</p></div>
   <div class="stream-sequence" aria-label="BGM とカラオケの自動切り替え"><div class="stream-step stream-step--playing"><span>BGM</span><strong>曲間に再生</strong></div><div class="stream-arrow"><span>カラオケ開始</span></div><div class="stream-step stream-step--active stream-step--paused"><span>カラオケ</span><strong>BGM を自動停止</strong></div><div class="stream-arrow"><span>一時停止・終了</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>自動で再開</strong></div></div>

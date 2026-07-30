@@ -23,20 +23,6 @@ translation_key: home
 
 {% include demo-video.html %}
 
-<section class="release-log" aria-labelledby="release-201-title">
-  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.1</strong></div>
-  <div class="release-log__body">
-    <div class="section-heading"><p class="section-kicker">本次更新</p><h2 id="release-201-title">让自动化更清楚，预览也更接近直播</h2><p>这次把播放协调、主题状态与歌词时间调整，整理成更容易理解和测试的操作。</p></div>
-    <div class="release-log__grid">
-      <article><span class="release-log__index">01</span><div><strong>播放状态</strong><p>底部状态区会说明 BGM 与伴奏如何协调；BGM 可选择淡出，并避免与伴奏重叠。</p></div></article>
-      <article><span class="release-log__index">02</span><div><strong>自动主题展示</strong><p>用示例歌曲循环展示长歌单、时间戳、Reserve 与 Next On，不会修改项目或 OBS。</p></div></article>
-      <article><span class="release-log__index">03</span><div><strong>更直观的歌词校正</strong><p>使用“歌词太早／太晚”、前后句数滑杆、平假名＋罗马拼音，并改善歌词窗口同步。</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>启动器也能自动更新</strong><p>主程序会在后台验证并更新外层启动器，无需再次确认或重新下载完整 ZIP；进度只显示在深色底部状态区。</p></div></article>
-    </div>
-    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.1">查看 2.0.1.1 完整更新内容 <span aria-hidden="true">→</span></a>
-  </div>
-</section>
-
 <section class="origin-story" id="why">
   <div><p class="section-kicker">为什么制作这个软件？</p><h2>它从歌回里最常发生的小失误开始</h2><p>我在歌回直播时，常常忘记在演唱前关闭 BGM、唱完后再打开 BGM，也会忘记把刚唱完的歌曲补到 OBS 画面上的歌单。这些事情并不难，却很容易在唱歌、聊天和寻找下一首歌时遗漏。</p><p>因此制作了 Singing Stream Savior：先选择 BGM 并开始播放，之后播放伴奏时会自动暂停 BGM；伴奏停止或播放完毕后，会自动恢复原来的 BGM。歌单 Overlay 也会跟随歌曲状态更新，不需要每唱一首就回到 OBS 手动修改文字。</p></div>
   <div class="stream-sequence" aria-label="背景音乐与歌唱伴奏自动切换流程"><div class="stream-step stream-step--playing"><span>BGM</span><strong>直播空档播放</strong></div><div class="stream-arrow"><span>播放伴奏</span></div><div class="stream-step stream-step--active stream-step--paused"><span>歌唱伴奏</span><strong>BGM 自动暂停</strong></div><div class="stream-arrow"><span>暂停或结束</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>自动恢复播放</strong></div></div>

@@ -17,20 +17,6 @@ translation_key: home
 
 {% include demo-video.html %}
 
-<section class="release-log" aria-labelledby="release-201-title">
-  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.1</strong></div>
-  <div class="release-log__body">
-    <div class="section-heading"><p class="section-kicker">What’s new</p><h2 id="release-201-title">Visible automation and previews that behave more like a live stream</h2><p>This release makes playback coordination, theme states, and lyric timing easier to understand before going live.</p></div>
-    <div class="release-log__grid">
-      <article><span class="release-log__index">01</span><div><strong>Playback status</strong><p>The bottom status area explains BGM and karaoke coordination. Optional BGM fading avoids overlap when karaoke starts.</p></div></article>
-      <article><span class="release-log__index">02</span><div><strong>Automatic theme demo</strong><p>Sample songs cycle through Now Singing, a long Set List, timestamps, Reserve, and Next On without changing your project or OBS.</p></div></article>
-      <article><span class="release-log__index">03</span><div><strong>Clearer lyric timing</strong><p>Use “lyrics too early/late,” before-and-after line sliders, Hiragana + Romaji, and improved Lyrics Window synchronization.</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>Automatic launcher updates</strong><p>The app now verifies and updates the outer launcher in the background, with no second confirmation or full-ZIP download. Progress stays in the dark bottom status area.</p></div></article>
-    </div>
-    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.1">Read the full 2.0.1.1 release notes <span aria-hidden="true">→</span></a>
-  </div>
-</section>
-
 <section class="origin-story" id="why">
   <div><p class="section-kicker">Why was it made?</p><h2>It began with the small mistakes that happen during singing streams</h2><p>I often forgot to turn BGM off before singing, turn it back on afterward, or add the song I had just finished to the set list shown in OBS. None of these tasks is difficult, but they are easy to miss while singing, talking to chat, and finding the next track.</p><p>Singing Stream Savior was built to handle that rhythm. First choose and start your BGM. Starting karaoke then pauses that BGM automatically, and stopping or finishing the karaoke track resumes it. The set-list overlay also follows song status without retyping every title in OBS.</p></div>
   <div class="stream-sequence" aria-label="Automatic handoff between BGM and karaoke"><div class="stream-step stream-step--playing"><span>BGM</span><strong>Plays between songs</strong></div><div class="stream-arrow"><span>Start karaoke</span></div><div class="stream-step stream-step--active stream-step--paused"><span>Karaoke</span><strong>BGM pauses</strong></div><div class="stream-arrow"><span>Pause or finish</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>Playback resumes</strong></div></div>

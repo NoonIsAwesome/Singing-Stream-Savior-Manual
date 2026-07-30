@@ -17,20 +17,6 @@ translation_key: home
 
 {% include demo-video.html %}
 
-<section class="release-log" aria-labelledby="release-201-title">
-  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.1</strong></div>
-  <div class="release-log__body">
-    <div class="section-heading"><p class="section-kicker">이번 업데이트</p><h2 id="release-201-title">자동화를 눈에 보이게 하고 미리보기를 방송에 가깝게</h2><p>재생 연동, 테마 상태와 가사 타이밍을 방송 전에 더 쉽게 이해하고 확인할 수 있습니다.</p></div>
-    <div class="release-log__grid">
-      <article><span class="release-log__index">01</span><div><strong>재생 상태</strong><p>하단 상태 영역에서 BGM과 반주 연동을 설명합니다. BGM 페이드아웃을 선택하고 반주와의 겹침을 막을 수 있습니다.</p></div></article>
-      <article><span class="release-log__index">02</span><div><strong>자동 테마 데모</strong><p>샘플 곡으로 긴 Set List, 타임스탬프, Reserve와 Next On을 순환 표시하며 프로젝트와 OBS는 변경하지 않습니다.</p></div></article>
-      <article><span class="release-log__index">03</span><div><strong>쉬운 가사 보정</strong><p>‘가사가 너무 빠름/느림’, 앞뒤 줄 슬라이더, 히라가나＋로마자와 가사 창 동기화 개선을 제공합니다.</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>런처 자동 업데이트</strong><p>앱이 외부 런처를 백그라운드에서 검증하고 업데이트합니다. 추가 확인이나 전체 ZIP 재다운로드가 필요 없으며 진행 상태는 어두운 하단 상태 영역에만 표시됩니다.</p></div></article>
-    </div>
-    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.1">2.0.1.1 전체 업데이트 보기 <span aria-hidden="true">→</span></a>
-  </div>
-</section>
-
 <section class="origin-story" id="why">
   <div><p class="section-kicker">왜 만들었나요?</p><h2>노래 방송에서 자주 생기는 작은 실수에서 시작했습니다</h2><p>노래를 시작하기 전에 BGM을 끄거나, 노래가 끝난 뒤 다시 켜는 것을 자주 잊었습니다. 방금 부른 곡을 OBS 세트리스트에 추가하는 일도 놓치기 쉬웠습니다. 어려운 일은 아니지만 노래, 채팅과 다음 곡을 동시에 챙기다 보면 빠뜨리기 쉽습니다.</p><p>그래서 Singing Stream Savior를 만들었습니다. 먼저 BGM을 선택해 재생하면 반주 시작 시 해당 BGM을 자동으로 일시 정지하고, 반주를 정지하거나 끝까지 재생한 뒤 원래 BGM을 자동으로 다시 재생합니다. 세트리스트 Overlay도 곡 상태에 따라 갱신되어 OBS에서 매번 제목을 다시 입력할 필요가 없습니다.</p></div>
   <div class="stream-sequence" aria-label="BGM과 반주의 자동 전환"><div class="stream-step stream-step--playing"><span>BGM</span><strong>곡 사이에 재생</strong></div><div class="stream-arrow"><span>반주 시작</span></div><div class="stream-step stream-step--active stream-step--paused"><span>반주</span><strong>BGM 자동 정지</strong></div><div class="stream-arrow"><span>일시 정지·종료</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>자동 재생 재개</strong></div></div>
