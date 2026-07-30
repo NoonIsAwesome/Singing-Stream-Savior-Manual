@@ -24,6 +24,24 @@ translation_key: home
 
 {% include demo-video.html %}
 
+<section class="release-log" aria-labelledby="release-201-title">
+  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.0</strong></div>
+  <div class="release-log__body">
+    <div class="section-heading">
+      <p class="section-kicker">本次更新</p>
+      <h2 id="release-201-title">讓自動化更看得見，預覽也更接近直播</h2>
+      <p>這次把先前藏在程式背後的協調狀態、主題展示與歌詞調整，整理成更容易理解和測試的操作。</p>
+    </div>
+    <div class="release-log__grid">
+      <article><span class="release-log__index">01</span><div><strong>自動播放狀態</strong><p>底部狀態區會說明 BGM 與伴奏正在如何協調；BGM 也可選擇淡出轉場，並避免與伴奏重疊。</p></div></article>
+      <article><span class="release-log__index">02</span><div><strong>全自動主題展示</strong><p>用範例歌曲循環展示 Now Singing、長歌單、時間戳、Reserve 與 Next On，不會改動專案或 OBS。</p></div></article>
+      <article><span class="release-log__index">03</span><div><strong>更直覺的歌詞校正</strong><p>以「歌詞太早／太晚」直接調整，並加入前後句數滑桿、平假名＋羅馬拼音及歌詞視窗同步修正。</p></div></article>
+      <article><span class="release-log__index">04</span><div><strong>操作與更新更穩定</strong><p>改善速度、音高與跳播反應，統一數值欄位、按鈕與 hover；更新器會驗證 SHA-256，失敗時可回復舊版。</p></div></article>
+    </div>
+    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.0">查看 2.0.1.0 完整更新內容 <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
 <section class="origin-story" id="why">
   <div>
     <p class="section-kicker">為什麼做這個軟體？</p>
@@ -55,7 +73,7 @@ translation_key: home
       <a class="demo-flow__frame" href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
         <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="歌單外觀頁選擇 Transparent Black v2，並預覽 Now Singing、Set List 與 Next On" loading="lazy" decoding="async">
       </a>
-      <p>從主題列選擇外觀，先確認目前歌曲、已唱清單和下一首歌的配置。</p>
+      <p>全自動展示會循環模擬歌曲與長歌單，直接看見目前歌曲、已唱清單與下一首歌如何移動。</p>
     </article>
     <article class="demo-flow__step">
       <header>
@@ -90,7 +108,7 @@ translation_key: home
     <article class="feature-card feature-card--signal">
       <span class="feature-card__label">播放協調</span>
       <h3>BGM 與伴奏自動交接</h3>
-      <p>請先選擇 BGM 並開始播放。之後播放歌唱伴奏時會自動暫停 BGM；伴奏停止或播放完畢後，會自動恢復原本的背景音樂。</p>
+      <p>請先選擇 BGM 並開始播放。伴奏開始時會自動暫停或淡出 BGM；伴奏停止或播放完畢後，會自動恢復原本的背景音樂。</p>
     </article>
     <article class="feature-card">
       <span class="feature-card__label">歌曲與待播</span>
@@ -100,12 +118,12 @@ translation_key: home
     <article class="feature-card">
       <span class="feature-card__label">OBS 歌單</span>
       <h3>切換主題，不必手動重打歌單</h3>
-      <p>選擇 Default、透明、Card、CD 或各種精緻主題，將畫面拖入 OBS；Now Singing、Set List、Reserve 與 Next On 會依播放狀態更新。</p>
+      <p>選擇 Default、透明、Card、CD 或各種精緻主題，先用全自動展示確認完整狀態，再將畫面拖入 OBS；內容會依播放狀態更新。</p>
     </article>
     <article class="feature-card">
       <span class="feature-card__label">歌詞</span>
       <h3>自己看，也可以顯示給觀眾</h3>
-      <p>搜尋或匯入同步歌詞，使用可自由移動的「歌詞視窗」閱讀，也能建立 OBS 歌詞畫面。日文歌詞可選擇平假名或羅馬拼音輔助。</p>
+      <p>搜尋或匯入同步歌詞，使用可自由移動的「歌詞視窗」閱讀，也能建立 OBS 歌詞畫面。日文歌詞支援平假名、羅馬拼音與兩者並列。</p>
     </article>
     <article class="feature-card">
       <span class="feature-card__label">伴奏來源</span>

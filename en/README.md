@@ -17,6 +17,20 @@ translation_key: home
 
 {% include demo-video.html %}
 
+<section class="release-log" aria-labelledby="release-201-title">
+  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.0</strong></div>
+  <div class="release-log__body">
+    <div class="section-heading"><p class="section-kicker">What’s new</p><h2 id="release-201-title">Visible automation and previews that behave more like a live stream</h2><p>This release makes playback coordination, theme states, and lyric timing easier to understand before going live.</p></div>
+    <div class="release-log__grid">
+      <article><span class="release-log__index">01</span><div><strong>Playback status</strong><p>The bottom status area explains BGM and karaoke coordination. Optional BGM fading avoids overlap when karaoke starts.</p></div></article>
+      <article><span class="release-log__index">02</span><div><strong>Automatic theme demo</strong><p>Sample songs cycle through Now Singing, a long Set List, timestamps, Reserve, and Next On without changing your project or OBS.</p></div></article>
+      <article><span class="release-log__index">03</span><div><strong>Clearer lyric timing</strong><p>Use “lyrics too early/late,” before-and-after line sliders, Hiragana + Romaji, and improved Lyrics Window synchronization.</p></div></article>
+      <article><span class="release-log__index">04</span><div><strong>Smoother controls and updates</strong><p>Speed, pitch, seeking, numeric controls, buttons, and hover states are refined. Updates use SHA-256 verification and rollback.</p></div></article>
+    </div>
+    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.0">Read the full 2.0.1.0 release notes <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
 <section class="origin-story" id="why">
   <div><p class="section-kicker">Why was it made?</p><h2>It began with the small mistakes that happen during singing streams</h2><p>I often forgot to turn BGM off before singing, turn it back on afterward, or add the song I had just finished to the set list shown in OBS. None of these tasks is difficult, but they are easy to miss while singing, talking to chat, and finding the next track.</p><p>Singing Stream Savior was built to handle that rhythm. First choose and start your BGM. Starting karaoke then pauses that BGM automatically, and stopping or finishing the karaoke track resumes it. The set-list overlay also follows song status without retyping every title in OBS.</p></div>
   <div class="stream-sequence" aria-label="Automatic handoff between BGM and karaoke"><div class="stream-step stream-step--playing"><span>BGM</span><strong>Plays between songs</strong></div><div class="stream-arrow"><span>Start karaoke</span></div><div class="stream-step stream-step--active stream-step--paused"><span>Karaoke</span><strong>BGM pauses</strong></div><div class="stream-arrow"><span>Pause or finish</span></div><div class="stream-step stream-step--playing"><span>BGM</span><strong>Playback resumes</strong></div></div>
@@ -26,21 +40,21 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">From setup to live output</p>
     <h2 id="demo-flow-title">Preview the result in Singing Stream Savior, then use it in OBS</h2>
-    <p>These screenshots use the Traditional Chinese interface, but the workflow and control locations are the same in every supported language.</p>
+    <p>The screenshots below use the English interface and real 2.0.1.0 controls with isolated sample data.</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">
-      <header><span>01</span><div><strong>Choose a set-list theme</strong><small>Playlist Appearance</small></div></header>
-      <a class="demo-flow__frame" href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}"><img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="Traditional Chinese Playlist Appearance page with Transparent Black v2 selected" loading="lazy" decoding="async"></a>
-      <p>Select a theme and check the Now Singing, Song List, and Next On layout in the built-in preview.</p>
+      <header><span class="demo-flow__number">01</span><div><strong>Choose a set-list theme</strong><small>Playlist Appearance</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/en/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/theme-workspace.png' | relative_url }}" alt="English Playlist Appearance page automatically demonstrating Transparent Black v2 with a long Set List" loading="lazy" decoding="async"></a>
+      <p>The automatic demo cycles through songs and a long Set List so you can see Now Singing, Reserve, and Next On in motion.</p>
     </article>
     <article class="demo-flow__step">
-      <header><span>02</span><div><strong>Check synchronized lyrics</strong><small>Lyrics preview</small></div></header>
-      <a class="demo-flow__frame" href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}"><img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="Traditional Chinese Lyrics page showing synchronized lyric preview during playback" loading="lazy" decoding="async"></a>
+      <header><span class="demo-flow__number">02</span><div><strong>Check synchronized lyrics</strong><small>Lyrics preview</small></div></header>
+      <a class="demo-flow__frame" href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="English Lyrics page showing timing controls, line-count sliders, and synchronized Japanese sample lyrics" loading="lazy" decoding="async"></a>
       <p>Confirm the current line, font, color, highlight, and timing while the karaoke track is playing.</p>
     </article>
     <article class="demo-flow__step">
-      <header><span>03</span><div><strong>Confirm the OBS result</strong><small>Live output</small></div></header>
+      <header><span class="demo-flow__number">03</span><div><strong>Confirm the OBS result</strong><small>Live output</small></div></header>
       <a class="demo-flow__frame" href="{{ '/assets/images/demo-obs-result.png' | relative_url }}"><img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS showing a transparent set list and synchronized lyrics over a stream background" loading="lazy" decoding="async"></a>
       <p>The set list and lyrics are independent sources in OBS, so each can be resized, cropped, and positioned for your scene.</p>
     </article>
@@ -50,10 +64,10 @@ translation_key: home
 <section class="feature-section" id="features">
   <div class="section-heading"><p class="section-kicker">Core features</p><h2>Designed around the real flow of a singing stream</h2><p>Preparing songs, performing, and updating OBS are parts of one continuous workflow.</p></div>
   <div class="feature-grid">
-    <article class="feature-card feature-card--signal"><span class="feature-card__label">Playback handoff</span><h3>BGM and karaoke work together</h3><p>First choose and start your BGM. Starting karaoke then pauses it automatically; stopping or finishing the karaoke track resumes the BGM that was playing.</p></article>
+    <article class="feature-card feature-card--signal"><span class="feature-card__label">Playback handoff</span><h3>BGM and karaoke work together</h3><p>First choose and start your BGM. Starting karaoke pauses or fades it automatically; stopping or finishing the karaoke track resumes the BGM that was playing.</p></article>
     <article class="feature-card"><span class="feature-card__label">Library & Reserve</span><h3>Plan ahead without losing flexibility</h3><p>Organize a library, playlists, favorites, and Reserve order. Pick from Reserve or double-click any song to play it immediately.</p></article>
-    <article class="feature-card"><span class="feature-card__label">OBS set list</span><h3>Change themes, not text after every song</h3><p>Choose Default, transparent, Card, CD, or illustrated themes and drag the overlay into OBS. Now Singing, Set List, Reserve, and Next On follow playback status.</p></article>
-    <article class="feature-card"><span class="feature-card__label">Lyrics</span><h3>Read them yourself or show the audience</h3><p>Search or import synchronized lyrics, open a movable Lyrics Window, or create an OBS lyric overlay. Japanese lyrics can include hiragana or spaced romaji aids.</p></article>
+    <article class="feature-card"><span class="feature-card__label">OBS set list</span><h3>Change themes, not text after every song</h3><p>Choose Default, transparent, Card, CD, or illustrated themes, inspect every state in the automatic demo, then drag the overlay into OBS.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Lyrics</span><h3>Read them yourself or show the audience</h3><p>Search or import synchronized lyrics, open a movable Lyrics Window, or create an OBS lyric overlay. Japanese aids support Hiragana, Romaji, or both together.</p></article>
     <article class="feature-card"><span class="feature-card__label">Backing sources</span><h3>Local files and YouTube backing tracks in one player</h3><p>Your backing track may be a vocal-removed, self-recorded, or downloaded local file—or a version you just found on YouTube. Singing Stream Savior supports both, so you do not have to switch between a media player and browser.</p></article>
     <article class="feature-card"><span class="feature-card__label">Workspace</span><h3>Full, Compact, and Mini modes</h3><p>Prepare in Full Mode, then reduce the window for the stream. Mini Mode keeps karaoke, Reserve, History, and the Lyrics Window close at hand.</p></article>
   </div>

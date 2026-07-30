@@ -8,9 +8,9 @@ translation_key: obs-and-themes
 
 <figure class="manual-figure">
   <a href="assets/images/theme-workspace.png">
-    <img src="assets/images/theme-workspace.png" alt="歌單外觀頁，頂部為主題選擇，中央為 Default 主題即時預覽">
+    <img src="assets/images/theme-workspace.png" alt="歌單外觀頁以 Transparent Black v2 自動展示目前歌曲、長歌單、時間戳與 Next On">
   </a>
-  <figcaption>歌單外觀頁會同時顯示主題卡片、畫面設定、即時預覽與主題指南。</figcaption>
+  <figcaption>歌單外觀頁會同時顯示主題卡片、畫面設定、全自動展示與主題指南。</figcaption>
 </figure>
 
 ## 歌單外觀頁
@@ -34,12 +34,14 @@ translation_key: obs-and-themes
 ### 切換與預覽主題
 
 1. 在上方主題列點選主題卡片。
-2. 查看中央預覽中的 Now Singing、Set List 與 Next On／Reserve。
+2. 開啟「自動展示」，查看中央預覽依序模擬 Now Singing、長 Set List、時間戳與 Next On／Reserve。
 3. 先查看最左側的「版面配置」，再依主題指南調整該主題實際支援的顏色、透明度、字型或版面位置。
-4. 切換「演唱／已唱／待播」檢查主題支援的其他狀態；不支援的分頁或控制項會直接隱藏。
+4. 讓展示循環跑過不同狀態，確認清單移動、Card／CD 封面與待播區塊；不支援的內容不會被硬塞進主題。
 5. 確認後再將「拖曳至 OBS」拖入 OBS。
 
 切換主題只會改變顯示方式，不會修改歌曲、待播順序或已唱紀錄。完整模式最適合比較主題，因為主題列、設定、預覽及指南可以同時顯示。
+
+自動展示使用內建假資料，會自行循環，不需要實際播放伴奏或逐一按按鈕。它也不會把展示歌曲寫入目前專案、已唱紀錄、待播清單或 OBS；關閉展示後會立即回到真實狀態。
 
 ### 從即時預覽到 OBS 實際畫面
 
@@ -50,7 +52,7 @@ translation_key: obs-and-themes
     <a href="assets/images/demo-theme-preview.png">
       <img src="assets/images/demo-theme-preview.png" alt="在歌單外觀頁選擇 Transparent Black v2 並檢查即時預覽" loading="lazy" decoding="async">
     </a>
-    <figcaption>軟體內：先選擇主題，確認 Now Singing、Set List 與 Next On 的配置。</figcaption>
+    <figcaption>軟體內：自動展示會以長歌單與時間戳，呈現 Now Singing、Set List 與 Next On 的實際配置。</figcaption>
   </figure>
   <figure class="manual-figure">
     <a href="assets/images/demo-obs-result.png">

@@ -11,7 +11,8 @@
 - `lyrics-manager.png`：管理歌詞
 - `lyrics-manager-linked.png`：管理歌詞的匯入與取消連結狀態
 - `lyrics-reading-preview.png`：日文讀音與 OBS 歌詞預覽
-- `theme-workspace.png`：歌單外觀與主題預覽
+- `lyrics-viewer.png`：獨立歌詞視窗與語意化時間校正
+- `theme-workspace.png`：歌單外觀與全自動主題展示
 - `card-theme-cover.png`：Card 主題的封面效果
 - `cd-theme-cover.png`：CD 主題的封面效果
 - `obs-websocket-settings.png`：OBS WebSocket 進階設定
