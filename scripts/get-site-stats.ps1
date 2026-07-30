@@ -1,5 +1,5 @@
 param(
-    [string]$ReleaseTag = "v2.0.0.0"
+    [string]$ReleaseTag = "v2.0.1.0"
 )
 
 $ErrorActionPreference = "Stop"
