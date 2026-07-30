@@ -18,16 +18,16 @@ translation_key: home
 {% include demo-video.html %}
 
 <section class="release-log" aria-labelledby="release-201-title">
-  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.0</strong></div>
+  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.1</strong></div>
   <div class="release-log__body">
     <div class="section-heading"><p class="section-kicker">今回の更新</p><h2 id="release-201-title">自動化を見える形にし、プレビューを配信に近づけました</h2><p>再生連携、テーマの各状態、歌詞タイミングを、配信前に分かりやすく確認できます。</p></div>
     <div class="release-log__grid">
       <article><span class="release-log__index">01</span><div><strong>再生ステータス</strong><p>下部に BGM とカラオケの連携状態を表示。BGM のフェードアウトを選べ、音の重なりも防ぎます。</p></div></article>
       <article><span class="release-log__index">02</span><div><strong>テーマの自動デモ</strong><p>サンプル曲で長い Set List、タイムスタンプ、Reserve、Next On を巡回表示。プロジェクトや OBS は変更しません。</p></div></article>
       <article><span class="release-log__index">03</span><div><strong>分かりやすい歌詞補正</strong><p>「歌詞が早い／遅い」、前後行数スライダー、ひらがな＋ローマ字、歌詞ウィンドウの同期改善を追加。</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>操作と更新の安定性</strong><p>速度・音程・シーク、数値入力、ボタンと hover を改善。フルパッケージにランチャー 1.0.0.1 を収録し、更新確認をダーク表示に統一して完了後は自動起動します。</p></div></article>
+      <article><span class="release-log__index">04</span><div><strong>ランチャーも自動更新</strong><p>アプリが外側のランチャーをバックグラウンドで検証・更新します。再確認や ZIP の再ダウンロードは不要で、進行状況はダーク表示の下部ステータスだけに表示します。</p></div></article>
     </div>
-    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.0">2.0.1.0 の更新内容を見る <span aria-hidden="true">→</span></a>
+    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.1">2.0.1.1 の更新内容を見る <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -40,7 +40,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">設定から配信画面まで</p>
     <h2 id="demo-flow-title">Singing Stream Savior で確認してから、OBS に表示</h2>
-    <p>以下は日本語 UI と隔離されたサンプルデータを使った、2.0.1.0 の実際の画面です。</p>
+    <p>以下は日本語 UI と隔離されたサンプルデータを使った、2.0.1.1 の実際の画面です。</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">

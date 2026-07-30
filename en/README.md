@@ -18,16 +18,16 @@ translation_key: home
 {% include demo-video.html %}
 
 <section class="release-log" aria-labelledby="release-201-title">
-  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.0</strong></div>
+  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.1</strong></div>
   <div class="release-log__body">
     <div class="section-heading"><p class="section-kicker">What’s new</p><h2 id="release-201-title">Visible automation and previews that behave more like a live stream</h2><p>This release makes playback coordination, theme states, and lyric timing easier to understand before going live.</p></div>
     <div class="release-log__grid">
       <article><span class="release-log__index">01</span><div><strong>Playback status</strong><p>The bottom status area explains BGM and karaoke coordination. Optional BGM fading avoids overlap when karaoke starts.</p></div></article>
       <article><span class="release-log__index">02</span><div><strong>Automatic theme demo</strong><p>Sample songs cycle through Now Singing, a long Set List, timestamps, Reserve, and Next On without changing your project or OBS.</p></div></article>
       <article><span class="release-log__index">03</span><div><strong>Clearer lyric timing</strong><p>Use “lyrics too early/late,” before-and-after line sliders, Hiragana + Romaji, and improved Lyrics Window synchronization.</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>Smoother controls and updates</strong><p>Speed, pitch, seeking, numeric controls, buttons, and hover states are refined. The full package includes launcher 1.0.0.1 with a dark update prompt and automatic launch after completion.</p></div></article>
+      <article><span class="release-log__index">04</span><div><strong>Automatic launcher updates</strong><p>The app now verifies and updates the outer launcher in the background, with no second confirmation or full-ZIP download. Progress stays in the dark bottom status area.</p></div></article>
     </div>
-    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.0">Read the full 2.0.1.0 release notes <span aria-hidden="true">→</span></a>
+    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.1">Read the full 2.0.1.1 release notes <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -40,7 +40,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">From setup to live output</p>
     <h2 id="demo-flow-title">Preview the result in Singing Stream Savior, then use it in OBS</h2>
-    <p>The screenshots below use the English interface and real 2.0.1.0 controls with isolated sample data.</p>
+    <p>The screenshots below use the English interface and real 2.0.1.1 controls with isolated sample data.</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">

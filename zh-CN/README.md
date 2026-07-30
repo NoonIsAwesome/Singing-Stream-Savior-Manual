@@ -24,16 +24,16 @@ translation_key: home
 {% include demo-video.html %}
 
 <section class="release-log" aria-labelledby="release-201-title">
-  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.0</strong></div>
+  <div class="release-log__rail"><span class="release-log__signal" aria-hidden="true"></span><span>STABLE UPDATE</span><strong>2.0.1.1</strong></div>
   <div class="release-log__body">
     <div class="section-heading"><p class="section-kicker">本次更新</p><h2 id="release-201-title">让自动化更清楚，预览也更接近直播</h2><p>这次把播放协调、主题状态与歌词时间调整，整理成更容易理解和测试的操作。</p></div>
     <div class="release-log__grid">
       <article><span class="release-log__index">01</span><div><strong>播放状态</strong><p>底部状态区会说明 BGM 与伴奏如何协调；BGM 可选择淡出，并避免与伴奏重叠。</p></div></article>
       <article><span class="release-log__index">02</span><div><strong>自动主题展示</strong><p>用示例歌曲循环展示长歌单、时间戳、Reserve 与 Next On，不会修改项目或 OBS。</p></div></article>
       <article><span class="release-log__index">03</span><div><strong>更直观的歌词校正</strong><p>使用“歌词太早／太晚”、前后句数滑杆、平假名＋罗马拼音，并改善歌词窗口同步。</p></div></article>
-      <article><span class="release-log__index">04</span><div><strong>操作与更新更稳定</strong><p>改善速度、音高、跳播、数值控件、按钮与 hover；完整包包含启动器 1.0.0.1，采用深色更新确认并在完成后直接启动。</p></div></article>
+      <article><span class="release-log__index">04</span><div><strong>启动器也能自动更新</strong><p>主程序会在后台验证并更新外层启动器，无需再次确认或重新下载完整 ZIP；进度只显示在深色底部状态区。</p></div></article>
     </div>
-    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.0">查看 2.0.1.0 完整更新内容 <span aria-hidden="true">→</span></a>
+    <a class="release-log__link" href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.1">查看 2.0.1.1 完整更新内容 <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -46,7 +46,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">从设置到直播画面</p>
     <h2 id="demo-flow-title">先在歌回救星中确认，再把效果显示到 OBS</h2>
-    <p>以下截图使用简体中文界面与隔离的示例数据，显示 2.0.1.0 的实际控件。</p>
+    <p>以下截图使用简体中文界面与隔离的示例数据，显示 2.0.1.1 的实际控件。</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">

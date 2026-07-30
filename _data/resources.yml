@@ -1,10 +1,10 @@
 # 發布正式檔案後，只要更新這裡的連結與版本即可。
 software:
-  version: "2.0.1.0"
-  launcher_version: "1.0.0.1"
-  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.0.1.0/Singing.Stream.Savior.2.0.1.0.zip"
+  version: "2.0.1.1"
+  launcher_version: "1.0.0.2"
+  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.0.1.1/Singing.Stream.Savior.2.0.1.1.zip"
   file_size: "310 MB"
-  updated_at: "2026-07-30"
+  updated_at: "2026-07-31"
 
 # file_url 可放網站內的 MP4；embed_url 可使用下列外部影片：
 # Google Drive: https://drive.google.com/file/d/FILE_ID/preview
