@@ -26,7 +26,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">설정에서 방송 화면까지</p>
     <h2 id="demo-flow-title">Singing Stream Savior에서 미리 확인한 뒤 OBS에 표시하세요</h2>
-    <p>아래 화면은 한국어 UI와 격리된 샘플 데이터를 사용한 2.0.1.2 실제 화면입니다.</p>
+    <p>아래 화면은 한국어 UI와 격리된 샘플 데이터를 사용한 2.0.1.3 실제 화면입니다.</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">

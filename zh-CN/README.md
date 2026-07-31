@@ -32,7 +32,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">从设置到直播画面</p>
     <h2 id="demo-flow-title">先在歌回救星中确认，再把效果显示到 OBS</h2>
-    <p>以下截图使用简体中文界面与隔离的示例数据，显示 2.0.1.2 的实际控件。</p>
+    <p>以下截图使用简体中文界面与隔离的示例数据，显示 2.0.1.3 的实际控件。</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">
