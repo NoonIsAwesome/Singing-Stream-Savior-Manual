@@ -44,6 +44,21 @@ Singing Stream Savior 2.0.2.0/
 
 2.0.2.0 起，第一次進入操作畫面時會自動開啟「初次使用導覽」。導覽會切換到對應頁面並框出目前要認識的位置；它只負責說明，不會替你修改專案或播放歌曲。
 
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="assets/images/first-use-tour-bgm.png">
+      <img src="assets/images/first-use-tour-bgm.png" alt="初次使用導覽第一步，高亮背景音樂區域並說明如何設定直播 BGM">
+    </a>
+    <figcaption>第一步會高亮 BGM 播放器，說明拖放、選擇檔案與自動切換機制。點擊圖片可放大查看。</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="assets/images/first-use-tour-theme.png">
+      <img src="assets/images/first-use-tour-theme.png" alt="初次使用導覽第五步，切換至歌單外觀並高亮主題選擇與拖曳至 OBS 區域">
+    </a>
+    <figcaption>第五步會自動切換到「歌單外觀」，讓主題、預覽與「拖曳至 OBS」的位置更容易理解。</figcaption>
+  </figure>
+</div>
+
 導覽依序介紹以下八個步驟：
 
 1. **設定直播 BGM**：把本機音訊檔或 YouTube 連結拖到整個 BGM 區域，也可以按「選擇 BGM」選擇檔案或貼上連結。設定後會自動循環播放；開始播放伴奏時會暫停，伴奏結束後再恢復。
