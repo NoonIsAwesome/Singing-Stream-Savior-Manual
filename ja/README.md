@@ -26,7 +26,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">設定から配信画面まで</p>
     <h2 id="demo-flow-title">Singing Stream Savior で確認してから、OBS に表示</h2>
-    <p>以下は日本語 UI と隔離されたサンプルデータを使った、2.0.1.1 の実際の画面です。</p>
+    <p>以下は日本語 UI と隔離されたサンプルデータを使った、2.0.1.2 の実際の画面です。</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">
