@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#090d14">
     <link rel="icon" href="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" sizes="any">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: '2.0.1.3' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: '2.0.2.0' }}">
     <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}/{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}">
     <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh-CN/{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
     <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/{% if section == 'resources' %}resources.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
@@ -44,7 +44,7 @@
           {% capture resources_target %}/{{ current_lang }}/resources.html{% endcapture %}
         {% endif %}
         <a class="resource-shortcut" href="{{ resources_target | relative_url }}">{{ t.nav.resources }}</a>
-        <span class="version-chip">{{ t.version }} 2.0.1.3</span>
+        <span class="version-chip">{{ t.version }} 2.0.2.0</span>
         <label class="language-control">
           <span>{{ t.language }}</span>
           <select data-language-switcher aria-label="{{ t.language }}">
@@ -121,6 +121,6 @@
       </main>
     </div>
 
-    <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.github.build_revision | default: '2.0.1.3' }}" defer></script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.github.build_revision | default: '2.0.2.0' }}" defer></script>
   </body>
 </html>

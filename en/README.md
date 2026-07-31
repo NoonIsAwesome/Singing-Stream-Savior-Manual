@@ -26,7 +26,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">From setup to live output</p>
     <h2 id="demo-flow-title">Preview the result in Singing Stream Savior, then use it in OBS</h2>
-    <p>The screenshots below use the English interface and real 2.0.1.3 controls with isolated sample data.</p>
+    <p>The screenshots below use the English interface and real 2.0.2.0 controls with isolated sample data.</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">
