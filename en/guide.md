@@ -15,15 +15,16 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
   <figcaption>Full mode shows all settings and the live OBS preview. Select an image to open an enlarged preview.</figcaption>
 </figure>
 
-## Recommended setup
+## Recommended first-use flow
 
-1. Select the BGM you want to use during the stream and adjust it to a suitable volume.
-2. Add the karaoke tracks needed for the stream to the library or a playlist.
+1. Set your stream BGM by dragging in a local file or YouTube link, or by using the selection button. The BGM starts looping automatically.
+2. Add karaoke tracks to the song library by dragging in local files or YouTube links, or by using the import button.
 3. Edit each track’s **Display title**. This is the name shown in Reserve and the OBS set list.
-4. Open **Playlist Appearance**, drag the **Drag to OBS** button into OBS, then choose the theme you want to use.
-5. Play one karaoke track as a test. Stop it and confirm that the BGM resumes automatically.
-6. Practice selecting, playing, and stopping a song once so the live workflow feels familiar.
-7. Save the project to complete the initial setup.
+4. Add songs to **Reserve** when you want the overlay to show what is coming next.
+5. Open **Playlist Appearance**, choose a theme while watching its automatic preview, then drag **Drag to OBS** into OBS.
+6. Return to **Live Controls** and double-click a song in the library or Reserve to start singing. The BGM pauses and resumes automatically.
+7. If lyric search opens during playback, choose synchronized lyrics whose duration and artist match the track.
+8. Open the **Lyrics** tab to adjust the display or manage lyrics manually, then drag **Drag to OBS** into OBS to show synchronized lyrics.
 
 > You do not need to configure the interface language or project/media folder locations first, and you do not need to create a test Reserve list. Reserve, cover art, lyrics, and OBS WebSocket can all be set up later when your stream needs them.
 
@@ -37,6 +38,21 @@ Extract the entire ZIP to a normal folder. In the outermost folder, double-click
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior app icon"><div><strong>Singing Stream Savior.exe</strong><span>Open this app to start</span></div></div>
 
 Create a project from **File > New project**, add songs, then save the `.bgmsproj` file. A project stores songs, display titles, queue order, lyric links, theme, and display settings. Sung history belongs to the current live session and is not written to a normal project save. If the app is interrupted unexpectedly, a recovery snapshot can restore the live-session progress when you restart. An asterisk in the window title means there are unsaved changes.
+
+### Follow the first-use guide
+
+Starting with version 2.0.2.0, the eight-step first-use guide opens automatically the first time you enter the workspace. It changes to the relevant page and highlights the area being explained without changing your project or starting playback. You can reopen it at any time from **Help > First-use Guide**.
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}" alt="First-use guide highlighting the BGM player"></a>
+    <figcaption>The first step introduces BGM setup, drag-and-drop, and automatic switching. The interface shown is Traditional Chinese.</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}" alt="First-use guide highlighting theme selection and Drag to OBS"></a>
+    <figcaption>The theme step switches to Playlist Appearance and points out the theme preview and Drag to OBS area.</figcaption>
+  </figure>
+</div>
 
 Full mode is the default preparation workspace: content and settings on the left, previews in the center, and players plus queue on the right.
 
@@ -84,7 +100,7 @@ Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song�
   <figcaption>When lyrics are linked, the lower-left controls let you import another file or unlink the current one.</figcaption>
 </figure>
 
-The embedded preview uses the same layout, font, color, highlight, and Japanese-reading option as OBS. The independent Lyrics window has its own reading option. Available Japanese readings are off, small hiragana above kanji, or word-spaced romaji below the original line.
+The embedded preview uses the same layout, font, color, highlight, and Japanese-reading option as OBS. The independent Lyrics window has its own reading option. Available Japanese readings are off, small hiragana above kanji, word-spaced romaji below the original line, or hiragana and romaji together.
 
 In the independent Lyrics window, choose any timestamped line to seek the karaoke track to that line. This works with synchronized lyrics such as LRC; plain-text lyrics have no seek positions. Japanese readings are generated locally by the bundled offline analyzer, so lyrics do not need to be uploaded.
 
@@ -95,7 +111,14 @@ In the independent Lyrics window, choose any timestamped line to seek the karaok
   <figcaption>This demonstration uses the Traditional Chinese interface. The preview shows the same lyric layout, font, color, and highlight that will appear in OBS.</figcaption>
 </figure>
 
-Use the lyric offset controls if timing is early or late: negative values show lyrics sooner; positive values show them later. Offset changes are reflected immediately in the preview, independent Lyrics window, and OBS lyric data, even while playback is paused.
+If the lyrics are out of sync, you do not need to work out positive or negative values. Choose **Lyrics too late → Earlier** when the sung line has already started but the lyric has not appeared, or **Lyrics too early → Later** when the lyric appears before it is sung. The center of the slider is synchronized; drag left for earlier or right for later, and use the reset icon to return to `0 ms`.
+
+The numbers of lines shown before and after the current line can be adjusted separately with a slider or value field. Near the beginning or end of a song, fewer lines may be available than the selected setting. Offset changes are reflected immediately in the preview, independent Lyrics window, and OBS lyric data, even while playback is paused.
+
+<figure class="manual-figure manual-figure--medium">
+  <a href="{{ '/assets/images/lyrics-viewer.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-viewer.png' | relative_url }}" alt="Lyrics window with semantic timing buttons and synchronized lyrics"></a>
+  <figcaption>The Lyrics window uses the same timing controls. Selecting a timestamped line seeks to it, and returning to the start of the song scrolls the list back to the top. The interface shown is Traditional Chinese.</figcaption>
+</figure>
 
 <a id="obs-and-themes"></a>
 ## 04 · Playlist appearance and OBS

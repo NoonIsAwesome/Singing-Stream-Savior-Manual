@@ -14,13 +14,14 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 
 ## 처음 사용할 때 권장 설정 순서
 
-1. 방송에서 사용할 BGM을 선택하고 방송에 알맞은 음량으로 조절합니다.
-2. 이번 방송에 필요한 반주를 라이브러리나 재생목록에 추가합니다.
-3. 각 곡의 **표시 제목**을 수정합니다. 이 제목이 대기 목록과 OBS 세트리스트에 표시됩니다.
-4. **재생목록 외관**을 열어 **OBS로 드래그** 버튼을 OBS에 놓은 다음 원하는 테마를 선택합니다.
-5. 반주 한 곡을 시험 재생하고, 정지한 뒤 BGM이 자동으로 다시 재생되는지 확인합니다.
-6. 곡 선택, 재생, 정지 과정을 한 번 조작하여 방송 중 사용할 흐름을 익힙니다.
-7. 프로젝트를 저장하면 첫 설정이 완료됩니다.
+1. 로컬 파일이나 YouTube 링크를 드래그하거나 선택 버튼을 사용해 방송용 BGM을 설정합니다. 설정한 BGM은 자동으로 반복 재생됩니다.
+2. 로컬 파일이나 YouTube 링크를 곡 목록에 드래그하거나 가져오기 버튼으로 반주를 추가합니다.
+3. 각 곡의 **표시 제목**을 수정합니다. 재생 중에는 이 제목이 세트리스트에 표시됩니다.
+4. 곡을 **대기 목록**에 추가하면 세트리스트에 다음 곡을 표시할 수 있습니다.
+5. **재생목록 외관**으로 이동해 자동 미리보기로 테마를 고른 뒤 **OBS로 드래그**를 OBS에 놓습니다.
+6. **라이브 조작**으로 돌아가 곡 목록이나 대기 목록의 곡을 두 번 클릭해 노래를 시작합니다. BGM은 자동으로 멈췄다가 종료 후 다시 재생됩니다.
+7. 재생 중 가사 검색 창이 열리면 길이와 가수 정보가 반주에 가까운 동기화 가사를 선택합니다.
+8. **가사** 탭에서 표시를 조절하거나 가사를 직접 관리한 뒤 **OBS로 드래그**를 OBS에 놓아 동기화 가사를 표시합니다.
 
 > 처음부터 인터페이스 언어나 프로젝트/미디어 폴더 위치를 설정하거나 시험용 대기 목록을 만들 필요는 없습니다. 대기 목록, 표지, 가사와 OBS WebSocket은 방송에 필요할 때 나중에 설정할 수 있습니다.
 
@@ -32,6 +33,21 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 앱 아이콘"><div><strong>Singing Stream Savior.exe</strong><span>평소에는 이 앱만 실행하세요</span></div></div>
 
 **파일 > 새 프로젝트**에서 `.bgmsproj`를 만듭니다. 곡, 표시 제목, 대기 순서, 가사 연결과 테마 설정이 저장됩니다. 부른 곡 기록은 현재 라이브 세션용이며 일반 프로젝트 저장에는 포함되지 않습니다. 앱이 예기치 않게 중단되면 다시 시작할 때 복구 스냅샷에서 대기 목록과 부른 곡 진행 상황을 복원할 수 있습니다. 창 제목의 `*`는 저장하지 않은 변경 사항을 뜻합니다.
+
+### 첫 사용 가이드를 따라 설정하기
+
+2.0.2.0부터 처음 조작 화면에 들어가면 8단계 첫 사용 가이드가 자동으로 열립니다. 설명할 페이지로 전환해 해당 영역을 강조하지만 프로젝트를 바꾸거나 곡을 재생하지는 않습니다. 이후에도 **도움말 > 첫 사용 가이드**에서 언제든 다시 열 수 있습니다.
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}" alt="BGM 플레이어를 강조하는 첫 사용 가이드"></a>
+    <figcaption>첫 단계는 BGM 설정, 드래그 앤 드롭과 자동 전환을 안내합니다. 화면의 인터페이스는 번체 중국어입니다.</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}" alt="테마 선택과 OBS로 드래그를 강조하는 첫 사용 가이드"></a>
+    <figcaption>테마 단계는 재생목록 외관으로 전환해 자동 미리보기와 OBS로 드래그 위치를 보여 줍니다.</figcaption>
+  </figure>
+</div>
 
 <a id="library-and-playback"></a>
 ## 02 · 곡 라이브러리와 재생
@@ -71,15 +87,24 @@ BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-manager-linked.png' | relative_url }}" alt="가사 파일 가져오기와 가사 연결 해제가 표시된 가사 관리 창"></a><figcaption>가사가 연결된 뒤에도 왼쪽 아래에서 다른 파일을 가져오거나 연결을 해제할 수 있습니다.</figcaption></figure>
 
-일본어 읽기는 끄기, 한자 위의 작은 히라가나, 원문 아래의 단어 간격 로마자 중에서 선택합니다. 내장된 오프라인 분석 및 단어 분리 엔진에서 생성하므로 가사를 외부로 업로드할 필요가 없습니다. 자동 생성 결과는 참고용이며 고유명사나 가수의 실제 발음과 다를 수 있습니다.
+일본어 읽기는 끄기, 한자 위의 작은 히라가나, 원문 아래의 단어 간격 로마자, 또는 히라가나와 로마자 동시 표시 중에서 선택합니다. **즉시 미리보기 + OBS**는 같은 설정을 사용하며 독립 **가사 창**은 별도 설정을 사용합니다. 내장된 오프라인 분석 및 단어 분리 엔진에서 생성하므로 가사를 외부로 업로드할 필요가 없습니다. 자동 생성 결과는 참고용이며 고유명사나 가수의 실제 발음과 다를 수 있습니다.
 
-독립 **가사 창**에서 타임스탬프가 있는 가사 줄을 클릭하면 반주가 해당 줄의 시점으로 이동합니다. LRC 같은 동기화 가사에서만 사용할 수 있으며 일반 텍스트 가사에는 이동할 시간이 없습니다. 가사 오프셋 변경은 재생을 일시 정지한 상태에서도 미리보기, 가사 창과 OBS용 가사 데이터에 즉시 반영됩니다.
+독립 **가사 창**에서 타임스탬프가 있는 가사 줄을 클릭하면 반주가 해당 줄의 시점으로 이동합니다. LRC 같은 동기화 가사에서만 사용할 수 있으며 일반 텍스트 가사에는 이동할 시간이 없습니다.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
     <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="번체 중국어 가사 화면에서 반주 재생 중 현재 동기화 가사를 강조한 미리보기" loading="lazy" decoding="async">
   </a>
   <figcaption>이 예시는 번체 중국어 인터페이스입니다. 미리보기에서 확인한 가사 배치, 글꼴, 색상과 강조가 OBS에도 적용됩니다.</figcaption>
+</figure>
+
+가사와 반주가 맞지 않을 때 양수와 음수를 계산할 필요는 없습니다. 노래가 시작됐는데 가사가 아직 나오지 않으면 **가사가 늦음 → 앞당기기**, 노래보다 가사가 먼저 나오면 **가사가 빠름 → 늦추기**를 선택합니다. 슬라이더 중앙은 동기화 상태이며 왼쪽은 앞당기기, 오른쪽은 늦추기입니다. 초기화 아이콘으로 `0 ms`로 돌아갈 수 있습니다.
+
+현재 줄 앞뒤에 표시할 줄 수는 각각 슬라이더나 숫자 입력란으로 설정할 수 있습니다. 곡의 시작이나 끝에서는 설정한 수보다 표시 가능한 줄이 적을 수 있습니다. 오프셋 변경은 재생을 일시 정지한 상태에서도 미리보기, 가사 창과 OBS용 가사 데이터에 즉시 반영됩니다.
+
+<figure class="manual-figure manual-figure--medium">
+  <a href="{{ '/assets/images/lyrics-viewer.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-viewer.png' | relative_url }}" alt="앞당기기와 늦추기 조작 및 동기화 가사를 표시한 가사 창"></a>
+  <figcaption>가사 창에서도 같은 시간 조정 방식을 사용합니다. 타임스탬프가 있는 가사를 누르면 해당 위치로 이동하고 곡을 처음으로 돌리면 목록도 맨 위로 돌아갑니다. 화면의 인터페이스는 번체 중국어입니다.</figcaption>
 </figure>
 
 <a id="obs-and-themes"></a>

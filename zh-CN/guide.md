@@ -14,13 +14,14 @@ manual_bundle: true
 
 ## 第一次使用的建议流程
 
-1. 选择直播时要播放的 BGM，并将音量调整到适合直播的大小。
-2. 将这次直播需要的伴奏加入歌曲库或歌单。
-3. 逐一修改歌曲的“显示歌名”；这个名称会显示在待播列表与 OBS 歌单画面中。
-4. 前往“歌单外观”，将“拖放至 OBS”按钮拖入 OBS，再选择想使用的主题。
-5. 测试播放一首伴奏，停止后确认 BGM 会自动恢复播放。
-6. 实际操作一次选歌、播放与停止流程，熟悉直播时会使用的操作方式。
-7. 保存项目，即完成第一次设置。
+1. 设置直播 BGM：可拖入本地文件或 YouTube 链接，也可通过按钮选择；设置后会自动循环播放。
+2. 将本地文件或 YouTube 链接拖入歌曲列表，或通过导入按钮添加伴奏。
+3. 编辑伴奏的“显示歌名”；播放时会以这里的名称显示在歌单上。
+4. 将歌曲加入“待播”，让歌单画面显示接下来准备演唱的歌曲。
+5. 切换到“歌单外观”，通过自动预览选择主题，再将“拖放至 OBS”拖入 OBS。
+6. 回到“直播操作”，从歌曲列表或待播双击歌曲开始演唱；BGM 会自动暂停并在结束后恢复。
+7. 播放时若自动打开歌词搜索，请选择时长接近且歌手信息相符的同步歌词。
+8. 切换到“歌词”页调整显示或手动管理歌词，再将“拖放至 OBS”拖入 OBS 显示同步歌词。
 
 > 第一次使用不必先调整界面语言、项目／媒体文件夹位置，也不必建立测试待播列表。待播、封面、歌词与 OBS WebSocket 都可以在直播需要时再设置。
 
@@ -32,6 +33,21 @@ manual_bundle: true
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 软件图标"><div><strong>Singing Stream Savior.exe</strong><span>平时只需要打开这个程序</span></div></div>
 
 从“文件 > 新建项目”建立项目并保存 `.bgmsproj`。项目会保存歌曲、显示歌名、待播顺序、歌词关联和主题设置。已唱记录属于本次直播，不会写入普通项目存档；如果软件异常中断，重新启动时可从恢复快照找回待播与已唱进度。标题栏出现 `*` 表示还有未保存的更改。
+
+### 跟随初次使用引导完成设置
+
+从 2.0.2.0 开始，第一次进入操作界面时会自动打开八步初次使用引导。引导会切换到对应页面并高亮当前说明的区域，但不会修改项目或自动播放歌曲。之后可随时从“帮助 > 初次使用引导”重新打开。
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}" alt="初次使用引导高亮 BGM 播放器"></a>
+    <figcaption>第一步介绍 BGM 设置、拖放与自动切换；截图界面为繁体中文。</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}" alt="初次使用引导高亮主题选择与拖放至 OBS"></a>
+    <figcaption>主题步骤会切换到“歌单外观”，指出自动预览与“拖放至 OBS”的位置。</figcaption>
+  </figure>
+</div>
 
 <a id="library-and-playback"></a>
 ## 02 · 歌曲库与播放
@@ -71,15 +87,24 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-manager-linked.png' | relative_url }}" alt="管理歌词窗口中的导入歌词文件和取消歌词关联"></a><figcaption>已有歌词时，左下角仍可导入其他文件或取消当前关联。</figcaption></figure>
 
-日文读音可关闭、在汉字上方显示小平假名，或在原文下方显示带空格的罗马拼音。读音由内置的离线日文分析与分词引擎生成，不需要把歌词上传到网络。自动读音仅供参考，特殊读法与演唱方式可能和原曲不同。
+日文读音可关闭、在汉字上方显示小平假名、在原文下方显示带空格的罗马拼音，或同时显示平假名与罗马拼音。“即时预览 + OBS”共用一组设置，独立“歌词窗口”使用另一组设置。读音由内置的离线日文分析与分词引擎生成，不需要把歌词上传到网络。自动读音仅供参考，特殊读法与演唱方式可能和原曲不同。
 
-在独立“歌词窗口”中，点击有时间戳的任一行歌词，可让伴奏跳到该行的时间点。此功能只适用于 LRC 等同步歌词；纯文本歌词没有可跳转的时间。调整歌词偏移后，即使伴奏处于暂停状态，预览、歌词窗口和 OBS 歌词数据也会立即同步。
+在独立“歌词窗口”中，点击有时间戳的任一行歌词，可让伴奏跳到该行的时间点。此功能只适用于 LRC 等同步歌词；纯文本歌词没有可跳转的时间。
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
     <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="繁体中文歌词页面在伴奏播放时强调当前同步歌词" loading="lazy" decoding="async">
   </a>
   <figcaption>此示例使用繁体中文界面。预览中的歌词版面、字体、颜色与强调效果也会套用到 OBS。</figcaption>
+</figure>
+
+如果歌词与伴奏不同步，不必换算正负值：歌词已经唱到却还没出现时，选择“歌词太晚 → 提前”；歌词比演唱更早出现时，选择“歌词太早 → 延后”。滑杆中央代表同步，向左是提前，向右是延后；重设图标会恢复为 `0 ms`。
+
+“当前行之前”与“当前行之后”可以分别用滑杆或数值栏设置显示行数。歌曲接近开头或结尾时，实际可显示的前后歌词可能少于设置值。调整偏移后，即使伴奏暂停，预览、歌词窗口和 OBS 歌词数据也会立即同步。
+
+<figure class="manual-figure manual-figure--medium">
+  <a href="{{ '/assets/images/lyrics-viewer.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-viewer.png' | relative_url }}" alt="歌词窗口中的提前、延后与同步歌词"></a>
+  <figcaption>歌词窗口使用相同的时间校正方式；点击有时间戳的歌词可跳转，歌曲回到开头时列表也会回到顶部。截图界面为繁体中文。</figcaption>
 </figure>
 
 <a id="obs-and-themes"></a>
