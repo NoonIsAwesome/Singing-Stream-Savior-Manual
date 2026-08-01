@@ -147,7 +147,7 @@ releases:
         - 新增歌詞簡繁轉換，並依介面語言採用合適預設；日文假名不受影響。
         - 歌詞時間調整、可見行數與獨立歌詞視窗更加清楚且穩定。
         - 對話框與次要視窗統一使用軟體的深色外觀。
-        - 丟給 Codex 工作的時候，看了很多貓貓影片。
+        - 丟給Codex工作的時候，練了一下吉他。
       zh-CN:
         - 改善部分 YouTube 链接偶尔无法播放，且必须重启软件才能恢复的问题。
         - 改善部分 YouTube 链接无法正确识别歌名的问题。
@@ -155,7 +155,7 @@ releases:
         - 新增歌词简繁转换，并依界面语言采用合适默认值；日文假名不受影响。
         - 歌词时间调整、可见行数与独立歌词窗口更加清楚且稳定。
         - 对话框与次要窗口统一使用软件的深色外观。
-        - 丢给 Codex 工作的时候，看了很多猫猫视频。
+        - 丢给Codex工作的时候，练了一下吉他。
       ja:
         - 一部の YouTube リンクが再生できず、復旧にアプリの再起動が必要になる問題を改善しました。
         - 一部の YouTube リンクで曲名を正しく取得できない問題を改善しました。
@@ -163,7 +163,7 @@ releases:
         - 歌詞の簡体字／繁体字変換と、UI 言語に応じた既定値を追加しました。日本語のかなには影響しません。
         - 歌詞タイミング、表示行数、独立歌詞ウィンドウの操作を分かりやすく安定させました。
         - ダイアログとサブウィンドウをアプリ共通のダーク表示に統一しました。
-        - Codex に作業を任せている間、猫の動画をたくさん見ました。
+        - Codex に作業を任せている間、少しギターを練習しました。
       ko:
         - 일부 YouTube 링크가 재생되지 않고 복구하려면 앱을 재시작해야 하는 문제를 개선했습니다.
         - 일부 YouTube 링크에서 곡명을 올바르게 가져오지 못하는 문제를 개선했습니다.
@@ -171,7 +171,7 @@ releases:
         - 중국어 간체／번체 가사 변환과 UI 언어에 맞는 기본값을 추가했습니다. 일본어 가나는 변경하지 않습니다.
         - 가사 시간, 표시 줄 수와 분리된 가사 창의 조작을 더 명확하고 안정적으로 개선했습니다.
         - 대화상자와 보조 창을 앱의 다크 화면으로 일관되게 표시합니다.
-        - Codex에게 작업을 맡겨 둔 동안 고양이 영상을 많이 봤습니다.
+        - Codex에게 작업을 맡겨 둔 동안 기타를 조금 연습했습니다.
       en:
         - Improved an issue where some YouTube links could stop playing until the application was restarted.
         - Improved song-title detection for some YouTube links.
@@ -179,7 +179,7 @@ releases:
         - Added Simplified and Traditional Chinese lyrics conversion with language-aware defaults; Japanese kana remain unchanged.
         - Lyrics timing controls, visible-line controls, and the detached lyrics window are clearer and more stable.
         - Dialogs and secondary windows consistently use the application's dark appearance.
-        - Watched a lot of cat videos while Codex was working.
+        - Practiced guitar for a while while Codex was working.
 
   - version: "2.0.1.1"
     date: "2026-07-31"
@@ -201,27 +201,27 @@ releases:
         - 主程式可在背景自動更新啟動器。
         - 啟動器更新進度使用既有的深色底部狀態區，不再顯示第二個確認視窗。
         - 啟動器替換或設定更新失敗時會安全回復，並在下次啟動再次嘗試。
-        - 丟給 Codex 工作的時候，滑了很多吉伊卡哇。
+        - 丟給Codex工作的時候，吃了一個布丁，爽的。
       zh-CN:
         - 主程序可在后台自动更新启动器。
         - 启动器更新进度使用现有的深色底部状态区，不再显示第二个确认窗口。
         - 启动器替换或设置更新失败时会安全恢复，并在下次启动再次尝试。
-        - 丢给 Codex 工作的时候，刷了很多吉伊卡哇。
+        - 丢给Codex工作的时候，吃了一个布丁，爽的。
       ja:
         - メインアプリからランチャーをバックグラウンドで自動更新できます。
         - ランチャー更新の進捗を既存のダークな下部ステータスに表示し、二重の確認ダイアログをなくしました。
         - ランチャーの置換や設定更新に失敗した場合は安全に元へ戻し、次回起動時に再試行します。
-        - Codex に作業を任せている間、ちいかわをたくさん眺めていました。
+        - Codex に作業を任せている間、プリンを一つ食べました。最高でした。
       ko:
         - 메인 앱에서 런처를 백그라운드로 자동 업데이트합니다.
         - 런처 업데이트 진행 상황을 기존의 다크 하단 상태 영역에 표시하고 두 번째 확인 대화상자를 없앴습니다.
         - 런처 교체나 설정 업데이트가 실패하면 안전하게 되돌리고 다음 실행에서 다시 시도합니다.
-        - Codex에게 작업을 맡겨 둔 동안 치이카와를 잔뜩 봤습니다.
+        - Codex에게 작업을 맡겨 둔 동안 푸딩을 하나 먹었습니다. 기분 최고였습니다.
       en:
         - The main application can update the launcher automatically in the background.
         - Launcher-update progress uses the existing dark bottom status area without a second confirmation dialog.
         - Failed launcher replacement or configuration updates roll back safely and retry on a later launch.
-        - Scrolled through a lot of Chiikawa while Codex was working.
+        - Ate a pudding while Codex was working. It was great.
 
   - version: "2.0.1.0"
     date: "2026-07-30"
