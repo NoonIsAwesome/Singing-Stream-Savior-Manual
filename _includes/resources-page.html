@@ -1,6 +1,11 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign resources = site.data.resources %}
 {% if current_lang == 'zh-TW' %}
+  {% assign changelog_target = '/changelog.html#v2-0-2-0' %}
+{% else %}
+  {% capture changelog_target %}/{{ current_lang }}/changelog.html#v2-0-2-0{% endcapture %}
+{% endif %}
+{% if current_lang == 'zh-TW' %}
   {% assign eyebrow = 'DOWNLOADS · VIDEOS' %}
   {% assign title = '軟體下載' %}
   {% assign lead = '在這裡取得 Singing Stream Savior，並查看之後加入的操作教學。下載前可先閱讀版本資訊；影片只會在你點擊後載入，不會自動播放。' %}
@@ -115,7 +120,7 @@
       <strong>{{ recent_update }} · {{ resources.software.version }}</strong>
       <p>{{ launcher_note }}</p>
     </div>
-    <a class="resource-update__link" href="{{ resources.software.release_url }}" rel="noopener">{{ release_notes_label }} <span aria-hidden="true">→</span></a>
+    <a class="resource-update__link" href="{{ changelog_target | relative_url }}">{{ release_notes_label }} <span aria-hidden="true">→</span></a>
   </aside>
 </section>
 

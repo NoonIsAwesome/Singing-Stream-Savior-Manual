@@ -24,6 +24,7 @@ zh-TW:
     modes: 工作區模式
     settings: 設定與疑難排解
     resources: 軟體下載
+    changelog: 更新日誌
     about: 作者與聯絡
 
 zh-CN:
@@ -52,6 +53,7 @@ zh-CN:
     modes: 工作区模式
     settings: 设置与疑难解答
     resources: 软件下载
+    changelog: 更新日志
     about: 作者与联系
 
 en:
@@ -80,6 +82,7 @@ en:
     modes: Workspace modes
     settings: Settings and help
     resources: Software download
+    changelog: Release history
     about: Creator and support
 
 ja:
@@ -108,6 +111,7 @@ ja:
     modes: ワークスペース
     settings: 設定とトラブル対処
     resources: アプリをダウンロード
+    changelog: 更新履歴
     about: 制作者・お問い合わせ
 
 ko:
@@ -136,4 +140,5 @@ ko:
     modes: 작업 공간 모드
     settings: 설정 및 문제 해결
     resources: 앱 다운로드
+    changelog: 업데이트 기록
     about: 제작자 및 문의

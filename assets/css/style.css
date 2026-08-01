@@ -2648,7 +2648,262 @@ body {
   outline-offset: 4px;
 }
 
+/* Release history */
+.changelog-hero {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: clamp(42px, 7vw, 74px);
+  padding: clamp(34px, 6vw, 62px);
+  background:
+    radial-gradient(circle at 86% 18%, rgba(86, 185, 255, 0.17), transparent 25%),
+    linear-gradient(145deg, #101c29, #0a111a 68%);
+  border: 1px solid #2b4863;
+  border-radius: 18px;
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.24);
+}
+
+.changelog-hero::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4da9f2, #7dd7ff 66%, #f2b84b);
+  content: "";
+}
+
+.changelog-eyebrow {
+  margin: 0 0 14px;
+  color: #70c8ff;
+  font: 750 0.72rem/1.4 ui-monospace, "Cascadia Mono", monospace;
+  letter-spacing: 0.13em;
+}
+
+.manual-article .changelog-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  color: #f4f9ff;
+  font-size: clamp(2.35rem, 6vw, 4.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.changelog-hero > p:not(.changelog-eyebrow) {
+  max-width: 720px;
+  margin: 22px 0 0;
+  color: #b7c8d9;
+  font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+  line-height: 1.85;
+}
+
+.changelog-hero__summary {
+  display: inline-grid;
+  box-sizing: border-box;
+  grid-template-columns: auto auto;
+  gap: 2px 12px;
+  align-items: end;
+  margin-top: 34px;
+  padding: 14px 18px;
+  background: rgba(3, 9, 15, 0.48);
+  border: 1px solid #29445d;
+  border-radius: 10px;
+}
+
+.changelog-hero__summary strong {
+  grid-row: 1 / 3;
+  color: #e9f6ff;
+  font: 760 2.15rem/1 ui-monospace, "Cascadia Mono", monospace;
+}
+
+.changelog-hero__summary span {
+  color: #aebfd0;
+  font-size: 0.78rem;
+}
+
+.changelog-hero__summary .changelog-hero__range {
+  color: #6fbee9;
+  font: 700 0.7rem/1.2 ui-monospace, "Cascadia Mono", monospace;
+}
+
+.release-timeline {
+  --timeline-rail: 170px;
+  position: relative;
+  display: grid;
+  gap: 30px;
+  margin-bottom: 72px;
+}
+
+.release-timeline::before {
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  left: calc(var(--timeline-rail) - 17px);
+  width: 1px;
+  background: linear-gradient(#58b9f4, #2a455e 38%, #1c2d3e);
+  content: "";
+}
+
+.release-entry {
+  display: grid;
+  grid-template-columns: var(--timeline-rail) minmax(0, 1fr);
+}
+
+.release-entry__rail {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  padding: 19px 40px 0 0;
+  text-align: right;
+}
+
+.release-entry__rail time {
+  color: #99aec1;
+  font: 720 0.75rem/1.3 ui-monospace, "Cascadia Mono", monospace;
+}
+
+.release-entry__rail > span:last-child {
+  color: #6f879d;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.release-entry__node {
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  right: 11px;
+  width: 13px;
+  height: 13px;
+  background: #0d1722;
+  border: 3px solid #42647f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #090f16;
+}
+
+.release-entry--latest .release-entry__node {
+  background: #65d8a5;
+  border-color: #b8f2d6;
+  box-shadow: 0 0 0 5px #10251f, 0 0 22px rgba(101, 216, 165, 0.38);
+}
+
+.release-entry__card {
+  min-width: 0;
+  padding: clamp(24px, 4vw, 36px);
+  background: linear-gradient(150deg, rgba(22, 35, 48, 0.96), rgba(11, 18, 27, 0.98));
+  border: 1px solid #2a3f54;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.release-entry--latest .release-entry__card {
+  border-color: #3f708d;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22), inset 3px 0 0 #63c9ff;
+}
+
+.release-entry__header {
+  display: flex;
+  gap: 18px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.release-entry__current {
+  display: inline-flex;
+  margin-bottom: 9px;
+  padding: 4px 8px;
+  color: #9cf0c5;
+  background: rgba(70, 203, 145, 0.1);
+  border: 1px solid rgba(102, 220, 165, 0.34);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 750;
+}
+
+.manual-article .release-entry__header h2 {
+  margin: 0;
+  color: #f0f7ff;
+  font: 780 clamp(1.55rem, 3vw, 2.1rem)/1.1 ui-monospace, "Cascadia Mono", monospace;
+  letter-spacing: -0.035em;
+}
+
+.release-entry__count {
+  flex: 0 0 auto;
+  padding-top: 6px;
+  color: #6e879d;
+  font: 700 0.7rem/1.3 ui-monospace, "Cascadia Mono", monospace;
+}
+
+.release-entry__summary {
+  margin: 20px 0 0;
+  color: #c5d5e4;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.release-entry__items {
+  display: grid;
+  gap: 0;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #283b4d;
+}
+
+.release-entry__items li {
+  position: relative;
+  margin: 0;
+  padding: 13px 8px 13px 26px;
+  color: #9fb1c3;
+  border-bottom: 1px solid rgba(40, 59, 77, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.72;
+}
+
+.release-entry__items li::before {
+  position: absolute;
+  top: 1.36rem;
+  left: 7px;
+  width: 6px;
+  height: 6px;
+  background: #56b9f3;
+  border-radius: 1px;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.manual-article .release-entry__link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #8fd6ff;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.manual-article .release-entry__link:hover {
+  color: #e0f5ff;
+}
+
+.release-entry__link span {
+  transition: transform 150ms ease;
+}
+
+.release-entry__link:hover span {
+  transform: translate(2px, -2px);
+}
+
 @media (max-width: 820px) {
+  .release-timeline {
+    --timeline-rail: 124px;
+  }
+
+  .release-entry__rail {
+    padding-right: 34px;
+  }
+
   .guide-sidebar {
     background: rgba(9, 13, 20, 0.985);
   }
@@ -2674,6 +2929,52 @@ body {
 }
 
 @media (max-width: 590px) {
+  .changelog-hero {
+    padding: 30px 24px;
+    border-radius: 14px;
+  }
+
+  .changelog-hero__summary {
+    width: 100%;
+  }
+
+  .release-timeline {
+    gap: 26px;
+  }
+
+  .release-timeline::before {
+    top: 18px;
+    bottom: 0;
+    left: 7px;
+  }
+
+  .release-entry {
+    display: block;
+    padding-left: 24px;
+  }
+
+  .release-entry__rail {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    padding: 0 0 10px;
+    text-align: left;
+  }
+
+  .release-entry__node {
+    top: 5px;
+    right: auto;
+    left: -23px;
+  }
+
+  .release-entry__header {
+    align-items: end;
+  }
+
+  .release-entry__card {
+    padding: 23px 20px;
+  }
+
   .resource-shortcut {
     display: none;
   }

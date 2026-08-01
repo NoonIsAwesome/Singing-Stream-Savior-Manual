@@ -1,0 +1,223 @@
+releases:
+  - version: "2.0.2.0"
+    date: "2026-07-31"
+    latest: true
+    type:
+      zh-TW: 重大更新
+      zh-CN: 重大更新
+      en: Major update
+    release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.2.0"
+    summary:
+      zh-TW: 新增八步驟初次使用導覽，並改善拖放操作、歌詞間奏顯示與舊版 OBS 主題相容性。
+      zh-CN: 新增八步初次使用引导，并改善拖放操作、歌词间奏显示与旧版 OBS 主题兼容性。
+      en: Adds an eight-step first-use guide and improves drag-and-drop, lyrics during instrumental gaps, and compatibility with older OBS versions.
+    items:
+      zh-TW:
+        - 新增八步驟初次使用導覽，依序說明設定 BGM、加入伴奏、編輯顯示歌名、準備待播、選擇歌單主題、開始演唱、選擇同步歌詞，以及將歌詞拖入 OBS。
+        - 導覽可隨時從「說明 → 初次使用導覽」重新開啟；鍵盤操作只保留 Esc 關閉，避免誤觸按鍵跳過步驟。
+        - 本機音訊檔與 YouTube 連結可拖放到完整的 BGM 或伴奏目標區，不再需要精準放到按鈕上。
+        - 導覽高亮會正確對準指定控制項與表格欄位，主題步驟也會保持顯示在動態預覽上方。
+        - 歌詞在間奏期間不再跳回第一行歌曲資訊；後面仍有歌詞時，畫面會停靠在下一句，但不會誤將它標成目前句。
+        - OBS Overlay CSS 加入舊版 OBS CEF 的相容性備援，在新版 OBS 維持原有外觀的同時保留透明背景與主題框線。
+        - 完整安裝包包含啟動器 1.0.0.3，以及最新的更新狀態復原機制。
+        - 已以乾淨的 Release x64 Build、翻譯與專案檢查、介面／播放／歌詞／Overlay 測試、啟動器復原與自我更新測試、執行期壓力測試及快速切換 YouTube 歌曲測試驗證。
+      zh-CN:
+        - 新增八步初次使用引导，依次说明设置 BGM、添加伴奏、编辑显示歌名、准备待播、选择歌单主题、开始演唱、选择同步歌词，以及将歌词拖入 OBS。
+        - 引导可随时从“帮助 → 初次使用引导”重新打开；键盘操作只保留 Esc 关闭，避免误触按键跳过步骤。
+        - 本地音频文件与 YouTube 链接可拖放到完整的 BGM 或伴奏目标区域，不再需要精准放到按钮上。
+        - 引导高亮会正确对准指定控件与表格列，主题步骤也会保持显示在动态预览上方。
+        - 歌词在间奏期间不再跳回第一行歌曲信息；后面仍有歌词时，画面会停靠在下一句，但不会误将它标为当前句。
+        - OBS Overlay CSS 加入旧版 OBS CEF 的兼容性后备，在新版 OBS 保持原有外观的同时保留透明背景与主题边框。
+        - 完整安装包包含启动器 1.0.0.3，以及最新的更新状态恢复机制。
+        - 已通过干净的 Release x64 Build、翻译与项目检查、界面／播放／歌词／Overlay 测试、启动器恢复与自我更新测试、运行压力测试及快速切换 YouTube 歌曲测试验证。
+      en:
+        - Added an eight-step first-use guide covering BGM setup, karaoke tracks, display names, the queue, overlay themes, starting a performance, synchronized lyrics, and sending lyrics to OBS.
+        - The guide can be reopened from Help → First-use Guide; keyboard navigation is limited to Escape so accidental keys do not skip steps.
+        - Local audio files and YouTube links can be dropped across the full BGM or karaoke target area instead of requiring an exact drop on the button.
+        - Guide highlights now follow the intended controls and table columns, while the theme step stays above the live preview.
+        - Lyrics no longer jump to the first metadata line during instrumental gaps. When another lyric follows, the display anchors to it without falsely marking it active.
+        - OBS overlay CSS adds compatibility fallbacks for older OBS CEF versions, preserving transparency and theme borders without changing current OBS output.
+        - The complete package includes launcher 1.0.0.3 and the latest update-state recovery behavior.
+        - Validated with a clean Release x64 build, repository and translation checks, deterministic UI/playback/lyrics/overlay tests, launcher recovery and self-update tests, runtime stress tests, and rapid YouTube switching tests.
+
+  - version: "2.0.1.3"
+    date: "2026-07-31"
+    type:
+      zh-TW: 穩定性更新
+      zh-CN: 稳定性更新
+      en: Stability update
+    release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.3"
+    summary:
+      zh-TW: 加強 YouTube 快速切歌、播放清單匯入及啟動器更新復原。
+      zh-CN: 加强 YouTube 快速切歌、播放列表导入及启动器更新恢复。
+      en: Improves rapid YouTube switching, playlist imports, and launcher recovery.
+    items:
+      zh-TW:
+        - 快速切換 YouTube 歌曲時，由最新的播放要求維持控制權，避免較舊的要求覆寫目前播放狀態。
+        - 主要與備用 YouTube 串流都開啟失敗時，會清除舊解析快取、重新解析來源並自動重試一次；下次手動播放也會重新解析。
+        - 快速切歌期間，播放狀態、Overlay 目前歌曲與已播紀錄會維持同步。
+        - 在自訂歌單內拖入 YouTube 單曲時，歌曲會正確加入目前歌單。
+        - 拖入 YouTube 播放清單時提供四種選擇：全部加入目前歌單、建立新歌單、只加入全部歌曲，或取消。
+        - LRCLIB 要求採用更接近瀏覽器的標頭，降低可避免的 HTTP 403 錯誤。
+        - 完整安裝包包含啟動器 1.0.0.3；可復原遺失的 current.json、重建損壞的更新狀態、隔離每次更新暫存資料並避免卡在過期的不完整下載。
+        - 現有使用者會由更新後的主程式在背景自動取得新版啟動器。
+      zh-CN:
+        - 快速切换 YouTube 歌曲时，由最新的播放请求保持控制权，避免较旧的请求覆盖当前播放状态。
+        - 主要与备用 YouTube 串流都打开失败时，会清除旧解析缓存、重新解析来源并自动重试一次；下次手动播放也会重新解析。
+        - 快速切歌期间，播放状态、Overlay 当前歌曲与已播记录会保持同步。
+        - 在自定义歌单内拖入 YouTube 单曲时，歌曲会正确加入当前歌单。
+        - 拖入 YouTube 播放列表时提供四种选择：全部加入当前歌单、建立新歌单、只加入全部歌曲，或取消。
+        - LRCLIB 请求采用更接近浏览器的标头，降低可避免的 HTTP 403 错误。
+        - 完整安装包包含启动器 1.0.0.3；可恢复遗失的 current.json、重建损坏的更新状态、隔离每次更新暂存数据并避免卡在过期的不完整下载。
+        - 现有用户会由更新后的主程序在后台自动取得新版启动器。
+      en:
+        - Rapid YouTube switching now keeps the newest request in control and prevents an older request from overwriting playback state.
+        - If both resolved YouTube streams fail, the app clears stale caches, resolves the source again, and retries once; a later manual attempt also starts fresh.
+        - Playback state, the overlay's current song, and played-song history stay synchronized during rapid changes.
+        - Dropping a YouTube video while viewing a custom playlist now adds it to that playlist.
+        - Dropping a YouTube playlist offers four choices: add all videos to the current playlist, create a new playlist, add only to All Songs, or cancel.
+        - LRCLIB requests use more browser-compatible headers to reduce avoidable HTTP 403 responses.
+        - The full ZIP includes launcher 1.0.0.3, which recovers missing current.json data, rebuilds damaged update state, isolates staging sessions, and avoids stale partial downloads.
+        - Existing users receive the launcher update automatically through the updated main application.
+
+  - version: "2.0.1.2"
+    date: "2026-07-31"
+    type:
+      zh-TW: 穩定性更新
+      zh-CN: 稳定性更新
+      en: Stability update
+    release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.2"
+    summary:
+      zh-TW: 改善播放可靠性、歌詞操作與全軟體深色介面一致性。
+      zh-CN: 改善播放可靠性、歌词操作与全软件深色界面一致性。
+      en: Improves playback reliability, lyrics usability, and visual consistency.
+    items:
+      zh-TW:
+        - YouTube 主要與備用串流都失敗時，會清除過期的解析快取並自動重新解析一次。
+        - 輕量中繼資料要求無法辨識影片時，YouTube 匯入會改用 yt-dlp 取得標題。
+        - OBS Overlay 明確維持透明的根畫布，包含沒有套用預期預設瀏覽器 CSS 的 OBS 環境。
+        - 歌詞顯示支援使用 OpenCC 辭典進行簡繁轉換，並依介面語言採用合適的預設；日文假名不會受到影響。
+        - 歌詞時間調整、可見行數與獨立歌詞視窗更加清楚且穩定。
+        - 對話框與次要視窗統一使用軟體的深色外觀。
+        - 完整安裝包包含啟動器 1.0.0.2，現有使用者可透過一般自動更新流程安裝。
+      zh-CN:
+        - YouTube 主要与备用串流都失败时，会清除过期的解析缓存并自动重新解析一次。
+        - 轻量元数据请求无法识别影片时，YouTube 导入会改用 yt-dlp 取得标题。
+        - OBS Overlay 明确保持透明的根画布，包括没有套用预期默认浏览器 CSS 的 OBS 环境。
+        - 歌词显示支持使用 OpenCC 词典进行简繁转换，并依界面语言采用合适的默认值；日文假名不会受到影响。
+        - 歌词时间调整、可见行数与独立歌词窗口更加清楚且稳定。
+        - 对话框与次要窗口统一使用软件的深色外观。
+        - 完整安装包包含启动器 1.0.0.2，现有用户可通过一般自动更新流程安装。
+      en:
+        - YouTube playback clears stale resolved-stream caches and resolves once more when both the primary and backup streams fail.
+        - YouTube imports fall back to yt-dlp for the title when lightweight metadata cannot identify a video.
+        - OBS overlays explicitly preserve a transparent root canvas, including OBS environments without the expected default browser CSS.
+        - Lyrics can be converted between Simplified and Traditional Chinese using OpenCC dictionaries and language-aware defaults; Japanese kana remain unchanged.
+        - Lyrics timing controls, visible-line controls, and the detached lyrics window are clearer and more stable.
+        - Dialogs and secondary windows consistently use the application's dark appearance.
+        - The full ZIP includes launcher 1.0.0.2 and can be installed through the normal automatic-update flow.
+
+  - version: "2.0.1.1"
+    date: "2026-07-31"
+    type:
+      zh-TW: 啟動器修補
+      zh-CN: 启动器修补
+      en: Launcher hotfix
+    release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.1"
+    summary:
+      zh-TW: 讓既有使用者可由主程式安全地更新外層啟動器。
+      zh-CN: 让现有用户可由主程序安全地更新外层启动器。
+      en: Allows existing installations to update the outer launcher safely through the main app.
+    items:
+      zh-TW:
+        - 更新後的主程式可在背景安全更新外層啟動器。
+        - 啟動器更新進度使用既有的深色底部狀態區，不再顯示第二個確認視窗。
+        - 暫存檔、備份檔與維護工具集中在程式內層的 Updater 資料夾。
+        - 安裝前會檢查 SHA-256、檔案大小及啟動器內嵌版本。
+        - 啟動器替換或設定更新失敗時會安全回復，並在下次啟動再次嘗試。
+        - 完整安裝包包含啟動器 1.0.0.2。
+        - 既有使用者只需接受一般的 2.0.1.1 主程式更新；主程式開啟後會在背景更新啟動器，下一次啟動即使用 1.0.0.2。
+        - 本次修補沒有刻意變更播放、歌詞、主題或專案行為。
+      zh-CN:
+        - 更新后的主程序可在后台安全更新外层启动器。
+        - 启动器更新进度使用现有的深色底部状态区，不再显示第二个确认窗口。
+        - 暂存文件、备份文件与维护工具集中在程序内层的 Updater 文件夹。
+        - 安装前会检查 SHA-256、文件大小及启动器内嵌版本。
+        - 启动器替换或设置更新失败时会安全恢复，并在下次启动再次尝试。
+        - 完整安装包包含启动器 1.0.0.2。
+        - 现有用户只需接受一般的 2.0.1.1 主程序更新；主程序打开后会在后台更新启动器，下次启动即使用 1.0.0.2。
+        - 本次修补没有刻意更改播放、歌词、主题或项目行为。
+      en:
+        - The updated main application can securely update the outer launcher in the background.
+        - Launcher-update progress uses the existing dark bottom status area without a second confirmation dialog.
+        - Temporary, backup, and maintenance files stay inside the nested Updater folder.
+        - SHA-256, file size, and embedded launcher version are verified before installation.
+        - Failed launcher replacement or configuration updates roll back safely and retry on a later launch.
+        - The full installation ZIP includes launcher 1.0.0.2.
+        - Existing users only need to accept the normal 2.0.1.1 update; the app updates the launcher in the background for the next start.
+        - No playback, lyrics, theme, or project behavior was intentionally changed in this hotfix.
+
+  - version: "2.0.1.0"
+    date: "2026-07-30"
+    type:
+      zh-TW: 功能與操作更新
+      zh-CN: 功能与操作更新
+      en: Feature and usability update
+    release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.0"
+    summary:
+      zh-TW: 2.0.0.0 後的第一個穩定性與操作體驗更新。
+      zh-CN: 2.0.0.0 后的第一个稳定性与操作体验更新。
+      en: The first stability and usability update after version 2.0.0.0.
+    items:
+      zh-TW:
+        - 改善 BGM 淡出與伴奏轉場協調。
+        - 改善速度、音高、跳轉回應與播放穩定性。
+        - 改善歌詞偏移控制、即時同步、捲動及點擊歌詞跳轉。
+        - 擴充歌詞字型、間距、讀音與前後顯示行數控制。
+        - 新增「平假名＋羅馬拼音」日文讀音模式。
+        - 改善動態主題預覽、主題控制規格及內建主題。
+        - 統一數值輸入、按鈕大小、Hover、游標及翻譯。
+        - 改善底部狀態區，讓 BGM 與伴奏自動化狀態清楚可見。
+        - Release 包含完整 ZIP，以及供 2.0.0.0 自動更新使用的主程式與主題資產。
+      zh-CN:
+        - 改善 BGM 淡出与伴奏转场协调。
+        - 改善速度、音高、跳转响应与播放稳定性。
+        - 改善歌词偏移控制、实时同步、滚动及点击歌词跳转。
+        - 扩充歌词字体、间距、读音与前后显示行数控制。
+        - 新增“平假名＋罗马拼音”日文读音模式。
+        - 改善动态主题预览、主题控制规格及内置主题。
+        - 统一数值输入、按钮大小、Hover、光标及翻译。
+        - 改善底部状态区，让 BGM 与伴奏自动化状态清楚可见。
+        - Release 包含完整 ZIP，以及供 2.0.0.0 自动更新使用的主程序与主题资源。
+      en:
+        - Improved BGM fade-out and karaoke transition coordination.
+        - Improved speed, pitch, seeking response, and playback stability.
+        - Improved lyrics offset controls, live synchronization, scrolling, and line seeking.
+        - Expanded lyrics typography, spacing, reading, and surrounding-line controls.
+        - Added Hiragana plus Romaji reading mode.
+        - Improved animated theme previews, the theme control contract, and built-in themes.
+        - Standardized numeric inputs, button sizes, hover states, cursors, and translations.
+        - Improved the bottom status area to make BGM and karaoke automation visible.
+        - The release includes the complete ZIP and application/theme assets for automatic updates from 2.0.0.0.
+
+  - version: "2.0.0.0"
+    date: "2026-07-29"
+    type:
+      zh-TW: 首次公開版本
+      zh-CN: 首次公开版本
+      en: First public release
+    release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.0.0"
+    summary:
+      zh-TW: Singing Stream Savior 第一個正式公開版本。
+      zh-CN: Singing Stream Savior 第一个正式公开版本。
+      en: The first public release of Singing Stream Savior.
+    items:
+      zh-TW:
+        - 提供完整安裝 ZIP；完整解壓縮後，開啟最外層的「Singing Stream Savior.exe」即可開始使用。
+        - 此版本只提供完整安裝包，作為後續正式更新的基準版本。
+      zh-CN:
+        - 提供完整安装 ZIP；完整解压后，打开最外层的“Singing Stream Savior.exe”即可开始使用。
+        - 此版本只提供完整安装包，作为后续正式更新的基准版本。
+      en:
+        - Shipped as a complete installation ZIP; extract it fully and open the outer “Singing Stream Savior.exe” to begin.
+        - This release provides the complete package that serves as the baseline for later public updates.
