@@ -13,6 +13,7 @@ translation_key: home
     <div class="intro-actions">
       <a class="intro-button intro-button--primary" href="{{ '/zh-CN/guide.html#getting-started' | relative_url }}">开始使用</a>
       <a class="intro-button" href="#features">查看主要功能</a>
+      <a class="intro-button" href="{{ '/zh-CN/resources.html' | relative_url }}">软件下载</a>
     </div>
   </div>
   <figure class="intro-hero__visual">

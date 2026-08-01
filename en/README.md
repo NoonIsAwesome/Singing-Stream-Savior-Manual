@@ -10,7 +10,7 @@ translation_key: home
     <p class="intro-kicker">SINGING STREAM SAVIOR · LIVE CONTROL DESK</p>
     <h1>Let the app remember the stream chores</h1>
     <p class="intro-lead">Prepare and control BGM, karaoke tracks, Reserve, OBS set lists, and lyrics from one workspace. Keep your attention on singing and chat instead of rearranging windows between songs.</p>
-    <div class="intro-actions"><a class="intro-button intro-button--primary" href="{{ '/en/guide.html#getting-started' | relative_url }}">Get started</a><a class="intro-button" href="#features">Explore the features</a></div>
+    <div class="intro-actions"><a class="intro-button intro-button--primary" href="{{ '/en/guide.html#getting-started' | relative_url }}">Get started</a><a class="intro-button" href="#features">Explore the features</a><a class="intro-button" href="{{ '/en/resources.html' | relative_url }}">Software download</a></div>
   </div>
   <figure class="intro-hero__visual"><img src="{{ '/assets/images/en/full-workspace.png' | relative_url }}" alt="English Full Mode with the library, BGM, karaoke player, and Reserve"><figcaption>Song selection, playback, and stream visuals in one workspace.</figcaption></figure>
 </div>

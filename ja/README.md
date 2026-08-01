@@ -10,7 +10,7 @@ translation_key: home
     <p class="intro-kicker">SINGING STREAM SAVIOR · 歌枠コントロールデスク</p>
     <h1>配信中に忘れやすい操作を、アプリに任せる</h1>
     <p class="intro-lead">BGM、カラオケ音源、予約曲、OBS のセットリスト、歌詞を一つの画面で準備・操作できます。曲間のウィンドウ操作ではなく、歌と視聴者に集中するためのアプリです。</p>
-    <div class="intro-actions"><a class="intro-button intro-button--primary" href="{{ '/ja/guide.html#getting-started' | relative_url }}">使い始める</a><a class="intro-button" href="#features">主な機能を見る</a></div>
+    <div class="intro-actions"><a class="intro-button intro-button--primary" href="{{ '/ja/guide.html#getting-started' | relative_url }}">使い始める</a><a class="intro-button" href="#features">主な機能を見る</a><a class="intro-button" href="{{ '/ja/resources.html' | relative_url }}">アプリをダウンロード</a></div>
   </div>
   <figure class="intro-hero__visual"><img src="{{ '/assets/images/ja/full-workspace.png' | relative_url }}" alt="日本語のフルモード。曲ライブラリ、BGM、カラオケ、予約リストを表示"><figcaption>選曲・再生・配信画面を一つのワークスペースで管理します。</figcaption></figure>
 </div>

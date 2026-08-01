@@ -10,7 +10,7 @@ translation_key: home
     <p class="intro-kicker">SINGING STREAM SAVIOR · 노래 방송 컨트롤 데스크</p>
     <h1>방송 중 잊기 쉬운 작업은 앱에 맡기세요</h1>
     <p class="intro-lead">BGM, 반주, 예약 곡, OBS 세트리스트와 가사를 한 화면에서 준비하고 조작합니다. 곡 사이에 여러 창을 정리하는 대신 노래와 시청자에게 집중할 수 있습니다.</p>
-    <div class="intro-actions"><a class="intro-button intro-button--primary" href="{{ '/ko/guide.html#getting-started' | relative_url }}">시작하기</a><a class="intro-button" href="#features">주요 기능 보기</a></div>
+    <div class="intro-actions"><a class="intro-button intro-button--primary" href="{{ '/ko/guide.html#getting-started' | relative_url }}">시작하기</a><a class="intro-button" href="#features">주요 기능 보기</a><a class="intro-button" href="{{ '/ko/resources.html' | relative_url }}">앱 다운로드</a></div>
   </div>
   <figure class="intro-hero__visual"><img src="{{ '/assets/images/ko/full-workspace.png' | relative_url }}" alt="한국어 전체 모드의 라이브러리, BGM, 반주와 예약 목록"><figcaption>선곡, 재생과 방송 화면을 하나의 작업 공간에서 관리합니다.</figcaption></figure>
 </div>
