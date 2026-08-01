@@ -23,8 +23,6 @@ releases:
         - 導覽高亮會正確對準指定控制項與表格欄位，主題步驟也會保持顯示在動態預覽上方。
         - 歌詞在間奏期間不再跳回第一行歌曲資訊；後面仍有歌詞時，畫面會停靠在下一句，但不會誤將它標成目前句。
         - OBS Overlay CSS 加入舊版 OBS CEF 的相容性備援，在新版 OBS 維持原有外觀的同時保留透明背景與主題框線。
-        - 完整安裝包包含啟動器 1.0.0.3，以及最新的更新狀態復原機制。
-        - 已以乾淨的 Release x64 Build、翻譯與專案檢查、介面／播放／歌詞／Overlay 測試、啟動器復原與自我更新測試、執行期壓力測試及快速切換 YouTube 歌曲測試驗證。
       zh-CN:
         - 新增八步初次使用引导，依次说明设置 BGM、添加伴奏、编辑显示歌名、准备待播、选择歌单主题、开始演唱、选择同步歌词，以及将歌词拖入 OBS。
         - 引导可随时从“帮助 → 初次使用引导”重新打开；键盘操作只保留 Esc 关闭，避免误触按键跳过步骤。
@@ -32,8 +30,6 @@ releases:
         - 引导高亮会正确对准指定控件与表格列，主题步骤也会保持显示在动态预览上方。
         - 歌词在间奏期间不再跳回第一行歌曲信息；后面仍有歌词时，画面会停靠在下一句，但不会误将它标为当前句。
         - OBS Overlay CSS 加入旧版 OBS CEF 的兼容性后备，在新版 OBS 保持原有外观的同时保留透明背景与主题边框。
-        - 完整安装包包含启动器 1.0.0.3，以及最新的更新状态恢复机制。
-        - 已通过干净的 Release x64 Build、翻译与项目检查、界面／播放／歌词／Overlay 测试、启动器恢复与自我更新测试、运行压力测试及快速切换 YouTube 歌曲测试验证。
       ja:
         - BGM 設定、伴奏の追加、表示曲名の編集、待機リスト、オーバーレイテーマ、歌唱開始、同期歌詞の選択、歌詞の OBS 追加までを案内する 8 ステップの初回ガイドを追加しました。
         - ガイドは「ヘルプ → 初回ガイド」からいつでも再表示できます。誤操作でステップが進まないよう、キーボード操作は Esc の終了だけに限定しました。
@@ -41,8 +37,6 @@ releases:
         - ガイドの強調表示が対象コントロールと表の列に正しく追従し、テーマのステップはライブプレビューより前面に表示されます。
         - 間奏中に歌詞が先頭の曲情報へ戻らなくなりました。後続の歌詞がある場合は次の行を基準に表示しますが、現在行として誤って強調しません。
         - 旧 OBS CEF 向けの CSS 互換処理を追加し、現行 OBS の見た目を変えずに透明背景とテーマ枠線を維持します。
-        - 完全版パッケージにはランチャー 1.0.0.3 と最新の更新状態復旧処理が含まれます。
-        - クリーンな Release x64 ビルド、翻訳／リポジトリ検査、UI・再生・歌詞・Overlay テスト、ランチャー復旧／自己更新、実行時負荷、YouTube 高速切替テストで検証しました。
       ko:
         - BGM 설정, 반주 추가, 표시 곡명 편집, 대기 목록, 오버레이 테마, 공연 시작, 동기화 가사 선택과 OBS 가사 추가를 안내하는 8단계 첫 사용 가이드를 추가했습니다.
         - 가이드는 “도움말 → 첫 사용 가이드”에서 언제든 다시 열 수 있습니다. 실수로 단계를 넘기지 않도록 키보드 조작은 Esc 종료만 지원합니다.
@@ -50,8 +44,6 @@ releases:
         - 가이드 강조 영역이 지정된 컨트롤과 표 열을 정확히 따라가며, 테마 단계는 라이브 미리보기보다 앞에 표시됩니다.
         - 간주 중 가사가 첫 번째 곡 정보 줄로 돌아가지 않습니다. 뒤에 가사가 있으면 다음 줄을 기준으로 표시하지만 현재 줄로 잘못 강조하지 않습니다.
         - 구형 OBS CEF용 CSS 호환 처리를 추가해 최신 OBS의 모양을 바꾸지 않으면서 투명 배경과 테마 테두리를 유지합니다.
-        - 전체 패키지에는 런처 1.0.0.3과 최신 업데이트 상태 복구 기능이 포함됩니다.
-        - 깨끗한 Release x64 빌드, 번역／저장소 검사, UI·재생·가사·Overlay 테스트, 런처 복구／자체 업데이트, 런타임 부하 및 빠른 YouTube 전환 테스트로 검증했습니다.
       en:
         - Added an eight-step first-use guide covering BGM setup, karaoke tracks, display names, the queue, overlay themes, starting a performance, synchronized lyrics, and sending lyrics to OBS.
         - The guide can be reopened from Help → First-use Guide; keyboard navigation is limited to Escape so accidental keys do not skip steps.
@@ -59,8 +51,6 @@ releases:
         - Guide highlights now follow the intended controls and table columns, while the theme step stays above the live preview.
         - Lyrics no longer jump to the first metadata line during instrumental gaps. When another lyric follows, the display anchors to it without falsely marking it active.
         - OBS overlay CSS adds compatibility fallbacks for older OBS CEF versions, preserving transparency and theme borders without changing current OBS output.
-        - The complete package includes launcher 1.0.0.3 and the latest update-state recovery behavior.
-        - Validated with a clean Release x64 build, repository and translation checks, deterministic UI/playback/lyrics/overlay tests, launcher recovery and self-update tests, runtime stress tests, and rapid YouTube switching tests.
 
   - version: "2.0.1.3"
     date: "2026-07-31"
@@ -84,8 +74,8 @@ releases:
         - 快速切歌期間，播放狀態、Overlay 目前歌曲與已播紀錄會維持同步。
         - 在自訂歌單內拖入 YouTube 單曲時，歌曲會正確加入目前歌單。
         - 拖入 YouTube 播放清單時提供四種選擇：全部加入目前歌單、建立新歌單、只加入全部歌曲，或取消。
-        - LRCLIB 要求採用更接近瀏覽器的標頭，降低可避免的 HTTP 403 錯誤。
-        - 完整安裝包包含啟動器 1.0.0.3；可復原遺失的 current.json、重建損壞的更新狀態、隔離每次更新暫存資料並避免卡在過期的不完整下載。
+        - 改善 LRCLIB 連線相容性，降低線上歌詞搜尋出現 HTTP 403 的情況。
+        - 啟動器可自動復原遺失或損壞的更新狀態，避免更新卡在不完整的下載。
         - 現有使用者會由更新後的主程式在背景自動取得新版啟動器。
       zh-CN:
         - 快速切换 YouTube 歌曲时，由最新的播放请求保持控制权，避免较旧的请求覆盖当前播放状态。
@@ -93,8 +83,8 @@ releases:
         - 快速切歌期间，播放状态、Overlay 当前歌曲与已播记录会保持同步。
         - 在自定义歌单内拖入 YouTube 单曲时，歌曲会正确加入当前歌单。
         - 拖入 YouTube 播放列表时提供四种选择：全部加入当前歌单、建立新歌单、只加入全部歌曲，或取消。
-        - LRCLIB 请求采用更接近浏览器的标头，降低可避免的 HTTP 403 错误。
-        - 完整安装包包含启动器 1.0.0.3；可恢复遗失的 current.json、重建损坏的更新状态、隔离每次更新暂存数据并避免卡在过期的不完整下载。
+        - 改善 LRCLIB 连接兼容性，降低在线歌词搜索出现 HTTP 403 的情况。
+        - 启动器可自动恢复遗失或损坏的更新状态，避免更新卡在不完整的下载。
         - 现有用户会由更新后的主程序在后台自动取得新版启动器。
       ja:
         - YouTube 曲を素早く切り替えても最新の再生要求が優先され、古い要求が現在の再生状態を上書きしないようにしました。
@@ -102,8 +92,8 @@ releases:
         - 高速切替中も再生状態、Overlay の現在曲、歌唱済み履歴が同期を保ちます。
         - カスタムプレイリストを表示中に YouTube 動画をドロップすると、そのプレイリストへ正しく追加されます。
         - YouTube プレイリストのドロップ時に「現在のプレイリストへ全曲追加」「新規プレイリスト作成」「すべての曲だけへ追加」「キャンセル」の 4 項目を選べます。
-        - LRCLIB リクエストのヘッダーをブラウザーに近づけ、回避可能な HTTP 403 を減らしました。
-        - 完全版 ZIP はランチャー 1.0.0.3 を含み、current.json の欠落、破損した更新状態、古い不完全ダウンロードから安全に復旧します。
+        - LRCLIB との接続互換性を改善し、オンライン歌詞検索で HTTP 403 が発生しにくくなりました。
+        - ランチャーが欠落または破損した更新状態を自動復旧し、不完全なダウンロードで更新が止まる問題を防ぎます。
         - 既存ユーザーのランチャーは、更新後のメインアプリから自動的に更新されます。
       ko:
         - YouTube 곡을 빠르게 전환해도 최신 재생 요청이 제어권을 유지해 이전 요청이 현재 재생 상태를 덮어쓰지 않습니다.
@@ -111,8 +101,8 @@ releases:
         - 빠른 곡 전환 중에도 재생 상태, Overlay의 현재 곡과 재생 완료 기록이 동기화됩니다.
         - 사용자 재생목록을 보고 있을 때 YouTube 영상을 드롭하면 해당 재생목록에 정확히 추가됩니다.
         - YouTube 재생목록을 드롭하면 “현재 재생목록에 모두 추가”, “새 재생목록 만들기”, “전체 곡에만 추가”, “취소”의 네 가지 선택지를 제공합니다.
-        - LRCLIB 요청 헤더를 브라우저와 더 비슷하게 만들어 피할 수 있는 HTTP 403 오류를 줄였습니다.
-        - 전체 ZIP에는 런처 1.0.0.3이 포함되며 누락된 current.json 복구, 손상된 업데이트 상태 재생성, 업데이트 임시 데이터 분리와 오래된 부분 다운로드 정리를 지원합니다.
+        - LRCLIB 연결 호환성을 개선해 온라인 가사 검색에서 HTTP 403 오류가 발생하는 경우를 줄였습니다.
+        - 런처가 누락되거나 손상된 업데이트 상태를 자동 복구해 불완전한 다운로드에서 업데이트가 멈추는 문제를 방지합니다.
         - 기존 사용자는 업데이트된 메인 앱을 통해 새 런처를 자동으로 받습니다.
       en:
         - Rapid YouTube switching now keeps the newest request in control and prevents an older request from overwriting playback state.
@@ -120,8 +110,8 @@ releases:
         - Playback state, the overlay's current song, and played-song history stay synchronized during rapid changes.
         - Dropping a YouTube video while viewing a custom playlist now adds it to that playlist.
         - Dropping a YouTube playlist offers four choices: add all videos to the current playlist, create a new playlist, add only to All Songs, or cancel.
-        - LRCLIB requests use more browser-compatible headers to reduce avoidable HTTP 403 responses.
-        - The full ZIP includes launcher 1.0.0.3, which recovers missing current.json data, rebuilds damaged update state, isolates staging sessions, and avoids stale partial downloads.
+        - Improved LRCLIB connection compatibility to reduce HTTP 403 errors during online lyrics searches.
+        - The launcher can recover missing or damaged update state automatically, preventing updates from getting stuck on incomplete downloads.
         - Existing users receive the launcher update automatically through the updated main application.
 
   - version: "2.0.1.2"
@@ -143,43 +133,38 @@ releases:
       zh-TW:
         - YouTube 主要與備用串流都失敗時，會清除過期的解析快取並自動重新解析一次。
         - 輕量中繼資料要求無法辨識影片時，YouTube 匯入會改用 yt-dlp 取得標題。
-        - OBS Overlay 明確維持透明的根畫布，包含沒有套用預期預設瀏覽器 CSS 的 OBS 環境。
-        - 歌詞顯示支援使用 OpenCC 辭典進行簡繁轉換，並依介面語言採用合適的預設；日文假名不會受到影響。
+        - 改善部分 OBS 環境拖入歌單後出現黑底的問題，透明主題可維持透明背景。
+        - 新增歌詞簡繁轉換，並依介面語言採用合適預設；日文假名不受影響。
         - 歌詞時間調整、可見行數與獨立歌詞視窗更加清楚且穩定。
         - 對話框與次要視窗統一使用軟體的深色外觀。
-        - 完整安裝包包含啟動器 1.0.0.2，現有使用者可透過一般自動更新流程安裝。
       zh-CN:
         - YouTube 主要与备用串流都失败时，会清除过期的解析缓存并自动重新解析一次。
         - 轻量元数据请求无法识别影片时，YouTube 导入会改用 yt-dlp 取得标题。
-        - OBS Overlay 明确保持透明的根画布，包括没有套用预期默认浏览器 CSS 的 OBS 环境。
-        - 歌词显示支持使用 OpenCC 词典进行简繁转换，并依界面语言采用合适的默认值；日文假名不会受到影响。
+        - 改善部分 OBS 环境拖入歌单后出现黑底的问题，透明主题可保持透明背景。
+        - 新增歌词简繁转换，并依界面语言采用合适默认值；日文假名不受影响。
         - 歌词时间调整、可见行数与独立歌词窗口更加清楚且稳定。
         - 对话框与次要窗口统一使用软件的深色外观。
-        - 完整安装包包含启动器 1.0.0.2，现有用户可通过一般自动更新流程安装。
       ja:
         - YouTube のメイン／予備ストリームがともに失敗した場合、古い解析キャッシュを削除して一度だけ自動再解析します。
         - 軽量メタデータで動画名を取得できない場合、YouTube 読み込みは yt-dlp からタイトルを取得します。
-        - OBS 側で想定した既定ブラウザー CSS がない環境でも、Overlay のルート画面を明示的に透明にします。
-        - OpenCC 辞書による簡体字／繁体字の歌詞変換と、UI 言語に応じた既定値を追加しました。日本語のかなには影響しません。
+        - 一部の OBS 環境で歌リストを追加した際に黒い背景が表示される問題を改善し、透明テーマの背景を維持します。
+        - 歌詞の簡体字／繁体字変換と、UI 言語に応じた既定値を追加しました。日本語のかなには影響しません。
         - 歌詞タイミング、表示行数、独立歌詞ウィンドウの操作を分かりやすく安定させました。
         - ダイアログとサブウィンドウをアプリ共通のダーク表示に統一しました。
-        - 完全版 ZIP はランチャー 1.0.0.2 を含み、既存ユーザーは通常の自動更新で導入できます。
       ko:
         - YouTube 기본／예비 스트림이 모두 실패하면 오래된 분석 캐시를 지우고 한 번 자동으로 다시 분석합니다.
         - 가벼운 메타데이터 요청으로 영상 제목을 확인하지 못하면 YouTube 가져오기가 yt-dlp에서 제목을 가져옵니다.
-        - 예상한 기본 브라우저 CSS가 없는 OBS 환경에서도 Overlay의 루트 캔버스를 명확히 투명하게 유지합니다.
-        - OpenCC 사전으로 중국어 간체／번체 가사를 변환하고 UI 언어에 맞는 기본값을 적용합니다. 일본어 가나는 변경하지 않습니다.
+        - 일부 OBS 환경에서 노래 목록을 추가한 뒤 검은 배경이 나타나는 문제를 개선해 투명 테마의 배경을 유지합니다.
+        - 중국어 간체／번체 가사 변환과 UI 언어에 맞는 기본값을 추가했습니다. 일본어 가나는 변경하지 않습니다.
         - 가사 시간, 표시 줄 수와 분리된 가사 창의 조작을 더 명확하고 안정적으로 개선했습니다.
         - 대화상자와 보조 창을 앱의 다크 화면으로 일관되게 표시합니다.
-        - 전체 ZIP에는 런처 1.0.0.2가 포함되며 기존 사용자는 일반 자동 업데이트로 설치할 수 있습니다.
       en:
         - YouTube playback clears stale resolved-stream caches and resolves once more when both the primary and backup streams fail.
         - YouTube imports fall back to yt-dlp for the title when lightweight metadata cannot identify a video.
-        - OBS overlays explicitly preserve a transparent root canvas, including OBS environments without the expected default browser CSS.
-        - Lyrics can be converted between Simplified and Traditional Chinese using OpenCC dictionaries and language-aware defaults; Japanese kana remain unchanged.
+        - Improved an issue where song-list overlays could show a black background in some OBS environments, preserving transparent themes.
+        - Added Simplified and Traditional Chinese lyrics conversion with language-aware defaults; Japanese kana remain unchanged.
         - Lyrics timing controls, visible-line controls, and the detached lyrics window are clearer and more stable.
         - Dialogs and secondary windows consistently use the application's dark appearance.
-        - The full ZIP includes launcher 1.0.0.2 and can be installed through the normal automatic-update flow.
 
   - version: "2.0.1.1"
     date: "2026-07-31"
@@ -200,46 +185,31 @@ releases:
       zh-TW:
         - 更新後的主程式可在背景安全更新外層啟動器。
         - 啟動器更新進度使用既有的深色底部狀態區，不再顯示第二個確認視窗。
-        - 暫存檔、備份檔與維護工具集中在程式內層的 Updater 資料夾。
-        - 安裝前會檢查 SHA-256、檔案大小及啟動器內嵌版本。
         - 啟動器替換或設定更新失敗時會安全回復，並在下次啟動再次嘗試。
-        - 完整安裝包包含啟動器 1.0.0.2。
         - 既有使用者只需接受一般的 2.0.1.1 主程式更新；主程式開啟後會在背景更新啟動器，下一次啟動即使用 1.0.0.2。
         - 本次修補沒有刻意變更播放、歌詞、主題或專案行為。
       zh-CN:
         - 更新后的主程序可在后台安全更新外层启动器。
         - 启动器更新进度使用现有的深色底部状态区，不再显示第二个确认窗口。
-        - 暂存文件、备份文件与维护工具集中在程序内层的 Updater 文件夹。
-        - 安装前会检查 SHA-256、文件大小及启动器内嵌版本。
         - 启动器替换或设置更新失败时会安全恢复，并在下次启动再次尝试。
-        - 完整安装包包含启动器 1.0.0.2。
         - 现有用户只需接受一般的 2.0.1.1 主程序更新；主程序打开后会在后台更新启动器，下次启动即使用 1.0.0.2。
         - 本次修补没有刻意更改播放、歌词、主题或项目行为。
       ja:
         - 更新後のメインアプリから、外側のランチャーをバックグラウンドで安全に更新できます。
         - ランチャー更新の進捗を既存のダークな下部ステータスに表示し、二重の確認ダイアログをなくしました。
-        - 一時ファイル、バックアップ、保守ツールをアプリ内の Updater フォルダーにまとめました。
-        - インストール前に SHA-256、ファイルサイズ、埋め込みランチャーバージョンを検証します。
         - ランチャーの置換や設定更新に失敗した場合は安全に元へ戻し、次回起動時に再試行します。
-        - 完全版 ZIP にはランチャー 1.0.0.2 が含まれます。
         - 既存ユーザーは通常の 2.0.1.1 更新を許可するだけで、アプリ起動後にランチャーがバックグラウンド更新され、次回から 1.0.0.2 を使用します。
         - この修正では再生、歌詞、テーマ、プロジェクトの動作を意図的に変更していません。
       ko:
         - 업데이트된 메인 앱이 바깥쪽 런처를 백그라운드에서 안전하게 업데이트합니다.
         - 런처 업데이트 진행 상황을 기존의 다크 하단 상태 영역에 표시하고 두 번째 확인 대화상자를 없앴습니다.
-        - 임시 파일, 백업과 유지 관리 도구를 앱 내부의 Updater 폴더에 모았습니다.
-        - 설치 전에 SHA-256, 파일 크기와 내장 런처 버전을 검증합니다.
         - 런처 교체나 설정 업데이트가 실패하면 안전하게 되돌리고 다음 실행에서 다시 시도합니다.
-        - 전체 ZIP에는 런처 1.0.0.2가 포함됩니다.
         - 기존 사용자는 일반 2.0.1.1 업데이트만 승인하면 됩니다. 앱 실행 후 백그라운드에서 런처를 업데이트하고 다음 실행부터 1.0.0.2를 사용합니다.
         - 이 수정에서는 재생, 가사, 테마 또는 프로젝트 동작을 의도적으로 변경하지 않았습니다.
       en:
         - The updated main application can securely update the outer launcher in the background.
         - Launcher-update progress uses the existing dark bottom status area without a second confirmation dialog.
-        - Temporary, backup, and maintenance files stay inside the nested Updater folder.
-        - SHA-256, file size, and embedded launcher version are verified before installation.
         - Failed launcher replacement or configuration updates roll back safely and retry on a later launch.
-        - The full installation ZIP includes launcher 1.0.0.2.
         - Existing users only need to accept the normal 2.0.1.1 update; the app updates the launcher in the background for the next start.
         - No playback, lyrics, theme, or project behavior was intentionally changed in this hotfix.
 
@@ -268,7 +238,6 @@ releases:
         - 改善動態主題預覽、主題控制規格及內建主題。
         - 統一數值輸入、按鈕大小、Hover、游標及翻譯。
         - 改善底部狀態區，讓 BGM 與伴奏自動化狀態清楚可見。
-        - Release 包含完整 ZIP，以及供 2.0.0.0 自動更新使用的主程式與主題資產。
       zh-CN:
         - 改善 BGM 淡出与伴奏转场协调。
         - 改善速度、音高、跳转响应与播放稳定性。
@@ -278,7 +247,6 @@ releases:
         - 改善动态主题预览、主题控制规格及内置主题。
         - 统一数值输入、按钮大小、Hover、光标及翻译。
         - 改善底部状态区，让 BGM 与伴奏自动化状态清楚可见。
-        - Release 包含完整 ZIP，以及供 2.0.0.0 自动更新使用的主程序与主题资源。
       ja:
         - BGM のフェードアウトと伴奏開始時の切替連携を改善しました。
         - 再生速度、ピッチ、シークの反応と再生安定性を改善しました。
@@ -288,7 +256,6 @@ releases:
         - テーマの自動プレビュー、テーマ制御仕様、内蔵テーマを改善しました。
         - 数値入力、ボタンサイズ、ホバー、カーソル、翻訳を統一しました。
         - 下部ステータスを改善し、BGM と伴奏の自動連携を見えるようにしました。
-        - Release には完全版 ZIP と、2.0.0.0 からの自動更新用アプリ／テーマ資産が含まれます。
       ko:
         - BGM 페이드아웃과 반주 전환의 연동을 개선했습니다.
         - 재생 속도, 음정, 탐색 반응과 재생 안정성을 개선했습니다.
@@ -298,7 +265,6 @@ releases:
         - 테마 자동 미리보기, 테마 제어 규격과 내장 테마를 개선했습니다.
         - 숫자 입력, 버튼 크기, Hover, 커서와 번역을 일관되게 정리했습니다.
         - 하단 상태 영역을 개선해 BGM과 반주의 자동 연동 상태를 확인할 수 있습니다.
-        - Release에는 전체 ZIP과 2.0.0.0 자동 업데이트용 앱／테마 리소스가 포함됩니다.
       en:
         - Improved BGM fade-out and karaoke transition coordination.
         - Improved speed, pitch, seeking response, and playback stability.
@@ -308,7 +274,6 @@ releases:
         - Improved animated theme previews, the theme control contract, and built-in themes.
         - Standardized numeric inputs, button sizes, hover states, cursors, and translations.
         - Improved the bottom status area to make BGM and karaoke automation visible.
-        - The release includes the complete ZIP and application/theme assets for automatic updates from 2.0.0.0.
 
   - version: "2.0.0.0"
     date: "2026-07-29"

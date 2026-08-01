@@ -94,7 +94,7 @@
               {% endif %}
               <li>
                 <a href="{{ target | relative_url }}" {% if section == key and page.manual_bundle != true %}aria-current="page"{% endif %}>
-                  <span>0{{ forloop.index0 }}</span>{{ t.nav[label_key] }}
+                  <span>{% if forloop.index < 10 %}0{{ forloop.index }}{% else %}{{ forloop.index }}{% endif %}</span>{{ t.nav[label_key] }}
                 </a>
               </li>
             {% endfor %}
