@@ -18,39 +18,39 @@ releases:
     items:
       zh-TW:
         - 新增八步驟初次使用導覽，依序說明設定 BGM、加入伴奏、編輯顯示歌名、準備待播、選擇歌單主題、開始演唱、選擇同步歌詞，以及將歌詞拖入 OBS。
-        - 導覽可隨時從「說明 → 初次使用導覽」重新開啟；鍵盤操作只保留 Esc 關閉，避免誤觸按鍵跳過步驟。
+        - 導覽可隨時從「說明 → 初次使用導覽」重新開啟。
         - 本機音訊檔與 YouTube 連結可拖放到完整的 BGM 或伴奏目標區，不再需要精準放到按鈕上。
-        - 導覽高亮會正確對準指定控制項與表格欄位，主題步驟也會保持顯示在動態預覽上方。
+        - 改善導覽的高亮位置，讓每一步都能正確指向操作區域。
         - 歌詞在間奏期間不再跳回第一行歌曲資訊；後面仍有歌詞時，畫面會停靠在下一句，但不會誤將它標成目前句。
-        - OBS Overlay CSS 加入舊版 OBS CEF 的相容性備援，在新版 OBS 維持原有外觀的同時保留透明背景與主題框線。
+        - 改善舊版 OBS 的主題顯示相容性，透明背景與主題框線可正常呈現。
       zh-CN:
         - 新增八步初次使用引导，依次说明设置 BGM、添加伴奏、编辑显示歌名、准备待播、选择歌单主题、开始演唱、选择同步歌词，以及将歌词拖入 OBS。
-        - 引导可随时从“帮助 → 初次使用引导”重新打开；键盘操作只保留 Esc 关闭，避免误触按键跳过步骤。
+        - 引导可随时从“帮助 → 初次使用引导”重新打开。
         - 本地音频文件与 YouTube 链接可拖放到完整的 BGM 或伴奏目标区域，不再需要精准放到按钮上。
-        - 引导高亮会正确对准指定控件与表格列，主题步骤也会保持显示在动态预览上方。
+        - 改善引导的高亮位置，让每一步都能正确指向操作区域。
         - 歌词在间奏期间不再跳回第一行歌曲信息；后面仍有歌词时，画面会停靠在下一句，但不会误将它标为当前句。
-        - OBS Overlay CSS 加入旧版 OBS CEF 的兼容性后备，在新版 OBS 保持原有外观的同时保留透明背景与主题边框。
+        - 改善旧版 OBS 的主题显示兼容性，透明背景与主题边框可正常呈现。
       ja:
         - BGM 設定、伴奏の追加、表示曲名の編集、待機リスト、オーバーレイテーマ、歌唱開始、同期歌詞の選択、歌詞の OBS 追加までを案内する 8 ステップの初回ガイドを追加しました。
-        - ガイドは「ヘルプ → 初回ガイド」からいつでも再表示できます。誤操作でステップが進まないよう、キーボード操作は Esc の終了だけに限定しました。
+        - ガイドは「ヘルプ → 初回ガイド」からいつでも再表示できます。
         - ローカル音声ファイルと YouTube リンクを、ボタンだけでなく BGM／伴奏エリア全体へドロップできるようにしました。
-        - ガイドの強調表示が対象コントロールと表の列に正しく追従し、テーマのステップはライブプレビューより前面に表示されます。
+        - ガイドの強調位置を改善し、各ステップが正しい操作箇所を示すようにしました。
         - 間奏中に歌詞が先頭の曲情報へ戻らなくなりました。後続の歌詞がある場合は次の行を基準に表示しますが、現在行として誤って強調しません。
-        - 旧 OBS CEF 向けの CSS 互換処理を追加し、現行 OBS の見た目を変えずに透明背景とテーマ枠線を維持します。
+        - 旧バージョンの OBS とのテーマ表示互換性を改善し、透明背景とテーマ枠線が正しく表示されるようにしました。
       ko:
         - BGM 설정, 반주 추가, 표시 곡명 편집, 대기 목록, 오버레이 테마, 공연 시작, 동기화 가사 선택과 OBS 가사 추가를 안내하는 8단계 첫 사용 가이드를 추가했습니다.
-        - 가이드는 “도움말 → 첫 사용 가이드”에서 언제든 다시 열 수 있습니다. 실수로 단계를 넘기지 않도록 키보드 조작은 Esc 종료만 지원합니다.
+        - 가이드는 “도움말 → 첫 사용 가이드”에서 언제든 다시 열 수 있습니다.
         - 로컬 오디오 파일과 YouTube 링크를 버튼뿐 아니라 BGM 또는 반주 영역 전체에 드롭할 수 있습니다.
-        - 가이드 강조 영역이 지정된 컨트롤과 표 열을 정확히 따라가며, 테마 단계는 라이브 미리보기보다 앞에 표시됩니다.
+        - 가이드 강조 위치를 개선해 각 단계가 올바른 조작 영역을 가리키도록 했습니다.
         - 간주 중 가사가 첫 번째 곡 정보 줄로 돌아가지 않습니다. 뒤에 가사가 있으면 다음 줄을 기준으로 표시하지만 현재 줄로 잘못 강조하지 않습니다.
-        - 구형 OBS CEF용 CSS 호환 처리를 추가해 최신 OBS의 모양을 바꾸지 않으면서 투명 배경과 테마 테두리를 유지합니다.
+        - 구형 OBS의 테마 표시 호환성을 개선해 투명 배경과 테마 테두리가 정상적으로 표시됩니다.
       en:
         - Added an eight-step first-use guide covering BGM setup, karaoke tracks, display names, the queue, overlay themes, starting a performance, synchronized lyrics, and sending lyrics to OBS.
-        - The guide can be reopened from Help → First-use Guide; keyboard navigation is limited to Escape so accidental keys do not skip steps.
+        - The guide can be reopened at any time from Help → First-use Guide.
         - Local audio files and YouTube links can be dropped across the full BGM or karaoke target area instead of requiring an exact drop on the button.
-        - Guide highlights now follow the intended controls and table columns, while the theme step stays above the live preview.
+        - Improved guide highlights so every step points to the correct area of the interface.
         - Lyrics no longer jump to the first metadata line during instrumental gaps. When another lyric follows, the display anchors to it without falsely marking it active.
-        - OBS overlay CSS adds compatibility fallbacks for older OBS CEF versions, preserving transparency and theme borders without changing current OBS output.
+        - Improved theme compatibility with older OBS versions so transparent backgrounds and theme borders display correctly.
 
   - version: "2.0.1.3"
     date: "2026-07-31"
@@ -69,49 +69,49 @@ releases:
       en: Improves rapid YouTube switching, playlist imports, and launcher recovery.
     items:
       zh-TW:
-        - 快速切換 YouTube 歌曲時，由最新的播放要求維持控制權，避免較舊的要求覆寫目前播放狀態。
-        - 主要與備用 YouTube 串流都開啟失敗時，會清除舊解析快取、重新解析來源並自動重試一次；下次手動播放也會重新解析。
+        - 改善快速切換 YouTube 歌曲時的播放穩定性，避免切歌後播放錯誤的歌曲。
+        - YouTube 播放失敗時會自動重新嘗試，減少必須重啟軟體的情況。
         - 快速切歌期間，播放狀態、Overlay 目前歌曲與已播紀錄會維持同步。
         - 在自訂歌單內拖入 YouTube 單曲時，歌曲會正確加入目前歌單。
         - 拖入 YouTube 播放清單時提供四種選擇：全部加入目前歌單、建立新歌單、只加入全部歌曲，或取消。
-        - 改善 LRCLIB 連線相容性，降低線上歌詞搜尋出現 HTTP 403 的情況。
-        - 啟動器可自動復原遺失或損壞的更新狀態，避免更新卡在不完整的下載。
+        - 改善線上歌詞搜尋的連線穩定性。
+        - 改善啟動器更新失敗或下載不完整時的自動復原。
         - 現有使用者會由更新後的主程式在背景自動取得新版啟動器。
       zh-CN:
-        - 快速切换 YouTube 歌曲时，由最新的播放请求保持控制权，避免较旧的请求覆盖当前播放状态。
-        - 主要与备用 YouTube 串流都打开失败时，会清除旧解析缓存、重新解析来源并自动重试一次；下次手动播放也会重新解析。
+        - 改善快速切换 YouTube 歌曲时的播放稳定性，避免切歌后播放错误的歌曲。
+        - YouTube 播放失败时会自动重新尝试，减少必须重启软件的情况。
         - 快速切歌期间，播放状态、Overlay 当前歌曲与已播记录会保持同步。
         - 在自定义歌单内拖入 YouTube 单曲时，歌曲会正确加入当前歌单。
         - 拖入 YouTube 播放列表时提供四种选择：全部加入当前歌单、建立新歌单、只加入全部歌曲，或取消。
-        - 改善 LRCLIB 连接兼容性，降低在线歌词搜索出现 HTTP 403 的情况。
-        - 启动器可自动恢复遗失或损坏的更新状态，避免更新卡在不完整的下载。
+        - 改善在线歌词搜索的连接稳定性。
+        - 改善启动器更新失败或下载不完整时的自动恢复。
         - 现有用户会由更新后的主程序在后台自动取得新版启动器。
       ja:
-        - YouTube 曲を素早く切り替えても最新の再生要求が優先され、古い要求が現在の再生状態を上書きしないようにしました。
-        - YouTube のメイン／予備ストリームがともに失敗した場合、古い解析キャッシュを削除して再解析し、一度だけ自動再試行します。次の手動再生も新しく解析します。
+        - YouTube 曲を素早く切り替えた際の再生安定性を改善し、切替後に別の曲が再生される問題を防ぎます。
+        - YouTube の再生に失敗した場合は自動的に再試行し、アプリの再起動が必要になる状況を減らしました。
         - 高速切替中も再生状態、Overlay の現在曲、歌唱済み履歴が同期を保ちます。
         - カスタムプレイリストを表示中に YouTube 動画をドロップすると、そのプレイリストへ正しく追加されます。
         - YouTube プレイリストのドロップ時に「現在のプレイリストへ全曲追加」「新規プレイリスト作成」「すべての曲だけへ追加」「キャンセル」の 4 項目を選べます。
-        - LRCLIB との接続互換性を改善し、オンライン歌詞検索で HTTP 403 が発生しにくくなりました。
-        - ランチャーが欠落または破損した更新状態を自動復旧し、不完全なダウンロードで更新が止まる問題を防ぎます。
+        - オンライン歌詞検索の接続安定性を改善しました。
+        - ランチャー更新の失敗や不完全なダウンロードからの自動復旧を改善しました。
         - 既存ユーザーのランチャーは、更新後のメインアプリから自動的に更新されます。
       ko:
-        - YouTube 곡을 빠르게 전환해도 최신 재생 요청이 제어권을 유지해 이전 요청이 현재 재생 상태를 덮어쓰지 않습니다.
-        - YouTube 기본／예비 스트림이 모두 실패하면 오래된 분석 캐시를 지우고 다시 분석한 뒤 한 번 자동 재시도합니다. 다음 수동 재생도 새로 분석합니다.
+        - YouTube 곡을 빠르게 전환할 때의 재생 안정성을 개선해 전환 후 잘못된 곡이 재생되는 문제를 방지합니다.
+        - YouTube 재생에 실패하면 자동으로 다시 시도해 앱을 재시작해야 하는 경우를 줄였습니다.
         - 빠른 곡 전환 중에도 재생 상태, Overlay의 현재 곡과 재생 완료 기록이 동기화됩니다.
         - 사용자 재생목록을 보고 있을 때 YouTube 영상을 드롭하면 해당 재생목록에 정확히 추가됩니다.
         - YouTube 재생목록을 드롭하면 “현재 재생목록에 모두 추가”, “새 재생목록 만들기”, “전체 곡에만 추가”, “취소”의 네 가지 선택지를 제공합니다.
-        - LRCLIB 연결 호환성을 개선해 온라인 가사 검색에서 HTTP 403 오류가 발생하는 경우를 줄였습니다.
-        - 런처가 누락되거나 손상된 업데이트 상태를 자동 복구해 불완전한 다운로드에서 업데이트가 멈추는 문제를 방지합니다.
+        - 온라인 가사 검색의 연결 안정성을 개선했습니다.
+        - 런처 업데이트 실패나 불완전한 다운로드에서 자동 복구하는 기능을 개선했습니다.
         - 기존 사용자는 업데이트된 메인 앱을 통해 새 런처를 자동으로 받습니다.
       en:
-        - Rapid YouTube switching now keeps the newest request in control and prevents an older request from overwriting playback state.
-        - If both resolved YouTube streams fail, the app clears stale caches, resolves the source again, and retries once; a later manual attempt also starts fresh.
+        - Improved playback stability when switching rapidly between YouTube songs, preventing the wrong song from taking over.
+        - YouTube playback now retries automatically after a failure, reducing cases that require restarting the application.
         - Playback state, the overlay's current song, and played-song history stay synchronized during rapid changes.
         - Dropping a YouTube video while viewing a custom playlist now adds it to that playlist.
         - Dropping a YouTube playlist offers four choices: add all videos to the current playlist, create a new playlist, add only to All Songs, or cancel.
-        - Improved LRCLIB connection compatibility to reduce HTTP 403 errors during online lyrics searches.
-        - The launcher can recover missing or damaged update state automatically, preventing updates from getting stuck on incomplete downloads.
+        - Improved connection stability for online lyrics searches.
+        - Improved automatic recovery when a launcher update fails or downloads incompletely.
         - Existing users receive the launcher update automatically through the updated main application.
 
   - version: "2.0.1.2"
@@ -131,36 +131,36 @@ releases:
       en: Improves playback reliability, lyrics usability, and visual consistency.
     items:
       zh-TW:
-        - YouTube 主要與備用串流都失敗時，會清除過期的解析快取並自動重新解析一次。
-        - 輕量中繼資料要求無法辨識影片時，YouTube 匯入會改用 yt-dlp 取得標題。
+        - 改善部分 YouTube 連結偶爾無法播放，且必須重啟軟體才能恢復的問題。
+        - 改善部分 YouTube 連結無法正確辨識歌名的問題。
         - 改善部分 OBS 環境拖入歌單後出現黑底的問題，透明主題可維持透明背景。
         - 新增歌詞簡繁轉換，並依介面語言採用合適預設；日文假名不受影響。
         - 歌詞時間調整、可見行數與獨立歌詞視窗更加清楚且穩定。
         - 對話框與次要視窗統一使用軟體的深色外觀。
       zh-CN:
-        - YouTube 主要与备用串流都失败时，会清除过期的解析缓存并自动重新解析一次。
-        - 轻量元数据请求无法识别影片时，YouTube 导入会改用 yt-dlp 取得标题。
+        - 改善部分 YouTube 链接偶尔无法播放，且必须重启软件才能恢复的问题。
+        - 改善部分 YouTube 链接无法正确识别歌名的问题。
         - 改善部分 OBS 环境拖入歌单后出现黑底的问题，透明主题可保持透明背景。
         - 新增歌词简繁转换，并依界面语言采用合适默认值；日文假名不受影响。
         - 歌词时间调整、可见行数与独立歌词窗口更加清楚且稳定。
         - 对话框与次要窗口统一使用软件的深色外观。
       ja:
-        - YouTube のメイン／予備ストリームがともに失敗した場合、古い解析キャッシュを削除して一度だけ自動再解析します。
-        - 軽量メタデータで動画名を取得できない場合、YouTube 読み込みは yt-dlp からタイトルを取得します。
+        - 一部の YouTube リンクが再生できず、復旧にアプリの再起動が必要になる問題を改善しました。
+        - 一部の YouTube リンクで曲名を正しく取得できない問題を改善しました。
         - 一部の OBS 環境で歌リストを追加した際に黒い背景が表示される問題を改善し、透明テーマの背景を維持します。
         - 歌詞の簡体字／繁体字変換と、UI 言語に応じた既定値を追加しました。日本語のかなには影響しません。
         - 歌詞タイミング、表示行数、独立歌詞ウィンドウの操作を分かりやすく安定させました。
         - ダイアログとサブウィンドウをアプリ共通のダーク表示に統一しました。
       ko:
-        - YouTube 기본／예비 스트림이 모두 실패하면 오래된 분석 캐시를 지우고 한 번 자동으로 다시 분석합니다.
-        - 가벼운 메타데이터 요청으로 영상 제목을 확인하지 못하면 YouTube 가져오기가 yt-dlp에서 제목을 가져옵니다.
+        - 일부 YouTube 링크가 재생되지 않고 복구하려면 앱을 재시작해야 하는 문제를 개선했습니다.
+        - 일부 YouTube 링크에서 곡명을 올바르게 가져오지 못하는 문제를 개선했습니다.
         - 일부 OBS 환경에서 노래 목록을 추가한 뒤 검은 배경이 나타나는 문제를 개선해 투명 테마의 배경을 유지합니다.
         - 중국어 간체／번체 가사 변환과 UI 언어에 맞는 기본값을 추가했습니다. 일본어 가나는 변경하지 않습니다.
         - 가사 시간, 표시 줄 수와 분리된 가사 창의 조작을 더 명확하고 안정적으로 개선했습니다.
         - 대화상자와 보조 창을 앱의 다크 화면으로 일관되게 표시합니다.
       en:
-        - YouTube playback clears stale resolved-stream caches and resolves once more when both the primary and backup streams fail.
-        - YouTube imports fall back to yt-dlp for the title when lightweight metadata cannot identify a video.
+        - Improved an issue where some YouTube links could stop playing until the application was restarted.
+        - Improved song-title detection for some YouTube links.
         - Improved an issue where song-list overlays could show a black background in some OBS environments, preserving transparent themes.
         - Added Simplified and Traditional Chinese lyrics conversion with language-aware defaults; Japanese kana remain unchanged.
         - Lyrics timing controls, visible-line controls, and the detached lyrics window are clearer and more stable.
@@ -176,42 +176,32 @@ releases:
       en: Launcher hotfix
     release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.1.1"
     summary:
-      zh-TW: 讓既有使用者可由主程式安全地更新外層啟動器。
-      zh-CN: 让现有用户可由主程序安全地更新外层启动器。
-      ja: 既存ユーザーがメインアプリから外側のランチャーを安全に更新できるようにしました。
-      ko: 기존 사용자가 메인 앱을 통해 바깥쪽 런처를 안전하게 업데이트할 수 있습니다.
-      en: Allows existing installations to update the outer launcher safely through the main app.
+      zh-TW: 主程式可在背景自動更新啟動器，並改善更新失敗時的復原。
+      zh-CN: 主程序可在后台自动更新启动器，并改善更新失败时的恢复。
+      ja: メインアプリからランチャーを自動更新し、失敗時の復旧を改善しました。
+      ko: 메인 앱에서 런처를 자동 업데이트하고 실패 시 복구를 개선했습니다.
+      en: Adds automatic launcher updates through the main application and improves recovery after failures.
     items:
       zh-TW:
-        - 更新後的主程式可在背景安全更新外層啟動器。
+        - 主程式可在背景自動更新啟動器。
         - 啟動器更新進度使用既有的深色底部狀態區，不再顯示第二個確認視窗。
         - 啟動器替換或設定更新失敗時會安全回復，並在下次啟動再次嘗試。
-        - 既有使用者只需接受一般的 2.0.1.1 主程式更新；主程式開啟後會在背景更新啟動器，下一次啟動即使用 1.0.0.2。
-        - 本次修補沒有刻意變更播放、歌詞、主題或專案行為。
       zh-CN:
-        - 更新后的主程序可在后台安全更新外层启动器。
+        - 主程序可在后台自动更新启动器。
         - 启动器更新进度使用现有的深色底部状态区，不再显示第二个确认窗口。
         - 启动器替换或设置更新失败时会安全恢复，并在下次启动再次尝试。
-        - 现有用户只需接受一般的 2.0.1.1 主程序更新；主程序打开后会在后台更新启动器，下次启动即使用 1.0.0.2。
-        - 本次修补没有刻意更改播放、歌词、主题或项目行为。
       ja:
-        - 更新後のメインアプリから、外側のランチャーをバックグラウンドで安全に更新できます。
+        - メインアプリからランチャーをバックグラウンドで自動更新できます。
         - ランチャー更新の進捗を既存のダークな下部ステータスに表示し、二重の確認ダイアログをなくしました。
         - ランチャーの置換や設定更新に失敗した場合は安全に元へ戻し、次回起動時に再試行します。
-        - 既存ユーザーは通常の 2.0.1.1 更新を許可するだけで、アプリ起動後にランチャーがバックグラウンド更新され、次回から 1.0.0.2 を使用します。
-        - この修正では再生、歌詞、テーマ、プロジェクトの動作を意図的に変更していません。
       ko:
-        - 업데이트된 메인 앱이 바깥쪽 런처를 백그라운드에서 안전하게 업데이트합니다.
+        - 메인 앱에서 런처를 백그라운드로 자동 업데이트합니다.
         - 런처 업데이트 진행 상황을 기존의 다크 하단 상태 영역에 표시하고 두 번째 확인 대화상자를 없앴습니다.
         - 런처 교체나 설정 업데이트가 실패하면 안전하게 되돌리고 다음 실행에서 다시 시도합니다.
-        - 기존 사용자는 일반 2.0.1.1 업데이트만 승인하면 됩니다. 앱 실행 후 백그라운드에서 런처를 업데이트하고 다음 실행부터 1.0.0.2를 사용합니다.
-        - 이 수정에서는 재생, 가사, 테마 또는 프로젝트 동작을 의도적으로 변경하지 않았습니다.
       en:
-        - The updated main application can securely update the outer launcher in the background.
+        - The main application can update the launcher automatically in the background.
         - Launcher-update progress uses the existing dark bottom status area without a second confirmation dialog.
         - Failed launcher replacement or configuration updates roll back safely and retry on a later launch.
-        - Existing users only need to accept the normal 2.0.1.1 update; the app updates the launcher in the background for the next start.
-        - No playback, lyrics, theme, or project behavior was intentionally changed in this hotfix.
 
   - version: "2.0.1.0"
     date: "2026-07-30"
@@ -235,8 +225,8 @@ releases:
         - 改善歌詞偏移控制、即時同步、捲動及點擊歌詞跳轉。
         - 擴充歌詞字型、間距、讀音與前後顯示行數控制。
         - 新增「平假名＋羅馬拼音」日文讀音模式。
-        - 改善動態主題預覽、主題控制規格及內建主題。
-        - 統一數值輸入、按鈕大小、Hover、游標及翻譯。
+        - 改善動態主題預覽與內建主題的顯示效果。
+        - 統一數值輸入、按鈕尺寸與操作提示，並改善翻譯。
         - 改善底部狀態區，讓 BGM 與伴奏自動化狀態清楚可見。
       zh-CN:
         - 改善 BGM 淡出与伴奏转场协调。
@@ -244,8 +234,8 @@ releases:
         - 改善歌词偏移控制、实时同步、滚动及点击歌词跳转。
         - 扩充歌词字体、间距、读音与前后显示行数控制。
         - 新增“平假名＋罗马拼音”日文读音模式。
-        - 改善动态主题预览、主题控制规格及内置主题。
-        - 统一数值输入、按钮大小、Hover、光标及翻译。
+        - 改善动态主题预览与内置主题的显示效果。
+        - 统一数值输入、按钮尺寸与操作提示，并改善翻译。
         - 改善底部状态区，让 BGM 与伴奏自动化状态清楚可见。
       ja:
         - BGM のフェードアウトと伴奏開始時の切替連携を改善しました。
@@ -253,8 +243,8 @@ releases:
         - 歌詞オフセット、リアルタイム同期、スクロール、歌詞クリックによるシークを改善しました。
         - 歌詞のフォント、間隔、読み、前後の表示行数に関する設定を拡張しました。
         - 日本語の読み表示に「ひらがな＋ローマ字」を追加しました。
-        - テーマの自動プレビュー、テーマ制御仕様、内蔵テーマを改善しました。
-        - 数値入力、ボタンサイズ、ホバー、カーソル、翻訳を統一しました。
+        - テーマの自動プレビューと内蔵テーマの表示を改善しました。
+        - 数値入力、ボタンサイズ、操作時の案内を統一し、翻訳を改善しました。
         - 下部ステータスを改善し、BGM と伴奏の自動連携を見えるようにしました。
       ko:
         - BGM 페이드아웃과 반주 전환의 연동을 개선했습니다.
@@ -262,8 +252,8 @@ releases:
         - 가사 오프셋, 실시간 동기화, 스크롤과 가사 줄 클릭 탐색을 개선했습니다.
         - 가사 글꼴, 간격, 읽기와 앞뒤 표시 줄 수 설정을 확장했습니다.
         - 일본어 읽기 표시에 “히라가나＋로마자” 모드를 추가했습니다.
-        - 테마 자동 미리보기, 테마 제어 규격과 내장 테마를 개선했습니다.
-        - 숫자 입력, 버튼 크기, Hover, 커서와 번역을 일관되게 정리했습니다.
+        - 테마 자동 미리보기와 내장 테마의 표시를 개선했습니다.
+        - 숫자 입력, 버튼 크기와 조작 안내를 일관되게 정리하고 번역을 개선했습니다.
         - 하단 상태 영역을 개선해 BGM과 반주의 자동 연동 상태를 확인할 수 있습니다.
       en:
         - Improved BGM fade-out and karaoke transition coordination.
@@ -271,8 +261,8 @@ releases:
         - Improved lyrics offset controls, live synchronization, scrolling, and line seeking.
         - Expanded lyrics typography, spacing, reading, and surrounding-line controls.
         - Added Hiragana plus Romaji reading mode.
-        - Improved animated theme previews, the theme control contract, and built-in themes.
-        - Standardized numeric inputs, button sizes, hover states, cursors, and translations.
+        - Improved animated theme previews and the appearance of built-in themes.
+        - Standardized numeric inputs, button sizes, and interaction hints, and improved translations.
         - Improved the bottom status area to make BGM and karaoke automation visible.
 
   - version: "2.0.0.0"
@@ -293,16 +283,11 @@ releases:
     items:
       zh-TW:
         - 提供完整安裝 ZIP；完整解壓縮後，開啟最外層的「Singing Stream Savior.exe」即可開始使用。
-        - 此版本只提供完整安裝包，作為後續正式更新的基準版本。
       zh-CN:
         - 提供完整安装 ZIP；完整解压后，打开最外层的“Singing Stream Savior.exe”即可开始使用。
-        - 此版本只提供完整安装包，作为后续正式更新的基准版本。
       ja:
         - 完全版 ZIP を配布しました。すべて展開して、最上位の「Singing Stream Savior.exe」を起動すると使用できます。
-        - 後続の正式アップデートの基準となる完全版パッケージのみを提供しました。
       ko:
         - 전체 설치 ZIP을 제공합니다. 모두 압축 해제한 뒤 최상위의 “Singing Stream Savior.exe”를 실행하면 사용할 수 있습니다.
-        - 이후 정식 업데이트의 기준이 되는 전체 패키지만 제공합니다.
       en:
         - Shipped as a complete installation ZIP; extract it fully and open the outer “Singing Stream Savior.exe” to begin.
-        - This release provides the complete package that serves as the baseline for later public updates.
