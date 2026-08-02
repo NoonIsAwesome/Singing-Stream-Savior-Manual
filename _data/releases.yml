@@ -19,18 +19,23 @@ releases:
       zh-TW:
         - 修正切換「讀音顯示（預覽 + OBS）」為韓文羅馬拼音後，只有獨立歌詞視窗顯示、主畫面與 OBS 沒有顯示的問題。
         - 啟動器改為每 15 分鐘重新檢查更新；檢查失敗時會在下次啟動重試，並改善更新狀態檔遺失或損壞時的復原。
+        - 丟給 Codex 工作的時候，思考了一下人生，真想發財。
       zh-CN:
         - 修复将“读音显示（预览 + OBS）”切换为韩文罗马拼音后，只有独立歌词窗口显示、主界面与 OBS 不显示的问题。
         - 启动器改为每 15 分钟重新检查更新；检查失败时会在下次启动重试，并改善更新状态文件丢失或损坏时的恢复。
+        - 丢给 Codex 工作的时候，思考了一下人生，真想发财。
       ja:
         - 「読み表示（プレビュー + OBS）」を韓国語ローマ字へ切り替えた際、独立した歌詞ウィンドウだけに表示され、メイン画面と OBS に表示されない問題を修正しました。
         - ランチャーは 15 分ごとに更新を再確認します。確認に失敗した場合は次回起動時に再試行し、更新状態ファイルが消失・破損した場合の復旧も改善しました。
+        - Codex に作業を任せている間に人生について少し考えました。ああ、お金持ちになりたい。
       ko:
         - “읽기 표시(미리보기 + OBS)”를 한국어 로마자로 바꿨을 때 별도 가사 창에만 표시되고 메인 화면과 OBS에는 표시되지 않던 문제를 수정했습니다.
         - 런처는 15분마다 업데이트를 다시 확인합니다. 확인에 실패하면 다음 실행에서 재시도하며 업데이트 상태 파일이 없거나 손상된 경우의 복구도 개선했습니다.
+        - Codex에게 작업을 맡겨 둔 동안 인생을 잠깐 생각해 봤습니다. 정말 부자가 되고 싶네요.
       en:
         - Fixed Korean romanization appearing in the separate Lyrics window but not in the main preview or OBS after changing Reading Display (Preview + OBS).
         - The launcher now checks again every 15 minutes, retries on the next launch after a failed check, and recovers more reliably when its update state file is missing or damaged.
+        - Thought about life for a moment while Codex was working. I really want to get rich.
 
   - version: "2.0.3.0"
     date: "2026-08-02"
