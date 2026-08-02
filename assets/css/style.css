@@ -2649,6 +2649,10 @@ body {
 }
 
 /* Release history */
+.changelog-layout {
+  --content-width: 1120px;
+}
+
 .changelog-hero {
   position: relative;
   overflow: hidden;

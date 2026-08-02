@@ -23,7 +23,7 @@
     {% seo %}
   </head>
   <body
-    class="{% if section == 'home' and page.manual_bundle != true %}intro-layout{% elsif section == 'about' %}creator-layout{% endif %}"
+    class="{% if section == 'home' and page.manual_bundle != true %}intro-layout{% elsif section == 'about' %}creator-layout{% elsif section == 'changelog' %}changelog-layout{% endif %}"
     data-analytics-host="{{ site.analytics.production_host | escape }}"
     data-pageview-endpoint="{{ site.analytics.pageview_endpoint | escape }}"
   >
