@@ -1,7 +1,54 @@
 releases:
-  - version: "2.0.3.1"
+  - version: "2.0.4.0"
     date: "2026-08-02"
     latest: true
+    type:
+      zh-TW: 資源更新
+      zh-CN: 资源更新
+      ja: リソース更新
+      ko: 리소스 업데이트
+      en: Resource update
+    release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.4.0"
+    summary:
+      zh-TW: 更完善的資源更新機制，讓跨版本升級也能自動補齊與修復必要資源。
+      zh-CN: 更完善的资源更新机制，让跨版本升级也能自动补齐和修复必要资源。
+      ja: リソース更新機構を強化し、バージョンをまたぐ更新でも必要なリソースを自動補完・修復できるようにしました。
+      ko: 리소스 업데이트 체계를 강화해 여러 버전을 건너뛰어 업데이트해도 필요한 리소스를 자동으로 보완하고 복구합니다.
+      en: Adds a more complete resource update system that can restore every required resource even across skipped versions.
+    items:
+      zh-TW:
+        - 簡繁轉換字典、日文與韓文讀音、主題共用資源及 YouTube 輔助程式，改由獨立的版本化資源包統一管理。
+        - 啟動時會檢查資源版本與完整性；檔案缺少、損壞或過舊時，可自動下載或使用本機快取修復。
+        - 即使從較早版本直接跳版更新，也會補齊目前版本需要的全部資源，不必逐版升級。
+        - 資源套用前會核對檔案清單、大小與雜湊值，避免不完整的內容被當成更新成功。
+        - 丟給 Codex 工作的時候，洗了衣服還煮了晚餐吃，非常充實。
+      zh-CN:
+        - 简繁转换词典、日文与韩文读音、主题共用资源及 YouTube 辅助程序，改由独立的版本化资源包统一管理。
+        - 启动时会检查资源版本与完整性；文件缺少、损坏或过旧时，可自动下载或使用本地缓存修复。
+        - 即使从较早版本直接跨版本更新，也会补齐当前版本需要的全部资源，不必逐版升级。
+        - 资源应用前会核对文件清单、大小与哈希值，避免不完整的内容被当成更新成功。
+        - 丢给 Codex 工作的时候，洗了衣服还煮了晚餐吃，非常充实。
+      ja:
+        - 簡体字／繁体字変換辞書、日本語・韓国語の読み、テーマ共通素材、YouTube 補助プログラムを、独立したバージョン付きリソースパックで一元管理するようにしました。
+        - 起動時にリソースのバージョンと整合性を確認し、不足・破損・古いファイルは自動ダウンロードまたはローカルキャッシュから修復します。
+        - 以前のバージョンから直接更新した場合でも、現在のバージョンに必要なリソースをすべて補完するため、順番に更新する必要はありません。
+        - 適用前にファイル一覧、サイズ、ハッシュ値を確認し、不完全な内容を更新成功として扱わないようにしました。
+        - Codex に仕事を任せている間に、洗濯をして夕食も作りました。とても充実した一日でした。
+      ko:
+        - 중국어 간체／번체 변환 사전, 일본어·한국어 읽기, 테마 공용 리소스와 YouTube 보조 프로그램을 독립된 버전형 리소스 팩으로 통합 관리합니다.
+        - 실행할 때 리소스 버전과 무결성을 확인하며, 파일이 누락·손상되었거나 오래된 경우 자동 다운로드 또는 로컬 캐시로 복구합니다.
+        - 이전 버전에서 바로 건너뛰어 업데이트해도 현재 버전에 필요한 모든 리소스를 보완하므로 버전별로 차례대로 업데이트할 필요가 없습니다.
+        - 적용 전에 파일 목록, 크기와 해시 값을 확인해 불완전한 내용을 업데이트 성공으로 처리하지 않습니다.
+        - Codex에게 일을 맡겨 둔 동안 빨래도 하고 저녁도 해 먹었습니다. 아주 알찬 하루였어요.
+      en:
+        - Simplified／Traditional Chinese dictionaries, Japanese and Korean readings, shared theme resources, and the YouTube helper are now managed in one independently versioned resource pack.
+        - Startup checks the resource version and integrity, then downloads or restores missing, damaged, or outdated files from the local cache.
+        - Updating directly from an older version now restores everything required by the current release, without installing each intermediate version.
+        - File lists, sizes, and hashes are verified before resources are applied, so incomplete content is never treated as a successful update.
+        - While Codex was working, I did the laundry and cooked dinner. It was a very productive day.
+
+  - version: "2.0.3.1"
+    date: "2026-08-02"
     type:
       zh-TW: 緊急修正
       zh-CN: 紧急修复

@@ -1,9 +1,9 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign resources = site.data.resources %}
 {% if current_lang == 'zh-TW' %}
-  {% assign changelog_target = '/changelog.html#v2-0-3-1' %}
+  {% assign changelog_target = '/changelog.html#v2-0-4-0' %}
 {% else %}
-  {% capture changelog_target %}/{{ current_lang }}/changelog.html#v2-0-3-1{% endcapture %}
+  {% capture changelog_target %}/{{ current_lang }}/changelog.html#v2-0-4-0{% endcapture %}
 {% endif %}
 {% if current_lang == 'zh-TW' %}
   {% assign eyebrow = 'DOWNLOADS · VIDEOS' %}
@@ -11,7 +11,7 @@
   {% assign lead = '在這裡取得 Singing Stream Savior，並查看之後加入的操作教學。下載前可先閱讀版本資訊；影片只會在你點擊後載入，不會自動播放。' %}
   {% assign software_title = '下載 Singing Stream Savior' %}
   {% assign software_text = '下載 ZIP 並解壓縮後，只需要開啟最外層的「Singing Stream Savior.exe」。它也會顯示版本檢查狀態，未來有更新時會先詢問是否安裝。請勿單獨移動內部 DLL 或資料夾。' %}
-  {% assign launcher_note = '2.0.3.1 修正主畫面與 OBS 的韓文羅馬拼音顯示，並會自動補齊升級時遺漏的讀音檔案。完整包內含啟動器 1.0.0.5。' %}
+  {% assign launcher_note = '2.0.4.0 採用更完善的版本化資源更新機制；即使直接跨版本升級，也會自動補齊或修復字典、讀音與主題等必要資源。完整包內含啟動器 1.0.0.5。' %}
   {% assign recent_update = '近期更新' %}
   {% assign release_notes_label = '查看更新內容' %}
   {% assign download_label = '下載最新版' %}
@@ -36,7 +36,7 @@
   {% assign lead = '在这里获取 Singing Stream Savior，并查看之后加入的操作教学。下载前可先阅读版本信息；视频只会在点击后加载，不会自动播放。' %}
   {% assign software_title = '下载 Singing Stream Savior' %}
   {% assign software_text = '下载 ZIP 并解压后，只需打开最外层的“Singing Stream Savior.exe”。它也会显示版本检查状态，今后发现更新时会先询问是否安装。请勿单独移动内部 DLL 或文件夹。' %}
-  {% assign launcher_note = '2.0.3.1 修复主界面与 OBS 的韩文罗马拼音显示，并会自动补齐升级时遗漏的读音文件。完整包包含启动器 1.0.0.5。' %}
+  {% assign launcher_note = '2.0.4.0 采用更完善的版本化资源更新机制；即使直接跨版本升级，也会自动补齐或修复词典、读音与主题等必要资源。完整包包含启动器 1.0.0.5。' %}
   {% assign recent_update = '近期更新' %}
   {% assign release_notes_label = '查看更新内容' %}
   {% assign download_label = '下载最新版' %}
@@ -61,7 +61,7 @@
   {% assign lead = 'Singing Stream Savior と今後追加する操作動画をこのページにまとめます。ダウンロード前にバージョン情報を確認できます。動画はクリック後に読み込まれ、自動再生されません。' %}
   {% assign software_title = 'Singing Stream Savior をダウンロード' %}
   {% assign software_text = 'ZIP を展開し、最上位にある「Singing Stream Savior.exe」を起動してください。更新確認の状態も表示され、今後新しい版がある場合はインストール前に確認します。内部の DLL やフォルダーは移動しないでください。' %}
-  {% assign launcher_note = '2.0.3.1 ではメイン画面と OBS の韓国語ローマ字表示を修正し、アップグレード時に不足した読み仮名用ファイルも自動修復します。ランチャー 1.0.0.5 を同梱しています。' %}
+  {% assign launcher_note = '2.0.4.0 ではバージョン付きリソース更新機構を強化しました。以前のバージョンから直接更新しても、辞書・読み・テーマなどの必要なリソースを自動補完または修復します。ランチャー 1.0.0.5 を同梱しています。' %}
   {% assign recent_update = '最近の更新' %}
   {% assign release_notes_label = '更新内容を見る' %}
   {% assign download_label = '最新版をダウンロード' %}
@@ -86,7 +86,7 @@
   {% assign lead = 'Singing Stream Savior와 추후 추가할 사용 영상을 한곳에서 제공합니다. 다운로드 전에 버전 정보를 확인할 수 있으며, 영상은 클릭한 뒤에만 불러오고 자동 재생하지 않습니다.' %}
   {% assign software_title = 'Singing Stream Savior 다운로드' %}
   {% assign software_text = 'ZIP 압축을 푼 뒤 최상위의 “Singing Stream Savior.exe”만 실행하세요. 버전 확인 상태를 표시하고 이후 새 버전이 있으면 설치 전에 먼저 확인합니다. 내부 DLL이나 폴더를 따로 이동하지 마세요.' %}
-  {% assign launcher_note = '2.0.3.1에서는 메인 화면과 OBS의 한국어 로마자 표시를 수정하고 업그레이드 중 누락된 읽기 파일도 자동으로 복구합니다. 런처 1.0.0.5가 포함됩니다.' %}
+  {% assign launcher_note = '2.0.4.0에서는 버전형 리소스 업데이트 체계를 강화했습니다. 이전 버전에서 바로 업데이트해도 사전, 읽기와 테마 등 필요한 리소스를 자동으로 보완하거나 복구합니다. 런처 1.0.0.5가 포함됩니다.' %}
   {% assign recent_update = '최근 업데이트' %}
   {% assign release_notes_label = '업데이트 내용 보기' %}
   {% assign download_label = '최신 버전 다운로드' %}
@@ -111,7 +111,7 @@
   {% assign lead = 'Get Singing Stream Savior here and find operation videos as they become available. You can review the release information before downloading; videos load only after you choose to play them and never autoplay.' %}
   {% assign software_title = 'Download Singing Stream Savior' %}
   {% assign software_text = 'Extract the ZIP, then open “Singing Stream Savior.exe” in the top-level folder. It also shows the version-check status and asks before installing a future update. Do not move the internal DLLs or folders separately.' %}
-  {% assign launcher_note = '2.0.3.1 fixes Korean romanization in the main preview and OBS, and automatically restores reading files omitted during an upgrade. Launcher 1.0.0.5 is included.' %}
+  {% assign launcher_note = '2.0.4.0 adds a more complete versioned resource update system. Direct upgrades from older versions now restore required dictionaries, readings, themes, and other resources automatically. Launcher 1.0.0.5 is included.' %}
   {% assign recent_update = 'Recent update' %}
   {% assign release_notes_label = 'View release notes' %}
   {% assign download_label = 'Download latest version' %}

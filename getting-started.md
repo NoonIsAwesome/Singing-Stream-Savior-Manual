@@ -21,7 +21,7 @@ translation_key: getting-started
 </div>
 
 ```text
-Singing Stream Savior 2.0.3.1/
+Singing Stream Savior 2/
 └─ Singing Stream Savior.exe        ← 平常開啟這個
 ```
 
