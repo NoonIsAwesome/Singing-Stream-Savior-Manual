@@ -102,10 +102,10 @@ translation_key: lyrics
 > **讀音僅供參考：** 自動讀音依離線字典與斷詞結果產生。人名、特殊讀法、歌詞省略、外來語及歌手刻意改變的唱法，可能與原曲不同。
 
 <figure class="manual-figure">
-  <a href="assets/images/lyrics-reading-preview.png">
-    <img src="assets/images/lyrics-reading-preview.png" alt="最新版完整模式的歌詞設定、歌詞視窗按鈕與 OBS 即時預覽">
+  <a href="assets/images/korean-romaji-preview.png">
+    <img src="assets/images/korean-romaji-preview.png" alt="韓文歌詞視窗顯示原文與保留詞間空格的羅馬拼音">
   </a>
-  <figcaption>歌詞頁可選擇日文讀音、開啟「歌詞視窗」，並以和 OBS 相同的版面顯示即時預覽；也能同時顯示平假名與羅馬拼音。</figcaption>
+  <figcaption>韓文羅馬拼音會顯示在原句下方並保留詞間空格；主畫面即時預覽、歌詞視窗與 OBS 都可使用。</figcaption>
 </figure>
 
 ## 時間校正
