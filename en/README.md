@@ -26,7 +26,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">From setup to live output</p>
     <h2 id="demo-flow-title">Preview the result in Singing Stream Savior, then use it in OBS</h2>
-    <p>The screenshots below use the English interface and real 2.0.2.0 controls with isolated sample data.</p>
+    <p>The screenshots below use the English interface and real 2.0.3.0 controls with isolated sample data.</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">
@@ -51,9 +51,9 @@ translation_key: home
   <div class="section-heading"><p class="section-kicker">Core features</p><h2>Designed around the real flow of a singing stream</h2><p>Preparing songs, performing, and updating OBS are parts of one continuous workflow.</p></div>
   <div class="feature-grid">
     <article class="feature-card feature-card--signal"><span class="feature-card__label">Playback handoff</span><h3>BGM and karaoke work together</h3><p>First choose and start your BGM. Starting karaoke pauses or fades it automatically; stopping or finishing the karaoke track resumes the BGM that was playing.</p></article>
-    <article class="feature-card"><span class="feature-card__label">Library & Reserve</span><h3>Plan ahead without losing flexibility</h3><p>Organize a library, playlists, favorites, and Reserve order. Pick from Reserve or double-click any song to play it immediately.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Library & Reserve</span><h3>Plan ahead without losing flexibility</h3><p>Organize songs and Reserve, play a backing track immediately, or create an unaccompanied item for a cappella and self-accompanied performances.</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS set list</span><h3>Change themes, not text after every song</h3><p>Choose Default, transparent, Card, CD, or illustrated themes, inspect every state in the automatic demo, then drag the overlay into OBS.</p></article>
-    <article class="feature-card"><span class="feature-card__label">Lyrics</span><h3>Read them yourself or show the audience</h3><p>Search or import synchronized lyrics, open a movable Lyrics Window, or create an OBS lyric overlay. Japanese aids support Hiragana, Romaji, or both together.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Lyrics</span><h3>Read them yourself or show the audience</h3><p>Search or import synchronized lyrics, open a movable Lyrics Window, or create an OBS lyric overlay. Japanese supports Hiragana and Romaji, and Korean can show romanization.</p></article>
     <article class="feature-card"><span class="feature-card__label">Backing sources</span><h3>Local files and YouTube backing tracks in one player</h3><p>Your backing track may be a vocal-removed, self-recorded, or downloaded local file—or a version you just found on YouTube. Singing Stream Savior supports both, so you do not have to switch between a media player and browser.</p></article>
     <article class="feature-card"><span class="feature-card__label">Workspace</span><h3>Full, Compact, and Mini modes</h3><p>Prepare in Full Mode, then reduce the window for the stream. Mini Mode keeps karaoke, Reserve, History, and the Lyrics Window close at hand.</p></article>
   </div>

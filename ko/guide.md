@@ -1,6 +1,6 @@
 ---
 title: Singing Stream Savior 2.0 사용자 설명서
-description: Singing Stream Savior 2.0.2.0 한국어 설명서
+description: Singing Stream Savior 2.0.3.0 한국어 설명서
 lang: ko
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.0 사용자 설명서
 
-Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사와 OBS 오버레이를 하나의 흐름으로 관리합니다. 이 설명서는 **2.0.2.0** 버전을 기준으로 합니다.
+Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사와 OBS 오버레이를 하나의 흐름으로 관리합니다. 이 설명서는 **2.0.3.0** 버전을 기준으로 합니다.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 확대 미리보기를 열 수 있습니다.</figcaption></figure>
 
@@ -68,6 +68,8 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}" alt="오른쪽 클릭 메뉴에서 표시 제목 셀을 편집하는 화면"></a><figcaption>오른쪽 클릭 메뉴의 첫 항목으로 방송에 표시할 제목만 편집하며, 왼쪽 원본 파일명은 유지됩니다.</figcaption></figure>
 
+아카펠라, 직접 연주 등 미디어 파일을 사용하지 않는 공연은 검색창 옆의 **+ 무반주 공연**에서 추가할 수 있습니다. 공개 표시 제목을 입력하고 수동 종료 또는 선택적인 예상 시간을 고르세요. 시간은 10초 단위 버튼과 마우스 휠로 조절할 수 있습니다. 시작하면 BGM을 일시 정지하고 Now Singing, 대기 목록과 완료 기록을 일반 곡처럼 갱신하며, 종료 후 이전 BGM을 다시 재생합니다. 항목은 전용 스마트 분류와 프로젝트에 저장되며 가짜 무음 파일을 만들지 않습니다.
+
 표지는 필수가 아니며 Card와 CD 테마에서 특별히 활용됩니다. 곡 메뉴에서 **표지 삽입**을 열고 검색 결과나 로컬 이미지를 선택한 뒤 미리보기 로딩이 끝나면 삽입하세요.
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}" alt="검색 결과와 불러온 표지 미리보기가 있는 표지 삽입 창"></a><figcaption>검색 결과를 선택하고 왼쪽 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
@@ -83,11 +85,11 @@ BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 
 
 가사는 선택 기능입니다. 진행자 전용 **가사 창**, 시청자용 OBS 가사 오버레이 또는 둘 다 사용할 수 있습니다. LRC, SRT, VTT, 일반 텍스트, YouTube 자막과 LRCLIB를 지원합니다.
 
-곡의 **가사** 페이지에서 **가사 관리…**를 누르거나 곡 목록의 **가사** 열에서 해당 곡의 아이콘을 클릭하면 같은 가사 관리 창이 열립니다. 여기에서 온라인 검색, 로컬 가사 가져오기, 결과 연결 또는 현재 가사 연결 해제를 할 수 있습니다. 최대 50개 결과를 표시하며 동기화 가사와 반주 길이에 가까운 버전을 우선합니다.
+곡의 **가사** 페이지에서 **가사 관리…**를 누르거나 곡 목록의 **가사** 열에서 해당 곡의 아이콘을 클릭하면 같은 가사 관리 창이 열립니다. 여기에서 온라인 검색, 로컬 가사 가져오기, 결과 연결 또는 현재 가사 연결 해제를 할 수 있습니다. LRCLIB와 YouTube 자막을 함께 최대 50개 표시하며 동기화 여부, 언어, 반주 길이와 가수 정보에 맞는 후보를 우선합니다. YouTube의 일시적인 요청 제한으로 자막을 받지 못해도 다른 후보는 유지되고 나중에 다시 시도할 수 있다는 안내를 표시합니다.
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-manager-linked.png' | relative_url }}" alt="가사 파일 가져오기와 가사 연결 해제가 표시된 가사 관리 창"></a><figcaption>가사가 연결된 뒤에도 왼쪽 아래에서 다른 파일을 가져오거나 연결을 해제할 수 있습니다.</figcaption></figure>
 
-일본어 읽기는 끄기, 한자 위의 작은 히라가나, 원문 아래의 단어 간격 로마자, 또는 히라가나와 로마자 동시 표시 중에서 선택합니다. **즉시 미리보기 + OBS**는 같은 설정을 사용하며 독립 **가사 창**은 별도 설정을 사용합니다. 내장된 오프라인 분석 및 단어 분리 엔진에서 생성하므로 가사를 외부로 업로드할 필요가 없습니다. 자동 생성 결과는 참고용이며 고유명사나 가수의 실제 발음과 다를 수 있습니다.
+일본어 읽기는 끄기, 한자 위의 작은 히라가나, 원문 아래의 단어 간격 로마자, 또는 히라가나와 로마자 동시 표시 중에서 선택합니다. 한국어 가사는 단어 사이 공백을 유지하는 로마자 표기를 선택할 수 있습니다. **즉시 미리보기 + OBS**는 같은 설정을 사용하며 독립 **가사 창**은 별도 설정을 사용합니다. 메인 화면, 가사 창과 OBS는 같은 오프라인 백그라운드 읽기 서비스를 사용하므로 결과가 일관됩니다. 자동 생성 결과는 참고용이며 고유명사나 가수의 실제 발음과 다를 수 있습니다.
 
 독립 **가사 창**에서 타임스탬프가 있는 가사 줄을 클릭하면 반주가 해당 줄의 시점으로 이동합니다. LRC 같은 동기화 가사에서만 사용할 수 있으며 일반 텍스트 가사에는 이동할 시간이 없습니다.
 
@@ -129,7 +131,7 @@ BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 
   </figure>
 </div>
 
-한국어 인터페이스의 **OBS로 드래그** 버튼을 OBS에 놓으면 로컬 Browser Source가 만들어집니다. 이 작업에는 WebSocket이 필요 없습니다. Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니다.
+Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니다. **OBS로 드래그**를 누른 채 OBS에 놓으면 로컬 Browser Source를 바로 만들 수 있습니다. 방송 중 드롭이 되지 않으면 같은 버튼을 클릭해 소스 경로를 복사하고, OBS에서 Browser Source를 추가해 URL 칸에 붙여 넣은 뒤 1920 × 1080으로 설정하세요. **로컬 파일**은 선택하지 않습니다. 두 방법 모두 WebSocket이 필요 없습니다.
 
 테마 캔버스는 OBS에서의 사용 방식을 제한하지 않습니다. 자신의 방송 레이아웃에 맞게 Browser Source를 자유롭게 확대·축소하고 자르거나 배치할 수 있습니다. Default는 자유롭게 조합하는 기본 화면으로 특히 적합합니다. 미리보기의 점선 텍스트 영역을 기준으로 Now Singing, Set List 등 필요한 블록만 OBS에서 잘라 내고 직접 만든 배경의 원하는 위치에 놓으세요. 투명 또는 장식 테마도 전체 구도를 유지하거나 필요한 부분만 사용할 수 있습니다. OBS 자르기는 해당 장면 소스의 표시 범위만 바꾸며 테마나 곡 데이터는 수정하지 않습니다.
 

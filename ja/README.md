@@ -26,7 +26,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">設定から配信画面まで</p>
     <h2 id="demo-flow-title">Singing Stream Savior で確認してから、OBS に表示</h2>
-    <p>以下は日本語 UI と隔離されたサンプルデータを使った、2.0.2.0 の実際の画面です。</p>
+    <p>以下は日本語 UI と隔離されたサンプルデータを使った、2.0.3.0 の実際の画面です。</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">
@@ -51,9 +51,9 @@ translation_key: home
   <div class="section-heading"><p class="section-kicker">主な機能</p><h2>実際の歌枠の流れに合わせた設計</h2><p>曲の準備、歌唱、OBS の更新を一つの連続した作業として扱います。</p></div>
   <div class="feature-grid">
     <article class="feature-card feature-card--signal"><span class="feature-card__label">再生連携</span><h3>BGM とカラオケを自動で切り替え</h3><p>カラオケ開始時に BGM を自動で一時停止またはフェードアウトし、カラオケを停止または最後まで再生した後に元の BGM を再開します。</p></article>
-    <article class="feature-card"><span class="feature-card__label">曲と予約</span><h3>準備しながら、その場の選曲にも対応</h3><p>曲ライブラリ、プレイリスト、お気に入り、予約順を管理できます。予約から選ぶほか、曲をダブルクリックしてすぐ再生できます。</p></article>
+    <article class="feature-card"><span class="feature-card__label">曲と予約</span><h3>準備しながら、その場の選曲にも対応</h3><p>曲と予約を整理し、伴奏をすぐ再生できます。アカペラや弾き語り向けの無伴奏演奏も作成できます。</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS セットリスト</span><h3>テーマを選び、曲名の手入力を減らす</h3><p>Default、透明、Card、CD、装飾テーマを選び、自動デモで全状態を確認してから OBS へドラッグできます。</p></article>
-    <article class="feature-card"><span class="feature-card__label">歌詞</span><h3>配信者用にも、視聴者用にも</h3><p>同期歌詞を検索・読み込みし、歌詞ウィンドウまたは OBS に表示。日本語はひらがな、ローマ字、両方の併記に対応します。</p></article>
+    <article class="feature-card"><span class="feature-card__label">歌詞</span><h3>配信者用にも、視聴者用にも</h3><p>同期歌詞を検索・読み込みし、歌詞ウィンドウまたは OBS に表示。日本語はひらがなとローマ字、韓国語はローマ字表示に対応します。</p></article>
     <article class="feature-card"><span class="feature-card__label">伴奏の追加元</span><h3>ローカル音源と YouTube 伴奏を一つのプレイヤーで</h3><p>ボーカルを除去した音源、自分で録音した伴奏、ダウンロード済みのファイルも、その場で YouTube から見つけた伴奏も使用できます。Singing Stream Savior なら両方を扱えるため、プレイヤーとブラウザを行き来する必要がありません。</p></article>
     <article class="feature-card"><span class="feature-card__label">ワークスペース</span><h3>フル・コンパクト・ミニの 3 モード</h3><p>準備はフルモード、配信中はコンパクトまたはミニモードへ。カラオケ、予約、履歴、歌詞ウィンドウなど必要な操作だけを残せます。</p></article>
   </div>

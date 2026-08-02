@@ -95,7 +95,7 @@ translation_key: home
     <article class="feature-card">
       <span class="feature-card__label">歌曲與待播</span>
       <h3>整理歌曲，也保留臨場彈性</h3>
-      <p>建立歌曲庫、自訂歌單、我的最愛與待播順序。可以從待播選歌，也能直接雙擊歌曲立即播放。</p>
+      <p>建立歌曲庫、自訂歌單、我的最愛與待播順序。可以直接播放伴奏，也能建立清唱或自彈自唱使用的無伴奏演出。</p>
     </article>
     <article class="feature-card">
       <span class="feature-card__label">OBS 歌單</span>
@@ -105,7 +105,7 @@ translation_key: home
     <article class="feature-card">
       <span class="feature-card__label">歌詞</span>
       <h3>自己看，也可以顯示給觀眾</h3>
-      <p>搜尋或匯入同步歌詞，使用可自由移動的「歌詞視窗」閱讀，也能建立 OBS 歌詞畫面。日文歌詞支援平假名、羅馬拼音與兩者並列。</p>
+      <p>搜尋或匯入同步歌詞，使用可自由移動的「歌詞視窗」閱讀，也能建立 OBS 歌詞畫面。日文支援平假名與羅馬拼音，韓文也可顯示羅馬拼音。</p>
     </article>
     <article class="feature-card">
       <span class="feature-card__label">伴奏來源</span>

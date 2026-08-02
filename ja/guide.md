@@ -1,6 +1,6 @@
 ---
 title: Singing Stream Savior 2.0 ユーザーマニュアル
-description: Singing Stream Savior 2.0.2.0 日本語マニュアル
+description: Singing Stream Savior 2.0.3.0 日本語マニュアル
 lang: ja
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.0 ユーザーマニュアル
 
-Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、OBS オーバーレイを一つの操作画面にまとめます。本書は **2.0.2.0** に対応しています。
+Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、OBS オーバーレイを一つの操作画面にまとめます。本書は **2.0.3.0** に対応しています。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと拡大プレビューを開けます。</figcaption></figure>
 
@@ -68,6 +68,8 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}" alt="右クリックメニューから表示曲名セルを編集している画面"></a><figcaption>右クリックメニューの先頭項目から、配信に表示する曲名だけを編集します。左側の元ファイル名は維持されます。</figcaption></figure>
 
+アカペラ、弾き語りなどメディアファイルを使わない演奏は、検索欄の横にある「＋ 無伴奏演奏」から追加できます。公開する表示曲名を入力し、手動終了または任意の予定時間を選びます。時間は 10 秒単位のボタンとマウスホイールで調整できます。開始すると BGM を一時停止して Now Singing、予約、履歴を通常の曲と同様に更新し、終了後に元の BGM を再開します。項目は専用のスマート分類とプロジェクトに保存され、偽の無音ファイルは作成しません。
+
 ジャケットは必須ではなく、Card と CD テーマで特に効果を発揮します。曲のメニューから「ジャケットを埋め込む」を開き、検索結果またはローカル画像を選び、プレビューの読み込み後に「埋め込む」を押します。
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}" alt="オンライン検索結果と読み込み済みジャケットを表示した埋め込み画面"></a><figcaption>検索結果を選択し、左側のプレビューが読み込まれると埋め込み操作が有効になります。</figcaption></figure>
@@ -83,11 +85,11 @@ BGM とカラオケ音源は別々に再生・音量・シークを操作でき�
 
 歌詞は任意です。配信者用の独立した「歌詞ウィンドウ」、視聴者向け OBS 歌詞オーバーレイ、または両方に使用できます。LRC、SRT、VTT、テキスト、YouTube 字幕、LRCLIB に対応します。
 
-曲の「歌詞」ページにある「歌詞を管理…」を押すか、曲一覧の「歌詞」列にある対象曲のアイコンをクリックすると、同じ歌詞管理画面が開きます。オンライン検索、ローカル歌詞の読み込み、検索結果の関連付け、現在の関連付け解除ができます。最大 50 件を表示し、同期歌詞と音源時間に近い候補を優先します。
+曲の「歌詞」ページにある「歌詞を管理…」を押すか、曲一覧の「歌詞」列にある対象曲のアイコンをクリックすると、同じ歌詞管理画面が開きます。オンライン検索、ローカル歌詞の読み込み、検索結果の関連付け、現在の関連付け解除ができます。LRCLIB と YouTube 字幕をまとめて最大 50 件表示し、同期状態、言語、音源時間、歌手情報に合う候補を優先します。YouTube の一時的な制限で字幕を取得できない場合も、他の候補を残して後で再試行できることを案内します。
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-manager-linked.png' | relative_url }}" alt="歌詞ファイルの読み込みと歌詞リンク解除を表示した歌詞管理画面"></a><figcaption>歌詞を設定済みでも、左下から別ファイルの読み込みや関連付け解除ができます。</figcaption></figure>
 
-日本語読みはオフ、漢字の上の小さなひらがな、原文下の空白区切りローマ字、またはひらがなとローマ字の同時表示から選べます。「即時プレビュー + OBS」は同じ設定を使い、独立した「歌詞ウィンドウ」は別の設定を使用します。内蔵のオフライン解析・分かち書きエンジンで生成するため、歌詞を外部へ送信する必要はありません。ただし、固有名詞や歌手独自の読み方とは異なる場合があります。
+日本語読みはオフ、漢字の上の小さなひらがな、原文下の空白区切りローマ字、またはひらがなとローマ字の同時表示から選べます。韓国語歌詞では、単語間の空白を保ったローマ字表示を選べます。「即時プレビュー + OBS」は同じ設定を使い、独立した「歌詞ウィンドウ」は別の設定を使用します。メイン画面、歌詞ウィンドウ、OBS は同じオフライン背景読みサービスを利用するため、結果が揃います。自動生成は参考用で、固有名詞や歌手独自の読み方とは異なる場合があります。
 
 独立した「歌詞ウィンドウ」では、タイムスタンプ付きの行をクリックすると、カラオケ音源をその行の時刻へ移動できます。LRC などの同期歌詞で利用でき、タイムスタンプのないテキスト歌詞では利用できません。
 
@@ -129,7 +131,7 @@ BGM とカラオケ音源は別々に再生・音量・シークを操作でき�
   </figure>
 </div>
 
-「OBSへドラッグ」を OBS にドロップするとローカル Browser Source が作成されます。この操作に WebSocket は不要です。Card は縦型ジャケットカード、CD は円盤風の表示になります。
+Card は縦型ジャケットカード、CD は円盤風の表示になります。「OBSへドラッグ」を押したまま OBS へドロップするとローカル Browser Source を直接作成できます。配信中などにドロップできない場合は、同じボタンをクリックしてソースのパスをコピーし、OBS で Browser Source を追加して URL 欄へ貼り付け、1920 × 1080 に設定してください。「ローカルファイル」は有効にしません。どちらの方法にも WebSocket は不要です。
 
 テーマのキャンバスは、OBS での使い方を制限するものではありません。自分の配信レイアウトに合わせて、Browser Source を自由に拡大縮小・クロップ・配置できます。Default は特に自由な組み合わせに向いています。プレビューの破線で示された文字領域を目安に、Now Singing や Set List など必要な部分を OBS で切り出し、自作背景の好きな位置に配置してください。透明・装飾テーマも、全体構図のまま使うか一部だけを切り出すかを自由に選べます。OBS のクロップはそのシーン内の表示範囲だけを変え、テーマや曲データは変更しません。
 

@@ -1,6 +1,6 @@
 ---
 title: 歌回救星 2.0 使用说明
-description: Singing Stream Savior 2.0.2.0 简体中文使用说明
+description: Singing Stream Savior 2.0.3.0 简体中文使用说明
 lang: zh-CN
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # 歌回救星 2.0 使用说明
 
-歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词和 OBS 画面整合在同一套流程中。本说明适用于 **2.0.2.0**。
+歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词和 OBS 画面整合在同一套流程中。本说明适用于 **2.0.3.0**。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可放大预览。</figcaption></figure>
 
@@ -68,6 +68,8 @@ manual_bundle: true
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}" alt="通过歌曲右键菜单编辑显示歌名"></a><figcaption>从右键菜单第一项打开编辑，只修改直播会显示的名称；左侧原始文件名保持不变。</figcaption></figure>
 
+清唱、自弹自唱或其他不使用媒体文件的演出，可从搜索栏旁的“＋ 无伴奏演出”新增。输入观众会看到的显示歌名，再选择手动结束或可选的预计时间；时间按钮每次调整 10 秒，也支持鼠标滚轮。开始后会像普通伴奏一样暂停 BGM，并更新 Now Singing、待播与已唱；结束后恢复原本的 BGM。项目会保存到“无伴奏演出”智能分类与当前项目，不会建立假的静音音频文件。
+
 封面不是必需，仅在 Card 与 CD 主题下有特别效果。在歌曲菜单打开“嵌入封面”，选择搜索结果或本地图片，等待预览完成后按“嵌入”。
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}" alt="显示搜索结果与封面预览的嵌入封面窗口"></a><figcaption>选择搜索结果并等待左侧封面预览载入完成后，即可嵌入。</figcaption></figure>
@@ -83,11 +85,11 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 歌词可供主播在独立“歌词窗口”阅读，也可作为 OBS 歌词画面给观众观看。支持 LRC、SRT、VTT、纯文本、YouTube 字幕与 LRCLIB。
 
-在歌曲的“歌词”页面点击“管理歌词…”，或直接点击歌曲列表中该歌曲“歌词”栏的图标，都可以打开管理歌词窗口。你可以在这里搜索、导入本地歌词、附加结果或取消歌词关联。搜索最多 50 条，优先显示同步歌词以及长度最接近伴奏的版本。
+在歌曲的“歌词”页面点击“管理歌词…”，或直接点击歌曲列表中该歌曲“歌词”栏的图标，都可以打开管理歌词窗口。你可以在这里搜索、导入本地歌词、附加结果或取消歌词关联。搜索会合并 LRCLIB 与 YouTube 字幕，最多显示 50 条，并依同步状态、语言、伴奏长度与歌手信息排序。YouTube 暂时限制字幕下载时，其他候选仍会保留，并提示稍后重试。
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-manager-linked.png' | relative_url }}" alt="管理歌词窗口中的导入歌词文件和取消歌词关联"></a><figcaption>已有歌词时，左下角仍可导入其他文件或取消当前关联。</figcaption></figure>
 
-日文读音可关闭、在汉字上方显示小平假名、在原文下方显示带空格的罗马拼音，或同时显示平假名与罗马拼音。“即时预览 + OBS”共用一组设置，独立“歌词窗口”使用另一组设置。读音由内置的离线日文分析与分词引擎生成，不需要把歌词上传到网络。自动读音仅供参考，特殊读法与演唱方式可能和原曲不同。
+日文读音可关闭、在汉字上方显示小平假名、在原文下方显示带空格的罗马拼音，或同时显示平假名与罗马拼音。韩文歌词也可显示保留词间空格的罗马拼音。“即时预览 + OBS”共用一组设置，独立“歌词窗口”使用另一组设置；主界面、歌词窗口与 OBS 会通过同一个离线后台读音服务取得一致结果。自动读音仅供参考，特殊读法与演唱方式可能和原曲不同。
 
 在独立“歌词窗口”中，点击有时间戳的任一行歌词，可让伴奏跳到该行的时间点。此功能只适用于 LRC 等同步歌词；纯文本歌词没有可跳转的时间。
 
@@ -129,7 +131,7 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
   </figure>
 </div>
 
-用“拖放至 OBS”建立本地 Browser Source，不需要启用 WebSocket。Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正常播放不要求封面。
+Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正常播放不要求封面。按住“拖放至 OBS”并拖进 OBS，可直接建立本地 Browser Source。若直播中无法拖入，可单击同一个按钮复制来源路径，在 OBS 新增 Browser Source 后粘贴到网址栏，并设置为 1920 × 1080；不必勾选“本地文件”。两种方式都不需要启用 WebSocket。
 
 主题画布不会限制 Browser Source 的使用方式。可以在 OBS 中按照自己的直播版面自由缩放、裁切与定位。Default 特别适合作为可自由组合的基础版面：参考预览中的虚线文字区域，沿虚线裁切想保留的 Now Singing、Set List 等区块，再放到自制背景的合适位置。透明与精致主题可以保留完整构图，也可以只裁取需要的部分。OBS 裁切只会改变当前场景中来源的显示范围，不会修改主题或歌曲资料。
 

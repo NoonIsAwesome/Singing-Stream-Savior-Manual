@@ -26,7 +26,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">설정에서 방송 화면까지</p>
     <h2 id="demo-flow-title">Singing Stream Savior에서 미리 확인한 뒤 OBS에 표시하세요</h2>
-    <p>아래 화면은 한국어 UI와 격리된 샘플 데이터를 사용한 2.0.2.0 실제 화면입니다.</p>
+    <p>아래 화면은 한국어 UI와 격리된 샘플 데이터를 사용한 2.0.3.0 실제 화면입니다.</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">
@@ -51,9 +51,9 @@ translation_key: home
   <div class="section-heading"><p class="section-kicker">주요 기능</p><h2>실제 노래 방송 흐름에 맞춘 설계</h2><p>곡 준비, 노래, OBS 갱신을 하나의 연속된 작업 흐름으로 다룹니다.</p></div>
   <div class="feature-grid">
     <article class="feature-card feature-card--signal"><span class="feature-card__label">재생 연동</span><h3>BGM과 반주를 자동 전환</h3><p>반주 시작 시 BGM을 자동으로 일시 정지하거나 페이드아웃하고, 반주를 정지하거나 끝까지 재생한 뒤 원래 BGM을 다시 재생합니다.</p></article>
-    <article class="feature-card"><span class="feature-card__label">곡과 예약</span><h3>미리 준비하고 현장 선곡에도 대응</h3><p>곡 라이브러리, 재생목록, 즐겨찾기와 예약 순서를 관리합니다. 예약에서 고르거나 원하는 곡을 두 번 클릭해 바로 재생할 수 있습니다.</p></article>
+    <article class="feature-card"><span class="feature-card__label">곡과 예약</span><h3>미리 준비하고 현장 선곡에도 대응</h3><p>곡과 대기 순서를 정리하고 반주를 바로 재생하거나, 아카펠라와 직접 연주를 위한 무반주 공연을 만들 수 있습니다.</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS 세트리스트</span><h3>테마를 바꾸고 곡명 입력은 줄이기</h3><p>Default, 투명, Card, CD 또는 장식 테마를 자동 데모로 확인한 뒤 OBS로 드래그할 수 있습니다.</p></article>
-    <article class="feature-card"><span class="feature-card__label">가사</span><h3>진행자가 읽거나 시청자에게 표시</h3><p>동기화 가사를 검색·가져와 가사 창 또는 OBS에 표시합니다. 일본어는 히라가나, 로마자 또는 두 가지 동시 표기를 지원합니다.</p></article>
+    <article class="feature-card"><span class="feature-card__label">가사</span><h3>진행자가 읽거나 시청자에게 표시</h3><p>동기화 가사를 검색·가져와 가사 창 또는 OBS에 표시합니다. 일본어는 히라가나와 로마자, 한국어는 로마자 표기를 지원합니다.</p></article>
     <article class="feature-card"><span class="feature-card__label">반주 소스</span><h3>로컬 음원과 YouTube 반주를 하나의 플레이어에서</h3><p>보컬을 제거하거나 직접 녹음하고 내려받은 로컬 파일도, 그 자리에서 YouTube로 찾은 반주도 사용할 수 있습니다. Singing Stream Savior는 두 방식을 모두 지원하므로 미디어 플레이어와 브라우저를 번갈아 열 필요가 없습니다.</p></article>
     <article class="feature-card"><span class="feature-card__label">작업 공간</span><h3>전체, 간단, 미니의 세 가지 모드</h3><p>준비할 때는 전체 모드, 방송 중에는 간단 또는 미니 모드를 사용해 반주, 예약, 연혁과 가사 창 같은 필수 조작만 남깁니다.</p></article>
   </div>

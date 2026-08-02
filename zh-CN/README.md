@@ -33,7 +33,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">从设置到直播画面</p>
     <h2 id="demo-flow-title">先在歌回救星中确认，再把效果显示到 OBS</h2>
-    <p>以下截图使用简体中文界面与隔离的示例数据，显示 2.0.2.0 的实际控件。</p>
+    <p>以下截图使用简体中文界面与隔离的示例数据，显示 2.0.3.0 的实际控件。</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">
@@ -58,9 +58,9 @@ translation_key: home
   <div class="section-heading"><p class="section-kicker">主要功能</p><h2>按照一场歌回真正会用到的流程设计</h2><p>从准备歌曲、开始演唱到更新 OBS 画面，是同一条连续的工作流程。</p></div>
   <div class="feature-grid">
     <article class="feature-card feature-card--signal"><span class="feature-card__label">播放协调</span><h3>BGM 与伴奏自动交接</h3><p>请先选择 BGM 并开始播放。伴奏开始时会自动暂停或淡出 BGM；伴奏停止或播放完毕后，会自动恢复原来的背景音乐。</p></article>
-    <article class="feature-card"><span class="feature-card__label">歌曲与待播</span><h3>整理歌曲，也保留临场弹性</h3><p>建立歌曲库、自定义歌单、收藏与待播顺序。可以从待播选歌，也能双击歌曲立即播放。</p></article>
+    <article class="feature-card"><span class="feature-card__label">歌曲与待播</span><h3>整理歌曲，也保留临场弹性</h3><p>整理歌曲与待播，可直接播放伴奏，也能为清唱或自弹自唱建立无伴奏演出。</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS 歌单</span><h3>切换主题，不必手动重打歌单</h3><p>选择 Default、透明、Card、CD 或精致主题，先通过自动展示检查完整状态，再拖入 OBS。</p></article>
-    <article class="feature-card"><span class="feature-card__label">歌词</span><h3>自己阅读，也能显示给观众</h3><p>搜索或导入同步歌词，使用可移动的“歌词窗口”阅读，也能建立 OBS 歌词画面。日文歌词支持平假名、罗马拼音或两者并列。</p></article>
+    <article class="feature-card"><span class="feature-card__label">歌词</span><h3>自己阅读，也能显示给观众</h3><p>搜索或导入同步歌词，使用可移动的“歌词窗口”阅读，也能建立 OBS 歌词画面。日文支持平假名与罗马拼音，韩文也可显示罗马拼音。</p></article>
     <article class="feature-card"><span class="feature-card__label">伴奏来源</span><h3>本地音频与 YouTube 伴奏，放在同一个播放器</h3><p>伴奏可能是自行消除人声、录制或下载的本地文件，也可能是临时在 YouTube 找到的版本。Singing Stream Savior 同时支持两者，不必在播放器与浏览器之间来回切换。</p></article>
     <article class="feature-card"><span class="feature-card__label">工作区</span><h3>完整、精简、迷你三种模式</h3><p>准备直播时使用完整模式；开播后可缩为精简或迷你模式，只保留播放器、待播／已唱和歌词窗口等常用操作。</p></article>
   </div>

@@ -132,13 +132,13 @@ Default 主題預設使用白色預覽背景；透明主題與精緻主題可使
 
 1. 在「歌單外觀」選擇主題。
 2. 確認預覽中的 Now Singing、Set List、Reserve 或 Next On。
-3. 用滑鼠按住右上方的「拖曳至 OBS」。
-4. 將按鈕拖入 OBS 預覽畫面或來源區域。
-5. OBS 會建立指向本機 Overlay 的 Browser Source。
+3. 選擇其中一種方式：按住右上方的「拖曳至 OBS」並拖入 OBS；或單擊按鈕複製瀏覽器來源路徑。
+4. 若使用拖曳，OBS 會直接建立指向本機 Overlay 的 Browser Source。
+5. 若使用複製路徑，請在 OBS 新增瀏覽器來源，將路徑貼到網址欄並設定為 1920 × 1080；不必勾選「本機檔案」。
 
 「重新載入」可重新掃描主題並更新預覽。
 
-> 「拖曳至 OBS」不需要啟用 OBS WebSocket。WebSocket 是額外的時間戳與連線狀態功能。
+> 拖曳與複製路徑都不需要啟用 OBS WebSocket。WebSocket 是額外的時間戳與連線狀態功能。若 OBS 在串流中不接受拖入來源，請改用單擊複製路徑的方式。
 
 ## 在 OBS 中自由擺放與裁切
 
@@ -169,4 +169,4 @@ Default 主題預設使用白色預覽背景；透明主題與精緻主題可使
 
 歌詞 Overlay 是選用畫面，與歌單 Overlay 屬於兩個獨立 Browser Source，可分別放置、縮放與顯示。主播也能只使用獨立歌詞視窗而不輸出給觀眾；詳細設定請參考[歌詞章節](lyrics.md)。
 
-[上一頁：歌詞、同步歌詞與日文讀音](lyrics.md) · [下一頁：OBS WebSocket 與直播時間戳](obs-websocket.md)
+[上一頁：歌詞、同步歌詞與日韓讀音](lyrics.md) · [下一頁：OBS WebSocket 與直播時間戳](obs-websocket.md)

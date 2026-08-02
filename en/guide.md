@@ -1,6 +1,6 @@
 ---
 title: Singing Stream Savior 2.0 User Manual
-description: English manual for Singing Stream Savior 2.0.2.0
+description: English manual for Singing Stream Savior 2.0.3.0
 lang: en
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.0 User Manual
 
-Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, and OBS overlays in one workflow. This manual covers version **2.0.2.0**.
+Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, and OBS overlays in one workflow. This manual covers version **2.0.3.0**.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
@@ -75,6 +75,17 @@ The song context menu is arranged for quick live use: **Edit display song name**
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/en/display-title-edit.png' | relative_url }}" alt="Display title cell open for inline editing from the song context menu"></a><figcaption>Choose the first context-menu item to edit only the viewer-facing Display title; the source name remains intact.</figcaption></figure>
 
+Use **+ Unaccompanied Performance** beside the search field for a cappella,
+self-accompanied, or other performances without a media file. Enter the public
+display title, then choose manual completion or an optional planned duration.
+The time controls use 10-second steps and also support the mouse wheel.
+
+Starting the item pauses BGM and updates Now Singing, Reserve, and History just
+like a karaoke track; stopping or completing it restores the previous BGM.
+These items appear in the Unaccompanied Performance smart collection, can also
+belong to custom playlists, and are saved with the project. No silent audio file
+is created.
+
 Cover art is optional. It becomes especially useful with the **Card** and **CD** themes. Open **Embed cover** from a local song’s context menu, select an online result or local image, wait for the preview to load, and choose **Embed**.
 
 <figure class="manual-figure manual-figure--medium">
@@ -93,14 +104,14 @@ The queue is optional: double-click a song in the table to play it immediately. 
 
 Lyrics are optional. They can be used in a movable host-only **Lyrics window**, as an OBS lyric overlay for viewers, or both. Supported sources include LRC, SRT, VTT, plain text, YouTube captions, and LRCLIB.
 
-Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song’s icon in the **Lyrics** column of the song list. Either route opens the same window, where you can search online, import a local lyric file, attach a result, or unlink the current lyrics. Search returns up to 50 results, prioritizing synchronized lyrics and versions closest to the karaoke track’s duration.
+Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song’s icon in the **Lyrics** column of the song list. Either route opens the same window, where you can search online, import a local lyric file, attach a result, or unlink the current lyrics. Search combines LRCLIB results and YouTube captions, returns up to 50 candidates, and prioritizes synchronized lyrics, language, duration, and artist information. If YouTube temporarily rate-limits caption downloads, other candidates remain available and the dialog explains that you can retry later.
 
 <figure class="manual-figure manual-figure--medium">
   <a href="{{ '/assets/images/en/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-manager-linked.png' | relative_url }}" alt="Manage lyrics window showing Import lyrics file and Unlink lyrics controls"></a>
   <figcaption>When lyrics are linked, the lower-left controls let you import another file or unlink the current one.</figcaption>
 </figure>
 
-The embedded preview uses the same layout, font, color, highlight, and Japanese-reading option as OBS. The independent Lyrics window has its own reading option. Available Japanese readings are off, small hiragana above kanji, word-spaced romaji below the original line, or hiragana and romaji together.
+The embedded preview uses the same layout, font, color, highlight, and reading option as OBS. The independent Lyrics window has its own reading option. Available Japanese readings are off, small hiragana above kanji, word-spaced romaji below the original line, or hiragana and romaji together. Korean lyrics can show romanization with readable spaces between words. The main preview, Lyrics window, and OBS share the same preloaded background reading service so results remain consistent.
 
 In the independent Lyrics window, choose any timestamped line to seek the karaoke track to that line. This works with synchronized lyrics such as LRC; plain-text lyrics have no seek positions. Japanese readings are generated locally by the bundled offline analyzer, so lyrics do not need to be uploaded.
 
@@ -145,7 +156,7 @@ Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set 
   </figure>
 </div>
 
-Card places cover art in a vertical card; CD crops it into a disc. Cover art is not required for playback or other themes. Use **Drag to OBS** to create a local Browser Source. This does not require OBS WebSocket.
+Card places cover art in a vertical card; CD crops it into a disc. Cover art is not required for playback or other themes. Hold and drag **Drag to OBS** to create a local Browser Source directly. If OBS does not accept a drop while streaming, click the same button to copy the source path, add an OBS Browser Source, paste it into the URL field, and set the size to 1920 × 1080. Do not enable **Local file**. Neither method requires OBS WebSocket.
 
 Default uses a white preview background. Transparent and illustrated themes can use the checkerboard preview to make transparency visible. The preview background itself is not sent to OBS.
 
