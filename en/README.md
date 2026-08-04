@@ -59,6 +59,6 @@ translation_key: home
   </div>
 </section>
 
-<aside class="experimental-note"><span>Experimental</span><div><strong>OBS WebSocket stream timestamps</strong><p>The app can read OBS’s live timer, record when karaoke starts, and show timestamps in supported Set Lists. Normal set-list and lyric overlays do not require WebSocket.</p></div></aside>
+<aside class="feature-note"><span>Stream timestamps</span><div><strong>OBS WebSocket stream timestamps</strong><p>The app can read OBS’s live timer, record when karaoke starts, and show timestamps in supported Set Lists. Normal set-list and lyric overlays do not require WebSocket.</p></div></aside>
 
 <section class="intro-next"><p class="section-kicker">Ready to begin</p><h2>Import one song and complete a test playback</h2><p>The guide begins with extracting the app, launching it, and creating your first project.</p><a class="intro-button intro-button--primary" href="{{ '/en/guide.html#getting-started' | relative_url }}">Open the user guide</a></section>

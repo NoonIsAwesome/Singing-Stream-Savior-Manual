@@ -1,6 +1,6 @@
----
+﻿---
 title: Singing Stream Savior 2.0 ユーザーマニュアル
-description: Singing Stream Savior 2.0.4.0 日本語マニュアル
+description: Singing Stream Savior 2.0.5.0 日本語マニュアル
 lang: ja
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.0 ユーザーマニュアル
 
-Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、OBS オーバーレイを一つの操作画面にまとめます。本書は **2.0.4.0** に対応しています。
+Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、OBS オーバーレイを一つの操作画面にまとめます。本書は **2.0.5.0** に対応しています。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと拡大プレビューを開けます。</figcaption></figure>
 
@@ -67,6 +67,8 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 曲の右クリックメニューは、「表示曲名を編集」「待機リストに追加」「プレイリストに追加」（お気に入り／カスタムプレイリスト）、現在の分類に応じた削除／分類から除外の順に並びます。
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}" alt="右クリックメニューから表示曲名セルを編集している画面"></a><figcaption>右クリックメニューの先頭項目から、配信に表示する曲名だけを編集します。左側の元ファイル名は維持されます。</figcaption></figure>
+
+{% include library-bgm-205.html %}
 
 アカペラ、弾き語りなどメディアファイルを使わない演奏は、検索欄の横にある「＋ 無伴奏演奏」から追加できます。公開する表示曲名を入力し、手動終了または任意の予定時間を選びます。時間は 10 秒単位のボタンとマウスホイールで調整できます。開始すると BGM を一時停止して Now Singing、予約、履歴を通常の曲と同様に更新し、終了後に元の BGM を再開します。項目は専用のスマート分類とプロジェクトに保存され、偽の無音ファイルは作成しません。
 
@@ -149,9 +151,9 @@ OBS に予約曲を表示するか、最大 1～10 曲の表示数も設定で�
 プレビュー背景は透明、暗色、明色、任意色、画像から選べ、画像はフィット／フィル／ストレッチに対応します。プレビューの配置調整はアプリ内の確認表示だけに作用し、OBS 出力は変わりません。対応しない設定項目は無効表示ではなく非表示になります。Default は最も多くの文字・配置設定に対応し、旧 Transparent Black／White は歌唱中と履歴の文字設定を維持します。v2、Signal Line、Stage Caption では対応する色と透明度を調整できます。
 
 <a id="obs-websocket"></a>
-## 05 · OBS WebSocket（テスト機能）
+## 05 · OBS WebSocket
 
-初期状態では無効です。現在は主に OBS の配信時間を読み取り、カラオケ開始時刻を記録し、Set List の曲名前にタイムスタンプを表示するために開発されています。通常のセットリストや歌詞表示には不要です。
+初期状態では無効です。主に OBS の配信時間を読み取り、カラオケ開始時刻を記録し、Set List の曲名前にタイムスタンプを表示するために使用します。通常のセットリストや歌詞表示には不要です。
 
 OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き、サーバーを有効にしてポート（通常 `4455`）とパスワードを確認します。アプリの「設定 > 詳細設定」で WebSocket を有効にし、`127.0.0.1`、同じポートとパスワードを入力して「接続」を押します。
 
@@ -177,7 +179,7 @@ OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き�
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 設定とトラブル対処
 
-設定には表示言語、プロジェクト／メディア保存先、YouTube 形式、テスト中の WebSocket が含まれます。他の PC へ移す前に `.bgmsproj`、ローカル音源、読み込んだ歌詞をバックアップしてください。
+設定には表示言語、プロジェクト／メディア保存先、YouTube 形式、任意で使用する WebSocket が含まれます。他の PC へ移す前に `.bgmsproj`、ローカル音源、読み込んだ歌詞をバックアップしてください。
 
 最上位の `Singing Stream Savior.exe` は、今後の更新を確認し、ダークテーマの進行画面に状態を表示します。新しいバージョンがある場合は、ダウンロードとインストールの前に確認します。更新しない場合も、現在のバージョンをそのまま起動できます。外側のランチャー、`current.json`、内部フォルダーは同じ相対位置に保ってください。新しいランチャーが必要な場合や更新に失敗した場合は、異なる版の DLL を混ぜず、最新版の完全 ZIP を展開してください。
 

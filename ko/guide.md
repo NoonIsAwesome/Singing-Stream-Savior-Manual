@@ -1,6 +1,6 @@
----
+﻿---
 title: Singing Stream Savior 2.0 사용자 설명서
-description: Singing Stream Savior 2.0.4.0 한국어 설명서
+description: Singing Stream Savior 2.0.5.0 한국어 설명서
 lang: ko
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.0 사용자 설명서
 
-Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사와 OBS 오버레이를 하나의 흐름으로 관리합니다. 이 설명서는 **2.0.4.0** 버전을 기준으로 합니다.
+Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사와 OBS 오버레이를 하나의 흐름으로 관리합니다. 이 설명서는 **2.0.5.0** 버전을 기준으로 합니다.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 확대 미리보기를 열 수 있습니다.</figcaption></figure>
 
@@ -67,6 +67,8 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 곡 오른쪽 클릭 메뉴는 **표시 곡명 편집**, **대기 목록에 추가**, **재생목록에 추가**(즐겨찾기 또는 사용자 재생목록), 현재 분류에 맞는 삭제/분류에서 제거 순서로 제공됩니다.
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}" alt="오른쪽 클릭 메뉴에서 표시 제목 셀을 편집하는 화면"></a><figcaption>오른쪽 클릭 메뉴의 첫 항목으로 방송에 표시할 제목만 편집하며, 왼쪽 원본 파일명은 유지됩니다.</figcaption></figure>
+
+{% include library-bgm-205.html %}
 
 아카펠라, 직접 연주 등 미디어 파일을 사용하지 않는 공연은 검색창 옆의 **+ 무반주 공연**에서 추가할 수 있습니다. 공개 표시 제목을 입력하고 수동 종료 또는 선택적인 예상 시간을 고르세요. 시간은 10초 단위 버튼과 마우스 휠로 조절할 수 있습니다. 시작하면 BGM을 일시 정지하고 Now Singing, 대기 목록과 완료 기록을 일반 곡처럼 갱신하며, 종료 후 이전 BGM을 다시 재생합니다. 항목은 전용 스마트 분류와 프로젝트에 저장되며 가짜 무음 파일을 만들지 않습니다.
 
@@ -149,7 +151,7 @@ OBS 대기 목록 표시 여부와 1–10곡 표시 한도도 정할 수 있습�
 미리보기 배경은 투명, 어두운색, 밝은색, 사용자 색상 또는 이미지 중에서 선택하며 이미지는 맞춤/채우기/늘이기를 지원합니다. 미리보기 배치 조정은 앱 안의 확인 화면에만 적용되고 OBS 출력은 바꾸지 않습니다. 지원하지 않는 설정은 잠긴 채 남지 않고 숨겨집니다. Default는 가장 많은 글자와 배치 설정을 제공하고, 기존 Transparent Black/White는 현재 곡과 부른 곡의 글자 설정을 유지합니다. v2, Signal Line, Stage Caption에서는 지원하는 색상과 배경 투명도를 조절할 수 있습니다.
 
 <a id="obs-websocket"></a>
-## 05 · OBS WebSocket(시험 기능)
+## 05 · OBS WebSocket
 
 기본값은 꺼짐입니다. 현재 주요 목적은 OBS 방송 시간을 읽고 반주 시작 시각을 기록하여 Set List의 곡 이름 앞에 타임스탬프를 표시하는 것입니다. 일반 세트리스트와 가사 오버레이에는 필요하지 않습니다.
 
@@ -177,7 +179,7 @@ OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 설정 및 문제 해결
 
-설정에는 화면 언어, 프로젝트/미디어 경로, YouTube 형식과 시험 중인 WebSocket이 있습니다. 다른 PC로 옮기기 전에 `.bgmsproj`, 로컬 미디어와 가져온 가사를 함께 백업하세요.
+설정에는 화면 언어, 프로젝트/미디어 경로, YouTube 형식과 선택 사항인 WebSocket이 있습니다. 다른 PC로 옮기기 전에 `.bgmsproj`, 로컬 미디어와 가져온 가사를 함께 백업하세요.
 
 최상위 `Singing Stream Savior.exe`는 이후 버전을 확인하고 어두운 상태 창에 진행 상황을 표시합니다. 새 버전이 있으면 다운로드와 설치 전에 먼저 확인하며, 업데이트하지 않아도 현재 버전을 계속 실행할 수 있습니다. 외부 실행기, `current.json`과 내부 폴더의 상대 위치를 유지하세요. 더 새로운 실행기가 필요하거나 업데이트가 완료되지 않으면 서로 다른 버전의 DLL을 섞지 말고 최신 전체 ZIP을 새로 압축 해제하세요.
 

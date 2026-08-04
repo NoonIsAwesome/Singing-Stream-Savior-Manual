@@ -1,11 +1,11 @@
-# 發布正式檔案後，只要更新這裡的連結與版本即可。
+﻿# 發布正式檔案後，只要更新這裡的連結與版本即可。
 software:
-  version: "2.0.4.0"
-  launcher_version: "1.0.0.5"
-  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.0.4.0/Singing.Stream.Savior.2.0.4.0.zip"
-  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.4.0"
+  version: "2.0.5.0"
+  launcher_version: "1.0.1.0"
+  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.0.5.0/Singing.Stream.Savior.2.0.5.0.zip"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.5.0"
   file_size: "406 MB"
-  updated_at: "2026-08-02"
+  updated_at: "2026-08-05"
 
 # file_url 可放網站內的 MP4；embed_url 可使用下列外部影片：
 # Google Drive: https://drive.google.com/file/d/FILE_ID/preview
@@ -41,6 +41,21 @@ videos:
       ja: "練習したい歌詞を歌詞ウィンドウで直接選ぶと、伴奏がその時刻へ移動します。プレーヤーのタイムラインで位置を探す必要はありません。デモ動画は無音です。"
       ko: "가사 창에서 연습할 가사를 직접 선택하면 반주가 해당 시점으로 이동합니다. 플레이어 타임라인에서 구간을 찾을 필요가 없습니다. 데모 영상은 무음입니다."
       en: "Select the lyric you want to practise and the karaoke track jumps to its timestamp—no more guessing the section on the player timeline. This demo is silent."
+  - file_url: "/assets/videos/library-bgm-205-demo.mp4"
+    poster: "/assets/images/library-bgm-205-demo-poster.jpg"
+    duration: "00:17"
+    title:
+      zh-TW: "卡片列表與 BGM 清單快速示範"
+      zh-CN: "卡片列表与 BGM 列表快速演示"
+      ja: "カード表示と BGM プレイリストのクイックデモ"
+      ko: "카드 목록과 BGM 재생목록 빠른 데모"
+      en: "Card list and BGM playlist quick demo"
+    description:
+      zh-TW: "示範切換歌曲列表顯示、使用卡片列表，以及展開 BGM 清單快速切換背景音樂。影片已靜音。"
+      zh-CN: "演示切换歌曲列表显示、使用卡片列表，以及展开 BGM 列表快速切换背景音乐。视频已静音。"
+      ja: "曲リスト表示の切り替え、カード表示、BGM プレイリストからの素早い切り替えを紹介します。繁体字中国語版の無音デモです。"
+      ko: "곡 목록 표시 전환, 카드 표시와 BGM 재생목록에서 빠르게 배경 음악을 바꾸는 과정을 보여 줍니다. 번체 중국어 버전의 무음 영상입니다."
+      en: "Shows how to switch song-list views, use the card layout, and change background music from the BGM playlist. This silent demo uses the Traditional Chinese interface."
 
 # type 可填 free 或 paid；download_url 可連到雲端檔案或販售頁。
 themes: []

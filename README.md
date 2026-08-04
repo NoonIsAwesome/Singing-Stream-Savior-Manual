@@ -120,8 +120,8 @@ translation_key: home
   </div>
 </section>
 
-<aside class="experimental-note">
-  <span>測試中</span>
+<aside class="feature-note">
+  <span>直播時間戳</span>
   <div><strong>OBS WebSocket 直播時間戳</strong><p>可讀取 OBS 的實際直播時間，記錄伴奏開始時刻，並在支援的 Set List 前顯示時間戳。一般歌單與歌詞畫面不需要啟用 WebSocket。</p></div>
 </aside>
 

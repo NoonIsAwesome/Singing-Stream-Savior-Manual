@@ -1,6 +1,6 @@
----
+﻿---
 title: 歌回救星 2.0 使用说明
-description: Singing Stream Savior 2.0.4.0 简体中文使用说明
+description: Singing Stream Savior 2.0.5.0 简体中文使用说明
 lang: zh-CN
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # 歌回救星 2.0 使用说明
 
-歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词和 OBS 画面整合在同一套流程中。本说明适用于 **2.0.4.0**。
+歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词和 OBS 画面整合在同一套流程中。本说明适用于 **2.0.5.0**。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可放大预览。</figcaption></figure>
 
@@ -67,6 +67,8 @@ manual_bundle: true
 歌曲右键菜单依次提供“编辑显示歌名”“加入待播”“加入歌单”（我的最爱或自定义歌单），以及符合当前分类的删除／从分类移除操作。
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}" alt="通过歌曲右键菜单编辑显示歌名"></a><figcaption>从右键菜单第一项打开编辑，只修改直播会显示的名称；左侧原始文件名保持不变。</figcaption></figure>
+
+{% include library-bgm-205.html %}
 
 清唱、自弹自唱或其他不使用媒体文件的演出，可从搜索栏旁的“＋ 无伴奏演出”新增。输入观众会看到的显示歌名，再选择手动结束或可选的预计时间；时间按钮每次调整 10 秒，也支持鼠标滚轮。开始后会像普通伴奏一样暂停 BGM，并更新 Now Singing、待播与已唱；结束后恢复原本的 BGM。项目会保存到“无伴奏演出”智能分类与当前项目，不会建立假的静音音频文件。
 
@@ -149,7 +151,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 预览背景可选透明、深色、浅色、自定义颜色或图片；图片支持符合、填满、拉伸。“调整预览”只改变软件内检查画面的大小与位置，不会改变 OBS 输出。不支持的控制项会直接隐藏，而不是以锁定状态保留。Default 提供最多文字与版面设置；旧版 Transparent Black／White 保留演唱与已唱文字设置；v2、Signal Line 与 Stage Caption 可调整各自支持的颜色和背景透明度。
 
 <a id="obs-websocket"></a>
-## 05 · OBS WebSocket（测试功能）
+## 05 · OBS WebSocket
 
 此功能默认关闭，目前主要用于读取 OBS 直播时间、记录伴奏开始时间，并在 Set List 歌名前显示时间戳。一般歌单与歌词画面不需要 WebSocket。
 
@@ -177,7 +179,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 设置与疑难解答
 
-设置包含界面语言、项目/媒体路径、YouTube 下载格式与测试中的 WebSocket。搬到其他电脑前，请备份 `.bgmsproj`、本地媒体和自行导入的歌词。
+设置包含界面语言、项目/媒体路径、YouTube 下载格式与选用的 WebSocket。搬到其他电脑前，请备份 `.bgmsproj`、本地媒体和自行导入的歌词。
 
 最外层的 `Singing Stream Savior.exe` 会检查后续版本，并在深色状态窗口显示进度。发现更新时会先询问是否下载和安装；选择不更新仍可继续打开当前版本。请保持外层启动器、`current.json` 和内部文件夹的相对位置不变。如果更新要求较新的启动器或无法完成，请下载最新版完整 ZIP，不要混合覆盖不同版本的 DLL。
 

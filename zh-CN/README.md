@@ -66,6 +66,6 @@ translation_key: home
   </div>
 </section>
 
-<aside class="experimental-note"><span>测试中</span><div><strong>OBS WebSocket 直播时间戳</strong><p>可读取 OBS 的实际直播时间，记录伴奏开始时刻，并在支持的 Set List 前显示时间戳。一般歌单与歌词画面无需启用 WebSocket。</p></div></aside>
+<aside class="feature-note"><span>直播时间戳</span><div><strong>OBS WebSocket 直播时间戳</strong><p>可读取 OBS 的实际直播时间，记录伴奏开始时刻，并在支持的 Set List 前显示时间戳。一般歌单与歌词画面无需启用 WebSocket。</p></div></aside>
 
 <section class="intro-next"><p class="section-kicker">准备开始</p><h2>先导入一首歌，完成第一次测试播放</h2><p>接下来的使用说明会从解压、启动软件与建立项目开始。</p><a class="intro-button intro-button--primary" href="{{ '/zh-CN/guide.html#getting-started' | relative_url }}">前往开始使用</a></section>

@@ -1,14 +1,14 @@
 ---
-title: OBS WebSocket（測試功能）與直播時間戳
+title: OBS WebSocket 與直播時間戳
 lang: zh-TW
 translation_key: obs-websocket
 ---
 
-# OBS WebSocket（測試功能）與直播時間戳
+# OBS WebSocket 與直播時間戳
 
-> **功能狀態：測試中。** OBS WebSocket 目前主要為直播時間戳設計。一般歌單主題與歌詞 Overlay 不需要啟用這項連線。
+> **選用功能。** OBS WebSocket 主要為直播時間戳設計。一般歌單主題與歌詞 Overlay 不需要啟用這項連線。
 
-OBS WebSocket 是選用功能，預設關閉。目前的測試重點包括：
+OBS WebSocket 預設關閉，可提供以下功能：
 
 - 讀取 OBS 實際直播時間。
 - 在伴奏開始時記錄歌曲時間戳。

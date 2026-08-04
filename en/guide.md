@@ -1,6 +1,6 @@
----
+﻿---
 title: Singing Stream Savior 2.0 User Manual
-description: English manual for Singing Stream Savior 2.0.4.0
+description: English manual for Singing Stream Savior 2.0.5.0
 lang: en
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.0 User Manual
 
-Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, and OBS overlays in one workflow. This manual covers version **2.0.4.0**.
+Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, and OBS overlays in one workflow. This manual covers version **2.0.5.0**.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
@@ -74,6 +74,8 @@ The **Display title** is used by Reserve, History, and OBS. If it is blank, the 
 The song context menu is arranged for quick live use: **Edit display song name**, **Add to Reserve**, **Add to playlist** (Favorites or a custom playlist), then the delete/remove action appropriate to the selected collection.
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/en/display-title-edit.png' | relative_url }}" alt="Display title cell open for inline editing from the song context menu"></a><figcaption>Choose the first context-menu item to edit only the viewer-facing Display title; the source name remains intact.</figcaption></figure>
+
+{% include library-bgm-205.html %}
 
 Use **+ Unaccompanied Performance** beside the search field for a cappella,
 self-accompanied, or other performances without a media file. Enter the public
@@ -176,9 +178,9 @@ You can also enable Reserve, choose a 1–10 song display limit, and—when OBS 
 Preview-only tools provide transparent, dark, light, custom-color, or image backgrounds; image fit/fill/stretch; and temporary source sizing/positioning. They never change the transparent OBS output. Unsupported controls are hidden rather than merely disabled. Default exposes the broadest typography and layout controls; legacy Transparent Black/White retain Current and History typography controls; both v2 themes, Signal Line, and Stage Caption expose their supported color/opacity controls.
 
 <a id="obs-websocket"></a>
-## 05 · OBS WebSocket (experimental)
+## 05 · OBS WebSocket
 
-OBS WebSocket is optional, disabled by default, and currently experimental. Its primary purpose is to read the live OBS timer, record when a karaoke track starts, and show timestamps before songs in supported Set Lists. Normal set-list and lyric overlays work without it.
+OBS WebSocket is optional and disabled by default. Its primary purpose is to read the live OBS timer, record when a karaoke track starts, and show timestamps before songs in supported Set Lists. Normal set-list and lyric overlays work without it.
 
 In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable the server, keep port `4455` unless you changed it, and copy the password. In Singing Stream Savior, open **Settings > Advanced**, enable OBS WebSocket, enter `127.0.0.1`, the matching port and password, then choose **Connect**.
 
@@ -209,7 +211,7 @@ Switching modes only changes which controls are visible. A song already playing 
 <a id="settings-and-troubleshooting"></a>
 ## 07 · Settings and troubleshooting
 
-Settings cover interface language, project/media folders, YouTube download format, and experimental OBS WebSocket controls. Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
+Settings cover interface language, project/media folders, YouTube download format, and optional OBS WebSocket controls. Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
 
 The outer `Singing Stream Savior.exe` checks for future releases and shows its progress in a dark status window. When an update is available, it asks before downloading or installing it; declining still opens the installed version. Keep the outer launcher, `current.json`, and the internal folders together. If the launcher requires a newer launcher or cannot complete an update, download a fresh complete ZIP instead of mixing DLLs from different versions.
 

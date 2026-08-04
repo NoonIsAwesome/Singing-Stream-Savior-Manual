@@ -59,6 +59,6 @@ translation_key: home
   </div>
 </section>
 
-<aside class="experimental-note"><span>テスト機能</span><div><strong>OBS WebSocket の配信タイムスタンプ</strong><p>OBS の実際の配信時間を読み取り、カラオケ開始時刻を記録して、対応 Set List に表示できます。通常のセットリスト・歌詞画面には WebSocket は不要です。</p></div></aside>
+<aside class="feature-note"><span>配信タイムスタンプ</span><div><strong>OBS WebSocket の配信タイムスタンプ</strong><p>OBS の実際の配信時間を読み取り、カラオケ開始時刻を記録して、対応 Set List に表示できます。通常のセットリスト・歌詞画面には WebSocket は不要です。</p></div></aside>
 
 <section class="intro-next"><p class="section-kicker">準備を始める</p><h2>まず 1 曲を追加して、テスト再生する</h2><p>ユーザーマニュアルは、展開・起動・最初のプロジェクト作成から説明します。</p><a class="intro-button intro-button--primary" href="{{ '/ja/guide.html#getting-started' | relative_url }}">ユーザーマニュアルへ</a></section>

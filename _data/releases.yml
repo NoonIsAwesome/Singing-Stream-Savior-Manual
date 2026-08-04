@@ -1,7 +1,64 @@
 releases:
+  - version: "2.0.5.0"
+    date: "2026-08-04"
+    latest: true
+    type:
+      zh-TW: 功能與播放清單更新
+      zh-CN: 功能与播放列表更新
+      ja: 機能・プレイリストアップデート
+      ko: 기능 및 재생목록 업데이트
+      en: Feature and playlist update
+    release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.5.0"
+    summary:
+      zh-TW: 新增 BGM 播放清單與卡片式歌曲列表，並讓播放狀態、YouTube 來源與跨版本更新更清楚可靠。
+      zh-CN: 新增 BGM 播放列表与卡片式歌曲列表，并让播放状态、YouTube 来源与跨版本更新更清楚可靠。
+      ja: BGM プレイリストとカード表示を追加し、再生状態、YouTube 音源、バージョンをまたぐ更新をより分かりやすく安定させました。
+      ko: BGM 재생목록과 카드형 곡 목록을 추가하고 재생 상태, YouTube 음원과 버전을 건너뛴 업데이트를 더 명확하고 안정적으로 개선했습니다.
+      en: Adds BGM playlists and a card-style song view, with clearer playback state, YouTube sources, and more reliable cross-version updates.
+    items:
+      zh-TW:
+        - 新增可收合的 BGM 播放清單，可保存多首本機或 YouTube 音源、加入備註、拖曳排序，並支援單曲循環、全部循環與全部隨機循環。
+        - 新增卡片式歌曲列表，優先顯示觀眾會看到的歌名，同時保留來源、封面與歌詞狀態；可在設定中切換，傳統列表仍為預設。
+        - BGM、歌曲列表、待播與已唱會清楚標示目前播放的項目，切換歌曲時更容易掌握狀態。
+        - YouTube 音源會顯示解析後的影片標題；將播放清單加入 BGM 時，可選擇目前影片或整份清單。
+        - 改善拖曳音檔到歌曲列表、歌單與 BGM 清單時的提示，以及播放器按鈕與循環圖示的一致性。
+        - Launcher 1.0.1.0 會集中完成主程式與必要資源更新；即使從較早版本直接升級，也能補齊目前版本需要的檔案。
+        - 把工作丟給 Codex 的時候，去健身房練了一小時，覺得今天的自己很棒！
+      zh-CN:
+        - 新增可收起的 BGM 播放列表，可保存多首本地或 YouTube 音源、添加备注、拖动排序，并支持单曲循环、全部循环与全部随机循环。
+        - 新增卡片式歌曲列表，优先显示观众会看到的歌名，同时保留来源、封面与歌词状态；可在设置中切换，传统列表仍为默认值。
+        - BGM、歌曲列表、待播与已唱会清楚标示当前播放项目，切换歌曲时更容易掌握状态。
+        - YouTube 音源会显示解析后的影片标题；将播放列表加入 BGM 时，可选择当前影片或整份列表。
+        - 改善将音频拖到歌曲列表、歌单与 BGM 列表时的提示，以及播放器按钮与循环图标的一致性。
+        - Launcher 1.0.1.0 会集中完成主程序与必要资源更新；即使从较早版本直接升级，也能补齐当前版本需要的文件。
+        - 把工作丢给 Codex 的时候，去健身房练了一小时，觉得今天的自己很棒！
+      ja:
+        - 折りたたみ式 BGM プレイリストを追加しました。複数のローカル／YouTube 音源、メモ、ドラッグ並べ替え、1曲リピート、全曲リピート、シャッフルリピートを利用できます。
+        - 視聴者に見せる曲名を優先しながら、音源、ジャケット、歌詞の状態も確認できるカード表示を追加しました。設定から切り替えられ、初期設定は従来の表形式です。
+        - BGM、曲リスト、待機リスト、歌唱済み履歴で再生中の項目を分かりやすく表示し、曲を切り替えた際の状態を確認しやすくしました。
+        - YouTube 音源は取得した動画タイトルを表示します。YouTube プレイリストを BGM に追加する際は、現在の動画だけ、または全項目を選べます。
+        - 曲リスト、プレイリスト、BGM リストへのドラッグ表示と、プレーヤーボタン／リピートアイコンの一貫性を改善しました。
+        - Launcher 1.0.1.0 がアプリ本体と必要なリソースの更新をまとめて行います。古いバージョンから直接更新しても、現在のバージョンに必要なファイルを補完できます。
+        - Codex に仕事を任せている間に、ジムで1時間トレーニングしました。今日の自分、えらい！
+      ko:
+        - 접을 수 있는 BGM 재생목록을 추가했습니다. 여러 로컬／YouTube 음원, 메모, 드래그 순서 변경, 한 곡 반복, 전체 반복과 무작위 반복을 사용할 수 있습니다.
+        - 시청자에게 보이는 곡명을 강조하면서 음원, 커버와 가사 상태도 유지하는 카드형 곡 목록을 추가했습니다. 설정에서 전환할 수 있으며 기본값은 기존 표 형식입니다.
+        - BGM, 곡 목록, 대기 목록과 완료 기록에서 현재 재생 항목을 명확하게 표시해 곡을 바꿀 때 상태를 쉽게 확인할 수 있습니다.
+        - YouTube 음원은 분석한 영상 제목을 표시합니다. YouTube 재생목록을 BGM에 추가할 때 현재 영상만 또는 전체 항목을 선택할 수 있습니다.
+        - 곡 목록, 재생목록과 BGM 목록에 음원을 끌어 놓을 때의 안내와 플레이어 버튼／반복 아이콘의 일관성을 개선했습니다.
+        - Launcher 1.0.1.0이 앱과 필수 리소스 업데이트를 한 번에 완료합니다. 이전 버전에서 바로 업데이트해도 현재 버전에 필요한 파일을 모두 보완합니다.
+        - Codex에게 일을 맡겨 둔 동안 헬스장에서 한 시간 운동했습니다. 오늘의 나, 정말 잘했어요!
+      en:
+        - Added a collapsible BGM playlist with multiple local or YouTube sources, notes, drag reordering, Repeat One, Repeat All, and Shuffle All.
+        - Added a card-style song list that emphasizes the audience-facing title while retaining source, cover, and lyrics status. It is optional; the traditional table remains the default.
+        - The playing BGM or song is now clearly highlighted across the library, queue, and History, making rapid switches easier to follow.
+        - YouTube sources now show their resolved video titles. When adding a YouTube playlist to BGM, choose the current video or the entire playlist.
+        - Improved drag-and-drop feedback across the song library, playlists, and BGM list, plus consistency between player buttons and repeat icons.
+        - Launcher 1.0.1.0 now completes app and required-resource updates in one place, including when upgrading directly from an older version.
+        - While Codex was working, I trained at the gym for an hour. I am proud of myself today!
+
   - version: "2.0.4.0"
     date: "2026-08-02"
-    latest: true
     type:
       zh-TW: 資源更新
       zh-CN: 资源更新

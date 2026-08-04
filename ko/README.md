@@ -59,6 +59,6 @@ translation_key: home
   </div>
 </section>
 
-<aside class="experimental-note"><span>시험 기능</span><div><strong>OBS WebSocket 방송 타임스탬프</strong><p>OBS의 실제 방송 시간을 읽고 반주 시작 시각을 기록하여 지원 Set List에 표시할 수 있습니다. 일반 세트리스트와 가사 화면에는 WebSocket이 필요하지 않습니다.</p></div></aside>
+<aside class="feature-note"><span>방송 타임스탬프</span><div><strong>OBS WebSocket 방송 타임스탬프</strong><p>OBS의 실제 방송 시간을 읽고 반주 시작 시각을 기록하여 지원 Set List에 표시할 수 있습니다. 일반 세트리스트와 가사 화면에는 WebSocket이 필요하지 않습니다.</p></div></aside>
 
 <section class="intro-next"><p class="section-kicker">준비 시작</p><h2>먼저 한 곡을 가져와 테스트 재생하세요</h2><p>사용자 설명서는 압축 해제, 앱 실행과 첫 프로젝트 만들기부터 안내합니다.</p><a class="intro-button intro-button--primary" href="{{ '/ko/guide.html#getting-started' | relative_url }}">사용자 설명서 열기</a></section>

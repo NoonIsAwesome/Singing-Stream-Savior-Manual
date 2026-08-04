@@ -84,6 +84,8 @@ translation_key: library-and-playback
   <figcaption>從右鍵選單第一項開啟編輯後，編輯框只出現在「顯示歌名」欄；左側檔案名稱維持不變。</figcaption>
 </figure>
 
+{% include library-bgm-205.html %}
+
 ## 無伴奏演出
 
 若要清唱、自彈自唱，或進行其他不使用伴奏媒體的演出，可按歌曲列表搜尋列
