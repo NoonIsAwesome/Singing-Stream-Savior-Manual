@@ -68,7 +68,13 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}" alt="오른쪽 클릭 메뉴에서 표시 제목 셀을 편집하는 화면"></a><figcaption>오른쪽 클릭 메뉴의 첫 항목으로 방송에 표시할 제목만 편집하며, 왼쪽 원본 파일명은 유지됩니다.</figcaption></figure>
 
-{% include library-bgm-205.html %}
+<section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
+  <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">더 직관적인 곡 카드와 BGM 재생목록</h2><p>곡 라이브러리는 기존 표와 카드 표시를 전환할 수 있고, BGM은 방송 주제에 맞게 미리 정리해 빠르게 바꿀 수 있습니다.</p></header>
+  <div class="manual-feature-update__copy"><h3>곡 목록 표시</h3><p><strong>기본값은 기존 표 형식입니다.</strong> “설정 → 일반 → 곡 목록 표시”에서 카드 표시로 바꿀 수 있습니다. 표시 곡명을 강조하면서 음원, 커버와 가사 상태를 유지하며, 두 번 클릭은 재생, 연필 아이콘은 표시 곡명 편집입니다.</p></div>
+  <div class="manual-feature-update__figures"><figure class="manual-figure"><a href="../assets/images/song-list-display-setting-205.png"><img src="../assets/images/song-list-display-setting-205.png" alt="곡 목록 표시 설정"></a><figcaption>기존 표 또는 카드 표시를 선택합니다. 화면은 번체 중국어 버전입니다.</figcaption></figure><figure class="manual-figure"><a href="../assets/images/song-card-list-205.png"><img src="../assets/images/song-card-list-205.png" alt="카드형 곡 목록"></a><figcaption>카드 표시는 시청자에게 보이는 곡명을 우선해 보여 줍니다.</figcaption></figure></div>
+  <div class="manual-feature-update__copy"><h3>BGM 재생목록</h3><p>여러 로컬／YouTube 음원을 저장하고, 각 BGM에 메모를 붙이며, 드래그로 순서를 바꿀 수 있습니다. 재생 중인 항목은 강조됩니다. YouTube 재생목록은 현재 영상만 또는 모든 항목을 추가할 수 있습니다.</p><ul><li><strong>한 곡 반복(기본값)</strong></li><li><strong>전체 반복</strong></li><li><strong>전체 무작위 반복</strong></li></ul></div>
+  <figure class="manual-figure manual-feature-update__wide-figure"><a href="../assets/images/bgm-playlist-205.png"><img src="../assets/images/bgm-playlist-205.png" alt="BGM 재생목록"></a><figcaption>메모, 음원과 현재 재생 항목을 바로 확인할 수 있습니다.</figcaption></figure>
+</section>
 
 아카펠라, 직접 연주 등 미디어 파일을 사용하지 않는 공연은 검색창 옆의 **+ 무반주 공연**에서 추가할 수 있습니다. 공개 표시 제목을 입력하고 수동 종료 또는 선택적인 예상 시간을 고르세요. 시간은 10초 단위 버튼과 마우스 휠로 조절할 수 있습니다. 시작하면 BGM을 일시 정지하고 Now Singing, 대기 목록과 완료 기록을 일반 곡처럼 갱신하며, 종료 후 이전 BGM을 다시 재생합니다. 항목은 전용 스마트 분류와 프로젝트에 저장되며 가짜 무음 파일을 만들지 않습니다.
 

@@ -84,7 +84,44 @@ translation_key: library-and-playback
   <figcaption>從右鍵選單第一項開啟編輯後，編輯框只出現在「顯示歌名」欄；左側檔案名稱維持不變。</figcaption>
 </figure>
 
-{% include library-bgm-205.html %}
+<section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
+  <header class="manual-feature-update__header">
+    <p class="manual-feature-update__eyebrow">2.0.5.0</p>
+    <h2 id="library-bgm-205-title">更直覺的歌曲列表與 BGM 播放清單</h2>
+    <p>歌曲庫現在可以在熟悉的傳統列表與卡片列表之間切換；背景音樂也能預先整理成清單，依直播主題快速切換。</p>
+  </header>
+
+  <div class="manual-feature-update__copy">
+    <h3>歌曲列表顯示</h3>
+    <p><strong>傳統列表仍是預設值</strong>；想更快辨認歌曲時，可在「設定 → 一般 → 歌曲列表顯示」改用卡片列表。卡片會突出顯示觀眾看到的歌名，同時保留來源、封面與歌詞狀態。雙擊卡片會播放歌曲，鉛筆圖示則用來編輯顯示歌名。</p>
+  </div>
+
+  <div class="manual-feature-update__figures">
+    <figure class="manual-figure">
+      <a href="assets/images/song-list-display-setting-205.png"><img src="assets/images/song-list-display-setting-205.png" alt="設定中的歌曲列表顯示選項"></a>
+      <figcaption>可在設定中隨時切換傳統列表與卡片列表。</figcaption>
+    </figure>
+    <figure class="manual-figure">
+      <a href="assets/images/song-card-list-205.png"><img src="assets/images/song-card-list-205.png" alt="卡片式歌曲列表"></a>
+      <figcaption>卡片列表優先顯示觀眾會看到的歌名，來源資訊仍保留在下方。</figcaption>
+    </figure>
+  </div>
+
+  <div class="manual-feature-update__copy">
+    <h3>BGM 播放清單</h3>
+    <p>展開「背景音樂」的清單按鈕後，可保存多首本機音檔或 YouTube 音源，替每首 BGM 加上備註，並直接拖曳調整順序。正在播放的項目會清楚高亮；加入 YouTube 播放清單時，也能選擇只加入目前影片，或一次匯入全部項目。</p>
+    <ul>
+      <li><strong>單曲循環（預設）</strong>：持續播放目前選擇的 BGM。</li>
+      <li><strong>全部循環</strong>：依清單順序播放，最後一首結束後回到第一首。</li>
+      <li><strong>全部隨機循環</strong>：每次從清單隨機選擇下一首 BGM。</li>
+    </ul>
+  </div>
+
+  <figure class="manual-figure manual-feature-update__wide-figure">
+    <a href="assets/images/bgm-playlist-205.png"><img src="assets/images/bgm-playlist-205.png" alt="展開的 BGM 播放清單"></a>
+    <figcaption>展開 BGM 清單後，可直接辨認備註、來源與正在播放的項目。</figcaption>
+  </figure>
+</section>
 
 ## 無伴奏演出
 

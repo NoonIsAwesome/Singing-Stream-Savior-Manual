@@ -75,7 +75,13 @@ The song context menu is arranged for quick live use: **Edit display song name**
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/en/display-title-edit.png' | relative_url }}" alt="Display title cell open for inline editing from the song context menu"></a><figcaption>Choose the first context-menu item to edit only the viewer-facing Display title; the source name remains intact.</figcaption></figure>
 
-{% include library-bgm-205.html %}
+<section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
+  <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">A clearer song view and a real BGM playlist</h2><p>Switch the song library between the familiar table and a card view, then prepare reusable background music for different stream moods.</p></header>
+  <div class="manual-feature-update__copy"><h3>Song list display</h3><p><strong>The traditional table remains the default.</strong> Choose Card list under Settings → General → Song List Display when you want titles to be easier to scan. Cards keep the source, cover, and lyrics indicators; double-click plays the song, while the pencil icon edits its Display title.</p></div>
+  <div class="manual-feature-update__figures"><figure class="manual-figure"><a href="../assets/images/song-list-display-setting-205.png"><img src="../assets/images/song-list-display-setting-205.png" alt="Song list display setting"></a><figcaption>Choose the traditional table or Card list in Settings. Screenshot shown in Traditional Chinese.</figcaption></figure><figure class="manual-figure"><a href="../assets/images/song-card-list-205.png"><img src="../assets/images/song-card-list-205.png" alt="Card-style song library"></a><figcaption>Card view emphasizes the title your audience will see.</figcaption></figure></div>
+  <div class="manual-feature-update__copy"><h3>BGM playlist</h3><p>Keep multiple local or YouTube sources, add a note to each BGM, and drag items into order. The active track is highlighted. YouTube playlists can add either the current video or every item.</p><ul><li><strong>Repeat one (default)</strong>: loop the selected BGM.</li><li><strong>Repeat all</strong>: play in list order and continue from the beginning.</li><li><strong>Shuffle all</strong>: choose each next BGM randomly.</li></ul></div>
+  <figure class="manual-figure manual-feature-update__wide-figure"><a href="../assets/images/bgm-playlist-205.png"><img src="../assets/images/bgm-playlist-205.png" alt="Expanded BGM playlist"></a><figcaption>The BGM list keeps notes, sources, and the playing item easy to identify.</figcaption></figure>
+</section>
 
 Use **+ Unaccompanied Performance** beside the search field for a cappella,
 self-accompanied, or other performances without a media file. Enter the public

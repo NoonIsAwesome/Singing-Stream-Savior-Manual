@@ -68,7 +68,13 @@ manual_bundle: true
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}" alt="通过歌曲右键菜单编辑显示歌名"></a><figcaption>从右键菜单第一项打开编辑，只修改直播会显示的名称；左侧原始文件名保持不变。</figcaption></figure>
 
-{% include library-bgm-205.html %}
+<section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
+  <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">更直观的歌曲列表与 BGM 播放列表</h2><p>歌曲库现在可切换传统列表与卡片列表；背景音乐也能预先整理成列表，配合直播主题快速切换。</p></header>
+  <div class="manual-feature-update__copy"><h3>歌曲列表显示</h3><p><strong>传统列表仍是默认值</strong>；可在“设置 → 一般 → 歌曲列表显示”改用卡片列表。卡片会突出显示观众看到的歌名，同时保留来源、封面与歌词状态。双击卡片会播放歌曲，铅笔图标则用于编辑显示歌名。</p></div>
+  <div class="manual-feature-update__figures"><figure class="manual-figure"><a href="../assets/images/song-list-display-setting-205.png"><img src="../assets/images/song-list-display-setting-205.png" alt="歌曲列表显示设置"></a><figcaption>可在设置中选择传统列表或卡片列表。</figcaption></figure><figure class="manual-figure"><a href="../assets/images/song-card-list-205.png"><img src="../assets/images/song-card-list-205.png" alt="卡片式歌曲列表"></a><figcaption>卡片列表优先显示观众会看到的歌曲名称。</figcaption></figure></div>
+  <div class="manual-feature-update__copy"><h3>BGM 播放列表</h3><p>可保存多首本地音频或 YouTube 音源，为每首 BGM 添加备注，并直接拖动调整顺序。正在播放的项目会清楚高亮；YouTube 播放列表可选择只加入当前视频或全部项目。</p><ul><li><strong>单曲循环（默认）</strong></li><li><strong>全部循环</strong></li><li><strong>全部随机循环</strong></li></ul></div>
+  <figure class="manual-figure manual-feature-update__wide-figure"><a href="../assets/images/bgm-playlist-205.png"><img src="../assets/images/bgm-playlist-205.png" alt="展开的 BGM 播放列表"></a><figcaption>可直接辨认备注、来源与正在播放的项目。</figcaption></figure>
+</section>
 
 清唱、自弹自唱或其他不使用媒体文件的演出，可从搜索栏旁的“＋ 无伴奏演出”新增。输入观众会看到的显示歌名，再选择手动结束或可选的预计时间；时间按钮每次调整 10 秒，也支持鼠标滚轮。开始后会像普通伴奏一样暂停 BGM，并更新 Now Singing、待播与已唱；结束后恢复原本的 BGM。项目会保存到“无伴奏演出”智能分类与当前项目，不会建立假的静音音频文件。
 

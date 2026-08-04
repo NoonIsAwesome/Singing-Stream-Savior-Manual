@@ -68,7 +68,13 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ja/display-title-edit.png' | relative_url }}" alt="右クリックメニューから表示曲名セルを編集している画面"></a><figcaption>右クリックメニューの先頭項目から、配信に表示する曲名だけを編集します。左側の元ファイル名は維持されます。</figcaption></figure>
 
-{% include library-bgm-205.html %}
+<section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
+  <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">見やすい曲カードと BGM プレイリスト</h2><p>曲ライブラリは従来の表とカード表示を切り替えられます。BGM は配信テーマに合わせて事前にまとめ、すぐ切り替えられます。</p></header>
+  <div class="manual-feature-update__copy"><h3>曲リストの表示</h3><p><strong>初期設定は従来の表形式です。</strong>「設定 → 一般 → 曲リスト表示」からカード表示へ切り替えられます。表示曲名を大きく見せつつ、音源、ジャケット、歌詞の状態も確認できます。ダブルクリックは再生、鉛筆アイコンは表示曲名の編集です。</p></div>
+  <div class="manual-feature-update__figures"><figure class="manual-figure"><a href="../assets/images/song-list-display-setting-205.png"><img src="../assets/images/song-list-display-setting-205.png" alt="曲リスト表示設定"></a><figcaption>従来の表またはカード表示を選択します。画面は繁体字中国語版です。</figcaption></figure><figure class="manual-figure"><a href="../assets/images/song-card-list-205.png"><img src="../assets/images/song-card-list-205.png" alt="カード式の曲リスト"></a><figcaption>カード表示では、視聴者に見せる曲名を優先して確認できます。</figcaption></figure></div>
+  <div class="manual-feature-update__copy"><h3>BGM プレイリスト</h3><p>複数のローカル／YouTube 音源を保存し、各 BGM にメモを付け、ドラッグで順番を変更できます。再生中の項目は強調表示されます。YouTube プレイリストは現在の動画だけ、または全項目を追加できます。</p><ul><li><strong>1曲リピート（初期設定）</strong></li><li><strong>全曲リピート</strong></li><li><strong>シャッフルリピート</strong></li></ul></div>
+  <figure class="manual-figure manual-feature-update__wide-figure"><a href="../assets/images/bgm-playlist-205.png"><img src="../assets/images/bgm-playlist-205.png" alt="BGM プレイリスト"></a><figcaption>メモ、音源、再生中の項目をすぐ確認できます。</figcaption></figure>
+</section>
 
 アカペラ、弾き語りなどメディアファイルを使わない演奏は、検索欄の横にある「＋ 無伴奏演奏」から追加できます。公開する表示曲名を入力し、手動終了または任意の予定時間を選びます。時間は 10 秒単位のボタンとマウスホイールで調整できます。開始すると BGM を一時停止して Now Singing、予約、履歴を通常の曲と同様に更新し、終了後に元の BGM を再開します。項目は専用のスマート分類とプロジェクトに保存され、偽の無音ファイルは作成しません。
 
