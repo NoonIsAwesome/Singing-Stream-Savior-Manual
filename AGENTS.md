@@ -2,6 +2,19 @@
 
 本檔適用於整個 Manual repository。修改前先檢查 Git 狀態，不覆蓋或提交與任務無關的使用者變更。
 
+## Codex 主機的已知工具限制
+
+- 此 Windows Codex 環境目前**沒有安裝 GitHub CLI (`gh`)**。不要先執行
+  `gh run list` 或 `gh release` 再改用替代方案。GitHub Pages／Actions 狀態直接
+  使用 GitHub REST API（PowerShell `Invoke-RestMethod`／`Invoke-WebRequest`）查詢；
+  repository 寫入沿用 Git push 或既有已驗證流程。
+- shell 指令預設使用無 profile／`login:false`，避免已知的 PowerShell profile
+  啟動等待。一般 PATH 不保證有 Ruby、Bundler、Jekyll、Node.js 或 Python 額外
+  套件；使用前先唯讀確認，不因缺少工具重複嘗試或臨時安裝。
+- Manual 的 Jekyll 最終驗證以 GitHub Pages Actions 成功，加上正式網址使用
+  cache-busting query 與 `Cache-Control: no-cache` 讀取為準。
+- 已知環境限制應先查本檔；不要把工具缺少、沙箱或編碼錯誤誤判為網站內容問題。
+
 ## Windows PowerShell 與批次檔編碼
 
 - 面向 Windows 使用者、由 `.cmd`、捷徑或檔案總管啟動的 `.ps1`，預設相容目標是 Windows PowerShell 5.1；除非流程明確只使用 `pwsh`，不可加入 `??`、`?:`、`&&` 等 PowerShell 7 才支援的語法。
