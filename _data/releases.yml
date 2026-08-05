@@ -19,27 +19,27 @@ releases:
       zh-TW:
         - 修正 OBS WebSocket 回應較慢時，自動時間戳可能比歌曲實際開始時間晚數秒的問題。
         - 歌詞文字轉換改在背景執行，減少播放、停止與快速切換歌曲時的短暫卡頓。
-        - 啟動器 1.0.1.2 會再次清理更新留下的舊備份與暫存檔，避免占用空間持續累積。
+        - 啟動器 1.0.1.3 會跟隨 Windows 顯示語言，並再次清理更新留下的舊備份與暫存檔。
         - 修一些問題不小心太晚睡了，希望明天不要睡過頭
       zh-CN:
         - 修正 OBS WebSocket 响应较慢时，自动时间戳可能比歌曲实际开始时间晚数秒的问题。
         - 歌词文字转换改为在后台执行，减少播放、停止与快速切换歌曲时的短暂卡顿。
-        - 启动器 1.0.1.2 会再次清理更新留下的旧备份与临时文件，避免占用空间持续累积。
+        - 启动器 1.0.1.3 会跟随 Windows 显示语言，并再次清理更新留下的旧备份与临时文件。
         - 修一些问题不小心太晚睡了，希望明天不要睡过头。
       ja:
         - OBS WebSocket の応答が遅い場合、自動タイムスタンプが実際の曲開始時刻より数秒遅れる問題を修正しました。
         - 歌詞の文字変換をバックグラウンドで行い、再生・停止・素早い曲切り替え時の一時的な引っかかりを軽減しました。
-        - ランチャー 1.0.1.2 は、更新後に残った古いバックアップと一時ファイルの整理を再試行し、容量の増加を防ぎます。
+        - ランチャー 1.0.1.3 は Windows の表示言語に対応し、更新後に残った古いバックアップと一時ファイルの整理も再試行します。
         - いくつか直していたら、うっかり夜更かし。明日は寝坊しませんように。
       ko:
         - OBS WebSocket 응답이 느릴 때 자동 타임스탬프가 실제 곡 시작보다 몇 초 늦게 기록되는 문제를 수정했습니다.
         - 가사 문자 변환을 백그라운드에서 처리해 재생·정지·빠른 곡 전환 시 잠깐 멈추는 현상을 줄였습니다.
-        - 런처 1.0.1.2는 업데이트 뒤 남은 오래된 백업과 임시 파일 정리를 다시 시도해 저장 공간 누적을 방지합니다.
+        - 런처 1.0.1.3은 Windows 표시 언어를 따르며, 업데이트 뒤 남은 오래된 백업과 임시 파일 정리도 다시 시도합니다.
         - 이것저것 고치다 보니 너무 늦게 자게 됐어요. 내일은 늦잠 자지 않기를!
       en:
         - Fixed automatic timestamps being recorded several seconds late when the OBS WebSocket response was delayed.
         - Moved lyric text conversion to the background to reduce brief stalls during play, stop, and rapid song switching.
-        - Launcher 1.0.1.2 retries cleanup of stale update backups and temporary files so they do not keep consuming space.
+        - Launcher 1.0.1.3 follows the Windows display language and retries cleanup of stale update backups and temporary files.
         - I stayed up too late fixing a few things. Hopefully I will not oversleep tomorrow.
   - version: "2.0.5.1"
     date: "2026-08-05"

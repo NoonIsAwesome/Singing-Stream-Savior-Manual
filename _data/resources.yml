@@ -1,7 +1,7 @@
 ﻿# 發布正式檔案後，只要更新這裡的連結與版本即可。
 software:
   version: "2.0.5.2"
-  launcher_version: "1.0.1.2"
+  launcher_version: "1.0.1.3"
   download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.0.5.2/Singing.Stream.Savior.2.0.5.2.zip"
   release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.5.2"
   file_size: "406 MB"
