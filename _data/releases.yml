@@ -1,7 +1,41 @@
 releases:
+  - version: "2.0.5.1"
+    date: "2026-08-05"
+    latest: true
+    type:
+      zh-TW: 使用體驗修正
+      zh-CN: 使用体验修正
+      ja: ユーザー体験の修正
+      ko: 사용자 경험 수정
+      en: User experience hotfix
+    release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.5.1"
+    summary:
+      zh-TW: 改善播放、停止與快速切歌反應，並讓直播中的提示視窗不再發出系統音效。
+      zh-CN: 改善播放、停止与快速切歌响应，并让直播中的提示窗口不再发出系统音效。
+      ja: 再生・停止・素早い曲切り替えの応答性を改善し、配信中のダイアログを無音化しました。
+      ko: 재생·정지·빠른 곡 전환 반응을 개선하고 방송 중 안내 창의 시스템 효과음을 제거했습니다.
+      en: Improves play, stop, and rapid song switching responsiveness, and silences dialogs during streams.
+    items:
+      zh-TW:
+        - 修正快速切歌後，上一首歌曲狀態可能殘留在時間、歌詞或選取 Highlight 的問題。
+        - 統一手動停止、自然播放結束與程式停止的清理流程。
+        - 主程式與啟動器的資訊、確認、警告及錯誤視窗改為無聲。
+        - 讓Codex工作的時候，出門去買了飲料，快樂！
+      zh-CN:
+        - 修正快速切歌后上一首歌曲状态可能残留的问题。
+        - 统一停止与播放结束的清理流程，并将提示窗口改为无声。
+      ja:
+        - 素早い曲切り替え後に前の曲の状態が残る可能性を修正しました。
+        - 停止処理を統一し、アプリとランチャーのダイアログを無音化しました。
+      ko:
+        - 빠른 곡 전환 뒤 이전 곡 상태가 남을 수 있는 문제를 수정했습니다.
+        - 정지 처리를 통합하고 앱과 런처 안내 창을 무음으로 변경했습니다.
+      en:
+        - Fixed stale playback, lyric, time, and highlight state after rapid song switches.
+        - Unified stop cleanup and silenced application and launcher dialogs.
   - version: "2.0.5.0"
     date: "2026-08-04"
-    latest: true
+    latest: false
     type:
       zh-TW: 功能與播放清單更新
       zh-CN: 功能与播放列表更新
