@@ -1,7 +1,59 @@
 releases:
+  - version: "2.0.5.3"
+    date: "2026-08-09"
+    latest: true
+    type:
+      zh-TW: 播放與 Overlay 修正
+      zh-CN: 播放与 Overlay 修正
+      ja: 再生・Overlay 修正
+      ko: 재생 및 Overlay 수정
+      en: Playback and Overlay hotfix
+    release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.5.3"
+    summary:
+      zh-TW: 改善起播順暢度與大量歌曲操作，並統一 Card、Default、Transparent 清單的固定速度循環捲動。
+      zh-CN: 改善开始播放与大量歌曲操作，并统一 Card、Default、Transparent 列表的固定速度循环滚动。
+      ja: 再生開始時の安定性と大量の曲を扱う操作を改善し、Card／Default／Transparent のリストを一定速度のループスクロールに統一しました。
+      ko: 재생 시작과 많은 곡을 다루는 작업을 개선하고 Card, Default, Transparent 목록을 일정 속도 순환 스크롤로 통일했습니다.
+      en: Improves playback startup and large-list operations, with fixed-speed loop scrolling for Card, Default, and Transparent lists.
+    items:
+      zh-TW:
+        - Card、Default 與 Transparent 系列的 Set List／Reserve 改為固定速度單向捲動；到底閃爍後回頂重新開始，不再因歌曲變多而加速。
+        - 清單捲動速度可調整為 8–60 px/s，預設 17 px/s；主題也能透過 manifest 共用捲動或翻頁規則。
+        - 本機／遠端播放來源會先在背景完成 100／200 ms 安全預載，降低剛起播時短暫音訊中斷的機率。
+        - 播放圖示改為局部更新，並修正自然播放結束後播放圖示或歌詞可能殘留。
+        - 待播支援多選刪除，已唱新增清空功能；自動狀態列也改成燈號與文字的精簡樣式。
+        - 把工作交給Codex之後，吃了一份臭豆腐，很好吃OuOb
+      zh-CN:
+        - Card、Default 与 Transparent 系列的 Set List／Reserve 改为固定速度单向滚动；到底闪烁后回到顶部重新开始，不再因歌曲增多而加速。
+        - 列表滚动速度可在 8–60 px/s 之间调整，默认 17 px/s；主题也可通过 manifest 共用滚动或翻页规则。
+        - 本地／远程播放源会先在后台完成 100／200 ms 安全预缓冲，降低刚开始播放时短暂无声或中断的概率。
+        - 播放图标改为局部更新，并修复自然播放结束后播放图标或歌词可能残留的问题。
+        - 待播支持多选删除，已唱新增清空功能；自动状态栏也改为指示灯与文字的简洁样式。
+        - 把工作交给 Codex 后，吃了一份臭豆腐，很好吃 OuOb
+      ja:
+        - Card／Default／Transparent 系列の Set List と Reserve を一定速度の一方向スクロールに変更し、末尾で点滅した後に先頭へ戻るようにしました。
+        - スクロール速度は 8～60 px/s の範囲で調整でき、既定値は 17 px/s です。テーマも manifest で共通のスクロール／ページ動作を宣言できます。
+        - ローカル／リモート音源をバックグラウンドで 100／200 ms 事前バッファし、再生開始直後の短い音切れを抑えました。
+        - 再生マーカーを必要な行だけ更新し、自然終了後に再生マーカーや歌詞が残る問題を修正しました。
+        - Reserve の複数削除と歌唱履歴の全消去を追加し、自動状態表示をランプと文字だけの簡潔なデザインにしました。
+        - Codex に作業を任せた後、臭豆腐を一皿食べました。とてもおいしかったです OuOb
+      ko:
+        - Card, Default 및 Transparent 계열의 Set List／Reserve를 일정 속도의 단방향 스크롤로 변경하고 마지막에서 깜박인 뒤 맨 위로 돌아가도록 했습니다.
+        - 스크롤 속도는 8–60 px/s 범위에서 조절할 수 있고 기본값은 17 px/s입니다. 테마도 manifest로 공통 스크롤／페이지 규칙을 선언할 수 있습니다.
+        - 로컬／원격 재생 소스를 백그라운드에서 100／200 ms 미리 버퍼링해 재생 직후의 짧은 끊김 가능성을 줄였습니다.
+        - 재생 표시를 필요한 행만 갱신하고 자연 종료 뒤 재생 표시나 가사가 남는 문제를 수정했습니다.
+        - Reserve 다중 삭제와 노래 기록 전체 지우기를 추가하고 자동 상태 표시를 램프와 텍스트만 남긴 간결한 형태로 바꿨습니다.
+        - Codex에게 작업을 맡긴 뒤 취두부 한 접시를 먹었습니다. 아주 맛있었어요 OuOb
+      en:
+        - Card, Default, and Transparent Set List/Reserve panels now scroll at a constant speed, flash at the end, and restart from the top.
+        - List speed is adjustable from 8–60 px/s with a 17 px/s default, and themes can declare shared scrolling or paging rules in their manifest.
+        - Local and remote sources are prebuffered by 100/200 ms in the background to reduce brief startup dropouts.
+        - Playback markers update only affected rows, and stale markers or lyrics after natural completion are cleared.
+        - Added multi-row Reserve removal and Clear Sung History, and simplified the automation status to a lamp and text.
+        - After handing the work to Codex, I ate a plate of stinky tofu. It was delicious OuOb
   - version: "2.0.5.2"
     date: "2026-08-06"
-    latest: true
+    latest: false
     type:
       zh-TW: 穩定性修正
       zh-CN: 稳定性修正
