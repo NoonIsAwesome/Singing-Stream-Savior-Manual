@@ -33,8 +33,9 @@
   {% assign smartscreen_alt2 = 'Windows SmartScreen 展開其他資訊後顯示仍要執行按鈕' %}
   {% assign verify_title = '先確認官方來源與雜湊' %}
   {% assign verify_text = '請只從本頁或 NoonIsAwesome／Singing-Stream-Savior-Updates 的官方 GitHub Release 下載。SHA-256 可用來確認下載檔與發布檔完全相同。' %}
-  {% assign detection_title = '防毒明確報毒時請先停止' %}
-  {% assign detection_text = '不要直接關閉防毒，也不要把整個程式資料夾加入白名單。請先更新病毒碼，並把偵測名稱、軟體版本與檔案 SHA-256 回報給開發者確認。' %}
+  {% assign detection_title = '防毒顯示警告時，先停下來確認' %}
+  {% assign detection_text = '未簽章的獨立軟體有時可能被啟發式防毒誤判，開發者測試時也曾遇過。請先更新病毒碼並核對官方來源、檔名與 SHA-256；若資訊不同，請不要執行。' %}
+  {% assign detection_link = '查看疑似誤判案例與安全檢查方式' %}
   {% assign privacy_title = '不要求帳號，也不包含遙測' %}
   {% assign privacy_text = '程式不要求註冊或登入，不包含廣告、使用者追蹤或分析遙測，也不會把歌曲、歌詞、音訊、麥克風內容、專案或個人檔案上傳至開發者伺服器。' %}
   {% assign offline_title = '核心功能可以離線使用' %}
@@ -67,8 +68,8 @@
   {% assign smartscreen_alt2 = 'Windows SmartScreen 展开更多信息后显示仍要运行按钮' %}
   {% assign verify_title = '先确认官方来源与哈希值' %}
   {% assign verify_text = '请仅从本页或 NoonIsAwesome／Singing-Stream-Savior-Updates 的官方 GitHub Release 下载。SHA-256 可确认下载文件与正式发布文件完全相同。' %}
-  {% assign detection_title = '防病毒软件明确报毒时请先停止' %}
-  {% assign detection_text = '不要直接关闭防病毒软件，也不要将整个程序文件夹加入白名单。请先更新病毒库，并将检测名称、软件版本和文件 SHA-256 报告给开发者确认。' %}
+  {% assign detection_title = '防病毒软件显示警告时，请先确认' %}
+  {% assign detection_text = '未签名的独立软件有时可能被启发式防病毒检测误报，开发者测试时也曾遇到。请先更新病毒库，并核对官方来源、文件名和 SHA-256；如果信息不同，请不要运行。' %}
   {% assign privacy_title = '无需账号，也不包含遥测' %}
   {% assign privacy_text = '程序不要求注册或登录，不包含广告、用户追踪或分析遥测，也不会将歌曲、歌词、音频、麦克风内容、项目或个人文件上传到开发者服务器。' %}
   {% assign offline_title = '核心功能可以离线使用' %}
@@ -101,8 +102,8 @@
   {% assign smartscreen_alt2 = '詳細情報を開いた Windows SmartScreen に表示される実行ボタン' %}
   {% assign verify_title = '公式配布元とハッシュを確認' %}
   {% assign verify_text = 'このページ、または NoonIsAwesome／Singing-Stream-Savior-Updates の公式 GitHub Release からのみダウンロードしてください。SHA-256 で公開ファイルと同一であることを確認できます。' %}
-  {% assign detection_title = '明確なウイルス検出時は停止' %}
-  {% assign detection_text = 'ウイルス対策を無効にしたり、フォルダー全体を除外したりしないでください。定義ファイルを更新し、検出名、アプリのバージョン、SHA-256 を開発者へ報告してください。' %}
+  {% assign detection_title = '警告が表示されたら、まず内容を確認' %}
+  {% assign detection_text = '未署名の個人開発ソフトはヒューリスティック検出で誤検知される場合があり、開発者のテスト環境でも発生しました。定義ファイルを更新し、公式配布元、ファイル名、SHA-256 を確認してください。情報が異なる場合は実行しないでください。' %}
   {% assign privacy_title = 'アカウント不要・テレメトリなし' %}
   {% assign privacy_text = '登録やログインは不要で、広告、利用者追跡、分析テレメトリを含みません。曲、歌詞、音声、マイク内容、プロジェクト、個人ファイルを開発者のサーバーへ送信しません。' %}
   {% assign offline_title = '主要機能はオフラインで利用可能' %}
@@ -135,8 +136,8 @@
   {% assign smartscreen_alt2 = '추가 정보를 연 Windows SmartScreen에 표시된 실행 버튼' %}
   {% assign verify_title = '공식 배포처와 해시 확인' %}
   {% assign verify_text = '이 페이지 또는 NoonIsAwesome／Singing-Stream-Savior-Updates 공식 GitHub Release에서만 다운로드하세요. SHA-256으로 다운로드한 파일이 게시된 파일과 동일한지 확인할 수 있습니다.' %}
-  {% assign detection_title = '백신이 명확히 탐지하면 중지' %}
-  {% assign detection_text = '백신을 끄거나 프로그램 폴더 전체를 예외 처리하지 마세요. 탐지 정보를 업데이트한 뒤 탐지명, 앱 버전과 SHA-256을 개발자에게 알려 확인받으세요.' %}
+  {% assign detection_title = '백신 경고가 표시되면 먼저 확인' %}
+  {% assign detection_text = '서명되지 않은 개인 개발 소프트웨어는 휴리스틱 검사에서 오탐될 수 있으며 개발자 테스트 중에도 발생했습니다. 백신 정보를 업데이트하고 공식 출처, 파일 이름과 SHA-256을 확인하세요. 정보가 다르면 실행하지 마세요.' %}
   {% assign privacy_title = '계정과 텔레메트리 없음' %}
   {% assign privacy_text = '가입이나 로그인이 필요 없으며 광고, 사용자 추적, 분석 텔레메트리를 포함하지 않습니다. 노래, 가사, 오디오, 마이크 내용, 프로젝트 또는 개인 파일을 개발자 서버로 전송하지 않습니다.' %}
   {% assign offline_title = '핵심 기능은 오프라인 사용 가능' %}
@@ -169,8 +170,8 @@
   {% assign smartscreen_alt2 = 'Windows SmartScreen showing the Run anyway button after More info is selected' %}
   {% assign verify_title = 'Verify the official source and hash' %}
   {% assign verify_text = 'Download only from this page or the official NoonIsAwesome/Singing-Stream-Savior-Updates GitHub Release. SHA-256 verifies that your download is identical to the published file.' %}
-  {% assign detection_title = 'Stop if antivirus reports a specific threat' %}
-  {% assign detection_text = 'Do not disable antivirus protection or exclude the entire application folder. Update its definitions, then report the detection name, app version, and SHA-256 to the developer for review.' %}
+  {% assign detection_title = 'Pause and verify an antivirus warning' %}
+  {% assign detection_text = 'Unsigned independent software can sometimes trigger heuristic false positives, including during the developer’s own testing. Update the antivirus definitions and verify the official source, filename, and SHA-256. Do not run the file if those details differ.' %}
   {% assign privacy_title = 'No account and no telemetry' %}
   {% assign privacy_text = 'The app requires no registration or login and contains no advertising, user tracking, or analytics telemetry. It does not upload songs, lyrics, audio, microphone content, projects, or personal files to the developer.' %}
   {% assign offline_title = 'Core features work offline' %}
@@ -252,7 +253,11 @@
     </ol>
     <div class="security-facts">
       <article><strong>{{ verify_title }}</strong><p>{{ verify_text }}</p></article>
-      <article class="security-facts__warning"><strong>{{ detection_title }}</strong><p>{{ detection_text }}</p></article>
+      <article class="security-facts__warning">
+        <strong>{{ detection_title }}</strong>
+        <p>{{ detection_text }}</p>
+        {% if detection_link %}<a class="security-facts__link" href="{{ '/settings-and-troubleshooting.html#antivirus-false-positive' | relative_url }}">{{ detection_link }} <span aria-hidden="true">→</span></a>{% endif %}
+      </article>
       <article><strong>{{ privacy_title }}</strong><p>{{ privacy_text }}</p></article>
       <article><strong>{{ offline_title }}</strong><p>{{ offline_text }}</p></article>
     </div>

@@ -91,6 +91,35 @@ translation_key: settings-and-troubleshooting
 4. 確認 Browser Source 指向目前版本程式資料夾產生的本機頁面。
 5. 若只是 WebSocket 紅燈，歌單 Overlay 仍可運作；WebSocket 主要影響直播時間戳。
 
+## 防毒軟體警告與疑似誤判 {#antivirus-false-positive}
+
+歌回救星目前由個人獨立開發，Windows 執行檔尚未提供可信任的程式碼簽章。部分防毒軟體可能因此依照啟發式特徵顯示警告；這不代表每一個警告都是惡意程式，但也不能反過來假設所有警告都是誤報。
+
+開發者在自行建置與測試時，曾遇到以下兩次啟發式警告。當時的檔案來自開發者自己的建置環境，後續檢查未發現蒐集資料或惡意行為，因此判斷為疑似誤報。圖片中的本機路徑已遮蔽，只保留偵測名稱與檔名。
+
+<div class="figure-grid security-report-grid">
+  <figure class="manual-figure">
+    <a href="assets/images/security/kaspersky-app-heuristic-redacted.png">
+      <img src="assets/images/security/kaspersky-app-heuristic-redacted.png" alt="Kaspersky 將本機建置的 Singing Stream Savior 主程式標示為 PDM Trojan 的疑似誤判畫面，路徑已遮蔽">
+    </a>
+    <figcaption>2026-08-06：本機建置的主程式被標示為 <code>PDM:Trojan.Win32.Generic</code>。</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="assets/images/security/kaspersky-diagnostics-heuristic-redacted.png">
+      <img src="assets/images/security/kaspersky-diagnostics-heuristic-redacted.png" alt="Kaspersky 將內部 QA 診斷工具 S3SDiagnostics 標示為 VHO Trojan 的疑似誤判畫面，路徑已遮蔽">
+    </a>
+    <figcaption>2026-08-10：內部 QA 工具 <code>S3SDiagnostics.exe</code> 被啟發式規則標示；這個工具不是公開下載包中的主程式。</figcaption>
+  </figure>
+</div>
+
+看到警告時，建議依序確認：
+
+1. 不要關閉防毒，也不要直接把整個程式資料夾加入白名單。
+2. 確認 ZIP 只來自本說明網站或官方 GitHub Release。
+3. 比對下載頁公布的版本、檔名與 ZIP SHA-256。
+4. 若來源或雜湊不同，請停止執行並刪除檔案。
+5. 若來源與雜湊相符，仍可先保留警告畫面、偵測名稱與 SHA-256，回報給開發者確認；如果仍有疑慮，請先不要下載或執行，等待未來提供可信任簽章的版本。
+
 ## 安全更新
 
 平常從最外層的 `Singing Stream Savior.exe` 啟動時，啟動器會先以深色狀態視窗檢查未來版本。若有更新，會先顯示版本並詢問是否下載安裝；選擇不更新仍可繼續開啟目前版本。

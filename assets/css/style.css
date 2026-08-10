@@ -2285,6 +2285,22 @@ body {
   margin: 3px 0 0;
 }
 
+.security-facts__link {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 9px;
+  color: #f2ca91;
+  font-weight: 750;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.security-report-grid .manual-figure img {
+  aspect-ratio: auto;
+  max-height: 560px;
+}
+
 .resource-action {
   display: inline-flex;
   min-height: 44px;
