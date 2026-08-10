@@ -5,6 +5,7 @@ software:
   download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.0.5.3/Singing.Stream.Savior.2.0.5.3.zip"
   release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.0.5.3"
   file_size: "406 MB"
+  sha256: "b65b400c4e7f09f4b83e9d1e0f173f646ed022485554506886f6f058908409cc"
   updated_at: "2026-08-09"
 
 # file_url 可放網站內的 MP4；embed_url 可使用下列外部影片：

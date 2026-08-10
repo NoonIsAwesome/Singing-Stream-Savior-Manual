@@ -2027,6 +2027,69 @@ body {
   color: var(--ink-500);
 }
 
+.download-panel__hash {
+  display: flex;
+  min-width: 0;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.download-panel__hash b {
+  flex: 0 0 auto;
+  color: #a9ddff;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+}
+
+.download-panel__hash code {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #c6d7e7;
+  background: transparent;
+  font-size: 0.72rem;
+}
+
+.download-trust-note {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 11px;
+  align-items: start;
+  margin: 14px 0 16px;
+  padding: 13px 15px;
+  color: var(--ink-600);
+  background: rgba(242, 181, 93, 0.055);
+  border-left: 3px solid #d9a45b;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.65;
+}
+
+.download-trust-note > span {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  color: #e3ad62;
+}
+
+.download-trust-note > span svg {
+  width: 24px;
+  height: 24px;
+  fill: rgba(227, 173, 98, 0.12);
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.download-trust-note strong {
+  color: #f2ca91;
+}
+
+.download-trust-note p {
+  margin: 2px 0 0;
+}
+
 .resource-update {
   display: flex;
   gap: 18px;
@@ -2188,8 +2251,15 @@ body {
   line-height: 1.55;
 }
 
-.smartscreen-guide__privacy {
+.security-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   margin-top: 16px;
+}
+
+.security-facts article {
+  min-width: 0;
   padding: 15px 17px;
   color: var(--ink-600);
   background: rgba(121, 201, 255, 0.055);
@@ -2198,11 +2268,20 @@ body {
   line-height: 1.7;
 }
 
-.smartscreen-guide__privacy strong {
+.security-facts article.security-facts__warning {
+  background: rgba(242, 181, 93, 0.065);
+  border-left-color: #e3ad62;
+}
+
+.security-facts strong {
   color: #bde7ff;
 }
 
-.smartscreen-guide__privacy p {
+.security-facts__warning strong {
+  color: #f2ca91;
+}
+
+.security-facts p {
   margin: 3px 0 0;
 }
 
@@ -3256,6 +3335,15 @@ body {
   }
 
   .smartscreen-guide__steps {
+    grid-template-columns: 1fr;
+  }
+
+  .download-panel__hash {
+    display: grid;
+    gap: 3px;
+  }
+
+  .security-facts {
     grid-template-columns: 1fr;
   }
 

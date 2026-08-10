@@ -15,21 +15,30 @@
   {% assign recent_update = '近期更新' %}
   {% assign release_notes_label = '查看更新內容' %}
   {% assign download_label = '下載最新版' %}
+  {% assign hash_label = 'ZIP SHA-256' %}
+  {% assign download_caution_title = '下載前的安全提醒' %}
+  {% assign download_caution_text = 'Singing Stream Savior 是由個人獨立開發的軟體，目前尚未提供程式碼簽章。它可以理解為一個包含自動切換 BGM 功能的本機播放器，不會蒐集或上傳任何使用者資料，核心功能即使不連線也能使用；只有播放 YouTube 連結、自動搜尋歌詞／封面或檢查更新等網路功能才需要連線。如果你對未簽章軟體仍有疑慮，建議先不要下載，等到未來提供可信任簽章後再使用。' %}
   {% assign coming_soon = '正式下載連結準備中' %}
   {% assign video_title = '操作影片' %}
   {% assign video_text = '影片會依實際軟體介面錄製，適合搭配文字說明快速熟悉操作。' %}
   {% assign video_empty = '操作影片準備中。之後會加入第一次設定、OBS 畫面與歌詞等教學。' %}
   {% assign watch_label = '播放教學影片' %}
   {% assign smartscreen_title = '第一次開啟時看到 Windows 保護提示？' %}
-  {% assign smartscreen_intro = '歌回救星目前尚未使用商業程式碼簽章，因此 Windows SmartScreen 可能會把第一次下載的版本標示為無法辨識的應用程式。請只從本頁或官方 GitHub Release 下載，確認來源後依照以下兩步驟啟動。' %}
+  {% assign smartscreen_intro = '歌回救星目前由個人獨立開發，Windows 執行檔尚未使用可信任的程式碼簽章，因此 SmartScreen 可能顯示「未知的發行者」或「無法辨識的應用程式」。未簽章不等於含有惡意內容，但 Windows 無法透過憑證驗證發布者身分與檔案是否遭到竄改。' %}
   {% assign smartscreen_step1 = '點擊「其他資訊」' %}
   {% assign smartscreen_step1_text = '先展開 Windows 隱藏的應用程式名稱與執行選項。' %}
   {% assign smartscreen_step2 = '點擊「仍要執行」' %}
-  {% assign smartscreen_step2_text = '確認應用程式是 Singing Stream Savior.exe 後即可啟動。' %}
+  {% assign smartscreen_step2_text = '僅在下載來源正確，而且上方 SHA-256 與檔案相符時繼續。' %}
   {% assign smartscreen_alt1 = 'Windows SmartScreen 提示畫面，其他資訊連結位於左側說明文字下方' %}
   {% assign smartscreen_alt2 = 'Windows SmartScreen 展開其他資訊後顯示仍要執行按鈕' %}
-  {% assign privacy_title = '它會連線或讀取什麼？' %}
-  {% assign privacy_text = '歌回救星是為歌回直播設計的本機播放器與 OBS 輔助工具。不使用 YouTube 連結、線上歌詞或封面搜尋時，播放與專案功能可以離線使用。程式不會主動上傳你的歌曲、歌詞、專案或個人檔案；只有 YouTube 解析、線上搜尋與更新檢查等對應功能需要連線。' %}
+  {% assign verify_title = '先確認官方來源與雜湊' %}
+  {% assign verify_text = '請只從本頁或 NoonIsAwesome／Singing-Stream-Savior-Updates 的官方 GitHub Release 下載。SHA-256 可用來確認下載檔與發布檔完全相同。' %}
+  {% assign detection_title = '防毒明確報毒時請先停止' %}
+  {% assign detection_text = '不要直接關閉防毒，也不要把整個程式資料夾加入白名單。請先更新病毒碼，並把偵測名稱、軟體版本與檔案 SHA-256 回報給開發者確認。' %}
+  {% assign privacy_title = '不要求帳號，也不包含遙測' %}
+  {% assign privacy_text = '程式不要求註冊或登入，不包含廣告、使用者追蹤或分析遙測，也不會把歌曲、歌詞、音訊、麥克風內容、專案或個人檔案上傳至開發者伺服器。' %}
+  {% assign offline_title = '核心功能可以離線使用' %}
+  {% assign offline_text = '專案、設定與音訊處理保留在你的電腦。只有使用 YouTube、線上歌詞／封面搜尋與更新檢查等選用功能時，才會連線至相應的第三方服務。' %}
 {% elsif current_lang == 'zh-CN' %}
   {% assign eyebrow = 'DOWNLOADS · VIDEOS' %}
   {% assign title = '软件下载' %}
@@ -40,21 +49,30 @@
   {% assign recent_update = '近期更新' %}
   {% assign release_notes_label = '查看更新内容' %}
   {% assign download_label = '下载最新版' %}
+  {% assign hash_label = 'ZIP SHA-256' %}
+  {% assign download_caution_title = '下载前的安全提醒' %}
+  {% assign download_caution_text = 'Singing Stream Savior 是由个人独立开发的软件，目前尚未提供代码签名。它可以理解为一个包含自动切换 BGM 功能的本地播放器，不会收集或上传任何用户数据，核心功能即使不联网也能使用；只有播放 YouTube 链接、自动搜索歌词／封面或检查更新等网络功能才需要联网。如果你对未签名软件仍有疑虑，建议先不要下载，等到今后提供可信签名后再使用。' %}
   {% assign coming_soon = '正式下载链接准备中' %}
   {% assign video_title = '操作视频' %}
   {% assign video_text = '视频会依照实际软件界面录制，方便搭配文字说明快速上手。' %}
   {% assign video_empty = '操作视频准备中，之后会加入初次设置、OBS 画面与歌词教学。' %}
   {% assign watch_label = '播放教学视频' %}
   {% assign smartscreen_title = '首次打开时看到 Windows 保护提示？' %}
-  {% assign smartscreen_intro = 'Singing Stream Savior 目前尚未使用商业代码签名，因此 Windows SmartScreen 可能会将首次下载的版本标记为无法识别的应用。请仅从本页或官方 GitHub Release 下载，确认来源后按以下两步启动。' %}
+  {% assign smartscreen_intro = 'Singing Stream Savior 目前由个人独立开发，Windows 程序尚未使用可信代码签名，因此 SmartScreen 可能显示“未知发布者”或“无法识别的应用”。未签名不代表包含恶意内容，但 Windows 无法通过证书验证发布者身份或文件是否被篡改。' %}
   {% assign smartscreen_step1 = '点击“更多信息”' %}
   {% assign smartscreen_step1_text = '先展开 Windows 隐藏的应用名称和运行选项。' %}
   {% assign smartscreen_step2 = '点击“仍要运行”' %}
-  {% assign smartscreen_step2_text = '确认应用是 Singing Stream Savior.exe 后即可启动。' %}
+  {% assign smartscreen_step2_text = '仅在下载来源正确，并且上方 SHA-256 与文件相符时继续。' %}
   {% assign smartscreen_alt1 = 'Windows SmartScreen 保护提示，更多信息链接位于说明文字下方' %}
   {% assign smartscreen_alt2 = 'Windows SmartScreen 展开更多信息后显示仍要运行按钮' %}
-  {% assign privacy_title = '它会联网或读取什么？' %}
-  {% assign privacy_text = 'Singing Stream Savior 是为歌回直播设计的本地播放器和 OBS 辅助工具。不使用 YouTube 链接、在线歌词或封面搜索时，播放和项目功能可以离线使用。程序不会主动上传你的歌曲、歌词、项目或个人文件；只有 YouTube 解析、在线搜索和更新检查等对应功能需要联网。' %}
+  {% assign verify_title = '先确认官方来源与哈希值' %}
+  {% assign verify_text = '请仅从本页或 NoonIsAwesome／Singing-Stream-Savior-Updates 的官方 GitHub Release 下载。SHA-256 可确认下载文件与正式发布文件完全相同。' %}
+  {% assign detection_title = '防病毒软件明确报毒时请先停止' %}
+  {% assign detection_text = '不要直接关闭防病毒软件，也不要将整个程序文件夹加入白名单。请先更新病毒库，并将检测名称、软件版本和文件 SHA-256 报告给开发者确认。' %}
+  {% assign privacy_title = '无需账号，也不包含遥测' %}
+  {% assign privacy_text = '程序不要求注册或登录，不包含广告、用户追踪或分析遥测，也不会将歌曲、歌词、音频、麦克风内容、项目或个人文件上传到开发者服务器。' %}
+  {% assign offline_title = '核心功能可以离线使用' %}
+  {% assign offline_text = '项目、设置与音频处理保留在你的电脑上。只有使用 YouTube、在线歌词／封面搜索和更新检查等可选功能时，才会连接相应的第三方服务。' %}
 {% elsif current_lang == 'ja' %}
   {% assign eyebrow = 'DOWNLOADS · VIDEOS' %}
   {% assign title = 'アプリをダウンロード' %}
@@ -65,21 +83,30 @@
   {% assign recent_update = '最近の更新' %}
   {% assign release_notes_label = '更新内容を見る' %}
   {% assign download_label = '最新版をダウンロード' %}
+  {% assign hash_label = 'ZIP SHA-256' %}
+  {% assign download_caution_title = 'ダウンロード前のセキュリティについて' %}
+  {% assign download_caution_text = 'Singing Stream Savior は個人が独立して開発しているソフトウェアで、現在はコード署名がありません。BGM の自動切り替え機能を備えたローカルプレーヤーとして動作し、利用者のデータを収集またはアップロードしません。主要機能はオフラインで利用でき、YouTube リンクの再生、歌詞／カバーの自動検索、更新確認などのオンライン機能を使う場合のみ通信します。未署名のソフトウェアに不安がある場合は、信頼された署名付きバージョンが提供されるまでダウンロードをお控えください。' %}
   {% assign coming_soon = '正式なダウンロードを準備中' %}
   {% assign video_title = '操作動画' %}
   {% assign video_text = '実際のアプリ画面を使い、初期設定や OBS、歌詞機能を紹介します。' %}
   {% assign video_empty = '操作動画は準備中です。' %}
   {% assign watch_label = '動画を再生' %}
   {% assign smartscreen_title = '初回起動時に Windows の保護画面が表示された場合' %}
-  {% assign smartscreen_intro = 'Singing Stream Savior は現在、商用コード署名を使用していないため、Windows SmartScreen が初めてダウンロードしたアプリを未確認として表示することがあります。このページまたは公式 GitHub Release から入手したことを確認し、次の手順で起動してください。' %}
+  {% assign smartscreen_intro = 'Singing Stream Savior は個人で開発されており、現在の Windows 実行ファイルには信頼されたコード署名がありません。そのため SmartScreen が「不明な発行元」または未確認のアプリとして表示することがあります。未署名は悪意があるという意味ではありませんが、Windows は証明書で発行者と改ざんの有無を確認できません。' %}
   {% assign smartscreen_step1 = '「詳細情報」を選択' %}
   {% assign smartscreen_step1_text = 'Windows が隠しているアプリ名と実行オプションを表示します。' %}
   {% assign smartscreen_step2 = '「実行」を選択' %}
-  {% assign smartscreen_step2_text = 'アプリ名が Singing Stream Savior.exe であることを確認して起動します。' %}
+  {% assign smartscreen_step2_text = '入手元が正しく、上記の SHA-256 がファイルと一致する場合にのみ続行してください。' %}
   {% assign smartscreen_alt1 = 'Windows SmartScreen の保護画面と詳細情報リンク' %}
   {% assign smartscreen_alt2 = '詳細情報を開いた Windows SmartScreen に表示される実行ボタン' %}
-  {% assign privacy_title = '通信とファイルの取り扱い' %}
-  {% assign privacy_text = 'Singing Stream Savior は歌配信用のローカルプレーヤー兼 OBS 補助ツールです。YouTube リンク、オンライン歌詞・カバー検索を使わなければ、再生とプロジェクト機能はオフラインで利用できます。曲、歌詞、プロジェクト、個人ファイルを勝手にアップロードすることはありません。通信するのは YouTube の解析、オンライン検索、更新確認など、その機能を利用するときだけです。' %}
+  {% assign verify_title = '公式配布元とハッシュを確認' %}
+  {% assign verify_text = 'このページ、または NoonIsAwesome／Singing-Stream-Savior-Updates の公式 GitHub Release からのみダウンロードしてください。SHA-256 で公開ファイルと同一であることを確認できます。' %}
+  {% assign detection_title = '明確なウイルス検出時は停止' %}
+  {% assign detection_text = 'ウイルス対策を無効にしたり、フォルダー全体を除外したりしないでください。定義ファイルを更新し、検出名、アプリのバージョン、SHA-256 を開発者へ報告してください。' %}
+  {% assign privacy_title = 'アカウント不要・テレメトリなし' %}
+  {% assign privacy_text = '登録やログインは不要で、広告、利用者追跡、分析テレメトリを含みません。曲、歌詞、音声、マイク内容、プロジェクト、個人ファイルを開発者のサーバーへ送信しません。' %}
+  {% assign offline_title = '主要機能はオフラインで利用可能' %}
+  {% assign offline_text = 'プロジェクト、設定、音声処理は PC 内に残ります。YouTube、オンライン歌詞／カバー検索、更新確認などの任意機能を使う場合のみ、対応する第三者サービスへ接続します。' %}
 {% elsif current_lang == 'ko' %}
   {% assign eyebrow = 'DOWNLOADS · VIDEOS' %}
   {% assign title = '앱 다운로드' %}
@@ -90,21 +117,30 @@
   {% assign recent_update = '최근 업데이트' %}
   {% assign release_notes_label = '업데이트 내용 보기' %}
   {% assign download_label = '최신 버전 다운로드' %}
+  {% assign hash_label = 'ZIP SHA-256' %}
+  {% assign download_caution_title = '다운로드 전 보안 안내' %}
+  {% assign download_caution_text = 'Singing Stream Savior는 개인이 독립적으로 개발하는 소프트웨어이며 현재 코드 서명이 제공되지 않습니다. BGM 자동 전환 기능이 포함된 로컬 플레이어로 이해할 수 있으며 사용자 데이터를 수집하거나 업로드하지 않습니다. 핵심 기능은 오프라인에서도 사용할 수 있고 YouTube 링크 재생, 가사／커버 자동 검색, 업데이트 확인 같은 온라인 기능을 사용할 때만 인터넷에 연결합니다. 서명되지 않은 소프트웨어가 걱정된다면 신뢰할 수 있는 서명 버전이 제공될 때까지 다운로드하지 않는 것을 권장합니다.' %}
   {% assign coming_soon = '정식 다운로드 준비 중' %}
   {% assign video_title = '사용 영상' %}
   {% assign video_text = '실제 앱 화면을 기준으로 초기 설정, OBS 화면과 가사 기능을 안내합니다.' %}
   {% assign video_empty = '사용 영상을 준비하고 있습니다.' %}
   {% assign watch_label = '영상 재생' %}
   {% assign smartscreen_title = '처음 실행할 때 Windows 보호 알림이 표시되나요?' %}
-  {% assign smartscreen_intro = 'Singing Stream Savior는 현재 상용 코드 서명을 사용하지 않아 Windows SmartScreen이 처음 다운로드한 앱을 확인되지 않은 앱으로 표시할 수 있습니다. 이 페이지 또는 공식 GitHub Release에서 받은 파일인지 확인한 뒤 아래 두 단계로 실행하세요.' %}
+  {% assign smartscreen_intro = 'Singing Stream Savior는 개인이 독립적으로 개발하고 있으며 현재 Windows 실행 파일에 신뢰할 수 있는 코드 서명이 없습니다. 따라서 SmartScreen이 알 수 없는 게시자 또는 확인되지 않은 앱으로 표시할 수 있습니다. 미서명은 악성이라는 뜻이 아니지만 Windows가 인증서로 게시자와 파일 변조 여부를 확인할 수는 없습니다.' %}
   {% assign smartscreen_step1 = '“추가 정보” 선택' %}
   {% assign smartscreen_step1_text = 'Windows가 숨겨 둔 앱 이름과 실행 옵션을 표시합니다.' %}
   {% assign smartscreen_step2 = '“실행” 선택' %}
-  {% assign smartscreen_step2_text = '앱 이름이 Singing Stream Savior.exe인지 확인한 뒤 실행합니다.' %}
+  {% assign smartscreen_step2_text = '다운로드 출처가 정확하고 위 SHA-256이 파일과 일치할 때만 계속하세요.' %}
   {% assign smartscreen_alt1 = 'Windows SmartScreen 보호 알림과 추가 정보 링크' %}
   {% assign smartscreen_alt2 = '추가 정보를 연 Windows SmartScreen에 표시된 실행 버튼' %}
-  {% assign privacy_title = '어떤 기능이 인터넷이나 파일을 사용하나요?' %}
-  {% assign privacy_text = 'Singing Stream Savior는 노래 방송을 위한 로컬 플레이어 겸 OBS 보조 도구입니다. YouTube 링크, 온라인 가사 또는 커버 검색을 사용하지 않으면 재생과 프로젝트 기능을 오프라인으로 이용할 수 있습니다. 노래, 가사, 프로젝트 또는 개인 파일을 임의로 업로드하지 않으며 YouTube 분석, 온라인 검색, 업데이트 확인처럼 해당 기능을 사용할 때만 인터넷에 연결합니다.' %}
+  {% assign verify_title = '공식 배포처와 해시 확인' %}
+  {% assign verify_text = '이 페이지 또는 NoonIsAwesome／Singing-Stream-Savior-Updates 공식 GitHub Release에서만 다운로드하세요. SHA-256으로 다운로드한 파일이 게시된 파일과 동일한지 확인할 수 있습니다.' %}
+  {% assign detection_title = '백신이 명확히 탐지하면 중지' %}
+  {% assign detection_text = '백신을 끄거나 프로그램 폴더 전체를 예외 처리하지 마세요. 탐지 정보를 업데이트한 뒤 탐지명, 앱 버전과 SHA-256을 개발자에게 알려 확인받으세요.' %}
+  {% assign privacy_title = '계정과 텔레메트리 없음' %}
+  {% assign privacy_text = '가입이나 로그인이 필요 없으며 광고, 사용자 추적, 분석 텔레메트리를 포함하지 않습니다. 노래, 가사, 오디오, 마이크 내용, 프로젝트 또는 개인 파일을 개발자 서버로 전송하지 않습니다.' %}
+  {% assign offline_title = '핵심 기능은 오프라인 사용 가능' %}
+  {% assign offline_text = '프로젝트, 설정과 오디오 처리는 PC에 남습니다. YouTube, 온라인 가사／커버 검색, 업데이트 확인 같은 선택 기능을 사용할 때만 해당 제3자 서비스에 연결합니다.' %}
 {% else %}
   {% assign eyebrow = 'DOWNLOADS · VIDEOS' %}
   {% assign title = 'Software download' %}
@@ -115,21 +151,30 @@
   {% assign recent_update = 'Recent update' %}
   {% assign release_notes_label = 'View release notes' %}
   {% assign download_label = 'Download latest version' %}
+  {% assign hash_label = 'ZIP SHA-256' %}
+  {% assign download_caution_title = 'Security note before downloading' %}
+  {% assign download_caution_text = 'Singing Stream Savior is independently developed by one person and does not currently have a code signature. You can think of it as a local media player with automatic BGM switching: it does not collect or upload user data, and its core features work offline. A connection is needed only for online features such as playing YouTube links, automatically searching for lyrics or cover art, and checking for updates. If you are uncomfortable installing unsigned software, please do not download it yet and wait for a future release with a trusted signature.' %}
   {% assign coming_soon = 'Official download coming soon' %}
   {% assign video_title = 'Operation videos' %}
   {% assign video_text = 'Short videos based on the actual app interface will cover first-time setup, OBS output, and lyrics.' %}
   {% assign video_empty = 'Operation videos are being prepared.' %}
   {% assign watch_label = 'Play tutorial' %}
   {% assign smartscreen_title = 'Seeing a Windows protection message on first launch?' %}
-  {% assign smartscreen_intro = 'Singing Stream Savior does not currently use a commercial code-signing certificate, so Windows SmartScreen may mark a newly downloaded copy as an unrecognized app. Download it only from this page or the official GitHub Release, verify the source, then follow these two steps.' %}
+  {% assign smartscreen_intro = 'Singing Stream Savior is independently developed by one person, and its Windows executable is not yet signed with a trusted code-signing certificate. SmartScreen may therefore show an unknown publisher or unrecognized app warning. Unsigned does not mean malicious, but Windows cannot use a certificate to verify the publisher or detect tampering.' %}
   {% assign smartscreen_step1 = 'Select “More info”' %}
   {% assign smartscreen_step1_text = 'This reveals the application name and the hidden run option.' %}
   {% assign smartscreen_step2 = 'Select “Run anyway”' %}
-  {% assign smartscreen_step2_text = 'Confirm that the application is Singing Stream Savior.exe, then launch it.' %}
+  {% assign smartscreen_step2_text = 'Continue only when the download source is correct and the SHA-256 above matches the file.' %}
   {% assign smartscreen_alt1 = 'Windows SmartScreen protection message with the More info link below the description' %}
   {% assign smartscreen_alt2 = 'Windows SmartScreen showing the Run anyway button after More info is selected' %}
-  {% assign privacy_title = 'What connects to the internet or accesses files?' %}
-  {% assign privacy_text = 'Singing Stream Savior is a local player and OBS companion designed for singing streams. Playback and project features work offline when you do not use YouTube links or online lyric and cover searches. The app does not proactively upload your songs, lyrics, projects, or personal files. Only features such as YouTube resolution, online search, and update checks require a connection when used.' %}
+  {% assign verify_title = 'Verify the official source and hash' %}
+  {% assign verify_text = 'Download only from this page or the official NoonIsAwesome/Singing-Stream-Savior-Updates GitHub Release. SHA-256 verifies that your download is identical to the published file.' %}
+  {% assign detection_title = 'Stop if antivirus reports a specific threat' %}
+  {% assign detection_text = 'Do not disable antivirus protection or exclude the entire application folder. Update its definitions, then report the detection name, app version, and SHA-256 to the developer for review.' %}
+  {% assign privacy_title = 'No account and no telemetry' %}
+  {% assign privacy_text = 'The app requires no registration or login and contains no advertising, user tracking, or analytics telemetry. It does not upload songs, lyrics, audio, microphone content, projects, or personal files to the developer.' %}
+  {% assign offline_title = 'Core features work offline' %}
+  {% assign offline_text = 'Projects, settings, and audio processing remain on your computer. Only optional features such as YouTube, online lyric or cover searches, and update checks connect to the relevant third-party service.' %}
 {% endif %}
 
 <header class="resource-hero">
@@ -146,6 +191,16 @@
       <p>{{ software_text }}</p>
     </div>
   </div>
+  <aside class="download-trust-note" role="note">
+    <span aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false">
+        <path d="M12 3.7 21 20H3L12 3.7Z"></path>
+        <path d="M12 9v5.2"></path>
+        <path d="M12 17.2h.01"></path>
+      </svg>
+    </span>
+    <div><strong>{{ download_caution_title }}</strong><p>{{ download_caution_text }}</p></div>
+  </aside>
   <article class="download-panel">
     <div class="download-panel__mark" aria-hidden="true">
       <svg viewBox="0 0 32 32" focusable="false">
@@ -158,6 +213,7 @@
       <strong>Singing Stream Savior</strong>
       <span>Application {{ resources.software.version }} · Launcher {{ resources.software.launcher_version }}</span>
       {% if resources.software.file_size != '' %}<small>{{ resources.software.file_size }}</small>{% endif %}
+      {% if resources.software.sha256 != '' %}<small class="download-panel__hash"><b>{{ hash_label }}</b><code>{{ resources.software.sha256 }}</code></small>{% endif %}
     </div>
     {% if resources.software.download_url != '' %}
       <a class="resource-action resource-action--primary" href="{{ resources.software.download_url }}" rel="noopener">{{ download_label }}</a>
@@ -194,10 +250,12 @@
         </figure>
       </li>
     </ol>
-    <aside class="smartscreen-guide__privacy">
-      <strong>{{ privacy_title }}</strong>
-      <p>{{ privacy_text }}</p>
-    </aside>
+    <div class="security-facts">
+      <article><strong>{{ verify_title }}</strong><p>{{ verify_text }}</p></article>
+      <article class="security-facts__warning"><strong>{{ detection_title }}</strong><p>{{ detection_text }}</p></article>
+      <article><strong>{{ privacy_title }}</strong><p>{{ privacy_text }}</p></article>
+      <article><strong>{{ offline_title }}</strong><p>{{ offline_text }}</p></article>
+    </div>
   </section>
 </section>
 
