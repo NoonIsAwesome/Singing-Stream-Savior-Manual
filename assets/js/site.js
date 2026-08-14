@@ -156,6 +156,35 @@
     });
   }
 
+  const article = document.querySelector(".manual-article");
+  if (article) {
+    const articleHeadings = [...article.querySelectorAll(":scope > h2[id]")];
+    if (articleHeadings.length >= 2 && articleHeadings.length <= 8) {
+      const outline = document.createElement("nav");
+      outline.className = "article-outline";
+      outline.setAttribute("aria-label", document.body.dataset.outlineLabel || "On this page");
+
+      const outlineTitle = document.createElement("strong");
+      outlineTitle.textContent = document.body.dataset.outlineLabel || "On this page";
+      const outlineList = document.createElement("ul");
+
+      articleHeadings.forEach((heading) => {
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = `#${encodeURIComponent(heading.id)}`;
+        link.textContent = heading.textContent.trim();
+        item.append(link);
+        outlineList.append(item);
+      });
+
+      outline.append(outlineTitle, outlineList);
+      const firstHeading = article.querySelector(":scope > h1");
+      if (firstHeading) {
+        firstHeading.insertAdjacentElement("afterend", outline);
+      }
+    }
+  }
+
   document.querySelectorAll("[data-video-embed]").forEach((placeholder) => {
     placeholder.addEventListener("click", () => {
       const embedUrl = placeholder.dataset.videoEmbed;
@@ -314,14 +343,71 @@
 
   const button = document.querySelector(".nav-toggle");
   const navigation = document.querySelector(".guide-sidebar");
+  const backdrop = document.querySelector(".nav-backdrop");
+  const collapseButton = document.querySelector(".sidebar-collapse");
+  const chapterSearch = document.querySelector("[data-chapter-search]");
+  const chapterSearchEmpty = document.querySelector("[data-chapter-search-empty]");
 
   if (!button || !navigation) {
     return;
   }
 
+  const sidebarStorageKey = "s3s-manual-sidebar-collapsed";
+  const setCollapsed = (collapsed) => {
+    document.body.classList.toggle("sidebar-collapsed", collapsed);
+    if (!collapseButton) {
+      return;
+    }
+    const label = collapsed
+      ? collapseButton.dataset.expandLabel
+      : collapseButton.dataset.collapseLabel;
+    collapseButton.setAttribute("aria-expanded", String(!collapsed));
+    collapseButton.setAttribute("aria-label", label);
+    collapseButton.title = label;
+  };
+
+  let storedCollapsed = false;
+  try {
+    storedCollapsed = window.localStorage.getItem(sidebarStorageKey) === "true";
+  } catch {
+    storedCollapsed = false;
+  }
+  setCollapsed(storedCollapsed);
+
+  collapseButton?.addEventListener("click", () => {
+    const collapsed = !document.body.classList.contains("sidebar-collapsed");
+    setCollapsed(collapsed);
+    try {
+      window.localStorage.setItem(sidebarStorageKey, String(collapsed));
+    } catch {
+      // The preference is optional when storage is unavailable.
+    }
+  });
+
+  if (chapterSearch) {
+    const chapterItems = [...navigation.querySelectorAll(".chapter-list li")];
+    chapterSearch.addEventListener("input", () => {
+      const query = chapterSearch.value.trim().toLocaleLowerCase();
+      let visibleCount = 0;
+      chapterItems.forEach((item) => {
+        const matches = !query || item.textContent.toLocaleLowerCase().includes(query);
+        item.classList.toggle("is-filtered", !matches);
+        if (matches) {
+          visibleCount += 1;
+        }
+      });
+      if (chapterSearchEmpty) {
+        chapterSearchEmpty.hidden = visibleCount !== 0;
+      }
+    });
+  }
+
   const setOpen = (open) => {
     button.setAttribute("aria-expanded", String(open));
     navigation.dataset.open = String(open);
+    if (backdrop) {
+      backdrop.hidden = !open;
+    }
     document.body.style.overflow = open ? "hidden" : "";
   };
 
@@ -335,8 +421,13 @@
     }
   });
 
+  backdrop?.addEventListener("click", () => {
+    setOpen(false);
+    button.focus();
+  });
+
   window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && button.getAttribute("aria-expanded") === "true") {
       setOpen(false);
       button.focus();
     }

@@ -15,17 +15,18 @@
     <meta name="theme-color" content="#090d14">
     <link rel="icon" href="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" sizes="any">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: '2.0.5.3' }}">
-    <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}/{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}">
-    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh-CN/{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
-    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
-    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ site.baseurl }}/ja/{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
-    <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ site.baseurl }}/ko/{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}/{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section == 'advanced-streaming' %}advanced-streaming.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}">
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh-CN/{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section == 'advanced-streaming' %}advanced-streaming.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section == 'advanced-streaming' %}advanced-streaming.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ site.baseurl }}/ja/{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section == 'advanced-streaming' %}advanced-streaming.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
+    <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ site.baseurl }}/ko/{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section == 'advanced-streaming' %}advanced-streaming.html{% elsif section != 'home' %}guide.html#{{ section }}{% endif %}">
     {% seo %}
   </head>
   <body
     class="{% if section == 'home' and page.manual_bundle != true %}intro-layout{% elsif section == 'about' %}creator-layout{% elsif section == 'changelog' %}changelog-layout{% endif %}"
     data-analytics-host="{{ site.analytics.production_host | escape }}"
     data-pageview-endpoint="{{ site.analytics.pageview_endpoint | escape }}"
+    data-outline-label="{{ t.on_this_page | escape }}"
   >
     <a class="skip-link" href="#guide-content">{{ t.skip }}</a>
 
@@ -48,11 +49,11 @@
         <label class="language-control">
           <span>{{ t.language }}</span>
           <select data-language-switcher aria-label="{{ t.language }}">
-            <option data-lang="zh-TW" value="{{ '/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'zh-TW' %}selected{% endif %}>繁體中文</option>
-            <option data-lang="zh-CN" value="{{ '/zh-CN/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'zh-CN' %}selected{% endif %}>简体中文</option>
-            <option data-lang="en" value="{{ '/en/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'en' %}selected{% endif %}>English</option>
-            <option data-lang="ja" value="{{ '/ja/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'ja' %}selected{% endif %}>日本語</option>
-            <option data-lang="ko" value="{{ '/ko/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'ko' %}selected{% endif %}>한국어</option>
+            <option data-lang="zh-TW" value="{{ '/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section == 'advanced-streaming' %}advanced-streaming.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'zh-TW' %}selected{% endif %}>繁體中文</option>
+            <option data-lang="zh-CN" value="{{ '/zh-CN/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section == 'advanced-streaming' %}advanced-streaming.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'zh-CN' %}selected{% endif %}>简体中文</option>
+            <option data-lang="en" value="{{ '/en/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section == 'advanced-streaming' %}advanced-streaming.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'en' %}selected{% endif %}>English</option>
+            <option data-lang="ja" value="{{ '/ja/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section == 'advanced-streaming' %}advanced-streaming.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'ja' %}selected{% endif %}>日本語</option>
+            <option data-lang="ko" value="{{ '/ko/' | relative_url }}{% if section == 'resources' %}resources.html{% elsif section == 'changelog' %}changelog.html{% elsif section == 'about' %}about.html{% elsif section == 'advanced-streaming' %}advanced-streaming.html{% elsif section != 'home' or page.manual_bundle %}guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endif %}" {% if current_lang == 'ko' %}selected{% endif %}>한국어</option>
           </select>
         </label>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav">
@@ -64,11 +65,21 @@
 
     <div class="guide-shell">
       <aside class="guide-sidebar" id="guide-nav">
+        <div class="sidebar-tools">
+          <label class="chapter-search">
+            <span class="visually-hidden">{{ t.search_chapters }}</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><path d="m16 16 4 4"></path></svg>
+            <input type="search" placeholder="{{ t.search_chapters }}" autocomplete="off" data-chapter-search>
+          </label>
+          <button class="sidebar-collapse" type="button" aria-label="{{ t.collapse_nav }}" title="{{ t.collapse_nav }}" data-collapse-label="{{ t.collapse_nav | escape }}" data-expand-label="{{ t.expand_nav | escape }}">
+            <span aria-hidden="true">‹</span>
+          </button>
+        </div>
         <nav aria-label="{{ t.nav_aria }}">
           <p class="nav-label">{{ t.flow }}</p>
           <ol class="chapter-list">
-            {% assign nav_keys = "home,getting-started,library-and-playback,lyrics,obs-and-themes,obs-websocket,workspace-modes,settings-and-troubleshooting,changelog,about" | split: "," %}
-            {% assign nav_labels = "home,getting_started,library,lyrics,themes,websocket,modes,settings,changelog,about" | split: "," %}
+            {% assign nav_keys = "home,getting-started,library-and-playback,lyrics,obs-and-themes,obs-websocket,workspace-modes,advanced-streaming,settings-and-troubleshooting,changelog,about" | split: "," %}
+            {% assign nav_labels = "home,getting_started,library,lyrics,themes,websocket,modes,advanced_streaming,settings,changelog,about" | split: "," %}
             {% for key in nav_keys %}
               {% assign label_key = nav_labels[forloop.index0] %}
               {% if current_lang == 'zh-TW' %}
@@ -78,6 +89,8 @@
                   {% assign target = '/changelog.html' %}
                 {% elsif key == 'about' %}
                   {% assign target = '/about.html' %}
+                {% elsif key == 'advanced-streaming' %}
+                  {% assign target = '/advanced-streaming.html' %}
                 {% else %}
                   {% capture target %}/guide.html#{{ key }}{% endcapture %}
                 {% endif %}
@@ -88,17 +101,20 @@
                   {% capture target %}/{{ current_lang }}/changelog.html{% endcapture %}
                 {% elsif key == 'about' %}
                   {% capture target %}/{{ current_lang }}/about.html{% endcapture %}
+                {% elsif key == 'advanced-streaming' %}
+                  {% capture target %}/{{ current_lang }}/advanced-streaming.html{% endcapture %}
                 {% else %}
                   {% capture target %}{{ language_guide }}#{{ key }}{% endcapture %}
                 {% endif %}
               {% endif %}
               <li>
-                <a href="{{ target | relative_url }}" {% if section == key and page.manual_bundle != true %}aria-current="page"{% endif %}>
-                  <span>{% if forloop.index < 10 %}0{{ forloop.index }}{% else %}{{ forloop.index }}{% endif %}</span>{{ t.nav[label_key] }}
+                <a href="{{ target | relative_url }}" title="{{ t.nav[label_key] | escape }}" {% if section == key and page.manual_bundle != true %}aria-current="page"{% endif %}>
+                  <span class="chapter-number">{% if forloop.index < 10 %}0{{ forloop.index }}{% else %}{{ forloop.index }}{% endif %}</span><span class="chapter-name">{{ t.nav[label_key] }}</span>
                 </a>
               </li>
             {% endfor %}
           </ol>
+          <p class="chapter-search-empty" data-chapter-search-empty hidden>{{ t.no_chapters }}</p>
         </nav>
 
         <div class="sidebar-note">
@@ -106,6 +122,7 @@
           <p>{{ t.stream_tip_text }}</p>
         </div>
       </aside>
+      <button class="nav-backdrop" type="button" aria-label="{{ t.collapse_nav }}" tabindex="-1" hidden></button>
 
       <main class="guide-content" id="guide-content">
         <div class="content-meta">
