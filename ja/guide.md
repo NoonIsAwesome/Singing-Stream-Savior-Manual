@@ -161,9 +161,9 @@ OBS に予約曲を表示するか、最大 1～10 曲の表示数も設定で�
 
 初期状態では無効です。主に OBS の配信時間を読み取り、カラオケ開始時刻を記録し、Set List の曲名前にタイムスタンプを表示するために使用します。通常のセットリストや歌詞表示には不要です。
 
-OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き、サーバーを有効にしてポート（通常 `4455`）とパスワードを確認します。アプリの「設定 > 詳細設定」で WebSocket を有効にし、`127.0.0.1`、同じポートとパスワードを入力して「接続」を押します。
+OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き、サーバーを有効にしてポート（通常 `4455`）とパスワードを確認します。未公開の 2.1.0.0 では「設定 > 配信タイムスタンプ」（現在の公開版では「詳細設定」）で WebSocket を有効にし、`127.0.0.1`、同じポートとパスワードを入力して「接続」を押します。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/ja/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/ja/obs-websocket-settings.png' | relative_url }}" alt="OBS WebSocket の説明と接続項目を表示した詳細設定"></a><figcaption>WebSocket を有効にした場合のみ、接続操作と状態表示を使用できます。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/ja/obs-websocket-settings.png' | relative_url }}" alt="現在の公開版で OBS WebSocket の接続項目を表示した詳細設定"></a><figcaption>この画像は現在の公開版です。2.1.0.0 ではタブ名が「配信タイムスタンプ」へ変わります。</figcaption></figure>
 
 右下の緑は接続済み、黄は接続または再接続中、赤は未接続です。本番前にテスト配信でタイムスタンプを確認してください。
 
@@ -185,7 +185,7 @@ OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き�
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 設定とトラブル対処
 
-設定には表示言語、プロジェクト／メディア保存先、YouTube 形式、任意で使用する WebSocket が含まれます。他の PC へ移す前に `.bgmsproj`、ローカル音源、読み込んだ歌詞をバックアップしてください。
+未公開の 2.1.0.0 では、YouTube ダウンロード設定が「ファイルとプロジェクト」へ移動し、「詳細設定」は「配信タイムスタンプ」へ名称変更されます。また再生、ミックス、モニター、録音を扱う「オーディオルーティング」が追加されます。画像付きの概要は[高度な配信モード](advanced-streaming.md)を参照してください。他の PC へ移す前に `.bgmsproj`、ローカル音源、読み込んだ歌詞をバックアップしてください。
 
 最上位の `Singing Stream Savior.exe` は、今後の更新を確認し、ダークテーマの進行画面に状態を表示します。新しいバージョンがある場合は、ダウンロードとインストールの前に確認します。更新しない場合も、現在のバージョンをそのまま起動できます。外側のランチャー、`current.json`、内部フォルダーは同じ相対位置に保ってください。新しいランチャーが必要な場合や更新に失敗した場合は、異なる版の DLL を混ぜず、最新版の完全 ZIP を展開してください。
 

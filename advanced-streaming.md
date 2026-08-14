@@ -9,6 +9,55 @@ translation_key: advanced-streaming
 
 從 **2.1.0.0** 起，進階直播模式可以在 Singing Stream Savior 內混合 BGM、伴奏與處理後的麥克風，再把完整 Stream Mix 送到 OBS、Discord 或其他直播軟體。
 
+<aside class="version-preview" role="note">
+  <span class="version-preview__badge">2.1.0.0 PREVIEW</span>
+  <div><strong>本頁介紹的是尚未發布版本。</strong><p>目前公開下載版可能尚未出現以下分頁與控制項；畫面與名稱仍可能在正式發布前微調。</p></div>
+</aside>
+
+## 2.1.0.0 設定位置變更
+
+- **YouTube 下載**已移至 **設定 → 檔案與專案**，與專案路徑、媒體資料夾放在同一頁。
+- 原本的 **進階設定**已改名為 **直播時間戳**，OBS WebSocket、直播時間讀取與 Set List 時間戳都在這裡設定。
+- 新增 **音訊路由**分頁，集中管理一般播放、進階混音、音訊驅動、輸出、監聽與錄音。
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.1.0.0 · AUDIO ROUTING</p><h2>選擇一般播放或進階直播模式</h2><p>在<strong>設定 → 音訊路由</strong>先選擇路由模式。一般播放模式只輸出本程式的 BGM 與伴奏；進階直播模式會加入麥克風、Profile 效果鏈、完整混音與虛擬輸出。</p></div>
+  <div class="feature-shot-grid feature-shot-grid--wide">
+    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/01-audio-routing-mode.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/01-audio-routing-mode.jpg' | relative_url }}" alt="音訊路由分頁中的一般播放與進階直播模式選單" loading="lazy" decoding="async"></a><figcaption>不需要處理麥克風時可維持一般播放模式；要把完整混音送往 OBS 或 Discord 時才使用進階直播模式。</figcaption></figure>
+    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/02-audio-driver.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/02-audio-driver.jpg' | relative_url }}" alt="ASIO 與 Windows Audio 音訊驅動選項" loading="lazy" decoding="async"></a><figcaption>ASIO 適合低延遲唱歌；Windows Audio 相容模式較容易搭配一般 Windows 裝置。</figcaption></figure>
+    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/04-playback-api.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/04-playback-api.jpg' | relative_url }}" alt="Windows Audio 的自動、WASAPI、DirectSound 與 MME 播放方式" loading="lazy" decoding="async"></a><figcaption>「自動（建議）」會優先選擇合適方式；遇到裝置相容問題時才手動改成 WASAPI、DirectSound 或 MME。</figcaption></figure>
+    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/03-bgm-output-graph.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/03-bgm-output-graph.jpg' | relative_url }}" alt="一般播放模式的 BGM 到系統輸出路由圖與電平表" loading="lazy" decoding="async"></a><figcaption>路由圖會顯示訊號實際流向、預估延遲、Buffer、取樣率與穩定度。</figcaption></figure>
+  </div>
+  <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}" alt="包含 BGM、麥克風、人聲 Profile、直播混音、虛擬輸出、監聽與錄音的完整音訊路由圖" loading="lazy" decoding="async"></a><figcaption>進階直播模式把訊號來源、兩組人聲 Profile、混音、Stream Output、監聽與錄音放在同一張可視化路由圖中。</figcaption></figure>
+</div>
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>建立與編輯人聲 Profiles</h2><p>每個 Profile 是一條可重用的人聲效果鏈。可以新增內建效果或 VST3 Plugin、拖曳調整處理順序、暫時停用單一 Block，並先試聽再儲存。</p></div>
+  <div class="feature-shot-grid">
+    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}" alt="唱歌高音域 Profile 的動音抑制器、EQ、殘響與限制器效果鏈" loading="lazy" decoding="async"></a><figcaption>可為高音域、低音域、KTV、古風等演唱情境建立不同效果鏈。</figcaption></figure>
+    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}" alt="直播聊天 Profile 的輸入增益、噪音閘與限制器效果鏈" loading="lazy" decoding="async"></a><figcaption>聊天與唱歌 Profile 可分開管理，切換時不需要重新調整每一顆效果器。</figcaption></figure>
+  </div>
+</div>
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">SONG AUTOMATION</p><h2>用歌曲標籤自動切換 Profile</h2><p>歌曲列表的標籤按鈕可以指定人聲 Profile。播放該首伴奏時，軟體會自動切換到對應效果鏈；選擇<strong>自動 · 唱歌 Profile</strong>則使用目前預設的唱歌 Profile。</p></div>
+  <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/08-song-profile-tag.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/08-song-profile-tag.jpg' | relative_url }}" alt="歌曲列表中可選擇自動或特定人聲 Profile 的標籤選單" loading="lazy" decoding="async"></a><figcaption>適合替不同音域、曲風或特殊歌曲預先配好效果；正式演唱前仍建議先試唱並確認音量。</figcaption></figure>
+</div>
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">LIVE CONTROL</p><h2>直播中手動切換效果器與麥克風靜音</h2><p>工作區上方可隨時改用指定 Profile，或交回歌曲標籤自動切換。旁邊的麥克風按鈕可立即靜音／解除靜音；切換後請以路由頁的電平表確認訊號狀態。</p></div>
+  <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/advanced-streaming/09-manual-profile-mic-controls.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/09-manual-profile-mic-controls.jpg' | relative_url }}" alt="工作區上方的監聽來源、耳機、錄音、麥克風靜音與 Profile 選單" loading="lazy" decoding="async"></a><figcaption>手動選擇會立即套用；要恢復依歌曲標籤切換，選回「自動切換 Profile」。</figcaption></figure>
+</div>
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>選擇監聽內容並錄下完整混音</h2><p>耳機按鈕控制監聽，來源可以是 BGM／伴奏、完整混音、加入濕聲或乾聲的組合，或只聽處理後麥克風。錄音可選擇完整輸出或目前監聽內容，並可使用 WAV 16-bit PCM 或 WAV 32-bit Float。</p></div>
+  <div class="feature-shot-grid feature-shot-grid--compact">
+    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/10-monitor-source.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/10-monitor-source.jpg' | relative_url }}" alt="BGM、完整混音、濕聲乾聲與處理後麥克風的監聽來源選單" loading="lazy" decoding="async"></a><figcaption>監聽只影響自己耳機中聽到的內容；Stream Output 仍依音訊路由設定輸出。</figcaption></figure>
+    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/11-recording-options.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/11-recording-options.jpg' | relative_url }}" alt="完整輸出、監聽內容、WAV 格式與錄音資料夾選項" loading="lazy" decoding="async"></a><figcaption>32-bit Float 適合保留後製空間但檔案較大；一般交付可選 16-bit PCM。</figcaption></figure>
+  </div>
+  <p><strong>避免回授：</strong>開啟麥克風監聽時請使用耳機，不要用會被麥克風再次收到的喇叭。正式直播前先做短錄音，確認人聲、伴奏、音量與延遲。</p>
+</div>
+
 ```text
 Singing Stream Savior → 虛擬音訊線 → OBS／Discord
 ```
@@ -67,7 +116,7 @@ Singing Stream Savior → 虛擬音訊線 → OBS／Discord
   </section>
 </div>
 
-## 重新啟動後連接 Singing Stream Savior
+### 重新啟動後連接 Singing Stream Savior
 
 1. 開啟 **設定 → 音訊路由**，選擇 **進階直播模式（混合輸出）**。
 2. 按 **設定虛擬輸出…**，再按 **重新整理裝置**。
@@ -78,7 +127,7 @@ Singing Stream Savior → 虛擬音訊線 → OBS／Discord
 
 > 若 OBS 已直接擷取原始麥克風，使用完整 Stream Mix 後請停用重複的麥克風來源，否則人聲可能疊加、變大或產生相位感。
 
-## 找不到 CABLE Input／Output
+### 找不到 CABLE Input／Output
 
 - 先確認安裝後已真正重新啟動 Windows，而不是只重開應用程式。
 - 確認安裝程式是在完整解壓後，以系統管理員身分執行。

@@ -161,9 +161,9 @@ OBS 대기 목록 표시 여부와 1–10곡 표시 한도도 정할 수 있습�
 
 기본값은 꺼짐입니다. 현재 주요 목적은 OBS 방송 시간을 읽고 반주 시작 시각을 기록하여 Set List의 곡 이름 앞에 타임스탬프를 표시하는 것입니다. 일반 세트리스트와 가사 오버레이에는 필요하지 않습니다.
 
-OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버를 켠 뒤 포트(보통 `4455`)와 비밀번호를 확인합니다. 앱의 **설정 > 고급 설정**에서 WebSocket을 켜고 `127.0.0.1`, 같은 포트와 비밀번호를 입력한 다음 **연결**을 누르세요.
+OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버를 켠 뒤 포트(보통 `4455`)와 비밀번호를 확인합니다. 아직 공개되지 않은 2.1.0.0에서는 **설정 > 방송 타임스탬프**(현재 공개판은 **고급 설정**)에서 WebSocket을 켜고 `127.0.0.1`, 같은 포트와 비밀번호를 입력한 다음 **연결**을 누르세요.
 
-<figure class="manual-figure"><a href="{{ '/assets/images/ko/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/ko/obs-websocket-settings.png' | relative_url }}" alt="OBS WebSocket 안내와 연결 정보를 표시한 고급 설정"></a><figcaption>WebSocket을 켠 경우에만 연결 버튼과 상태가 활성화됩니다.</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/ko/obs-websocket-settings.png' | relative_url }}" alt="현재 공개판에서 OBS WebSocket 연결 정보를 표시한 고급 설정"></a><figcaption>이 이미지는 현재 공개판입니다. 2.1.0.0부터 탭 이름이 “방송 타임스탬프”로 바뀝니다.</figcaption></figure>
 
 오른쪽 아래 녹색은 연결됨, 노란색은 연결 또는 재연결 중, 빨간색은 연결되지 않음을 뜻합니다. 실제 방송 전에 테스트 방송으로 타임스탬프를 확인하세요.
 
@@ -185,7 +185,7 @@ OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 설정 및 문제 해결
 
-설정에는 화면 언어, 프로젝트/미디어 경로, YouTube 형식과 선택 사항인 WebSocket이 있습니다. 다른 PC로 옮기기 전에 `.bgmsproj`, 로컬 미디어와 가져온 가사를 함께 백업하세요.
+아직 공개되지 않은 2.1.0.0에서는 YouTube 다운로드 설정이 “파일 및 프로젝트”로 이동하고, “고급 설정”은 “방송 타임스탬프”로 이름이 바뀝니다. 재생, 믹스, 모니터와 녹음을 관리하는 “오디오 라우팅” 탭도 추가됩니다. 이미지 안내는 [고급 방송 모드](advanced-streaming.md)를 참고하세요. 다른 PC로 옮기기 전에 `.bgmsproj`, 로컬 미디어와 가져온 가사를 함께 백업하세요.
 
 최상위 `Singing Stream Savior.exe`는 이후 버전을 확인하고 어두운 상태 창에 진행 상황을 표시합니다. 새 버전이 있으면 다운로드와 설치 전에 먼저 확인하며, 업데이트하지 않아도 현재 버전을 계속 실행할 수 있습니다. 외부 실행기, `current.json`과 내부 폴더의 상대 위치를 유지하세요. 더 새로운 실행기가 필요하거나 업데이트가 완료되지 않으면 서로 다른 버전의 DLL을 섞지 말고 최신 전체 ZIP을 새로 압축 해제하세요.
 

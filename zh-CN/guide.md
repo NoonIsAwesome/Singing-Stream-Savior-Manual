@@ -161,9 +161,9 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 
 此功能默认关闭，目前主要用于读取 OBS 直播时间、记录伴奏开始时间，并在 Set List 歌名前显示时间戳。一般歌单与歌词画面不需要 WebSocket。
 
-在 OBS Studio 28 以上版本打开“工具 > WebSocket 服务器设置”，启用服务器并确认端口（通常为 `4455`）与密码。再到软件“设置 > 高级设置”，启用 WebSocket，填写 `127.0.0.1`、端口和密码后按“连接”。
+在 OBS Studio 28 以上版本打开“工具 > WebSocket 服务器设置”，启用服务器并确认端口（通常为 `4455`）与密码。在尚未发布的 2.1.0.0 中，请到“设置 > 直播时间戳”（当前公开版仍称“高级设置”），启用 WebSocket，填写 `127.0.0.1`、端口和密码后按“连接”。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/obs-websocket-settings.png' | relative_url }}" alt="高级设置中的 OBS WebSocket 说明和连接资料"></a><figcaption>启用选项后，连接按钮与状态显示才会出现。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/obs-websocket-settings.png' | relative_url }}" alt="当前公开版高级设置中的 OBS WebSocket 说明和连接资料"></a><figcaption>此图为当前公开版画面；2.1.0.0 起分页名称改为“直播时间戳”。</figcaption></figure>
 
 右下角绿灯为已连接，黄灯为连接中，红灯为未连接。正式直播前请先用测试直播确认时间戳。
 
@@ -185,7 +185,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 设置与疑难解答
 
-设置包含界面语言、项目/媒体路径、YouTube 下载格式与选用的 WebSocket。搬到其他电脑前，请备份 `.bgmsproj`、本地媒体和自行导入的歌词。
+尚未发布的 2.1.0.0 会把 YouTube 下载选项移到“文件与项目”，把“高级设置”改名为“直播时间戳”，并新增包含播放、混音、监听与录音的“音频路由”分页。图解预览请参阅[高级直播模式](advanced-streaming.md)。搬到其他电脑前，请备份 `.bgmsproj`、本地媒体和自行导入的歌词。
 
 最外层的 `Singing Stream Savior.exe` 会检查后续版本，并在深色状态窗口显示进度。发现更新时会先询问是否下载和安装；选择不更新仍可继续打开当前版本。请保持外层启动器、`current.json` 和内部文件夹的相对位置不变。如果更新要求较新的启动器或无法完成，请下载最新版完整 ZIP，不要混合覆盖不同版本的 DLL。
 

@@ -188,11 +188,11 @@ Preview-only tools provide transparent, dark, light, custom-color, or image back
 
 OBS WebSocket is optional and disabled by default. Its primary purpose is to read the live OBS timer, record when a karaoke track starts, and show timestamps before songs in supported Set Lists. Normal set-list and lyric overlays work without it.
 
-In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable the server, keep port `4455` unless you changed it, and copy the password. In Singing Stream Savior, open **Settings > Advanced**, enable OBS WebSocket, enter `127.0.0.1`, the matching port and password, then choose **Connect**.
+In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable the server, keep port `4455` unless you changed it, and copy the password. In Singing Stream Savior 2.1.0.0, open **Settings > Stream Timestamps** (called **Advanced** in the current public version), enable OBS WebSocket, enter `127.0.0.1`, the matching port and password, then choose **Connect**.
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/en/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/en/obs-websocket-settings.png' | relative_url }}" alt="Advanced settings showing OBS WebSocket instructions and connection fields"></a>
-  <figcaption>Connection controls remain disabled until OBS WebSocket is enabled.</figcaption>
+  <a href="{{ '/assets/images/en/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/en/obs-websocket-settings.png' | relative_url }}" alt="Current public version's Advanced settings showing OBS WebSocket connection fields"></a>
+  <figcaption>This is the current public-version screen. The tab is renamed Stream Timestamps in the unreleased 2.1.0.0.</figcaption>
 </figure>
 
 The status indicator appears at the lower-right only when enabled: green means connected, yellow means connecting/reconnecting, and red means disconnected. Test timestamps with a private test stream before relying on them live.
@@ -217,7 +217,7 @@ Switching modes only changes which controls are visible. A song already playing 
 <a id="settings-and-troubleshooting"></a>
 ## 07 · Settings and troubleshooting
 
-Settings cover interface language, project/media folders, YouTube download format, and optional OBS WebSocket controls. Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
+In the unreleased 2.1.0.0, YouTube download options move to **Files &amp; Projects**, **Advanced** is renamed **Stream Timestamps**, and the new **Audio Routing** tab contains playback, mixing, monitor, and recording controls. See [Advanced Streaming Mode](advanced-streaming.md) for the illustrated preview. Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
 
 The outer `Singing Stream Savior.exe` checks for future releases and shows its progress in a dark status window. When an update is available, it asks before downloading or installing it; declining still opens the installed version. Keep the outer launcher, `current.json`, and the internal folders together. If the launcher requires a newer launcher or cannot complete an update, download a fresh complete ZIP instead of mixing DLLs from different versions.
 

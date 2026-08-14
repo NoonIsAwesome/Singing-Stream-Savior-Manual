@@ -29,7 +29,7 @@ OBS WebSocket 預設關閉，可提供以下功能：
 
 ## 在歌回救星連線
 
-1. 開啟「設定 > 進階設定」。
+1. 在 2.1.0.0 開啟「設定 > 直播時間戳」。目前公開版則仍是「設定 > 進階設定」。
 2. 勾選「啟用 OBS WebSocket 連線」。
 3. 主機填入 `127.0.0.1`。
 4. 連接埠填入 `4455`，或填入 OBS 中自行設定的連接埠。
@@ -40,9 +40,9 @@ OBS WebSocket 預設關閉，可提供以下功能：
 
 <figure class="manual-figure">
   <a href="assets/images/obs-websocket-settings.png">
-    <img src="assets/images/obs-websocket-settings.png" alt="進階設定中的 OBS WebSocket 說明、啟用開關、主機、連接埠、密碼與連線按鈕">
+    <img src="assets/images/obs-websocket-settings.png" alt="舊版進階設定中的 OBS WebSocket 說明、啟用開關、主機、連接埠、密碼與連線按鈕">
   </a>
-  <figcaption>進階設定內含 OBS 端啟用步驟與連線資料；WebSocket 預設為關閉。</figcaption>
+  <figcaption>此圖為目前公開版畫面；2.1.0.0 起分頁名稱改為「直播時間戳」，設定內容與用途不變。</figcaption>
 </figure>
 
 ## 連線狀態
