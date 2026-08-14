@@ -19,6 +19,7 @@ zh-TW:
   back_home: 回到首頁
   language: 語言
   version: 版本
+  download_windows: 下載 Windows 版
   nav:
     home: 軟體介紹
     getting_started: 開始使用
@@ -54,6 +55,7 @@ zh-CN:
   back_home: 返回首页
   language: 语言
   version: 版本
+  download_windows: 下载 Windows 版
   nav:
     home: 软件介绍
     getting_started: 开始使用
@@ -89,6 +91,7 @@ en:
   back_home: Back to top
   language: Language
   version: Version
+  download_windows: Download for Windows
   nav:
     home: About the app
     getting_started: Getting started
@@ -124,6 +127,7 @@ ja:
   back_home: トップへ戻る
   language: 言語
   version: バージョン
+  download_windows: Windows 版をダウンロード
   nav:
     home: アプリ紹介
     getting_started: はじめに
@@ -159,6 +163,7 @@ ko:
   back_home: 맨 위로
   language: 언어
   version: 버전
+  download_windows: Windows용 다운로드
   nav:
     home: 앱 소개
     getting_started: 시작하기
