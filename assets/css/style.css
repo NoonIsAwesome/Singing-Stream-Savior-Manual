@@ -3660,25 +3660,33 @@ body {
   }
 }
 
-.manual-cta {
+.manual-article a.manual-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 46px;
   margin: 8px 0 24px;
   padding: 11px 18px;
-  color: #07121d;
+  color: #fff;
   font-weight: 800;
   text-decoration: none;
-  background: linear-gradient(135deg, var(--amber), #ffd36b);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #0b5f91, #0f6f9f);
+  border: 1px solid #4ab7e8;
   border-radius: 10px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 24px rgba(10, 113, 174, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: filter 140ms ease, transform 140ms ease;
 }
 
-.manual-cta:hover {
-  color: #07121d;
+.manual-article a.manual-cta:hover {
+  color: #fff;
+  filter: brightness(1.1);
   transform: translateY(-1px);
+}
+
+.manual-article a.manual-cta:focus-visible {
+  color: #fff;
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
 }
 
 .setup-steps {
