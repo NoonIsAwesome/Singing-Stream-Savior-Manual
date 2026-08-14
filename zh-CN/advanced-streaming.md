@@ -3,6 +3,7 @@ title: 高级直播模式与 VB-CABLE 安装
 description: 在 Singing Stream Savior 2.1.0.0 设置麦克风混音、虚拟输出、OBS 与 Discord
 lang: zh-CN
 translation_key: advanced-streaming
+published: false
 ---
 
 # 高级直播模式

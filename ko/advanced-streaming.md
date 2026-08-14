@@ -3,6 +3,7 @@ title: 고급 방송 모드와 VB-CABLE 설치
 description: Singing Stream Savior 2.1.0.0의 마이크 믹스와 가상 출력을 OBS 및 Discord에 연결하는 방법
 lang: ko
 translation_key: advanced-streaming
+published: false
 ---
 
 # 고급 방송 모드

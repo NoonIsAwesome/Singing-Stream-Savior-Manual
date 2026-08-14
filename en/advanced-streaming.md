@@ -3,6 +3,7 @@ title: Advanced Streaming Mode and VB-CABLE setup
 description: Route the processed microphone and complete stream mix from Singing Stream Savior 2.1.0.0 to OBS or Discord
 lang: en
 translation_key: advanced-streaming
+published: false
 ---
 
 # Advanced Streaming Mode

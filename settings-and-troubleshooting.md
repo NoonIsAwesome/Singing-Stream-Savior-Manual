@@ -34,10 +34,6 @@ translation_key: settings-and-troubleshooting
 
 包含 OBS WebSocket 功能說明、OBS 端啟用步驟、主機、連接埠、密碼及「連線」按鈕。這項設定主要用於直播時間戳，並非使用歌單或歌詞 Overlay 的必要條件。2.1.0.0 尚未發布；目前公開版仍可能顯示舊名稱「進階設定」。
 
-### 音訊路由（2.1.0.0 新增）
-
-一般播放、進階直播混音、ASIO／Windows Audio、虛擬輸出、監聽與錄音都集中在此頁。完整圖解請參考[進階直播模式](advanced-streaming.md)。
-
 ## 專案與媒體備份
 
 `.bgmsproj` 保存專案資料，但本機音訊原檔仍可能位於其他資料夾。要搬到另一台電腦前，建議：

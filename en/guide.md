@@ -217,7 +217,7 @@ Switching modes only changes which controls are visible. A song already playing 
 <a id="settings-and-troubleshooting"></a>
 ## 07 · Settings and troubleshooting
 
-In the unreleased 2.1.0.0, YouTube download options move to **Files &amp; Projects**, **Advanced** is renamed **Stream Timestamps**, and the new **Audio Routing** tab contains playback, mixing, monitor, and recording controls. See [Advanced Streaming Mode](advanced-streaming.md) for the illustrated preview. Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
+Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
 
 The outer `Singing Stream Savior.exe` checks for future releases and shows its progress in a dark status window. When an update is available, it asks before downloading or installing it; declining still opens the installed version. Keep the outer launcher, `current.json`, and the internal folders together. If the launcher requires a newer launcher or cannot complete an update, download a fresh complete ZIP instead of mixing DLLs from different versions.
 

@@ -3,6 +3,7 @@ title: 高度な配信モードと VB-CABLE のインストール
 description: Singing Stream Savior 2.1.0.0 のマイクミックスと仮想出力を OBS・Discord に接続する方法
 lang: ja
 translation_key: advanced-streaming
+published: false
 ---
 
 # 高度な配信モード
