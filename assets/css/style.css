@@ -2061,7 +2061,7 @@ body {
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16);
 }
 
-.manual-article a:not(.intro-button):not(.resource-action):not(.creator-link) {
+.manual-article a:not(.intro-button):not(.resource-action):not(.creator-link):not(.manual-cta) {
   color: var(--blue-strong);
 }
 
