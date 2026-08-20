@@ -8,6 +8,10 @@ software:
   sha256: "b65b400c4e7f09f4b83e9d1e0f173f646ed022485554506886f6f058908409cc"
   updated_at: "2026-08-09"
 
+support:
+  ecpay_url: "https://p.ecpay.com.tw/3604623"
+  paypal_url: "https://streamlabs.com/noon_0606/tip"
+
 # file_url 可放網站內的 MP4；embed_url 可使用下列外部影片：
 # Google Drive: https://drive.google.com/file/d/FILE_ID/preview
 # YouTube: https://www.youtube-nocookie.com/embed/VIDEO_ID

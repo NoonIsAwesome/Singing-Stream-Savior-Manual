@@ -13,7 +13,7 @@
   {% assign support_action = '寫信至 noon.aepro@gmail.com' %}
   {% assign support_note = '請勿在信件中附上密碼、OBS WebSocket 密碼、API 金鑰或其他私人資料。' %}
   {% assign social_kicker = '直播與近況' %}
-  {% assign social_title = '在這些地方找到 Noon' %}
+  {% assign social_title = '沐橙的各種社群連結' %}
   {% assign social_text = 'YouTube 是主要直播與影片平台；第一手近況通常會發布在 X，也歡迎加入 Discord 社群。' %}
   {% assign youtube_description = '主要直播和影片發布平台，請來直播上找我玩！' %}
   {% assign x_description = '主要發文的平台，通常第一手訊息會在這裡。' %}
@@ -166,10 +166,13 @@
   <p class="support-privacy"><span aria-hidden="true">i</span>{{ support_note }}</p>
 </section>
 
-<section class="creator-section" aria-labelledby="creator-social-title">
+<section class="creator-section" id="social-links" aria-labelledby="creator-social-title">
   <div class="creator-section__heading">
     <p class="creator-eyebrow">{{ social_kicker }}</p>
-    <h2 id="creator-social-title">{{ social_title }}</h2>
+    <div class="creator-section__title">
+      <h2 id="creator-social-title">{{ social_title }}</h2>
+      <a class="creator-section__permalink" href="#social-links" aria-label="{{ social_title }}">#</a>
+    </div>
     <p>{{ social_text }}</p>
   </div>
   <div class="social-links">

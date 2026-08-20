@@ -2291,6 +2291,46 @@ body {
   font-size: 0.72rem;
 }
 
+.download-support {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 16px 18px;
+  background: rgba(242, 181, 93, 0.065);
+  border: 1px solid #4d412b;
+  border-left: 3px solid #e3ad62;
+  border-radius: 0 9px 9px 0;
+}
+
+.download-support__copy {
+  min-width: 0;
+}
+
+.download-support__copy strong {
+  color: #f2ca91;
+}
+
+.download-support__copy p {
+  margin: 3px 0 0;
+  color: var(--ink-600);
+  line-height: 1.65;
+}
+
+.download-support__actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.download-support__actions .resource-action {
+  gap: 7px;
+  white-space: nowrap;
+}
+
 .download-trust-note {
   display: grid;
   grid-template-columns: 28px minmax(0, 1fr);
@@ -2936,6 +2976,10 @@ body {
   margin: clamp(70px, 9vw, 100px) 0;
 }
 
+#social-links {
+  scroll-margin-top: 24px;
+}
+
 .creator-section__heading {
   max-width: 720px;
   margin-bottom: 24px;
@@ -2944,6 +2988,29 @@ body {
 .manual-article .creator-section__heading h2 {
   margin: 0 0 8px;
   font-size: clamp(1.8rem, 4vw, 2.65rem);
+}
+
+.creator-section__title {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.manual-article .creator-section__title h2 {
+  margin-bottom: 8px;
+}
+
+.manual-article .creator-section__permalink {
+  color: #77c7fa;
+  font: 750 1rem/1 ui-monospace, "Cascadia Mono", monospace;
+  text-decoration: none;
+  opacity: 0.72;
+}
+
+.manual-article .creator-section__permalink:hover,
+.manual-article .creator-section__permalink:focus-visible {
+  color: #bde7ff;
+  opacity: 1;
 }
 
 .creator-section__heading > p:last-child {
@@ -3575,6 +3642,16 @@ body {
     align-items: flex-start;
     flex-direction: column;
     gap: 5px;
+  }
+
+  .download-support {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .download-support__actions {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .smartscreen-guide {
