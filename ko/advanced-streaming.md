@@ -1,6 +1,6 @@
 ---
-title: 고급 방송 모드와 VB-CABLE 설치
-description: Singing Stream Savior 2.1.0.0의 마이크 믹스와 가상 출력을 OBS 및 Discord에 연결하는 방법
+title: 2.1.0.0 고급 방송, Profiles 및 오디오 라우팅 전체 안내
+description: 2.1.0.0 라이브 컨트롤, 보컬 Profiles, 내장 효과, 라우팅, Meter, 녹음, OBS 직접 출력과 시스템 트레이를 자세히 설명합니다
 lang: ko
 translation_key: advanced-streaming
 published: false
@@ -34,6 +34,27 @@ published: false
   <div class="feature-shot-grid"><figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}" alt="고음역 노래 Profile의 다이내믹 억제, EQ, 리버브와 리미터" loading="lazy" decoding="async"></a><figcaption>고음역, 저음역, KTV, 고풍 등 노래 상황별로 다른 체인을 만들 수 있습니다.</figcaption></figure><figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}" alt="방송 대화 Profile의 입력 게인, 노이즈 게이트와 리미터" loading="lazy" decoding="async"></a><figcaption>대화용과 노래용 Profile을 나누면 방송 중 효과를 하나씩 다시 조절할 필요가 없습니다.</figcaption></figure></div>
 </div>
 
+### Profile에 저장되는 내용
+
+- 각 Block의 활성 상태, 파라미터와 처리 순서를 함께 저장하고 프로젝트를 다시 열 때 복원합니다.
+- 내장 효과와 최대 8개의 VST3 Plugin 슬롯을 함께 사용할 수 있으며 VST3 parameter state도 Profile에 저장합니다.
+- Block을 드래그하면 실제 처리 순서가 바뀝니다. Bypass는 설정을 삭제하지 않고 처리만 잠시 건너뜁니다.
+- 편집 중 결과를 바로 들어 볼 수 있습니다. 라이브 화면으로 돌아가거나 트레이로 최소화하거나 편집기를 닫으면 Profile 미리 듣기를 끝내고 현재 방송 모니터로 복원합니다.
+- Factory Profile은 실용적인 출발점입니다. 마이크, 방 소음, 음역과 창법에 맞게 조절한 뒤 개인 Profile로 저장하세요.
+
+### 12개 내장 보컬 효과
+
+모든 편집기는 무광 패널, 눈금 노브, 실시간 그래프와 도움말 버튼을 공유합니다. 간단 모드는 용도별 시작점을, 고급 모드는 전체 파라미터를 제공합니다.
+
+- **Input Gain**: 체인 입력 레벨을 맞추고 첫 단계의 클리핑을 방지합니다.
+- **Background Attenuation／Noise Gate／De-esser**: 지속 소음, 구절 사이 키보드 소리, 강한 치찰음을 각각 정리합니다.
+- **Compressor／Limiter**: 작은 소리와 큰 소리의 차이를 줄이고 Profile 끝에서 갑작스러운 피크를 막습니다.
+- **Equalizer／Saturation／Air Enhancer**: 불필요한 저역, 두께, 명료도와 Air 느낌을 조절합니다.
+- **Voice Changer**: Pitch와 Formant를 함께 바꿔 캐릭터나 특정 파트 효과를 만듭니다.
+- **Delay／Reverb**: KTV, 발라드, Plate 또는 긴 공간감을 만듭니다.
+
+Profile 뒤에는 전체 방송용 **Mix Bus Compressor**, **Stream Output Limiter**, Master 음량이 있습니다. 이들은 개별 Profile의 음색 설정을 다시 쓰지 않습니다.
+
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">SONG AUTOMATION</p><h2>곡 태그로 Profile 자동 전환</h2><p>곡 목록의 태그 버튼에서 음성 Profile을 지정하세요. 해당 반주를 재생하면 연결된 효과 체인으로 자동 전환됩니다. <strong>자동 · 노래 Profile</strong>은 현재 기본 노래 Profile을 사용합니다.</p></div>
   <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/08-song-profile-tag.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/08-song-profile-tag.jpg' | relative_url }}" alt="곡마다 자동 또는 특정 음성 Profile을 선택하는 태그 메뉴" loading="lazy" decoding="async"></a><figcaption>음역, 장르 또는 특별한 곡에 맞춰 효과를 미리 준비할 수 있습니다. 실제 방송 전에 노래와 음량을 시험하세요.</figcaption></figure>
@@ -44,10 +65,40 @@ published: false
   <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/advanced-streaming/09-manual-profile-mic-controls.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/09-manual-profile-mic-controls.jpg' | relative_url }}" alt="모니터 소스, 헤드폰, 녹음, 마이크 음소거와 Profile 컨트롤" loading="lazy" decoding="async"></a><figcaption>수동 선택은 즉시 적용됩니다. 곡 태그를 다시 따르려면 자동 Profile 전환을 선택하세요.</figcaption></figure>
 </div>
 
+### 상단 바 컨트롤
+
+- **모니터 소스**에서 BGM／반주, 전체 믹스, Wet／Dry 보컬 조합 또는 처리된 마이크만 선택합니다.
+- **헤드폰**은 선택한 모니터를 켜고 끄며 소스 선택은 유지합니다.
+- **녹음** 메인 버튼은 시작／정지, 메뉴는 전체 출력／모니터 내용, WAV 형식과 저장 폴더를 설정합니다.
+- **마이크**는 즉시 음소거／복원하며 트레이 메뉴와 같은 상태 아이콘을 사용합니다.
+- **Profile**은 수동 효과 체인 또는 곡 태그를 따르는 자동 전환을 선택합니다.
+
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>모니터 내용을 선택하고 전체 믹스 녹음</h2><p>헤드폰 버튼으로 모니터링을 제어합니다. BGM／반주, 전체 믹스, Wet／Dry 마이크 조합 또는 처리된 마이크만 들을 수 있습니다. 녹음은 전체 출력이나 모니터 내용을 WAV 16-bit PCM 또는 WAV 32-bit Float로 저장합니다.</p></div>
   <div class="feature-shot-grid feature-shot-grid--compact"><figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/10-monitor-source.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/10-monitor-source.jpg' | relative_url }}" alt="BGM, 전체 믹스, Wet Dry 마이크와 처리된 마이크의 모니터 소스 메뉴" loading="lazy" decoding="async"></a><figcaption>모니터링은 헤드폰으로 듣는 내용만 바꿉니다. Stream Output은 계속 라우팅 설정을 따릅니다.</figcaption></figure><figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/11-recording-options.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/11-recording-options.jpg' | relative_url }}" alt="전체 출력, 모니터 내용, WAV 형식과 녹음 폴더 옵션" loading="lazy" decoding="async"></a><figcaption>32-bit Float는 편집 여유가 크지만 용량도 큽니다. 일반 전달용은 16-bit PCM을 선택할 수 있습니다.</figcaption></figure></div>
   <p><strong>피드백 방지:</strong> 마이크 모니터링 중에는 마이크로 다시 들어가는 스피커 대신 헤드폰을 사용하세요. 실제 방송 전에 짧게 녹음해 목소리, 반주, 음량과 지연을 확인하세요.</p>
+</div>
+
+### 모니터와 녹음은 Profile 음색을 바꾸지 않습니다
+
+모니터는 독립된 헤드폰 경로입니다. Meter의 BGM／반주 모니터와 보컬 모니터 노브는 0–200% 범위로 연주자가 듣는 균형만 바꿉니다. 시청자용 Stream Output이나 Profile 내부 Compressor, EQ 등에는 영향을 주지 않습니다.
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>5개 오디오 경로와 시스템 부하 확인</h2><p>고급 방송 모드에서는 보기 또는 트레이 메뉴에서 Meter를 열 수 있습니다. 오른쪽 도킹, 독립 창, 가로／세로 레이아웃 전환을 지원합니다.</p></div>
+  <p><strong>BGM／반주</strong>, <strong>보컬(Profile 후, Mix 전)</strong>, <strong>방송 출력</strong>, <strong>BGM／반주 모니터</strong>, <strong>보컬 모니터</strong>를 표시합니다. 모든 트랙에 Peak, 방송 출력에는 3초 단기 <strong>LUFS-S</strong>도 표시하며 0–200% 눈금 노브로 조절합니다.</p>
+  <p>오른쪽 아래의 테두리 없는 CPU／RAM 표시는 시스템 전체와 앱 사용량을 구분합니다. 고급 방송 모드에서는 Buffer, callback, 예상 지연, underrun／overrun도 Tooltip에 표시합니다.</p>
+</div>
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>시스템 트레이에 둔 채 방송 제어</h2><p>닫기 버튼을 트레이 최소화 또는 완전 종료로 동작하도록 설정할 수 있습니다.</p></div>
+  <p>상태에 따라 재생／계속, 일시 정지, 정지, 처음부터 재생, Key, 속도, Profile, 마이크, 가사 창, 메인 창과 고급 방송 모드 전용 Meter를 표시합니다. “앱 종료”가 본체와 helper를 끝냅니다.</p>
+  <p>전역 단축키는 재생 제어와 마이크／모니터로 분류되며 기본 키를 제공합니다. 일반 재생에서는 고급 모드 전용 항목을 숨깁니다.</p>
+</div>
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">OBS DIRECT OUTPUT</p><h2>OBS 오디오 플러그인 또는 가상 장치 사용</h2><p>두 경로 모두 Profile, Mix Bus와 최종 리미터를 통과한 같은 Stream Output을 보냅니다.</p></div>
+  <p>기존 OBS 플러그인 메뉴에는 표준 OBS, Portable 폴더와 제거가 있습니다. 설치가 끝나면 <strong>Singing Stream Savior Audio (OBS Plugin)</strong> 출력을 자동 선택합니다. OBS를 다시 시작하고 같은 이름의 오디오 소스를 추가하세요.</p>
+  <p>VB-CABLE을 사용할 때는 Singing Stream Savior에서 CABLE Input, OBS 오디오 입력 캡처에서 CABLE Output을 선택합니다. 중복되는 원본 마이크 소스는 비활성화하세요.</p>
 </div>
 
 ```text

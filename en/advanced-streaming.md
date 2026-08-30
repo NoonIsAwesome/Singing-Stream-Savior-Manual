@@ -1,6 +1,6 @@
 ---
-title: Advanced Streaming Mode and VB-CABLE setup
-description: Route the processed microphone and complete stream mix from Singing Stream Savior 2.1.0.0 to OBS or Discord
+title: Complete 2.1.0.0 guide to Advanced Streaming, Profiles, and audio routing
+description: Learn the 2.1.0.0 live controls, vocal Profiles, built-in effects, routing, Meter, recording, direct OBS output, and system-tray workflow
 lang: en
 translation_key: advanced-streaming
 published: false
@@ -32,8 +32,41 @@ Starting with **2.1.0.0**, Advanced Streaming Mode mixes BGM, accompaniment, and
   <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}" alt="Complete audio route with BGM, microphone, voice Profiles, stream mix, virtual output, monitor, and recording" loading="lazy" decoding="async"></a><figcaption>Advanced Streaming Mode places sources, two voice Profiles, the stream mix, Stream Output, monitoring, and recording in one visual route.</figcaption></figure>
 </div>
 
+## Create and edit voice Profiles
+
+A Profile is a reusable vocal effect chain. Add built-in effects or VST3 plug-ins, drag blocks into processing order, bypass individual blocks, and audition the result before saving.
+
+### What the Profile editor saves
+
+- Every block's enabled state, parameters, and processing order are stored with the Profile and restored when the project opens again.
+- Built-in effects and VST3 plug-ins can be combined, with up to eight VST3 slots. The plug-in parameter state is stored with the Profile.
+- Dragging a block changes the real processing order. Bypass temporarily skips an effect without deleting its settings.
+- You can audition edits live. Returning to Live Control, minimizing to the tray, or closing the editor leaves Profile audition and restores the current live-monitoring route.
+- Factory Profiles are practical starting points; tune them for the microphone, room noise, vocal range, and singing style before saving a personal Profile.
+
+### Twelve built-in vocal effects
+
+All editors share the same matte panel, calibrated knobs, live graph, and Help button. Simple mode starts from a useful scenario; Advanced mode exposes the complete parameter set.
+
+| Group | Effect | Main purpose |
+| --- | --- | --- |
+| Utility | **Input Gain** | Set the level entering the chain without clipping its first stage. |
+| Cleanup | **Background Attenuation** | Reduce steady fan or room noise during gaps in the voice. |
+| Cleanup | **Noise Gate** | Close the mic between phrases to reduce keyboard and mouse sounds. |
+| Dynamics | **Compressor** | Reduce the difference between quiet and powerful phrases with Threshold, Attack, and Release. |
+| Tone | **Equalizer (EQ)** | Remove unnecessary lows, reduce mud, and shape different vocal ranges. |
+| Tone | **Saturation** | Add harmonics, density, or controlled edge. |
+| Tone | **Air Enhancer** | Add presence, air, and sparkle, then level-match with Trim. |
+| Cleanup | **De-esser** | Control harsh S and SH consonants. |
+| Creative | **Voice Changer** | Change Pitch and Formant together for character or section effects. |
+| Space | **Delay** | Add slap, KTV, or ballad-style echoes. |
+| Space | **Reverb** | Create rooms, plates, or longer airy ambience. |
+| Dynamics | **Limiter** | Catch sudden vocal peaks at the end of a Profile. |
+
+After the Profile, the complete stream still passes through the **Mix Bus Compressor**, **Stream Output Limiter**, and Master level. These belong to the overall output chain and do not rewrite the tone of an individual Profile.
+
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>Create and edit voice Profiles</h2><p>A Profile is a reusable vocal effect chain. Add built-in effects or VST3 plug-ins, drag blocks into processing order, bypass individual blocks, and audition the result before saving.</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h3>Profile examples</h3><p>Separate chat, singing range, genre, and special-effect chains so they can be recalled instead of rebuilt during a live stream.</p></div>
   <div class="feature-shot-grid">
     <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}" alt="High-range singing Profile with dynamic suppression, EQ, reverb, and limiter blocks" loading="lazy" decoding="async"></a><figcaption>Create separate chains for high or low ranges, KTV, traditional styles, and other singing situations.</figcaption></figure>
     <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}" alt="Streaming chat Profile with input gain, noise gate, and limiter blocks" loading="lazy" decoding="async"></a><figcaption>Keep talking and singing Profiles separate instead of readjusting every effect during a stream.</figcaption></figure>
@@ -50,6 +83,14 @@ Starting with **2.1.0.0**, Advanced Streaming Mode mixes BGM, accompaniment, and
   <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/advanced-streaming/09-manual-profile-mic-controls.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/09-manual-profile-mic-controls.jpg' | relative_url }}" alt="Workspace monitor source, headphones, record, microphone mute, and Profile controls" loading="lazy" decoding="async"></a><figcaption>A manual selection takes effect immediately. Choose Automatic Profile Switching to follow song tags again.</figcaption></figure>
 </div>
 
+### What each top-bar control does
+
+- **Monitor source** selects BGM/accompaniment, the full mix, BGM plus wet voice, BGM plus dry voice, or the processed microphone alone.
+- The **headphones button** toggles the selected monitor without forgetting the source.
+- The **record button** starts or stops immediately; its menu chooses full output or monitor content, WAV format, and recording folder.
+- The **microphone button** mutes or restores the mic and uses the same state icon as the tray menu.
+- The **Profile menu** applies a chain manually or returns control to Automatic Profile Switching.
+
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>Choose what you monitor and record the mix</h2><p>The headphones button controls monitoring. Listen to BGM/accompaniment, the full mix, wet or dry microphone combinations, or the processed microphone alone. Recording can capture the full output or monitored content as WAV 16-bit PCM or WAV 32-bit Float.</p></div>
   <div class="feature-shot-grid feature-shot-grid--compact">
@@ -57,6 +98,28 @@ Starting with **2.1.0.0**, Advanced Streaming Mode mixes BGM, accompaniment, and
     <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/11-recording-options.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/11-recording-options.jpg' | relative_url }}" alt="Full output, monitored content, WAV format, and recording-folder options" loading="lazy" decoding="async"></a><figcaption>32-bit Float preserves more headroom for editing but uses more storage; 16-bit PCM suits normal delivery.</figcaption></figure>
   </div>
   <p><strong>Avoid feedback:</strong> use headphones when microphone monitoring is enabled, not speakers that feed back into the mic. Make a short test recording before a live stream to check voice, accompaniment, levels, and latency.</p>
+</div>
+
+### Monitoring and recording do not rewrite Profile tone
+
+Monitoring is a separate headphone path. The Meter's BGM/accompaniment-monitor and vocal-monitor knobs run from 0–200% and change only the performer's balance—not the audience Stream Output or any Compressor, EQ, or other Profile parameter. Record **Full Output** to check what the audience receives; record **Monitored Content** to check the headphone balance.
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>Inspect five audio paths and system load</h2><p>Advanced Streaming Mode exposes the Meter through View or the tray menu. It can dock on the right, float independently, and switch between horizontal and vertical layouts with one split button.</p></div>
+  <p>The five tracks are <strong>BGM / accompaniment</strong>, <strong>Vocal (after Profile, before Mix)</strong>, <strong>Stream Output</strong>, <strong>BGM / accompaniment monitor</strong>, and <strong>Vocal monitor</strong>. Every track shows Peak; Stream Output also shows three-second short-term <strong>LUFS-S</strong>. Calibrated knobs cover 0–200% and use the main app's muted blue.</p>
+  <p>The borderless CPU/RAM status distinguishes total-system and app use. In Advanced Streaming Mode its tooltip also includes buffer size, callback time, estimated latency, and underrun/overrun counts, with color warnings when load may affect stability.</p>
+</div>
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>Keep control after minimizing to the system tray</h2><p>A setting chooses whether the main-window close button minimizes to the tray or exits. When the app stays in the background, common live controls remain available without reopening the workspace.</p></div>
+  <p>The state-aware menu includes play/resume, pause, stop, restart from the beginning, Key, speed, Profile, microphone mute/restore, Lyrics Window, Open Main Window, and—only in Advanced Streaming Mode—the Meter. **Exit Application** is the action that closes the app and its helpers.</p>
+  <p>Global shortcuts are grouped into Playback Controls and Microphone/Monitoring, include defaults, and hide Advanced-only actions in Normal Playback Mode.</p>
+</div>
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">OBS DIRECT OUTPUT</p><h2>Use the OBS audio plug-in or a virtual device</h2><p>Both routes carry the same Stream Output after the Profile, Mix Bus, and final limiter.</p></div>
+  <p>The existing Install OBS Plug-in menu covers standard OBS, a Portable OBS folder, and removal. A successful install automatically selects <strong>Singing Stream Savior Audio (OBS Plugin)</strong>; restart OBS and add the source with the same name to receive the signal.</p>
+  <p>With VB-CABLE, select CABLE Input in Singing Stream Savior and CABLE Output in an OBS Audio Input Capture. Disable any duplicate raw-microphone source to avoid doubled vocals.</p>
 </div>
 
 ```text

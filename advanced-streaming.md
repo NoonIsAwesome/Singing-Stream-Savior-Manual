@@ -1,6 +1,6 @@
 ---
-title: 進階直播模式與 VB-CABLE 安裝
-description: 在 Singing Stream Savior 2.1.0.0 設定麥克風混音、虛擬輸出、OBS 與 Discord
+title: 2.1.0.0 進階直播、Profiles 與音訊路由完整指南
+description: 詳細介紹 Singing Stream Savior 2.1.0.0 的主畫面直播控制、人聲 Profiles、內建效果器、音訊路由、Meter、錄音、OBS 直連與系統工具
 lang: zh-TW
 translation_key: advanced-streaming
 published: false
@@ -40,6 +40,35 @@ published: false
   </div>
 </div>
 
+### Profile 編輯器會保留哪些內容
+
+- Profile 內每個 Block 的啟用狀態、參數與先後順序都會一起保存；重新開啟專案後不必重調。
+- 內建效果與 VST3 Plugin 可以混合使用，最多可加入八個 VST3 插槽。VST3 的參數 state 也會跟著 Profile 儲存。
+- 拖曳 Block 可以改變實際處理順序；旁路只暫時略過該效果，不會刪除設定。
+- 編輯時可直接試聽處理結果。切回直播操作、縮到系統工具或關閉編輯器時，會離開 Profile 試聽並恢復目前的直播監聽設定。
+- Factory Profile 是可立即使用的起點；仍建議依麥克風、房間噪音、音域與唱法微調，再另存成自己的 Profile。
+
+### 12 顆內建人聲效果器
+
+效果器採用同一套霧面面板、刻度旋鈕、即時訊號圖與說明按鈕。簡易模式可從情境起點快速調整，進階模式則開放完整參數。
+
+| 類型 | 效果器 | 適合處理的問題 |
+| --- | --- | --- |
+| 訊號工具 | **Input Gain** | 調整進入效果鏈的音量；音訊介面已設好時先維持接近 0 dB，避免在最前端削波。 |
+| 清理 | **Background Attenuation** | 在人聲空隙降低持續背景聲；適合風扇與房間底噪，但無法消除和人聲同時出現的噪音。 |
+| 清理 | **Noise Gate** | 在句子之間關閉麥克風，減少鍵盤、滑鼠等間歇聲；開啟／關閉閾值需配合實際環境調整。 |
+| 動態 | **Compressor** | 縮小輕聲與大聲之間的差距；Threshold、Attack 與 Release 會共同影響人聲力度與自然度。 |
+| 音色 | **Equalizer (EQ)** | 去除不需要的低頻、整理混濁感並塑造男女聲或不同音域的音色。 |
+| 音色 | **Saturation** | 增加泛音、厚度或受控的粗糙感；Mix 過高會降低歌詞清晰度。 |
+| 音色 | **Air Enhancer** | 增加存在感、空氣感與亮度，並可用 Trim 對齊旁路前後的音量。 |
+| 清理 | **De-esser** | 壓低刺耳的 S、SH 等齒音，避免高頻過亮或 Limiter 被齒音頻繁觸發。 |
+| 創意 | **Voice Changer** | 同時調整 Pitch 與 Formant，適合角色或特殊段落效果；用途是創意變聲而非身分保護。 |
+| 空間 | **Delay** | 加入 slap、KTV 或抒情回聲；Wet 與 Feedback 應保守，避免尾音掩蓋下一句。 |
+| 空間 | **Reverb** | 建立房間、Plate 或較長的空靈殘響；Pre-delay 可保留字頭清晰度。 |
+| 動態 | **Limiter** | 放在 Profile 尾端攔截突發人聲峰值，保留輸出安全餘裕。 |
+
+Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compressor**、**Stream Output Limiter** 與 Master 音量。這三項屬於整體直播輸出，不會寫回單一 Profile 的音色設定。
+
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">SONG AUTOMATION</p><h2>用歌曲標籤自動切換 Profile</h2><p>歌曲列表的標籤按鈕可以指定人聲 Profile。播放該首伴奏時，軟體會自動切換到對應效果鏈；選擇<strong>自動 · 唱歌 Profile</strong>則使用目前預設的唱歌 Profile。</p></div>
   <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/08-song-profile-tag.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/08-song-profile-tag.jpg' | relative_url }}" alt="歌曲列表中可選擇自動或特定人聲 Profile 的標籤選單" loading="lazy" decoding="async"></a><figcaption>適合替不同音域、曲風或特殊歌曲預先配好效果；正式演唱前仍建議先試唱並確認音量。</figcaption></figure>
@@ -50,6 +79,14 @@ published: false
   <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/advanced-streaming/09-manual-profile-mic-controls.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/09-manual-profile-mic-controls.jpg' | relative_url }}" alt="工作區上方的監聽來源、耳機、錄音、麥克風靜音與 Profile 選單" loading="lazy" decoding="async"></a><figcaption>手動選擇會立即套用；要恢復依歌曲標籤切換，選回「自動切換 Profile」。</figcaption></figure>
 </div>
 
+### 主畫面上方每個控制項的用途
+
+- **監聽來源**：決定耳機中要聽到 BGM／伴奏、完整混音、BGM／伴奏加濕聲、BGM／伴奏加乾聲，或只聽處理後麥克風。
+- **耳機按鈕**：開啟或關閉目前選定的監聽，不會清除已選來源；再次開啟時會沿用同一個來源。
+- **錄音按鈕**：主按鈕直接開始／停止錄音，旁邊選單用來選擇錄音來源、WAV 格式與資料夾。
+- **麥克風按鈕**：立即將麥克風靜音或恢復；圖示和系統工具右鍵選單保持一致，方便不看文字也能判斷狀態。
+- **Profile 選單**：手動指定目前效果鏈，或選回「自動切換 Profile」讓歌曲標籤接管。
+
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>選擇監聽內容並錄下完整混音</h2><p>耳機按鈕控制監聽，來源可以是 BGM／伴奏、完整混音、加入濕聲或乾聲的組合，或只聽處理後麥克風。錄音可選擇完整輸出或目前監聽內容，並可使用 WAV 16-bit PCM 或 WAV 32-bit Float。</p></div>
   <div class="feature-shot-grid feature-shot-grid--compact">
@@ -58,6 +95,50 @@ published: false
   </div>
   <p><strong>避免回授：</strong>開啟麥克風監聽時請使用耳機，不要用會被麥克風再次收到的喇叭。正式直播前先做短錄音，確認人聲、伴奏、音量與延遲。</p>
 </div>
+
+### 監聽與錄音不會改變直播輸出
+
+監聽是給演唱者自己聽的獨立路徑。切換監聽來源或調整 BGM／伴奏監聽、人聲監聽的音量，不會改變觀眾收到的 Stream Output。Meter 的監聽旋鈕可在 0–200% 間調整，適合在唱歌時把人聲稍微提高、把伴奏稍微降低；它不會改寫 Profile 裡的 Compressor、EQ 或其他音色參數。
+
+錄音選單則將「要錄什麼」與「自己聽什麼」分開：
+
+- **完整輸出**會錄下送往直播端的完整混音，適合檢查觀眾實際聽到的結果。
+- **監聽內容**會錄下目前耳機路徑，適合檢查演唱時的監聽平衡。
+- **WAV 16-bit PCM**檔案較小、相容性高；**WAV 32-bit Float**保留較多後製空間但檔案更大。
+- 可直接選擇錄音資料夾或開啟目前資料夾，不必離開直播操作頁。
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>查看五條音訊路徑與系統負載</h2><p>進階直播模式可從「檢視」或系統工具右鍵選單開啟音量 Meter。它可以停駐在主視窗右側，也能獨立懸浮，並用單一切換按鈕改成橫向或直向顯示。</p></div>
+  <p>五軌分別是 <strong>BGM／伴奏</strong>、<strong>人聲（Profile 後、Mix 前）</strong>、<strong>直播輸出</strong>、<strong>BGM／伴奏監聽</strong>與<strong>人聲監聽</strong>。每軌顯示 Peak；直播輸出另顯示三秒短期 <strong>LUFS-S</strong>，方便同時觀察瞬間峰值與主觀響度趨勢。</p>
+  <p>每軌旋鈕沿用效果器的刻度樣式，範圍為 0–200%。直播路徑旋鈕調整路由階段的音量，監聽旋鈕只調整耳機平衡；這些控制不會直接改寫 Profile 內部參數。</p>
+  <p>主視窗右下角的無外框 CPU／RAM 狀態會顯示本程式使用率。停留滑鼠可看到系統總 CPU、系統記憶體、本程式 Working Set 與 Private Memory；只有進階直播模式才會加上 Buffer、callback、估計延遲和 underrun／overrun 等音訊資訊。負載可能影響穩定度時會以顏色提示。</p>
+</div>
+
+<!-- RELEASE_SCREENSHOT: 12-meter-horizontal.jpg + 13-meter-vertical.jpg
+     Capture the final muted-blue Meter with native Windows title bar, all five
+     route names, PEAK/LUFS-S, 0-200% effect-style knobs, and both orientations. -->
+<!-- RELEASE_SCREENSHOT: 14-system-health-tooltip.jpg
+     Capture the borderless status plus expanded Advanced-mode audio details. -->
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>縮到系統工具後仍可控制直播</h2><p>設定中的「按下關閉軟體時縮到系統工具」預設開啟。按主視窗叉叉後，程式可在背景維持直播流程，不必重新打開完整工作區。</p></div>
+  <p>系統工具右鍵選單會依目前狀態顯示播放／繼續、暫停、停止、從頭播放、升降 Key、原 Key、速度增減、原速、Profile、麥克風靜音／恢復、歌詞視窗與開啟主視窗；進階直播模式另有 Meter。選擇「關閉軟體」才會結束主程式與相關 helper。</p>
+  <p>全域快捷鍵也依「播放控制」與「麥克風／監聽」分類並提供預設按鍵；音訊路由不是進階直播模式時，會隱藏不適用的麥克風／監聽項目。快捷鍵在歌回救星執行期間可從其他應用程式觸發，並可在設定中改成自己的組合。</p>
+</div>
+
+<!-- RELEASE_SCREENSHOT: 15-tray-menu.jpg
+     Capture the complete state-aware menu while accompaniment is playing,
+     including icons, Key/speed submenus, Lyrics, Meter, and red Exit action. -->
+
+<div class="manual-feature-update">
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">OBS DIRECT OUTPUT</p><h2>使用 OBS 音訊插件或虛擬音源</h2><p>進階直播輸出提供兩條路徑：可直接送到 Singing Stream Savior OBS 音訊插件，也可輸出到 VB-CABLE 等虛擬音源。兩者都輸出同一條經過 Profile、Mix Bus 與最終限制器的 Stream Output。</p></div>
+  <p>「安裝 OBS 外掛」的既有選單可選標準版或 Portable OBS 資料夾，並可在同一選單執行移除。安裝成功後，Stream Output 會自動切換到 <strong>Singing Stream Savior 音訊（OBS 外掛）</strong>；重新啟動 OBS 後新增同名音訊來源，就能直接接收訊號，不需要再把它當成一般 Windows 播放裝置尋找。</p>
+  <p>如果使用虛擬音源，則在歌回救星選擇 CABLE Input，並在 OBS 以「音訊輸入擷取」選擇 CABLE Output。不要同時保留另一條原始麥克風來源，以免人聲重複。</p>
+</div>
+
+<!-- RELEASE_SCREENSHOT: 16-obs-plugin-output.jpg
+     Capture the install/repair/remove menu, synthetic OBS output selection,
+     and the corresponding OBS source after the final real-OBS signal test. -->
 
 ```text
 Singing Stream Savior → 虛擬音訊線 → OBS／Discord

@@ -1,0 +1,93 @@
+# Unpublished 2.1.0.0 changelog draft.
+# This file is intentionally not consumed by changelog-page.html. After the
+# release gates below pass, move this entry to the front of releases.yml,
+# clear the previous `latest` flag, set the final date/URL, and update
+# resources.yml plus the localized download copy.
+release:
+  version: "2.1.0.0"
+  date: "TBD"
+  latest: true
+  type:
+    zh-TW: 進階直播音訊與人聲處理重大更新
+    zh-CN: 高级直播音频与人声处理重大更新
+    ja: 高度な配信オーディオとボーカル処理の大型更新
+    ko: 고급 방송 오디오 및 보컬 처리 대규모 업데이트
+    en: Advanced streaming audio and vocal processing update
+  release_url: "TBD"
+  summary:
+    zh-TW: 新增進階直播音訊路由、可編輯人聲 Profiles、OBS 直連、五軌音量 Meter，以及完整快捷鍵與系統工具控制。
+    zh-CN: 新增高级直播音频路由、可编辑人声 Profiles、OBS 直连、五轨音量 Meter，以及完整快捷键与系统托盘控制。
+    ja: 高度な配信オーディオルーティング、編集可能なボーカル Profile、OBS 直接接続、5 トラック Meter、ショートカットとシステムトレイ操作を追加します。
+    ko: 고급 방송 오디오 라우팅, 편집 가능한 보컬 Profile, OBS 직접 연결, 5트랙 Meter, 단축키와 시스템 트레이 제어를 추가합니다.
+    en: Adds Advanced Streaming audio routing, editable vocal Profiles, direct OBS output, a five-track Meter, and complete shortcut and tray controls.
+  items:
+    zh-TW:
+      - 新增「進階直播模式」，可在程式內混合 BGM／伴奏與經過 Profile 的麥克風，再透過虛擬音源或 Singing Stream Savior OBS 音訊插件輸出完整直播訊號。
+      - 新增可編輯的人聲 Profiles、12 顆一致化的內建效果器、Block 拖曳排序與最多八個 VST3 插槽；參數、順序與 VST3 state 會隨 Profile 儲存。
+      - 重新設計直播聊天、通用歌唱、低／高音域、古風及其他 Factory Profiles，並加入噪音閥、Air、空間與動態處理的實用起點。
+      - 監聽可分別調整 BGM／伴奏與人聲，Stream Output 另有 Mix Bus Compressor、Final Limiter、Master 與即時延遲／裝置健康資訊。
+      - 新增可停駐在主視窗右側或獨立懸浮的五軌音量 Meter，支援橫向／直向顯示、0–200% 旋鈕、PEAK，以及 Stream Output 的三秒短期 LUFS-S；配色與切換按鈕沿用主介面風格，懸浮時使用標準 Windows 縮小與關閉控制。
+      - 主視窗右下角新增無外框 CPU／記憶體狀態；Tooltip 會區分系統與本程式用量，進階直播模式另顯示音訊 Buffer、callback、預估延遲與 underrun／overrun。
+      - 新增播放／暫停待播、停止、從頭播放、升降 Key、原 Key、速度增減、原速、歌詞視窗等全域快捷鍵，並依音訊模式分類及隱藏不適用項目。
+      - 擴充系統工具右鍵選單，提供播放、停止、重播、Key、速度、Profile、麥克風、歌詞視窗與 Meter 控制；設定可決定按下視窗叉叉時縮到系統工具或直接關閉。
+      - 改善歌詞 Offset 的即時預覽與專案保存、歌詞視窗可用性、來源列按鈕對齊，以及歌詞／Profile／歌曲庫／歌單外觀頁面的邊界、間距與條件式控制項。
+      - 所有效果器視窗改為不阻塞主畫面，統一霧面控制項、刻度旋鈕、說明按鈕與 ToolTip；修正 Saturation 類型命名、Compressor 時間圖遮線／缺線及多種即時訊號圖重畫問題。
+      - 軟體通知改為靜音，改善縮到系統工具時的 Profile 試聽退出、完整關閉與 helper 清理，並強化 VST3 編輯、保存、關閉及排序流程。
+      - 延續 YouTube 分階段備援播放與歌詞搜尋可靠性修正，並加強 OBS 直連的 session 重連、跨 OBS 29–32 相容性、安裝／修復／移除交易與虛擬音源路由診斷；安裝成功會自動選取並套用「Singing Stream Savior 音訊（OBS 外掛）」輸出。
+    zh-CN:
+      - 新增“高级直播模式”，可在程序内混合 BGM／伴奏与经过 Profile 的麦克风，再通过虚拟音源或 Singing Stream Savior OBS 音频插件输出完整直播信号。
+      - 新增可编辑的人声 Profiles、12 个一致化的内置效果器、Block 拖拽排序与最多八个 VST3 插槽；参数、顺序与 VST3 state 会随 Profile 保存。
+      - 重新设计直播聊天、通用歌唱、低／高音域、古风及其他 Factory Profiles，并加入噪声门、Air、空间与动态处理的实用起点。
+      - 监听可分别调整 BGM／伴奏与人声，Stream Output 另有 Mix Bus Compressor、Final Limiter、Master 与实时延迟／设备健康信息。
+      - 新增可停靠在主窗口右侧或独立悬浮的五轨音量 Meter，支持横向／纵向显示、0–200% 旋钮、PEAK，以及 Stream Output 的三秒短期 LUFS-S；配色与切换按钮沿用主界面风格，悬浮时使用标准 Windows 最小化与关闭控件。
+      - 主窗口右下角新增无边框 CPU／内存状态；Tooltip 会区分系统与本程序用量，高级直播模式另显示音频 Buffer、callback、预计延迟与 underrun／overrun。
+      - 新增播放／暂停待播、停止、从头播放、升降 Key、原 Key、速度增减、原速、歌词窗口等全局快捷键，并按音频模式分类及隐藏不适用项目。
+      - 扩充系统托盘右键菜单，提供播放、停止、重播、Key、速度、Profile、麦克风、歌词窗口与 Meter 控制；设置可决定点击窗口关闭按钮时缩到系统托盘或直接退出。
+      - 改善歌词 Offset 的实时预览与项目保存、歌词窗口可用性、来源行按钮对齐，以及歌词／Profile／歌曲库／歌单外观页面的边界、间距与条件式控件。
+      - 所有效果器窗口改为不阻塞主界面，统一雾面控件、刻度旋钮、说明按钮与 ToolTip；修复 Saturation 类型命名、Compressor 时间图遮线／缺线及多种实时信号图重绘问题。
+      - 软件通知改为静音，改善缩到系统托盘时的 Profile 试听退出、完整关闭与 helper 清理，并强化 VST3 编辑、保存、关闭及排序流程。
+      - 延续 YouTube 分阶段备用播放与歌词搜索可靠性修复，并加强 OBS 直连的 session 重连、跨 OBS 29–32 兼容性、安装／修复／移除事务与虚拟音源路由诊断；安装成功后会自动选择并应用“Singing Stream Savior 音频（OBS 插件）”输出。
+    ja:
+      - 「高度な配信モード」を追加し、BGM／伴奏と Profile 処理後のマイクをアプリ内でミックスして、仮想オーディオデバイスまたは Singing Stream Savior OBS オーディオプラグインへ出力できます。
+      - 編集可能なボーカル Profile、統一された 12 個の内蔵エフェクト、Block のドラッグ並べ替え、最大 8 個の VST3 スロットを追加し、パラメータ、順序、VST3 state を Profile に保存します。
+      - 雑談、汎用歌唱、低／高音域、古風などの Factory Profile を再設計し、Gate、Air、空間系、ダイナミクス処理の実用的な開始点を用意しました。
+      - BGM／伴奏とボーカルのモニター音量を個別に調整でき、Stream Output には Mix Bus Compressor、Final Limiter、Master、リアルタイムの遅延／デバイス状態を追加しました。
+      - メインウィンドウ右側へのドッキングと独立表示に対応した 5 トラック Meter を追加し、横／縦表示、0–200% ノブ、PEAK、Stream Output の 3 秒 LUFS-S を表示します。配色と切替ボタンはメイン UI に統一し、独立表示では標準 Windows の最小化／閉じる操作を使用します。
+      - 右下に枠なしの CPU／メモリ状態を追加し、Tooltip でシステム全体と本アプリを区別します。高度な配信モードでは Buffer、callback、推定遅延、underrun／overrun も表示します。
+      - Reserve の再生／一時停止、停止、先頭から再生、Key／速度変更とリセット、歌詞ウィンドウなどのグローバルショートカットを追加し、モードに合わない項目を自動的に隠します。
+      - システムトレイメニューに再生、停止、リスタート、Key、速度、Profile、マイク、歌詞ウィンドウ、Meter 操作を追加し、閉じるボタンの動作も設定可能にしました。
+      - 歌詞 Offset のリアルタイム反映とプロジェクト保存、歌詞ウィンドウ、ボタン配置、歌詞／Profile／ライブラリ／外観ページの境界、余白、条件付きコントロールを改善しました。
+      - エフェクト画面を非モーダル化し、マットな操作部、目盛り付きノブ、ヘルプ、Tooltip を統一しました。Saturation の名称と Compressor を含むライブグラフの欠落／重なりも修正しました。
+      - 通知音を無効化し、トレイ格納時の Profile 試聴終了、完全終了、helper 清掃、VST3 の編集／保存／終了／並べ替えを改善しました。
+      - YouTube の段階的フォールバックと歌詞検索の信頼性修正を引き継ぎ、OBS session 再接続、OBS 29–32 互換性、取引型インストール／修復／削除、仮想出力診断を強化しました。インストール成功後は「Singing Stream Savior Audio (OBS Plugin)」出力を自動選択して適用します。
+    ko:
+      - “고급 방송 모드”를 추가해 BGM／반주와 Profile 처리 후 마이크를 앱 안에서 믹스하고 가상 오디오 장치 또는 Singing Stream Savior OBS 오디오 플러그인으로 출력할 수 있습니다.
+      - 편집 가능한 보컬 Profile, 통일된 12개 내장 이펙트, Block 드래그 순서 변경, 최대 8개 VST3 슬롯을 추가하고 파라미터, 순서, VST3 state를 Profile에 저장합니다.
+      - 잡담, 범용 노래, 저／고음역, 고풍 등 Factory Profile을 다시 설계하고 Gate, Air, 공간계, 다이내믹 처리의 실용적인 시작점을 제공합니다.
+      - BGM／반주와 보컬 모니터 음량을 각각 조절할 수 있으며 Stream Output에 Mix Bus Compressor, Final Limiter, Master, 실시간 지연／장치 상태를 추가했습니다.
+      - 메인 창 오른쪽 도킹과 독립 창을 지원하는 5트랙 Meter를 추가하고 가로／세로 표시, 0–200% 노브, PEAK, Stream Output의 3초 LUFS-S를 표시합니다. 색상과 전환 버튼은 메인 UI와 통일하고 독립 창에서는 표준 Windows 최소화／닫기 컨트롤을 사용합니다.
+      - 오른쪽 아래에 테두리 없는 CPU／메모리 상태를 추가해 Tooltip에서 시스템 전체와 앱 사용량을 구분합니다. 고급 방송 모드에서는 Buffer, callback, 예상 지연, underrun／overrun도 표시합니다.
+      - Reserve 재생／일시 정지, 정지, 처음부터 재생, Key／속도 조절과 초기화, 가사 창 등의 전역 단축키를 추가하고 모드에 맞지 않는 항목은 자동으로 숨깁니다.
+      - 시스템 트레이 메뉴에 재생, 정지, 다시 시작, Key, 속도, Profile, 마이크, 가사 창, Meter 제어를 추가하고 닫기 버튼 동작도 설정할 수 있습니다.
+      - 가사 Offset의 실시간 반영과 프로젝트 저장, 가사 창, 버튼 정렬, 가사／Profile／라이브러리／외관 페이지의 경계, 간격, 조건부 컨트롤을 개선했습니다.
+      - 이펙트 창을 비모달로 바꾸고 무광 컨트롤, 눈금 노브, 도움말, Tooltip을 통일했습니다. Saturation 명칭과 Compressor를 포함한 라이브 그래프 누락／겹침도 수정했습니다.
+      - 알림음을 끄고 트레이 최소화 시 Profile 미리 듣기 종료, 완전 종료, helper 정리, VST3 편집／저장／닫기／순서 변경을 개선했습니다.
+      - YouTube 단계별 대체 재생과 가사 검색 안정성 수정을 이어가며 OBS session 재연결, OBS 29–32 호환성, 트랜잭션 설치／복구／제거, 가상 출력 진단을 강화했습니다. 설치가 끝나면 “Singing Stream Savior Audio (OBS Plugin)” 출력을 자동으로 선택하고 적용합니다.
+    en:
+      - Added Advanced Streaming Mode to mix BGM/accompaniment with the Profile-processed microphone and send the complete stream through a virtual audio device or the Singing Stream Savior OBS audio plug-in.
+      - Added editable vocal Profiles, 12 consistently designed built-in effects, draggable Block ordering, and up to eight VST3 slots; parameters, order, and VST3 state are stored with the Profile.
+      - Redesigned Factory Profiles for chat, general singing, lower/higher ranges, airy traditional styles, and other starting points with practical Gate, Air, space, and dynamics processing.
+      - Program and vocal monitoring can be balanced separately; Stream Output adds a Mix Bus Compressor, Final Limiter, Master, and live latency/device-health information.
+      - Added a five-track Meter that can dock to the main window or float independently, with horizontal/vertical layouts, 0–200% knobs, PEAK, and three-second LUFS-S for Stream Output. Its color and switch control match the main UI, while the floating window uses standard Windows minimize and close controls.
+      - Added a borderless CPU/memory status in the lower-right corner. Its tooltip separates system and app use; Advanced Streaming Mode also shows buffer, callback, estimated latency, and underrun/overrun details.
+      - Added global shortcuts for Reserve play/pause, stop, restart, key and speed changes/resets, and the lyrics window, grouped by function and hidden when the current audio mode does not support them.
+      - Expanded the system-tray menu with playback, restart, key, speed, Profile, microphone, lyrics-window, and Meter controls, plus a setting that chooses minimize-to-tray or full exit for the window close button.
+      - Improved live and persisted lyrics Offset behavior, lyrics-window availability, source-row alignment, and the borders, spacing, and capability-dependent controls across Lyrics, Profiles, Library, and Appearance pages.
+      - Made effect windows non-modal and unified matte controls, calibrated knobs, help, and tooltips. Also fixed Saturation naming and missing/overlapping redraws in Compressor and other live DSP graphs.
+      - Silenced application notifications, ended Profile audition when minimizing to tray, improved complete shutdown/helper cleanup, and hardened VST3 editing, state saving, closing, and reordering.
+      - Carried forward staged YouTube fallback and lyrics-search reliability fixes, while strengthening OBS session reconnection, OBS 29–32 compatibility, transactional install/repair/removal, and virtual-output diagnostics. A successful install automatically selects and applies the “Singing Stream Savior Audio (OBS Plugin)” output.
+release_gates:
+  - Complete user testing of real singing, monitoring balance, Meter layout, lyrics Offset, and tray/shortcut workflows.
+  - Verify standard and Portable OBS install／repair／removal from the existing menu, plus automatic selection and signal delivery through the OBS plug-in output.
+  - Complete a real OBS scene mouth-sync check, Windows sleep/resume coverage, repeated app/OBS restart coverage, and a 2–4 hour drift run.
+  - Set final release date, tag URL, package URL, file size, SHA-256, and launcher copy only after release staging passes.

@@ -1,0 +1,84 @@
+# Internal capture checklist for the unpublished 2.1.0.0 manual.
+# Do not render this file on the public site. Capture again only after the
+# release UI is frozen, then verify every localized page against its assets.
+release: "2.1.0.0"
+published: false
+locales:
+  - zh-TW
+  - zh-CN
+  - en
+  - ja
+  - ko
+
+existing_story:
+  - id: "01-05"
+    topic: 音訊路由模式、驅動、播放 API、一般與進階路由圖
+    assets:
+      - 01-audio-routing-mode.jpg
+      - 02-audio-driver.jpg
+      - 03-bgm-output-graph.jpg
+      - 04-playback-api.jpg
+      - 05-routing-mixer.jpg
+  - id: "06-08"
+    topic: Profile 效果鏈、聊天／唱歌 Factory Profile、歌曲 Profile 標籤
+    assets:
+      - 06-vocal-profile-effects.jpg
+      - 07-chat-profile-effects.jpg
+      - 08-song-profile-tag.jpg
+  - id: "09-11"
+    topic: 主畫面監聽、錄音、麥克風與 Profile 控制
+    assets:
+      - 09-manual-profile-mic-controls.jpg
+      - 10-monitor-source.jpg
+      - 11-recording-options.jpg
+
+final_capture_required:
+  - id: "12"
+    asset: 12-built-in-effect-editor.jpg
+    topic: 一致化的霧面效果器視窗
+    must_show:
+      - 一顆有即時訊號圖的內建效果器
+      - 刻度旋鈕、簡易／進階切換、Bypass、說明按鈕
+      - 不遮住主畫面的非模態使用情境
+  - id: "13"
+    asset: 13-meter-horizontal.jpg
+    topic: 橫向五軌音量 Meter
+    must_show:
+      - BGM／伴奏、人聲（Profile 後、Mix 前）、直播輸出、兩條監聽
+      - Peak、直播輸出的 LUFS-S、0–200% 旋鈕
+      - 主介面低飽和藍、與完整／精簡一致的方向切換按鈕
+      - 標準 Windows 標題列、縮小與關閉按鈕
+  - id: "14"
+    asset: 14-meter-vertical.jpg
+    topic: 直向 Meter 與右側停駐
+    must_show:
+      - 同一顆方向按鈕切換後的版面
+      - 停駐時不覆蓋或改寫原本主工作區
+  - id: "15"
+    asset: 15-system-health-tooltip.jpg
+    topic: CPU／記憶體與音訊健康資訊
+    must_show:
+      - 無外框狀態文字
+      - 系統與本程式 CPU、Working Set、Private Memory
+      - 進階模式限定的 Buffer、callback、延遲、underrun／overrun
+  - id: "16"
+    asset: 16-tray-menu.jpg
+    topic: 伴奏播放中的系統工具右鍵選單
+    must_show:
+      - 播放／暫停、停止、從頭播放
+      - Key 與速度子選單、重設動作和正確圖示
+      - Profile、麥克風、歌詞視窗、Meter、開啟主視窗與紅色關閉軟體
+  - id: "17"
+    asset: 17-obs-plugin-output.jpg
+    topic: OBS 插件安裝與直連輸出
+    must_show:
+      - 標準／Portable 安裝與移除位於同一選單
+      - 安裝後自動選取 Singing Stream Savior 音訊（OBS 外掛）
+      - OBS 內同名音訊來源有實際電平訊號
+
+capture_rules:
+  - 使用最終 Release build 與乾淨測試專案，不得使用概念圖代替實際畫面。
+  - 每張圖先完成對應功能的實機測試，再拍攝一致尺寸、100% Windows 顯示縮放的畫面。
+  - 不顯示私人檔案路徑、串流金鑰、裝置序號或其他敏感資料。
+  - 五個語言頁面使用對應介面語言的同名資產；不得把繁體中文 UI 當成其他語言的完成截圖。
+  - 圖片加入頁面後檢查 alt、figcaption、行動版裁切與放大連結。
