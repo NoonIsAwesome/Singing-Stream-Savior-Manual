@@ -3,7 +3,7 @@ title: 2.1.0.0 고급 방송, Profiles 및 오디오 라우팅 전체 안내
 description: 2.1.0.0 라이브 컨트롤, 보컬 Profiles, 내장 효과, 라우팅, Meter, 녹음, OBS 직접 출력과 시스템 트레이를 자세히 설명합니다
 lang: ko
 translation_key: advanced-streaming
-published: false
+published: true
 ---
 
 # 고급 방송 모드
@@ -29,6 +29,12 @@ published: false
   <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}" alt="BGM, 마이크, 음성 Profile, 방송 믹스, 가상 출력, 모니터와 녹음을 포함한 전체 경로" loading="lazy" decoding="async"></a><figcaption>고급 방송 모드는 소스, 두 음성 Profile, 믹스, Stream Output, 모니터와 녹음을 하나의 시각적 경로에 표시합니다.</figcaption></figure>
 </div>
 
+### App 버퍼 점검과 노란색 상태
+
+**앱 안전 버퍼** 선택 상자와 **버퍼 안정성 점검…** 버튼은 한 줄에 항상 표시됩니다. ASIO 입력을 사용하는 경우 이 줄은 ASIO 샘플 레이트／하드웨어 버퍼 영역 바로 아래에 있습니다. **Windows 재생 호환성** 고급 설정을 접어 둔 상태에서도 값을 조정하거나 점검을 시작할 수 있습니다. **빠른 점검**은 512／1024프레임을 약 25초 동안, **전체 점검**은 128／256／512／1024프레임을 약 5분 동안 확인합니다. 점검 대상은 앱 버퍼이며 오디오 인터페이스의 별도 ASIO hardware buffer는 변경하지 않습니다. 완료 후 권장값을 바로 적용할 수 있지만, 128／256 같은 낮은 값은 현재 장치, Profile, 효과 및 경로에서 전체 점검의 독립적인 엄격 관찰 2회를 모두 통과한 경우에만 검증된 값으로 취급됩니다.
+
+노란색 메시지는 두 가지 의미로 나뉩니다. **드롭아웃 확인**은 마이크／모니터 underrun 또는 overrun, 정식 Stream 경로의 불연속, 장치 중단／복구가 감지되었을 때 표시됩니다. **오디오 타이밍 확인**은 동일한 callback, 클록 또는 지연 계산 이상이 약 2초 동안 지속될 때 표시됩니다. 순간적인 callback peak 한 번만으로 실제 들리는 드롭아웃이 발생했다고 판단하지 않습니다. 안정성 텍스트에 포인터를 두면 경로별 카운터, 장치 복구, callback peak／period와 이상 플래그를 확인할 수 있습니다.
+
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>음성 Profiles 만들기 및 편집</h2><p>Profile은 재사용할 수 있는 보컬 효과 체인입니다. 내장 효과 또는 VST3 Plugin을 추가하고, Block 순서를 드래그해 바꾸며, 개별 Block을 우회하고 저장 전에 미리 들을 수 있습니다.</p></div>
   <div class="feature-shot-grid"><figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}" alt="고음역 노래 Profile의 다이내믹 억제, EQ, 리버브와 리미터" loading="lazy" decoding="async"></a><figcaption>고음역, 저음역, KTV, 고풍 등 노래 상황별로 다른 체인을 만들 수 있습니다.</figcaption></figure><figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}" alt="방송 대화 Profile의 입력 게인, 노이즈 게이트와 리미터" loading="lazy" decoding="async"></a><figcaption>대화용과 노래용 Profile을 나누면 방송 중 효과를 하나씩 다시 조절할 필요가 없습니다.</figcaption></figure></div>
@@ -42,7 +48,7 @@ published: false
 - 편집 중 결과를 바로 들어 볼 수 있습니다. 라이브 화면으로 돌아가거나 트레이로 최소화하거나 편집기를 닫으면 Profile 미리 듣기를 끝내고 현재 방송 모니터로 복원합니다.
 - Factory Profile은 실용적인 출발점입니다. 마이크, 방 소음, 음역과 창법에 맞게 조절한 뒤 개인 Profile로 저장하세요.
 
-### 12개 내장 보컬 효과
+### 15개 내장 보컬 효과
 
 모든 편집기는 무광 패널, 눈금 노브, 실시간 그래프와 도움말 버튼을 공유합니다. 간단 모드는 용도별 시작점을, 고급 모드는 전체 파라미터를 제공합니다.
 
@@ -51,7 +57,8 @@ published: false
 - **Compressor／Limiter**: 작은 소리와 큰 소리의 차이를 줄이고 Profile 끝에서 갑작스러운 피크를 막습니다.
 - **Equalizer／Saturation／Air Enhancer**: 불필요한 저역, 두께, 명료도와 Air 느낌을 조절합니다.
 - **Voice Changer**: Pitch와 Formant를 함께 바꿔 캐릭터나 특정 파트 효과를 만듭니다.
-- **Delay／Reverb**: KTV, 발라드, Plate 또는 긴 공간감을 만듭니다.
+- **Harmony／Doubler**: 곡 Key를 따르는 화음 또는 짧은 지연과 미세한 피치 차이가 있는 두 보컬 레이어를 더합니다.
+- **Delay／Reverb／Shimmer**: KTV, 발라드, Plate, 긴 공간감과 한 옥타브 위의 몽환적인 잔향을 만듭니다.
 
 Profile 뒤에는 전체 방송용 **Mix Bus Compressor**, **Stream Output Limiter**, Master 음량이 있습니다. 이들은 개별 Profile의 음색 설정을 다시 쓰지 않습니다.
 
@@ -81,11 +88,13 @@ Profile 뒤에는 전체 방송용 **Mix Bus Compressor**, **Stream Output Limit
 
 ### 모니터와 녹음은 Profile 음색을 바꾸지 않습니다
 
-모니터는 독립된 헤드폰 경로입니다. Meter의 BGM／반주 모니터와 보컬 모니터 노브는 0–200% 범위로 연주자가 듣는 균형만 바꿉니다. 시청자용 Stream Output이나 Profile 내부 Compressor, EQ 등에는 영향을 주지 않습니다.
+모니터는 독립된 헤드폰 경로입니다. Dry Cue는 독립된 소프트웨어 캡처로 드라이 보컬 모니터 지연을 가능한 한 낮추지만 정식 Mix, OBS 또는 녹음 경로는 바꾸지 않습니다. 노래할 때 가장 낮은 모니터 지연이 필요하면 오디오 인터페이스의 hardware Direct Monitor를 우선 사용하세요. Meter의 BGM／반주 모니터와 보컬 모니터 노브는 0–200% 범위로 연주자가 듣는 균형만 바꿉니다. 시청자용 Stream Output이나 Profile 내부 Compressor, EQ 등에는 영향을 주지 않습니다. **전체 출력** 녹음은 정식 Stream Output 타임라인을 사용하므로 BGM／반주와 보컬이 같은 정식 시간축에 기록됩니다. Dry Cue 또는 다른 소프트웨어 모니터 지연은 녹음 안에서 두 신호의 상대 offset을 바꾸지 않습니다.
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>5개 오디오 경로와 시스템 부하 확인</h2><p>고급 방송 모드에서는 보기 또는 트레이 메뉴에서 Meter를 열 수 있습니다. 오른쪽 도킹, 독립 창, 가로／세로 레이아웃 전환을 지원합니다.</p></div>
   <p><strong>BGM／반주</strong>, <strong>보컬(Profile 후, Mix 전)</strong>, <strong>방송 출력</strong>, <strong>BGM／반주 모니터</strong>, <strong>보컬 모니터</strong>를 표시합니다. 모든 트랙에 Peak, 방송 출력에는 3초 단기 <strong>LUFS-S</strong>도 표시하며 0–200% 눈금 노브로 조절합니다.</p>
+  <p>가로형 Meter는 BGM／반주와 보컬의 균형이 오랫동안 어긋날 때 보컬을 높이거나 반주를 낮추도록 안내합니다. 조언만 제공하며 게인을 자동으로 변경하지 않습니다. 적격 보컬 활동이 아직 감지되지 않은 동안에는 안내를 표시하지 않습니다. 적격 보컬이 5초 동안 연속으로 감지되지 않으면 간주 구간으로 처리하고 이전 안내와 판단 데이터를 지운 뒤 다음 보컬 구간부터 다시 판단합니다.</p>
+  <div class="effect-reference"><details><summary><strong>음량 균형 안내의 판단 방식</strong><span>무음, 호흡, 간주를 보컬과 구분합니다</span></summary><div class="effect-reference__body"><p>Meter는 실제 방송 경로의 Mix 전 BGM／반주와 Profile 후 보컬을 100ms 단위로 확인합니다. BGM／반주가 실제 Playing 상태이고 신호가 있으며, 라우팅과 마이크 상태가 정상이고 보컬 활동이 조건을 통과할 때만 데이터를 누적합니다. Noise Gate 정보가 있으면 해당 구간의 약 25% 이상에서 Gate가 열려 있어야 하며, Profile 후 보컬의 평균 에너지는 −45 dBFS 이상, 처리 전 마이크 Peak는 −50 dBFS 이상이어야 합니다. 안내가 표시되려면 최소 10초 재생, 최근 12초 중 6초 이상의 적격 보컬, 각각 최소 1.2초이고 서로 최소 300ms 떨어진 두 구절이 필요합니다. BGM／반주 레벨이 보컬보다 2dB 넘게 낮지 않거나 더 큰 상태도 최근 적격 데이터에서 최소 6초 누적되어야 합니다. 적격 구간의 보컬 평균 에너지가 −26 dBFS 이하일 때만 “보컬이 작을 수 있음” 안내도 표시합니다. 최근 처리 전 또는 처리 후 보컬 Peak가 −6 dBFS 이상이거나 Limiter 게인 감소가 1dB를 초과하면 반주를 낮추라는 안내만 유지하고 보컬을 높이라고 권하지 않습니다. 곡 변경, 재생 중지 또는 재시작, 큰 폭의 재생 위치 이동, Profile 변경, 라우팅 중단 또는 복구 대기, Meter 숨김은 판단 데이터를 초기화합니다. 이는 지속적인 신호 활동과 음량 비교이며 음성 인식이 아닙니다.</p></div></details></div>
   <p>오른쪽 아래의 테두리 없는 CPU／RAM 표시는 시스템 전체와 앱 사용량을 구분합니다. 고급 방송 모드에서는 Buffer, callback, 예상 지연, underrun／overrun도 Tooltip에 표시합니다.</p>
 </div>
 

@@ -10,6 +10,7 @@ zh-TW:
   no_chapters: 找不到符合的章節
   collapse_nav: 收合章節欄
   expand_nav: 展開章節欄
+  preview_badge: 2.1 測試
   on_this_page: 本頁內容
   flow: 使用流程
   stream_tip: 直播前建議
@@ -28,7 +29,9 @@ zh-TW:
     themes: 歌單外觀與主題
     websocket: OBS WebSocket
     modes: 工作區模式
-    advanced_streaming: 進階直播模式
+    audio_routing: 音訊路由
+    profiles: 人聲 Profiles
+    advanced_streaming: 進階直播音訊
     settings: 設定與疑難排解
     resources: 軟體下載
     changelog: 更新日誌
@@ -46,6 +49,7 @@ zh-CN:
   no_chapters: 找不到匹配的章节
   collapse_nav: 收起章节栏
   expand_nav: 展开章节栏
+  preview_badge: 2.1 测试
   on_this_page: 本页内容
   flow: 使用流程
   stream_tip: 直播前建议
@@ -64,7 +68,9 @@ zh-CN:
     themes: 歌单外观与主题
     websocket: OBS WebSocket
     modes: 工作区模式
-    advanced_streaming: 高级直播模式
+    audio_routing: 音频路由
+    profiles: 人声 Profiles
+    advanced_streaming: 高级直播音频
     settings: 设置与疑难解答
     resources: 软件下载
     changelog: 更新日志
@@ -82,6 +88,7 @@ en:
   no_chapters: No matching chapters
   collapse_nav: Collapse chapter sidebar
   expand_nav: Expand chapter sidebar
+  preview_badge: 2.1 test
   on_this_page: On this page
   flow: Guide
   stream_tip: Before going live
@@ -100,7 +107,9 @@ en:
     themes: Playlist Appearance
     websocket: OBS WebSocket
     modes: Workspace modes
-    advanced_streaming: Advanced streaming
+    audio_routing: Audio routing
+    profiles: Vocal Profiles
+    advanced_streaming: Advanced streaming audio
     settings: Settings and help
     resources: Software download
     changelog: Release history
@@ -118,6 +127,7 @@ ja:
   no_chapters: 一致する章がありません
   collapse_nav: 章サイドバーを折りたたむ
   expand_nav: 章サイドバーを展開する
+  preview_badge: 2.1 テスト
   on_this_page: このページの内容
   flow: 使用ガイド
   stream_tip: 配信前の確認
@@ -136,7 +146,9 @@ ja:
     themes: プレイリスト外観
     websocket: OBS WebSocket
     modes: ワークスペース
-    advanced_streaming: 高度な配信モード
+    audio_routing: 音声ルーティング
+    profiles: ボーカル Profiles
+    advanced_streaming: 高度な配信オーディオ
     settings: 設定とトラブル対処
     resources: アプリをダウンロード
     changelog: 更新履歴
@@ -154,6 +166,7 @@ ko:
   no_chapters: 일치하는 목차가 없습니다
   collapse_nav: 목차 사이드바 접기
   expand_nav: 목차 사이드바 펼치기
+  preview_badge: 2.1 테스트
   on_this_page: 이 페이지의 내용
   flow: 사용 안내
   stream_tip: 방송 전 확인
@@ -172,7 +185,9 @@ ko:
     themes: 재생목록 외관
     websocket: OBS WebSocket
     modes: 작업 공간 모드
-    advanced_streaming: 고급 방송 모드
+    audio_routing: 오디오 라우팅
+    profiles: 보컬 Profiles
+    advanced_streaming: 고급 방송 오디오
     settings: 설정 및 문제 해결
     resources: 앱 다운로드
     changelog: 업데이트 기록

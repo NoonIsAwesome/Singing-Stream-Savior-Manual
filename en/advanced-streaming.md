@@ -3,7 +3,7 @@ title: Complete 2.1.0.0 guide to Advanced Streaming, Profiles, and audio routing
 description: Learn the 2.1.0.0 live controls, vocal Profiles, built-in effects, routing, Meter, recording, direct OBS output, and system-tray workflow
 lang: en
 translation_key: advanced-streaming
-published: false
+published: true
 ---
 
 # Advanced Streaming Mode
@@ -32,6 +32,12 @@ Starting with **2.1.0.0**, Advanced Streaming Mode mixes BGM, accompaniment, and
   <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}" alt="Complete audio route with BGM, microphone, voice Profiles, stream mix, virtual output, monitor, and recording" loading="lazy" decoding="async"></a><figcaption>Advanced Streaming Mode places sources, two voice Profiles, the stream mix, Stream Output, monitoring, and recording in one visual route.</figcaption></figure>
 </div>
 
+### App-buffer health check and yellow status
+
+The **App safety buffer** selector and **Check buffer stability…** button stay together in one visible row. With ASIO input, the row appears directly below the ASIO sample-rate/hardware-buffer panel; it remains available while the advanced **Windows playback compatibility** section is collapsed. **Quick check** tests 512 and 1024 frames in about 25 seconds. **Full check** tests 128, 256, 512, and 1024 frames in about five minutes. It diagnoses the app buffer without changing the audio interface's separate ASIO hardware buffer, and its recommendation can be applied directly. A low value such as 128 or 256 is treated as verified only after both independent strict observations in Full check pass for the current devices, Profile, effects, and route.
+
+The yellow messages have two different meanings. **Check dropouts** appears for microphone or monitor underruns/overruns, a discontinuity in the formal Stream path, or an interrupted/recovering device. **Check audio timing** requires the same callback, clock, or latency-accounting anomaly to persist for about two seconds. A momentary callback peak alone is not proof of an audible dropout. Hover over Stability to inspect route counters, device recovery, callback peak/period, and anomaly flags.
+
 ## Create and edit voice Profiles
 
 A Profile is a reusable vocal effect chain. Add built-in effects or VST3 plug-ins, drag blocks into processing order, bypass individual blocks, and audition the result before saving.
@@ -44,7 +50,7 @@ A Profile is a reusable vocal effect chain. Add built-in effects or VST3 plug-in
 - You can audition edits live. Returning to Live Control, minimizing to the tray, or closing the editor leaves Profile audition and restores the current live-monitoring route.
 - Factory Profiles are practical starting points; tune them for the microphone, room noise, vocal range, and singing style before saving a personal Profile.
 
-### Twelve built-in vocal effects
+### Fifteen built-in vocal effects
 
 All editors share the same matte panel, calibrated knobs, live graph, and Help button. Simple mode starts from a useful scenario; Advanced mode exposes the complete parameter set.
 
@@ -59,8 +65,11 @@ All editors share the same matte panel, calibrated knobs, live graph, and Help b
 | Tone | **Air Enhancer** | Add presence, air, and sparkle, then level-match with Trim. |
 | Cleanup | **De-esser** | Control harsh S and SH consonants. |
 | Creative | **Voice Changer** | Change Pitch and Formant together for character or section effects. |
+| Pitch & voice | **Harmony** | Create a key-aware harmony above or below the lead, fading out when tracking is uncertain. |
+| Pitch & voice | **Doubler** | Add two short, slightly detuned vocal layers for thickness and stereo width. |
 | Space | **Delay** | Add slap, KTV, or ballad-style echoes. |
 | Space | **Reverb** | Create rooms, plates, or longer airy ambience. |
+| Space | **Shimmer** | Add an octave-up halo to reverb tails for airy sections. |
 | Dynamics | **Limiter** | Catch sudden vocal peaks at the end of a Profile. |
 
 After the Profile, the complete stream still passes through the **Mix Bus Compressor**, **Stream Output Limiter**, and Master level. These belong to the overall output chain and do not rewrite the tone of an individual Profile.
@@ -102,11 +111,13 @@ After the Profile, the complete stream still passes through the **Mix Bus Compre
 
 ### Monitoring and recording do not rewrite Profile tone
 
-Monitoring is a separate headphone path. The Meter's BGM/accompaniment-monitor and vocal-monitor knobs run from 0–200% and change only the performer's balance—not the audience Stream Output or any Compressor, EQ, or other Profile parameter. Record **Full Output** to check what the audience receives; record **Monitored Content** to check the headphone balance.
+Monitoring is a separate headphone path. Dry Cue uses an independent software capture to reduce dry-vocal monitoring latency where possible; it does not change the formal Mix, OBS, or recording path. For the lowest singing-monitor latency, prefer the audio interface's hardware Direct Monitor. The Meter's BGM/accompaniment-monitor and vocal-monitor knobs run from 0–200% and change only the performer's balance—not the audience Stream Output or any Compressor, EQ, or other Profile parameter. **Full Output** recording follows the formal Stream Output timeline, so BGM/accompaniment and Vocal share that timeline; Dry Cue or other software-monitor latency does not shift their relative offset in the recording. Record **Monitored Content** when you specifically want to inspect the headphone balance.
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>Inspect five audio paths and system load</h2><p>Advanced Streaming Mode exposes the Meter through View or the tray menu. It can dock on the right, float independently, and switch between horizontal and vertical layouts with one split button.</p></div>
   <p>The five tracks are <strong>BGM / accompaniment</strong>, <strong>Vocal (after Profile, before Mix)</strong>, <strong>Stream Output</strong>, <strong>BGM / accompaniment monitor</strong>, and <strong>Vocal monitor</strong>. Every track shows Peak; Stream Output also shows three-second short-term <strong>LUFS-S</strong>. Calibrated knobs cover 0–200% and use the main app's muted blue.</p>
+  <p>The horizontal Meter can suggest raising Vocal or lowering BGM/accompaniment after a sustained imbalance. It is advisory only and never changes gain automatically. No advice appears before qualified vocal activity has been detected. Five continuous seconds without qualified Vocal is treated as an interlude, clears the old advice and evidence, and requires the next vocal section to qualify again.</p>
+  <div class="effect-reference"><details><summary><strong>How loudness advice is qualified</strong><span>Silence, breaths, and interludes are excluded</span></summary><div class="effect-reference__body"><p>The Meter evaluates 100 ms buckets from the live-output path, using BGM/accompaniment before Mix and Vocal after the Profile. Evidence accumulates only while BGM/accompaniment is truly in the Playing state, its signal is present, routing and microphone health are good, and vocal activity qualifies. When Noise Gate telemetry is available, the gate must be open for about 25% or more of the bucket; average post-Profile Vocal energy must be at least −45 dBFS and raw-microphone Peak at least −50 dBFS. A warning requires at least 10 seconds of playback, at least 6 seconds of qualified Vocal in the latest 12 seconds, and two phrases of at least 1.2 seconds each separated by at least 300 ms. BGM/accompaniment must be no more than 2 dB below Vocal—or louder—for at least 6 seconds of the latest qualified evidence. “Vocal may be too quiet” additionally requires average qualified Vocal energy at or below −26 dBFS. If recent raw or processed Vocal Peak reaches −6 dBFS or higher, or limiter gain reduction exceeds 1 dB, only the safer suggestion to lower accompaniment remains; the Meter will not recommend raising Vocal. Changing tracks, stopping or restarting playback, making a significant seek, switching Profiles, route interruption or pending recovery, and hiding the Meter reset the evidence. This is sustained signal-activity and loudness comparison, not speech recognition.</p></div></details></div>
   <p>The borderless CPU/RAM status distinguishes total-system and app use. In Advanced Streaming Mode its tooltip also includes buffer size, callback time, estimated latency, and underrun/overrun counts, with color warnings when load may affect stability.</p>
 </div>
 

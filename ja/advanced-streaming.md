@@ -3,7 +3,7 @@ title: 2.1.0.0 高度な配信・Profiles・音声ルーティング完全ガイ
 description: 2.1.0.0 のライブ操作、ボーカル Profiles、内蔵エフェクト、ルーティング、Meter、録音、OBS 直接出力、システムトレイを詳しく説明します
 lang: ja
 translation_key: advanced-streaming
-published: false
+published: true
 ---
 
 # 高度な配信モード
@@ -29,6 +29,12 @@ published: false
   <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}" alt="BGM、マイク、音声 Profile、配信ミックス、仮想出力、モニター、録音を含む全体ルート" loading="lazy" decoding="async"></a><figcaption>高度な配信モードでは、音源、2 系統の音声 Profile、ミックス、Stream Output、モニター、録音を一つの図で確認できます。</figcaption></figure>
 </div>
 
+### App バッファのチェックと黄色の状態表示
+
+**アプリ安全バッファ**セレクターと **バッファの安定性をチェック…** ボタンは、同じ行に常時表示されます。ASIO 入力を使用している場合、この行は ASIO サンプルレート／ハードウェアバッファ欄の直下にあります。**Windows 再生互換性**の詳細設定を閉じたままでも、値の変更とチェックを行えます。**クイックチェック**は 512／1024 フレームを約 25 秒で、**フルチェック**は 128／256／512／1024 フレームを約 5 分で確認します。診断対象はアプリ側のバッファであり、オーディオインターフェース側の ASIO hardware buffer は変更しません。推奨値はそのまま適用できますが、128／256 などの低い値は、現在のデバイス、Profile、エフェクト、ルートでフルチェック内の独立した 2 回の厳格な観測の両方に合格した場合だけ検証済みとして扱われます。
+
+黄色の表示には 2 種類あります。**ドロップアウトを確認**は、マイク／モニターの underrun・overrun、正式な Stream 経路の不連続、またはデバイスの中断／復旧を検出した場合に表示します。**オーディオタイミングを確認**は、同じ callback、クロック、遅延計算の異常が約 2 秒続いた場合に表示します。一度だけの瞬間的な callback peak は、聞こえるドロップアウトが発生した証拠ではありません。「安定性」にポインターを置くと、各経路のカウンター、デバイス復旧、callback peak／period、異常フラグを確認できます。
+
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>音声 Profiles を作成・編集する</h2><p>Profile は再利用できるボーカルエフェクトチェーンです。内蔵エフェクトや VST3 Plugin を追加し、Block の順序変更、一時バイパス、試聴を行ってから保存できます。</p></div>
   <div class="feature-shot-grid"><figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}" alt="高音域用 Profile のダイナミック抑制、EQ、リバーブ、リミッター" loading="lazy" decoding="async"></a><figcaption>高音域、低音域、KTV、古風など、歌唱場面ごとにチェーンを作成できます。</figcaption></figure><figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}" alt="配信トーク用 Profile の入力ゲイン、ノイズゲート、リミッター" loading="lazy" decoding="async"></a><figcaption>トーク用と歌唱用を分ければ、配信中に各エフェクトを調整し直す必要がありません。</figcaption></figure></div>
@@ -42,7 +48,7 @@ published: false
 - 編集中は結果を試聴できます。ライブ操作へ戻る、トレイへ格納する、またはエディターを閉じると試聴を終了し、現在の配信モニターへ戻ります。
 - Factory Profile は実用的な開始点です。マイク、部屋のノイズ、音域、歌い方に合わせて調整してから個人用 Profile として保存してください。
 
-### 12 個の内蔵ボーカルエフェクト
+### 15 個の内蔵ボーカルエフェクト
 
 すべてのエディターはマットなパネル、目盛り付きノブ、ライブグラフ、ヘルプボタンを共通化しています。簡易モードは用途別の開始点、詳細モードは全パラメーターを表示します。
 
@@ -51,7 +57,8 @@ published: false
 - **Compressor／Limiter**：声量差を整え、Profile 末尾で急なピークを止めます。
 - **Equalizer／Saturation／Air Enhancer**：不要な低域、音の厚み、明瞭さや空気感を調整します。
 - **Voice Changer**：Pitch と Formant を同時に変え、キャラクターや特定パート向けの音色を作ります。
-- **Delay／Reverb**：KTV、バラード、Plate、長い空間などの反響を作ります。
+- **Harmony／Doubler**：楽曲 Key に沿うハーモニー、または短い遅延とわずかなピッチ差を持つ 2 層の声を加えます。
+- **Delay／Reverb／Shimmer**：KTV、バラード、Plate、長い空間や1オクターブ上の幻想的な余韻を作ります。
 
 Profile の後段には、配信全体用の **Mix Bus Compressor**、**Stream Output Limiter**、Master 音量があります。これらは個別 Profile の音色設定を書き換えません。
 
@@ -81,11 +88,13 @@ Profile の後段には、配信全体用の **Mix Bus Compressor**、**Stream O
 
 ### モニターと録音は Profile の音色を書き換えません
 
-モニターは独立したヘッドホン経路です。Meter の BGM／伴奏モニターとボーカルモニターは 0–200% で調整でき、演奏者が聞くバランスだけを変えます。観客向け Stream Output や Profile 内の Compressor、EQ などには影響しません。
+モニターは独立したヘッドホン経路です。Dry Cue は独立したソフトウェアキャプチャーでドライ音声のモニター遅延をできるだけ小さくしますが、正式な Mix、OBS、録音経路は変更しません。歌唱時のモニター遅延を最小にするには、オーディオインターフェースの hardware Direct Monitor を優先してください。Meter の BGM／伴奏モニターとボーカルモニターは 0–200% で調整でき、演奏者が聞くバランスだけを変えます。観客向け Stream Output や Profile 内の Compressor、EQ などには影響しません。**完全出力**の録音は正式な Stream Output のタイムラインを使用するため、BGM／伴奏とボーカルは同じ正式な時間軸に記録されます。Dry Cue などのソフトウェアモニター遅延が、録音内の相対オフセットを変えることはありません。
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>5 系統の音声とシステム負荷を確認</h2><p>高度な配信モードでは「表示」またはトレイメニューから Meter を開けます。右側へドッキング、独立表示、横／縦レイアウトの切り替えに対応します。</p></div>
   <p><strong>BGM／伴奏</strong>、<strong>ボーカル（Profile 後・Mix 前）</strong>、<strong>配信出力</strong>、<strong>BGM／伴奏モニター</strong>、<strong>ボーカルモニター</strong>を表示します。全系統に Peak、配信出力には 3 秒の短期 <strong>LUFS-S</strong>も表示し、0–200% の目盛り付きノブで調整します。</p>
+  <p>横型 Meter は、BGM／伴奏とボーカルのバランスが長時間崩れた場合、ボーカルを上げるか伴奏を下げるよう提案します。助言だけを表示し、ゲインを自動変更することはありません。適格なボーカル活動がまだ検出されていない間は表示しません。適格なボーカルが 5 秒間連続して検出されない場合は間奏として扱い、古い助言と判定履歴を消去して、次の歌唱から再判定します。</p>
+  <div class="effect-reference"><details><summary><strong>音量バランス助言の判定方法</strong><span>無音、息継ぎ、間奏を歌声と区別します</span></summary><div class="effect-reference__body"><p>Meter は実際の配信経路にある Mix 前の BGM／伴奏と Profile 後のボーカルを 100 ms 単位で確認します。BGM／伴奏が実際に Playing 状態で信号も存在し、ルーティングとマイクが正常で、ボーカル活動が条件を満たす場合だけ証拠を蓄積します。Noise Gate の情報がある場合は、区間の約 25% 以上で Gate が開いている必要があります。さらに、Profile 後ボーカルの平均エネルギーが −45 dBFS 以上、処理前マイクの Peak が −50 dBFS 以上である必要があります。表示には 10 秒以上の再生、直近 12 秒中 6 秒以上の適格ボーカル、および各 1.2 秒以上で互いに 300 ms 以上離れた 2 つのフレーズが必要です。BGM／伴奏がボーカルより 2 dB を超えて小さくない状態、または伴奏の方が大きい状態も、最新の適格区間で 6 秒以上必要です。適格区間のボーカル平均エネルギーが −26 dBFS 以下の場合だけ「ボーカルが小さい可能性」も表示します。直近データの処理前または処理後 Peak が −6 dBFS 以上、あるいは Limiter のゲインリダクションが 1 dB を超える場合は、伴奏を下げる助言だけを残し、ボーカルを上げるよう提案しません。曲の変更、停止または再生し直し、大幅なシーク、Profile の切り替え、経路の中断または復旧待ち、Meter の非表示で判定をリセットします。これは持続的な信号活動と音量の比較であり、音声認識ではありません。</p></div></details></div>
   <p>右下の枠なし CPU／RAM 表示はシステム全体と本アプリを区別します。高度な配信モードでは Buffer、callback、推定遅延、underrun／overrun も Tooltip に追加します。</p>
 </div>
 

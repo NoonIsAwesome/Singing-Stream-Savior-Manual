@@ -32,6 +32,12 @@ published: false
   <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}" alt="包含 BGM、麥克風、人聲 Profile、直播混音、虛擬輸出、監聽與錄音的完整音訊路由圖" loading="lazy" decoding="async"></a><figcaption>進階直播模式把訊號來源、兩組人聲 Profile、混音、Stream Output、監聽與錄音放在同一張可視化路由圖中。</figcaption></figure>
 </div>
 
+### App Buffer 健檢與黃色狀態
+
+**程式安全 Buffer** 選單與 **檢查 Buffer 穩定性…** 按鈕會固定顯示在同一列。使用 ASIO 輸入時，這一列位於 ASIO 取樣率／硬體 Buffer 區塊下方；即使 **Windows 播放相容性**的進階設定保持收合，也能直接調整或開啟健檢。**快速健檢**測試 512／1024 frames，約需 25 秒；**完整健檢**測試 128／256／512／1024 frames，約需 5 分鐘。健檢只診斷歌回救星的 App Buffer，不會更改音訊介面的 ASIO hardware buffer；完成後可直接套用建議，但 128／256 等低值只有在完整健檢的兩輪獨立嚴格觀察都通過後，才會列為目前裝置、Profile、效果器與路由已驗證。
+
+黃色的 **檢查音訊中斷**會在麥克風／監聽 under/overrun、正式 Stream 斷續或裝置中斷／復原時顯示；**檢查音訊時序**則需同一 callback、時鐘或延遲異常持續約 2 秒。一次瞬時 callback peak 不代表已發生可聽掉訊，將游標停在穩定度文字上可查看各路徑計數、裝置復原、callback peak／period 與異常旗標。
+
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>建立與編輯人聲 Profiles</h2><p>每個 Profile 是一條可重用的人聲效果鏈。可以新增內建效果或 VST3 Plugin、拖曳調整處理順序、暫時停用單一 Block，並先試聽再儲存。</p></div>
   <div class="feature-shot-grid">
@@ -48,7 +54,7 @@ published: false
 - 編輯時可直接試聽處理結果。切回直播操作、縮到系統工具或關閉編輯器時，會離開 Profile 試聽並恢復目前的直播監聽設定。
 - Factory Profile 是可立即使用的起點；仍建議依麥克風、房間噪音、音域與唱法微調，再另存成自己的 Profile。
 
-### 12 顆內建人聲效果器
+### 15 顆內建人聲效果器
 
 效果器採用同一套霧面面板、刻度旋鈕、即時訊號圖與說明按鈕。簡易模式可從情境起點快速調整，進階模式則開放完整參數。
 
@@ -63,8 +69,11 @@ published: false
 | 音色 | **Air Enhancer** | 增加存在感、空氣感與亮度，並可用 Trim 對齊旁路前後的音量。 |
 | 清理 | **De-esser** | 壓低刺耳的 S、SH 等齒音，避免高頻過亮或 Limiter 被齒音頻繁觸發。 |
 | 創意 | **Voice Changer** | 同時調整 Pitch 與 Formant，適合角色或特殊段落效果；用途是創意變聲而非身分保護。 |
+| 音高與人聲 | **Harmony** | 依歌曲 Key 與演唱音高產生上方或下方三度和聲；追蹤不確定時會平順淡出。 |
+| 音高與人聲 | **Doubler** | 加入兩層短延遲與些微音高差的人聲，增加厚度與立體寬度。 |
 | 空間 | **Delay** | 加入 slap、KTV 或抒情回聲；Wet 與 Feedback 應保守，避免尾音掩蓋下一句。 |
 | 空間 | **Reverb** | 建立房間、Plate 或較長的空靈殘響；Pre-delay 可保留字頭清晰度。 |
+| 空間 | **Shimmer** | 在殘響尾音加入高八度光暈；適合空靈段落，也可用歌曲預設與快捷鍵切換。 |
 | 動態 | **Limiter** | 放在 Profile 尾端攔截突發人聲峰值，保留輸出安全餘裕。 |
 
 Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compressor**、**Stream Output Limiter** 與 Master 音量。這三項屬於整體直播輸出，不會寫回單一 Profile 的音色設定。
@@ -98,11 +107,11 @@ Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compres
 
 ### 監聽與錄音不會改變直播輸出
 
-監聽是給演唱者自己聽的獨立路徑。切換監聽來源或調整 BGM／伴奏監聽、人聲監聽的音量，不會改變觀眾收到的 Stream Output。Meter 的監聽旋鈕可在 0–200% 間調整，適合在唱歌時把人聲稍微提高、把伴奏稍微降低；它不會改寫 Profile 裡的 Compressor、EQ 或其他音色參數。
+監聽是給演唱者自己聽的獨立路徑。Dry Cue 會用獨立的軟體擷取盡量降低乾聲監聽延遲，但不會改變正式 Mix、OBS 或錄音路徑；需要最低延遲時，仍應優先使用音訊介面的 Hardware Direct Monitor。切換監聽來源或調整 BGM／伴奏監聽、人聲監聽的音量，不會改變觀眾收到的 Stream Output。Meter 的監聽旋鈕可在 0–200% 間調整，適合在唱歌時把人聲稍微提高、把伴奏稍微降低；它不會改寫 Profile 裡的 Compressor、EQ 或其他音色參數。
 
 錄音選單則將「要錄什麼」與「自己聽什麼」分開：
 
-- **完整輸出**會錄下送往直播端的完整混音，適合檢查觀眾實際聽到的結果。
+- **完整輸出**沿用正式 Stream Output 的時間軸錄下完整混音；BGM／伴奏與人聲位於同一條正式時間線，Dry Cue 或其他軟體監聽延遲不會改變錄音中的相對 offset。
 - **監聽內容**會錄下目前耳機路徑，適合檢查演唱時的監聽平衡。
 - **WAV 16-bit PCM**檔案較小、相容性高；**WAV 32-bit Float**保留較多後製空間但檔案更大。
 - 可直接選擇錄音資料夾或開啟目前資料夾，不必離開直播操作頁。
@@ -111,6 +120,8 @@ Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compres
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>查看五條音訊路徑與系統負載</h2><p>進階直播模式可從「檢視」或系統工具右鍵選單開啟音量 Meter。它可以停駐在主視窗右側，也能獨立懸浮，並用單一切換按鈕改成橫向或直向顯示。</p></div>
   <p>五軌分別是 <strong>BGM／伴奏</strong>、<strong>人聲（Profile 後、Mix 前）</strong>、<strong>直播輸出</strong>、<strong>BGM／伴奏監聽</strong>與<strong>人聲監聽</strong>。每軌顯示 Peak；直播輸出另顯示三秒短期 <strong>LUFS-S</strong>，方便同時觀察瞬間峰值與主觀響度趨勢。</p>
   <p>每軌旋鈕沿用效果器的刻度樣式，範圍為 0–200%。直播路徑旋鈕調整路由階段的音量，監聽旋鈕只調整耳機平衡；這些控制不會直接改寫 Profile 內部參數。</p>
+  <p>橫向 Meter 會在 BGM／伴奏與人聲長時間失衡時，提示提高人聲或調低伴奏；它只提供建議，絕不自動改變任何增益。從頭沒有合格人聲時不會提示；連續 5 秒沒有合格人聲會視為間奏，清除舊提示與判斷資料，下一段歌聲需重新累積。</p>
+  <div class="effect-reference"><details><summary><strong>響度提示的判斷方式</strong><span>避免把安靜、換氣或間奏誤判為人聲過小</span></summary><div class="effect-reference__body"><p>系統以正式直播路徑中的 Mix 前 BGM／伴奏與 Profile 後人聲，每 100 ms 建立一筆資料。只有 BGM／伴奏實際處於 Playing、有伴奏訊號、路由與麥克風健康，而且人聲通過活動條件時才累積證據。Noise Gate 有資料時，該區段至少約 25% 時間必須保持開啟；Profile 後人聲平均能量至少為 −45 dBFS，原始麥克風 Peak 至少為 −50 dBFS。顯示失衡提示前，需要至少 10 秒播放、最近 12 秒內至少 6 秒合格人聲，並包含兩段各至少 1.2 秒、彼此相隔至少 300 ms 的人聲；伴奏不比人聲低超過 2 dB，或比人聲更大聲的狀況，還需在最新合格人聲資料中累積至少 6 秒。只有合格人聲平均能量不高於 −26 dBFS，才會同時提示「人聲可能偏小」。若最近資料中原始或處理後人聲 Peak 達到 −6 dBFS 或更高，或 Limiter 增益衰減超過 1 dB，則只保留降低伴奏的建議，不會要求提高人聲。換歌、停止或重新播放、大幅移動播放位置、切換 Profile、路由中斷或等待恢復，以及隱藏 Meter，都會重置判斷。這是訊號活動與長時間響度比較，不是語音辨識。</p></div></details></div>
   <p>主視窗右下角的無外框 CPU／RAM 狀態會顯示本程式使用率。停留滑鼠可看到系統總 CPU、系統記憶體、本程式 Working Set 與 Private Memory；只有進階直播模式才會加上 Buffer、callback、估計延遲和 underrun／overrun 等音訊資訊。負載可能影響穩定度時會以顏色提示。</p>
 </div>
 

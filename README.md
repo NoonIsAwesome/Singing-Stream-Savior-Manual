@@ -24,6 +24,33 @@ translation_key: home
 
 {% include demo-video.html %}
 
+<section class="release-preview-section" aria-labelledby="release-preview-title">
+  <div class="section-heading">
+    <p class="section-kicker">2.1.0.0 · 測試功能先行介紹</p>
+    <h2 id="release-preview-title">這次更新，先從每一首歌的人聲風格開始</h2>
+    <p>2.1.0.0 的重點不是要求使用者理解複雜音訊術語，而是讓麥克風效果能跟著歌曲自動準備好。以下功能仍在發布前測試，介面文字與細節可能微調。</p>
+  </div>
+  <div class="release-highlights">
+    <article class="release-highlight"><div><strong>播放伴奏時，自動切換該歌曲的麥克風效果</strong><p>可以為每一首歌曲指定不同風格的效果器訊號鏈；伴奏開始時自動套用，結束後回到聊天用設定。</p></div></article>
+    <article class="release-highlight"><div><strong>自行設計各種人聲效果器訊號鏈</strong><p>軟體內建噪音閥、壓縮器、EQ、Reverb、Delay、Shimmer 等效果器，也能加入 VST3 並拖曳調整先後順序。</p></div></article>
+    <article class="release-highlight"><div><strong>內建多種可直接使用的效果</strong><p>提供古風、搖滾、KTV、空靈、通用歌唱、不同音域與聊天等 Profiles，可直接使用，也可複製後微調。</p></div></article>
+    <article class="release-highlight"><div><strong>縮小到系統工具，以最少空間持續執行</strong><p>主視窗收起後，仍可從右鍵選單與全域快捷鍵控制伴奏、Key、速度、Profile、麥克風、歌詞視窗與 Meter。</p></div></article>
+    <article class="release-highlight"><div><strong>完整的直播音訊路由</strong><p>把 BGM／伴奏與處理後的人聲混合，再透過 OBS 音訊外掛或虛擬音源送到 OBS；監聽與錄音可分開設定。</p></div></article>
+    <article class="release-highlight"><div><strong>五軌音量 Meter 與效能狀態</strong><p>觀察伴奏、人聲、直播輸出與兩條監聽訊號，並查看 PEAK、LUFS-S、CPU、記憶體、Buffer 與預估延遲。</p></div></article>
+    <article class="release-highlight"><div><strong>更完整的直播控制</strong><p>主畫面新增監聽、錄音、麥克風靜音與 Profile 切換；播放、重播、升降 Key、速度與歌詞視窗也都有預設快捷鍵。</p></div></article>
+    <article class="release-highlight"><div><strong>歌詞與效果器操作改善</strong><p>歌詞 Offset 可即時反映並隨專案保存；效果器視窗不再鎖住主畫面，並統一旋鈕、Bypass、說明與即時訊號圖。</p></div></article>
+  </div>
+  <div class="release-preview-gallery" aria-label="2.1.0.0 功能畫面">
+    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/08-song-profile-tag.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/08-song-profile-tag.jpg' | relative_url }}" alt="在歌曲列表替每首歌曲指定人聲 Profile" loading="lazy" decoding="async"></a><figcaption><strong>歌曲自動切換效果：</strong>在歌曲選單指定 Profile，之後播放伴奏就會自動套用。</figcaption></figure>
+    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/12-built-in-effect-editor.png' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/12-built-in-effect-editor.png' | relative_url }}" alt="使用刻度旋鈕與即時訊號圖編輯 Noise Gate" loading="lazy" decoding="async"></a><figcaption><strong>一致的內建效果器介面：</strong>以起始設定、即時圖、刻度旋鈕與 Bypass 調整人聲。</figcaption></figure>
+    <figure class="manual-figure release-preview-gallery__wide"><a href="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}" alt="包含伴奏、人聲 Profile、直播輸出、監聽與錄音的完整音訊路由" loading="lazy" decoding="async"></a><figcaption><strong>看得懂聲音去了哪裡：</strong>從伴奏與麥克風，一路確認 Profile、直播輸出、監聽、錄音與 OBS。</figcaption></figure>
+  </div>
+  <div class="intro-actions">
+    <a class="intro-button intro-button--primary" href="{{ '/profiles.html' | relative_url }}">閱讀人聲 Profiles 教學</a>
+    <a class="intro-button" href="{{ '/audio-routing.html' | relative_url }}">閱讀音訊路由教學</a>
+  </div>
+</section>
+
 <section class="origin-story" id="why">
   <div>
     <p class="section-kicker">為什麼做這個軟體？</p>

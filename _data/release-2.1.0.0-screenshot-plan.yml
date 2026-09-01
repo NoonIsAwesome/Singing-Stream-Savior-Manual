@@ -31,15 +31,12 @@ existing_story:
       - 09-manual-profile-mic-controls.jpg
       - 10-monitor-source.jpg
       - 11-recording-options.jpg
+  - id: "12"
+    topic: 一致化的霧面效果器視窗
+    assets:
+      - 12-built-in-effect-editor.png
 
 final_capture_required:
-  - id: "12"
-    asset: 12-built-in-effect-editor.jpg
-    topic: 一致化的霧面效果器視窗
-    must_show:
-      - 一顆有即時訊號圖的內建效果器
-      - 刻度旋鈕、簡易／進階切換、Bypass、說明按鈕
-      - 不遮住主畫面的非模態使用情境
   - id: "13"
     asset: 13-meter-horizontal.jpg
     topic: 橫向五軌音量 Meter

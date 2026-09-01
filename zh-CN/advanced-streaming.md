@@ -3,7 +3,7 @@ title: 2.1.0.0 高级直播、Profiles 与音频路由完整指南
 description: 详细介绍 Singing Stream Savior 2.1.0.0 的直播控制、人声 Profiles、内置效果器、音频路由、Meter、录音、OBS 直连与系统托盘
 lang: zh-CN
 translation_key: advanced-streaming
-published: false
+published: true
 ---
 
 # 高级直播模式
@@ -29,6 +29,12 @@ published: false
   <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}" alt="包含 BGM、麦克风、人声 Profile、直播混音、虚拟输出、监听与录音的完整音频路由图" loading="lazy" decoding="async"></a><figcaption>高级直播模式把信号来源、两组人声 Profile、混音、Stream Output、监听与录音放在同一张可视化路由图中。</figcaption></figure>
 </div>
 
+### App Buffer 检查与黄色状态
+
+**程序安全 Buffer** 选单与 **检查 Buffer 稳定性…** 按钮会固定显示在同一行。使用 ASIO 输入时，该行位于 ASIO 采样率／硬件 Buffer 区块下方；即使 **Windows 播放兼容性**的高级设置保持收起，也能直接调整或打开检查。**快速检查**测试 512／1024 frames，约需 25 秒；**完整检查**测试 128／256／512／1024 frames，约需 5 分钟。检查只诊断歌回救星的 App Buffer，不会更改音频接口独立的 ASIO hardware buffer；完成后可以直接应用建议。128／256 等低数值只有在完整检查中的两轮独立严格观察均通过后，才会视为已针对当前设备、Profile、效果与路由完成验证。
+
+黄色信息有两种不同含义。**检查音频中断**表示检测到麦克风／监听 underrun、overrun、正式 Stream 路径中断，或设备正在中断／恢复；**检查音频时序**则要求同一 callback、时钟或延迟核算异常持续约 2 秒。单次瞬时 callback peak 不代表已经发生可听见的断音。将鼠标停在“稳定性”上，可查看各路径计数、设备恢复、callback peak／period 与异常标志。
+
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>创建并编辑人声 Profiles</h2><p>每个 Profile 都是一条可重复使用的人声效果链。可以加入内置效果或 VST3 Plugin、拖动调整处理顺序、暂时停用单个 Block，并在保存前试听。</p></div>
   <div class="feature-shot-grid"><figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}" alt="高音域演唱 Profile 的动态抑制、EQ、混响与限制器效果链" loading="lazy" decoding="async"></a><figcaption>可为高低音域、KTV、古风等演唱场景建立不同效果链。</figcaption></figure><figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}" alt="直播聊天 Profile 的输入增益、噪声门与限制器效果链" loading="lazy" decoding="async"></a><figcaption>聊天与演唱 Profile 分开管理，不必直播中逐项重调效果器。</figcaption></figure></div>
@@ -42,7 +48,7 @@ published: false
 - 编辑时可以直接试听。切回直播操作、缩到系统托盘或关闭编辑器时，会退出 Profile 试听并恢复当前直播监听。
 - Factory Profile 是可立即使用的起点；仍建议依麦克风、环境噪声、音域与唱法微调后另存为自己的 Profile。
 
-### 12 个内置人声效果器
+### 15 个内置人声效果器
 
 所有效果器使用一致的雾面面板、刻度旋钮、实时信号图与说明按钮。简易模式提供情境起点，进阶模式开放完整参数。
 
@@ -57,8 +63,11 @@ published: false
 | 音色 | **Air Enhancer** | 增加存在感、空气感与亮度，并以 Trim 匹配音量。 |
 | 清理 | **De-esser** | 压低刺耳的 S、SH 等齿音。 |
 | 创意 | **Voice Changer** | 同时调整 Pitch 与 Formant，制作角色或特殊段落效果。 |
+| 音高与人声 | **Harmony** | 按歌曲 Key 与演唱音高生成上方或下方三度和声；跟踪不确定时会平滑淡出。 |
+| 音高与人声 | **Doubler** | 加入两层短延迟与轻微音高差的人声，增加厚度与立体声宽度。 |
 | 空间 | **Delay** | 加入 slap、KTV 或抒情回声。 |
 | 空间 | **Reverb** | 建立房间、Plate 或较长的空灵混响。 |
+| 空间 | **Shimmer** | 在混响尾音加入高八度光晕，适合空灵段落。 |
 | 动态 | **Limiter** | 在 Profile 末端拦截突发人声峰值。 |
 
 Profile 处理后，完整直播输出还会依次经过 **Mix Bus Compressor**、**Stream Output Limiter** 与 Master 音量；这些属于整体输出，不会写回单个 Profile 的音色设置。
@@ -89,11 +98,13 @@ Profile 处理后，完整直播输出还会依次经过 **Mix Bus Compressor**�
 
 ### 监听与录音不会改写 Profile 音色
 
-监听是独立的耳机路径。Meter 中的 BGM／伴奏监听与人声监听旋钮可在 0–200% 调整，只改变演唱者听到的平衡，不改变观众的 Stream Output，也不会重写 Profile 内的 Compressor、EQ 或其他效果参数。录制“完整输出”适合检查观众实际收到的混音；录制“监听内容”适合检查自己的耳机平衡。
+监听是独立的耳机路径。Dry Cue 使用独立的软件采集尽量降低干声监听延迟，但不会改变正式 Mix、OBS 或录音路径；需要最低演唱监听延迟时，请优先使用音频接口的 hardware Direct Monitor。Meter 中的 BGM／伴奏监听与人声监听旋钮可在 0–200% 调整，只改变演唱者听到的平衡，不改变观众的 Stream Output，也不会重写 Profile 内的 Compressor、EQ 或其他效果参数。“完整输出”录音沿用正式 Stream Output 时间轴，BGM／伴奏与人声位于同一条正式时间线；Dry Cue 或其他软件监听延迟不会改变录音中两者的相对 offset。录制“监听内容”则适合检查自己的耳机平衡。
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>查看五条音频路径与系统负载</h2><p>高级直播模式可从“查看”或系统托盘菜单打开 Meter。它可以停靠在主窗口右侧或独立悬浮，并通过一颗按钮切换横向／纵向布局。</p></div>
   <p>五轨为 <strong>BGM／伴奏</strong>、<strong>人声（Profile 后、Mix 前）</strong>、<strong>直播输出</strong>、<strong>BGM／伴奏监听</strong>与<strong>人声监听</strong>。每轨显示 Peak；直播输出另显示三秒短期 <strong>LUFS-S</strong>。刻度旋钮范围为 0–200%，配色与主界面一致。</p>
+  <p>横向 Meter 会在 BGM／伴奏与人声长时间失衡时提示提高人声或调低伴奏；它只提供建议，绝不自动改变任何增益。尚未检测到合格人声时不会提示；连续 5 秒未检测到合格人声会视为间奏，清除旧提示与判断数据，并从下一段人声重新累计。</p>
+  <div class="effect-reference"><details><summary><strong>响度提示的判断方式</strong><span>避免把安静、换气或间奏误判为人声过小</span></summary><div class="effect-reference__body"><p>系统每 100 ms 检查一次实际直播路径中的 Mix 前 BGM／伴奏与 Profile 后人声。只有 BGM／伴奏确实处于 Playing 状态、有伴奏信号、路由与麦克风状态正常，并且人声通过活动条件时才会累计数据。Noise Gate 有状态数据时，该区段至少约 25% 的时间必须保持开启；Profile 后人声平均能量至少为 −45 dBFS，原始麦克风 Peak 至少为 −50 dBFS。显示失衡提示前，需要至少播放 10 秒、最近 12 秒内至少 6 秒合格人声，并包含两段各至少 1.2 秒、彼此间隔至少 300 ms 的人声；伴奏不比人声低超过 2 dB，或比人声更大的状态，还必须在最近的合格人声数据中累计至少 6 秒。只有合格人声平均能量不高于 −26 dBFS，才会同时提示“人声可能偏小”。如果最近数据中的原始或处理后人声 Peak 达到 −6 dBFS 或更高，或 Limiter 增益衰减超过 1 dB，则只保留调低伴奏的建议，不会要求提高人声。换曲、停止或重新播放、大幅跳转播放位置、切换 Profile、路由中断或等待恢复，以及隐藏 Meter，都会重置判断。这是信号活动与长时间响度比较，并非语音识别。</p></div></details></div>
   <p>右下角无边框 CPU／RAM 状态区分系统与本程序用量。高级直播模式的 Tooltip 还会显示 Buffer、callback、估计延迟及 underrun／overrun，并在负载可能影响稳定性时用颜色提醒。</p>
 </div>
 
