@@ -21,4 +21,28 @@
     {% endfor %}
   </div>
   <blockquote><p>{{ setup.note }}</p></blockquote>
+  {% if setup.discord %}
+  <section class="discord-output-walkthrough" aria-labelledby="discord-output-walkthrough-title">
+    <h3 id="discord-output-walkthrough-title">{{ setup.discord.heading }}</h3>
+    <p>{{ setup.discord.intro }}</p>
+    <div class="setup-steps">
+      {% for step in setup.discord.steps %}
+      <section class="setup-step">
+        <span class="setup-step-number">{{ forloop.index }}</span>
+        <div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.body }}</p>
+          <div class="feature-shot-grid feature-shot-grid--compact">
+            {% for shot in step.images %}
+              {% capture discord_shot_path %}/assets/images/advanced-streaming/{{ shot.file }}{% endcapture %}
+              <figure class="manual-figure"><a href="{{ discord_shot_path | relative_url }}"><img src="{{ discord_shot_path | relative_url }}" alt="{{ shot.alt | escape }}" loading="lazy" decoding="async"></a><figcaption>{{ shot.caption }}</figcaption></figure>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+    <blockquote><p>{{ setup.discord.note }}</p></blockquote>
+  </section>
+  {% endif %}
 </section>

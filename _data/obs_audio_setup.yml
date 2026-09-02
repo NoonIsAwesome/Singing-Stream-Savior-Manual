@@ -2,6 +2,23 @@ zh-TW:
   heading: OBS 設定圖解
   intro: 先在歌回救星的「直播輸出」選擇一條路徑，再到 OBS 加入相符的來源。OBS 外掛與虛擬音源傳送的是同一條完整 Stream Output，不需要同時使用。
   note: 使用完整 Stream Output 時，請停用 OBS 內重複的原始麥克風或桌面伴奏來源，否則可能出現人聲重複、音量變大或相位感。
+  discord:
+    heading: 用虛擬音源把完整混音送到 Discord
+    intro: Discord 無法使用 OBS 專用外掛；要把伴奏與 Profile 效果後人聲一起送入語音頻道，請在歌回救星使用虛擬音源輸出，再讓 Discord 接收同一組虛擬音源的錄音端。
+    steps:
+      - title: 輸入裝置選擇虛擬音源的錄音端
+        body: 在 Discord「語音」設定中，把麥克風／輸入裝置選成虛擬音源的錄音端。以 VB-CABLE 為例，歌回救星輸出到 CABLE Input，Discord 這裡要選 <strong>CABLE Output</strong>。
+        images:
+          - file: 28-discord-virtual-input.png
+            alt: Discord 語音設定將輸入裝置選為 CABLE Output
+            caption: VB-CABLE 的 Discord 輸入端是 CABLE Output；不要選成歌回救星使用的 CABLE Input。
+      - title: 輸入設定檔建議選 Studio（Pure Audio）
+        body: 實測使用 <strong>Studio</strong> 時不會套用語音隔離與降噪，較不容易把伴奏、殘響或處理後人聲誤判成噪音而切斷。若 Discord 版本沒有 Studio，請選擇最接近「不處理／原音」的模式，並關閉會自動消除背景聲的選項。
+        images:
+          - file: 29-discord-studio-mode.png
+            alt: Discord 輸入設定檔選擇 Studio Pure Audio
+            caption: Studio 的說明為開放麥克風、不進行任何處理，適合接收已在歌回救星完成的混音。
+    note: Discord 的通話傳輸仍可能對聲音重新編碼、壓縮或做平台端處理，因此音質可能比本機錄音或 OBS 錄影稍差。這通常不是歌回救星路由異常；需要保留最高音質時，請以 OBS 或本機錄音為準。
   steps:
     - title: 先啟用進階直播模式與正式混音路徑
       body: 到「設定 → 音訊路由」，把路由模式設為「進階直播模式（混音輸出）」，再選擇實際使用的 ASIO 或 Windows Audio 麥克風輸入、聊天／唱歌 Profile 與直播輸出。只有這個模式會把 BGM／伴奏與 Profile 效果後人聲合成完整 Stream Output；畫面中的 Volt、ASIO 與裝置名稱只是作者電腦的設定範例。
@@ -59,6 +76,23 @@ zh-CN:
   heading: OBS 设置图解
   intro: 先在 Singing Stream Savior 的“直播输出”中选择一种路径，再在 OBS 中添加对应的来源。OBS 插件与虚拟音频设备传送的是同一条完整 Stream Output，无需同时使用。
   note: 使用完整 Stream Output 时，请停用 OBS 中重复的原始麦克风或桌面伴奏来源，否则可能出现人声重复、音量增大或相位感。
+  discord:
+    heading: 使用虚拟音频设备把完整混音发送到 Discord
+    intro: Discord 无法使用 OBS 专用插件。要把伴奏与 Profile 处理后的人声一起发送到语音频道，请让 Singing Stream Savior 输出到虚拟音频设备，再让 Discord 接收同一设备的录音端。
+    steps:
+      - title: 输入设备选择虚拟音频设备的录音端
+        body: 在 Discord“语音”设置中，将麦克风／输入设备设为虚拟音频设备的录音端。以 VB-CABLE 为例，Singing Stream Savior 输出到 CABLE Input，而 Discord 应选择 <strong>CABLE Output</strong>。
+        images:
+          - file: 28-discord-virtual-input.png
+            alt: Discord 语音设置将输入设备选为 CABLE Output
+            caption: VB-CABLE 的 Discord 输入端是 CABLE Output；截图为繁体中文界面，其他语言的位置相同。
+      - title: 输入配置文件建议选择 Studio（Pure Audio）
+        body: 实测 <strong>Studio</strong> 不会套用语音隔离与降噪，较不容易把伴奏、混响或处理后的人声误判为噪声而切断。如果当前 Discord 版本没有 Studio，请选择最接近“不处理／原音”的模式，并关闭自动消除背景声的选项。
+        images:
+          - file: 29-discord-studio-mode.png
+            alt: Discord 输入配置文件选择 Studio Pure Audio
+            caption: Studio 使用开放麦克风且不进行语音处理；截图为繁体中文界面，其他语言的名称可能不同。
+    note: Discord 的通话传输仍可能重新编码、压缩或进行平台处理，因此音质可能比本地录音或 OBS 录像略差。这通常不是 Singing Stream Savior 路由异常；需要保留最高音质时，请以 OBS 或本地录音为准。
   steps:
     - title: 先启用高级直播模式与正式混音路径
       body: 打开“设置 → 音频路由”，把路由模式设为“高级直播模式（混音输出）”，再选择实际使用的 ASIO 或 Windows Audio 麦克风输入、聊天／演唱 Profile 与直播输出。只有此模式会把 BGM／伴奏与 Profile 处理后的人声合成为完整 Stream Output；截图中的 Volt、ASIO 与设备名称只是作者电脑的设置示例。
@@ -116,6 +150,23 @@ en:
   heading: Receive Stream Output in OBS
   intro: Choose one Stream Output route in Singing Stream Savior, then add the matching source in OBS. The OBS plug-in and a virtual audio device carry the same complete Stream Output, so you do not need both.
   note: When using the complete Stream Output, disable duplicate raw-microphone or desktop-accompaniment sources in OBS. Keeping both can double the voice, raise the level, or create phasey sound.
+  discord:
+    heading: Send the complete mix to Discord through a virtual device
+    intro: Discord cannot receive the dedicated OBS plug-in. To send accompaniment and the post-Profile vocal together, output to a virtual audio device in Singing Stream Savior and select the paired recording endpoint in Discord.
+    steps:
+      - title: Select the virtual device's recording endpoint as Discord input
+        body: In Discord Voice settings, set the microphone／input device to the recording side of the virtual device. With VB-CABLE, Singing Stream Savior sends to CABLE Input and Discord must select <strong>CABLE Output</strong>.
+        images:
+          - file: 28-discord-virtual-input.png
+            alt: Discord Voice input device set to CABLE Output
+            caption: CABLE Output is the Discord input in this VB-CABLE example. The capture uses the Traditional Chinese Discord interface; the control is in the same Voice settings area in other languages.
+      - title: Use the Studio (Pure Audio) input profile
+        body: In testing, <strong>Studio</strong> avoided voice isolation and noise suppression, so accompaniment, reverb, and processed vocals were less likely to be mistaken for noise and cut out. If Studio is unavailable in your Discord version, choose the closest unprocessed／original-audio mode and disable automatic background-noise removal.
+        images:
+          - file: 29-discord-studio-mode.png
+            alt: Discord input profile set to Studio Pure Audio
+            caption: Studio keeps an open microphone without voice processing. The capture uses the Traditional Chinese interface; wording can differ by Discord version and language.
+    note: Discord may still re-encode, compress, or otherwise process call audio, so it can sound worse than a local recording or OBS capture even when routing is correct. Use OBS or local recording when preserving the highest quality matters.
   steps:
     - title: Enable Advanced Streaming Mode and the formal mix path first
       body: Open Settings → Audio Routing, set Routing Mode to Advanced Streaming Mode (Mixed Output), then choose your real ASIO or Windows Audio microphone input, chat／singing Profiles, and Stream Output. Only this mode combines BGM／accompaniment with the Profile-processed vocal into the complete Stream Output. The Volt, ASIO, and device names in these captures are examples from the author's PC, not required values.
@@ -173,6 +224,23 @@ ja:
   heading: OBS で配信出力を受け取る
   intro: Singing Stream Savior の「配信出力」で経路を一つ選び、OBS に対応するソースを追加します。OBS プラグインと仮想オーディオデバイスは同じ完全な Stream Output を運ぶため、同時に使用する必要はありません。
   note: 完全な Stream Output を使用するときは、OBS 側の重複した生マイクやデスクトップ伴奏ソースを無効にしてください。声が二重になったり、大きくなったり、位相感が出たりする原因になります。
+  discord:
+    heading: 仮想オーディオで完全なミックスを Discord へ送る
+    intro: Discord は OBS 専用プラグインを受信できません。伴奏と Profile 処理後の声をまとめて送るには、Singing Stream Savior から仮想オーディオへ出力し、Discord で対になる録音側を選びます。
+    steps:
+      - title: Discord 入力に仮想デバイスの録音側を選ぶ
+        body: Discord の音声設定で、マイク／入力デバイスを仮想オーディオの録音側にします。VB-CABLE では Singing Stream Savior が CABLE Input へ送り、Discord は <strong>CABLE Output</strong> を選びます。
+        images:
+          - file: 28-discord-virtual-input.png
+            alt: Discord の音声入力デバイスに CABLE Output を選択した画面
+            caption: VB-CABLE の Discord 入力は CABLE Output です。画像は繁体字中国語版ですが、他言語でも音声設定内の同じ項目です。
+      - title: 入力プロファイルは Studio（Pure Audio）を推奨
+        body: 実測では <strong>Studio</strong> が音声分離やノイズ抑制を適用せず、伴奏、残響、処理済みボーカルをノイズとして途中で切りにくい結果でした。Studio がない Discord バージョンでは、最も「無処理／原音」に近いモードを選び、背景音の自動除去を無効にしてください。
+        images:
+          - file: 29-discord-studio-mode.png
+            alt: Discord の入力プロファイルに Studio Pure Audio を選択した画面
+            caption: Studio はマイクを開放し、音声処理を行わない設定です。画像は繁体字中国語版で、名称はバージョンや言語により異なる場合があります。
+    note: 経路が正しくても Discord 側で再エンコード、圧縮、その他の通話処理が行われる場合があり、ローカル録音や OBS 録画より音質が下がることがあります。最高音質を残す場合は OBS またはローカル録音を基準にしてください。
   steps:
     - title: 最初に高度な配信モードと正式ミックス経路を有効にする
       body: 「設定 → オーディオルーティング」でルーティングモードを「高度な配信モード（ミックス出力）」にし、実際に使う ASIO または Windows Audio のマイク入力、トーク／歌唱 Profile、配信出力を選びます。このモードだけが BGM／伴奏と Profile 処理後の声を完全な Stream Output にまとめます。画像内の Volt、ASIO、デバイス名は作者 PC の例であり、必須設定ではありません。
@@ -230,6 +298,23 @@ ko:
   heading: OBS에서 방송 출력 받기
   intro: Singing Stream Savior의 방송 출력에서 경로 하나를 선택한 다음 OBS에 맞는 소스를 추가합니다. OBS 플러그인과 가상 오디오 장치는 같은 전체 Stream Output을 전달하므로 동시에 사용할 필요가 없습니다.
   note: 전체 Stream Output을 사용할 때는 OBS의 중복 원본 마이크 또는 데스크톱 반주 소스를 비활성화하세요. 둘 다 남겨 두면 보컬이 겹치거나 커지고 위상감이 생길 수 있습니다.
+  discord:
+    heading: 가상 오디오로 전체 믹스를 Discord에 보내기
+    intro: Discord는 OBS 전용 플러그인을 받을 수 없습니다. 반주와 Profile 처리 후 보컬을 함께 보내려면 Singing Stream Savior에서 가상 오디오로 출력하고 Discord에서 짝을 이루는 녹음 쪽 장치를 선택합니다.
+    steps:
+      - title: Discord 입력 장치에 가상 장치의 녹음 쪽 선택
+        body: Discord 음성 설정에서 마이크／입력 장치를 가상 오디오의 녹음 쪽으로 설정합니다. VB-CABLE에서는 Singing Stream Savior가 CABLE Input으로 보내고 Discord는 <strong>CABLE Output</strong>을 선택합니다.
+        images:
+          - file: 28-discord-virtual-input.png
+            alt: Discord 음성 입력 장치를 CABLE Output으로 설정한 화면
+            caption: VB-CABLE의 Discord 입력은 CABLE Output입니다. 캡처는 번체 중국어 화면이지만 다른 언어에서도 같은 음성 설정 위치에 있습니다.
+      - title: 입력 프로필은 Studio(Pure Audio) 권장
+        body: 테스트에서 <strong>Studio</strong>는 음성 분리와 노이즈 억제를 적용하지 않아 반주, 리버브 또는 처리된 보컬을 소음으로 판단해 끊을 가능성이 낮았습니다. 현재 Discord 버전에 Studio가 없다면 가장 가까운 무처리／원음 모드를 선택하고 자동 배경 소음 제거를 끄세요.
+        images:
+          - file: 29-discord-studio-mode.png
+            alt: Discord 입력 프로필을 Studio Pure Audio로 설정한 화면
+            caption: Studio는 마이크를 열어 두고 음성 처리를 하지 않습니다. 캡처는 번체 중국어 화면이며 버전과 언어에 따라 이름이 다를 수 있습니다.
+    note: 라우팅이 정확해도 Discord가 통화 오디오를 다시 인코딩하거나 압축하고 플랫폼 처리를 적용할 수 있어 로컬 녹음이나 OBS 녹화보다 음질이 낮을 수 있습니다. 최고 음질을 보존하려면 OBS 또는 로컬 녹음을 기준으로 사용하세요.
   steps:
     - title: 먼저 고급 방송 모드와 정식 믹스 경로 활성화
       body: 설정 → 오디오 라우팅에서 라우팅 모드를 고급 방송 모드(믹스 출력)로 바꾸고 실제로 사용할 ASIO 또는 Windows Audio 마이크 입력, 대화／노래 Profile과 방송 출력을 선택합니다. 이 모드에서만 BGM／반주와 Profile 처리 후 보컬을 전체 Stream Output으로 합칩니다. 화면의 Volt, ASIO와 장치 이름은 개발자 PC의 예시이며 필수 값이 아닙니다.

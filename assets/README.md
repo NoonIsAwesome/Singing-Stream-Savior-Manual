@@ -33,6 +33,7 @@
 - `advanced-streaming/24-singing-profile-default.png` 與 `25-chat-profile-ducking.png`：快速設定中的預設唱歌／聊天 Profile 與 BGM 閃避位置
 - `advanced-streaming/26-song-profile-tag-menu.png`：從歌曲列展開 Profile 標籤選單
 - `advanced-streaming/27-live-profile-menu.png`：直播操作列的即時 Profile、監聽、錄音與麥克風控制
+- `advanced-streaming/28-discord-virtual-input.png` 與 `29-discord-studio-mode.png`：Discord 使用 VB-CABLE 錄音端與 Studio（Pure Audio）輸入設定檔的實測設定
 
 `effect-editors/` 存放 15 顆內建效果器的實際編輯視窗，檔名必須使用 `S3S_REGISTRY_EDITOR_SCREENSHOT_DIR` 實際輸出的 Qt／DSP module ID：`gain.png`、`noise.png`、`gate.png`、`compressor.png`、`eq.png`、`saturation.png`、`air.png`、`deesser.png`、`voice-changer.png`、`harmony.png`、`doubler.png`、`delay.png`、`reverb.png`、`shimmer.png`、`limiter.png`。根目錄為繁體中文；其他語言放在各自語言資料夾下的 `effect-editors/`。
 
