@@ -27,6 +27,36 @@
 
   recordProductionPageview();
 
+  const placeEffectEditorScreenshots = () => {
+    document.querySelectorAll("[data-effect-editor-gallery]").forEach((source) => {
+      let reference = source.nextElementSibling;
+      while (reference && !reference.classList.contains("effect-reference")) {
+        reference = reference.nextElementSibling;
+      }
+
+      if (!reference) {
+        source.hidden = false;
+        source.classList.add("effect-editor-gallery");
+        return;
+      }
+
+      const details = [...reference.children].filter(
+        (child) => child.tagName === "DETAILS",
+      );
+      const templates = [...source.querySelectorAll("[data-effect-editor-template]")];
+
+      templates.forEach((template, index) => {
+        const body = details[index]?.querySelector(".effect-reference__body");
+        if (body) {
+          body.prepend(template.content.cloneNode(true));
+        }
+      });
+      source.remove();
+    });
+  };
+
+  placeEffectEditorScreenshots();
+
   const languageSwitcher = document.querySelector("[data-language-switcher]");
   if (languageSwitcher) {
     languageSwitcher.addEventListener("change", () => {

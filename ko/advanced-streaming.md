@@ -42,7 +42,7 @@ published: true
 
 점검 자체는 합성 테스트 톤이나 반주를 재생하지 않습니다. 소프트웨어 모니터링이 켜져 있으면 점검 중에도 실시간 마이크 소리가 들릴 수 있으며, 경로를 다시 시작할 때마다 짧은 끊김이 발생할 수 있습니다. 확인 후에는 Singing Stream Savior가 앱 안에서 재생 중인 BGM과 반주를 자동으로 중지합니다. 하지만 OBS 방송, Discord 통화, 외부 녹음은 대신 중지할 수 없으므로 사용자가 먼저 중지해야 합니다. 오디오 인터페이스의 **Direct Monitor**는 영향을 받지 않습니다.
 
-{% include localized-release-screenshot.html name="audio-health-check.png" alt="테스트 시작 전 Buffer 안정성 점검 화면" caption="이 실제 화면은 테스트 전 초기 상태입니다. 시작 후 각 행에 독립 관찰 결과와 예상 지연이 채워지고 판단이 끝난 뒤에만 권장값을 적용할 수 있습니다." %}
+{% include localized-release-screenshot.html name="audio-health-check.png" alt="App Buffer 전체 점검 완료 결과" caption="전체 점검 완료 예시입니다. 녹색 체크는 통과, 진한 녹색 행은 이 PC의 권장값, 노란색은 점검을 마쳤지만 안전 여유가 부족함을 뜻합니다. 권장값과 지연은 PC마다 다릅니다." %}
 
 > **128／256이 ‘검증되지 않음’으로 표시되어도 정상인가요?** 정상입니다. 낮은 Buffer는 두 번의 엄격 관찰에서 엔진／녹음 이벤트가 없고 callback, 클록, FIFO와 처리 성능에 충분한 여유가 있을 때만 검증됩니다. ‘카운터 증가 없음’이더라도 ‘엄격 성능 여유 점검 실패’라면 관찰 중 드롭아웃이 집계되지는 않았지만 권장할 안전 여유가 부족하다는 뜻입니다. 소프트웨어 Monitor 지연을 특별히 낮춰야 하는 경우가 아니라면 권장된 512를 사용하세요. App Buffer와 ASIO hardware buffer는 서로 다른 설정입니다.
 
@@ -56,7 +56,7 @@ published: true
 - ASIO가 없으면 Windows Audio와 자동 512를 사용하며 처음부터 128／256을 강제로 선택하지 않습니다.
 - 소프트웨어 Dry Monitor 지연을 더 줄이고 싶을 때만 전체 점검을 실행하고, 점검이 권장할 때만 256을 적용합니다. 노래의 주 모니터는 Direct Monitor를 우선합니다.
 - OBS는 Singing Stream Savior 전용 오디오 소스를 우선하고, 다른 앱에도 완전한 Mix가 필요할 때만 가상 케이블을 사용합니다.
-- 방송 전 빠른 점검과 짧은 OBS 녹화를 실행합니다. 노란 상태, 계속 증가하는 카운터 또는 들리는 끊김이 있으면 방송을 멈추고 전체 점검을 실행하며 필요하면 1024를 사용합니다.
+- 처음 라우팅을 설정한 뒤 전체 점검을 최소 한 번 실행하고 권장값을 적용하세요. 방송 전마다 다시 실행할 필요는 없습니다. 장치／드라이버, Profile／VST3／라우팅을 크게 변경했거나 노란 상태 또는 실제 끊김이 있을 때만 다시 실행합니다.
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>음성 Profiles 만들기 및 편집</h2><p>Profile은 재사용할 수 있는 보컬 효과 체인입니다. 내장 효과 또는 VST3 Plugin을 추가하고, Block 순서를 드래그해 바꾸며, 개별 Block을 우회하고 저장 전에 미리 들을 수 있습니다.</p></div>
@@ -70,6 +70,8 @@ published: true
 - Block을 드래그하면 실제 처리 순서가 바뀝니다. Bypass는 설정을 삭제하지 않고 처리만 잠시 건너뜁니다.
 - Monitor를 켜면 Profile 편집기에서 현재 편집 중인 Profile을 미리 들을 수 있습니다. 반주를 재생한 채 이펙트를 조정할 수 있고, 음성 효과만 들으려면 오른쪽 위의 **S(Solo)**를 누릅니다. 라이브 화면으로 돌아가거나 트레이로 최소화하거나 편집기를 닫으면 미리 듣기를 끝내고 이전 방송 Monitor로 복원합니다.
 - Factory Profile은 실용적인 출발점입니다. 마이크, 방 소음, 음역과 창법에 맞게 조절한 뒤 개인 Profile로 저장하세요.
+
+{% include profile-signal-chain.html %}
 
 {% include factory-profiles-reference.html %}
 
@@ -116,9 +118,11 @@ Profile 뒤에는 전체 방송용 **Mix Bus Compressor**, **Stream Output Limit
 - **Profile**은 수동 효과 체인 또는 곡 태그를 따르는 자동 전환을 선택합니다.
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>모니터 내용을 선택하고 전체 믹스 녹음</h2><p>헤드폰 버튼으로 모니터링을 제어합니다. BGM／반주, 전체 믹스, Wet／Dry 마이크 조합 또는 처리된 마이크만 들을 수 있습니다. 녹음은 전체 출력이나 모니터 내용을 WAV 16-bit PCM 또는 WAV 32-bit Float로 저장합니다.</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>모니터 내용을 선택하고 전체 믹스 녹음</h2><p>헤드폰 버튼으로 모니터링을 제어합니다. BGM／반주, 전체 믹스, Wet／Dry 마이크 조합 또는 처리된 마이크만 들을 수 있습니다. 녹음은 전체 출력이나 모니터 내용을 WAV 16-bit PCM, WAV 24-bit PCM 또는 WAV 32-bit Float로 저장합니다.</p></div>
   <p><strong>피드백 방지:</strong> 마이크 모니터링 중에는 마이크로 다시 들어가는 스피커 대신 헤드폰을 사용하세요. 실제 방송 전에 짧게 녹음해 목소리, 반주, 음량과 지연을 확인하세요.</p>
 </div>
+
+- **WAV 16-bit PCM**은 파일이 가장 작고 호환성이 높으며, **WAV 24-bit PCM**은 일반 녹음과 편집에 권장하는 균형, **WAV 32-bit Float**는 편집 여유가 가장 크지만 파일도 가장 큽니다.
 
 ### 모니터와 녹음은 Profile 음색을 바꾸지 않습니다
 

@@ -42,7 +42,7 @@ published: true
 
 このチェック自体は、合成テストトーンや伴奏を再生しません。ソフトウェアモニターが有効な場合は、チェック中も入力中のマイク音声が聞こえることがあり、ルートを再起動するたびに一時的な途切れが生じる場合があります。確認後、本アプリは再生中の BGM と伴奏を自動停止します。ただし、OBS 配信、Discord 通話、外部アプリの録音は停止できないため、先にユーザーが停止してください。オーディオインターフェースの **Direct Monitor** は影響を受けません。
 
-{% include localized-release-screenshot.html name="audio-health-check.png" alt="テスト開始前の Buffer 安定性チェック画面" caption="この実画面はテスト前の初期状態です。開始後に各行へ独立した観測結果と推定遅延が入り、判定完了後だけ推奨値を適用できます。" %}
+{% include localized-release-screenshot.html name="audio-health-check.png" alt="App Buffer の完全チェック完了結果" caption="完全チェック完了例です。緑のチェックは合格、濃い緑の行はこの PC の推奨値、黄色はテスト完了後も安全余裕が不足したことを示します。推奨値と遅延は PC ごとに異なります。" %}
 
 > **128／256 が「未検証」でも正常ですか？** 正常です。低い Buffer は、2 回の厳格な観測でエンジン／録音イベントがなく、callback、クロック、FIFO、処理性能に十分な余裕がある場合だけ検証済みになります。「カウンター増加なし」でも「厳格な余裕チェック失敗」と表示された場合、観測中にドロップアウトは数えられなかったものの、推奨できる安全余裕が不足しています。ソフトウェア Monitor の遅延を特に下げる必要がなければ、推奨された 512 を使用してください。App Buffer と ASIO hardware buffer は別の設定です。
 
@@ -56,7 +56,7 @@ published: true
 - ASIO がない場合は Windows Audio と自動 512 を使い、最初から 128／256 を強制しません。
 - ソフトウェア Dry Monitor をさらに短くしたい場合だけ完全チェックを実行し、推奨された場合だけ 256 を適用します。歌唱の主モニターには Direct Monitor を優先します。
 - OBS は Singing Stream Savior 専用音声ソースを優先し、他アプリにも完全 Mix が必要な場合だけ仮想ケーブルを使います。
-- 配信前にクイックチェックと短い OBS 録画を行い、黄色状態、増え続けるカウンター、聞こえる途切れがある場合は配信を止めて完全チェックを実行し、必要なら 1024 を使います。
+- 初回のルーティング設定後に少なくとも一度完全チェックを実行し、推奨値を適用します。配信前に毎回やり直す必要はありません。デバイス／ドライバー、Profile／VST3／ルーティングを大きく変更した場合、黄色状態、または実際の音切れがある場合だけ再実行します。
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>音声 Profiles を作成・編集する</h2><p>Profile は再利用できるボーカルエフェクトチェーンです。内蔵エフェクトや VST3 Plugin を追加し、Block の順序変更、一時バイパス、試聴を行ってから保存できます。</p></div>
@@ -70,6 +70,8 @@ published: true
 - Block のドラッグは実際の処理順を変更します。Bypass は設定を消さず、一時的に処理だけを省略します。
 - Monitor を有効にすると、Profile エディターで現在編集中の Profile を試聴できます。伴奏を再生したままエフェクトを調整でき、声の効果だけを聴く場合は右上の **S（Solo）**を押します。ライブ操作へ戻る、トレイへ格納する、またはエディターを閉じると試聴を終了し、元の配信 Monitor へ戻ります。
 - Factory Profile は実用的な開始点です。マイク、部屋のノイズ、音域、歌い方に合わせて調整してから個人用 Profile として保存してください。
+
+{% include profile-signal-chain.html %}
 
 {% include factory-profiles-reference.html %}
 
@@ -116,9 +118,11 @@ Profile の後段には、配信全体用の **Mix Bus Compressor**、**Stream O
 - **Profile**は手動指定、または曲タグに任せる自動切り替えを選べます。
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>モニター内容を選び、完全なミックスを録音</h2><p>ヘッドホンボタンでモニターを操作します。BGM／伴奏、完全なミックス、ウェット／ドライマイクを含む組み合わせ、処理後マイクだけを選べます。録音は完全出力またはモニター内容を WAV 16-bit PCM／32-bit Float で保存できます。</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>モニター内容を選び、完全なミックスを録音</h2><p>ヘッドホンボタンでモニターを操作します。BGM／伴奏、完全なミックス、ウェット／ドライマイクを含む組み合わせ、処理後マイクだけを選べます。録音は完全出力またはモニター内容を WAV 16-bit PCM、WAV 24-bit PCM、WAV 32-bit Float で保存できます。</p></div>
   <p><strong>フィードバック防止：</strong>マイクモニター時は、マイクへ再入力されるスピーカーではなくヘッドホンを使います。本番前に短く録音し、声、伴奏、音量、遅延を確認してください。</p>
 </div>
+
+- **WAV 16-bit PCM** は最小で互換性が高く、**WAV 24-bit PCM** は通常の録音と編集に推奨するバランス、**WAV 32-bit Float** は編集余裕が最大ですがファイルも最大です。
 
 ### モニターと録音は Profile の音色を書き換えません
 

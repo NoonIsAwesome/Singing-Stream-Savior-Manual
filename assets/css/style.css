@@ -16,7 +16,7 @@
   --table-heading-background: #eaf1f8;
   --table-cell-background: #ffffff;
   --table-cell-stripe: #f7faff;
-  --content-width: 760px;
+  --content-width: 1040px;
   color-scheme: light;
 }
 
@@ -4222,6 +4222,32 @@ body {
   margin: 20px 0 34px;
 }
 
+.profile-chain-guide {
+  margin: 22px 0 30px;
+  padding: 20px 22px;
+  background: linear-gradient(135deg, rgba(77, 169, 242, 0.1), rgba(77, 169, 242, 0.035));
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--blue-strong);
+  border-radius: 10px;
+}
+
+.manual-article .profile-chain-guide h3 {
+  margin-top: 0;
+}
+
+.profile-chain-guide > :last-child {
+  margin-bottom: 0;
+}
+
+.profile-chain-guide__flow {
+  padding: 12px 14px;
+  color: var(--ink-900);
+  line-height: 1.75;
+  background: rgba(7, 18, 29, 0.32);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
 .effect-editor-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4240,6 +4266,23 @@ body {
   object-fit: contain;
   object-position: top center;
   background: #080d13;
+}
+
+.effect-reference__editor {
+  width: min(100%, 760px);
+  margin: 16px auto 20px;
+}
+
+.effect-reference__editor img {
+  width: 100%;
+  max-height: 620px;
+  object-fit: contain;
+  object-position: top center;
+  background: #080d13;
+}
+
+.effect-editor-gallery-fallback {
+  margin: 20px 0 34px;
 }
 
 .effect-reference details {

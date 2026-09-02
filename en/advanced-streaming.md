@@ -45,7 +45,7 @@ The **App safety buffer** selector and **Check buffer stability…** button stay
 
 The health check does not play a synthetic test tone or accompaniment. If software monitoring is enabled, you may still hear the live microphone, and each route restart can cause a brief interruption. After you confirm, Singing Stream Savior automatically stops BGM and accompaniment playing inside the app. It cannot stop OBS streaming, Discord calls, or external recording, so stop those yourself first. The audio interface's **Direct Monitor** is unaffected.
 
-{% include localized-release-screenshot.html name="audio-health-check.png" alt="Buffer health-check window before testing starts" caption="This real capture shows the initial state. Once testing starts, each row is populated with its independent observation and estimated latency; Apply is offered only after the recommendation is complete." %}
+{% include localized-release-screenshot.html name="audio-health-check.png" alt="Completed Full App Buffer health-check results" caption="Completed Full-check example: green checks passed, the darker green row is this computer's recommendation, and yellow means the test finished without enough safety headroom. Recommendations and latency vary by computer." %}
 
 > **Is “Not verified” normal for 128 or 256?** Yes. A low Buffer is verified only when both strict rounds have no engine or recording events and retain enough callback, clock, FIFO, and processing headroom. “No counter increments” does not override “strict headroom failed”: it means no dropout was counted during that observation, but there was not enough safety margin to recommend the value. Use the recommended 512 unless you specifically need lower software-monitor latency. App Buffer and the interface's ASIO hardware buffer are separate settings.
 
@@ -59,7 +59,7 @@ The yellow messages have two different meanings. **Check dropouts** appears for 
 - Without ASIO, choose Windows Audio and leave the App Buffer on automatic 512. Do not force 128 or 256 as the first step.
 - Run Full Check only when you want lower software Dry monitoring latency; apply 256 only when the check recommends it. Prefer the interface's Direct Monitor for primary singing monitoring.
 - Prefer the dedicated Singing Stream Savior source in OBS. Use a virtual cable only when another application also needs the complete Mix.
-- Before going live, run Quick Check and make a short OBS recording. If the state turns yellow, counters keep rising, or you hear a dropout, stop the stream and run Full Check; use 1024 if necessary.
+- Run Full Check and apply its recommendation at least once after the initial route setup; you do not need to repeat it before every stream. Run it again only after device／driver or major Profile／VST3／routing changes, a yellow state, or an audible dropout.
 
 ## Create and edit voice Profiles
 
@@ -72,6 +72,8 @@ A Profile is a reusable vocal effect chain. Add built-in effects or VST3 plug-in
 - Dragging a block changes the real processing order. Bypass temporarily skips an effect without deleting its settings.
 - With monitoring enabled, the Profile editor plays the Profile currently being edited. You can keep accompaniment playing while adjusting effects. Press **S (Solo)** at the upper right when you want to hear only the Profile preview. Returning to Live Control, minimizing to the tray, or closing the editor leaves audition and restores the previous live-monitoring route.
 - Factory Profiles are practical starting points; tune them for the microphone, room noise, vocal range, and singing style before saving a personal Profile.
+
+{% include profile-signal-chain.html %}
 
 {% include factory-profiles-reference.html %}
 
@@ -136,9 +138,11 @@ Open an effect below for its signal role, primary controls, live-singing approac
 - The **Profile menu** applies a chain manually or returns control to Automatic Profile Switching.
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>Choose what you monitor and record the mix</h2><p>The headphones button controls monitoring. Listen to BGM/accompaniment, the full mix, wet or dry microphone combinations, or the processed microphone alone. Recording can capture the full output or monitored content as WAV 16-bit PCM or WAV 32-bit Float.</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>Choose what you monitor and record the mix</h2><p>The headphones button controls monitoring. Listen to BGM/accompaniment, the full mix, wet or dry microphone combinations, or the processed microphone alone. Recording can capture the full output or monitored content as WAV 16-bit PCM, WAV 24-bit PCM, or WAV 32-bit Float.</p></div>
   <p><strong>Avoid feedback:</strong> use headphones when microphone monitoring is enabled, not speakers that feed back into the mic. Make a short test recording before a live stream to check voice, accompaniment, levels, and latency.</p>
 </div>
+
+- **WAV 16-bit PCM** is the smallest and most compatible; **WAV 24-bit PCM** is the recommended balance for normal recording and editing; **WAV 32-bit Float** keeps the most post-production headroom but creates the largest files.
 
 ### Monitoring and recording do not rewrite Profile tone
 

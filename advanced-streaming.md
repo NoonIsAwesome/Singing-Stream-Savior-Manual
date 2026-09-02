@@ -39,7 +39,7 @@ published: true
 
 健檢本身不會播放合成測試音或伴奏。若已啟用軟體監聽，測試期間仍可能聽到即時麥克風；每次路由重新啟動也可能造成短暫中斷。按下確認後，歌回救星會自動停止本程式正在播放的 BGM 與伴奏，但無法代為停止 OBS 串流、Discord 通話或外部錄音，仍須由使用者先行停止。音訊介面的 **Direct Monitor** 不受這項測試影響。
 
-{% include localized-release-screenshot.html name="audio-health-check.png" alt="尚未開始測試的 App Buffer 穩定性健檢視窗" caption="這是開始測試前的實際畫面；健檢開始後才會逐列填入各 Buffer 的觀察結果與預估延遲，完成判定後才會提供可直接套用的建議。" %}
+{% include localized-release-screenshot.html name="audio-health-check.png" alt="完整 App Buffer 穩定性健檢完成後的結果視窗" caption="完整健檢完成示例：綠色勾勾表示通過，較深的綠色列是這台電腦的建議值；黃色表示測試完成但安全餘裕不足。每台電腦的建議值與延遲都可能不同。" %}
 
 > **128／256 顯示「尚未驗證」是正常的嗎？** 是。低 Buffer 必須連續兩回合都沒有引擎／錄音事件，且 callback、時鐘、FIFO 與處理效能仍有足夠餘裕，才會標成已驗證。即使「計數器沒有增加」，只要顯示「嚴格效能餘裕檢查失敗」，就代表它沒有留下足夠安全空間，軟體不會推薦；這不等於當下已經爆音。此時直接採用健檢推薦的 512，只有實際需要降低軟體監聽延遲時才再嘗試低值。這裡的 App Buffer 與 ASIO hardware buffer 是兩個不同設定。
 
@@ -53,7 +53,7 @@ published: true
 - 沒有 ASIO 時選 Windows Audio，App Buffer 先維持自動 512。不要一開始就強迫使用 128／256。
 - 想降低軟體 Dry Monitor 延遲時再執行「完整健檢」；只有健檢建議 256 時才直接套用。唱歌主監聽仍優先使用錄音介面的 Direct Monitor。
 - OBS 優先使用 Singing Stream Savior 專用音訊來源；只有其他程式也要接收同一份完整 Mix 時，才需要 VB-CABLE 等虛擬音源。
-- 開播前跑一次快速健檢並錄一小段 OBS。若狀態轉黃、underrun／overrun 持續增加或真的聽到爆音，再停止直播執行完整健檢，必要時改用 1024。
+- 完成初次路由設定後至少執行一次完整健檢並套用建議值；之後不必每次開播重跑。只有更換裝置／驅動、大幅改變 Profile／VST3／路由，或狀態轉黃、真的聽到爆音時才重新健檢。
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>建立與編輯人聲 Profiles</h2><p>每個 Profile 是一條可重用的人聲效果鏈。可以新增內建效果或 VST3 Plugin、拖曳調整處理順序、暫時停用單一 Block，並先試聽再儲存。</p></div>
@@ -70,6 +70,8 @@ published: true
 - 拖曳 Block 可以改變實際處理順序；旁路只暫時略過該效果，不會刪除設定。
 - 開啟監聽後，Profile 編輯頁會播放目前正在編輯的 Profile 預覽；可以一邊播放伴奏、一邊調整效果器。只想聽人聲效果時，按右上角 **S（Solo）**，就會暫時只保留 Profile 預覽。切回直播操作、縮到系統工具或關閉編輯器時，會離開試聽並恢復原本的直播監聽設定。
 - Factory Profile 是可立即使用的起點；仍建議依麥克風、房間噪音、音域與唱法微調，再另存成自己的 Profile。
+
+{% include profile-signal-chain.html %}
 
 {% include factory-profiles-reference.html %}
 
@@ -97,6 +99,8 @@ published: true
 | 空間 | **Shimmer** | 在殘響尾音加入高八度光暈；適合空靈段落，也可用歌曲預設與快捷鍵切換。 |
 | 動態 | **Limiter** | 放在 Profile 尾端攔截突發人聲峰值，保留輸出安全餘裕。 |
 
+[查看每一顆效果器的實際編輯畫面、One Knob、Presets、進階參數與調整建議 →]({{ '/profiles.html#內建效果器與參數' | relative_url }})
+
 Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compressor**、**Stream Output Limiter** 與 Master 音量。這三項屬於整體直播輸出，不會寫回單一 Profile 的音色設定。
 
 {% include profile-performance-controls.html %}
@@ -120,7 +124,7 @@ Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compres
 - **Profile 選單**：手動指定目前效果鏈，或選回「自動切換 Profile」讓歌曲標籤接管。
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>選擇監聽內容並錄下完整混音</h2><p>耳機按鈕控制監聽，來源可以是 BGM／伴奏、完整混音、加入濕聲或乾聲的組合，或只聽處理後麥克風。錄音可選擇完整輸出或目前監聽內容，並可使用 WAV 16-bit PCM 或 WAV 32-bit Float。</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>選擇監聽內容並錄下完整混音</h2><p>耳機按鈕控制監聽，來源可以是 BGM／伴奏、完整混音、加入濕聲或乾聲的組合，或只聽處理後麥克風。錄音可選擇完整輸出或目前監聽內容，並可使用 WAV 16-bit PCM、WAV 24-bit PCM 或 WAV 32-bit Float。</p></div>
   {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="音訊路由中的 Monitor 與錄音路徑" caption="Monitor 只改變自己聽到的內容；完整輸出錄音沿用正式 Stream Output 時間軸，畫面中的路由線可直接核對兩者。" %}
   <p><strong>避免回授：</strong>開啟麥克風監聽時請使用耳機，不要用會被麥克風再次收到的喇叭。正式直播前先做短錄音，確認人聲、伴奏、音量與延遲。</p>
 </div>
@@ -133,7 +137,7 @@ Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compres
 
 - **完整輸出**沿用正式 Stream Output 的時間軸錄下完整混音；BGM／伴奏與人聲位於同一條正式時間線，Dry Cue 或其他軟體監聽延遲不會改變錄音中的相對 offset。
 - **監聽內容**會錄下目前耳機路徑，適合檢查演唱時的監聽平衡。
-- **WAV 16-bit PCM**檔案較小、相容性高；**WAV 32-bit Float**保留較多後製空間但檔案更大。
+- **WAV 16-bit PCM**檔案最小、相容性最高；**WAV 24-bit PCM**是一般錄音與後製的建議平衡；**WAV 32-bit Float**保留最大的後製餘裕，但檔案也最大。
 - 可直接選擇錄音資料夾或開啟目前資料夾，不必離開直播操作頁。
 
 <div class="manual-feature-update">

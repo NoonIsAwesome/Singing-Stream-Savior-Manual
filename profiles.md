@@ -15,7 +15,7 @@ Profile 是一組可以重複使用的「麥克風效果器訊號鏈」。你可
 </aside>
 
 <nav class="paired-guides" aria-label="2.1.0.0 音訊設定教學">
-  <a class="paired-guide" href="{{ '/audio-routing.html' | relative_url }}"><span class="paired-guide__node">IN</span><span class="paired-guide__copy"><strong>音訊路由</strong><small>麥克風、伴奏、監聽、OBS 與錄音</small></span><span class="paired-guide__arrow" aria-hidden="true">›</span></a>
+  <a class="paired-guide" href="{{ '/advanced-streaming.html' | relative_url }}"><span class="paired-guide__node">IN</span><span class="paired-guide__copy"><strong>進階直播設定</strong><small>麥克風、伴奏、監聽、OBS 與錄音</small></span><span class="paired-guide__arrow" aria-hidden="true">›</span></a>
   <a class="paired-guide" href="{{ '/profiles.html' | relative_url }}" aria-current="page"><span class="paired-guide__node">FX</span><span class="paired-guide__copy"><strong>人聲 Profiles</strong><small>效果器訊號鏈、歌曲標籤與自動切換</small></span><span class="paired-guide__arrow" aria-hidden="true">›</span></a>
 </nav>
 
@@ -57,6 +57,10 @@ Factory Profile 是調音起點，不是每一支麥克風、房間和唱法的�
 ## 編輯一條效果器訊號鏈
 
 Profile 頁面中的每個 Block 就是一顆內建效果器或 VST3。訊號會由上到下依序處理。
+
+{% include profile-signal-chain.html %}
+
+各效果器的用途、建議與參數可直接[跳到後面的詳細說明](#內建效果器與參數)。
 
 1. 選擇要編輯的 Profile；Factory Profile 建議先複製，再修改副本。
 2. 按 **＋** 新增內建效果器或 VST3。
@@ -143,4 +147,4 @@ Profile 的 Block、順序、Bypass、內建參數、Shimmer／疊聲器／和�
 4. 播放設定過標籤的歌曲，確認開始與停止伴奏時切換正確。
 5. 錄製包含聊天、唱歌、Profile 效果器 Switch 與 Profile 切換的短片，在 OBS 回放中確認沒有爆音或不自然跳變。
 
-如果尚未設定麥克風、監聽或 OBS 輸出，請回到 [音訊路由完整教學]({{ '/audio-routing.html' | relative_url }})。
+如果尚未設定麥克風、監聽或 OBS 輸出，請回到 [進階直播模式的最短設定流程]({{ '/advanced-streaming.html' | relative_url }})。

@@ -42,7 +42,7 @@ published: true
 
 检查本身不会播放合成测试音或伴奏。若已启用软件监听，测试期间仍可能听到实时麦克风；每次路由重新启动也可能造成短暂中断。确认后，歌回救星会自动停止本程序正在播放的 BGM 与伴奏，但无法代为停止 OBS 直播、Discord 通话或外部录音，仍需用户先行停止。音频接口的 **Direct Monitor** 不受本次检查影响。
 
-{% include localized-release-screenshot.html name="audio-health-check.png" alt="尚未开始测试的 Buffer 稳定性检查窗口" caption="这张实图是测试前的初始状态；开始后才会逐行填入独立观察结果与预计延迟，完成判断后才会提供可直接应用的建议。" %}
+{% include localized-release-screenshot.html name="audio-health-check.png" alt="完整 App Buffer 稳定性检查完成后的结果窗口" caption="完整检查完成示例：绿色勾选表示通过，较深的绿色行是这台电脑的建议值；黄色表示测试完成但安全余量不足。每台电脑的建议值与延迟都可能不同。" %}
 
 > **128／256 显示“尚未验证”正常吗？** 正常。低 Buffer 必须连续两轮都没有引擎／录音事件，而且 callback、时钟、FIFO 与处理性能仍有足够余量，才会标记为已验证。即使“计数器没有增加”，只要显示“严格性能余量检查失败”，就表示安全余量不足，软件不会推荐；这并不等于当时已经出现爆音。此时直接使用检查推荐的 512，只在确实需要降低软件监听延迟时再尝试低值。这里的 App Buffer 与 ASIO hardware buffer 是两个不同设置。
 
@@ -56,7 +56,7 @@ published: true
 - 没有 ASIO 时选择 Windows Audio，App Buffer 先保持自动 512，不要一开始就强制使用 128／256。
 - 只有希望降低软件 Dry 监听延迟时才运行“完整检查”；仅在检查建议 256 时直接应用。演唱主监听仍优先使用音频接口的 Direct Monitor。
 - OBS 优先使用 Singing Stream Savior 专用音频来源；只有其他程序也需要完整 Mix 时才使用 VB-CABLE 等虚拟音频设备。
-- 开播前运行一次快速检查并录制短片。状态变黄、计数持续增加或确实听到爆音时，先停止直播再运行完整检查，必要时改用 1024。
+- 完成首次路由设置后至少运行一次完整检查并应用建议值；之后无需每次开播都重跑。只有更换设备／驱动、大幅改变 Profile／VST3／路由，或状态变黄、实际听到爆音时才重新检查。
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>创建并编辑人声 Profiles</h2><p>每个 Profile 都是一条可重复使用的人声效果链。可以加入内置效果或 VST3 Plugin、拖动调整处理顺序、暂时停用单个 Block，并在保存前试听。</p></div>
@@ -70,6 +70,8 @@ published: true
 - 拖动 Block 会改变实际处理顺序；旁路只是暂时跳过效果，不会删除设置。
 - 开启监听后，Profile 编辑页面会播放当前正在编辑的 Profile 预览；可以一边播放伴奏，一边调整效果。只想听人声效果时，点击右上角的 **S（Solo）**，即可暂时只保留 Profile 预览。切回直播操作、缩到系统托盘或关闭编辑器时，会退出试听并恢复原来的直播监听。
 - Factory Profile 是可立即使用的起点；仍建议依麦克风、环境噪声、音域与唱法微调后另存为自己的 Profile。
+
+{% include profile-signal-chain.html %}
 
 {% include factory-profiles-reference.html %}
 
@@ -126,9 +128,11 @@ Profile 处理后，完整直播输出还会依次经过 **Mix Bus Compressor**�
 - **Profile 菜单**可手动指定效果链，或回到“自动切换 Profile”交由歌曲标签控制。
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>选择监听内容并录制完整混音</h2><p>耳机按钮控制监听，可选择 BGM／伴奏、完整混音、加入湿声或干声的组合，或只听处理后麦克风。录音可捕捉完整输出或当前监听内容，并使用 WAV 16-bit PCM 或 WAV 32-bit Float。</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>选择监听内容并录制完整混音</h2><p>耳机按钮控制监听，可选择 BGM／伴奏、完整混音、加入湿声或干声的组合，或只听处理后麦克风。录音可捕捉完整输出或当前监听内容，并使用 WAV 16-bit PCM、WAV 24-bit PCM 或 WAV 32-bit Float。</p></div>
   <p><strong>避免回授：</strong>开启麦克风监听时请使用耳机，不要使用会被麦克风再次收到的扬声器。正式直播前先做短录音，确认人声、伴奏、音量与延迟。</p>
 </div>
+
+- **WAV 16-bit PCM** 文件最小、兼容性最高；**WAV 24-bit PCM** 是一般录音与后期处理的建议平衡；**WAV 32-bit Float** 保留最大的后期余量，但文件也最大。
 
 ### 监听与录音不会改写 Profile 音色
 

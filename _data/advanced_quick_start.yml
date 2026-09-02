@@ -15,12 +15,12 @@ zh-TW:
           alt: 直播輸出的加寬裝置清單，包含 OBS 外掛與虛擬音源
           caption: OBS 外掛與虛擬音源擇一即可；Monitor 選單則選自己真正要聽的裝置。
     - title: 讓健檢直接建議 App Buffer
-      body: 不確定時先保留<strong>自動（建議）· 512 frames</strong>，再按「檢查 Buffer 穩定性…」執行快速健檢並套用建議。只有狀態變黃、真的聽到爆音或想降低軟體監聽延遲時，才需要完整健檢或附錄中的手動調整。<strong>完成：</strong>健檢顯示可套用的建議，路由狀態保持穩定。
+      body: 第一次完成音訊路由後，至少按一次「檢查 Buffer 穩定性…」執行<strong>完整健檢</strong>並套用建議；之後不必每次開播重跑。若暫時不方便等待，可先保留<strong>自動（建議）· 512 frames</strong>，之後再找時間完整健檢。更換裝置／驅動、大幅改動 Profile／VST3／路由，或真的聽到爆音時再重跑。<strong>完成：</strong>健檢顯示綠色通過與可套用的建議，路由狀態保持穩定。
       images:
         - file: audio-health-check.png
           localized: true
           alt: App Buffer 穩定性健檢視窗
-          caption: 先使用快速健檢；完成後直接套用軟體建議，不必先理解每一個工程數值。
+          caption: 完整健檢的完成示例；綠色勾勾代表通過，深綠色列是這台電腦的建議值。直接按「套用建議」即可，不必先理解每個工程數值。
     - title: 在 OBS 加入相符的 Source，確認有訊號
       body: 使用 OBS 外掛時，在「來源」加入<strong>Singing Stream Savior 音訊</strong>；使用虛擬音源時加入<strong>擷取音訊輸入</strong>，VB-CABLE 範例選 CABLE Output。不要再保留另一條原始麥克風來源。<strong>完成：</strong>播放伴奏並說話時，OBS 混音器電平會動。
       images:
@@ -52,7 +52,7 @@ zh-TW:
         - file: 26-song-profile-tag-menu.png
           alt: 歌曲列展開 Profile 標籤選單
           caption: 從歌曲列的標籤按鈕選擇適合的 Profile；先依實際試聽決定，不必每首歌都強制設定。
-  note: 最後播放一首伴奏並說話或唱歌，確認歌回救星與 OBS 的電平都有反應，再錄一小段檢查左右聲道、音量與嘴形同步。這段錄影正常，就已完成基本設定。
+  note: 最後播放一首伴奏並說話或唱歌，確認歌回救星與 OBS 的電平都有反應。可用歌回救星的錄音功能錄下「完整輸出」，播放檔案確認直播輸出結果；也可錄一小段 OBS 檢查左右聲道、音量與嘴形同步。結果正常，就已完成基本設定。
 
 zh-CN:
   heading: 最短设置流程：跟着画面把声音发送到 OBS
@@ -71,12 +71,12 @@ zh-CN:
           alt: 直播输出的加宽设备列表，包含 OBS 插件与虚拟音频设备
           caption: OBS 插件与虚拟音频设备选择一种即可；Monitor 列表用于选择自己真正要听的设备。
     - title: 让检查功能直接建议 App Buffer
-      body: 不确定时先保留<strong>自动（推荐）· 512 frames</strong>，再点击“检查 Buffer 稳定性…”运行快速检查并应用建议。只有状态变黄、实际听到爆音或希望降低软件监听延迟时，才需要完整检查或附录中的手动调整。<strong>完成：</strong>检查显示可应用的建议，路由状态保持稳定。
+      body: 第一次完成音频路由后，至少点击一次“检查 Buffer 稳定性…”运行<strong>完整检查</strong>并应用建议；以后无需每次开播都重跑。如果暂时不方便等待，可先保留<strong>自动（推荐）· 512 frames</strong>，之后再完成完整检查。更换设备／驱动、大幅调整 Profile／VST3／路由，或实际听到爆音时再重跑。<strong>完成：</strong>检查显示绿色通过标记与可应用的建议，路由状态保持稳定。
       images:
         - file: audio-health-check.png
           localized: true
           alt: App Buffer 稳定性检查窗口
-          caption: 先运行快速检查；完成后直接应用软件建议，无需先理解每个工程数值。
+          caption: 完整检查的完成示例；绿色勾选表示通过，深绿色行是这台电脑的建议值。直接点击“应用建议”即可，无需先理解每个工程数值。
     - title: 在 OBS 中添加对应的 Source 并确认信号
       body: 使用 OBS 插件时，在“来源”中添加<strong>Singing Stream Savior 音频</strong>；使用虚拟设备时添加<strong>音频输入采集</strong>，VB-CABLE 示例选择 CABLE Output。不要再保留另一条原始麦克风来源。<strong>完成：</strong>播放伴奏并说话时，OBS 混音器电平会移动。
       images:
@@ -108,7 +108,7 @@ zh-CN:
         - file: 26-song-profile-tag-menu.png
           alt: 歌曲行展开 Profile 标签选项
           caption: 从歌曲行的标签按钮选择合适的 Profile；请先按实际试听决定，无需强制为每首歌设置。
-  note: 最后播放一首伴奏并说话或演唱，确认 Singing Stream Savior 与 OBS 的电平都有反应，再录一小段检查左右声道、音量与口型同步。录制结果正常，就已完成基本设置。
+  note: 最后播放一首伴奏并说话或演唱，确认 Singing Stream Savior 与 OBS 的电平都有反应。可以用 Singing Stream Savior 的录音功能录制“完整输出”，回放文件确认直播输出结果；也可以录制一小段 OBS 检查左右声道、音量与口型同步。结果正常，就已完成基本设置。
 
 en:
   heading: "Shortest setup: follow the screens to send audio to OBS"
@@ -127,12 +127,12 @@ en:
           alt: Expanded Stream Output list containing the OBS plug-in and virtual audio devices
           caption: Choose either the OBS plug-in or a virtual device. The Monitor list selects the device you actually listen through.
     - title: Let the health check recommend the App Buffer
-      body: If unsure, keep <strong>Automatic (recommended) · 512 frames</strong>, run <strong>Check Buffer Stability…</strong> in Quick mode, and apply its recommendation. Use the Full check or manual appendix only after a yellow status, audible dropouts, or when reducing software-monitor latency. <strong>Done:</strong> the check offers an applicable recommendation and routing remains stable.
+      body: After setting up audio routing for the first time, run <strong>Check Buffer Stability…</strong> in <strong>Full</strong> mode at least once and apply its recommendation; you do not need to repeat it before every stream. If you cannot wait yet, keep <strong>Automatic (recommended) · 512 frames</strong> and run the Full check later. Repeat it after changing devices or drivers, making major Profile／VST3／routing changes, or hearing real dropouts. <strong>Done:</strong> the check shows green passes and an applicable recommendation while routing remains stable.
       images:
         - file: audio-health-check.png
           localized: true
           alt: App Buffer stability health-check window
-          caption: Run the Quick check first and apply the recommendation; you do not need to interpret every engineering value.
+          caption: Example of a completed Full check. Green checks passed; the darker green row is this computer's recommendation. Apply it directly without interpreting every engineering value.
     - title: Add the matching Source in OBS and verify signal
       body: For the OBS plug-in route, add <strong>Singing Stream Savior Audio</strong> under Sources. For a virtual route, add <strong>Audio Input Capture</strong>; choose CABLE Output for VB-CABLE. Do not keep a second raw-microphone source. <strong>Done:</strong> the OBS mixer moves while accompaniment plays and you speak.
       images:
@@ -164,7 +164,7 @@ en:
         - file: 26-song-profile-tag-menu.png
           alt: Profile tag menu opened from a song row
           caption: Choose a Profile from the song-row tag button after auditioning it. You do not have to tag every song.
-  note: Finally, play one accompaniment and speak or sing. Confirm activity in both Singing Stream Savior and OBS, then make a short recording to check left and right channels, balance, and lip sync. If that recording is correct, basic setup is complete.
+  note: Finally, play one accompaniment and speak or sing, then confirm activity in both Singing Stream Savior and OBS. You can record “Full Output” in Singing Stream Savior and play the file back to verify the stream result; you can also make a short OBS recording to check channels, balance, and lip sync. If the result is correct, basic setup is complete.
 
 ja:
   heading: 最短設定：画面どおりに音声を OBS へ送る
@@ -183,12 +183,12 @@ ja:
           alt: OBS プラグインと仮想音声デバイスを含む配信出力リスト
           caption: OBS プラグインと仮想音声デバイスはどちらか一方で十分です。Monitor では自分が聴くデバイスを選びます。
     - title: ヘルスチェックに App Buffer を提案させる
-      body: 迷った場合は<strong>自動（推奨）· 512 frames</strong>のまま「Buffer の安定性を確認…」をクイックで実行し、提案を適用します。黄色表示、実際の音切れ、またはソフトウェア Monitor の遅延を下げたい場合だけ完全チェックや付録の手動調整を使います。<strong>完了：</strong>適用できる提案が表示され、経路が安定しています。
+      body: 初回の音声ルーティング設定後に「Buffer の安定性を確認…」を<strong>完全チェック</strong>で少なくとも一度実行し、提案を適用します。配信前に毎回やり直す必要はありません。すぐ待てない場合は<strong>自動（推奨）· 512 frames</strong>を保ち、後で完全チェックを実行してください。デバイス／ドライバーの変更、Profile／VST3／ルーティングの大幅な変更、実際の音切れがあった場合に再実行します。<strong>完了：</strong>緑の合格表示と適用可能な推奨値が表示され、経路が安定しています。
       images:
         - file: audio-health-check.png
           localized: true
           alt: App Buffer 安定性ヘルスチェック画面
-          caption: まずクイックチェックを実行して提案を適用します。すべての技術数値を先に理解する必要はありません。
+          caption: 完全チェック完了例です。緑のチェックは合格、濃い緑の行はこの PC の推奨値です。各技術値を理解しなくても、そのまま提案を適用できます。
     - title: OBS に対応する Source を追加して信号を確認する
       body: OBS プラグインでは Source に <strong>Singing Stream Savior Audio</strong> を追加します。仮想音声では<strong>音声入力キャプチャ</strong>を追加し、VB-CABLE の場合は CABLE Output を選びます。別の生マイク Source は残しません。<strong>完了：</strong>伴奏を再生して話すと OBS ミキサーが動きます。
       images:
@@ -220,7 +220,7 @@ ja:
         - file: 26-song-profile-tag-menu.png
           alt: 曲リストから開いた Profile タグメニュー
           caption: 実際に試聴してから曲のタグボタンで選びます。すべての曲へ無理にタグを付ける必要はありません。
-  note: 最後に伴奏を 1 曲再生して話すか歌い、Singing Stream Savior と OBS の両方でメーターが動くことを確認します。短い録画で左右チャンネル、音量、リップシンクが正常なら基本設定は完了です。
+  note: 最後に伴奏を 1 曲再生して話すか歌い、Singing Stream Savior と OBS の両方でメーターが動くことを確認します。Singing Stream Savior の録音機能で「完全出力」を録音して再生すれば配信出力を確認できます。短い OBS 録画で左右チャンネル、音量、リップシンクも確認し、結果が正常なら基本設定は完了です。
 
 ko:
   heading: "최단 설정: 화면을 따라 오디오를 OBS로 보내기"
@@ -239,12 +239,12 @@ ko:
           alt: OBS 플러그인과 가상 오디오 장치가 포함된 방송 출력 목록
           caption: OBS 플러그인과 가상 오디오 장치 중 하나만 선택하면 됩니다. Monitor 목록에서는 자신이 들을 장치를 선택합니다.
     - title: 상태 점검으로 App Buffer 권장값 받기
-      body: 잘 모르겠다면 <strong>자동(권장) · 512 frames</strong>를 유지하고 “Buffer 안정성 확인…”을 빠른 점검으로 실행한 뒤 권장값을 적용합니다. 상태가 노란색이거나 실제 끊김이 들리거나 소프트웨어 Monitor 지연을 줄일 때만 전체 점검 또는 부록의 수동 조정을 사용합니다. <strong>완료:</strong> 적용 가능한 권장값이 표시되고 라우팅이 안정적입니다.
+      body: 처음 오디오 라우팅을 설정한 뒤 “Buffer 안정성 확인…”을 <strong>전체 점검</strong>으로 최소 한 번 실행하고 권장값을 적용하세요. 방송 전마다 다시 실행할 필요는 없습니다. 바로 기다리기 어렵다면 <strong>자동(권장) · 512 frames</strong>를 유지하고 나중에 전체 점검을 완료하세요. 장치／드라이버 변경, Profile／VST3／라우팅의 큰 변경 또는 실제 끊김이 들릴 때 다시 실행합니다. <strong>완료:</strong> 녹색 통과 표시와 적용 가능한 권장값이 보이고 라우팅이 안정적입니다.
       images:
         - file: audio-health-check.png
           localized: true
           alt: App Buffer 안정성 상태 점검 창
-          caption: 먼저 빠른 점검을 실행하고 권장값을 적용하세요. 모든 기술 수치를 미리 이해할 필요는 없습니다.
+          caption: 전체 점검 완료 예시입니다. 녹색 체크는 통과, 진한 녹색 행은 이 PC의 권장값입니다. 모든 기술 수치를 이해하지 않아도 권장값을 바로 적용할 수 있습니다.
     - title: OBS에 맞는 Source를 추가하고 신호 확인
       body: OBS 플러그인은 Source에 <strong>Singing Stream Savior Audio</strong>를 추가합니다. 가상 장치는 <strong>오디오 입력 캡처</strong>를 추가하고 VB-CABLE이면 CABLE Output을 선택합니다. 별도의 원본 마이크 Source는 남기지 않습니다. <strong>완료:</strong> 반주를 재생하고 말할 때 OBS 믹서 미터가 움직입니다.
       images:
@@ -276,4 +276,4 @@ ko:
         - file: 26-song-profile-tag-menu.png
           alt: 곡 행에서 펼친 Profile 태그 메뉴
           caption: 실제로 미리 들어 본 뒤 곡 행의 태그 버튼에서 선택하세요. 모든 곡에 태그를 강제로 지정할 필요는 없습니다.
-  note: 마지막으로 반주 한 곡을 재생하고 말하거나 노래해 Singing Stream Savior와 OBS 양쪽 미터가 움직이는지 확인하세요. 짧은 녹화에서 좌우 채널, 밸런스와 립싱크가 정상이면 기본 설정이 완료됩니다.
+  note: 마지막으로 반주 한 곡을 재생하고 말하거나 노래해 Singing Stream Savior와 OBS 양쪽 미터가 움직이는지 확인하세요. Singing Stream Savior의 녹음 기능으로 “전체 출력”을 녹음하고 재생해 방송 출력을 확인할 수 있습니다. 짧은 OBS 녹화로 좌우 채널, 밸런스와 립싱크도 확인해 정상이면 기본 설정이 완료됩니다.

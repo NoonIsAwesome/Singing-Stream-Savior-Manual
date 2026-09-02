@@ -19,7 +19,7 @@
 - `mini-workspace.png`：迷你模式
 - `qt-platform-error.png`：Qt 外掛錯誤
 - `audio-routing.png`：2.1.0.0 進階直播音訊路由頁面上半部，包含 OBS 外掛／虛擬輸出入口、App Buffer 與路由圖上半部
-- `audio-health-check.png`：App Buffer 穩定性健檢與延遲建議
+- `audio-health-check.png`：完整 App Buffer 健檢完成後的通過狀態、建議值與延遲示例
 - `audio-meter-horizontal.png`／`audio-meter-vertical.png`：五軌音量 Meter 的兩種方向
 - `profile-horizontal-rack.png`／`profile-vertical-rack.png`：Profile 效果鏈的兩種 Rack 方向
 - `notification-area-menu.png`：未播放時的 Windows 系統工具右鍵選單；播放／進階模式會依狀態增加動作

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-TW' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="0; url={{ page.redirect_target | relative_url }}">
+    <link rel="canonical" href="{{ page.redirect_target | absolute_url }}">
+    <meta name="robots" content="noindex, follow">
+    <title>{{ page.title }} · {{ site.title }}</title>
+    <script>
+      (function () {
+        var target = {{ page.redirect_target | relative_url | jsonify }};
+        window.location.replace(target + window.location.search + window.location.hash);
+      }());
+    </script>
+  </head>
+  <body>
+    <p>教學已移至<a href="{{ page.redirect_target | relative_url }}">新版「進階直播模式」設定流程</a>。</p>
+  </body>
+</html>
