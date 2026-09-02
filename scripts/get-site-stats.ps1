@@ -5,7 +5,7 @@
 
 $ErrorActionPreference = "Stop"
 
-$counterUrl = "https://api.counterapi.dev/v1/noonisawesome-singing-stream-savior-manual/pageviews"
+$counterUrl = "https://api.counterapi.dev/v2/noonisawesome-singing-stream-savior-manual/pageviews"
 $releaseBaseUrl = "https://api.github.com/repos/NoonIsAwesome/Singing-Stream-Savior-Updates/releases"
 $headers = @{
     "Accept" = "application/vnd.github+json"
@@ -29,7 +29,7 @@ function Test-FullPackageAsset {
 $pageviews = 0
 try {
     $counter = Invoke-RestMethod -Uri $counterUrl -Method Get
-    $pageviews = [int64]$counter.count
+    $pageviews = [int64]$counter.data.up_count - [int64]$counter.data.down_count
 }
 catch {
     $statusCode = [int]$_.Exception.Response.StatusCode

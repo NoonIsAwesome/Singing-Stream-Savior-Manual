@@ -10,7 +10,9 @@ published: true
 
 **2.1.0.0**부터 고급 방송 모드는 BGM, 반주와 처리된 마이크를 Singing Stream Savior 안에서 믹스한 뒤 전체 Stream Mix를 OBS, Discord 또는 다른 방송 앱으로 보낼 수 있습니다.
 
-<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 새 기능</span><div><strong>오디오 라우팅과 음성 Profile을 함께 설정하세요.</strong><p>라우팅은 입력, Monitor, 녹음과 방송 출력을, Profile은 보컬 음색을 관리합니다. 최종 이미지는 Release build를 본문과 같은 언어로 캡처한 실제 화면입니다.</p></div></aside>
+<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 새 기능</span><div><strong>오디오 라우팅과 음성 Profile을 함께 설정하세요.</strong><p>라우팅은 입력, Monitor, 녹음과 방송 출력을, Profile은 보컬 음색을 관리합니다. 모든 이미지는 Release build의 실제 화면이며 현지화 버전이 있을 때 우선 사용합니다.</p></div></aside>
+
+{% include advanced-quick-start.html %}
 
 ## 2.1.0.0에서 이동한 설정
 
@@ -91,11 +93,12 @@ Profile 뒤에는 전체 방송용 **Mix Bus Compressor**, **Stream Output Limit
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">SONG AUTOMATION</p><h2>곡 태그로 Profile 자동 전환</h2><p>곡 목록의 태그 버튼에서 음성 Profile을 지정하세요. 해당 반주를 재생하면 연결된 효과 체인으로 자동 전환됩니다. <strong>자동 · 노래 Profile</strong>은 현재 기본 노래 Profile을 사용합니다.</p></div>
+  {% include advanced-streaming-screenshot.html name="26-song-profile-tag-menu.png" alt="곡 행에서 연 Profile 태그 메뉴" caption="곡 행 오른쪽 태그 아이콘에서 자동 노래 Profile, 방송 대화 또는 사용자／내장 Profile을 선택할 수 있습니다. 선택한 색상 태그는 곡 행에 표시됩니다." %}
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">LIVE CONTROL</p><h2>방송 중 효과 전환 및 마이크 음소거</h2><p>작업 화면 위에서 원하는 Profile을 즉시 적용하거나 곡 태그 자동 전환으로 돌아갈 수 있습니다. 옆의 마이크 버튼으로 음소거／해제하고 전환 후 라우팅 화면의 미터를 확인하세요.</p></div>
-  {% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 고급 방송 모드 전체 작업 화면" caption="이 Release 실제 화면은 곡 라이브러리와 BGM／반주, 고급 방송 모드의 Monitor, 녹음, 마이크 및 Profile 컨트롤을 함께 표시합니다." %}
+  {% include advanced-streaming-screenshot.html name="27-live-profile-menu.png" alt="작업 화면 위쪽에서 연 방송 중 Profile 메뉴" caption="위쪽 Profile 메뉴로 효과를 즉시 지정하거나 자동 전환으로 돌아갈 수 있습니다. 옆에서 Monitor, 녹음과 마이크 음소거도 조작합니다." size="medium" %}
 </div>
 
 ### 상단 바 컨트롤

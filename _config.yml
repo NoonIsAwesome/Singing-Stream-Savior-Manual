@@ -7,7 +7,9 @@ baseurl: /Singing-Stream-Savior-Manual
 
 analytics:
   production_host: noonisawesome.github.io
-  pageview_endpoint: https://api.counterapi.dev/v1/noonisawesome-singing-stream-savior-manual/pageviews/up
+  # CounterAPI v2 reports this legacy v1 namespace as an unknown workspace.
+  # Re-enable only after the matching public v2 workspace has been registered.
+  pageview_endpoint:
 
 markdown: kramdown
 kramdown:

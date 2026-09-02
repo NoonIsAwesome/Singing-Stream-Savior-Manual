@@ -10,7 +10,9 @@ published: true
 
 从 **2.1.0.0** 起，高级直播模式可以在 Singing Stream Savior 内混合 BGM、伴奏与处理后的麦克风，再把完整 Stream Mix 发送到 OBS、Discord 或其他直播软件。
 
-<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新功能</span><div><strong>请将音频路由与人声 Profile 一起设置。</strong><p>音频路由负责输入、监听、录音与直播输出；Profile 负责人声音色。本页最终截图均来自 Release build，并与页面使用相同语言。</p></div></aside>
+<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新功能</span><div><strong>请将音频路由与人声 Profile 一起设置。</strong><p>音频路由负责输入、监听、录音与直播输出；Profile 负责人声音色。所有截图均来自 Release build，有对应本地化版本时会优先使用。</p></div></aside>
+
+{% include advanced-quick-start.html %}
 
 ## 2.1.0.0 设置位置变更
 
@@ -101,11 +103,12 @@ Profile 处理后，完整直播输出还会依次经过 **Mix Bus Compressor**�
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">SONG AUTOMATION</p><h2>用歌曲标签自动切换 Profile</h2><p>歌曲列表的标签按钮可以指定人声 Profile。播放该首伴奏时，软件会自动切换到对应效果链；选择<strong>自动 · 演唱 Profile</strong>则使用当前默认的演唱 Profile。</p></div>
+  {% include advanced-streaming-screenshot.html name="26-song-profile-tag-menu.png" alt="歌曲列表展开 Profile 标签选项" caption="点击歌曲行右侧的标签图标后，可选择自动使用演唱 Profile、直播聊天或任意自定义／内置 Profile；彩色标签会直接显示在歌曲行中。" %}
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">LIVE CONTROL</p><h2>直播中手动切换效果器与麦克风静音</h2><p>工作区上方可立即套用指定 Profile，或交回歌曲标签自动切换。旁边的麦克风按钮可立即静音／取消静音；切换后请通过路由页电平表确认信号。</p></div>
-  {% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 高级直播模式完整工作区" caption="这张 Release 实图同时显示歌曲库、BGM／伴奏，以及高级模式的监听、录音、麦克风与 Profile 控制。" %}
+  {% include advanced-streaming-screenshot.html name="27-live-profile-menu.png" alt="主界面顶部展开直播中的 Profile 选项" caption="顶部 Profile 选项可立即指定效果或恢复自动切换；旁边可同时操作监听、录音与麦克风静音。" size="medium" %}
 </div>
 
 ### 主界面顶部控制项

@@ -1,0 +1,24 @@
+{% assign quick_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign quick = site.data.advanced_quick_start[quick_lang] | default: site.data.advanced_quick_start['zh-TW'] %}
+<h2 id="advanced-quick-start">{{ quick.heading }}</h2>
+<p>{{ quick.intro }}</p>
+<div class="setup-steps">
+  {% for step in quick.steps %}
+  <section class="setup-step">
+    <span class="setup-step-number">{{ forloop.index }}</span>
+    <div>
+      <h3>{{ step.title }}</h3>
+      <p>{{ step.body }}</p>
+      {% if step.images %}
+      <div class="feature-shot-grid{% if step.images.size == 1 %} feature-shot-grid--compact{% endif %}">
+        {% for shot in step.images %}
+          {% capture shot_path %}/assets/images/advanced-streaming/{{ shot.file }}{% endcapture %}
+          <figure class="manual-figure"><a href="{{ shot_path | relative_url }}"><img src="{{ shot_path | relative_url }}" alt="{{ shot.alt | escape }}" loading="lazy" decoding="async"></a><figcaption>{{ shot.caption }}</figcaption></figure>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+<blockquote><p>{{ quick.note }}</p></blockquote>

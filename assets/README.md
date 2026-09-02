@@ -30,6 +30,9 @@
 - `reserve-list.png`、`reserve-display-setting.png`、`reserve-overlay-next.png`、`reserve-overlay-multiple.png`：待播／已唱清單、OBS 顯示選項，以及 Next On 與 Reserve 的實際呈現
 - `advanced-streaming/13-obs-add-s3s-audio-source.png` 至 `22-audio-routing-signal-graph.png`：進階直播模式、OBS 外掛、虛擬音源、OBS 混音器與直播輸出裝置選擇的逐步設定圖
 - `advanced-streaming/23-system-resource-status-expanded.png`：主視窗 CPU／RAM 與進階音訊健康 Tooltip 的完整欄位，用於判讀教學
+- `advanced-streaming/24-singing-profile-default.png` 與 `25-chat-profile-ducking.png`：快速設定中的預設唱歌／聊天 Profile 與 BGM 閃避位置
+- `advanced-streaming/26-song-profile-tag-menu.png`：從歌曲列展開 Profile 標籤選單
+- `advanced-streaming/27-live-profile-menu.png`：直播操作列的即時 Profile、監聽、錄音與麥克風控制
 
 `effect-editors/` 存放 15 顆內建效果器的實際編輯視窗，檔名必須使用 `S3S_REGISTRY_EDITOR_SCREENSHOT_DIR` 實際輸出的 Qt／DSP module ID：`gain.png`、`noise.png`、`gate.png`、`compressor.png`、`eq.png`、`saturation.png`、`air.png`、`deesser.png`、`voice-changer.png`、`harmony.png`、`doubler.png`、`delay.png`、`reverb.png`、`shimmer.png`、`limiter.png`。根目錄為繁體中文；其他語言放在各自語言資料夾下的 `effect-editors/`。
 

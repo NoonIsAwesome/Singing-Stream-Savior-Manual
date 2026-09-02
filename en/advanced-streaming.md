@@ -12,8 +12,10 @@ Starting with **2.1.0.0**, Advanced Streaming Mode mixes BGM, accompaniment, and
 
 <aside class="version-preview" role="note">
   <span class="version-preview__badge">2.1.0.0 NEW</span>
-  <div><strong>Read this chapter together with the normal playback guide.</strong><p>Audio Routing defines inputs, monitoring, recording, and stream delivery; voice Profiles define vocal tone. The final screenshots on this page are captured from the Release build in the same language as the page.</p></div>
+  <div><strong>Read this chapter together with the normal playback guide.</strong><p>Audio Routing defines inputs, monitoring, recording, and stream delivery; voice Profiles define vocal tone. All screenshots are real Release-build captures, with localized versions used where available.</p></div>
 </aside>
+
+{% include advanced-quick-start.html %}
 
 ## Settings moved in 2.1.0.0
 
@@ -111,11 +113,12 @@ Open an effect below for its signal role, primary controls, live-singing approac
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">SONG AUTOMATION</p><h2>Switch Profiles automatically with song tags</h2><p>Use the tag button in the song list to assign a voice Profile. Playing that accompaniment automatically activates its effect chain. <strong>Automatic · Singing Profile</strong> uses the current default singing Profile.</p></div>
+  {% include advanced-streaming-screenshot.html name="26-song-profile-tag-menu.png" alt="Profile tag menu opened from a song row" caption="Open the tag icon on a song row to choose Automatic Singing Profile, Live Chat, or any custom or built-in Profile. The colored tag remains visible on the row." %}
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">LIVE CONTROL</p><h2>Switch effects and mute the microphone manually</h2><p>The workspace toolbar can apply any Profile immediately or return control to song-tag automation. The nearby microphone button mutes or unmutes the microphone; check the meters on the routing page after switching.</p></div>
-  {% include localized-release-screenshot.html name="full-workspace.png" alt="Complete 2.1 Advanced Streaming workspace" caption="This Release capture shows the library and BGM/accompaniment together with Advanced Streaming monitoring, recording, microphone, and Profile controls." %}
+  {% include advanced-streaming-screenshot.html name="27-live-profile-menu.png" alt="Live Profile menu opened from the top workspace toolbar" caption="Use the top Profile menu to apply an effect immediately or return to automatic switching. Monitoring, recording, and microphone mute remain beside it." size="medium" %}
 </div>
 
 ### What each top-bar control does

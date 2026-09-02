@@ -10,7 +10,9 @@ published: true
 
 **2.1.0.0** 以降の高度な配信モードでは、BGM、伴奏、処理済みマイクを Singing Stream Savior 内でミックスし、完全な Stream Mix を OBS、Discord、その他の配信アプリへ送信できます。
 
-<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新機能</span><div><strong>オーディオルーティングと音声 Profile を一緒に設定してください。</strong><p>ルーティングは入力、Monitor、録音、配信出力を、Profile はボーカル音色を管理します。掲載する最終画像は Release build を本ページと同じ言語で撮影した実画面です。</p></div></aside>
+<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新機能</span><div><strong>オーディオルーティングと音声 Profile を一緒に設定してください。</strong><p>ルーティングは入力、Monitor、録音、配信出力を、Profile はボーカル音色を管理します。画像はすべて Release build の実画面で、対応するローカライズ版がある場合はそちらを使用します。</p></div></aside>
+
+{% include advanced-quick-start.html %}
 
 ## 2.1.0.0 で移動した設定
 
@@ -91,11 +93,12 @@ Profile の後段には、配信全体用の **Mix Bus Compressor**、**Stream O
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">SONG AUTOMATION</p><h2>曲タグで Profile を自動切り替え</h2><p>曲一覧のタグボタンで音声 Profile を割り当てます。その伴奏を再生すると対応するエフェクトチェーンへ自動切り替えします。<strong>自動・歌唱 Profile</strong>は現在の標準歌唱 Profile を使います。</p></div>
+  {% include advanced-streaming-screenshot.html name="26-song-profile-tag-menu.png" alt="曲行から開いた Profile タグメニュー" caption="曲行右側のタグアイコンから、自動歌唱 Profile、配信雑談、任意のユーザー／内蔵 Profile を選べます。選んだ色付きタグは曲行に表示されます。" %}
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">LIVE CONTROL</p><h2>配信中にエフェクトを切り替え、マイクをミュート</h2><p>ワークスペース上部で任意の Profile を即時適用するか、曲タグの自動切り替えへ戻せます。隣のマイクボタンでミュート／解除し、切り替え後はルーティング画面のメーターを確認します。</p></div>
-  {% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 高度な配信モードのフルワークスペース" caption="この Release 実画面は、曲ライブラリ、BGM／伴奏と、高度な配信モードの Monitor、録音、マイク、Profile 操作を同時に表示します。" %}
+  {% include advanced-streaming-screenshot.html name="27-live-profile-menu.png" alt="ワークスペース上部から開いた配信中の Profile メニュー" caption="上部 Profile メニューで即時にエフェクトを指定するか、自動切り替えへ戻せます。隣には Monitor、録音、マイクミュートがあります。" size="medium" %}
 </div>
 
 ### 上部バーの操作

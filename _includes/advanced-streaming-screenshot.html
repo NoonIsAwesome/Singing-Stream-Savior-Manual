@@ -1,0 +1,2 @@
+{% capture advanced_shot_path %}/assets/images/advanced-streaming/{{ include.name }}{% endcapture %}
+<figure class="manual-figure{% if include.size == 'medium' %} manual-figure--compact{% endif %}"><a href="{{ advanced_shot_path | relative_url }}"><img src="{{ advanced_shot_path | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy" decoding="async"></a>{% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}</figure>

@@ -15,6 +15,8 @@ published: true
   <div><strong>請將音訊路由與人聲 Profile 一起設定。</strong><p>音訊路由負責輸入、監聽、錄音與直播輸出；Profile 負責人聲音色。本頁截圖均來自 Release build，並盡量使用與頁面相同的語言。</p></div>
 </aside>
 
+{% include advanced-quick-start.html %}
+
 ## 2.1.0.0 設定位置變更
 
 - **YouTube 下載**已移至 **設定 → 檔案與專案**，與專案路徑、媒體資料夾放在同一頁。
@@ -32,6 +34,8 @@ published: true
 **程式安全 Buffer** 選單與 **檢查 Buffer 穩定性…** 按鈕會固定顯示在同一列。使用 ASIO 輸入時，這一列位於 ASIO 取樣率／硬體 Buffer 區塊下方；即使 **Windows 播放相容性**的進階設定保持收合，也能直接調整或開啟健檢。**快速健檢**測試 512／1024 frames，約需 25 秒；**完整健檢**測試 128／256／512／1024 frames，約需 5 分鐘。健檢只診斷歌回救星的 App Buffer，不會更改音訊介面的 ASIO hardware buffer；完成後可直接套用建議，但 128／256 等低值只有在完整健檢的兩輪獨立嚴格觀察都通過後，才會列為目前裝置、Profile、效果器與路由已驗證。
 
 健檢本身不會播放合成測試音或伴奏。若已啟用軟體監聽，測試期間仍可能聽到即時麥克風；每次路由重新啟動也可能造成短暫中斷。按下確認後，歌回救星會自動停止本程式正在播放的 BGM 與伴奏，但無法代為停止 OBS 串流、Discord 通話或外部錄音，仍須由使用者先行停止。音訊介面的 **Direct Monitor** 不受這項測試影響。
+
+{% include localized-release-screenshot.html name="audio-health-check.png" alt="尚未開始測試的 App Buffer 穩定性健檢視窗" caption="這是開始測試前的實際畫面；健檢開始後才會逐列填入各 Buffer 的觀察結果與預估延遲，完成判定後才會提供可直接套用的建議。" %}
 
 黃色的 **檢查音訊中斷**會在麥克風／監聽 under/overrun、正式 Stream 斷續或裝置中斷／復原時顯示；**檢查音訊時序**則需同一 callback、時鐘或延遲異常持續約 2 秒。一次瞬時 callback peak 不代表已發生可聽掉訊，將游標停在穩定度文字上可查看各路徑計數、裝置復原、callback peak／period 與異常旗標。
 
@@ -93,12 +97,12 @@ Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compres
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">SONG AUTOMATION</p><h2>用歌曲標籤自動切換 Profile</h2><p>歌曲列表的標籤按鈕可以指定人聲 Profile。播放該首伴奏時，軟體會自動切換到對應效果鏈；選擇<strong>自動 · 唱歌 Profile</strong>則使用目前預設的唱歌 Profile。</p></div>
-  {% include localized-release-screenshot.html name="full-workspace.png" alt="含歌曲 Profile 標籤與進階直播控制的完整工作區" caption="歌曲標籤可預先指定效果鏈；播放時自動套用，工作區上方仍可在直播中手動切換。" %}
+  {% include advanced-streaming-screenshot.html name="26-song-profile-tag-menu.png" alt="歌曲列表展開 Profile 標籤選單" caption="按歌曲列右側的標籤圖示後，可選擇自動使用唱歌 Profile、直播聊天或任一自訂／內建 Profile；彩色標籤會直接顯示在歌曲列上。" %}
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">LIVE CONTROL</p><h2>直播中手動切換效果器與麥克風靜音</h2><p>工作區上方可隨時改用指定 Profile，或交回歌曲標籤自動切換。旁邊的麥克風按鈕可立即靜音／解除靜音；切換後請以路由頁的電平表確認訊號狀態。</p></div>
-  {% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 進階直播模式完整工作區" caption="此 Release 實圖同時顯示歌曲庫、BGM／伴奏，以及進階模式的監聽、錄音、麥克風與 Profile 控制。" %}
+  {% include advanced-streaming-screenshot.html name="27-live-profile-menu.png" alt="主畫面上方展開直播中的 Profile 選單" caption="上方 Profile 選單可立即指定效果或回到自動切換；旁邊可同時操作監聽、錄音與麥克風靜音。" size="medium" %}
 </div>
 
 ### 主畫面上方每個控制項的用途
