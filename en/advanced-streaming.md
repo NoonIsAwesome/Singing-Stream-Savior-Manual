@@ -47,6 +47,8 @@ The health check does not play a synthetic test tone or accompaniment. If softwa
 
 {% include localized-release-screenshot.html name="audio-health-check.png" alt="Buffer health-check window before testing starts" caption="This real capture shows the initial state. Once testing starts, each row is populated with its independent observation and estimated latency; Apply is offered only after the recommendation is complete." %}
 
+> **Is “Not verified” normal for 128 or 256?** Yes. A low Buffer is verified only when both strict rounds have no engine or recording events and retain enough callback, clock, FIFO, and processing headroom. “No counter increments” does not override “strict headroom failed”: it means no dropout was counted during that observation, but there was not enough safety margin to recommend the value. Use the recommended 512 unless you specifically need lower software-monitor latency. App Buffer and the interface's ASIO hardware buffer are separate settings.
+
 The yellow messages have two different meanings. **Check dropouts** appears for microphone or monitor underruns/overruns, a discontinuity in the formal Stream path, or an interrupted/recovering device. **Check audio timing** requires the same callback, clock, or latency-accounting anomaly to persist for about two seconds. A momentary callback peak alone is not proof of an audible dropout. Hover over Stability to inspect route counters, device recovery, callback peak/period, and anomaly flags.
 
 ### Recommended starting point for most users

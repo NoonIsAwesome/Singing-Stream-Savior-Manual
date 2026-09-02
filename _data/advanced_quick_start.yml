@@ -1,6 +1,6 @@
 zh-TW:
   heading: 最短設定流程：照著畫面把聲音送到 OBS
-  intro: 先只做下面六步。每一步都附有完成標準；成功錄到一小段聲音後，再依需要查看後面的詳細說明與附錄。
+  intro: 先只做下面七步。每一步都附有完成標準；成功錄到一小段聲音後，再依需要查看後面的詳細說明與附錄。
   steps:
     - title: 開啟進階直播模式，選擇麥克風
       body: 到「設定 → 音訊路由」選<strong>進階直播模式（混音輸出）</strong>。有錄音介面時優先用原廠 ASIO；沒有 ASIO 就選 Windows Audio，再選實際使用的麥克風。<strong>完成：</strong>說話時「麥克風輸入」電平會動。
@@ -30,8 +30,8 @@ zh-TW:
         - file: 15-obs-select-cable-output.png
           alt: OBS 擷取音訊輸入設定選擇 CABLE Output
           caption: 使用虛擬音源時，OBS 從錄音端接收；VB-CABLE 範例選 CABLE Output。
-    - title: 設定聊天、唱歌與歌曲 Profile
-      body: <strong>唱歌人聲 Profile</strong>是伴奏播放時的預設效果；<strong>直播聊天人聲 Profile</strong>用於 BGM／聊天，下方可選說話時是否自動降低 BGM。只有某首歌需要不同音色時，才在歌曲列按標籤指定 Profile。<strong>完成：</strong>開始／停止伴奏時會自動切換到對應 Profile。
+    - title: 設定聊天與唱歌的預設 Profile
+      body: <strong>唱歌人聲 Profile</strong>是伴奏播放時的預設效果；<strong>直播聊天人聲 Profile</strong>用於 BGM／聊天，下方可選說話時是否自動降低 BGM。<strong>完成：</strong>沒有歌曲標籤時，開始／停止伴奏會在這兩個預設 Profile 間自動切換。
       images:
         - file: 24-singing-profile-default.png
           alt: 音訊路由頁的唱歌人聲 Profile 選單
@@ -46,11 +46,17 @@ zh-TW:
           localized: true
           alt: 人聲 Profile 編輯頁與右上角 S Solo 按鈕
           caption: 右上角 S 是 Solo；開啟後只聽目前編輯的 Profile 預覽，適合獨立確認人聲效果。
+    - title: 為歌曲挑選合適的 Profile 並加上標籤
+      body: 先用上一步試聽音色，再按歌曲列右側的標籤圖示。一般歌曲可選<strong>自動・唱歌 Profile</strong>或「唱歌・通用」；依音域選低／高音域，依風格選搖滾、KTV、古風、夢幻空靈等，特殊效果則留給確實需要的歌曲。沒有標籤仍會使用預設唱歌 Profile。<strong>完成：</strong>歌曲列顯示彩色標籤，播放伴奏時會自動切換到該 Profile。
+      images:
+        - file: 26-song-profile-tag-menu.png
+          alt: 歌曲列展開 Profile 標籤選單
+          caption: 從歌曲列的標籤按鈕選擇適合的 Profile；先依實際試聽決定，不必每首歌都強制設定。
   note: 最後播放一首伴奏並說話或唱歌，確認歌回救星與 OBS 的電平都有反應，再錄一小段檢查左右聲道、音量與嘴形同步。這段錄影正常，就已完成基本設定。
 
 zh-CN:
   heading: 最短设置流程：跟着画面把声音发送到 OBS
-  intro: 先只完成下面六步。每一步都写明了完成标准；成功录制一小段声音后，再按需要查看后面的详细说明与附录。
+  intro: 先只完成下面七步。每一步都写明了完成标准；成功录制一小段声音后，再按需要查看后面的详细说明与附录。
   steps:
     - title: 开启高级直播模式并选择麦克风
       body: 打开“设置 → 音频路由”，选择<strong>高级直播模式（混音输出）</strong>。有音频接口时优先使用原厂 ASIO；没有 ASIO 就选择 Windows Audio，然后选择实际使用的麦克风。<strong>完成：</strong>说话时“麦克风输入”电平会移动。
@@ -80,8 +86,8 @@ zh-CN:
         - file: 15-obs-select-cable-output.png
           alt: OBS 音频输入采集选择 CABLE Output
           caption: 使用虚拟音频设备时，OBS 从录音端接收；VB-CABLE 示例选择 CABLE Output。
-    - title: 设置聊天、演唱与歌曲 Profile
-      body: <strong>演唱人声 Profile</strong>是播放伴奏时的默认效果；<strong>直播聊天人声 Profile</strong>用于 BGM／聊天，下面可以选择说话时是否自动降低 BGM。只有某首歌需要不同音色时，才在歌曲行点击标签指定 Profile。<strong>完成：</strong>开始／停止伴奏时会自动切换到对应 Profile。
+    - title: 设置聊天与演唱的默认 Profile
+      body: <strong>演唱人声 Profile</strong>是播放伴奏时的默认效果；<strong>直播聊天人声 Profile</strong>用于 BGM／聊天，下面可以选择说话时是否自动降低 BGM。<strong>完成：</strong>没有歌曲标签时，开始／停止伴奏会在这两个默认 Profile 之间自动切换。
       images:
         - file: 24-singing-profile-default.png
           alt: 音频路由页面中的演唱人声 Profile 选项
@@ -96,11 +102,17 @@ zh-CN:
           localized: true
           alt: 人声 Profile 编辑页面与右上角的 S Solo 按钮
           caption: 右上角 S 是 Solo；开启后只听当前编辑的 Profile 预览，适合单独确认人声效果。
+    - title: 为歌曲选择合适的 Profile 并添加标签
+      body: 先通过上一步试听音色，再点击歌曲行右侧的标签图标。一般歌曲可选择<strong>自动・演唱 Profile</strong>或“演唱・通用”；按音域选择低／高音域，按风格选择摇滚、KTV、古风、梦幻空灵等，特殊效果只用于确实需要的歌曲。没有标签仍会使用默认演唱 Profile。<strong>完成：</strong>歌曲行显示彩色标签，播放伴奏时会自动切换到该 Profile。
+      images:
+        - file: 26-song-profile-tag-menu.png
+          alt: 歌曲行展开 Profile 标签选项
+          caption: 从歌曲行的标签按钮选择合适的 Profile；请先按实际试听决定，无需强制为每首歌设置。
   note: 最后播放一首伴奏并说话或演唱，确认 Singing Stream Savior 与 OBS 的电平都有反应，再录一小段检查左右声道、音量与口型同步。录制结果正常，就已完成基本设置。
 
 en:
   heading: "Shortest setup: follow the screens to send audio to OBS"
-  intro: Complete only these six steps first. Each step includes a success check; after a short recording works, use the detailed reference and appendices only when needed.
+  intro: Complete only these seven steps first. Each step includes a success check; after a short recording works, use the detailed reference and appendices only when needed.
   steps:
     - title: Enable Advanced Streaming Mode and choose the microphone
       body: Open <strong>Settings → Audio Routing</strong> and select <strong>Advanced Streaming Mode (mix output)</strong>. Prefer the manufacturer ASIO driver when you have an audio interface; otherwise choose Windows Audio, then select the microphone you use. <strong>Done:</strong> the Microphone Input meter moves when you speak.
@@ -130,8 +142,8 @@ en:
         - file: 15-obs-select-cable-output.png
           alt: CABLE Output selected in OBS Audio Input Capture
           caption: With a virtual device, OBS receives from its recording endpoint; choose CABLE Output for VB-CABLE.
-    - title: Set Chat, Singing, and per-song Profiles
-      body: <strong>Singing Voice Profile</strong> is the accompaniment default. <strong>Live Chat Voice Profile</strong> is used for BGM and talking, and its lower option controls automatic BGM ducking. Use a song-row tag only when that song needs a different sound. <strong>Done:</strong> starting and stopping accompaniment selects the expected Profile automatically.
+    - title: Set the default Chat and Singing Profiles
+      body: <strong>Singing Voice Profile</strong> is the accompaniment default. <strong>Live Chat Voice Profile</strong> is used for BGM and talking, and its lower option controls automatic BGM ducking. <strong>Done:</strong> without a song tag, starting and stopping accompaniment switches between these two defaults automatically.
       images:
         - file: 24-singing-profile-default.png
           alt: Singing Voice Profile selector in Audio Routing
@@ -146,11 +158,17 @@ en:
           localized: true
           alt: Voice Profile editor with the S Solo button at the upper right
           caption: S means Solo. Enable it to hear only the Profile currently being edited and check the vocal effect in isolation.
+    - title: Choose a suitable Profile and tag the song
+      body: Audition the sound in the previous step, then press the tag icon on the song row. Use <strong>Automatic · Singing Profile</strong> or Singing · General for an ordinary song; choose Low／High Range for range, or Rock, KTV, Traditional, Dreamy／Ethereal, and other Profiles for the intended style. Reserve special-effect Profiles for songs that need them. An untagged song still uses the default Singing Profile. <strong>Done:</strong> a colored tag appears on the row and playback selects that Profile automatically.
+      images:
+        - file: 26-song-profile-tag-menu.png
+          alt: Profile tag menu opened from a song row
+          caption: Choose a Profile from the song-row tag button after auditioning it. You do not have to tag every song.
   note: Finally, play one accompaniment and speak or sing. Confirm activity in both Singing Stream Savior and OBS, then make a short recording to check left and right channels, balance, and lip sync. If that recording is correct, basic setup is complete.
 
 ja:
   heading: 最短設定：画面どおりに音声を OBS へ送る
-  intro: まず次の 6 手順だけを完了してください。各手順に完了条件があります。短い録画に成功した後、必要な場合だけ後半の詳細説明と付録を確認します。
+  intro: まず次の 7 手順だけを完了してください。各手順に完了条件があります。短い録画に成功した後、必要な場合だけ後半の詳細説明と付録を確認します。
   steps:
     - title: 高度な配信モードを有効にしてマイクを選ぶ
       body: <strong>設定 → 音声ルーティング</strong>で<strong>高度な配信モード（Mix 出力）</strong>を選びます。オーディオインターフェースがある場合はメーカー純正 ASIO、ない場合は Windows Audio を選び、使用するマイクを設定します。<strong>完了：</strong>話すと「マイク入力」メーターが動きます。
@@ -180,8 +198,8 @@ ja:
         - file: 15-obs-select-cable-output.png
           alt: OBS の音声入力キャプチャで CABLE Output を選択した画面
           caption: 仮想デバイスでは OBS が録音側から受信します。VB-CABLE は CABLE Output を選びます。
-    - title: 雑談、歌唱、曲別の Profile を設定する
-      body: <strong>歌唱用 Voice Profile</strong>は伴奏再生中の既定値です。<strong>配信雑談用 Voice Profile</strong>は BGM／トーク時に使い、下の項目で BGM の自動ダッキングを選べます。曲ごとに違う音色が必要な場合だけ曲リストのタグを指定します。<strong>完了：</strong>伴奏の開始／停止で想定した Profile に自動切り替えされます。
+    - title: 雑談用と歌唱用の既定 Profile を設定する
+      body: <strong>歌唱用 Voice Profile</strong>は伴奏再生中の既定値です。<strong>配信雑談用 Voice Profile</strong>は BGM／トーク時に使い、下の項目で BGM の自動ダッキングを選べます。<strong>完了：</strong>曲タグがない場合、伴奏の開始／停止でこの二つの既定 Profile が自動切り替えされます。
       images:
         - file: 24-singing-profile-default.png
           alt: 音声ルーティングの歌唱用 Voice Profile 選択欄
@@ -196,11 +214,17 @@ ja:
           localized: true
           alt: 右上に S Solo ボタンがあるボーカル Profile 編集画面
           caption: 右上の S は Solo です。有効にすると編集中の Profile プレビューだけを聴いて声の効果を単独で確認できます。
+    - title: 曲に合う Profile を選び、タグを付ける
+      body: 前の手順で音色を試聴してから、曲リスト右側のタグアイコンを押します。一般的な曲は<strong>自動・歌唱 Profile</strong>または「歌唱・汎用」、音域には低／高音域、曲調には Rock、KTV、古風、夢幻／空気感などを選びます。特殊効果は必要な曲だけに使います。タグがない曲は既定の歌唱 Profile を使います。<strong>完了：</strong>曲の行に色付きタグが表示され、伴奏再生時にその Profile へ自動切り替えされます。
+      images:
+        - file: 26-song-profile-tag-menu.png
+          alt: 曲リストから開いた Profile タグメニュー
+          caption: 実際に試聴してから曲のタグボタンで選びます。すべての曲へ無理にタグを付ける必要はありません。
   note: 最後に伴奏を 1 曲再生して話すか歌い、Singing Stream Savior と OBS の両方でメーターが動くことを確認します。短い録画で左右チャンネル、音量、リップシンクが正常なら基本設定は完了です。
 
 ko:
   heading: "최단 설정: 화면을 따라 오디오를 OBS로 보내기"
-  intro: 먼저 아래 여섯 단계만 완료하세요. 각 단계에는 완료 기준이 있으며, 짧은 녹화가 정상일 때만 필요에 따라 뒤의 자세한 설명과 부록을 확인하면 됩니다.
+  intro: 먼저 아래 일곱 단계만 완료하세요. 각 단계에는 완료 기준이 있으며, 짧은 녹화가 정상일 때만 필요에 따라 뒤의 자세한 설명과 부록을 확인하면 됩니다.
   steps:
     - title: 고급 방송 모드를 켜고 마이크 선택
       body: <strong>설정 → 오디오 라우팅</strong>에서 <strong>고급 방송 모드(믹스 출력)</strong>를 선택합니다. 오디오 인터페이스가 있으면 제조사 ASIO를 우선 사용하고, 없으면 Windows Audio를 선택한 뒤 실제 마이크를 설정합니다. <strong>완료:</strong> 말할 때 마이크 입력 미터가 움직입니다.
@@ -230,8 +254,8 @@ ko:
         - file: 15-obs-select-cable-output.png
           alt: OBS 오디오 입력 캡처에서 CABLE Output을 선택한 화면
           caption: 가상 장치는 OBS가 녹음 단자에서 받습니다. VB-CABLE은 CABLE Output을 선택합니다.
-    - title: 대화, 노래와 곡별 Profile 설정
-      body: <strong>Singing Voice Profile</strong>은 반주 재생 중 기본값입니다. <strong>Live Chat Voice Profile</strong>은 BGM／대화 때 사용하며 아래 항목에서 BGM 자동 더킹을 선택할 수 있습니다. 특정 곡에 다른 음색이 필요할 때만 곡 목록의 태그를 지정합니다. <strong>완료:</strong> 반주 시작／정지 때 예상한 Profile로 자동 전환됩니다.
+    - title: 대화와 노래의 기본 Profile 설정
+      body: <strong>Singing Voice Profile</strong>은 반주 재생 중 기본값입니다. <strong>Live Chat Voice Profile</strong>은 BGM／대화 때 사용하며 아래 항목에서 BGM 자동 더킹을 선택할 수 있습니다. <strong>완료:</strong> 곡 태그가 없으면 반주 시작／정지 때 이 두 기본 Profile 사이에서 자동 전환됩니다.
       images:
         - file: 24-singing-profile-default.png
           alt: 오디오 라우팅의 Singing Voice Profile 선택 항목
@@ -246,4 +270,10 @@ ko:
           localized: true
           alt: 오른쪽 위에 S Solo 버튼이 있는 음성 Profile 편집 화면
           caption: 오른쪽 위 S는 Solo입니다. 켜면 편집 중인 Profile 미리 듣기만 들려 음성 효과를 따로 확인할 수 있습니다.
+    - title: 곡에 맞는 Profile을 선택하고 태그 추가
+      body: 앞 단계에서 음색을 미리 들은 뒤 곡 행 오른쪽의 태그 아이콘을 누릅니다. 일반 곡은 <strong>자동 · Singing Profile</strong> 또는 Singing · General, 음역에 따라 Low／High Range, 스타일에 따라 Rock, KTV, 고풍, 몽환／공기감 등을 선택합니다. 특수 효과는 실제로 필요한 곡에만 사용합니다. 태그가 없는 곡은 기본 Singing Profile을 사용합니다. <strong>완료:</strong> 곡 행에 색상 태그가 표시되고 반주 재생 시 해당 Profile로 자동 전환됩니다.
+      images:
+        - file: 26-song-profile-tag-menu.png
+          alt: 곡 행에서 펼친 Profile 태그 메뉴
+          caption: 실제로 미리 들어 본 뒤 곡 행의 태그 버튼에서 선택하세요. 모든 곡에 태그를 강제로 지정할 필요는 없습니다.
   note: 마지막으로 반주 한 곡을 재생하고 말하거나 노래해 Singing Stream Savior와 OBS 양쪽 미터가 움직이는지 확인하세요. 짧은 녹화에서 좌우 채널, 밸런스와 립싱크가 정상이면 기본 설정이 완료됩니다.

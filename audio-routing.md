@@ -70,6 +70,8 @@ translation_key: audio-routing
 
 {% include localized-release-screenshot.html name="audio-health-check.png" alt="尚未開始測試的 Buffer 穩定性健檢視窗" caption="此圖是開始測試前的實際視窗；健檢開始後才會逐列填入測試狀態、估計延遲與是否通過，全部判定完成後才提供可直接套用的建議 Buffer。" %}
 
+> **128／256 顯示「尚未驗證」是正常的嗎？** 是。低 Buffer 除了不能增加中斷計數，還必須連續兩回合通過 callback、時鐘、FIFO 與處理效能餘裕檢查。看到「計數器沒有增加・嚴格效能餘裕檢查失敗」代表當下沒有記到中斷，但安全餘裕仍不足，所以不列為可推薦值；直接採用健檢建議的 512 即可。App Buffer 與錄音介面的 ASIO hardware buffer 是兩個不同設定。
+
 ### 黃色穩定度訊息代表什麼
 
 - **檢查音訊中斷**：偵測到麥克風／監聽 under/overrun、正式 Stream 路徑斷續，或裝置正在中斷／復原時立即顯示；恢復後仍會短暫保留，方便看見剛發生的事件。

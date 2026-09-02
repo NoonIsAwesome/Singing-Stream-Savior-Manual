@@ -41,6 +41,8 @@ published: true
 
 {% include localized-release-screenshot.html name="audio-health-check.png" alt="尚未開始測試的 App Buffer 穩定性健檢視窗" caption="這是開始測試前的實際畫面；健檢開始後才會逐列填入各 Buffer 的觀察結果與預估延遲，完成判定後才會提供可直接套用的建議。" %}
 
+> **128／256 顯示「尚未驗證」是正常的嗎？** 是。低 Buffer 必須連續兩回合都沒有引擎／錄音事件，且 callback、時鐘、FIFO 與處理效能仍有足夠餘裕，才會標成已驗證。即使「計數器沒有增加」，只要顯示「嚴格效能餘裕檢查失敗」，就代表它沒有留下足夠安全空間，軟體不會推薦；這不等於當下已經爆音。此時直接採用健檢推薦的 512，只有實際需要降低軟體監聽延遲時才再嘗試低值。這裡的 App Buffer 與 ASIO hardware buffer 是兩個不同設定。
+
 黃色的 **檢查音訊中斷**會在麥克風／監聽 under/overrun、正式 Stream 斷續或裝置中斷／復原時顯示；**檢查音訊時序**則需同一 callback、時鐘或延遲異常持續約 2 秒。一次瞬時 callback peak 不代表已發生可聽掉訊，將游標停在穩定度文字上可查看各路徑計數、裝置復原、callback peak／period 與異常旗標。
 
 ### 建議設定：一般使用者先照這樣做

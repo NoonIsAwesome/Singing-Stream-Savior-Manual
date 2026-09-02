@@ -44,6 +44,8 @@ published: true
 
 {% include localized-release-screenshot.html name="audio-health-check.png" alt="尚未开始测试的 Buffer 稳定性检查窗口" caption="这张实图是测试前的初始状态；开始后才会逐行填入独立观察结果与预计延迟，完成判断后才会提供可直接应用的建议。" %}
 
+> **128／256 显示“尚未验证”正常吗？** 正常。低 Buffer 必须连续两轮都没有引擎／录音事件，而且 callback、时钟、FIFO 与处理性能仍有足够余量，才会标记为已验证。即使“计数器没有增加”，只要显示“严格性能余量检查失败”，就表示安全余量不足，软件不会推荐；这并不等于当时已经出现爆音。此时直接使用检查推荐的 512，只在确实需要降低软件监听延迟时再尝试低值。这里的 App Buffer 与 ASIO hardware buffer 是两个不同设置。
+
 黄色信息有两种不同含义。**检查音频中断**表示检测到麦克风／监听 underrun、overrun、正式 Stream 路径中断，或设备正在中断／恢复；**检查音频时序**则要求同一 callback、时钟或延迟核算异常持续约 2 秒。单次瞬时 callback peak 不代表已经发生可听见的断音。将鼠标停在“稳定性”上，可查看各路径计数、设备恢复、callback peak／period 与异常标志。
 
 ### 建议设置：普通用户先这样使用
