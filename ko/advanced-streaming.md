@@ -10,9 +10,9 @@ published: true
 
 **2.1.0.0**부터 고급 방송 모드는 BGM, 반주와 처리된 마이크를 Singing Stream Savior 안에서 믹스한 뒤 전체 Stream Mix를 OBS, Discord 또는 다른 방송 앱으로 보낼 수 있습니다.
 
-<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 새 기능</span><div><strong>오디오 라우팅과 음성 Profile을 함께 설정하세요.</strong><p>라우팅은 입력, Monitor, 녹음과 방송 출력을, Profile은 보컬 음색을 관리합니다. 모든 이미지는 Release build의 실제 화면이며 현지화 버전이 있을 때 우선 사용합니다.</p></div></aside>
-
 {% include advanced-quick-start.html %}
+
+<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 새 기능</span><div><strong>오디오 라우팅과 음성 Profile을 함께 설정하세요.</strong><p>라우팅은 입력, Monitor, 녹음과 방송 출력을, Profile은 보컬 음색을 관리합니다. 모든 이미지는 Release build의 실제 화면이며 현지화 버전이 있을 때 우선 사용합니다.</p></div></aside>
 
 ## 2.1.0.0에서 이동한 설정
 

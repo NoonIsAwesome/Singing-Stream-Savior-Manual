@@ -10,12 +10,12 @@ published: true
 
 Starting with **2.1.0.0**, Advanced Streaming Mode mixes BGM, accompaniment, and the processed microphone inside Singing Stream Savior, then sends the complete Stream Mix to OBS, Discord, or another app.
 
+{% include advanced-quick-start.html %}
+
 <aside class="version-preview" role="note">
   <span class="version-preview__badge">2.1.0.0 NEW</span>
   <div><strong>Read this chapter together with the normal playback guide.</strong><p>Audio Routing defines inputs, monitoring, recording, and stream delivery; voice Profiles define vocal tone. All screenshots are real Release-build captures, with localized versions used where available.</p></div>
 </aside>
-
-{% include advanced-quick-start.html %}
 
 ## Settings moved in 2.1.0.0
 

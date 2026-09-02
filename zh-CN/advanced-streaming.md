@@ -10,9 +10,9 @@ published: true
 
 从 **2.1.0.0** 起，高级直播模式可以在 Singing Stream Savior 内混合 BGM、伴奏与处理后的麦克风，再把完整 Stream Mix 发送到 OBS、Discord 或其他直播软件。
 
-<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新功能</span><div><strong>请将音频路由与人声 Profile 一起设置。</strong><p>音频路由负责输入、监听、录音与直播输出；Profile 负责人声音色。所有截图均来自 Release build，有对应本地化版本时会优先使用。</p></div></aside>
-
 {% include advanced-quick-start.html %}
+
+<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新功能</span><div><strong>请将音频路由与人声 Profile 一起设置。</strong><p>音频路由负责输入、监听、录音与直播输出；Profile 负责人声音色。所有截图均来自 Release build，有对应本地化版本时会优先使用。</p></div></aside>
 
 ## 2.1.0.0 设置位置变更
 

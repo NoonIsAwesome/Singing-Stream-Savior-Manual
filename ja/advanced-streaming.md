@@ -10,9 +10,9 @@ published: true
 
 **2.1.0.0** 以降の高度な配信モードでは、BGM、伴奏、処理済みマイクを Singing Stream Savior 内でミックスし、完全な Stream Mix を OBS、Discord、その他の配信アプリへ送信できます。
 
-<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新機能</span><div><strong>オーディオルーティングと音声 Profile を一緒に設定してください。</strong><p>ルーティングは入力、Monitor、録音、配信出力を、Profile はボーカル音色を管理します。画像はすべて Release build の実画面で、対応するローカライズ版がある場合はそちらを使用します。</p></div></aside>
-
 {% include advanced-quick-start.html %}
+
+<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新機能</span><div><strong>オーディオルーティングと音声 Profile を一緒に設定してください。</strong><p>ルーティングは入力、Monitor、録音、配信出力を、Profile はボーカル音色を管理します。画像はすべて Release build の実画面で、対応するローカライズ版がある場合はそちらを使用します。</p></div></aside>
 
 ## 2.1.0.0 で移動した設定
 
