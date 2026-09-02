@@ -12,6 +12,10 @@ published: true
 
 {% include advanced-quick-start.html %}
 
+## 詳細說明與附錄
+
+如果上面的測試錄影正常，基本設定已經完成，可以先停止閱讀。以下內容保留給需要更換裝置、手動微調 Buffer、深入設定效果器、監聽、錄音或排查異常時查閱，不必在第一次設定時全部看完。
+
 <aside class="version-preview" role="note">
   <span class="version-preview__badge">2.1.0.0 新功能</span>
   <div><strong>請將音訊路由與人聲 Profile 一起設定。</strong><p>音訊路由負責輸入、監聽、錄音與直播輸出；Profile 負責人聲音色。本頁截圖均來自 Release build，並盡量使用與頁面相同的語言。</p></div>
@@ -62,7 +66,7 @@ published: true
 - Profile 內每個 Block 的啟用狀態、參數與先後順序都會一起保存；重新開啟專案後不必重調。
 - 內建效果與 VST3 Plugin 可以混合使用，最多可加入八個 VST3 插槽。VST3 的參數 state 也會跟著 Profile 儲存。
 - 拖曳 Block 可以改變實際處理順序；旁路只暫時略過該效果，不會刪除設定。
-- 編輯時可直接試聽處理結果。切回直播操作、縮到系統工具或關閉編輯器時，會離開 Profile 試聽並恢復目前的直播監聽設定。
+- 開啟監聽後，Profile 編輯頁會播放目前正在編輯的 Profile 預覽；可以一邊播放伴奏、一邊調整效果器。只想聽人聲效果時，按右上角 **S（Solo）**，就會暫時只保留 Profile 預覽。切回直播操作、縮到系統工具或關閉編輯器時，會離開試聽並恢復原本的直播監聽設定。
 - Factory Profile 是可立即使用的起點；仍建議依麥克風、房間噪音、音域與唱法微調，再另存成自己的 Profile。
 
 {% include factory-profiles-reference.html %}

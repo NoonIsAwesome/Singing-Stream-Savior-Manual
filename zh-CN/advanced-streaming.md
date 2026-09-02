@@ -12,6 +12,10 @@ published: true
 
 {% include advanced-quick-start.html %}
 
+## 详细说明与附录
+
+如果上面的测试录制正常，基本设置已经完成，可以先停止阅读。以下内容只在更换设备、手动微调 Buffer、深入设置效果、监听、录音或排查异常时查阅，第一次设置无需全部读完。
+
 <aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新功能</span><div><strong>请将音频路由与人声 Profile 一起设置。</strong><p>音频路由负责输入、监听、录音与直播输出；Profile 负责人声音色。所有截图均来自 Release build，有对应本地化版本时会优先使用。</p></div></aside>
 
 ## 2.1.0.0 设置位置变更
@@ -62,7 +66,7 @@ published: true
 - 每个 Block 的启用状态、参数与顺序都会一起保存；重新打开项目后无需重新调整。
 - 内置效果与 VST3 Plugin 可以混合使用，最多八个 VST3 插槽；VST3 参数 state 也会随 Profile 保存。
 - 拖动 Block 会改变实际处理顺序；旁路只是暂时跳过效果，不会删除设置。
-- 编辑时可以直接试听。切回直播操作、缩到系统托盘或关闭编辑器时，会退出 Profile 试听并恢复当前直播监听。
+- 开启监听后，Profile 编辑页面会播放当前正在编辑的 Profile 预览；可以一边播放伴奏，一边调整效果。只想听人声效果时，点击右上角的 **S（Solo）**，即可暂时只保留 Profile 预览。切回直播操作、缩到系统托盘或关闭编辑器时，会退出试听并恢复原来的直播监听。
 - Factory Profile 是可立即使用的起点；仍建议依麦克风、环境噪声、音域与唱法微调后另存为自己的 Profile。
 
 {% include factory-profiles-reference.html %}

@@ -12,7 +12,15 @@
       {% if step.images %}
       <div class="feature-shot-grid{% if step.images.size == 1 %} feature-shot-grid--compact{% endif %}">
         {% for shot in step.images %}
-          {% capture shot_path %}/assets/images/advanced-streaming/{{ shot.file }}{% endcapture %}
+          {% if shot.localized %}
+            {% if quick_lang == 'zh-TW' %}
+              {% capture shot_path %}/assets/images/{{ shot.file }}{% endcapture %}
+            {% else %}
+              {% capture shot_path %}/assets/images/{{ quick_lang }}/{{ shot.file }}{% endcapture %}
+            {% endif %}
+          {% else %}
+            {% capture shot_path %}/assets/images/advanced-streaming/{{ shot.file }}{% endcapture %}
+          {% endif %}
           <figure class="manual-figure"><a href="{{ shot_path | relative_url }}"><img src="{{ shot_path | relative_url }}" alt="{{ shot.alt | escape }}" loading="lazy" decoding="async"></a><figcaption>{{ shot.caption }}</figcaption></figure>
         {% endfor %}
       </div>

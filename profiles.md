@@ -65,10 +65,12 @@ Profile 頁面中的每個 Block 就是一顆內建效果器或 VST3。訊號會
 5. 點選 Block 開啟參數視窗，邊試聽邊調整。
 6. 儲存後，參數、Block 順序、Bypass 與 VST3 state 都會跟著 Profile 保存。
 
+開啟監聽後，這個頁面會讓你聽到「目前正在編輯的 Profile」預覽效果；伴奏可以繼續播放，因此能直接比較人聲與歌曲的搭配。如果只想單獨聽 Profile 預覽，按右上角的 **S（Solo）**。離開 Solo、切回直播操作或關閉編輯器後，會恢復原本的監聽內容。
+
 同一條鏈可以放入多顆相同類型的效果器，每顆 Block 都有自己的識別與參數。最多可放入八個 VST3 插槽；如果另一台電腦沒有安裝同一個 VST3，Profile 仍可開啟，但該 Plugin 無法產生原本的效果。
 
 <div class="feature-shot-grid">
-{% include localized-release-screenshot.html name="profile-horizontal-rack.png" alt="人聲 Profile 編輯頁的橫向效果器 Rack" caption="橫向 Rack 依實際處理順序排列 Block，適合一次比較整條效果鏈。" %}
+{% include localized-release-screenshot.html name="profile-horizontal-rack.png" alt="人聲 Profile 編輯頁的橫向效果器 Rack 與右上角 S Solo 按鈕" caption="橫向 Rack 依實際處理順序排列 Block；右上角 S（Solo）可只保留目前 Profile 的預覽，適合單獨確認人聲效果。" %}
 {% include localized-release-screenshot.html name="profile-vertical-rack.png" alt="人聲 Profile 編輯頁的直向效果器 Rack" caption="直向 Rack 使用相同的 Block、Bypass、拖曳順序與編輯器；切換方向不會改變訊號處理。" %}
 </div>
 

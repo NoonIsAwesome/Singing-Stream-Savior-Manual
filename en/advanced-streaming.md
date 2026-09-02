@@ -12,6 +12,10 @@ Starting with **2.1.0.0**, Advanced Streaming Mode mixes BGM, accompaniment, and
 
 {% include advanced-quick-start.html %}
 
+## Detailed reference and appendices
+
+If the short test recording above is correct, basic setup is complete and you can stop here. Use the remaining material only when changing devices, manually tuning the Buffer, configuring effects, monitoring or recording in depth, or troubleshooting a problem.
+
 <aside class="version-preview" role="note">
   <span class="version-preview__badge">2.1.0.0 NEW</span>
   <div><strong>Read this chapter together with the normal playback guide.</strong><p>Audio Routing defines inputs, monitoring, recording, and stream delivery; voice Profiles define vocal tone. All screenshots are real Release-build captures, with localized versions used where available.</p></div>
@@ -64,7 +68,7 @@ A Profile is a reusable vocal effect chain. Add built-in effects or VST3 plug-in
 - Every block's enabled state, parameters, and processing order are stored with the Profile and restored when the project opens again.
 - Built-in effects and VST3 plug-ins can be combined, with up to eight VST3 slots. The plug-in parameter state is stored with the Profile.
 - Dragging a block changes the real processing order. Bypass temporarily skips an effect without deleting its settings.
-- You can audition edits live. Returning to Live Control, minimizing to the tray, or closing the editor leaves Profile audition and restores the current live-monitoring route.
+- With monitoring enabled, the Profile editor plays the Profile currently being edited. You can keep accompaniment playing while adjusting effects. Press **S (Solo)** at the upper right when you want to hear only the Profile preview. Returning to Live Control, minimizing to the tray, or closing the editor leaves audition and restores the previous live-monitoring route.
 - Factory Profiles are practical starting points; tune them for the microphone, room noise, vocal range, and singing style before saving a personal Profile.
 
 {% include factory-profiles-reference.html %}

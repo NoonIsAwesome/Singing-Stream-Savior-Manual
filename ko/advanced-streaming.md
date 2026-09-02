@@ -12,6 +12,10 @@ published: true
 
 {% include advanced-quick-start.html %}
 
+## 자세한 설명과 부록
+
+위의 짧은 테스트 녹화가 정상이라면 기본 설정은 끝났으며 여기서 읽기를 멈춰도 됩니다. 아래 내용은 장치 변경, Buffer 수동 조정, 이펙트·Monitor·녹음의 세부 설정 또는 문제 해결이 필요할 때만 확인하세요.
+
 <aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 새 기능</span><div><strong>오디오 라우팅과 음성 Profile을 함께 설정하세요.</strong><p>라우팅은 입력, Monitor, 녹음과 방송 출력을, Profile은 보컬 음색을 관리합니다. 모든 이미지는 Release build의 실제 화면이며 현지화 버전이 있을 때 우선 사용합니다.</p></div></aside>
 
 ## 2.1.0.0에서 이동한 설정
@@ -62,7 +66,7 @@ published: true
 - 각 Block의 활성 상태, 파라미터와 처리 순서를 함께 저장하고 프로젝트를 다시 열 때 복원합니다.
 - 내장 효과와 최대 8개의 VST3 Plugin 슬롯을 함께 사용할 수 있으며 VST3 parameter state도 Profile에 저장합니다.
 - Block을 드래그하면 실제 처리 순서가 바뀝니다. Bypass는 설정을 삭제하지 않고 처리만 잠시 건너뜁니다.
-- 편집 중 결과를 바로 들어 볼 수 있습니다. 라이브 화면으로 돌아가거나 트레이로 최소화하거나 편집기를 닫으면 Profile 미리 듣기를 끝내고 현재 방송 모니터로 복원합니다.
+- Monitor를 켜면 Profile 편집기에서 현재 편집 중인 Profile을 미리 들을 수 있습니다. 반주를 재생한 채 이펙트를 조정할 수 있고, 음성 효과만 들으려면 오른쪽 위의 **S(Solo)**를 누릅니다. 라이브 화면으로 돌아가거나 트레이로 최소화하거나 편집기를 닫으면 미리 듣기를 끝내고 이전 방송 Monitor로 복원합니다.
 - Factory Profile은 실용적인 출발점입니다. 마이크, 방 소음, 음역과 창법에 맞게 조절한 뒤 개인 Profile로 저장하세요.
 
 {% include factory-profiles-reference.html %}

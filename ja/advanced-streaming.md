@@ -12,6 +12,10 @@ published: true
 
 {% include advanced-quick-start.html %}
 
+## 詳細説明と付録
+
+上の短いテスト録画が正常なら基本設定は完了し、ここで読むのを止めてもかまいません。以下はデバイス変更、Buffer の手動調整、エフェクト、Monitor、録音の詳細設定、またはトラブル解決が必要な場合だけ参照してください。
+
 <aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新機能</span><div><strong>オーディオルーティングと音声 Profile を一緒に設定してください。</strong><p>ルーティングは入力、Monitor、録音、配信出力を、Profile はボーカル音色を管理します。画像はすべて Release build の実画面で、対応するローカライズ版がある場合はそちらを使用します。</p></div></aside>
 
 ## 2.1.0.0 で移動した設定
@@ -62,7 +66,7 @@ published: true
 - Block の有効状態、パラメーター、処理順をまとめて保存し、プロジェクト再開時に復元します。
 - 内蔵エフェクトと最大 8 スロットの VST3 Plugin を混在でき、VST3 の parameter state も Profile に保存します。
 - Block のドラッグは実際の処理順を変更します。Bypass は設定を消さず、一時的に処理だけを省略します。
-- 編集中は結果を試聴できます。ライブ操作へ戻る、トレイへ格納する、またはエディターを閉じると試聴を終了し、現在の配信モニターへ戻ります。
+- Monitor を有効にすると、Profile エディターで現在編集中の Profile を試聴できます。伴奏を再生したままエフェクトを調整でき、声の効果だけを聴く場合は右上の **S（Solo）**を押します。ライブ操作へ戻る、トレイへ格納する、またはエディターを閉じると試聴を終了し、元の配信 Monitor へ戻ります。
 - Factory Profile は実用的な開始点です。マイク、部屋のノイズ、音域、歌い方に合わせて調整してから個人用 Profile として保存してください。
 
 {% include factory-profiles-reference.html %}
