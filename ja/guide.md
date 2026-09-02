@@ -1,14 +1,14 @@
 ﻿---
-title: Singing Stream Savior 2.0 ユーザーマニュアル
-description: Singing Stream Savior 2.0.5.4 日本語マニュアル
+title: Singing Stream Savior 2.1 ユーザーマニュアル
+description: Singing Stream Savior 2.1.0.0 日本語マニュアル
 lang: ja
 translation_key: home
 manual_bundle: true
 ---
 
-# Singing Stream Savior 2.0 ユーザーマニュアル
+# Singing Stream Savior 2.1 ユーザーマニュアル
 
-Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、OBS オーバーレイを一つの操作画面にまとめます。本書は **2.0.5.4** に対応しています。
+Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.0.0** に対応しています。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと拡大プレビューを開けます。</figcaption></figure>
 
@@ -39,14 +39,8 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 2.0.2.0 以降、初めて操作画面へ入ると 8 ステップの初回ガイドが自動的に開きます。説明するページへ切り替えて対象箇所を強調しますが、プロジェクトの変更や曲の再生は行いません。後から「ヘルプ > 初回ガイド」でいつでも再表示できます。
 
 <div class="figure-grid">
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}" alt="BGM プレイヤーを強調する初回ガイド"></a>
-    <figcaption>最初のステップでは BGM 設定、ドラッグ＆ドロップ、自動切替を説明します。画面表示は繁体字中国語です。</figcaption>
-  </figure>
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}" alt="テーマ選択と OBS へドラッグを強調する初回ガイド"></a>
-    <figcaption>テーマのステップでは「プレイリスト外観」へ切り替え、自動プレビューと「OBSへドラッグ」の位置を示します。</figcaption>
-  </figure>
+  {% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 のフルワークスペースと BGM プレイヤー" caption="初回ガイドは対応ページへ移動し、BGM 設定、ドラッグ＆ドロップ、自動切替の領域を強調します。" %}
+  {% include localized-release-screenshot.html name="theme-workspace.png" alt="2.1 のプレイリスト外観ワークスペース" caption="テーマのステップでは自動プレビューと「OBSへドラッグ」の位置を案内します。画像も説明言語に合わせて切り替わります。" %}
 </div>
 
 <a id="library-and-playback"></a>
@@ -71,9 +65,8 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
   <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">見やすい曲カードと BGM プレイリスト</h2><p>曲ライブラリは従来の表とカード表示を切り替えられます。BGM は配信テーマに合わせて事前にまとめ、すぐ切り替えられます。</p></header>
   <div class="manual-feature-update__copy"><h3>曲リストの表示</h3><p><strong>初期設定は従来の表形式です。</strong>「設定 → 一般 → 曲リスト表示」からカード表示へ切り替えられます。表示曲名を大きく見せつつ、音源、ジャケット、歌詞の状態も確認できます。ダブルクリックは再生、鉛筆アイコンは表示曲名の編集です。</p></div>
-  <div class="manual-feature-update__figures"><figure class="manual-figure"><a href="../assets/images/song-list-display-setting-205.png"><img src="../assets/images/song-list-display-setting-205.png" alt="曲リスト表示設定"></a><figcaption>従来の表またはカード表示を選択します。画面は繁体字中国語版です。</figcaption></figure><figure class="manual-figure"><a href="../assets/images/song-card-list-205.png"><img src="../assets/images/song-card-list-205.png" alt="カード式の曲リスト"></a><figcaption>カード表示では、視聴者に見せる曲名を優先して確認できます。</figcaption></figure></div>
   <div class="manual-feature-update__copy"><h3>BGM プレイリスト</h3><p>複数のローカル／YouTube 音源を保存し、各 BGM にメモを付け、ドラッグで順番を変更できます。再生中の項目は強調表示されます。YouTube プレイリストは現在の動画だけ、または全項目を追加できます。</p><ul><li><strong>1曲リピート（初期設定）</strong></li><li><strong>全曲リピート</strong></li><li><strong>シャッフルリピート</strong></li></ul></div>
-  <figure class="manual-figure manual-feature-update__wide-figure"><a href="../assets/images/bgm-playlist-205.png"><img src="../assets/images/bgm-playlist-205.png" alt="BGM プレイリスト"></a><figcaption>メモ、音源、再生中の項目をすぐ確認できます。</figcaption></figure>
+  {% include localized-release-screenshot.html name="bgm-playlist.png" alt="2.1 の BGM プレイリスト" caption="メモ、音源、再生中の項目をすぐ確認できます。" %}
 </section>
 
 アカペラ、弾き語りなどメディアファイルを使わない演奏は、検索欄の横にある「＋ 無伴奏演奏」から追加できます。公開する表示曲名を入力し、手動終了または任意の予定時間を選びます。時間は 10 秒単位のボタンとマウスホイールで調整できます。開始すると BGM を一時停止して Now Singing、予約、履歴を通常の曲と同様に更新し、終了後に元の BGM を再開します。項目は専用のスマート分類とプロジェクトに保存され、偽の無音ファイルは作成しません。
@@ -83,6 +76,8 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ja/cover-dialog.png' | relative_url }}" alt="オンライン検索結果と読み込み済みジャケットを表示した埋め込み画面"></a><figcaption>検索結果を選択し、左側のプレビューが読み込まれると埋め込み操作が有効になります。</figcaption></figure>
 
 BGM とカラオケ音源は別々に再生・音量・シークを操作できます。カラオケ側では再生速度と半音単位のキーを調整できます。難しい曲をゆっくり練習したいとき、当日の歌いやすいテンポに合わせたいとき、音域が高すぎる／低すぎる伴奏を自分に合うキーへ移したいときに便利で、別バージョンの音源を用意する必要はありません。
+
+2.1 では BGM とカラオケ音源の音量に、より聴感に合う知覚的なラウドネスカーブを使用します。ローカルファイルと YouTube 再生は、同じスライダー数値から出力ゲインへの変換を共有します。更新後も現在のスライダー数値は保持されますが、同じ数値でも旧バージョンと聴感が異なる場合があるため、初回配信前に伴奏とボーカルのバランスを再確認してください。これは音量操作カーブであり、自動ラウドネス正規化ではありません。
 
 調整した速度とキーは曲ごとに記憶されます。別の曲へ切り替えてから戻っても、その曲に合う設定が復元されます。元に戻す場合は速度を `100%`、キーを `0` 半音にリセットできます。変更は再生時だけに適用され、元の音源ファイルや音質を書き換えません。
 
@@ -101,21 +96,13 @@ BGM とカラオケ音源は別々に再生・音量・シークを操作でき�
 
 独立した「歌詞ウィンドウ」では、タイムスタンプ付きの行をクリックすると、カラオケ音源をその行の時刻へ移動できます。LRC などの同期歌詞で利用でき、タイムスタンプのないテキスト歌詞では利用できません。
 
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
-    <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="繁体字中国語の歌詞画面で、カラオケ再生中の現在行を強調した同期歌詞プレビュー" loading="lazy" decoding="async">
-  </a>
-  <figcaption>この操作例は繁体字中国語の画面です。プレビューで確認した歌詞の配置、フォント、色、ハイライトが OBS にも反映されます。</figcaption>
-</figure>
+{% include localized-release-screenshot.html name="lyrics-reading-preview.png" alt="2.1 の同期歌詞と読み方プレビュー" caption="プレビューのレイアウト、フォント、色、現在行の強調、読み方設定は OBS にも反映されます。" %}
 
 歌詞と伴奏がずれている場合、正負の値を考える必要はありません。歌唱が始まっても歌詞がまだ表示されない場合は「歌詞が遅い → 早める」、歌唱より先に歌詞が表示される場合は「歌詞が早い → 遅らせる」を選びます。スライダー中央が同期位置で、左へ動かすと早く、右へ動かすと遅くなります。リセットアイコンで `0 ms` に戻せます。
 
 現在行の前後に表示する行数は、別々のスライダーまたは数値欄で設定できます。曲の冒頭や終わりでは、設定値より表示できる行が少ない場合があります。オフセット変更は、再生を一時停止している間もプレビュー、歌詞ウィンドウ、OBS 用歌詞データへ即時反映されます。
 
-<figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/lyrics-viewer.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-viewer.png' | relative_url }}" alt="早める、遅らせる操作と同期歌詞を表示した歌詞ウィンドウ"></a>
-  <figcaption>歌詞ウィンドウでも同じ時刻調整を使えます。時刻付き歌詞を選ぶとその位置へ移動し、曲を先頭へ戻すと一覧も上端へ戻ります。画面表示は繁体字中国語です。</figcaption>
-</figure>
+{% include localized-release-screenshot.html name="lyrics-viewer.png" extra_class="manual-figure--medium" alt="2.1 の早める・遅らせる操作と同期歌詞ウィンドウ" caption="歌詞ウィンドウでも同じ時刻調整を使えます。時刻付き歌詞を選ぶとその位置へ移動し、曲を先頭へ戻すと一覧も上端へ戻ります。" %}
 
 <a id="obs-and-themes"></a>
 ## 04 · プレイリスト外観と OBS
@@ -125,12 +112,6 @@ BGM とカラオケ音源は別々に再生・音量・シークを操作でき�
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/theme-workspace.png' | relative_url }}" alt="テーマカード、設定、プレビュー、テーマガイドを表示した画面"></a><figcaption>フルモードではテーマ比較、設定、OBS 表示確認を同時に行えます。</figcaption></figure>
 
 <div class="figure-grid">
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
-      <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="繁体字中国語のプレイリスト外観画面で Transparent Black v2 をプレビューした状態" loading="lazy" decoding="async">
-    </a>
-    <figcaption>アプリ内：テーマを選び、Now Singing、Song List、Next On の配置を確認します。画面表示は繁体字中国語です。</figcaption>
-  </figure>
   <figure class="manual-figure">
     <a href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
       <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS の配信背景に Transparent Black v2 のセットリストと同期歌詞を重ねた状態" loading="lazy" decoding="async">
@@ -161,9 +142,7 @@ OBS に予約曲を表示するか、最大 1～10 曲の表示数も設定で�
 
 初期状態では無効です。主に OBS の配信時間を読み取り、カラオケ開始時刻を記録し、Set List の曲名前にタイムスタンプを表示するために使用します。通常のセットリストや歌詞表示には不要です。
 
-OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き、サーバーを有効にしてポート（通常 `4455`）とパスワードを確認します。未公開の 2.1.0.0 では「設定 > 配信タイムスタンプ」（現在の公開版では「詳細設定」）で WebSocket を有効にし、`127.0.0.1`、同じポートとパスワードを入力して「接続」を押します。
-
-<figure class="manual-figure"><a href="{{ '/assets/images/ja/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/ja/obs-websocket-settings.png' | relative_url }}" alt="現在の公開版で OBS WebSocket の接続項目を表示した詳細設定"></a><figcaption>この画像は現在の公開版です。2.1.0.0 ではタブ名が「配信タイムスタンプ」へ変わります。</figcaption></figure>
+OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き、サーバーを有効にしてポート（通常 `4455`）とパスワードを確認します。Singing Stream Savior の「設定 > 配信タイムスタンプ」で WebSocket を有効にし、`127.0.0.1`、同じポートとパスワードを入力して「接続」を押します。OBS のパスワードはローカル接続用の認証情報です。パスワードが写った設定画面を公開しないでください。
 
 右下の緑は接続済み、黄は接続または再接続中、赤は未接続です。本番前にテスト配信でタイムスタンプを確認してください。
 
@@ -182,12 +161,26 @@ OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き�
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/ja/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/mini-workspace.png' | relative_url }}" alt="日本語のミニモード"></a><figcaption>ミニモードは予約リストの表示領域を広く取れます。</figcaption></figure>
 </div>
 
+メインウィンドウが不要なときは、閉じるボタンで終了せず Windows の通知領域へ格納するよう設定できます。再生はバックグラウンドで続き、トレイメニューとグローバルショートカットから再生、Key、速度、Profile、マイク、歌詞ウィンドウ、Meter を操作できます。アプリ本体と helper を完全に終了する場合は、トレイメニューの「アプリを終了」を選びます。
+
+{% include localized-release-screenshot.html name="notification-area-menu.png" alt="未再生時の Singing Stream Savior Windows 通知領域メニュー" caption="未再生時は簡潔なメニューです。伴奏再生または高度な配信モードでは、再生、Key、速度、Profile、マイク、Meter の必要な項目が追加されます。" size="medium" %}
+
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 設定とトラブル対処
 
 他の PC へ移す前に `.bgmsproj`、ローカル音源、読み込んだ歌詞をバックアップしてください。
 
-最上位の `Singing Stream Savior.exe` は、今後の更新を確認し、ダークテーマの進行画面に状態を表示します。新しいバージョンがある場合は、ダウンロードとインストールの前に確認します。更新しない場合も、現在のバージョンをそのまま起動できます。外側のランチャー、`current.json`、内部フォルダーは同じ相対位置に保ってください。新しいランチャーが必要な場合や更新に失敗した場合は、異なる版の DLL を混ぜず、最新版の完全 ZIP を展開してください。
+最上位の `Singing Stream Savior.exe` は Launcher 1.2 で更新を確認します。新しい版がない場合は空の更新画面で停止せず、確認後に検証済みの現行版を自動起動します。オフライン時や次の確認時刻より前でも、インストール済みの版をそのまま起動します。
+
+更新がある場合は、カード形式の画面に現在／更新先バージョンと日本語の更新内容を表示します。「後で」または確認画面を閉じるとファイルを変更せず現行版を起動し、「今すぐ更新」を選んだ場合だけダウンロードを開始します。
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/launcher-update-prompt.png' | relative_url }}"><img src="{{ '/assets/images/ja/launcher-update-prompt.png' | relative_url }}" alt="バージョンと更新内容を表示する Launcher 1.2 のカード形式更新画面"></a><figcaption>更新内容はスクロール可能なカードに表示されます。「後で」は現行版を維持し、「今すぐ更新」で検証付き更新を開始します。</figcaption></figure>
+
+キャンセル可能なダウンロード中は、「キャンセル」またはウィンドウを閉じる操作で安全な中止を要求できます。既存ファイルと `current.json` を完全に維持し、一時ファイルを片付けてから現行版を起動します。短い最終コミット段階では閉じる操作を一時的に無視します。更新中にプロセスや PC が強制終了しても、次回起動時に永続トランザクション記録からロールバックまたは完了処理を行い、整合した版だけを起動します。
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/ja/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 のダウンロード、検証、インストール進行画面"></a><figcaption>HTTPS の取得元、想定サイズ、SHA-256 を確認してから、復旧可能なアトミック処理で版を切り替えます。</figcaption></figure>
+
+外側のランチャー、`current.json`、内部フォルダーは同じ相対位置に保ってください。Launcher 1.2 は自動修復とトランザクション復旧用に一つ前の検証済みパッケージを保持しますが、ワンクリックのダウングレード機能はありません。古いアプリが新しい版で保存したプロジェクトを理解できない可能性があるためです。旧版を試す必要がある場合は、公式の完全 ZIP を**別フォルダー**へ展開し、`.bgmsproj` とメディアのコピーを使用してください。更新に失敗する場合も、異なる版の DLL を混ぜず最新版の完全 ZIP を展開してください。
 
 Qt platform plugin エラーが出る場合は ZIP を再ダウンロードして完全に展開し、一番外側の `Singing Stream Savior.exe` だけを起動してください。データフォルダーの中を確認したり開いたりする必要はありません。デスクトップには、その外側 EXE の Windows ショートカットを作成してください。
 

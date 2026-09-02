@@ -1,0 +1,32 @@
+{% assign control_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% if control_lang == 'en' %}
+### Performance Switch, saved defaults, and song Key
+
+Shimmer, Doubler, and Harmony share the **Profile Effect Switch** workflow. A block's **Bypass** removes that processor from the chain; its **Default on/off** value decides how a newly applied Profile or song starts; the global shortcut or tray **Switch** changes only the current song and never rewrites that saved default. Reapplying the Profile restores its saved starting state.
+
+Song Key analysis can run in the background. Hover over the player's **Pitch** button to see the detected original key, confidence, and the key after transposition, or correct it manually. When a song selects a Profile that contains Harmony, the app schedules one analysis automatically. Low confidence, key changes, and non-standard tuning still require an ear check.
+{% elsif control_lang == 'zh-CN' %}
+### 表演 Switch、保存的默认状态与歌曲 Key
+
+Shimmer、Doubler 与 Harmony 共用 **Profile 效果器 Switch**。Block 的**旁路**会让整颗处理器离开效果链；**默认开启／关闭**决定每次重新套用 Profile 或开始新歌曲时的起始状态；全局快捷键或系统托盘的 **Switch** 只改变当前歌曲，不会改写已保存的默认值。重新套用 Profile 后会恢复其起始状态。
+
+歌曲 Key 可在后台分析。将鼠标移到播放器的 **Pitch** 按钮，可查看检测到的原调、信心程度与升降 Key 后的调性，也可以手动修正。歌曲指定的 Profile 含 Harmony 时，软件会自动安排一次分析；信心偏低、歌曲转调或非标准调律时仍应以听感确认。
+{% elsif control_lang == 'ja' %}
+### 演奏用 Switch、保存する初期状態、曲の Key
+
+Shimmer、Doubler、Harmony は **Profile エフェクト Switch** の操作を共有します。Block の **Bypass** は処理自体をチェーンから外し、**初期オン／オフ**は Profile の再適用または次の曲を開始した際の状態を決めます。グローバルショートカット／トレイの **Switch** は現在の曲だけを一時変更し、保存した初期状態を書き換えません。Profile を再適用すると保存状態へ戻ります。
+
+曲の Key はバックグラウンドで解析できます。プレイヤーの **Pitch** ボタンへカーソルを置くと、検出した原調、信頼度、移調後の Key を確認でき、手動修正も可能です。Harmony を含む Profile が曲へ指定されている場合は解析を一度自動予約します。信頼度が低い曲、転調、標準外のチューニングは耳でも確認してください。
+{% elsif control_lang == 'ko' %}
+### 공연 Switch, 저장 기본 상태와 곡 Key
+
+Shimmer, Doubler와 Harmony는 **Profile 이펙트 Switch** 흐름을 공유합니다. Block의 **Bypass**는 프로세서를 체인에서 제외하고, **기본 켜짐／꺼짐**은 Profile을 다시 적용하거나 다음 곡을 시작할 때의 상태를 정합니다. 전역 단축키／트레이 **Switch**는 현재 곡만 임시로 바꾸며 저장된 기본값을 덮어쓰지 않습니다. Profile을 다시 적용하면 저장된 시작 상태로 돌아갑니다.
+
+곡 Key는 백그라운드에서 분석할 수 있습니다. 플레이어의 **Pitch** 버튼에 마우스를 올리면 감지한 원 Key, 신뢰도와 조옮김 후 Key를 확인하고 직접 수정할 수 있습니다. Harmony가 포함된 Profile을 곡에 지정하면 분석을 한 번 자동 예약합니다. 신뢰도가 낮거나 전조／비표준 튜닝이 있는 곡은 귀로도 확인하세요.
+{% else %}
+### 表演 Switch、保存的預設狀態與歌曲 Key
+
+Shimmer、疊聲器與和聲器共用 **Profile 效果器 Switch**。Block 的 **Bypass** 會讓整顆處理器離開效果鏈；**預設開啟／關閉**決定每次重新套用 Profile 或開始新歌曲時的起始狀態；全域快捷鍵或系統工具的 **Switch** 只改變目前歌曲，不會改寫保存的預設值。重新套用 Profile 後會恢復起始狀態。
+
+歌曲 Key 可在背景分析。將游標移到播放器的 **Pitch** 按鈕，可查看偵測到的原調、信心程度與升降 Key 後的調性，也可以手動修正。歌曲指定的 Profile 含和聲器時，軟體會自動安排一次分析；信心偏低、歌曲轉調或非標準調律時仍應以聽感確認。
+{% endif %}

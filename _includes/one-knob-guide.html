@@ -1,0 +1,30 @@
+{% assign one_knob_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+<div class="effect-reference one-knob-guide">
+{% case one_knob_lang %}
+{% when 'en' %}
+  <details open><summary><strong>How One Knob works</strong><span>Quick control without hiding the real parameters</span></summary><div class="effect-reference__body">
+    <p>Supported effects offer a <strong>One Knob</strong> Simple view. Choose a starting point first, then use the central knob to move several related parameters together toward a lighter or stronger result. At 50%, the selected starting point is reproduced exactly; the endpoints are effect-specific safe ranges, not a universal Dry/Maximum scale.</p>
+    <p>One Knob and Advanced mode edit the same effect. Switching views alone never changes the sound or adds a second processing stage. Use One Knob for a fast live-singing adjustment, then open Advanced when one parameter—such as Threshold, Release, Wet, or Tone—needs separate control. Effects whose job is already a direct adjustment, such as Input Gain and EQ, show their direct controls instead of inventing an extra macro.</p>
+  </div></details>
+{% when 'zh-CN' %}
+  <details open><summary><strong>One Knob 的工作方式</strong><span>快速调整，同时保留完整参数</span></summary><div class="effect-reference__body">
+    <p>支持的效果器会提供 <strong>One Knob</strong> 简易界面。先选择一个起始设定，再用中央旋钮让数个相关参数一起朝较轻或较强的结果变化。50% 会准确还原所选起始设定；0% 与 100% 是该效果器专属的安全范围，并不统一代表全干声与最大效果。</p>
+    <p>One Knob 与进阶模式编辑的是同一颗效果器；只切换界面不会改变声音，也不会多加一层处理。现场演唱时可先用 One Knob 快速调整；若 Threshold、Release、Wet 或 Tone 等参数需要分开控制，再进入进阶模式。Input Gain、EQ 这类本身就是直接调节的效果器，会直接显示实际参数，不会额外制造一个宏旋钮。</p>
+  </div></details>
+{% when 'ja' %}
+  <details open><summary><strong>One Knob の仕組み</strong><span>実パラメーターを残したまま素早く調整</span></summary><div class="effect-reference__body">
+    <p>対応エフェクトには <strong>One Knob</strong> の簡易画面があります。最初に開始設定を選び、中央ノブで複数の関連パラメーターをまとめて弱め／強めへ動かします。50% は選択した開始設定を正確に再現します。0% と 100% はエフェクトごとに設計された安全な範囲であり、共通の Dry／最大値を意味しません。</p>
+    <p>One Knob と詳細モードは同じエフェクトを編集します。表示を切り替えるだけでは音も処理段数も変わりません。ライブでは One Knob で素早く整え、Threshold、Release、Wet、Tone などを個別に詰めたい場合だけ詳細モードを使います。Input Gain や EQ のように操作自体が直接的なエフェクトは、不要なマクロを追加せず実パラメーターを表示します。</p>
+  </div></details>
+{% when 'ko' %}
+  <details open><summary><strong>One Knob 작동 방식</strong><span>실제 파라미터를 유지한 빠른 조절</span></summary><div class="effect-reference__body">
+    <p>지원되는 이펙트에는 <strong>One Knob</strong> 간단 화면이 있습니다. 먼저 시작 설정을 선택한 뒤 중앙 노브로 서로 관련된 여러 파라미터를 더 약하거나 강한 결과 쪽으로 함께 움직입니다. 50%는 선택한 시작 설정을 정확히 재현합니다. 0%와 100%는 각 이펙트에 맞춰 설계된 안전 범위이며 공통적인 Dry／최대 효과를 뜻하지 않습니다.</p>
+    <p>One Knob와 고급 모드는 같은 이펙트를 편집합니다. 화면만 바꿔도 소리가 달라지거나 처리 단계가 하나 더 생기지 않습니다. 라이브에서는 One Knob로 빠르게 맞추고 Threshold, Release, Wet, Tone 등을 따로 조절할 때 고급 모드를 사용하세요. Input Gain이나 EQ처럼 원래 직접 조절하는 이펙트는 불필요한 매크로 없이 실제 파라미터를 표시합니다.</p>
+  </div></details>
+{% else %}
+  <details open><summary><strong>One Knob 的運作方式</strong><span>快速調整，同時保留完整參數</span></summary><div class="effect-reference__body">
+    <p>支援的效果器會提供 <strong>One Knob</strong> 簡易介面。先選擇一個起始設定，再用中央旋鈕讓數個相關參數一起朝較輕或較強的結果變化。50% 會精確還原所選起始設定；0% 與 100% 是該效果器專屬的安全範圍，並不一律代表全乾聲與最大效果。</p>
+    <p>One Knob 與進階模式編輯的是同一顆效果器；只切換介面不會改變聲音，也不會多加一層處理。現場演唱時可先用 One Knob 快速調整；若 Threshold、Release、Wet 或 Tone 等參數需要分開控制，再進入進階模式。Input Gain、EQ 這類本身就是直接調節的效果器，會直接顯示實際參數，不會額外製造一顆宏旋鈕。</p>
+  </div></details>
+{% endcase %}
+</div>

@@ -60,6 +60,12 @@ translation_key: workspace-modes
   <figcaption>迷你模式隱藏 BGM 與歌曲庫，把空間留給歌唱伴奏、待播和已唱清單；需要閱讀歌詞時可另外開啟「歌詞視窗」。</figcaption>
 </figure>
 
+## 縮到 Windows 系統通知區
+
+如果直播時不需要保留主視窗，可在設定中讓關閉按鈕改為「縮到系統通知區」。程式與播放流程會繼續在背景執行；在工作列通知區對歌回救星圖示按右鍵，即可依目前狀態操作播放／暫停、停止、從頭播放、Key、速度、Profile、麥克風靜音／恢復、歌詞視窗與 Meter。選擇選單底部的「關閉軟體」才會完整結束主程式與相關 helper。
+
+{% include localized-release-screenshot.html name="notification-area-menu.png" alt="歌回救星未播放時的 Windows 系統通知區右鍵選單" caption="未播放時只顯示精簡項目；播放伴奏或開啟進階直播模式後，選單會依狀態增加播放、Key、速度、Profile、麥克風與 Meter 操作。" size="medium" %}
+
 ## 視窗配置記憶
 
 完整、精簡與迷你模式會分別記住視窗大小及相關分隔位置。切回原模式時會恢復先前配置。
@@ -69,6 +75,7 @@ translation_key: workspace-modes
 - **整理歌曲、歌詞與主題：** 完整模式。
 - **直播中仍會臨時點歌：** 精簡模式。
 - **曲目已排定，只需要播放與看待播：** 迷你模式。
+- **不需要顯示主視窗，但仍要控制直播：** 縮到 Windows 系統通知區，使用右鍵選單或全域快捷鍵。
 - **需要大字閱讀歌詞：** 開啟獨立歌詞視窗並移到適合的螢幕位置。
 
 [上一頁：OBS WebSocket 與直播時間戳](obs-websocket.md) · [下一頁：設定、備份與疑難排解](settings-and-troubleshooting.md)

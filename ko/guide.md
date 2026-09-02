@@ -1,14 +1,14 @@
 ﻿---
-title: Singing Stream Savior 2.0 사용자 설명서
-description: Singing Stream Savior 2.0.5.4 한국어 설명서
+title: Singing Stream Savior 2.1 사용자 설명서
+description: Singing Stream Savior 2.1.0.0 한국어 설명서
 lang: ko
 translation_key: home
 manual_bundle: true
 ---
 
-# Singing Stream Savior 2.0 사용자 설명서
+# Singing Stream Savior 2.1 사용자 설명서
 
-Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사와 OBS 오버레이를 하나의 흐름으로 관리합니다. 이 설명서는 **2.0.5.4** 버전을 기준으로 합니다.
+Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.1.0.0** 버전을 기준으로 합니다.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 확대 미리보기를 열 수 있습니다.</figcaption></figure>
 
@@ -39,14 +39,8 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 2.0.2.0부터 처음 조작 화면에 들어가면 8단계 첫 사용 가이드가 자동으로 열립니다. 설명할 페이지로 전환해 해당 영역을 강조하지만 프로젝트를 바꾸거나 곡을 재생하지는 않습니다. 이후에도 **도움말 > 첫 사용 가이드**에서 언제든 다시 열 수 있습니다.
 
 <div class="figure-grid">
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}" alt="BGM 플레이어를 강조하는 첫 사용 가이드"></a>
-    <figcaption>첫 단계는 BGM 설정, 드래그 앤 드롭과 자동 전환을 안내합니다. 화면의 인터페이스는 번체 중국어입니다.</figcaption>
-  </figure>
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}" alt="테마 선택과 OBS로 드래그를 강조하는 첫 사용 가이드"></a>
-    <figcaption>테마 단계는 재생목록 외관으로 전환해 자동 미리보기와 OBS로 드래그 위치를 보여 줍니다.</figcaption>
-  </figure>
+  {% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 전체 작업 화면과 BGM 플레이어" caption="첫 사용 가이드는 관련 페이지로 이동해 BGM 설정, 드래그 앤 드롭과 자동 전환 영역을 강조합니다." %}
+  {% include localized-release-screenshot.html name="theme-workspace.png" alt="2.1 재생목록 외관 작업 화면" caption="테마 단계는 자동 미리보기와 OBS로 드래그 위치를 안내하며 스크린샷도 현재 설명 언어에 맞춰 바뀝니다." %}
 </div>
 
 <a id="library-and-playback"></a>
@@ -71,9 +65,8 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
   <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">더 직관적인 곡 카드와 BGM 재생목록</h2><p>곡 라이브러리는 기존 표와 카드 표시를 전환할 수 있고, BGM은 방송 주제에 맞게 미리 정리해 빠르게 바꿀 수 있습니다.</p></header>
   <div class="manual-feature-update__copy"><h3>곡 목록 표시</h3><p><strong>기본값은 기존 표 형식입니다.</strong> “설정 → 일반 → 곡 목록 표시”에서 카드 표시로 바꿀 수 있습니다. 표시 곡명을 강조하면서 음원, 커버와 가사 상태를 유지하며, 두 번 클릭은 재생, 연필 아이콘은 표시 곡명 편집입니다.</p></div>
-  <div class="manual-feature-update__figures"><figure class="manual-figure"><a href="../assets/images/song-list-display-setting-205.png"><img src="../assets/images/song-list-display-setting-205.png" alt="곡 목록 표시 설정"></a><figcaption>기존 표 또는 카드 표시를 선택합니다. 화면은 번체 중국어 버전입니다.</figcaption></figure><figure class="manual-figure"><a href="../assets/images/song-card-list-205.png"><img src="../assets/images/song-card-list-205.png" alt="카드형 곡 목록"></a><figcaption>카드 표시는 시청자에게 보이는 곡명을 우선해 보여 줍니다.</figcaption></figure></div>
   <div class="manual-feature-update__copy"><h3>BGM 재생목록</h3><p>여러 로컬／YouTube 음원을 저장하고, 각 BGM에 메모를 붙이며, 드래그로 순서를 바꿀 수 있습니다. 재생 중인 항목은 강조됩니다. YouTube 재생목록은 현재 영상만 또는 모든 항목을 추가할 수 있습니다.</p><ul><li><strong>한 곡 반복(기본값)</strong></li><li><strong>전체 반복</strong></li><li><strong>전체 무작위 반복</strong></li></ul></div>
-  <figure class="manual-figure manual-feature-update__wide-figure"><a href="../assets/images/bgm-playlist-205.png"><img src="../assets/images/bgm-playlist-205.png" alt="BGM 재생목록"></a><figcaption>메모, 음원과 현재 재생 항목을 바로 확인할 수 있습니다.</figcaption></figure>
+  {% include localized-release-screenshot.html name="bgm-playlist.png" alt="2.1 BGM 재생목록" caption="메모, 음원과 현재 재생 항목을 바로 확인할 수 있습니다." %}
 </section>
 
 아카펠라, 직접 연주 등 미디어 파일을 사용하지 않는 공연은 검색창 옆의 **+ 무반주 공연**에서 추가할 수 있습니다. 공개 표시 제목을 입력하고 수동 종료 또는 선택적인 예상 시간을 고르세요. 시간은 10초 단위 버튼과 마우스 휠로 조절할 수 있습니다. 시작하면 BGM을 일시 정지하고 Now Singing, 대기 목록과 완료 기록을 일반 곡처럼 갱신하며, 종료 후 이전 BGM을 다시 재생합니다. 항목은 전용 스마트 분류와 프로젝트에 저장되며 가짜 무음 파일을 만들지 않습니다.
@@ -83,6 +76,8 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}" alt="검색 결과와 불러온 표지 미리보기가 있는 표지 삽입 창"></a><figcaption>검색 결과를 선택하고 왼쪽 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
 
 BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 재생 속도와 반음 단위 키도 조절할 수 있습니다. 어려운 곡을 천천히 연습하거나 라이브에서 편안한 템포에 맞출 때, 음역이 너무 높거나 낮은 반주를 자신에게 맞는 키로 옮길 때 유용하며 별도의 반주 파일을 만들 필요가 없습니다.
+
+2.1에서 BGM과 반주 음량은 청감에 더 잘 맞는 지각적 라우드니스 곡선을 사용합니다. 로컬 파일과 YouTube 재생은 같은 슬라이더 수치-출력 게인 매핑을 공유합니다. 업데이트 후에도 기존 슬라이더 수치는 유지되지만, 같은 수치의 청감이 이전 버전과 다를 수 있으므로 첫 방송 전에 반주와 보컬 균형을 다시 확인하세요. 이는 음량 제어 곡선이며 자동 라우드니스 정규화가 아닙니다.
 
 조절한 속도와 키는 곡마다 따로 기억됩니다. 다른 곡으로 전환했다가 돌아와도 해당 곡에 맞춘 설정이 복원되며, 필요하면 `100%` 속도와 `0` 반음으로 초기화할 수 있습니다. 이 설정은 재생에만 적용되고 원본 파일이나 음질을 변경하지 않습니다.
 
@@ -101,21 +96,13 @@ BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 
 
 독립 **가사 창**에서 타임스탬프가 있는 가사 줄을 클릭하면 반주가 해당 줄의 시점으로 이동합니다. LRC 같은 동기화 가사에서만 사용할 수 있으며 일반 텍스트 가사에는 이동할 시간이 없습니다.
 
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
-    <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="번체 중국어 가사 화면에서 반주 재생 중 현재 동기화 가사를 강조한 미리보기" loading="lazy" decoding="async">
-  </a>
-  <figcaption>이 예시는 번체 중국어 인터페이스입니다. 미리보기에서 확인한 가사 배치, 글꼴, 색상과 강조가 OBS에도 적용됩니다.</figcaption>
-</figure>
+{% include localized-release-screenshot.html name="lyrics-reading-preview.png" alt="2.1 동기화 가사와 읽기 미리보기" caption="미리보기의 가사 배치, 글꼴, 색상, 현재 줄 강조와 읽기 설정은 OBS에도 적용됩니다." %}
 
 가사와 반주가 맞지 않을 때 양수와 음수를 계산할 필요는 없습니다. 노래가 시작됐는데 가사가 아직 나오지 않으면 **가사가 늦음 → 앞당기기**, 노래보다 가사가 먼저 나오면 **가사가 빠름 → 늦추기**를 선택합니다. 슬라이더 중앙은 동기화 상태이며 왼쪽은 앞당기기, 오른쪽은 늦추기입니다. 초기화 아이콘으로 `0 ms`로 돌아갈 수 있습니다.
 
 현재 줄 앞뒤에 표시할 줄 수는 각각 슬라이더나 숫자 입력란으로 설정할 수 있습니다. 곡의 시작이나 끝에서는 설정한 수보다 표시 가능한 줄이 적을 수 있습니다. 오프셋 변경은 재생을 일시 정지한 상태에서도 미리보기, 가사 창과 OBS용 가사 데이터에 즉시 반영됩니다.
 
-<figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/lyrics-viewer.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-viewer.png' | relative_url }}" alt="앞당기기와 늦추기 조작 및 동기화 가사를 표시한 가사 창"></a>
-  <figcaption>가사 창에서도 같은 시간 조정 방식을 사용합니다. 타임스탬프가 있는 가사를 누르면 해당 위치로 이동하고 곡을 처음으로 돌리면 목록도 맨 위로 돌아갑니다. 화면의 인터페이스는 번체 중국어입니다.</figcaption>
-</figure>
+{% include localized-release-screenshot.html name="lyrics-viewer.png" extra_class="manual-figure--medium" alt="2.1 앞당기기·늦추기 조작과 동기화 가사 창" caption="가사 창에서도 같은 시간 조정 방식을 사용합니다. 타임스탬프가 있는 가사를 누르면 해당 위치로 이동하고 곡을 처음으로 돌리면 목록도 맨 위로 돌아갑니다." %}
 
 <a id="obs-and-themes"></a>
 ## 04 · 재생목록 외관과 OBS
@@ -125,12 +112,6 @@ BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/theme-workspace.png' | relative_url }}" alt="테마 카드, 설정, 미리보기와 테마 안내가 있는 화면"></a><figcaption>전체 모드에서는 테마 비교, 설정과 OBS 결과 확인을 동시에 할 수 있습니다.</figcaption></figure>
 
 <div class="figure-grid">
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
-      <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="번체 중국어 재생목록 외관 화면에서 Transparent Black v2를 미리 보는 모습" loading="lazy" decoding="async">
-    </a>
-    <figcaption>앱에서: 테마를 고르고 Now Singing, Song List와 Next On 배치를 확인합니다. 화면 언어는 번체 중국어입니다.</figcaption>
-  </figure>
   <figure class="manual-figure">
     <a href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
       <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS 방송 배경 위에 Transparent Black v2 세트리스트와 동기화 가사를 표시한 모습" loading="lazy" decoding="async">
@@ -161,9 +142,7 @@ OBS 대기 목록 표시 여부와 1–10곡 표시 한도도 정할 수 있습�
 
 기본값은 꺼짐입니다. 현재 주요 목적은 OBS 방송 시간을 읽고 반주 시작 시각을 기록하여 Set List의 곡 이름 앞에 타임스탬프를 표시하는 것입니다. 일반 세트리스트와 가사 오버레이에는 필요하지 않습니다.
 
-OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버를 켠 뒤 포트(보통 `4455`)와 비밀번호를 확인합니다. 아직 공개되지 않은 2.1.0.0에서는 **설정 > 방송 타임스탬프**(현재 공개판은 **고급 설정**)에서 WebSocket을 켜고 `127.0.0.1`, 같은 포트와 비밀번호를 입력한 다음 **연결**을 누르세요.
-
-<figure class="manual-figure"><a href="{{ '/assets/images/ko/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/ko/obs-websocket-settings.png' | relative_url }}" alt="현재 공개판에서 OBS WebSocket 연결 정보를 표시한 고급 설정"></a><figcaption>이 이미지는 현재 공개판입니다. 2.1.0.0부터 탭 이름이 “방송 타임스탬프”로 바뀝니다.</figcaption></figure>
+OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버를 켠 뒤 포트(보통 `4455`)와 비밀번호를 확인합니다. Singing Stream Savior의 **설정 > 방송 타임스탬프**에서 WebSocket을 켜고 `127.0.0.1`, 같은 포트와 비밀번호를 입력한 다음 **연결**을 누르세요. OBS 비밀번호는 로컬 연결용 인증 정보이므로 비밀번호가 보이는 설정 화면을 공개하지 마세요.
 
 오른쪽 아래 녹색은 연결됨, 노란색은 연결 또는 재연결 중, 빨간색은 연결되지 않음을 뜻합니다. 실제 방송 전에 테스트 방송으로 타임스탬프를 확인하세요.
 
@@ -182,12 +161,26 @@ OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}" alt="한국어 미니 모드"></a><figcaption>미니 모드는 대기 목록을 위한 세로 공간을 더 확보합니다.</figcaption></figure>
 </div>
 
+메인 창이 필요하지 않을 때는 닫기 버튼이 종료 대신 Singing Stream Savior를 Windows 알림 영역으로 숨기도록 설정할 수 있습니다. 재생은 백그라운드에서 계속되며 트레이 메뉴와 전역 단축키로 재생, Key, 속도, Profile, 마이크, 가사 창과 Meter를 제어할 수 있습니다. 앱과 helper를 완전히 끝내려면 트레이 메뉴의 ‘앱 종료’를 선택하세요.
+
+{% include localized-release-screenshot.html name="notification-area-menu.png" alt="재생하지 않을 때의 Singing Stream Savior Windows 알림 영역 메뉴" caption="재생하지 않을 때는 메뉴가 간결합니다. 반주 재생 또는 고급 방송 모드에서는 필요한 재생, Key, 속도, Profile, 마이크와 Meter 항목이 추가됩니다." size="medium" %}
+
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 설정 및 문제 해결
 
 다른 PC로 옮기기 전에 `.bgmsproj`, 로컬 미디어와 가져온 가사를 함께 백업하세요.
 
-최상위 `Singing Stream Savior.exe`는 이후 버전을 확인하고 어두운 상태 창에 진행 상황을 표시합니다. 새 버전이 있으면 다운로드와 설치 전에 먼저 확인하며, 업데이트하지 않아도 현재 버전을 계속 실행할 수 있습니다. 외부 실행기, `current.json`과 내부 폴더의 상대 위치를 유지하세요. 더 새로운 실행기가 필요하거나 업데이트가 완료되지 않으면 서로 다른 버전의 DLL을 섞지 말고 최신 전체 ZIP을 새로 압축 해제하세요.
+최상위 `Singing Stream Savior.exe`는 Launcher 1.2로 업데이트를 확인합니다. 새 버전이 없으면 빈 업데이트 화면에 머물지 않고 확인 후 검증된 현재 앱을 자동으로 실행합니다. 오프라인이거나 다음 확인 시간이 아직 되지 않았을 때도 설치된 버전을 바로 실행합니다.
+
+업데이트가 있으면 카드형 화면에 현재／대상 버전과 한국어 업데이트 내용을 표시합니다. ‘나중에’를 누르거나 확인 창을 닫으면 파일을 바꾸지 않고 현재 버전을 실행하며, ‘지금 업데이트’를 선택해야 다운로드를 시작합니다.
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/launcher-update-prompt.png' | relative_url }}"><img src="{{ '/assets/images/ko/launcher-update-prompt.png' | relative_url }}" alt="버전과 업데이트 내용을 표시하는 Launcher 1.2 카드형 업데이트 창"></a><figcaption>스크롤 가능한 카드에 업데이트 내용을 표시합니다. ‘나중에’는 현재 버전을 유지하고 ‘지금 업데이트’는 검증 업데이트를 시작합니다.</figcaption></figure>
+
+취소 가능한 다운로드 단계에서는 ‘취소’를 누르거나 창을 닫아 안전한 취소를 요청할 수 있습니다. 기존 파일과 `current.json`을 정확히 보존하고 임시 잔여물을 지운 뒤 현재 버전을 실행합니다. 짧은 최종 커밋 단계에서는 닫기 동작을 잠시 무시합니다. 업데이트 중 프로세스나 PC가 강제로 종료되어도 다음 실행 때 영구 트랜잭션 기록으로 롤백 또는 마무리를 먼저 수행하여 일관된 버전만 실행합니다.
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/ko/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 다운로드, 검증 및 설치 진행 화면"></a><figcaption>HTTPS 출처, 예상 크기와 SHA-256을 확인한 뒤 복구 가능한 원자적 트랜잭션으로 버전을 전환합니다.</figcaption></figure>
+
+외부 실행기, `current.json`과 내부 폴더의 상대 위치를 유지하세요. Launcher 1.2는 자동 복구와 트랜잭션 롤백을 위해 이전 검증 패키지 하나를 보관하지만 원클릭 다운그레이드는 제공하지 않습니다. 이전 앱이 새 버전에서 저장한 프로젝트를 이해하지 못할 수 있기 때문입니다. 꼭 이전 버전을 시험해야 한다면 공식 전체 ZIP을 **별도 폴더**에 풀고 `.bgmsproj`와 미디어의 복사본을 사용하세요. 업데이트가 완료되지 않을 때도 서로 다른 버전의 DLL을 섞지 말고 최신 전체 ZIP을 새로 압축 해제하세요.
 
 Qt platform plugin 오류가 나오면 ZIP을 다시 내려받아 완전히 압축 해제하고 가장 바깥쪽 `Singing Stream Savior.exe`만 실행하세요. 데이터 폴더 안의 파일을 확인하거나 열 필요는 없습니다. 바탕 화면에는 이 바깥쪽 EXE의 Windows 바로가기를 만드세요.
 

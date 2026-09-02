@@ -11,8 +11,8 @@ published: true
 Starting with **2.1.0.0**, Advanced Streaming Mode mixes BGM, accompaniment, and the processed microphone inside Singing Stream Savior, then sends the complete Stream Mix to OBS, Discord, or another app.
 
 <aside class="version-preview" role="note">
-  <span class="version-preview__badge">2.1.0.0 PREVIEW</span>
-  <div><strong>This page covers an unreleased version.</strong><p>The current public download may not include these tabs and controls yet. Screenshots are from the Traditional Chinese preview build; controls follow the language selected in the app. Labels and layouts can still change before release.</p></div>
+  <span class="version-preview__badge">2.1.0.0 NEW</span>
+  <div><strong>Read this chapter together with the normal playback guide.</strong><p>Audio Routing defines inputs, monitoring, recording, and stream delivery; voice Profiles define vocal tone. The final screenshots on this page are captured from the Release build in the same language as the page.</p></div>
 </aside>
 
 ## Settings moved in 2.1.0.0
@@ -23,20 +23,29 @@ Starting with **2.1.0.0**, Advanced Streaming Mode mixes BGM, accompaniment, and
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.1.0.0 · AUDIO ROUTING</p><h2>Choose normal playback or Advanced Streaming Mode</h2><p>Begin in <strong>Settings → Audio Routing</strong>. Normal Playback outputs the app's BGM and accompaniment only. Advanced Streaming Mode adds the microphone, Profile effect chains, complete mix, and virtual output.</p></div>
-  <div class="feature-shot-grid feature-shot-grid--wide">
-    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/01-audio-routing-mode.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/01-audio-routing-mode.jpg' | relative_url }}" alt="Normal Playback and Advanced Streaming Mode selector on the Audio Routing tab" loading="lazy" decoding="async"></a><figcaption>Stay in Normal Playback when you do not need microphone processing. Use Advanced Streaming Mode to send a complete mix to OBS or Discord.</figcaption></figure>
-    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/02-audio-driver.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/02-audio-driver.jpg' | relative_url }}" alt="ASIO and Windows Audio driver choices" loading="lazy" decoding="async"></a><figcaption>ASIO is intended for low-latency singing; Windows Audio compatibility mode works with typical Windows devices.</figcaption></figure>
-    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/04-playback-api.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/04-playback-api.jpg' | relative_url }}" alt="Automatic, WASAPI, DirectSound, and MME playback methods" loading="lazy" decoding="async"></a><figcaption>Automatic (recommended) chooses a suitable method first. Select a specific API only when troubleshooting device compatibility.</figcaption></figure>
-    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/03-bgm-output-graph.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/03-bgm-output-graph.jpg' | relative_url }}" alt="Normal Playback route from BGM to system output with signal meters" loading="lazy" decoding="async"></a><figcaption>The graph shows the active signal path, estimated latency, buffer, sample rate, and stability.</figcaption></figure>
-  </div>
-  <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/05-routing-mixer.jpg' | relative_url }}" alt="Complete audio route with BGM, microphone, voice Profiles, stream mix, virtual output, monitor, and recording" loading="lazy" decoding="async"></a><figcaption>Advanced Streaming Mode places sources, two voice Profiles, the stream mix, Stream Output, monitoring, and recording in one visual route.</figcaption></figure>
+  {% include localized-release-screenshot.html name="audio-routing.png" alt="Upper portion of the 2.1.0.0 Audio Routing page" caption="This real capture shows the OBS plug-in installer and virtual-output entries at the upper right, route mode, Windows Audio, the App Buffer and health-check entry, plus source, Profile, formal Mix, and Stream Output. Scroll down for Monitor, recording, and the lower route graph." %}
+  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="Lower portion of the 2.1.0.0 Audio Routing page" caption="The lower capture shows Monitor, recording, route lines, and latency state. Monitor latency does not change accompaniment-to-vocal alignment in OBS or the formal output." %}
 </div>
+
+### Default Profiles and BGM Ducking
+
+- **Chat Voice Profile** is selected automatically during BGM playback or livestream chat.
+- **Singing Voice Profile** is the default while accompaniment is playing; a song's Profile tag can override it. The microphone button's right-click menu can hold a temporary manual Profile. Choose **Automatically switch Profile** to resume chat/singing and song-tag automation.
+- **BGM Ducking · Automatic** lowers only BGM while microphone voice is detected, by no more than 9 dB, and never boosts the microphone. It is bypassed automatically during singing accompaniment so the track does not pump with every phrase; the Mix Bus Compressor handles overall glue there. Choose **Off** to disable automatic BGM reduction.
 
 ### App-buffer health check and yellow status
 
 The **App safety buffer** selector and **Check buffer stability…** button stay together in one visible row. With ASIO input, the row appears directly below the ASIO sample-rate/hardware-buffer panel; it remains available while the advanced **Windows playback compatibility** section is collapsed. **Quick check** tests 512 and 1024 frames in about 25 seconds. **Full check** tests 128, 256, 512, and 1024 frames in about five minutes. It diagnoses the app buffer without changing the audio interface's separate ASIO hardware buffer, and its recommendation can be applied directly. A low value such as 128 or 256 is treated as verified only after both independent strict observations in Full check pass for the current devices, Profile, effects, and route.
 
+The health check does not play a synthetic test tone or accompaniment. If software monitoring is enabled, you may still hear the live microphone, and each route restart can cause a brief interruption. After you confirm, Singing Stream Savior automatically stops BGM and accompaniment playing inside the app. It cannot stop OBS streaming, Discord calls, or external recording, so stop those yourself first. The audio interface's **Direct Monitor** is unaffected.
+
+{% include localized-release-screenshot.html name="audio-health-check.png" alt="Buffer health-check window before testing starts" caption="This real capture shows the initial state. Once testing starts, each row is populated with its independent observation and estimated latency; Apply is offered only after the recommendation is complete." %}
+
 The yellow messages have two different meanings. **Check dropouts** appears for microphone or monitor underruns/overruns, a discontinuity in the formal Stream path, or an interrupted/recovering device. **Check audio timing** requires the same callback, clock, or latency-accounting anomaly to persist for about two seconds. A momentary callback peak alone is not proof of an audible dropout. Hover over Stability to inspect route counters, device recovery, callback peak/period, and anomaly flags.
+
+### Development-machine measurements and general recommendations
+
+{% include audio-test-results-en.html %}
 
 ## Create and edit voice Profiles
 
@@ -50,9 +59,13 @@ A Profile is a reusable vocal effect chain. Add built-in effects or VST3 plug-in
 - You can audition edits live. Returning to Live Control, minimizing to the tray, or closing the editor leaves Profile audition and restores the current live-monitoring route.
 - Factory Profiles are practical starting points; tune them for the microphone, room noise, vocal range, and singing style before saving a personal Profile.
 
+{% include factory-profiles-reference.html %}
+
 ### Fifteen built-in vocal effects
 
-All editors share the same matte panel, calibrated knobs, live graph, and Help button. Simple mode starts from a useful scenario; Advanced mode exposes the complete parameter set.
+Every built-in effect provides a live graph, Bypass control, and Help button. Simple mode starts from a useful scenario; Advanced mode exposes the complete parameter set.
+
+{% include one-knob-guide.html %}
 
 | Group | Effect | Main purpose |
 | --- | --- | --- |
@@ -72,40 +85,43 @@ All editors share the same matte panel, calibrated knobs, live graph, and Help b
 | Space | **Shimmer** | Add an octave-up halo to reverb tails for airy sections. |
 | Dynamics | **Limiter** | Catch sudden vocal peaks at the end of a Profile. |
 
-After the Profile, the complete stream still passes through the **Mix Bus Compressor**, **Stream Output Limiter**, and Master level. These belong to the overall output chain and do not rewrite the tone of an individual Profile.
+After the Profile, the complete stream still passes through the **Mix Bus Compressor**, **Stream Output Limiter**, and Master level. These belong to the overall output chain and do not rewrite the tone of an individual Profile. Final Limiter state is saved separately by mode: it is off by default in Normal Playback, on the first time Advanced Streaming Mode is used, and each mode remembers later manual changes independently.
+
+Open an effect below for its signal role, primary controls, live-singing approach, and failure modes.
+
+{% include effect-editor-gallery.html %}
+
+{% include effects-reference-en.html %}
+
+{% include profile-performance-controls.html %}
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h3>Profile examples</h3><p>Separate chat, singing range, genre, and special-effect chains so they can be recalled instead of rebuilt during a live stream.</p></div>
   <div class="feature-shot-grid">
-    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/06-vocal-profile-effects.jpg' | relative_url }}" alt="High-range singing Profile with dynamic suppression, EQ, reverb, and limiter blocks" loading="lazy" decoding="async"></a><figcaption>Create separate chains for high or low ranges, KTV, traditional styles, and other singing situations.</figcaption></figure>
-    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/07-chat-profile-effects.jpg' | relative_url }}" alt="Streaming chat Profile with input gain, noise gate, and limiter blocks" loading="lazy" decoding="async"></a><figcaption>Keep talking and singing Profiles separate instead of readjusting every effect during a stream.</figcaption></figure>
+    {% include localized-release-screenshot.html name="profile-horizontal-rack.png" alt="Horizontal Profile effect rack" caption="The horizontal rack shows the real block processing order across the page." %}
+    {% include localized-release-screenshot.html name="profile-vertical-rack.png" alt="Vertical Profile effect rack" caption="The vertical rack uses the same blocks, bypass state, drag order, and editors without changing signal processing." %}
   </div>
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">SONG AUTOMATION</p><h2>Switch Profiles automatically with song tags</h2><p>Use the tag button in the song list to assign a voice Profile. Playing that accompaniment automatically activates its effect chain. <strong>Automatic · Singing Profile</strong> uses the current default singing Profile.</p></div>
-  <figure class="manual-figure manual-feature-update__wide-figure"><a href="{{ '/assets/images/advanced-streaming/08-song-profile-tag.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/08-song-profile-tag.jpg' | relative_url }}" alt="Song tag menu for choosing automatic or a specific voice Profile" loading="lazy" decoding="async"></a><figcaption>Prepare effects for different ranges, genres, or special songs. Always test the voice and level before going live.</figcaption></figure>
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">LIVE CONTROL</p><h2>Switch effects and mute the microphone manually</h2><p>The workspace toolbar can apply any Profile immediately or return control to song-tag automation. The nearby microphone button mutes or unmutes the microphone; check the meters on the routing page after switching.</p></div>
-  <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/advanced-streaming/09-manual-profile-mic-controls.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/09-manual-profile-mic-controls.jpg' | relative_url }}" alt="Workspace monitor source, headphones, record, microphone mute, and Profile controls" loading="lazy" decoding="async"></a><figcaption>A manual selection takes effect immediately. Choose Automatic Profile Switching to follow song tags again.</figcaption></figure>
+  {% include localized-release-screenshot.html name="full-workspace.png" alt="Complete 2.1 Advanced Streaming workspace" caption="This Release capture shows the library and BGM/accompaniment together with Advanced Streaming monitoring, recording, microphone, and Profile controls." %}
 </div>
 
 ### What each top-bar control does
 
 - **Monitor source** selects BGM/accompaniment, the full mix, BGM plus wet voice, BGM plus dry voice, or the processed microphone alone.
 - The **headphones button** toggles the selected monitor without forgetting the source.
-- The **record button** starts or stops immediately; its menu chooses full output or monitor content, WAV format, and recording folder.
-- The **microphone button** mutes or restores the mic and uses the same state icon as the tray menu.
+- **Left-click the record button** to start or stop immediately; **right-click it** to open the menu for full output or monitor content, WAV format, and the recording folder.
+- **Left-click the microphone button** to mute or restore the mic; **right-click it** to open the Profile menu and select a chain or resume automatic switching. Its state icon matches the tray menu.
 - The **Profile menu** applies a chain manually or returns control to Automatic Profile Switching.
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>Choose what you monitor and record the mix</h2><p>The headphones button controls monitoring. Listen to BGM/accompaniment, the full mix, wet or dry microphone combinations, or the processed microphone alone. Recording can capture the full output or monitored content as WAV 16-bit PCM or WAV 32-bit Float.</p></div>
-  <div class="feature-shot-grid feature-shot-grid--compact">
-    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/10-monitor-source.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/10-monitor-source.jpg' | relative_url }}" alt="Monitor source menu for BGM, full mix, wet or dry microphone, and processed microphone" loading="lazy" decoding="async"></a><figcaption>Monitoring changes only what you hear in your headphones. Stream Output continues to follow the routing settings.</figcaption></figure>
-    <figure class="manual-figure"><a href="{{ '/assets/images/advanced-streaming/11-recording-options.jpg' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/11-recording-options.jpg' | relative_url }}" alt="Full output, monitored content, WAV format, and recording-folder options" loading="lazy" decoding="async"></a><figcaption>32-bit Float preserves more headroom for editing but uses more storage; 16-bit PCM suits normal delivery.</figcaption></figure>
-  </div>
   <p><strong>Avoid feedback:</strong> use headphones when microphone monitoring is enabled, not speakers that feed back into the mic. Make a short test recording before a live stream to check voice, accompaniment, levels, and latency.</p>
 </div>
 
@@ -117,14 +133,19 @@ Monitoring is a separate headphone path. Dry Cue uses an independent software ca
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>Inspect five audio paths and system load</h2><p>Advanced Streaming Mode exposes the Meter through View or the tray menu. It can dock on the right, float independently, and switch between horizontal and vertical layouts with one split button.</p></div>
   <p>The five tracks are <strong>BGM / accompaniment</strong>, <strong>Vocal (after Profile, before Mix)</strong>, <strong>Stream Output</strong>, <strong>BGM / accompaniment monitor</strong>, and <strong>Vocal monitor</strong>. Every track shows Peak; Stream Output also shows three-second short-term <strong>LUFS-S</strong>. Calibrated knobs cover 0–200% and use the main app's muted blue.</p>
   <p>The horizontal Meter can suggest raising Vocal or lowering BGM/accompaniment after a sustained imbalance. It is advisory only and never changes gain automatically. No advice appears before qualified vocal activity has been detected. Five continuous seconds without qualified Vocal is treated as an interlude, clears the old advice and evidence, and requires the next vocal section to qualify again.</p>
+  <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="Five-track audio Meter with horizontal level bars" caption="This real capture shows five Peak tracks and the 0–200% controls. LUFS-S and sustained-balance text appear only when their measurement conditions are met, so they are not populated in this fixed-signal capture." %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="Five-track audio Meter panel with vertical level bars" caption="This crop shows the vertical Meter panel itself with the same five tracks and controls; it can also dock at the right of the main window without changing the audio route." %}</div>
   <div class="effect-reference"><details><summary><strong>How loudness advice is qualified</strong><span>Silence, breaths, and interludes are excluded</span></summary><div class="effect-reference__body"><p>The Meter evaluates 100 ms buckets from the live-output path, using BGM/accompaniment before Mix and Vocal after the Profile. Evidence accumulates only while BGM/accompaniment is truly in the Playing state, its signal is present, routing and microphone health are good, and vocal activity qualifies. When Noise Gate telemetry is available, the gate must be open for about 25% or more of the bucket; average post-Profile Vocal energy must be at least −45 dBFS and raw-microphone Peak at least −50 dBFS. A warning requires at least 10 seconds of playback, at least 6 seconds of qualified Vocal in the latest 12 seconds, and two phrases of at least 1.2 seconds each separated by at least 300 ms. BGM/accompaniment must be no more than 2 dB below Vocal—or louder—for at least 6 seconds of the latest qualified evidence. “Vocal may be too quiet” additionally requires average qualified Vocal energy at or below −26 dBFS. If recent raw or processed Vocal Peak reaches −6 dBFS or higher, or limiter gain reduction exceeds 1 dB, only the safer suggestion to lower accompaniment remains; the Meter will not recommend raising Vocal. Changing tracks, stopping or restarting playback, making a significant seek, switching Profiles, route interruption or pending recovery, and hiding the Meter reset the evidence. This is sustained signal-activity and loudness comparison, not speech recognition.</p></div></details></div>
   <p>The borderless CPU/RAM status distinguishes total-system and app use. In Advanced Streaming Mode its tooltip also includes buffer size, callback time, estimated latency, and underrun/overrun counts, with color warnings when load may affect stability.</p>
+  {% include localized-release-screenshot.html name="system-resource-status.png" alt="Collapsed CPU and RAM summary at the lower-right of the main window" caption="This capture shows only the compact CPU/RAM summary before hover. Pointing at it expands the system/app load and Advanced-mode audio-health details described above." size="medium" %}
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>Keep control after minimizing to the system tray</h2><p>A setting chooses whether the main-window close button minimizes to the tray or exits. When the app stays in the background, common live controls remain available without reopening the workspace.</p></div>
   <p>The state-aware menu includes play/resume, pause, stop, restart from the beginning, Key, speed, Profile, microphone mute/restore, Lyrics Window, Open Main Window, and—only in Advanced Streaming Mode—the Meter. **Exit Application** is the action that closes the app and its helpers.</p>
+  {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior Windows notification-area menu while idle" caption="This real capture is the compact idle menu. Playback and Advanced Streaming Mode add the playback, Key, speed, Profile, microphone, and Meter actions described above. Exit at the bottom closes the app and its helpers completely." size="medium" %}
   <p>Global shortcuts are grouped into Playback Controls and Microphone/Monitoring, include defaults, and hide Advanced-only actions in Normal Playback Mode.</p>
+  {% include keyboard-shortcuts-reference.html %}
+  {% include localized-release-screenshot.html name="keyboard-shortcuts.png" alt="Keyboard Shortcuts settings grouped by playback, microphone, and monitoring" caption="Defaults can be edited directly. Controls that require Advanced Streaming Mode are hidden in Normal Playback Mode." %}
 </div>
 
 <div class="manual-feature-update">

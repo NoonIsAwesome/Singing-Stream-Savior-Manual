@@ -1,14 +1,14 @@
 ﻿---
-title: Singing Stream Savior 2.0 User Manual
-description: English manual for Singing Stream Savior 2.0.5.4
+title: Singing Stream Savior 2.1 User Manual
+description: English manual for Singing Stream Savior 2.1.0.0
 lang: en
 translation_key: home
 manual_bundle: true
 ---
 
-# Singing Stream Savior 2.0 User Manual
+# Singing Stream Savior 2.1 User Manual
 
-Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, and OBS overlays in one workflow. This manual covers version **2.0.5.4**.
+Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.0.0**.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
@@ -44,14 +44,8 @@ Create a project from **File > New project**, add songs, then save the `.bgmspro
 Starting with version 2.0.2.0, the eight-step first-use guide opens automatically the first time you enter the workspace. It changes to the relevant page and highlights the area being explained without changing your project or starting playback. You can reopen it at any time from **Help > First-use Guide**.
 
 <div class="figure-grid">
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}" alt="First-use guide highlighting the BGM player"></a>
-    <figcaption>The first step introduces BGM setup, drag-and-drop, and automatic switching. The interface shown is Traditional Chinese.</figcaption>
-  </figure>
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}" alt="First-use guide highlighting theme selection and Drag to OBS"></a>
-    <figcaption>The theme step switches to Playlist Appearance and points out the theme preview and Drag to OBS area.</figcaption>
-  </figure>
+  {% include localized-release-screenshot.html name="full-workspace.png" alt="The full 2.1 workspace used by the first-use guide" caption="The first steps introduce BGM setup, drag-and-drop, automatic switching, and the three main workspace columns." %}
+  {% include localized-release-screenshot.html name="theme-workspace.png" alt="The 2.1 Playlist Appearance workspace" caption="The theme step opens Playlist Appearance and points out its cards, preview, settings, and OBS workflow." %}
 </div>
 
 Full mode is the default preparation workspace: content and settings on the left, previews in the center, and players plus queue on the right.
@@ -78,9 +72,8 @@ The song context menu is arranged for quick live use: **Edit display song name**
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
   <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">A clearer song view and a real BGM playlist</h2><p>Switch the song library between the familiar table and a card view, then prepare reusable background music for different stream moods.</p></header>
   <div class="manual-feature-update__copy"><h3>Song list display</h3><p><strong>The traditional table remains the default.</strong> Choose Card list under Settings → General → Song List Display when you want titles to be easier to scan. Cards keep the source, cover, and lyrics indicators; double-click plays the song, while the pencil icon edits its Display title.</p></div>
-  <div class="manual-feature-update__figures"><figure class="manual-figure"><a href="../assets/images/song-list-display-setting-205.png"><img src="../assets/images/song-list-display-setting-205.png" alt="Song list display setting"></a><figcaption>Choose the traditional table or Card list in Settings. Screenshot shown in Traditional Chinese.</figcaption></figure><figure class="manual-figure"><a href="../assets/images/song-card-list-205.png"><img src="../assets/images/song-card-list-205.png" alt="Card-style song library"></a><figcaption>Card view emphasizes the title your audience will see.</figcaption></figure></div>
   <div class="manual-feature-update__copy"><h3>BGM playlist</h3><p>Keep multiple local or YouTube sources, add a note to each BGM, and drag items into order. The active track is highlighted. YouTube playlists can add either the current video or every item.</p><ul><li><strong>Repeat one (default)</strong>: loop the selected BGM.</li><li><strong>Repeat all</strong>: play in list order and continue from the beginning.</li><li><strong>Shuffle all</strong>: choose each next BGM randomly.</li></ul></div>
-  <figure class="manual-figure manual-feature-update__wide-figure"><a href="../assets/images/bgm-playlist-205.png"><img src="../assets/images/bgm-playlist-205.png" alt="Expanded BGM playlist"></a><figcaption>The BGM list keeps notes, sources, and the playing item easy to identify.</figcaption></figure>
+  {% include localized-release-screenshot.html name="bgm-playlist.png" alt="Expanded BGM playlist in 2.1" caption="The BGM list keeps notes, sources, and the playing item easy to identify." %}
 </section>
 
 Use **+ Unaccompanied Performance** beside the search field for a cappella,
@@ -103,6 +96,8 @@ Cover art is optional. It becomes especially useful with the **Card** and **CD**
 
 The BGM and karaoke players have separate play, pause, stop, loop, mute, volume, and seek controls. Karaoke playback also provides speed control and semitone key transposition—particularly useful for slowing down a difficult song, matching a comfortable practice tempo, or moving a track whose range is too high or too low without preparing another audio file.
 
+Version 2.1 maps both BGM and karaoke volume through a more perceptual loudness curve. Local files and YouTube playback use the same slider-to-gain mapping. Existing slider numbers are preserved during the update, but the same number may sound different from an earlier version, so recheck the accompaniment-to-voice balance before the first live stream. This is a volume-control curve, not automatic loudness normalization.
+
 The app remembers the adjusted speed and key separately for every song. When you switch away and return, that song’s preferred settings are restored; use the reset controls to return to `100%` speed and `0` semitones. These adjustments affect playback only and never rewrite or reduce the quality of the source file.
 
 The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** when managing viewer requests or songs you plan to sing later. Supported themes show the first reserved song in **Next On**, or several reserved songs in **Reserve**. Completed songs move to **History**. History is cleared after a normal app exit; after an unexpected interruption, the recovery snapshot can restore the queue and History for that live session.
@@ -123,21 +118,13 @@ The embedded preview uses the same layout, font, color, highlight, and reading o
 
 In the independent Lyrics window, choose any timestamped line to seek the karaoke track to that line. This works with synchronized lyrics such as LRC; plain-text lyrics have no seek positions. Japanese readings are generated locally by the bundled offline analyzer, so lyrics do not need to be uploaded.
 
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
-    <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="Traditional Chinese Lyrics page highlighting the current synchronized line during karaoke playback" loading="lazy" decoding="async">
-  </a>
-  <figcaption>This demonstration uses the Traditional Chinese interface. The preview shows the same lyric layout, font, color, and highlight that will appear in OBS.</figcaption>
-</figure>
+{% include localized-release-screenshot.html name="lyrics-reading-preview.png" alt="The 2.1 Lyrics page highlighting the current synchronized line" caption="The embedded preview uses the same lyric layout, font, color, reading, and highlight that will appear in OBS." %}
 
 If the lyrics are out of sync, you do not need to work out positive or negative values. Choose **Lyrics too late → Earlier** when the sung line has already started but the lyric has not appeared, or **Lyrics too early → Later** when the lyric appears before it is sung. The center of the slider is synchronized; drag left for earlier or right for later, and use the reset icon to return to `0 ms`.
 
 The numbers of lines shown before and after the current line can be adjusted separately with a slider or value field. Near the beginning or end of a song, fewer lines may be available than the selected setting. Offset changes are reflected immediately in the preview, independent Lyrics window, and OBS lyric data, even while playback is paused.
 
-<figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/lyrics-viewer.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-viewer.png' | relative_url }}" alt="Lyrics window with semantic timing buttons and synchronized lyrics"></a>
-  <figcaption>The Lyrics window uses the same timing controls. Selecting a timestamped line seeks to it, and returning to the start of the song scrolls the list back to the top. The interface shown is Traditional Chinese.</figcaption>
-</figure>
+{% include localized-release-screenshot.html name="lyrics-viewer.png" alt="The 2.1 Lyrics window with timing controls and synchronized lyrics" caption="Selecting a timestamped line seeks to it; returning to the beginning scrolls the lyric list back to the top." size="medium" %}
 
 <a id="obs-and-themes"></a>
 ## 04 · Playlist appearance and OBS
@@ -150,12 +137,6 @@ Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set 
 </figure>
 
 <div class="figure-grid">
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
-      <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="Traditional Chinese Playlist Appearance page previewing Transparent Black v2" loading="lazy" decoding="async">
-    </a>
-    <figcaption>In the app: choose a theme and check the Now Singing, Song List, and Next On layout. The interface shown here is Traditional Chinese.</figcaption>
-  </figure>
   <figure class="manual-figure">
     <a href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
       <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS showing the Transparent Black v2 set list and synchronized lyrics over a stream background" loading="lazy" decoding="async">
@@ -188,12 +169,7 @@ Preview-only tools provide transparent, dark, light, custom-color, or image back
 
 OBS WebSocket is optional and disabled by default. Its primary purpose is to read the live OBS timer, record when a karaoke track starts, and show timestamps before songs in supported Set Lists. Normal set-list and lyric overlays work without it.
 
-In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable the server, keep port `4455` unless you changed it, and copy the password. In Singing Stream Savior 2.1.0.0, open **Settings > Stream Timestamps** (called **Advanced** in the current public version), enable OBS WebSocket, enter `127.0.0.1`, the matching port and password, then choose **Connect**.
-
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/en/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/en/obs-websocket-settings.png' | relative_url }}" alt="Current public version's Advanced settings showing OBS WebSocket connection fields"></a>
-  <figcaption>This is the current public-version screen. The tab is renamed Stream Timestamps in the unreleased 2.1.0.0.</figcaption>
-</figure>
+In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable the server, keep port `4455` unless you changed it, and copy the password. In Singing Stream Savior, open **Settings > Stream Timestamps**, enable OBS WebSocket, enter `127.0.0.1`, the matching port and password, then choose **Connect**. Treat the OBS password as a local connection credential and do not publish screenshots that reveal it.
 
 The status indicator appears at the lower-right only when enabled: green means connected, yellow means connecting/reconnecting, and red means disconnected. Test timestamps with a private test stream before relying on them live.
 
@@ -214,12 +190,26 @@ Use the top-right mode button or `Ctrl + Shift + M`:
 
 Switching modes only changes which controls are visible. A song already playing continues, and the existing queue order and OBS scene are not reset. Each mode remembers its window size and layout.
 
+When the main window is not needed, its close button can minimize Singing Stream Savior to the Windows notification area instead of exiting. Playback continues in the background, while the tray menu and global shortcuts keep playback, Key, speed, Profile, microphone, Lyrics Window, and Meter controls available. Use **Exit Application** in the tray menu to close the app and its helpers completely.
+
+{% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior Windows notification-area menu while idle" caption="The idle menu stays compact. Playback and Advanced Streaming Mode add the relevant playback, Key, speed, Profile, microphone, and Meter actions." size="medium" %}
+
 <a id="settings-and-troubleshooting"></a>
 ## 07 · Settings and troubleshooting
 
 Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
 
-The outer `Singing Stream Savior.exe` checks for future releases and shows its progress in a dark status window. When an update is available, it asks before downloading or installing it; declining still opens the installed version. Keep the outer launcher, `current.json`, and the internal folders together. If the launcher requires a newer launcher or cannot complete an update, download a fresh complete ZIP instead of mixing DLLs from different versions.
+The outer `Singing Stream Savior.exe` uses Launcher 1.2 to check for releases. If no newer version is available, it automatically opens the verified installed app without leaving you on an empty update screen. Offline startup and a check that is not yet due also continue with the installed version.
+
+When an update is available, the card-style prompt shows the current and target versions plus localized release notes. **Later** or closing the prompt starts the installed version without changing files; **Update now** begins the download.
+
+<figure class="manual-figure"><a href="{{ '/assets/images/en/launcher-update-prompt.png' | relative_url }}"><img src="{{ '/assets/images/en/launcher-update-prompt.png' | relative_url }}" alt="Launcher 1.2 card-style update prompt with versions and release-note cards"></a><figcaption>The scrollable cards contain the update notes. Later keeps the installed version; Update now starts the verified update.</figcaption></figure>
+
+During a cancellable download, **Cancel** or closing the window requests a safe cancellation. The launcher preserves the exact installed files and `current.json`, removes temporary residue, then starts that version. Closing is temporarily ignored during the short non-cancellable commit stage. If the process or PC is forcibly stopped mid-update, the next launch uses the durable transaction journal to roll back or finish consistently before starting the app.
+
+<figure class="manual-figure"><a href="{{ '/assets/images/en/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/en/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 download, verification, and installation progress"></a><figcaption>The package is checked for HTTPS origin, expected size, and SHA-256 before an atomic, recoverable version switch.</figcaption></figure>
+
+Keep the outer launcher, `current.json`, and the internal folders together. Launcher 1.2 retains one previous verified package for automatic repair and transaction recovery, but it does not provide a one-click downgrade: an older app may not understand a project saved by a newer version. If you must test an older release, extract its official complete ZIP to a **separate folder** and work on a copy of the `.bgmsproj` and media. If updating still fails, download a fresh complete ZIP instead of mixing DLLs from different versions.
 
 If the app reports that no Qt platform plug-in could be initialized, extract a fresh copy of the complete ZIP and launch only the outer `Singing Stream Savior.exe`. You do not need to inspect or open anything in the data folders. For desktop access, create a Windows shortcut to that outer EXE instead of moving it.
 

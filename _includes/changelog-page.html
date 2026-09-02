@@ -1,5 +1,7 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign current_release = site.data["release-2.1.0.0-draft"].release %}
 {% assign releases = site.data.releases.releases %}
+{% assign release_count = releases | size | plus: 1 %}
 {% if current_lang == 'zh-TW' %}
   {% assign content_lang = 'zh-TW' %}
   {% assign eyebrow = 'RELEASE HISTORY · FROM NEWEST' %}
@@ -47,42 +49,15 @@
   <h1>{{ title }}</h1>
   <p>{{ lead }}</p>
   <div class="changelog-hero__summary" aria-label="{{ title }}">
-    <strong>{{ releases | size }}</strong>
+    <strong>{{ release_count }}</strong>
     <span>{% if current_lang == 'zh-TW' %}個公開版本{% elsif current_lang == 'zh-CN' %}个公开版本{% elsif current_lang == 'ja' %}公開バージョン{% elsif current_lang == 'ko' %}개 공개 버전{% else %}public releases{% endif %}</span>
-    <span class="changelog-hero__range">2.0.0.0 → {{ releases.first.version }}</span>
+    <span class="changelog-hero__range">2.0.0.0 → {{ current_release.version }}</span>
   </div>
 </header>
 
 <section class="release-timeline" aria-label="{{ title }}">
+  {% include release-entry.html release=current_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
   {% for release in releases %}
-    {% assign version_anchor = release.version | replace: '.', '-' | prepend: 'v' %}
-    {% assign localized_type = release.type[content_lang] | default: release.type.en %}
-    {% assign localized_summary = release.summary[content_lang] | default: release.summary.en %}
-    {% assign localized_items = release.items[content_lang] | default: release.items.en %}
-    <article class="release-entry{% if release.latest %} release-entry--latest{% endif %}" id="{{ version_anchor }}">
-      <div class="release-entry__rail">
-        <span class="release-entry__node" aria-hidden="true"></span>
-        <time datetime="{{ release.date }}">{{ release.date }}</time>
-        <span>{{ localized_type }}</span>
-      </div>
-      <div class="release-entry__card">
-        <header class="release-entry__header">
-          <div>
-            {% if release.latest %}<span class="release-entry__current">{{ latest_label }}</span>{% endif %}
-            <h2>{{ release.version }}</h2>
-          </div>
-          <span class="release-entry__count">{{ localized_items | size }}{{ items_label }}</span>
-        </header>
-        <p class="release-entry__summary">{{ localized_summary }}</p>
-        <ul class="release-entry__items">
-          {% for item in localized_items %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-        <a class="release-entry__link" href="{{ release.release_url }}" rel="noopener">
-          {{ release_link }} <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </article>
+    {% include release-entry.html release=release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
   {% endfor %}
 </section>

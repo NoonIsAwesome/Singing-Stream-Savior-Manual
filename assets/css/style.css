@@ -1122,6 +1122,89 @@ body.has-image-lightbox {
   line-height: 1.5;
 }
 
+.intro-promo {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: minmax(270px, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: clamp(26px, 4vw, 58px);
+  margin: 0 0 clamp(54px, 7vw, 84px);
+  padding: clamp(16px, 2.2vw, 26px);
+  border: 1px solid #26394d;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(70, 169, 236, 0.14), transparent 36%),
+    linear-gradient(135deg, #101925 0%, #111722 58%, #171a21 100%);
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.25);
+}
+
+.intro-promo__visual {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(103, 188, 247, 0.34);
+  border-radius: 16px;
+  background: #081522;
+  box-shadow: 0 15px 38px rgba(0, 0, 0, 0.36);
+}
+
+.manual-article .intro-promo__visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.intro-promo__visual:hover img {
+  transform: scale(1.012);
+}
+
+.intro-promo__copy {
+  max-width: 650px;
+  padding-right: clamp(4px, 1.5vw, 18px);
+}
+
+.manual-article .intro-promo h2 {
+  margin: 6px 0 14px;
+  padding: 0;
+  color: #f5f8fb;
+  font-size: clamp(1.75rem, 3.1vw, 2.65rem);
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+}
+
+.manual-article .intro-promo h2::after {
+  display: none;
+}
+
+.intro-promo__copy > p:not(.section-kicker) {
+  margin: 0;
+  color: #b8c6d5;
+  font-size: 0.98rem;
+  line-height: 1.78;
+}
+
+.intro-promo__points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.intro-promo__points span {
+  padding: 7px 11px;
+  border: 1px solid rgba(103, 188, 247, 0.28);
+  border-radius: 999px;
+  color: #dcecf8;
+  background: rgba(43, 110, 158, 0.13);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
 .demo-video-showcase {
   position: relative;
   display: grid;
@@ -1607,6 +1690,79 @@ body.has-image-lightbox {
   line-height: 1.75;
 }
 
+.feature-card--media {
+  min-height: 245px;
+  padding: 0;
+  isolation: isolate;
+  background: #111724;
+}
+
+.feature-card--media::after {
+  display: none;
+}
+
+.feature-card__media {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.feature-card__media::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 13, 23, 0.04) 18%, rgba(9, 13, 23, 0.38) 48%, rgba(9, 13, 23, 0.96) 82%);
+  content: "";
+}
+
+.manual-article .feature-card__media img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  object-position: center top;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 180ms ease;
+}
+
+.feature-card--media:hover .feature-card__media img {
+  transform: scale(1.025);
+}
+
+.feature-card__media:focus-visible {
+  outline: 3px solid #79c7ff;
+  outline-offset: -4px;
+}
+
+.feature-card__copy {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 22px 20px;
+  pointer-events: none;
+}
+
+.feature-card--media .feature-card__label {
+  color: #99d5ff;
+}
+
+.manual-article .feature-card--media h3 {
+  margin: 8px 0 5px;
+  color: #fff;
+  font-size: 1.04rem;
+  line-height: 1.38;
+}
+
+.feature-card--media p {
+  color: #d8e2ec;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
 .feature-note {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -1799,6 +1955,10 @@ body.has-image-lightbox {
     transform: none;
   }
 
+  .intro-promo {
+    grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.28fr);
+  }
+
   .origin-story {
     grid-template-columns: 1fr;
     margin-inline: -8px;
@@ -1910,6 +2070,21 @@ body.has-image-lightbox {
     font-size: clamp(2.35rem, 12vw, 3.5rem);
   }
 
+  .intro-promo {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 14px 14px 24px;
+  }
+
+  .intro-promo__visual {
+    width: min(100%, 520px);
+    justify-self: center;
+  }
+
+  .intro-promo__copy {
+    padding: 0 8px;
+  }
+
   .intro-actions {
     display: grid;
   }
@@ -1945,6 +2120,10 @@ body.has-image-lightbox {
 
   .feature-card {
     min-height: 0;
+  }
+
+  .feature-card--media {
+    min-height: min(88vw, 390px);
   }
 
   .feature-note {
@@ -3954,6 +4133,7 @@ body {
 
 .paired-guides::before {
   position: absolute;
+  z-index: 0;
   top: 50%;
   right: 18%;
   left: 18%;
@@ -3961,6 +4141,7 @@ body {
   background: linear-gradient(90deg, var(--blue), var(--amber), var(--blue));
   content: "";
   opacity: 0.72;
+  pointer-events: none;
 }
 
 .paired-guide {
@@ -3973,7 +4154,8 @@ body {
   min-height: 86px;
   padding: 14px;
   color: #d7e5f2 !important;
-  background: linear-gradient(145deg, #111d2a, #0e1722);
+  background-color: #111d2a;
+  background-image: linear-gradient(145deg, #111d2a, #0e1722);
   border: 1px solid #304960;
   border-radius: 10px;
   text-decoration: none;
@@ -3982,7 +4164,11 @@ body {
 
 .paired-guide:hover {
   color: #fff !important;
-  background: #152334;
+  /* Keep an opaque paint layer throughout the hover transition. Changing
+     from a gradient to a flat background made background-color animate from
+     transparent and briefly exposed the amber route connector underneath. */
+  background-color: #152334;
+  background-image: linear-gradient(145deg, #152334, #122033);
   border-color: #5aaee8;
 }
 
@@ -4033,6 +4219,26 @@ body {
   display: grid;
   gap: 10px;
   margin: 20px 0 34px;
+}
+
+.effect-editor-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0 34px;
+}
+
+.effect-editor-gallery .manual-figure {
+  width: 100%;
+  margin: 0;
+}
+
+.effect-editor-gallery img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: top center;
+  background: #080d13;
 }
 
 .effect-reference details {
@@ -4088,6 +4294,38 @@ body {
 .effect-reference__body {
   padding: 0 18px 16px;
   border-top: 1px solid var(--line);
+}
+
+.effect-reference__body > p:first-child {
+  margin-top: 16px;
+}
+
+.effect-reference__guidance {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 14px 0 4px;
+}
+
+.effect-reference__guidance p {
+  margin: 0;
+  padding: 12px 13px;
+  color: var(--ink-500);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  background: rgba(77, 169, 242, 0.055);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.effect-reference__guidance p:last-child {
+  background: rgba(242, 189, 91, 0.055);
+}
+
+.effect-reference__guidance strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink-900);
 }
 
 .parameter-list {
@@ -4220,6 +4458,8 @@ body {
 @media (max-width: 620px) {
   .paired-guides,
   .guide-checklist,
+  .effect-editor-gallery,
+  .effect-reference__guidance,
   .parameter-list,
   .release-preview-gallery {
     grid-template-columns: 1fr;

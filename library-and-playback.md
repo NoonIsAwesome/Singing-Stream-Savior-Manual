@@ -96,17 +96,6 @@ translation_key: library-and-playback
     <p><strong>傳統列表仍是預設值</strong>；想更快辨認歌曲時，可在「設定 → 一般 → 歌曲列表顯示」改用卡片列表。卡片會突出顯示觀眾看到的歌名，同時保留來源、封面與歌詞狀態。雙擊卡片會播放歌曲，鉛筆圖示則用來編輯顯示歌名。</p>
   </div>
 
-  <div class="manual-feature-update__figures">
-    <figure class="manual-figure">
-      <a href="assets/images/song-list-display-setting-205.png"><img src="assets/images/song-list-display-setting-205.png" alt="設定中的歌曲列表顯示選項"></a>
-      <figcaption>可在設定中隨時切換傳統列表與卡片列表。</figcaption>
-    </figure>
-    <figure class="manual-figure">
-      <a href="assets/images/song-card-list-205.png"><img src="assets/images/song-card-list-205.png" alt="卡片式歌曲列表"></a>
-      <figcaption>卡片列表優先顯示觀眾會看到的歌名，來源資訊仍保留在下方。</figcaption>
-    </figure>
-  </div>
-
   <div class="manual-feature-update__copy">
     <h3>BGM 播放清單</h3>
     <p>展開「背景音樂」的清單按鈕後，可保存多首本機音檔或 YouTube 音源，替每首 BGM 加上備註，並直接拖曳調整順序。正在播放的項目會清楚高亮；加入 YouTube 播放清單時，也能選擇只加入目前影片，或一次匯入全部項目。</p>
@@ -117,10 +106,7 @@ translation_key: library-and-playback
     </ul>
   </div>
 
-  <figure class="manual-figure manual-feature-update__wide-figure">
-    <a href="assets/images/bgm-playlist-205.png"><img src="assets/images/bgm-playlist-205.png" alt="展開的 BGM 播放清單"></a>
-    <figcaption>展開 BGM 清單後，可直接辨認備註、來源與正在播放的項目。</figcaption>
-  </figure>
+  {% include localized-release-screenshot.html name="bgm-playlist.png" alt="2.1 展開的 BGM 播放清單" caption="展開 BGM 清單後，可直接辨認備註、來源與正在播放的項目。" %}
 </section>
 
 ## 無伴奏演出
@@ -161,6 +147,8 @@ Card 與 CD 的實際呈現請參考[歌單外觀章節](obs-and-themes.md#card-
 ## 背景音樂播放器
 
 BGM 播放器有獨立的播放、暫停、停止、循環、靜音、音量與進度控制。開始播放歌唱伴奏時，程式可協調 BGM 狀態，避免兩條音軌同時干擾演唱。
+
+2.1 的 BGM 與歌唱伴奏音量改用較符合人耳感知的響度曲線，本機音檔與 YouTube 來源共用同一套滑桿數值到輸出增益的映射。更新會保留原本的滑桿數值，但因映射曲線改變，同一數值的聽感可能與舊版不同；請在第一次正式直播前重新確認伴奏與人聲平衡。這是音量控制曲線，不是自動響度標準化。
 
 ## 歌唱伴奏播放器
 

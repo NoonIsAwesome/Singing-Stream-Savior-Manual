@@ -1,7 +1,7 @@
 releases:
   - version: "2.0.5.4"
     date: "2026-08-19"
-    latest: true
+    latest: false
     type:
       zh-TW: YouTube 播放相容性修正
       zh-CN: YouTube 播放兼容性修正

@@ -1,0 +1,53 @@
+{% assign effect_gallery_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% comment %}File names are the Qt/DSP module IDs emitted by S3S_REGISTRY_EDITOR_SCREENSHOT_DIR, not the public catalog IDs.{% endcomment %}
+{% assign effect_gallery_ids = "gain,noise,gate,compressor,eq,saturation,air,deesser,voice-changer,harmony,doubler,delay,reverb,shimmer,limiter" | split: "," %}
+{% case effect_gallery_lang %}
+  {% when 'zh-TW' %}
+    {% assign effect_gallery_labels = "輸入增益|背景噪音衰減|噪音閥|壓縮器|等化器|飽和|Air 感增強|齒音抑制器|變聲器|實驗性和聲器|疊聲器|Delay|Reverb|Shimmer|限制器" | split: "|" %}
+    {% assign effect_gallery_alt_suffix = "內建效果器實際視窗" %}
+    {% assign effect_gallery_caption_suffix = "的 2.1.0.0 實際編輯視窗；畫面語言與本頁一致。" %}
+  {% when 'zh-CN' %}
+    {% assign effect_gallery_labels = "输入增益|背景噪声衰减|噪声门|压缩器|均衡器|饱和|Air 感增强|齿音抑制器|变声器|实验性和声器|叠声器|Delay|Reverb|Shimmer|限制器" | split: "|" %}
+    {% assign effect_gallery_alt_suffix = "内置效果器实际窗口" %}
+    {% assign effect_gallery_caption_suffix = "的 2.1.0.0 实际编辑窗口；界面语言与本页一致。" %}
+  {% when 'ja' %}
+    {% assign effect_gallery_labels = "入力ゲイン|背景ノイズ減衰|ノイズゲート|コンプレッサー|イコライザー（EQ）|サチュレーション|Air エンハンサー|ディエッサー|ボイスチェンジャー|ハーモニー|ダブラー|ディレイ|リバーブ|シマー|リミッター" | split: "|" %}
+    {% assign effect_gallery_alt_suffix = "内蔵エフェクトの実画面" %}
+    {% assign effect_gallery_caption_suffix = "の 2.1.0.0 実エディター画面です。表示言語は本ページと同じです。" %}
+  {% when 'ko' %}
+    {% assign effect_gallery_labels = "입력 게인|배경 소음 감쇠|노이즈 게이트|컴프레서|이퀄라이저(EQ)|새추레이션|Air 인핸서|디에서|보이스 체인저|하모니|더블러|딜레이|리버브|시머|리미터" | split: "|" %}
+    {% assign effect_gallery_alt_suffix = "내장 효과 실제 창" %}
+    {% assign effect_gallery_caption_suffix = "의 2.1.0.0 실제 편집기 화면이며 본문과 같은 언어입니다." %}
+  {% else %}
+    {% assign effect_gallery_labels = "Input Gain|Background Attenuation|Noise Gate|Compressor|Equalizer|Saturation|Air Enhancer|De-esser|Voice Changer|Experimental Harmony|Doubler|Delay|Reverb|Shimmer|Limiter" | split: "|" %}
+    {% assign effect_gallery_alt_suffix = "built-in effect editor" %}
+    {% assign effect_gallery_caption_suffix = " in the actual 2.1.0.0 editor, captured in the same language as this page." %}
+{% endcase %}
+
+{% assign effect_gallery_count = 0 %}
+{% for effect_gallery_id in effect_gallery_ids %}
+  {% if effect_gallery_lang == 'zh-TW' %}
+    {% capture effect_gallery_path %}/assets/images/effect-editors/{{ effect_gallery_id }}.png{% endcapture %}
+  {% else %}
+    {% capture effect_gallery_path %}/assets/images/{{ effect_gallery_lang }}/effect-editors/{{ effect_gallery_id }}.png{% endcapture %}
+  {% endif %}
+  {% assign effect_gallery_file = site.static_files | where: "path", effect_gallery_path | first %}
+  {% if effect_gallery_file %}{% assign effect_gallery_count = effect_gallery_count | plus: 1 %}{% endif %}
+{% endfor %}
+
+{% if effect_gallery_count > 0 %}
+<div class="effect-editor-gallery">
+  {% for effect_gallery_id in effect_gallery_ids %}
+    {% assign effect_gallery_label = effect_gallery_labels[forloop.index0] %}
+    {% if effect_gallery_lang == 'zh-TW' %}
+      {% capture effect_gallery_path %}/assets/images/effect-editors/{{ effect_gallery_id }}.png{% endcapture %}
+    {% else %}
+      {% capture effect_gallery_path %}/assets/images/{{ effect_gallery_lang }}/effect-editors/{{ effect_gallery_id }}.png{% endcapture %}
+    {% endif %}
+    {% assign effect_gallery_file = site.static_files | where: "path", effect_gallery_path | first %}
+    {% if effect_gallery_file %}
+      <figure class="manual-figure"><a href="{{ effect_gallery_path | relative_url }}"><img src="{{ effect_gallery_path | relative_url }}" alt="{{ effect_gallery_label }} {{ effect_gallery_alt_suffix }}" loading="lazy" decoding="async"></a><figcaption><strong>{{ effect_gallery_label }}</strong>{{ effect_gallery_caption_suffix }}</figcaption></figure>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}

@@ -12,8 +12,18 @@ translation_key: home
     <p class="intro-lead">BGM、カラオケ音源、予約曲、OBS のセットリスト、歌詞を一つの画面で準備・操作できます。曲間のウィンドウ操作ではなく、歌と視聴者に集中するためのアプリです。</p>
     <div class="intro-actions"><a class="intro-button intro-button--primary" href="{{ '/ja/guide.html#getting-started' | relative_url }}">使い始める</a><a class="intro-button" href="#features">主な機能を見る</a><a class="intro-button" href="{{ '/ja/resources.html' | relative_url }}">アプリをダウンロード</a></div>
   </div>
-  <figure class="intro-hero__visual"><img src="{{ '/assets/images/ja/full-workspace.png' | relative_url }}" alt="日本語のフルモード。曲ライブラリ、BGM、カラオケ、予約リストを表示"><figcaption>選曲・再生・配信画面を一つのワークスペースで管理します。</figcaption></figure>
+  <figure class="intro-hero__visual"><img src="{{ '/assets/images/ja/full-workspace.png' | relative_url }}" alt="日本語のフルモード。カード形式の曲一覧、BGM、カラオケ、予約リストを表示"><figcaption>カード形式の曲一覧、二つのプレイヤー、予約リストを一つの画面で管理します。</figcaption></figure>
 </div>
+
+<section class="intro-promo" aria-labelledby="intro-promo-title">
+  <a class="intro-promo__visual" href="{{ '/assets/images/booth-promo-ja.jpg' | relative_url }}"><img src="{{ '/assets/images/booth-promo-ja.jpg' | relative_url }}" alt="OBS のセットリスト、字幕、配信画面を示す日本語の機能紹介" decoding="async"></a>
+  <div class="intro-promo__copy">
+    <p class="section-kicker">視聴者に届く完成形</p>
+    <h2 id="intro-promo-title">カラオケを再生すれば、BGM・曲名・セットリスト・歌詞が連動</h2>
+    <p>見落としやすい再生切替と OBS 画面の更新を、一つの配信フローにまとめます。曲間の画面操作ではなく、選曲と歌に集中できます。</p>
+    <div class="intro-promo__points"><span>BGM 自動切替</span><span>セットリスト同期</span><span>同期歌詞</span><span>タイムスタンプ自動記録</span></div>
+  </div>
+</section>
 
 {% include demo-video.html %}
 
@@ -26,7 +36,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">設定から配信画面まで</p>
     <h2 id="demo-flow-title">Singing Stream Savior で確認してから、OBS に表示</h2>
-    <p>以下は日本語 UI と隔離されたサンプルデータを使った、2.0.3.1 の実際の画面です。</p>
+    <p>以下は日本語 UI と隔離されたサンプルデータを使った、2.1.0.0 Release の実際の画面です。</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">
@@ -54,11 +64,18 @@ translation_key: home
     <article class="feature-card"><span class="feature-card__label">曲と予約</span><h3>準備しながら、その場の選曲にも対応</h3><p>曲と予約を整理し、伴奏をすぐ再生できます。アカペラや弾き語り向けの無伴奏演奏も作成できます。</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS セットリスト</span><h3>テーマを選び、曲名の手入力を減らす</h3><p>Default、透明、Card、CD、装飾テーマを選び、自動デモで全状態を確認してから OBS へドラッグできます。</p></article>
     <article class="feature-card"><span class="feature-card__label">歌詞</span><h3>配信者用にも、視聴者用にも</h3><p>同期歌詞を検索・読み込みし、歌詞ウィンドウまたは OBS に表示。日本語はひらがなとローマ字、韓国語はローマ字表示に対応します。</p></article>
-    <article class="feature-card"><span class="feature-card__label">伴奏の追加元</span><h3>ローカル音源と YouTube 伴奏を一つのプレイヤーで</h3><p>ボーカルを除去した音源、自分で録音した伴奏、ダウンロード済みのファイルも、その場で YouTube から見つけた伴奏も使用できます。Singing Stream Savior なら両方を扱えるため、プレイヤーとブラウザを行き来する必要がありません。</p></article>
-    <article class="feature-card"><span class="feature-card__label">ワークスペース</span><h3>フル・コンパクト・ミニの 3 モード</h3><p>準備はフルモード、配信中はコンパクトまたはミニモードへ。カラオケ、予約、履歴、歌詞ウィンドウなど必要な操作だけを残せます。</p></article>
+    <article class="feature-card"><span class="feature-card__label">伴奏の追加元</span><h3>ローカル音源と YouTube 伴奏を一つのプレイヤーで</h3><p>両方に一般的なプレイヤーに近い知覚音量カーブを使い、YouTube には段階的な代替再生も用意。プレイヤーとブラウザを行き来する必要がありません。</p></article>
+    <article class="feature-card"><span class="feature-card__label">ワークスペース</span><h3>フル・コンパクト・ミニの 3 モード</h3><p>準備はフルモード、配信中はコンパクトまたはミニモードへ。Windows の通知領域へ隠し、トレイメニューやグローバルショートカットから操作することもできます。</p></article>
+    <article class="feature-card"><span class="feature-card__label">曲別ボーカル</span><h3>伴奏の再生に合わせてボーカル効果を自動切替</h3><p>曲ごとにマイク Profile を指定できます。伴奏開始時に適用し、終了後は配信トーク用へ戻ります。配信中の手動切り替えにも対応します。</p></article>
+    <article class="feature-card"><span class="feature-card__label">ボーカル Profiles</span><h3>内蔵エフェクトと VST3 でチェーンを構成</h3><p>Gate、Compressor、EQ、Reverb、Delay、Shimmer など 15 個の内蔵エフェクト、または VST3 を追加し、パラメータ、Bypass、処理順を編集できます。</p></article>
+    <article class="feature-card"><span class="feature-card__label">配信音声</span><h3>伴奏とボーカルを一つの Mix として OBS へ</h3><p>ASIO、Windows Audio、専用 OBS 音声プラグイン、仮想音声デバイスに対応。Final Mix、OBS、完全出力録音は安定して同期した正式経路を共有します。</p></article>
+    <article class="feature-card"><span class="feature-card__label">Monitor と録音</span><h3>視聴者向け Mix を動かさず、聴く音を選択</h3><p>伴奏、Dry、Wet、完全出力を監視または録音できます。「伴奏＋Dry」は独立した低遅延 Cue を使用し、主なボーカル監視にはオーディオインターフェースの Direct Monitor を推奨します。</p></article>
+    <article class="feature-card"><span class="feature-card__label">Meter とヘルスチェック</span><h3>音量、Buffer、遅延、中断を確認</h3><p>5 トラックの Meter で Peak と Stream Output の LUFS-S を表示。Buffer ヘルスチェックは安定性と推定遅延を比較し、そのまま適用できる設定を提案します。</p></article>
+    <article class="feature-card feature-card--media">
+      <a class="feature-card__media" href="{{ '/assets/images/live-timeline-card.jpg' | relative_url }}"><img src="{{ '/assets/images/live-timeline-card.jpg' | relative_url }}" alt="Now Singing、Next On、曲のタイムスタンプを表示した配信画面" loading="lazy" decoding="async"></a>
+      <div class="feature-card__copy"><span class="feature-card__label">配信タイムスタンプ</span><h3>Set List に実際の配信タイムラインを表示</h3><p>OBS WebSocket で各伴奏の開始時刻を記録し、対応 Set List に表示します。通常のセットリストと歌詞には WebSocket は不要です。</p></div>
+    </article>
   </div>
 </section>
-
-<aside class="feature-note"><span>配信タイムスタンプ</span><div><strong>OBS WebSocket の配信タイムスタンプ</strong><p>OBS の実際の配信時間を読み取り、カラオケ開始時刻を記録して、対応 Set List に表示できます。通常のセットリスト・歌詞画面には WebSocket は不要です。</p></div></aside>
 
 <section class="intro-next"><p class="section-kicker">準備を始める</p><h2>まず 1 曲を追加して、テスト再生する</h2><p>ユーザーマニュアルは、展開・起動・最初のプロジェクト作成から説明します。</p><a class="intro-button intro-button--primary" href="{{ '/ja/guide.html#getting-started' | relative_url }}">ユーザーマニュアルへ</a></section>

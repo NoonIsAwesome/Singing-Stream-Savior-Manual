@@ -1,0 +1,10 @@
+{% assign screenshot_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% if screenshot_lang == 'zh-TW' %}
+  {% capture screenshot_path %}/assets/images/{{ include.name }}{% endcapture %}
+{% else %}
+  {% capture screenshot_path %}/assets/images/{{ screenshot_lang }}/{{ include.name }}{% endcapture %}
+{% endif %}
+{% assign screenshot_file = site.static_files | where: "path", screenshot_path | first %}
+{% if screenshot_file %}
+<figure class="manual-figure{% if include.size %} manual-figure--{{ include.size }}{% endif %}{% if include.extra_class %} {{ include.extra_class }}{% endif %}"><a href="{{ screenshot_path | relative_url }}"><img src="{{ screenshot_path | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy" decoding="async"></a><figcaption>{{ include.caption }}</figcaption></figure>
+{% endif %}

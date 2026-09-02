@@ -1,4 +1,4 @@
-# Internal capture checklist for the unpublished 2.1.0.0 manual.
+# Internal capture checklist for the published 2.1.0.0 manual.
 # Do not render this file on the public site. Capture again only after the
 # release UI is frozen, then verify every localized page against its assets.
 release: "2.1.0.0"
@@ -32,46 +32,122 @@ existing_story:
       - 10-monitor-source.jpg
       - 11-recording-options.jpg
   - id: "12"
-    topic: 一致化的霧面效果器視窗
+    topic: One Knob、進階參數與即時訊號圖
     assets:
       - 12-built-in-effect-editor.png
 
-final_capture_required:
-  - id: "13"
-    asset: 13-meter-horizontal.jpg
+final_capture_completed:
+  - asset: audio-meter-horizontal.png
     topic: 橫向五軌音量 Meter
-    must_show:
-      - BGM／伴奏、人聲（Profile 後、Mix 前）、直播輸出、兩條監聽
-      - Peak、直播輸出的 LUFS-S、0–200% 旋鈕
-      - 主介面低飽和藍、與完整／精簡一致的方向切換按鈕
-      - 標準 Windows 標題列、縮小與關閉按鈕
-  - id: "14"
-    asset: 14-meter-vertical.jpg
-    topic: 直向 Meter 與右側停駐
-    must_show:
-      - 同一顆方向按鈕切換後的版面
-      - 停駐時不覆蓋或改寫原本主工作區
-  - id: "15"
-    asset: 15-system-health-tooltip.jpg
-    topic: CPU／記憶體與音訊健康資訊
-    must_show:
-      - 無外框狀態文字
-      - 系統與本程式 CPU、Working Set、Private Memory
-      - 進階模式限定的 Buffer、callback、延遲、underrun／overrun
-  - id: "16"
-    asset: 16-tray-menu.jpg
-    topic: 伴奏播放中的系統工具右鍵選單
-    must_show:
-      - 播放／暫停、停止、從頭播放
-      - Key 與速度子選單、重設動作和正確圖示
-      - Profile、麥克風、歌詞視窗、Meter、開啟主視窗與紅色關閉軟體
-  - id: "17"
-    asset: 17-obs-plugin-output.jpg
-    topic: OBS 插件安裝與直連輸出
-    must_show:
-      - 標準／Portable 安裝與移除位於同一選單
-      - 安裝後自動選取 Singing Stream Savior 音訊（OBS 外掛）
-      - OBS 內同名音訊來源有實際電平訊號
+  - asset: audio-meter-vertical.png
+    topic: 直向五軌音量 Meter
+  - asset: system-resource-status.png
+    topic: CPU／記憶體與音訊健康摘要
+  - asset: notification-area-menu.png
+    topic: Windows 系統通知區右鍵選單
+  - asset: audio-routing.png
+    topic: OBS 插件安裝入口與直連輸出選擇
+  - asset: keyboard-shortcuts.png
+    topic: 全域快捷鍵分類與設定
+
+# Final localized Release-build capture contract. The executable produces the
+# same file names for every locale; copy zh_TW into assets/images/ and the
+# other four locales into assets/images/<site-locale>/. Pages use a conditional
+# include, so a shot is rendered only after the real file exists.
+localized_release_capture:
+  output_locales:
+    en: assets/images/en
+    zh_TW: assets/images
+    zh_CN: assets/images/zh-CN
+    ja_JP: assets/images/ja
+    ko_KR: assets/images/ko
+  effect_editor_output_locales:
+    en: assets/images/en/effect-editors
+    zh_TW: assets/images/effect-editors
+    zh_CN: assets/images/zh-CN/effect-editors
+    ja_JP: assets/images/ja/effect-editors
+    ko_KR: assets/images/ko/effect-editors
+  general_ui_expected_count: 26
+  general_ui_assets:
+    - add-to-playlist-menu.png
+    - audio-health-check.png
+    - audio-meter-horizontal.png
+    - audio-meter-vertical.png
+    - audio-routing.png
+    - audio-routing-bottom.png
+    - author-information.png
+    - bgm-playlist.png
+    - compact-workspace.png
+    - cover-dialog.png
+    - display-title-edit.png
+    - full-workspace.png
+    - lyrics-manager-linked.png
+    - lyrics-manager.png
+    - lyrics-reading-preview.png
+    - lyrics-viewer.png
+    - launcher-update-progress.png
+    - launcher-update-prompt.png
+    - keyboard-shortcuts.png
+    - mini-workspace.png
+    - notification-area-menu.png
+    - profile-horizontal-rack.png
+    - profile-vertical-rack.png
+    - song-library.png
+    - system-resource-status.png
+    - theme-workspace.png
+  effect_editor_gate:
+    environment: S3S_REGISTRY_EDITOR_SCREENSHOT_DIR
+    evidence: "VOCAL_DSP_ALL_EDITOR_UI_PRESENTATION=PASS editors=N"
+    expected_count: 15
+  effect_editor_assets:
+    - gain.png
+    - noise.png
+    - gate.png
+    - compressor.png
+    - eq.png
+    - saturation.png
+    - air.png
+    - deesser.png
+    - voice-changer.png
+    - harmony.png
+    - doubler.png
+    - delay.png
+    - reverb.png
+    - shimmer.png
+    - limiter.png
+  page_bindings:
+    home:
+      - full-workspace.png
+      - profile-horizontal-rack.png
+      - audio-health-check.png
+      - audio-routing.png
+    localized-guide:
+      - full-workspace.png
+      - launcher-update-prompt.png
+      - launcher-update-progress.png
+      - theme-workspace.png
+      - lyrics-reading-preview.png
+      - lyrics-viewer.png
+    library-and-playback:
+      - bgm-playlist.png
+    audio-routing:
+      - audio-routing.png
+      - audio-routing-bottom.png
+      - audio-health-check.png
+      - audio-meter-horizontal.png
+      - audio-meter-vertical.png
+      - notification-area-menu.png
+      - system-resource-status.png
+    profiles:
+      - full-workspace.png
+      - profile-horizontal-rack.png
+      - profile-vertical-rack.png
+      - all effect_editor_assets
+  retirement_note: >-
+    Existing advanced-streaming/01–12 images are pre-final captures. Replace
+    their page role with the localized Release-build files above where a
+    direct counterpart exists; never present an old Traditional-Chinese image
+    as a completed English, Simplified-Chinese, Japanese, or Korean capture.
 
 capture_rules:
   - 使用最終 Release build 與乾淨測試專案，不得使用概念圖代替實際畫面。

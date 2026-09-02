@@ -1,14 +1,14 @@
 ﻿---
-title: 歌回救星 2.0 使用说明
-description: Singing Stream Savior 2.0.5.4 简体中文使用说明
+title: 歌回救星 2.1 使用说明
+description: Singing Stream Savior 2.1.0.0 简体中文使用说明
 lang: zh-CN
 translation_key: home
 manual_bundle: true
 ---
 
-# 歌回救星 2.0 使用说明
+# 歌回救星 2.1 使用说明
 
-歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词和 OBS 画面整合在同一套流程中。本说明适用于 **2.0.5.4**。
+歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.0.0**。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可放大预览。</figcaption></figure>
 
@@ -39,14 +39,8 @@ manual_bundle: true
 从 2.0.2.0 开始，第一次进入操作界面时会自动打开八步初次使用引导。引导会切换到对应页面并高亮当前说明的区域，但不会修改项目或自动播放歌曲。之后可随时从“帮助 > 初次使用引导”重新打开。
 
 <div class="figure-grid">
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-bgm.png' | relative_url }}" alt="初次使用引导高亮 BGM 播放器"></a>
-    <figcaption>第一步介绍 BGM 设置、拖放与自动切换；截图界面为繁体中文。</figcaption>
-  </figure>
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}"><img src="{{ '/assets/images/first-use-tour-theme.png' | relative_url }}" alt="初次使用引导高亮主题选择与拖放至 OBS"></a>
-    <figcaption>主题步骤会切换到“歌单外观”，指出自动预览与“拖放至 OBS”的位置。</figcaption>
-  </figure>
+  {% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 完整工作区与 BGM 播放器" caption="初次使用引导会切换到对应页面并高亮 BGM 设置、拖放与自动切换区域。" %}
+  {% include localized-release-screenshot.html name="theme-workspace.png" alt="2.1 歌单外观工作区" caption="主题步骤会指出自动预览与“拖放至 OBS”的位置；截图会随当前说明语言切换。" %}
 </div>
 
 <a id="library-and-playback"></a>
@@ -71,9 +65,8 @@ manual_bundle: true
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
   <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">更直观的歌曲列表与 BGM 播放列表</h2><p>歌曲库现在可切换传统列表与卡片列表；背景音乐也能预先整理成列表，配合直播主题快速切换。</p></header>
   <div class="manual-feature-update__copy"><h3>歌曲列表显示</h3><p><strong>传统列表仍是默认值</strong>；可在“设置 → 一般 → 歌曲列表显示”改用卡片列表。卡片会突出显示观众看到的歌名，同时保留来源、封面与歌词状态。双击卡片会播放歌曲，铅笔图标则用于编辑显示歌名。</p></div>
-  <div class="manual-feature-update__figures"><figure class="manual-figure"><a href="../assets/images/song-list-display-setting-205.png"><img src="../assets/images/song-list-display-setting-205.png" alt="歌曲列表显示设置"></a><figcaption>可在设置中选择传统列表或卡片列表。</figcaption></figure><figure class="manual-figure"><a href="../assets/images/song-card-list-205.png"><img src="../assets/images/song-card-list-205.png" alt="卡片式歌曲列表"></a><figcaption>卡片列表优先显示观众会看到的歌曲名称。</figcaption></figure></div>
   <div class="manual-feature-update__copy"><h3>BGM 播放列表</h3><p>可保存多首本地音频或 YouTube 音源，为每首 BGM 添加备注，并直接拖动调整顺序。正在播放的项目会清楚高亮；YouTube 播放列表可选择只加入当前视频或全部项目。</p><ul><li><strong>单曲循环（默认）</strong></li><li><strong>全部循环</strong></li><li><strong>全部随机循环</strong></li></ul></div>
-  <figure class="manual-figure manual-feature-update__wide-figure"><a href="../assets/images/bgm-playlist-205.png"><img src="../assets/images/bgm-playlist-205.png" alt="展开的 BGM 播放列表"></a><figcaption>可直接辨认备注、来源与正在播放的项目。</figcaption></figure>
+  {% include localized-release-screenshot.html name="bgm-playlist.png" alt="2.1 展开的 BGM 播放列表" caption="可直接辨认备注、来源与正在播放的项目。" %}
 </section>
 
 清唱、自弹自唱或其他不使用媒体文件的演出，可从搜索栏旁的“＋ 无伴奏演出”新增。输入观众会看到的显示歌名，再选择手动结束或可选的预计时间；时间按钮每次调整 10 秒，也支持鼠标滚轮。开始后会像普通伴奏一样暂停 BGM，并更新 Now Singing、待播与已唱；结束后恢复原本的 BGM。项目会保存到“无伴奏演出”智能分类与当前项目，不会建立假的静音音频文件。
@@ -83,6 +76,8 @@ manual_bundle: true
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}" alt="显示搜索结果与封面预览的嵌入封面窗口"></a><figcaption>选择搜索结果并等待左侧封面预览载入完成后，即可嵌入。</figcaption></figure>
 
 BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还可以调整播放速度，并以半音为单位升降 Key：可放慢较难掌握的歌曲、配合练习节奏，或把音域太高／太低的伴奏调到更适合演唱的位置，不需要另外制作不同版本的音频。
+
+2.1 中的 BGM 与歌唱伴奏音量改用更符合人耳感知的响度曲线；本地文件和 YouTube 播放使用相同的滑块数值到输出增益映射。更新会保留现有滑块数值，但同一数值的听感可能与旧版不同；第一次直播前请重新确认伴奏与人声的平衡。这是音量控制曲线，不是自动响度标准化。
 
 软件会为每首歌曲分别记住调整过的速度与音高。切换歌曲后再次回来时会恢复该歌曲的设置；需要回到原始状态时，可重置为 `100%` 速度和 `0` 半音。这些调整只影响播放，不会修改原始文件或降低其音频质量。
 
@@ -101,21 +96,13 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 在独立“歌词窗口”中，点击有时间戳的任一行歌词，可让伴奏跳到该行的时间点。此功能只适用于 LRC 等同步歌词；纯文本歌词没有可跳转的时间。
 
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">
-    <img src="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" alt="繁体中文歌词页面在伴奏播放时强调当前同步歌词" loading="lazy" decoding="async">
-  </a>
-  <figcaption>此示例使用繁体中文界面。预览中的歌词版面、字体、颜色与强调效果也会套用到 OBS。</figcaption>
-</figure>
+{% include localized-release-screenshot.html name="lyrics-reading-preview.png" alt="2.1 伴奏播放时的同步歌词与读音预览" caption="预览中的歌词排版、字体、颜色、当前行强调和读音设置也会应用到 OBS。" %}
 
 如果歌词与伴奏不同步，不必换算正负值：歌词已经唱到却还没出现时，选择“歌词太晚 → 提前”；歌词比演唱更早出现时，选择“歌词太早 → 延后”。滑杆中央代表同步，向左是提前，向右是延后；重设图标会恢复为 `0 ms`。
 
 “当前行之前”与“当前行之后”可以分别用滑杆或数值栏设置显示行数。歌曲接近开头或结尾时，实际可显示的前后歌词可能少于设置值。调整偏移后，即使伴奏暂停，预览、歌词窗口和 OBS 歌词数据也会立即同步。
 
-<figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/lyrics-viewer.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-viewer.png' | relative_url }}" alt="歌词窗口中的提前、延后与同步歌词"></a>
-  <figcaption>歌词窗口使用相同的时间校正方式；点击有时间戳的歌词可跳转，歌曲回到开头时列表也会回到顶部。截图界面为繁体中文。</figcaption>
-</figure>
+{% include localized-release-screenshot.html name="lyrics-viewer.png" extra_class="manual-figure--medium" alt="2.1 歌词窗口中的提前、延后与同步歌词" caption="歌词窗口使用相同的时间校正方式；点击有时间戳的歌词可跳转，歌曲回到开头时列表也会回到顶部。" %}
 
 <a id="obs-and-themes"></a>
 ## 04 · 歌单外观与主题
@@ -125,12 +112,6 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/theme-workspace.png' | relative_url }}" alt="歌单外观页面的主题卡片、设置、预览和说明"></a><figcaption>完整模式可同时比较主题、调整设置并查看 OBS 效果。</figcaption></figure>
 
 <div class="figure-grid">
-  <figure class="manual-figure">
-    <a href="{{ '/assets/images/demo-theme-preview.png' | relative_url }}">
-      <img src="{{ '/assets/images/demo-theme-preview.png' | relative_url }}" alt="繁体中文歌单外观页面预览 Transparent Black v2" loading="lazy" decoding="async">
-    </a>
-    <figcaption>软件内：选择主题，检查 Now Singing、Song List 与 Next On 的版面。截图界面为繁体中文。</figcaption>
-  </figure>
   <figure class="manual-figure">
     <a href="{{ '/assets/images/demo-obs-result.png' | relative_url }}">
       <img src="{{ '/assets/images/demo-obs-result.png' | relative_url }}" alt="OBS 在直播背景上显示 Transparent Black v2 歌单与同步歌词" loading="lazy" decoding="async">
@@ -161,9 +142,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 
 此功能默认关闭，目前主要用于读取 OBS 直播时间、记录伴奏开始时间，并在 Set List 歌名前显示时间戳。一般歌单与歌词画面不需要 WebSocket。
 
-在 OBS Studio 28 以上版本打开“工具 > WebSocket 服务器设置”，启用服务器并确认端口（通常为 `4455`）与密码。在尚未发布的 2.1.0.0 中，请到“设置 > 直播时间戳”（当前公开版仍称“高级设置”），启用 WebSocket，填写 `127.0.0.1`、端口和密码后按“连接”。
-
-<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/obs-websocket-settings.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/obs-websocket-settings.png' | relative_url }}" alt="当前公开版高级设置中的 OBS WebSocket 说明和连接资料"></a><figcaption>此图为当前公开版画面；2.1.0.0 起分页名称改为“直播时间戳”。</figcaption></figure>
+在 OBS Studio 28 以上版本打开“工具 > WebSocket 服务器设置”，启用服务器并确认端口（通常为 `4455`）与密码。在歌回救星中打开“设置 > 直播时间戳”，启用 WebSocket，填写 `127.0.0.1`、端口和密码后按“连接”。OBS 密码属于本机连接凭据，请勿公开分享包含密码的设置截图。
 
 右下角绿灯为已连接，黄灯为连接中，红灯为未连接。正式直播前请先用测试直播确认时间戳。
 
@@ -182,12 +161,26 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/zh-CN/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/mini-workspace.png' | relative_url }}" alt="简体中文迷你模式"></a><figcaption>迷你模式把更多垂直空间留给待播列表。</figcaption></figure>
 </div>
 
+不需要保留主窗口时，可在设置中让关闭按钮把 Singing Stream Savior 缩到 Windows 通知区域而不是退出。播放会在后台继续；托盘菜单与全局快捷键仍可操作播放、Key、速度、Profile、麦克风、歌词窗口与 Meter。只有选择托盘菜单中的“关闭软件”，才会完整结束主程序与 helper。
+
+{% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior 未播放时的 Windows 通知区域右键菜单" caption="未播放时菜单保持精简；播放伴奏或开启高级直播模式后，会增加相应的播放、Key、速度、Profile、麦克风与 Meter 项目。" size="medium" %}
+
 <a id="settings-and-troubleshooting"></a>
 ## 07 · 设置与疑难解答
 
 搬到其他电脑前，请备份 `.bgmsproj`、本地媒体和自行导入的歌词。
 
-最外层的 `Singing Stream Savior.exe` 会检查后续版本，并在深色状态窗口显示进度。发现更新时会先询问是否下载和安装；选择不更新仍可继续打开当前版本。请保持外层启动器、`current.json` 和内部文件夹的相对位置不变。如果更新要求较新的启动器或无法完成，请下载最新版完整 ZIP，不要混合覆盖不同版本的 DLL。
+最外层的 `Singing Stream Savior.exe` 会通过 Launcher 1.2 检查更新。没有新版本时不会停留在空白提示页，检查完成后会自动打开已验证的当前版本；离线或尚未到下一次检查时间时，也会继续启动当前版本。
+
+发现新版本时，卡片式提示会显示当前版本、目标版本与本地化更新内容。选择“稍后”或关闭询问窗口，会直接启动当前版本且不改动文件；只有选择“立即更新”才开始下载。
+
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/launcher-update-prompt.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/launcher-update-prompt.png' | relative_url }}" alt="Launcher 1.2 卡片式更新提示，显示版本与更新内容"></a><figcaption>更新内容显示在可滚动卡片中；“稍后”保留当前版本，“立即更新”开始验证更新。</figcaption></figure>
+
+在可取消的下载阶段，按“取消”或关闭窗口会请求安全取消。启动器会保留原有文件与 `current.json`、清理临时残留，再启动当前版本。进入短暂且不可中断的最终提交阶段后，关闭操作会暂时被忽略；即使进程或电脑在更新途中被强制结束，下次启动也会先根据持久化事务记录回滚或完成收尾，再启动一致的版本。
+
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 下载、验证与安装更新的进度画面"></a><figcaption>更新包会先检查 HTTPS 来源、预期大小与 SHA-256，再以可恢复的原子事务切换版本。</figcaption></figure>
+
+请保持外层启动器、`current.json` 和内部文件夹的相对位置不变。Launcher 1.2 会保留一个上一版的已验证包供自动修复与事务恢复使用，但不提供一键降级：旧版不一定能理解由新版保存的项目。如果必须测试旧版，请将官方旧版完整 ZIP 解压到**另一个文件夹**，并使用 `.bgmsproj` 与媒体的副本。若更新仍无法完成，请下载最新版完整 ZIP，不要混合覆盖不同版本的 DLL。
 
 若出现 Qt platform plugin 错误，请重新下载并完整解压 ZIP，只打开最外层的 `Singing Stream Savior.exe`。不需要检查或打开资料文件夹中的内容。需要桌面入口时，请为这个外层 EXE 建立 Windows 快捷方式，不要移动文件本身。
 

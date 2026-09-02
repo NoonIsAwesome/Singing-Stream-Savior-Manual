@@ -10,13 +10,13 @@ zh-TW:
   no_chapters: 找不到符合的章節
   collapse_nav: 收合章節欄
   expand_nav: 展開章節欄
-  preview_badge: 2.1 測試
+  preview_badge: 2.1 新功能
   on_this_page: 本頁內容
   flow: 使用流程
   stream_tip: 直播前建議
   stream_tip_text: 先播放一首測試歌曲，確認音訊、歌詞、歌單與 OBS 畫面。
   meta: 歌回直播整合工具
-  footer: 歌回救星 2.0 使用說明
+  footer: 歌回救星 2.1 使用說明
   back_home: 回到首頁
   language: 語言
   version: 版本
@@ -49,13 +49,13 @@ zh-CN:
   no_chapters: 找不到匹配的章节
   collapse_nav: 收起章节栏
   expand_nav: 展开章节栏
-  preview_badge: 2.1 测试
+  preview_badge: 2.1 新功能
   on_this_page: 本页内容
   flow: 使用流程
   stream_tip: 直播前建议
   stream_tip_text: 先播放一首测试歌曲，确认音频、歌词、歌单与 OBS 画面。
   meta: 歌回直播整合工具
-  footer: 歌回救星 2.0 使用说明
+  footer: 歌回救星 2.1 使用说明
   back_home: 返回首页
   language: 语言
   version: 版本
@@ -88,13 +88,13 @@ en:
   no_chapters: No matching chapters
   collapse_nav: Collapse chapter sidebar
   expand_nav: Expand chapter sidebar
-  preview_badge: 2.1 test
+  preview_badge: 2.1 new
   on_this_page: On this page
   flow: Guide
   stream_tip: Before going live
   stream_tip_text: Play one test song and check audio, lyrics, set list, and the OBS output.
   meta: Singing-stream production tool
-  footer: Singing Stream Savior 2.0 User Manual
+  footer: Singing Stream Savior 2.1 User Manual
   back_home: Back to top
   language: Language
   version: Version
@@ -127,13 +127,13 @@ ja:
   no_chapters: 一致する章がありません
   collapse_nav: 章サイドバーを折りたたむ
   expand_nav: 章サイドバーを展開する
-  preview_badge: 2.1 テスト
+  preview_badge: 2.1 新機能
   on_this_page: このページの内容
   flow: 使用ガイド
   stream_tip: 配信前の確認
   stream_tip_text: テスト曲を再生し、音声・歌詞・セットリスト・OBS 画面を確認してください。
   meta: 歌枠配信統合ツール
-  footer: Singing Stream Savior 2.0 ユーザーマニュアル
+  footer: Singing Stream Savior 2.1 ユーザーマニュアル
   back_home: トップへ戻る
   language: 言語
   version: バージョン
@@ -166,13 +166,13 @@ ko:
   no_chapters: 일치하는 목차가 없습니다
   collapse_nav: 목차 사이드바 접기
   expand_nav: 목차 사이드바 펼치기
-  preview_badge: 2.1 테스트
+  preview_badge: 2.1 새 기능
   on_this_page: 이 페이지의 내용
   flow: 사용 안내
   stream_tip: 방송 전 확인
   stream_tip_text: 테스트 곡을 재생하고 오디오, 가사, 세트리스트와 OBS 화면을 확인하세요.
   meta: 노래 방송 통합 도구
-  footer: Singing Stream Savior 2.0 사용자 설명서
+  footer: Singing Stream Savior 2.1 사용자 설명서
   back_home: 맨 위로
   language: 언어
   version: 버전

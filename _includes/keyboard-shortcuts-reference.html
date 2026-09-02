@@ -1,0 +1,60 @@
+{% assign shortcuts_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+<div class="effect-reference keyboard-shortcuts-reference">
+{% case shortcuts_lang %}
+{% when 'en' %}
+  <details><summary><strong>Default global shortcuts</strong><span>All assignments can be changed or cleared in Settings</span></summary><div class="effect-reference__body">
+    <p>While Singing Stream Savior is running, registered shortcuts work even when OBS or another app has focus and when the main window is hidden in the notification area. A conflict is rejected without replacing the shortcut that already works. Microphone, Monitor, and effect Switch actions are available only in Advanced Streaming Mode.</p>
+    <table><thead><tr><th>Function</th><th>Default</th></tr></thead><tbody>
+      <tr><td>Mute / restore microphone</td><td><kbd>Ctrl+Alt+M</kbd></td></tr><tr><td>Turn the selected Monitor source on / off</td><td><kbd>Ctrl+Alt+H</kbd></td></tr>
+      <tr><td>Switch active-Profile Shimmer for this song</td><td><kbd>Ctrl+Alt+E</kbd></td></tr><tr><td>Switch active-Profile Doubler for this song</td><td><kbd>Ctrl+Alt+D</kbd></td></tr><tr><td>Switch active-Profile Harmony for this song</td><td><kbd>Ctrl+Alt+Y</kbd></td></tr>
+      <tr><td>Play / pause accompaniment or play the first Reserve item</td><td><kbd>Media Play/Pause</kbd></td></tr><tr><td>Stop accompaniment</td><td><kbd>Media Stop</kbd></td></tr><tr><td>Restart current accompaniment</td><td><kbd>Ctrl+Alt+R</kbd></td></tr><tr><td>Open / close the lyrics window</td><td><kbd>Ctrl+Alt+L</kbd></td></tr>
+      <tr><td>Key −1 / +1 semitone</td><td><kbd>Ctrl+Alt+Down</kbd> / <kbd>Ctrl+Alt+Up</kbd></td></tr><tr><td>Restore original Key</td><td><kbd>Ctrl+Alt+K</kbd></td></tr><tr><td>Speed −5% / +5%</td><td><kbd>Ctrl+Alt+Left</kbd> / <kbd>Ctrl+Alt+Right</kbd></td></tr><tr><td>Restore 100% speed</td><td><kbd>Ctrl+Alt+S</kbd></td></tr>
+    </tbody></table>
+    <p>Shimmer, Doubler, and Harmony shortcuts change only the current song's temporary Switch state. They do not change Block Bypass or the Profile's saved default.</p>
+  </div></details>
+{% when 'zh-CN' %}
+  <details><summary><strong>默认全局快捷键</strong><span>所有按键都可在设置中修改或清除</span></summary><div class="effect-reference__body">
+    <p>歌回救星运行时，即使焦点在 OBS 或其他软件、主窗口已隐藏到通知区域，注册成功的快捷键仍可使用。发生冲突时，新组合不会保存，也不会覆盖原本可用的快捷键。麦克风、监听与效果器 Switch 只在高级直播模式生效。</p>
+    <table><thead><tr><th>功能</th><th>默认按键</th></tr></thead><tbody>
+      <tr><td>静音／恢复麦克风</td><td><kbd>Ctrl+Alt+M</kbd></td></tr><tr><td>开启／关闭当前监听来源</td><td><kbd>Ctrl+Alt+H</kbd></td></tr>
+      <tr><td>切换当前 Profile 的 Shimmer（仅当前歌曲）</td><td><kbd>Ctrl+Alt+E</kbd></td></tr><tr><td>切换当前 Profile 的叠声器（仅当前歌曲）</td><td><kbd>Ctrl+Alt+D</kbd></td></tr><tr><td>切换当前 Profile 的和声器（仅当前歌曲）</td><td><kbd>Ctrl+Alt+Y</kbd></td></tr>
+      <tr><td>播放／暂停伴奏；没有当前伴奏时播放待播第一首</td><td><kbd>媒体播放／暂停键</kbd></td></tr><tr><td>停止伴奏</td><td><kbd>媒体停止键</kbd></td></tr><tr><td>当前伴奏从头播放</td><td><kbd>Ctrl+Alt+R</kbd></td></tr><tr><td>开启／关闭歌词窗口</td><td><kbd>Ctrl+Alt+L</kbd></td></tr>
+      <tr><td>Key 降／升 1 个半音</td><td><kbd>Ctrl+Alt+Down</kbd>／<kbd>Ctrl+Alt+Up</kbd></td></tr><tr><td>恢复原 Key</td><td><kbd>Ctrl+Alt+K</kbd></td></tr><tr><td>速度降低／提高 5%</td><td><kbd>Ctrl+Alt+Left</kbd>／<kbd>Ctrl+Alt+Right</kbd></td></tr><tr><td>恢复 100% 速度</td><td><kbd>Ctrl+Alt+S</kbd></td></tr>
+    </tbody></table>
+    <p>Shimmer、叠声器与和声器快捷键只改变当前歌曲的临时 Switch，不会改变 Block 的 Bypass 或 Profile 保存的默认状态。</p>
+  </div></details>
+{% when 'ja' %}
+  <details><summary><strong>既定のグローバルショートカット</strong><span>すべて設定画面で変更／解除できます</span></summary><div class="effect-reference__body">
+    <p>歌回救星の実行中は、OBS や他のアプリにフォーカスがある場合や、メイン画面が通知領域に隠れている場合でも登録済みショートカットを使用できます。競合する組み合わせは保存されず、動作中の設定も上書きしません。マイク、モニター、エフェクト Switch は高度な配信モード専用です。</p>
+    <table><thead><tr><th>機能</th><th>既定キー</th></tr></thead><tbody>
+      <tr><td>マイクのミュート／解除</td><td><kbd>Ctrl+Alt+M</kbd></td></tr><tr><td>選択中のモニターをオン／オフ</td><td><kbd>Ctrl+Alt+H</kbd></td></tr>
+      <tr><td>現在の Profile の Shimmer をこの曲だけ切り替え</td><td><kbd>Ctrl+Alt+E</kbd></td></tr><tr><td>現在の Profile の Doubler をこの曲だけ切り替え</td><td><kbd>Ctrl+Alt+D</kbd></td></tr><tr><td>現在の Profile の Harmony をこの曲だけ切り替え</td><td><kbd>Ctrl+Alt+Y</kbd></td></tr>
+      <tr><td>伴奏の再生／一時停止、または Reserve の先頭を再生</td><td><kbd>メディア再生／一時停止</kbd></td></tr><tr><td>伴奏を停止</td><td><kbd>メディア停止</kbd></td></tr><tr><td>現在の伴奏を先頭から再生</td><td><kbd>Ctrl+Alt+R</kbd></td></tr><tr><td>歌詞ウィンドウを開く／閉じる</td><td><kbd>Ctrl+Alt+L</kbd></td></tr>
+      <tr><td>Key を半音下げる／上げる</td><td><kbd>Ctrl+Alt+Down</kbd>／<kbd>Ctrl+Alt+Up</kbd></td></tr><tr><td>原曲 Key に戻す</td><td><kbd>Ctrl+Alt+K</kbd></td></tr><tr><td>速度を 5% 下げる／上げる</td><td><kbd>Ctrl+Alt+Left</kbd>／<kbd>Ctrl+Alt+Right</kbd></td></tr><tr><td>速度を 100% に戻す</td><td><kbd>Ctrl+Alt+S</kbd></td></tr>
+    </tbody></table>
+    <p>Shimmer、Doubler、Harmony のショートカットは現在の曲の一時 Switch だけを変更し、Block の Bypass や Profile に保存した初期状態は変更しません。</p>
+  </div></details>
+{% when 'ko' %}
+  <details><summary><strong>기본 전역 단축키</strong><span>설정에서 모두 변경하거나 해제할 수 있습니다</span></summary><div class="effect-reference__body">
+    <p>歌回救星 실행 중에는 OBS나 다른 앱에 포커스가 있거나 메인 창을 알림 영역에 숨겨도 등록된 단축키가 작동합니다. 충돌하는 조합은 저장되지 않으며 이미 작동 중인 단축키도 덮어쓰지 않습니다. 마이크, 모니터 및 이펙트 Switch는 고급 방송 모드에서만 사용할 수 있습니다.</p>
+    <table><thead><tr><th>기능</th><th>기본 키</th></tr></thead><tbody>
+      <tr><td>마이크 음소거／복원</td><td><kbd>Ctrl+Alt+M</kbd></td></tr><tr><td>선택한 모니터 소스 켜기／끄기</td><td><kbd>Ctrl+Alt+H</kbd></td></tr>
+      <tr><td>현재 Profile의 Shimmer를 이 곡에서만 전환</td><td><kbd>Ctrl+Alt+E</kbd></td></tr><tr><td>현재 Profile의 Doubler를 이 곡에서만 전환</td><td><kbd>Ctrl+Alt+D</kbd></td></tr><tr><td>현재 Profile의 Harmony를 이 곡에서만 전환</td><td><kbd>Ctrl+Alt+Y</kbd></td></tr>
+      <tr><td>반주 재생／일시 정지 또는 Reserve 첫 곡 재생</td><td><kbd>미디어 재생／일시 정지</kbd></td></tr><tr><td>반주 정지</td><td><kbd>미디어 정지</kbd></td></tr><tr><td>현재 반주 처음부터 재생</td><td><kbd>Ctrl+Alt+R</kbd></td></tr><tr><td>가사 창 열기／닫기</td><td><kbd>Ctrl+Alt+L</kbd></td></tr>
+      <tr><td>Key 반음 내리기／올리기</td><td><kbd>Ctrl+Alt+Down</kbd>／<kbd>Ctrl+Alt+Up</kbd></td></tr><tr><td>원래 Key 복원</td><td><kbd>Ctrl+Alt+K</kbd></td></tr><tr><td>속도 5% 낮추기／높이기</td><td><kbd>Ctrl+Alt+Left</kbd>／<kbd>Ctrl+Alt+Right</kbd></td></tr><tr><td>속도 100% 복원</td><td><kbd>Ctrl+Alt+S</kbd></td></tr>
+    </tbody></table>
+    <p>Shimmer, Doubler, Harmony 단축키는 현재 곡의 임시 Switch만 바꾸며 Block Bypass나 Profile에 저장된 기본 상태를 변경하지 않습니다.</p>
+  </div></details>
+{% else %}
+  <details><summary><strong>預設全域快捷鍵</strong><span>所有按鍵都可在設定中修改或清除</span></summary><div class="effect-reference__body">
+    <p>歌回救星執行時，即使焦點在 OBS 或其他軟體、主視窗已隱藏到系統工具，註冊成功的快捷鍵仍可使用。發生衝突時，新組合不會保存，也不會覆蓋原本可用的快捷鍵。麥克風、監聽與效果器 Switch 只在進階直播模式生效。</p>
+    <table><thead><tr><th>功能</th><th>預設按鍵</th></tr></thead><tbody>
+      <tr><td>靜音／恢復麥克風</td><td><kbd>Ctrl+Alt+M</kbd></td></tr><tr><td>開啟／關閉目前監聽來源</td><td><kbd>Ctrl+Alt+H</kbd></td></tr>
+      <tr><td>切換目前 Profile 的 Shimmer（僅目前歌曲）</td><td><kbd>Ctrl+Alt+E</kbd></td></tr><tr><td>切換目前 Profile 的疊聲器（僅目前歌曲）</td><td><kbd>Ctrl+Alt+D</kbd></td></tr><tr><td>切換目前 Profile 的和聲器（僅目前歌曲）</td><td><kbd>Ctrl+Alt+Y</kbd></td></tr>
+      <tr><td>播放／暫停伴奏；沒有目前伴奏時播放待播第一首</td><td><kbd>媒體播放／暫停鍵</kbd></td></tr><tr><td>停止伴奏</td><td><kbd>媒體停止鍵</kbd></td></tr><tr><td>目前伴奏從頭播放</td><td><kbd>Ctrl+Alt+R</kbd></td></tr><tr><td>開啟／關閉歌詞視窗</td><td><kbd>Ctrl+Alt+L</kbd></td></tr>
+      <tr><td>Key 降／升 1 個半音</td><td><kbd>Ctrl+Alt+Down</kbd>／<kbd>Ctrl+Alt+Up</kbd></td></tr><tr><td>恢復原 Key</td><td><kbd>Ctrl+Alt+K</kbd></td></tr><tr><td>速度降低／提高 5%</td><td><kbd>Ctrl+Alt+Left</kbd>／<kbd>Ctrl+Alt+Right</kbd></td></tr><tr><td>恢復 100% 速度</td><td><kbd>Ctrl+Alt+S</kbd></td></tr>
+    </tbody></table>
+    <p>Shimmer、疊聲器與和聲器快捷鍵只改變目前歌曲的暫時 Switch，不會改變 Block 的 Bypass 或 Profile 保存的預設狀態。</p>
+  </div></details>
+{% endcase %}
+</div>

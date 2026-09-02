@@ -22,7 +22,7 @@ translation_key: settings-and-troubleshooting
 
 變更預設路徑不會自動搬移既有檔案。
 
-### YouTube 下載格式（2.1.0.0：位於「檔案與專案」）
+### YouTube 下載格式（位於「檔案與專案」）
 
 可選擇下載格式：
 
@@ -30,9 +30,9 @@ translation_key: settings-and-troubleshooting
 - MP3：方便一般播放器使用，但會再次有損壓縮。
 - WAV：適合後續編輯，但檔案較大，也無法恢復 YouTube 已失去的音質。
 
-### 直播時間戳（2.1.0.0 原「進階設定」）
+### 直播時間戳
 
-包含 OBS WebSocket 功能說明、OBS 端啟用步驟、主機、連接埠、密碼及「連線」按鈕。這項設定主要用於直播時間戳，並非使用歌單或歌詞 Overlay 的必要條件。2.1.0.0 尚未發布；目前公開版仍可能顯示舊名稱「進階設定」。
+包含 OBS WebSocket 功能說明、OBS 端啟用步驟、主機、連接埠、密碼及「連線」按鈕。這項設定主要用於直播時間戳，並非使用歌單或歌詞 Overlay 的必要條件。OBS 密碼屬於本機連線憑證，請勿公開分享包含密碼的設定畫面。
 
 ## 專案與媒體備份
 
@@ -123,10 +123,18 @@ translation_key: settings-and-troubleshooting
 
 ## 安全更新
 
-平常從最外層的 `Singing Stream Savior.exe` 啟動時，啟動器會先以深色狀態視窗檢查未來版本。若有更新，會先顯示版本並詢問是否下載安裝；選擇不更新仍可繼續開啟目前版本。
+平常從最外層的 `Singing Stream Savior.exe` 啟動時，Launcher 1.2 會先檢查更新。**沒有新版本時不會停在提示頁**，檢查完成便自動開啟目前安裝的主程式；離線或尚未到下一次檢查時間時，也會使用已驗證的目前版本，不必等待網路。
 
-更新檔下載後會先檢查檔案大小與 SHA-256，再替換允許更新的主程式與主題檔。請保留最外層的 `Singing Stream Savior.exe`、`current.json` 和內部資料夾原有的相對位置，不要只移動其中一個檔案。
+有新版本時，卡片式畫面會列出目前版本、目標版本與本次更新內容。按「稍後」或關閉這個詢問畫面，會直接開啟目前版本，不會改動檔案；按「立即更新」才會下載。
 
-若啟動器提示需要較新的啟動器，或自動更新無法完成，請改從本說明網站下載最新版完整 ZIP，解壓縮到新的資料夾，再用新版開啟原本的 `.bgmsproj`。不要把兩個版本的 DLL 直接混合覆蓋。
+<figure class="manual-figure"><a href="assets/images/launcher-update-prompt.png"><img src="assets/images/launcher-update-prompt.png" alt="Launcher 1.2 卡片式更新提示，顯示版本與更新內容"></a><figcaption>更新內容在可捲動的卡片區顯示；「稍後」保留目前版本，「立即更新」才開始下載。</figcaption></figure>
+
+下載期間可以按「取消」或關閉視窗要求安全取消。Launcher 會保留原本的 `current.json` 與已安裝檔案、清除未完成暫存，再啟動目前版本。進入不可中斷的最終交換階段後，關閉操作會暫時忽略，直到交易安全完成；即使在更新途中被強制結束或電腦重啟，下次啟動也會先依持久化交易紀錄完成回復或收尾，不會把新舊 DLL 混在同一個可啟動版本。
+
+<figure class="manual-figure"><a href="assets/images/launcher-update-progress.png"><img src="assets/images/launcher-update-progress.png" alt="Launcher 1.2 下載、驗證與安裝更新的進度畫面"></a><figcaption>套件會先核對 HTTPS 來源、檔案大小與 SHA-256，再以可回復的交易方式切換版本。</figcaption></figure>
+
+請保留最外層的 `Singing Stream Savior.exe`、`current.json` 和內部資料夾原有的相對位置，不要只移動其中一個檔案。Launcher 會保留一份上一版的已驗證套件供自動修復與交易回復使用，但 1.2 不提供一鍵降版按鈕；舊版不一定能理解新版專案內容。若必須退回，請把官方舊版完整 ZIP 解壓到**另一個資料夾**，先複製 `.bgmsproj` 與媒體再測試，不要用舊版覆蓋新版資料夾。
+
+若啟動器提示需要較新的啟動器，或自動更新仍無法完成，請改從本說明網站下載最新版完整 ZIP，解壓縮到新的資料夾，再用新版開啟原本的 `.bgmsproj`。不要把兩個版本的 DLL 直接混合覆蓋。
 
 [上一頁：完整、精簡與迷你模式](workspace-modes.md) · [回到說明書首頁](README.md)

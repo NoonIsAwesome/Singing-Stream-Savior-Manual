@@ -12,8 +12,18 @@ translation_key: home
     <p class="intro-lead">Prepare and control BGM, karaoke tracks, Reserve, OBS set lists, and lyrics from one workspace. Keep your attention on singing and chat instead of rearranging windows between songs.</p>
     <div class="intro-actions"><a class="intro-button intro-button--primary" href="{{ '/en/guide.html#getting-started' | relative_url }}">Get started</a><a class="intro-button" href="#features">Explore the features</a><a class="intro-button" href="{{ '/en/resources.html' | relative_url }}">Software download</a></div>
   </div>
-  <figure class="intro-hero__visual"><img src="{{ '/assets/images/en/full-workspace.png' | relative_url }}" alt="English Full Mode with the library, BGM, karaoke player, and Reserve"><figcaption>Song selection, playback, and stream visuals in one workspace.</figcaption></figure>
+  <figure class="intro-hero__visual"><img src="{{ '/assets/images/en/full-workspace.png' | relative_url }}" alt="English Full Mode with a card-style song library, BGM, karaoke player, and Reserve"><figcaption>Card-style songs, both players, and Reserve in one workspace.</figcaption></figure>
 </div>
+
+<section class="intro-promo" aria-labelledby="intro-promo-title">
+  <a class="intro-promo__visual" href="{{ '/assets/images/booth-promo-en.jpg' | relative_url }}"><img src="{{ '/assets/images/booth-promo-en.jpg' | relative_url }}" alt="Singing Stream Savior feature overview showing an OBS set list, subtitles, and a live scene" decoding="async"></a>
+  <div class="intro-promo__copy">
+    <p class="section-kicker">The finished stream your audience sees</p>
+    <h2 id="intro-promo-title">Start the karaoke track. BGM, titles, set lists, and lyrics follow.</h2>
+    <p>Singing Stream Savior turns the easy-to-miss handoffs between playback and OBS into one workflow. Choose the song and sing instead of rebuilding the scene between tracks.</p>
+    <div class="intro-promo__points"><span>Automatic BGM</span><span>OBS set-list sync</span><span>Synchronized lyrics</span><span>Automatic timestamps</span></div>
+  </div>
+</section>
 
 {% include demo-video.html %}
 
@@ -26,7 +36,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">From setup to live output</p>
     <h2 id="demo-flow-title">Preview the result in Singing Stream Savior, then use it in OBS</h2>
-    <p>The screenshots below use the English interface and real 2.0.3.1 controls with isolated sample data.</p>
+    <p>The screenshots below use the English interface and real 2.1.0.0 Release controls with isolated sample data.</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">
@@ -54,11 +64,18 @@ translation_key: home
     <article class="feature-card"><span class="feature-card__label">Library & Reserve</span><h3>Plan ahead without losing flexibility</h3><p>Organize songs and Reserve, play a backing track immediately, or create an unaccompanied item for a cappella and self-accompanied performances.</p></article>
     <article class="feature-card"><span class="feature-card__label">OBS set list</span><h3>Change themes, not text after every song</h3><p>Choose Default, transparent, Card, CD, or illustrated themes, inspect every state in the automatic demo, then drag the overlay into OBS.</p></article>
     <article class="feature-card"><span class="feature-card__label">Lyrics</span><h3>Read them yourself or show the audience</h3><p>Search or import synchronized lyrics, open a movable Lyrics Window, or create an OBS lyric overlay. Japanese supports Hiragana and Romaji, and Korean can show romanization.</p></article>
-    <article class="feature-card"><span class="feature-card__label">Backing sources</span><h3>Local files and YouTube backing tracks in one player</h3><p>Your backing track may be a vocal-removed, self-recorded, or downloaded local file—or a version you just found on YouTube. Singing Stream Savior supports both, so you do not have to switch between a media player and browser.</p></article>
-    <article class="feature-card"><span class="feature-card__label">Workspace</span><h3>Full, Compact, and Mini modes</h3><p>Prepare in Full Mode, then reduce the window for the stream. Mini Mode keeps karaoke, Reserve, History, and the Lyrics Window close at hand.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Backing sources</span><h3>Local files and YouTube backing tracks in one player</h3><p>Both sources use the same familiar perceptual volume curve, while staged YouTube fallback improves resilience after playback changes. There is no need to switch between a media player and browser.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Workspace</span><h3>Full, Compact, and Mini modes</h3><p>Prepare in Full Mode, then reduce the window for the stream. You can also hide it in the Windows notification area and keep control through the tray menu or global shortcuts.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Song vocals</span><h3>Switch vocal effects automatically with each song</h3><p>Assign a microphone Profile to each song. It is applied when the backing track starts, returns to the chat Profile when the song ends, and can still be changed manually during a stream.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Vocal Profiles</span><h3>Build an effects chain with built-in effects and VST3</h3><p>Use 15 built-in effects—including Gate, Compressor, EQ, Reverb, Delay, and Shimmer—or add VST3 plug-ins, edit parameters, Bypass blocks, and drag them into processing order.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Stream audio</span><h3>Send backing track and vocals to OBS as one mix</h3><p>Use ASIO or Windows Audio with the dedicated OBS source or a virtual audio device. Final Mix, OBS, and Full Output recording share the stable, aligned program path.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Monitor &amp; record</span><h3>Choose what you hear without moving the audience mix</h3><p>Monitor or record the backing track, Dry, Wet, or Full Output. Backing + Dry uses an independent low-latency cue; an interface's Direct Monitor remains the recommended main vocal monitor.</p></article>
+    <article class="feature-card"><span class="feature-card__label">Meter &amp; health check</span><h3>See level, Buffer, latency, and interruptions</h3><p>Five meters show Peak and Stream Output LUFS-S. The Buffer health check compares stability and estimated latency, then offers a recommendation you can apply directly.</p></article>
+    <article class="feature-card feature-card--media">
+      <a class="feature-card__media" href="{{ '/assets/images/live-timeline-card.jpg' | relative_url }}"><img src="{{ '/assets/images/live-timeline-card.jpg' | relative_url }}" alt="Live overlay showing Now Singing, Next On, and song timestamps" loading="lazy" decoding="async"></a>
+      <div class="feature-card__copy"><span class="feature-card__label">Stream timeline</span><h3>Show the real stream timeline in a Set List</h3><p>OBS WebSocket records the stream time when each backing track starts and displays it in supported Set Lists. Regular set-list and lyric overlays do not require WebSocket.</p></div>
+    </article>
   </div>
 </section>
-
-<aside class="feature-note"><span>Stream timestamps</span><div><strong>OBS WebSocket stream timestamps</strong><p>The app can read OBS’s live timer, record when karaoke starts, and show timestamps in supported Set Lists. Normal set-list and lyric overlays do not require WebSocket.</p></div></aside>
 
 <section class="intro-next"><p class="section-kicker">Ready to begin</p><h2>Import one song and complete a test playback</h2><p>The guide begins with extracting the app, launching it, and creating your first project.</p><a class="intro-button intro-button--primary" href="{{ '/en/guide.html#getting-started' | relative_url }}">Open the user guide</a></section>
