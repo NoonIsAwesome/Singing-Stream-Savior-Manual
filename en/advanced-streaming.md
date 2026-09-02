@@ -137,6 +137,7 @@ Monitoring is a separate headphone path. Dry Cue uses an independent software ca
   <div class="effect-reference"><details><summary><strong>How loudness advice is qualified</strong><span>Silence, breaths, and interludes are excluded</span></summary><div class="effect-reference__body"><p>The Meter evaluates 100 ms buckets from the live-output path, using BGM/accompaniment before Mix and Vocal after the Profile. Evidence accumulates only while BGM/accompaniment is truly in the Playing state, its signal is present, routing and microphone health are good, and vocal activity qualifies. When Noise Gate telemetry is available, the gate must be open for about 25% or more of the bucket; average post-Profile Vocal energy must be at least −45 dBFS and raw-microphone Peak at least −50 dBFS. A warning requires at least 10 seconds of playback, at least 6 seconds of qualified Vocal in the latest 12 seconds, and two phrases of at least 1.2 seconds each separated by at least 300 ms. BGM/accompaniment must be no more than 2 dB below Vocal—or louder—for at least 6 seconds of the latest qualified evidence. “Vocal may be too quiet” additionally requires average qualified Vocal energy at or below −26 dBFS. If recent raw or processed Vocal Peak reaches −6 dBFS or higher, or limiter gain reduction exceeds 1 dB, only the safer suggestion to lower accompaniment remains; the Meter will not recommend raising Vocal. Changing tracks, stopping or restarting playback, making a significant seek, switching Profiles, route interruption or pending recovery, and hiding the Meter reset the evidence. This is sustained signal-activity and loudness comparison, not speech recognition.</p></div></details></div>
   <p>The borderless CPU/RAM status distinguishes total-system and app use. In Advanced Streaming Mode its tooltip also includes buffer size, callback time, estimated latency, and underrun/overrun counts, with color warnings when load may affect stability.</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="Collapsed CPU and RAM summary at the lower-right of the main window" caption="This capture shows only the compact CPU/RAM summary before hover. Pointing at it expands the system/app load and Advanced-mode audio-health details described above." size="medium" %}
+  {% include system-health-interpretation.html %}
 </div>
 
 <div class="manual-feature-update">
@@ -153,6 +154,8 @@ Monitoring is a separate headphone path. Dry Cue uses an independent software ca
   <p>The existing Install OBS Plug-in menu covers standard OBS, a Portable OBS folder, and removal. A successful install automatically selects <strong>Singing Stream Savior Audio (OBS Plugin)</strong>; restart OBS and add the source with the same name to receive the signal.</p>
   <p>With VB-CABLE, select CABLE Input in Singing Stream Savior and CABLE Output in an OBS Audio Input Capture. Disable any duplicate raw-microphone source to avoid doubled vocals.</p>
 </div>
+
+{% include obs-audio-output-setup.html %}
 
 ```text
 Singing Stream Savior → virtual audio cable → OBS / Discord

@@ -1,0 +1,21 @@
+{% assign health_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign health = site.data.system_health_guide[health_lang] | default: site.data.system_health_guide['zh-TW'] %}
+<section class="system-health-guide" aria-labelledby="system-health-guide-title">
+  <h3 id="system-health-guide-title">{{ health.heading }}</h3>
+  <p>{{ health.intro }}</p>
+  {% capture health_image %}/assets/images/advanced-streaming/23-system-resource-status-expanded.png{% endcapture %}
+  <figure class="manual-figure manual-figure--medium"><a href="{{ health_image | relative_url }}"><img src="{{ health_image | relative_url }}" alt="{{ health.image_alt | escape }}" loading="lazy" decoding="async"></a><figcaption>{{ health.image_caption }}</figcaption></figure>
+  <table>
+    <thead><tr><th>{{ health.metric_heading }}</th><th>{{ health.meaning_heading }}</th><th>{{ health.judgement_heading }}</th></tr></thead>
+    <tbody>
+      {% for row in health.rows %}
+      <tr><td><strong>{{ row.metric }}</strong></td><td>{{ row.meaning }}</td><td>{{ row.judgement }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h3>{{ health.action_heading }}</h3>
+  <ol>
+    {% for action in health.actions %}<li>{{ action }}</li>{% endfor %}
+  </ol>
+  <blockquote><p>{{ health.example }}</p></blockquote>
+</section>

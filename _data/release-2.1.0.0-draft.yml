@@ -4,7 +4,7 @@
 release:
   version: "2.1.0.0"
   date: "2026-09-02"
-  latest: true
+  latest: false
   type:
     zh-TW: 進階直播音訊與人聲處理重大更新
     zh-CN: 高级直播音频与人声处理重大更新

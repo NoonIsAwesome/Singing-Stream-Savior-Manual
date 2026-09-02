@@ -159,7 +159,7 @@
   const article = document.querySelector(".manual-article");
   if (article) {
     const articleHeadings = [...article.querySelectorAll(":scope > h2[id]")];
-    if (articleHeadings.length >= 2 && articleHeadings.length <= 8) {
+    if (articleHeadings.length >= 2) {
       const outline = document.createElement("nav");
       outline.className = "article-outline";
       outline.setAttribute("aria-label", document.body.dataset.outlineLabel || "On this page");

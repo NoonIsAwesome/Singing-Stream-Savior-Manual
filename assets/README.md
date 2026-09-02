@@ -26,6 +26,8 @@
 - `keyboard-shortcuts.png`：鍵盤快捷鍵設定頁與依模式分類的全域快捷鍵
 - `system-resource-status.png`：未停留游標時的 CPU／記憶體收合摘要；音訊健康資訊位於 hover Tooltip
 - `live-timeline-card.jpg`：實際直播畫面中的 Now Singing、Next On 與歌曲時間戳，用於首頁功能卡片
+- `advanced-streaming/13-obs-add-s3s-audio-source.png` 至 `22-audio-routing-signal-graph.png`：進階直播模式、OBS 外掛、虛擬音源、OBS 混音器與直播輸出裝置選擇的逐步設定圖
+- `advanced-streaming/23-system-resource-status-expanded.png`：主視窗 CPU／RAM 與進階音訊健康 Tooltip 的完整欄位，用於判讀教學
 
 `effect-editors/` 存放 15 顆內建效果器的實際編輯視窗，檔名必須使用 `S3S_REGISTRY_EDITOR_SCREENSHOT_DIR` 實際輸出的 Qt／DSP module ID：`gain.png`、`noise.png`、`gate.png`、`compressor.png`、`eq.png`、`saturation.png`、`air.png`、`deesser.png`、`voice-changer.png`、`harmony.png`、`doubler.png`、`delay.png`、`reverb.png`、`shimmer.png`、`limiter.png`。根目錄為繁體中文；其他語言放在各自語言資料夾下的 `effect-editors/`。
 

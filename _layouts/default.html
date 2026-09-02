@@ -15,7 +15,7 @@
   {% assign alternate_ja = '/ja/advanced-streaming.html' %}
   {% assign alternate_ko = '/ko/advanced-streaming.html' %}
 {% elsif section == 'advanced-streaming' %}
-  {% assign alternate_zh_tw = '/audio-routing.html' %}
+  {% assign alternate_zh_tw = '/advanced-streaming.html' %}
   {% assign alternate_zh_cn = '/zh-CN/advanced-streaming.html' %}
   {% assign alternate_en = '/en/advanced-streaming.html' %}
   {% assign alternate_ja = '/ja/advanced-streaming.html' %}
@@ -46,7 +46,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#090d14">
     <link rel="icon" href="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" sizes="any">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: '2.1.0.0' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: '2.1.0.1' }}">
     <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_tw }}">
     <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_cn }}">
     <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}{{ alternate_en }}">
@@ -76,7 +76,7 @@
         {% else %}
           {% capture resources_target %}/{{ current_lang }}/resources.html{% endcapture %}
         {% endif %}
-        <span class="version-chip" aria-label="{{ t.version }} 2.1.0.0">v2.1.0.0</span>
+        <span class="version-chip" aria-label="{{ t.version }} 2.1.0.1">v2.1.0.1</span>
         <label class="language-control">
           <span class="visually-hidden">{{ t.language }}</span>
           <svg class="language-control__icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.45 3.6 5.45 3.6 9S14.4 18.55 12 21M12 3C9.6 5.45 8.4 8.45 8.4 12s1.2 6.55 3.6 9"></path></svg>
@@ -111,13 +111,8 @@
         <nav aria-label="{{ t.nav_aria }}">
           <p class="nav-label">{{ t.flow }}</p>
           <ol class="chapter-list">
-            {% if current_lang == 'zh-TW' %}
-              {% assign nav_keys = "home,getting-started,library-and-playback,lyrics,obs-and-themes,audio-routing,profiles,obs-websocket,workspace-modes,settings-and-troubleshooting,changelog,about" | split: "," %}
-              {% assign nav_labels = "home,getting_started,library,lyrics,themes,audio_routing,profiles,websocket,modes,settings,changelog,about" | split: "," %}
-            {% else %}
-              {% assign nav_keys = "home,getting-started,library-and-playback,lyrics,obs-and-themes,advanced-streaming,obs-websocket,workspace-modes,settings-and-troubleshooting,changelog,about" | split: "," %}
-              {% assign nav_labels = "home,getting_started,library,lyrics,themes,advanced_streaming,websocket,modes,settings,changelog,about" | split: "," %}
-            {% endif %}
+            {% assign nav_keys = "home,getting-started,library-and-playback,lyrics,obs-and-themes,advanced-streaming,obs-websocket,workspace-modes,settings-and-troubleshooting,changelog,about" | split: "," %}
+            {% assign nav_labels = "home,getting_started,library,lyrics,themes,advanced_streaming,websocket,modes,settings,changelog,about" | split: "," %}
             {% for key in nav_keys %}
               {% assign label_key = nav_labels[forloop.index0] %}
               {% if current_lang == 'zh-TW' %}
@@ -127,8 +122,8 @@
                   {% assign target = '/changelog.html' %}
                 {% elsif key == 'about' %}
                   {% assign target = '/about.html' %}
-                {% elsif key == 'audio-routing' or key == 'profiles' %}
-                  {% capture target %}/{{ key }}.html{% endcapture %}
+                {% elsif key == 'advanced-streaming' %}
+                  {% assign target = '/advanced-streaming.html' %}
                 {% else %}
                   {% capture target %}/guide.html#{{ key }}{% endcapture %}
                 {% endif %}
@@ -176,6 +171,6 @@
       </main>
     </div>
 
-    <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.github.build_revision | default: '2.1.0.0' }}" defer></script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.github.build_revision | default: '2.1.0.1' }}" defer></script>
   </body>
 </html>

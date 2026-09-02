@@ -1,0 +1,284 @@
+zh-TW:
+  heading: OBS 設定圖解
+  intro: 先在歌回救星的「直播輸出」選擇一條路徑，再到 OBS 加入相符的來源。OBS 外掛與虛擬音源傳送的是同一條完整 Stream Output，不需要同時使用。
+  note: 使用完整 Stream Output 時，請停用 OBS 內重複的原始麥克風或桌面伴奏來源，否則可能出現人聲重複、音量變大或相位感。
+  steps:
+    - title: 先啟用進階直播模式與正式混音路徑
+      body: 到「設定 → 音訊路由」，把路由模式設為「進階直播模式（混音輸出）」，再選擇實際使用的 ASIO 或 Windows Audio 麥克風輸入、聊天／唱歌 Profile 與直播輸出。只有這個模式會把 BGM／伴奏與 Profile 效果後人聲合成完整 Stream Output；畫面中的 Volt、ASIO 與裝置名稱只是作者電腦的設定範例。
+      images:
+        - file: 21-audio-routing-advanced-mode.png
+          alt: 音訊路由頁選擇進階直播模式、ASIO 輸入與直播輸出
+          caption: 先在音訊路由頁啟用進階直播模式，並依自己的錄音介面或 Windows Audio 裝置選擇輸入。
+        - file: 22-audio-routing-signal-graph.png
+          alt: 音訊路由頁的 BGM、麥克風 Profile、直播混音、輸出與監聽訊號圖
+          caption: 路由圖應顯示 BGM／伴奏與 Profile 後人聲進入直播混音，再送往直播輸出；Monitor 是另一條不影響觀眾訊號的路徑。
+    - title: 選擇 OBS 外掛輸出
+      body: 安裝或修復 OBS 外掛並重新啟動 OBS 後，在直播輸出選擇「Singing Stream Savior 音訊（OBS 外掛）」。展開裝置清單時會依最長名稱加寬，收合後不會撐大路由卡片。
+      images:
+        - file: 19-stream-output-obs-plugin.png
+          alt: 歌回救星直播輸出選擇 Singing Stream Savior OBS 音訊外掛
+          caption: OBS 外掛模式會把完整混音直接送到專用來源。
+        - file: 20-stream-output-device-picker.png
+          alt: 歌回救星直播輸出的加寬裝置清單
+          caption: 展開後可看完整裝置名稱；同樣的加寬方式也套用於監聽裝置清單。
+    - title: 在 OBS 加入專用音訊來源
+      body: 在 OBS 的「來源」按下加號，選擇「Singing Stream Savior 音訊」。這不是一般的音訊輸入擷取；若清單中沒有出現，請先確認外掛已安裝並重新啟動 OBS。
+      images:
+        - file: 13-obs-add-s3s-audio-source.png
+          alt: OBS 新增來源選單中的 Singing Stream Savior 音訊
+          caption: OBS 外掛安裝成功後，來源清單會出現專用的 Singing Stream Savior 音訊項目。
+    - title: 確認 OBS 外掛收到訊號
+      body: 播放伴奏並對麥克風說話或唱歌，OBS 混音器中的專用來源應有電平反應。這代表 OBS 已收到歌回救星對齊後的伴奏與人聲。
+      images:
+        - file: 16-obs-mixer-s3s-audio.png
+          alt: OBS 混音器中的 Singing Stream Savior 音訊電平
+          caption: 專用 OBS 外掛來源在混音器中的訊號範例。
+    - title: 選擇虛擬音源輸出
+      body: 若 OBS 以外的程式也要接收完整混音，可在歌回救星選擇虛擬音源的播放端；以 VB-CABLE 為例是「CABLE Input」。監聽裝置請另外選實體耳機或錄音介面。
+      images:
+        - file: 18-stream-output-virtual-device.png
+          alt: 歌回救星直播輸出選擇 CABLE Input 虛擬音源
+          caption: 歌回救星送入 CABLE Input，OBS 會從成對的 CABLE Output 接收。
+    - title: 在 OBS 加入音訊輸入擷取
+      body: 在 OBS 的「來源」按下加號，選擇「擷取音訊輸入」，再把裝置設為虛擬音源的錄音端；以 VB-CABLE 為例是「CABLE Output」。
+      images:
+        - file: 14-obs-add-audio-input-capture.png
+          alt: OBS 新增來源選單中的擷取音訊輸入
+          caption: 虛擬音源使用 OBS 內建的「擷取音訊輸入」來源。
+        - file: 15-obs-select-cable-output.png
+          alt: OBS 擷取音訊輸入選擇 CABLE Output
+          caption: VB-CABLE 範例中，OBS 裝置選擇 CABLE Output，而不是歌回救星使用的 CABLE Input。
+    - title: 確認虛擬音源收到訊號
+      body: 播放伴奏並輸入人聲，確認 OBS 混音器中的「擷取音訊輸入」有穩定電平，再錄製短片檢查左右聲道、平衡與嘴形同步。
+      images:
+        - file: 17-obs-mixer-virtual-input.png
+          alt: OBS 混音器中的擷取音訊輸入電平
+          caption: 虛擬音源路徑在 OBS 混音器中的訊號範例。
+
+zh-CN:
+  heading: OBS 设置图解
+  intro: 先在 Singing Stream Savior 的“直播输出”中选择一种路径，再在 OBS 中添加对应的来源。OBS 插件与虚拟音频设备传送的是同一条完整 Stream Output，无需同时使用。
+  note: 使用完整 Stream Output 时，请停用 OBS 中重复的原始麦克风或桌面伴奏来源，否则可能出现人声重复、音量增大或相位感。
+  steps:
+    - title: 先启用高级直播模式与正式混音路径
+      body: 打开“设置 → 音频路由”，把路由模式设为“高级直播模式（混音输出）”，再选择实际使用的 ASIO 或 Windows Audio 麦克风输入、聊天／演唱 Profile 与直播输出。只有此模式会把 BGM／伴奏与 Profile 处理后的人声合成为完整 Stream Output；截图中的 Volt、ASIO 与设备名称只是作者电脑的设置示例。
+      images:
+        - file: 21-audio-routing-advanced-mode.png
+          alt: 音频路由页面选择高级直播模式、ASIO 输入与直播输出
+          caption: 先在音频路由页面启用高级直播模式，并根据自己的音频接口或 Windows Audio 设备选择输入。
+        - file: 22-audio-routing-signal-graph.png
+          alt: 音频路由页面中的 BGM、麦克风 Profile、直播混音、输出与监听信号图
+          caption: 路由图应显示 BGM／伴奏与 Profile 处理后的人声进入直播混音，再发送至直播输出；监听是不会改变观众信号的独立路径。
+    - title: 选择 OBS 插件输出
+      body: 安装或修复 OBS 插件并重新启动 OBS 后，在直播输出中选择“Singing Stream Savior 音频（OBS 插件）”。展开设备列表时会按最长名称加宽，收起后不会撑大路由卡片。
+      images:
+        - file: 19-stream-output-obs-plugin.png
+          alt: Singing Stream Savior 直播输出选择 OBS 音频插件
+          caption: OBS 插件模式会把完整混音直接发送到专用来源。
+        - file: 20-stream-output-device-picker.png
+          alt: Singing Stream Savior 直播输出的加宽设备列表
+          caption: 展开后可查看完整设备名称；监听设备列表也使用相同的加宽方式。
+    - title: 在 OBS 中添加专用音频来源
+      body: 在 OBS 的“来源”中点击加号，选择“Singing Stream Savior 音频”。它不是普通的音频输入采集；如果列表中没有出现，请确认插件已经安装并重新启动 OBS。
+      images:
+        - file: 13-obs-add-s3s-audio-source.png
+          alt: OBS 添加来源列表中的 Singing Stream Savior 音频
+          caption: OBS 插件安装成功后，来源列表会出现专用的 Singing Stream Savior 音频项目。
+    - title: 确认 OBS 插件收到信号
+      body: 播放伴奏并对着麦克风说话或唱歌，OBS 混音器中的专用来源应显示电平。这表示 OBS 已收到 Singing Stream Savior 对齐后的伴奏与人声。
+      images:
+        - file: 16-obs-mixer-s3s-audio.png
+          alt: OBS 混音器中的 Singing Stream Savior 音频电平
+          caption: 专用 OBS 插件来源在混音器中的信号示例。
+    - title: 选择虚拟音频设备输出
+      body: 如果 OBS 以外的程序也需要接收完整混音，可在 Singing Stream Savior 中选择虚拟音频设备的播放端；以 VB-CABLE 为例是“CABLE Input”。监听设备应另外选择实体耳机或音频接口。
+      images:
+        - file: 18-stream-output-virtual-device.png
+          alt: Singing Stream Savior 直播输出选择 CABLE Input 虚拟音频设备
+          caption: Singing Stream Savior 发送到 CABLE Input，OBS 从配对的 CABLE Output 接收。
+    - title: 在 OBS 中添加音频输入采集
+      body: 在 OBS 的“来源”中点击加号，选择“音频输入采集”，再把设备设为虚拟音频设备的录音端；以 VB-CABLE 为例是“CABLE Output”。
+      images:
+        - file: 14-obs-add-audio-input-capture.png
+          alt: OBS 添加来源列表中的音频输入采集
+          caption: 虚拟音频设备使用 OBS 内置的“音频输入采集”来源。
+        - file: 15-obs-select-cable-output.png
+          alt: OBS 音频输入采集选择 CABLE Output
+          caption: 在 VB-CABLE 示例中，OBS 选择 CABLE Output，而不是 Singing Stream Savior 使用的 CABLE Input。
+    - title: 确认虚拟音频设备收到信号
+      body: 播放伴奏并输入人声，确认 OBS 混音器中的音频输入采集有稳定电平，再录制短片检查左右声道、平衡与口型同步。
+      images:
+        - file: 17-obs-mixer-virtual-input.png
+          alt: OBS 混音器中的音频输入采集电平
+          caption: 虚拟音频设备路径在 OBS 混音器中的信号示例。
+
+en:
+  heading: Receive Stream Output in OBS
+  intro: Choose one Stream Output route in Singing Stream Savior, then add the matching source in OBS. The OBS plug-in and a virtual audio device carry the same complete Stream Output, so you do not need both.
+  note: When using the complete Stream Output, disable duplicate raw-microphone or desktop-accompaniment sources in OBS. Keeping both can double the voice, raise the level, or create phasey sound.
+  steps:
+    - title: Enable Advanced Streaming Mode and the formal mix path first
+      body: Open Settings → Audio Routing, set Routing Mode to Advanced Streaming Mode (Mixed Output), then choose your real ASIO or Windows Audio microphone input, chat／singing Profiles, and Stream Output. Only this mode combines BGM／accompaniment with the Profile-processed vocal into the complete Stream Output. The Volt, ASIO, and device names in these captures are examples from the author's PC, not required values.
+      images:
+        - file: 21-audio-routing-advanced-mode.png
+          alt: Audio Routing page with Advanced Streaming Mode, ASIO input, and Stream Output selected
+          caption: Enable Advanced Streaming Mode first, then select the input that matches your own audio interface or Windows Audio device.
+        - file: 22-audio-routing-signal-graph.png
+          alt: Audio Routing graph showing BGM, microphone Profiles, Stream Mix, Stream Output, and Monitor
+          caption: The graph should show BGM／accompaniment and the post-Profile vocal entering Stream Mix before Stream Output. Monitor remains a separate path and does not change the audience signal.
+    - title: Select the OBS plug-in output
+      body: After installing or repairing the OBS plug-in and restarting OBS, select Singing Stream Savior Audio (OBS Plugin) for Stream Output. The open device list expands for its longest name, while the closed routing card keeps its original width.
+      images:
+        - file: 19-stream-output-obs-plugin.png
+          alt: Singing Stream Savior Stream Output set to the OBS audio plug-in
+          caption: OBS plug-in mode sends the complete mix directly to the dedicated source.
+        - file: 20-stream-output-device-picker.png
+          alt: Expanded Singing Stream Savior Stream Output device list
+          caption: The open list shows complete device names; Monitor Device uses the same expanded-list behavior.
+    - title: Add the dedicated source in OBS
+      body: Select the plus button under OBS Sources and choose Singing Stream Savior Audio. This is not a normal Audio Input Capture. If it is missing, confirm that the plug-in is installed and restart OBS.
+      images:
+        - file: 13-obs-add-s3s-audio-source.png
+          alt: Singing Stream Savior Audio in the OBS Add Source menu
+          caption: A successful plug-in installation adds the dedicated Singing Stream Savior Audio source to OBS.
+    - title: Confirm the OBS plug-in signal
+      body: Play accompaniment and speak or sing into the microphone. The dedicated source should move in the OBS Audio Mixer, confirming that OBS receives the aligned accompaniment and vocal mix.
+      images:
+        - file: 16-obs-mixer-s3s-audio.png
+          alt: Singing Stream Savior Audio level in the OBS Audio Mixer
+          caption: Example signal from the dedicated OBS plug-in source.
+    - title: Select a virtual audio output
+      body: If another app also needs the complete mix, select the playback side of a virtual audio device in Singing Stream Savior. With VB-CABLE, this is CABLE Input. Keep Monitor Device on physical headphones or your audio interface.
+      images:
+        - file: 18-stream-output-virtual-device.png
+          alt: Singing Stream Savior Stream Output set to the CABLE Input virtual device
+          caption: Singing Stream Savior sends to CABLE Input; OBS receives from the paired CABLE Output.
+    - title: Add Audio Input Capture in OBS
+      body: Select the plus button under OBS Sources, choose Audio Input Capture, and set Device to the recording side of the virtual cable. With VB-CABLE, this is CABLE Output.
+      images:
+        - file: 14-obs-add-audio-input-capture.png
+          alt: Audio Input Capture in the OBS Add Source menu
+          caption: A virtual audio device uses OBS's built-in Audio Input Capture source.
+        - file: 15-obs-select-cable-output.png
+          alt: OBS Audio Input Capture set to CABLE Output
+          caption: In this VB-CABLE example, OBS selects CABLE Output, not the CABLE Input used by Singing Stream Savior.
+    - title: Confirm the virtual-device signal
+      body: Play accompaniment and add vocal input. Confirm a stable Audio Input Capture level in the OBS mixer, then make a short recording to check stereo centering, balance, and lip sync.
+      images:
+        - file: 17-obs-mixer-virtual-input.png
+          alt: Audio Input Capture level in the OBS Audio Mixer
+          caption: Example OBS mixer signal from the virtual-audio route.
+
+ja:
+  heading: OBS で配信出力を受け取る
+  intro: Singing Stream Savior の「配信出力」で経路を一つ選び、OBS に対応するソースを追加します。OBS プラグインと仮想オーディオデバイスは同じ完全な Stream Output を運ぶため、同時に使用する必要はありません。
+  note: 完全な Stream Output を使用するときは、OBS 側の重複した生マイクやデスクトップ伴奏ソースを無効にしてください。声が二重になったり、大きくなったり、位相感が出たりする原因になります。
+  steps:
+    - title: 最初に高度な配信モードと正式ミックス経路を有効にする
+      body: 「設定 → オーディオルーティング」でルーティングモードを「高度な配信モード（ミックス出力）」にし、実際に使う ASIO または Windows Audio のマイク入力、トーク／歌唱 Profile、配信出力を選びます。このモードだけが BGM／伴奏と Profile 処理後の声を完全な Stream Output にまとめます。画像内の Volt、ASIO、デバイス名は作者 PC の例であり、必須設定ではありません。
+      images:
+        - file: 21-audio-routing-advanced-mode.png
+          alt: 高度な配信モード、ASIO 入力、配信出力を選択したオーディオルーティング画面
+          caption: 最初に高度な配信モードを有効にし、自分のオーディオインターフェースまたは Windows Audio に合う入力を選びます。
+        - file: 22-audio-routing-signal-graph.png
+          alt: BGM、マイク Profile、配信ミックス、配信出力、Monitor を示すルーティング図
+          caption: BGM／伴奏と Profile 後の声が配信ミックスへ入り、配信出力へ送られることを確認します。Monitor は視聴者向け信号を変えない独立経路です。
+    - title: OBS プラグイン出力を選ぶ
+      body: OBS プラグインをインストールまたは修復して OBS を再起動した後、「配信出力」で Singing Stream Savior Audio（OBS Plugin）を選びます。リストを開くと最長のデバイス名に合わせて広がり、閉じたルーティングカードの幅は変わりません。
+      images:
+        - file: 19-stream-output-obs-plugin.png
+          alt: OBS オーディオプラグインを選択した Singing Stream Savior の配信出力
+          caption: OBS プラグイン経路は完全なミックスを専用ソースへ直接送ります。
+        - file: 20-stream-output-device-picker.png
+          alt: 展開された Singing Stream Savior の配信出力デバイス一覧
+          caption: 展開時はデバイス名を省略せず確認できます。モニターデバイスの一覧も同じ動作です。
+    - title: OBS に専用オーディオソースを追加する
+      body: OBS の「ソース」で＋を押し、Singing Stream Savior Audio を選びます。通常の音声入力キャプチャではありません。表示されない場合はプラグインの導入を確認し、OBS を再起動してください。
+      images:
+        - file: 13-obs-add-s3s-audio-source.png
+          alt: OBS のソース追加メニューにある Singing Stream Savior Audio
+          caption: プラグインが正しく導入されると、専用の Singing Stream Savior Audio ソースが表示されます。
+    - title: OBS プラグインの信号を確認する
+      body: 伴奏を再生し、マイクへ話すか歌います。OBS 音声ミキサーの専用ソースにレベルが出れば、同期済みの伴奏と声を OBS が受信しています。
+      images:
+        - file: 16-obs-mixer-s3s-audio.png
+          alt: OBS 音声ミキサーの Singing Stream Savior Audio レベル
+          caption: 専用 OBS プラグインソースの信号例です。
+    - title: 仮想オーディオ出力を選ぶ
+      body: OBS 以外のアプリにも完全なミックスを渡す場合は、Singing Stream Savior で仮想オーディオデバイスの再生側を選びます。VB-CABLE では CABLE Input です。モニターは実際のヘッドホンまたはオーディオインターフェースを選びます。
+      images:
+        - file: 18-stream-output-virtual-device.png
+          alt: CABLE Input 仮想デバイスを選択した Singing Stream Savior の配信出力
+          caption: Singing Stream Savior は CABLE Input へ送り、OBS は対になる CABLE Output から受信します。
+    - title: OBS に音声入力キャプチャを追加する
+      body: OBS の「ソース」で＋を押し、「音声入力キャプチャ」を追加して、仮想ケーブルの録音側を選びます。VB-CABLE では CABLE Output です。
+      images:
+        - file: 14-obs-add-audio-input-capture.png
+          alt: OBS のソース追加メニューにある音声入力キャプチャ
+          caption: 仮想オーディオデバイスは OBS 標準の音声入力キャプチャを使います。
+        - file: 15-obs-select-cable-output.png
+          alt: CABLE Output を選択した OBS の音声入力キャプチャ
+          caption: VB-CABLE の例では、OBS は Singing Stream Savior 側の CABLE Input ではなく CABLE Output を選びます。
+    - title: 仮想デバイスの信号を確認する
+      body: 伴奏を再生して声を入力し、OBS 音声ミキサーの音声入力キャプチャに安定したレベルが出ることを確認します。短い録画で左右の定位、バランス、口の動きとの同期も確認してください。
+      images:
+        - file: 17-obs-mixer-virtual-input.png
+          alt: OBS 音声ミキサーの音声入力キャプチャレベル
+          caption: 仮想オーディオ経路を受信した OBS ミキサーの例です。
+
+ko:
+  heading: OBS에서 방송 출력 받기
+  intro: Singing Stream Savior의 방송 출력에서 경로 하나를 선택한 다음 OBS에 맞는 소스를 추가합니다. OBS 플러그인과 가상 오디오 장치는 같은 전체 Stream Output을 전달하므로 동시에 사용할 필요가 없습니다.
+  note: 전체 Stream Output을 사용할 때는 OBS의 중복 원본 마이크 또는 데스크톱 반주 소스를 비활성화하세요. 둘 다 남겨 두면 보컬이 겹치거나 커지고 위상감이 생길 수 있습니다.
+  steps:
+    - title: 먼저 고급 방송 모드와 정식 믹스 경로 활성화
+      body: 설정 → 오디오 라우팅에서 라우팅 모드를 고급 방송 모드(믹스 출력)로 바꾸고 실제로 사용할 ASIO 또는 Windows Audio 마이크 입력, 대화／노래 Profile과 방송 출력을 선택합니다. 이 모드에서만 BGM／반주와 Profile 처리 후 보컬을 전체 Stream Output으로 합칩니다. 화면의 Volt, ASIO와 장치 이름은 개발자 PC의 예시이며 필수 값이 아닙니다.
+      images:
+        - file: 21-audio-routing-advanced-mode.png
+          alt: 고급 방송 모드, ASIO 입력과 방송 출력을 선택한 오디오 라우팅 화면
+          caption: 먼저 고급 방송 모드를 켜고 자신의 오디오 인터페이스 또는 Windows Audio 장치에 맞는 입력을 선택합니다.
+        - file: 22-audio-routing-signal-graph.png
+          alt: BGM, 마이크 Profile, 방송 믹스, 방송 출력과 Monitor를 보여 주는 라우팅 그래프
+          caption: BGM／반주와 Profile 처리 후 보컬이 방송 믹스로 들어가 방송 출력으로 전달되는지 확인합니다. Monitor는 시청자 신호를 바꾸지 않는 별도 경로입니다.
+    - title: OBS 플러그인 출력 선택
+      body: OBS 플러그인을 설치하거나 복구하고 OBS를 다시 시작한 뒤 방송 출력에서 Singing Stream Savior Audio (OBS Plugin)를 선택합니다. 목록을 열면 가장 긴 장치 이름에 맞춰 넓어지고, 닫힌 라우팅 카드는 기존 너비를 유지합니다.
+      images:
+        - file: 19-stream-output-obs-plugin.png
+          alt: OBS 오디오 플러그인을 선택한 Singing Stream Savior 방송 출력
+          caption: OBS 플러그인 경로는 전체 믹스를 전용 소스로 직접 보냅니다.
+        - file: 20-stream-output-device-picker.png
+          alt: 펼쳐진 Singing Stream Savior 방송 출력 장치 목록
+          caption: 펼친 목록에서 전체 장치 이름을 볼 수 있으며 모니터 장치 목록도 같은 방식으로 확장됩니다.
+    - title: OBS에 전용 오디오 소스 추가
+      body: OBS 소스 아래의＋를 누르고 Singing Stream Savior Audio를 선택합니다. 일반 오디오 입력 캡처가 아닙니다. 항목이 보이지 않으면 플러그인 설치를 확인하고 OBS를 다시 시작하세요.
+      images:
+        - file: 13-obs-add-s3s-audio-source.png
+          alt: OBS 소스 추가 메뉴의 Singing Stream Savior Audio
+          caption: 플러그인이 정상적으로 설치되면 전용 Singing Stream Savior Audio 소스가 나타납니다.
+    - title: OBS 플러그인 신호 확인
+      body: 반주를 재생하고 마이크에 말하거나 노래합니다. OBS 오디오 믹서의 전용 소스에 레벨이 나타나면 정렬된 반주와 보컬 믹스를 OBS가 받고 있는 것입니다.
+      images:
+        - file: 16-obs-mixer-s3s-audio.png
+          alt: OBS 오디오 믹서의 Singing Stream Savior Audio 레벨
+          caption: 전용 OBS 플러그인 소스의 신호 예시입니다.
+    - title: 가상 오디오 출력 선택
+      body: OBS 이외의 앱도 전체 믹스를 받아야 한다면 Singing Stream Savior에서 가상 오디오 장치의 재생 쪽을 선택합니다. VB-CABLE에서는 CABLE Input입니다. 모니터 장치는 실제 헤드폰이나 오디오 인터페이스를 선택하세요.
+      images:
+        - file: 18-stream-output-virtual-device.png
+          alt: CABLE Input 가상 장치를 선택한 Singing Stream Savior 방송 출력
+          caption: Singing Stream Savior는 CABLE Input으로 보내고 OBS는 짝을 이루는 CABLE Output에서 받습니다.
+    - title: OBS에 오디오 입력 캡처 추가
+      body: OBS 소스 아래의＋를 누르고 오디오 입력 캡처를 추가한 뒤 가상 케이블의 녹음 쪽을 선택합니다. VB-CABLE에서는 CABLE Output입니다.
+      images:
+        - file: 14-obs-add-audio-input-capture.png
+          alt: OBS 소스 추가 메뉴의 오디오 입력 캡처
+          caption: 가상 오디오 장치는 OBS 기본 오디오 입력 캡처 소스를 사용합니다.
+        - file: 15-obs-select-cable-output.png
+          alt: CABLE Output을 선택한 OBS 오디오 입력 캡처
+          caption: VB-CABLE 예시에서 OBS는 Singing Stream Savior가 사용하는 CABLE Input이 아니라 CABLE Output을 선택합니다.
+    - title: 가상 장치 신호 확인
+      body: 반주와 보컬을 입력해 OBS 오디오 믹서의 오디오 입력 캡처에 안정적인 레벨이 나타나는지 확인합니다. 짧게 녹화하여 좌우 중앙 정렬, 밸런스와 입 모양 동기화도 확인하세요.
+      images:
+        - file: 17-obs-mixer-virtual-input.png
+          alt: OBS 오디오 믹서의 오디오 입력 캡처 레벨
+          caption: 가상 오디오 경로를 받은 OBS 믹서 신호 예시입니다.

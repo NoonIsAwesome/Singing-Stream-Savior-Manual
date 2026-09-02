@@ -154,6 +154,8 @@ translation_key: audio-routing
 
 > OBS 外掛少經過一層 Windows 虛擬音源；虛擬音源則可供 OBS 以外的軟體使用。實際延遲與穩定度會受電腦、驅動、Buffer 和裝置影響，請以本機狀態資訊與測試錄音為準，而不是把單一測試數字當成每台電腦的保證。
 
+{% include obs-audio-output-setup.html %}
+
 ## 監聽：自己在耳機中聽到什麼
 
 <div class="manual-feature-update">
@@ -215,6 +217,8 @@ translation_key: audio-routing
 主視窗右下角的 CPU／RAM 文字不使用外框。滑鼠停留後可看到系統與歌回救星的 CPU、系統記憶體、程式 Working Set 與 Private Memory；進階直播模式才會再顯示 Buffer、callback、估計延遲與 underrun／overrun。警示會綜合系統壓力與音訊異常，不會只因工作管理員中正常的記憶體用量就亮起。
 
 {% include localized-release-screenshot.html name="system-resource-status.png" alt="主視窗右下角收合狀態的 CPU 與 RAM 摘要" caption="此圖只顯示未停留游標時的精簡 CPU／RAM 摘要；將游標停在文字上，才會展開前述系統／程式資源與進階音訊健康資料。" size="medium" %}
+
+{% include system-health-interpretation.html %}
 
 ## 系統工具、快捷鍵與完整關閉
 

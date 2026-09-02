@@ -1,9 +1,9 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign resources = site.data.resources %}
 {% if current_lang == 'zh-TW' %}
-  {% assign changelog_target = '/changelog.html#v2-0-5-4' %}
+  {% assign changelog_target = '/changelog.html#v2-1-0-1' %}
 {% else %}
-  {% capture changelog_target %}/{{ current_lang }}/changelog.html#v2-0-5-4{% endcapture %}
+  {% capture changelog_target %}/{{ current_lang }}/changelog.html#v2-1-0-1{% endcapture %}
 {% endif %}
 {% if current_lang == 'zh-TW' %}
   {% assign eyebrow = 'DOWNLOADS · VIDEOS' %}

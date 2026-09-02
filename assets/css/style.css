@@ -1692,6 +1692,7 @@ body.has-image-lightbox {
 
 .feature-card--media {
   min-height: 245px;
+  aspect-ratio: 1 / 1;
   padding: 0;
   isolation: isolate;
   background: #111724;
@@ -1711,7 +1712,7 @@ body.has-image-lightbox {
 .feature-card__media::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 13, 23, 0.04) 18%, rgba(9, 13, 23, 0.38) 48%, rgba(9, 13, 23, 0.96) 82%);
+  background: linear-gradient(180deg, rgba(9, 13, 23, 0.96) 0%, rgba(9, 13, 23, 0.72) 34%, rgba(9, 13, 23, 0.22) 62%, rgba(9, 13, 23, 0.03) 100%);
   content: "";
 }
 
@@ -1739,10 +1740,10 @@ body.has-image-lightbox {
 .feature-card__copy {
   position: absolute;
   z-index: 1;
+  top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
-  padding: 58px 22px 20px;
+  padding: 20px 22px 58px;
   pointer-events: none;
 }
 

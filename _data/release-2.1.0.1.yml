@@ -1,0 +1,43 @@
+release:
+  version: "2.1.0.1"
+  date: "2026-09-02"
+  latest: true
+  type:
+    zh-TW: 音訊裝置、聲道與裝置清單熱修正
+    zh-CN: 音频设备、声道与设备列表热修复
+    ja: オーディオデバイス・チャンネル・一覧表示の修正
+    ko: 오디오 장치, 채널 및 장치 목록 핫픽스
+    en: Audio device, channel, and device-list hotfix
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.0.1"
+  summary:
+    zh-TW: 修正 2.1 更新後的音訊裝置啟動與 Windows Audio 麥克風聲道，並改善長裝置名稱的顯示。
+    zh-CN: 修复 2.1 更新后的音频设备启动与 Windows Audio 麦克风声道问题，并改善长设备名称的显示。
+    ja: 2.1 更新後のオーディオデバイス起動と Windows Audio のマイクチャンネル経路を修正し、長いデバイス名の表示を改善しました。
+    ko: 2.1 업데이트 후 오디오 장치 시작 문제와 Windows Audio 마이크 채널 라우팅을 수정하고 긴 장치 이름 표시를 개선했습니다.
+    en: Fixes audio-device startup and Windows Audio microphone routing after the 2.1 update, and improves long device-name display.
+  items:
+    zh-TW:
+      - 修正從 2.0.5.4 升級後，第一次開啟時 ASIO 與相關音訊輔助元件偶爾顯示無法使用的問題。主程式現在會直接從作用中的 Runtime 套件載入已驗證元件，不必重新啟動一次等待舊位置修復。
+      - 修正使用 Windows Audio 時，接在 Input 1 的單聲道麥克風錄製後偏在左聲道的問題。Input 1 現在會等量送至左右聲道，使 Dry、Wet、Final Mix、OBS 與錄音的人聲保持置中。
+      - 改善音訊路由頁面的裝置選擇。展開「直播輸出」或「監聽裝置」清單時，清單會依最長裝置名稱自動加寬並限制在螢幕範圍內；原本卡片與欄位寬度不變。
+      - 昨天吃火鍋吃到臭掉的蛤仔，大概一個月不敢吃火鍋了。
+    zh-CN:
+      - 修复从 2.0.5.4 升级后，首次启动时 ASIO 与相关音频辅助组件偶尔显示无法使用的问题。主程序现在会直接从当前 Runtime 包加载已经验证的组件，无需再次启动来修复旧位置。
+      - 修复使用 Windows Audio 时，连接至 Input 1 的单声道麦克风在录制后主要出现在左声道的问题。Input 1 现在会等量发送到左右声道，使 Dry、Wet、Final Mix、OBS 与录音中的人声保持居中。
+      - 改善音频路由页面的设备选择。展开“直播输出”或“监听设备”列表时，列表会根据最长设备名称自动加宽，并保持在可用屏幕范围内；原有卡片与字段宽度不变。
+      - 昨天吃火锅吃到了坏掉的蛤蜊，大概一个月不敢再吃火锅了。
+    ja:
+      - 2.0.5.4 から更新した直後の初回起動で、ASIO と関連オーディオヘルパーが使用不可と表示される場合がある問題を修正しました。検証済みヘルパーを有効な Runtime パッケージから直接読み込むため、旧配置を修復するための再起動は不要です。
+      - Windows Audio 使用時に、Input 1 に接続したモノラルマイクが録音で主に左チャンネルへ偏る問題を修正しました。Input 1 を左右へ同じ音量で送り、Dry、Wet、Final Mix、OBS、録音のボーカルを中央に配置します。
+      - オーディオルーティング画面のデバイス選択を改善しました。「配信出力」または「モニターデバイス」のリストを開くと、画面内に収まる範囲で最も長いデバイス名に合わせて自動的に横幅が広がります。閉じた状態のフィールドとカードの幅は変わりません。
+      - 昨日、火鍋で傷んだアサリを食べてしまったので、たぶん1か月くらい火鍋を食べる勇気が出ません。
+    ko:
+      - 2.0.5.4에서 업데이트한 뒤 처음 실행할 때 ASIO 및 관련 오디오 도우미를 사용할 수 없다고 표시될 수 있는 문제를 수정했습니다. 이제 검증된 도우미를 활성 Runtime 패키지에서 직접 불러오므로 기존 위치를 복구하기 위해 한 번 더 실행할 필요가 없습니다.
+      - Windows Audio 사용 시 Input 1에 연결한 모노 마이크가 녹음에서 주로 왼쪽 채널에 들리는 문제를 수정했습니다. Input 1을 왼쪽과 오른쪽에 동일하게 보내 Dry, Wet, Final Mix, OBS 및 녹음의 보컬이 중앙에 위치하도록 했습니다.
+      - 오디오 라우팅 화면의 장치 선택 표시를 개선했습니다. 방송 출력 또는 모니터 장치 목록을 열면 화면 안에 들어오는 범위에서 가장 긴 장치 이름에 맞춰 목록 너비가 자동으로 확장됩니다. 닫힌 필드와 카드의 너비는 그대로 유지됩니다.
+      - 어제 훠궈를 먹다가 상한 조개를 먹어서, 아마 한 달 정도는 훠궈를 못 먹을 것 같습니다.
+    en:
+      - Fixes ASIO and related audio helpers sometimes appearing unavailable on the first launch after upgrading from 2.0.5.4. The application now loads verified helpers directly from the active Runtime package, without requiring a second launch to repair the legacy location.
+      - Fixes a mono microphone connected to Input 1 being recorded mainly in the left channel when using Windows Audio. Input 1 is now duplicated equally to left and right for centered Dry, Wet, Final Mix, OBS, and recording output.
+      - Improves device selection on the Audio Routing page. When Stream Output or Monitor Device is opened, its list expands to fit the longest device name while remaining within the available screen area; the closed field and card layout keep their existing width.
+      - Yesterday I got a spoiled clam while eating hot pot, so I probably will not dare eat hot pot again for about a month.

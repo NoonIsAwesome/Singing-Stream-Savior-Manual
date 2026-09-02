@@ -117,6 +117,7 @@ Profile 뒤에는 전체 방송용 **Mix Bus Compressor**, **Stream Output Limit
   <div class="effect-reference"><details><summary><strong>음량 균형 안내의 판단 방식</strong><span>무음, 호흡, 간주를 보컬과 구분합니다</span></summary><div class="effect-reference__body"><p>Meter는 실제 방송 경로의 Mix 전 BGM／반주와 Profile 후 보컬을 100ms 단위로 확인합니다. BGM／반주가 실제 Playing 상태이고 신호가 있으며, 라우팅과 마이크 상태가 정상이고 보컬 활동이 조건을 통과할 때만 데이터를 누적합니다. Noise Gate 정보가 있으면 해당 구간의 약 25% 이상에서 Gate가 열려 있어야 하며, Profile 후 보컬의 평균 에너지는 −45 dBFS 이상, 처리 전 마이크 Peak는 −50 dBFS 이상이어야 합니다. 안내가 표시되려면 최소 10초 재생, 최근 12초 중 6초 이상의 적격 보컬, 각각 최소 1.2초이고 서로 최소 300ms 떨어진 두 구절이 필요합니다. BGM／반주 레벨이 보컬보다 2dB 넘게 낮지 않거나 더 큰 상태도 최근 적격 데이터에서 최소 6초 누적되어야 합니다. 적격 구간의 보컬 평균 에너지가 −26 dBFS 이하일 때만 “보컬이 작을 수 있음” 안내도 표시합니다. 최근 처리 전 또는 처리 후 보컬 Peak가 −6 dBFS 이상이거나 Limiter 게인 감소가 1dB를 초과하면 반주를 낮추라는 안내만 유지하고 보컬을 높이라고 권하지 않습니다. 곡 변경, 재생 중지 또는 재시작, 큰 폭의 재생 위치 이동, Profile 변경, 라우팅 중단 또는 복구 대기, Meter 숨김은 판단 데이터를 초기화합니다. 이는 지속적인 신호 활동과 음량 비교이며 음성 인식이 아닙니다.</p></div></details></div>
   <p>오른쪽 아래의 테두리 없는 CPU／RAM 표시는 시스템 전체와 앱 사용량을 구분합니다. 고급 방송 모드에서는 Buffer, callback, 예상 지연, underrun／overrun도 Tooltip에 표시합니다.</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="메인 창 오른쪽 아래에 접힌 CPU／RAM 요약" caption="이 이미지는 포인터를 두기 전의 간결한 CPU／RAM 요약만 보여 줍니다. 포인터를 두면 위에서 설명한 시스템／앱 부하와 고급 오디오 상태가 펼쳐집니다." size="medium" %}
+  {% include system-health-interpretation.html %}
 </div>
 
 <div class="manual-feature-update">
@@ -133,6 +134,8 @@ Profile 뒤에는 전체 방송용 **Mix Bus Compressor**, **Stream Output Limit
   <p>기존 OBS 플러그인 메뉴에는 표준 OBS, Portable 폴더와 제거가 있습니다. 설치가 끝나면 <strong>Singing Stream Savior Audio (OBS Plugin)</strong> 출력을 자동 선택합니다. OBS를 다시 시작하고 같은 이름의 오디오 소스를 추가하세요.</p>
   <p>VB-CABLE을 사용할 때는 Singing Stream Savior에서 CABLE Input, OBS 오디오 입력 캡처에서 CABLE Output을 선택합니다. 중복되는 원본 마이크 소스는 비활성화하세요.</p>
 </div>
+
+{% include obs-audio-output-setup.html %}
 
 ```text
 Singing Stream Savior → 가상 오디오 케이블 → OBS／Discord

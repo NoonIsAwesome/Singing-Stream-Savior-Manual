@@ -127,6 +127,7 @@ Profile 处理后，完整直播输出还会依次经过 **Mix Bus Compressor**�
   <div class="effect-reference"><details><summary><strong>响度提示的判断方式</strong><span>避免把安静、换气或间奏误判为人声过小</span></summary><div class="effect-reference__body"><p>系统每 100 ms 检查一次实际直播路径中的 Mix 前 BGM／伴奏与 Profile 后人声。只有 BGM／伴奏确实处于 Playing 状态、有伴奏信号、路由与麦克风状态正常，并且人声通过活动条件时才会累计数据。Noise Gate 有状态数据时，该区段至少约 25% 的时间必须保持开启；Profile 后人声平均能量至少为 −45 dBFS，原始麦克风 Peak 至少为 −50 dBFS。显示失衡提示前，需要至少播放 10 秒、最近 12 秒内至少 6 秒合格人声，并包含两段各至少 1.2 秒、彼此间隔至少 300 ms 的人声；伴奏不比人声低超过 2 dB，或比人声更大的状态，还必须在最近的合格人声数据中累计至少 6 秒。只有合格人声平均能量不高于 −26 dBFS，才会同时提示“人声可能偏小”。如果最近数据中的原始或处理后人声 Peak 达到 −6 dBFS 或更高，或 Limiter 增益衰减超过 1 dB，则只保留调低伴奏的建议，不会要求提高人声。换曲、停止或重新播放、大幅跳转播放位置、切换 Profile、路由中断或等待恢复，以及隐藏 Meter，都会重置判断。这是信号活动与长时间响度比较，并非语音识别。</p></div></details></div>
   <p>右下角无边框 CPU／RAM 状态区分系统与本程序用量。高级直播模式的 Tooltip 还会显示 Buffer、callback、估计延迟及 underrun／overrun，并在负载可能影响稳定性时用颜色提醒。</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="主窗口右下角收起状态的 CPU 与 RAM 摘要" caption="这张图只显示鼠标尚未停留时的精简 CPU／RAM 摘要；指向文字后才会展开上文说明的系统／程序负载与高级音频健康资料。" size="medium" %}
+  {% include system-health-interpretation.html %}
 </div>
 
 <div class="manual-feature-update">
@@ -143,6 +144,8 @@ Profile 处理后，完整直播输出还会依次经过 **Mix Bus Compressor**�
   <p>现有“安装 OBS 插件”菜单包含标准版、Portable 文件夹与移除。安装成功后会自动选择 <strong>Singing Stream Savior 音频（OBS 插件）</strong>输出；重新启动 OBS 并添加同名音频来源即可接收信号。</p>
   <p>使用 VB-CABLE 时，在歌回救星选择 CABLE Input，再在 OBS 的“音频输入采集”选择 CABLE Output。不要同时保留另一条原始麦克风，以免人声重复。</p>
 </div>
+
+{% include obs-audio-output-setup.html %}
 
 ```text
 Singing Stream Savior → 虚拟音频线 → OBS／Discord

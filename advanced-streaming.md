@@ -10,6 +10,11 @@ published: true
 
 從 **2.1.0.0** 起，進階直播模式可以在 Singing Stream Savior 內混合 BGM、伴奏與處理後的麥克風，再把完整 Stream Mix 送到 OBS、Discord 或其他直播軟體。
 
+<aside class="version-preview" role="note">
+  <span class="version-preview__badge">2.1.0.0 新功能</span>
+  <div><strong>請將音訊路由與人聲 Profile 一起設定。</strong><p>音訊路由負責輸入、監聽、錄音與直播輸出；Profile 負責人聲音色。本頁截圖均來自 Release build，並盡量使用與頁面相同的語言。</p></div>
+</aside>
+
 ## 2.1.0.0 設定位置變更
 
 - **YouTube 下載**已移至 **設定 → 檔案與專案**，與專案路徑、媒體資料夾放在同一頁。
@@ -124,6 +129,7 @@ Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compres
   <div class="effect-reference"><details><summary><strong>響度提示的判斷方式</strong><span>避免把安靜、換氣或間奏誤判為人聲過小</span></summary><div class="effect-reference__body"><p>系統以正式直播路徑中的 Mix 前 BGM／伴奏與 Profile 後人聲，每 100 ms 建立一筆資料。只有 BGM／伴奏實際處於 Playing、有伴奏訊號、路由與麥克風健康，而且人聲通過活動條件時才累積證據。Noise Gate 有資料時，該區段至少約 25% 時間必須保持開啟；Profile 後人聲平均能量至少為 −45 dBFS，原始麥克風 Peak 至少為 −50 dBFS。顯示失衡提示前，需要至少 10 秒播放、最近 12 秒內至少 6 秒合格人聲，並包含兩段各至少 1.2 秒、彼此相隔至少 300 ms 的人聲；伴奏不比人聲低超過 2 dB，或比人聲更大聲的狀況，還需在最新合格人聲資料中累積至少 6 秒。只有合格人聲平均能量不高於 −26 dBFS，才會同時提示「人聲可能偏小」。若最近資料中原始或處理後人聲 Peak 達到 −6 dBFS 或更高，或 Limiter 增益衰減超過 1 dB，則只保留降低伴奏的建議，不會要求提高人聲。換歌、停止或重新播放、大幅移動播放位置、切換 Profile、路由中斷或等待恢復，以及隱藏 Meter，都會重置判斷。這是訊號活動與長時間響度比較，不是語音辨識。</p></div></details></div>
   <p>主視窗右下角的無外框 CPU／RAM 狀態會顯示本程式使用率。停留滑鼠可看到系統總 CPU、系統記憶體、本程式 Working Set 與 Private Memory；只有進階直播模式才會加上 Buffer、callback、估計延遲和 underrun／overrun 等音訊資訊。負載可能影響穩定度時會以顏色提示。</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="主視窗右下角收合狀態的 CPU 與記憶體摘要" caption="未停留滑鼠時只保留精簡 CPU／RAM 摘要；指向文字後會展開系統、本程式與進階音訊健康資料。" size="medium" %}
+  {% include system-health-interpretation.html %}
 </div>
 
 <div class="manual-feature-update">
@@ -140,6 +146,8 @@ Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compres
   <p>「安裝 OBS 外掛」的既有選單可選標準版或 Portable OBS 資料夾，並可在同一選單執行移除。安裝成功後，Stream Output 會自動切換到 <strong>Singing Stream Savior 音訊（OBS 外掛）</strong>；重新啟動 OBS 後新增同名音訊來源，就能直接接收訊號，不需要再把它當成一般 Windows 播放裝置尋找。</p>
   <p>如果使用虛擬音源，則在歌回救星選擇 CABLE Input，並在 OBS 以「音訊輸入擷取」選擇 CABLE Output。不要同時保留另一條原始麥克風來源，以免人聲重複。</p>
 </div>
+
+{% include obs-audio-output-setup.html %}
 
 ```text
 Singing Stream Savior → 虛擬音訊線 → OBS／Discord

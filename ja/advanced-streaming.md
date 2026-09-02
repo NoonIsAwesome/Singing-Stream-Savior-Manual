@@ -117,6 +117,7 @@ Profile の後段には、配信全体用の **Mix Bus Compressor**、**Stream O
   <div class="effect-reference"><details><summary><strong>音量バランス助言の判定方法</strong><span>無音、息継ぎ、間奏を歌声と区別します</span></summary><div class="effect-reference__body"><p>Meter は実際の配信経路にある Mix 前の BGM／伴奏と Profile 後のボーカルを 100 ms 単位で確認します。BGM／伴奏が実際に Playing 状態で信号も存在し、ルーティングとマイクが正常で、ボーカル活動が条件を満たす場合だけ証拠を蓄積します。Noise Gate の情報がある場合は、区間の約 25% 以上で Gate が開いている必要があります。さらに、Profile 後ボーカルの平均エネルギーが −45 dBFS 以上、処理前マイクの Peak が −50 dBFS 以上である必要があります。表示には 10 秒以上の再生、直近 12 秒中 6 秒以上の適格ボーカル、および各 1.2 秒以上で互いに 300 ms 以上離れた 2 つのフレーズが必要です。BGM／伴奏がボーカルより 2 dB を超えて小さくない状態、または伴奏の方が大きい状態も、最新の適格区間で 6 秒以上必要です。適格区間のボーカル平均エネルギーが −26 dBFS 以下の場合だけ「ボーカルが小さい可能性」も表示します。直近データの処理前または処理後 Peak が −6 dBFS 以上、あるいは Limiter のゲインリダクションが 1 dB を超える場合は、伴奏を下げる助言だけを残し、ボーカルを上げるよう提案しません。曲の変更、停止または再生し直し、大幅なシーク、Profile の切り替え、経路の中断または復旧待ち、Meter の非表示で判定をリセットします。これは持続的な信号活動と音量の比較であり、音声認識ではありません。</p></div></details></div>
   <p>右下の枠なし CPU／RAM 表示はシステム全体と本アプリを区別します。高度な配信モードでは Buffer、callback、推定遅延、underrun／overrun も Tooltip に追加します。</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="メイン画面右下に折りたたまれた CPU／RAM 概要" caption="この画像はポインターを置く前の簡潔な CPU／RAM 表示だけです。ポインターを置くと、上記のシステム／アプリ負荷と高度な音声状態が展開します。" size="medium" %}
+  {% include system-health-interpretation.html %}
 </div>
 
 <div class="manual-feature-update">
@@ -133,6 +134,8 @@ Profile の後段には、配信全体用の **Mix Bus Compressor**、**Stream O
   <p>既存の OBS プラグインメニューには標準版、Portable フォルダー、削除があります。インストール成功後は <strong>Singing Stream Savior Audio (OBS Plugin)</strong> を自動選択します。OBS を再起動し、同名の音声ソースを追加してください。</p>
   <p>VB-CABLE では Singing Stream Savior 側で CABLE Input、OBS の音声入力キャプチャで CABLE Output を選びます。重複する生マイクソースは無効にしてください。</p>
 </div>
+
+{% include obs-audio-output-setup.html %}
 
 ```text
 Singing Stream Savior → 仮想オーディオケーブル → OBS／Discord
