@@ -1,0 +1,38 @@
+release:
+  version: "2.1.0.2"
+  date: "2026-09-02"
+  latest: true
+  type:
+    zh-TW: 一般播放器音訊路由改善
+    zh-CN: 一般播放器音频路由改善
+    ja: 標準プレイヤーの音声ルーティング改善
+    ko: 표준 플레이어 오디오 라우팅 개선
+    en: Standard Player audio-routing improvements
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.0.2"
+  summary:
+    zh-TW: 讓一般播放器模式的設定更安全、簡單，並在切換模式時保留進階直播的音訊路由選擇。
+    zh-CN: 让一般播放器模式的设置更安全、简单，并在切换模式时保留进阶直播的音频路由选择。
+    ja: 標準プレイヤーモードをより安全で簡潔にし、モード切り替え時も高度な配信ルーティング設定を保持します。
+    ko: 표준 플레이어 모드를 더 안전하고 간단하게 만들고 모드 전환 시 고급 방송 라우팅 설정을 유지합니다.
+    en: Makes Standard Player Mode safer and simpler, and preserves Advanced Streaming routing choices when switching modes.
+  items:
+    zh-TW:
+      - 改善音訊路由「一般播放器模式」的設定方式：固定使用 Windows Audio 與系統預設輸出，隱藏不適用的驅動與輸出裝置選項，降低設定錯誤的機會。
+      - 修正「一般播放器模式」下仍會顯示 Buffer、延遲與穩定度等進階音訊資訊的問題。
+      - 改善首次切換「進階直播模式」時的直播輸出預選；系統會優先選擇已安裝的 OBS 外掛或偵測到的虛擬音源，並確保重複切換模式後仍保留原本的 OBS 外掛、監聽裝置與 ASIO 設定。
+    zh-CN:
+      - 改善音频路由“一般播放器模式”的设置方式：固定使用 Windows Audio 与系统默认输出，隐藏不适用于此模式的驱动与输出设备选项，降低设置错误的机会。
+      - 修复“一般播放器模式”下仍会显示 Buffer、延迟与稳定度等进阶音频信息的问题。
+      - 改善首次切换“进阶直播模式”时的直播输出预选；系统会优先选择已安装的 OBS 插件或检测到的虚拟音频设备，并确保重复切换模式后仍保留原有的 OBS 插件、监听设备与 ASIO 设置。
+    ja:
+      - 標準プレイヤーモードのオーディオルーティング設定を改善しました。Windows Audio とシステムの既定の出力を固定で使用し、このモードに不要なドライバーと出力デバイスの選択肢を非表示にします。
+      - 標準プレイヤーモードでも Buffer、レイテンシー、安定性などの高度なオーディオ情報が表示される問題を修正しました。
+      - 高度な配信モードを初めて使用するとき、インストール済みの OBS プラグインまたは検出済みの仮想出力を優先します。また、モードを繰り返し切り替えても OBS プラグイン、モニターデバイス、ASIO 設定を保持します。
+    ko:
+      - 표준 플레이어 모드의 오디오 라우팅 설정을 개선했습니다. Windows Audio와 시스템 기본 출력을 고정으로 사용하고 이 모드에 필요하지 않은 드라이버 및 출력 장치 선택 항목을 숨깁니다.
+      - 표준 플레이어 모드에서도 Buffer, 지연 시간 및 안정성과 같은 고급 오디오 정보가 표시되던 문제를 수정했습니다.
+      - 고급 방송 모드를 처음 사용할 때 설치된 OBS 플러그인 또는 감지된 가상 출력을 우선 선택합니다. 또한 모드를 반복해서 전환해도 기존 OBS 플러그인, 모니터 장치 및 ASIO 설정을 유지합니다.
+    en:
+      - Improves Audio Routing in Standard Player Mode. It now always uses Windows Audio and the system default output, while hiding driver and output-device choices that do not apply to this mode.
+      - Fixes Advanced-only Buffer, latency, and stability information remaining visible in Standard Player Mode.
+      - Improves the first Advanced Streaming Mode setup by preferring an installed OBS plugin or detected virtual output, and preserves existing OBS plugin, Monitor device, and ASIO settings across repeated mode switches.

@@ -1,7 +1,7 @@
 release:
   version: "2.1.0.1"
   date: "2026-09-02"
-  latest: true
+  latest: false
   type:
     zh-TW: 音訊裝置、聲道與裝置清單熱修正
     zh-CN: 音频设备、声道与设备列表热修复
