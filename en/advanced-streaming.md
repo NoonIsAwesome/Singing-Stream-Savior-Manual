@@ -43,9 +43,15 @@ The health check does not play a synthetic test tone or accompaniment. If softwa
 
 The yellow messages have two different meanings. **Check dropouts** appears for microphone or monitor underruns/overruns, a discontinuity in the formal Stream path, or an interrupted/recovering device. **Check audio timing** requires the same callback, clock, or latency-accounting anomaly to persist for about two seconds. A momentary callback peak alone is not proof of an audible dropout. Hover over Stability to inspect route counters, device recovery, callback peak/period, and anomaly flags.
 
-### Development-machine measurements and general recommendations
+### Recommended starting point for most users
 
-{% include audio-test-results-en.html %}
+> **The simplest starting point is ASIO when an interface provides it, App Safety Buffer set to Automatic (Recommended) · 512 frames, and the dedicated OBS audio source.** You do not need to read the engineering table or manually try every buffer first.
+
+- Prefer the interface vendor's ASIO driver. Keep the interface hardware buffer at an already-stable value—commonly 128 or 256 frames. It is separate from the App Buffer.
+- Without ASIO, choose Windows Audio and leave the App Buffer on automatic 512. Do not force 128 or 256 as the first step.
+- Run Full Check only when you want lower software Dry monitoring latency; apply 256 only when the check recommends it. Prefer the interface's Direct Monitor for primary singing monitoring.
+- Prefer the dedicated Singing Stream Savior source in OBS. Use a virtual cable only when another application also needs the complete Mix.
+- Before going live, run Quick Check and make a short OBS recording. If the state turns yellow, counters keep rising, or you hear a dropout, stop the stream and run Full Check; use 1024 if necessary.
 
 ## Create and edit voice Profiles
 
@@ -197,5 +203,13 @@ These steps cover a typical 64-bit Windows 10/11 PC. For Windows on ARM or anoth
 - Confirm that Setup was run as administrator from the fully extracted folder.
 - Select **Refresh devices** in Singing Stream Savior's Virtual Output Setup.
 - Close apps that may be holding audio devices. If it is still missing, use the [official VB-Audio reference manual](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf).
+
+## Complete development-machine measurements (reference)
+
+Normal setup does not require understanding every row below. The data remains available as evidence from the author's test PC and as a reference when diagnosing latency or stability.
+
+<div class="effect-reference"><details><summary><strong>Show complete ASIO, Windows Audio, OBS, and virtual-output results</strong><span>Latency, continuity, and long-duration stress tests</span></summary><div class="effect-reference__body">
+{% include audio-test-results-en.html %}
+</div></details></div>
 
 <small>VB-CABLE names, interfaces, and installers are products of VB-Audio Software. Screenshots are included only to explain the installation steps.</small>

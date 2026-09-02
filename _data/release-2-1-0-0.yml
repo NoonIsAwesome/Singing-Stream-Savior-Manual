@@ -1,4 +1,4 @@
-# 2.1.0.0 current-release data. changelog-page.html renders this entry before
+# 2.1.0.0 release data. changelog-page.html renders this entry before
 # the historical releases in releases.yml so the detailed five-language notes
 # remain maintainable in one file.
 release:

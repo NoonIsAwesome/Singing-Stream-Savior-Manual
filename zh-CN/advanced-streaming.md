@@ -40,9 +40,15 @@ published: true
 
 黄色信息有两种不同含义。**检查音频中断**表示检测到麦克风／监听 underrun、overrun、正式 Stream 路径中断，或设备正在中断／恢复；**检查音频时序**则要求同一 callback、时钟或延迟核算异常持续约 2 秒。单次瞬时 callback peak 不代表已经发生可听见的断音。将鼠标停在“稳定性”上，可查看各路径计数、设备恢复、callback peak／period 与异常标志。
 
-### 开发机实测与一般建议
+### 建议设置：普通用户先这样使用
 
-{% include audio-test-results-zh-CN.html %}
+> **最简单的起点是有音频接口时使用 ASIO、程序安全 Buffer 设为“自动（推荐）· 512 frames”，并在 OBS 使用专用音频来源。** 无需先阅读完整工程表格，也不用手动测试每一种 Buffer。
+
+- 音频接口提供原厂 ASIO 时优先使用；接口 hardware buffer 保持已经稳定的设置，常见起点为 128 或 256 frames。它与 App Buffer 是两个独立设置。
+- 没有 ASIO 时选择 Windows Audio，App Buffer 先保持自动 512，不要一开始就强制使用 128／256。
+- 只有希望降低软件 Dry 监听延迟时才运行“完整检查”；仅在检查建议 256 时直接应用。演唱主监听仍优先使用音频接口的 Direct Monitor。
+- OBS 优先使用 Singing Stream Savior 专用音频来源；只有其他程序也需要完整 Mix 时才使用 VB-CABLE 等虚拟音频设备。
+- 开播前运行一次快速检查并录制短片。状态变黄、计数持续增加或确实听到爆音时，先停止直播再运行完整检查，必要时改用 1024。
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>创建并编辑人声 Profiles</h2><p>每个 Profile 都是一条可重复使用的人声效果链。可以加入内置效果或 VST3 Plugin、拖动调整处理顺序、暂时停用单个 Block，并在保存前试听。</p></div>
@@ -187,5 +193,13 @@ Singing Stream Savior → 虚拟音频线 → OBS／Discord
 - 确认安装程序在完整解压后以管理员身份运行。
 - 在 Singing Stream Savior 的虚拟输出设置中点击 **刷新设备**。
 - 关闭可能占用音频设备的程序；仍然找不到时，请参阅 [VB-Audio 官方参考手册](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf)。
+
+## 开发机完整测试数据（补充）
+
+普通设置无需逐行理解以下工程数据；这些内容保留为作者电脑上的版本测试证据，并供排查延迟或稳定性时参考。
+
+<div class="effect-reference"><details><summary><strong>展开 ASIO、Windows Audio、OBS 与虚拟音频完整测试表</strong><span>延迟、连续性与长时间压力测试</span></summary><div class="effect-reference__body">
+{% include audio-test-results-zh-CN.html %}
+</div></details></div>
 
 <small>VB-CABLE 名称、界面与安装程序属于 VB-Audio Software。此处截图仅用于说明安装步骤。</small>

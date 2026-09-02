@@ -26,6 +26,8 @@
 - `keyboard-shortcuts.png`：鍵盤快捷鍵設定頁與依模式分類的全域快捷鍵
 - `system-resource-status.png`：未停留游標時的 CPU／記憶體收合摘要；音訊健康資訊位於 hover Tooltip
 - `live-timeline-card.jpg`：實際直播畫面中的 Now Singing、Next On 與歌曲時間戳，用於首頁功能卡片
+- `bgm-playlist.png`：展開後的背景音樂播放清單，顯示備註、來源與目前播放項目
+- `reserve-list.png`、`reserve-display-setting.png`、`reserve-overlay-next.png`、`reserve-overlay-multiple.png`：待播／已唱清單、OBS 顯示選項，以及 Next On 與 Reserve 的實際呈現
 - `advanced-streaming/13-obs-add-s3s-audio-source.png` 至 `22-audio-routing-signal-graph.png`：進階直播模式、OBS 外掛、虛擬音源、OBS 混音器與直播輸出裝置選擇的逐步設定圖
 - `advanced-streaming/23-system-resource-status-expanded.png`：主視窗 CPU／RAM 與進階音訊健康 Tooltip 的完整欄位，用於判讀教學
 

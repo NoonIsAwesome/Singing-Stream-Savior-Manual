@@ -100,7 +100,7 @@ Version 2.1 maps both BGM and karaoke volume through a more perceptual loudness 
 
 The app remembers the adjusted speed and key separately for every song. When you switch away and return, that song’s preferred settings are restored; use the reset controls to return to `100%` speed and `0` semitones. These adjustments affect playback only and never rewrite or reduce the quality of the source file.
 
-The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** when managing viewer requests or songs you plan to sing later. Supported themes show the first reserved song in **Next On**, or several reserved songs in **Reserve**. Completed songs move to **History**. History is cleared after a normal app exit; after an unexpected interruption, the recovery snapshot can restore the queue and History for that live session.
+The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** for viewer requests or a prepared running order, drag its rows to reorder them, or double-click a queued row to start it. In Playlist Appearance, enable **Show Reserve in OBS**, then choose **Next song only** or a limit of 2, 3, 5, or 10. One song is labelled **Next On**; a multi-song list is labelled **Reserve**, unless the selected theme supports only one presentation. Completed songs move to **History**. History is cleared after a normal app exit; after an unexpected interruption, the recovery snapshot can restore the queue and History for that live session.
 
 <a id="lyrics"></a>
 ## 03 · Lyrics
@@ -160,7 +160,7 @@ The theme canvas does not restrict how the Browser Source must be used. In OBS, 
 | **History** | Set List font, size, color, numbering, bold/italic/underline, alignment, and list scroll speed |
 | **Reserve** | Separate Reserve/Next On font, size, color, numbering, style, and alignment |
 
-You can also enable Reserve, choose a 1–10 song display limit, and—when OBS WebSocket is enabled—show timestamps before sung songs in supported Set Lists. Timestamps are not added to Reserve or Next On.
+You can also enable Reserve, choose **Next song only** or a 2-, 3-, 5-, or 10-song display limit, and—when OBS WebSocket is enabled—show timestamps before sung songs in supported Set Lists. Timestamps are not added to Reserve or Next On.
 
 Preview-only tools provide transparent, dark, light, custom-color, or image backgrounds; image fit/fill/stretch; and temporary source sizing/positioning. They never change the transparent OBS output. Unsupported controls are hidden rather than merely disabled. Default exposes the broadest typography and layout controls; legacy Transparent Black/White retain Current and History typography controls; both v2 themes, Signal Line, and Stage Caption expose their supported color/opacity controls.
 

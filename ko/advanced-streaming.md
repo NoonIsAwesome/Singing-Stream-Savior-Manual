@@ -40,9 +40,15 @@ published: true
 
 노란색 메시지는 두 가지 의미로 나뉩니다. **드롭아웃 확인**은 마이크／모니터 underrun 또는 overrun, 정식 Stream 경로의 불연속, 장치 중단／복구가 감지되었을 때 표시됩니다. **오디오 타이밍 확인**은 동일한 callback, 클록 또는 지연 계산 이상이 약 2초 동안 지속될 때 표시됩니다. 순간적인 callback peak 한 번만으로 실제 들리는 드롭아웃이 발생했다고 판단하지 않습니다. 안정성 텍스트에 포인터를 두면 경로별 카운터, 장치 복구, callback peak／period와 이상 플래그를 확인할 수 있습니다.
 
-### 개발 PC 실측값과 일반 권장
+### 일반 사용자를 위한 권장 시작 설정
 
-{% include audio-test-results-ko.html %}
+> **가장 간단한 시작점은 지원 인터페이스에서 ASIO, 앱 안전 Buffer는 자동(권장) · 512 frames, OBS는 전용 오디오 소스입니다.** 처음부터 기술 표를 읽거나 모든 Buffer를 직접 시험할 필요는 없습니다.
+
+- 제조사 ASIO가 있으면 우선 사용하고 인터페이스 hardware buffer는 이미 안정적인 값(보통 128 또는 256 frames)을 유지합니다. App Buffer와는 별도 설정입니다.
+- ASIO가 없으면 Windows Audio와 자동 512를 사용하며 처음부터 128／256을 강제로 선택하지 않습니다.
+- 소프트웨어 Dry Monitor 지연을 더 줄이고 싶을 때만 전체 점검을 실행하고, 점검이 권장할 때만 256을 적용합니다. 노래의 주 모니터는 Direct Monitor를 우선합니다.
+- OBS는 Singing Stream Savior 전용 오디오 소스를 우선하고, 다른 앱에도 완전한 Mix가 필요할 때만 가상 케이블을 사용합니다.
+- 방송 전 빠른 점검과 짧은 OBS 녹화를 실행합니다. 노란 상태, 계속 증가하는 카운터 또는 들리는 끊김이 있으면 방송을 멈추고 전체 점검을 실행하며 필요하면 1024를 사용합니다.
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>음성 Profiles 만들기 및 편집</h2><p>Profile은 재사용할 수 있는 보컬 효과 체인입니다. 내장 효과 또는 VST3 Plugin을 추가하고, Block 순서를 드래그해 바꾸며, 개별 Block을 우회하고 저장 전에 미리 들을 수 있습니다.</p></div>
@@ -177,5 +183,13 @@ Singing Stream Savior → 가상 오디오 케이블 → OBS／Discord
 - 완전히 압축을 푼 폴더에서 관리자 권한으로 Setup을 실행했는지 확인하세요.
 - Singing Stream Savior의 가상 출력 설정에서 **장치 새로 고침**을 누르세요.
 - 오디오 장치를 사용 중인 앱을 닫으세요. 계속 보이지 않으면 [VB-Audio 공식 참조 설명서](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf)를 확인하세요.
+
+## 개발 PC 전체 테스트 데이터(참고)
+
+일반 설정에서는 아래 기술 데이터를 행마다 이해할 필요가 없습니다. 작성자 PC의 버전 테스트 근거와 지연／안정성 문제를 자세히 확인할 때의 참고 자료로 남겨 둡니다.
+
+<div class="effect-reference"><details><summary><strong>ASIO, Windows Audio, OBS 및 가상 출력 전체 결과 보기</strong><span>지연, 연속성 및 장시간 스트레스 테스트</span></summary><div class="effect-reference__body">
+{% include audio-test-results-ko.html %}
+</div></details></div>
 
 <small>VB-CABLE 이름, 화면과 설치 프로그램은 VB-Audio Software의 제품입니다. 스크린샷은 설치 단계 설명 목적으로만 사용합니다.</small>

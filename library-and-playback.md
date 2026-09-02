@@ -106,7 +106,12 @@ translation_key: library-and-playback
     </ul>
   </div>
 
-  {% include localized-release-screenshot.html name="bgm-playlist.png" alt="2.1 展開的 BGM 播放清單" caption="展開 BGM 清單後，可直接辨認備註、來源與正在播放的項目。" %}
+  <figure class="manual-figure manual-figure--portrait">
+    <a href="assets/images/bgm-playlist.png">
+      <img src="assets/images/bgm-playlist.png" alt="2.1 展開的 BGM 播放清單，顯示備註、來源與正在播放的項目" loading="lazy" decoding="async">
+    </a>
+    <figcaption>展開 BGM 清單後，可直接辨認每首背景音樂的備註與來源；藍色項目是目前正在播放的 BGM。</figcaption>
+  </figure>
 </section>
 
 ## 無伴奏演出
@@ -183,5 +188,14 @@ BGM 播放器有獨立的播放、暫停、停止、循環、靜音、音量與�
 3. 拖曳調整演唱順序。
 
 支援待播顯示的主題會將第一首待播歌曲顯示在 **Next On**，或把數首待播歌曲顯示在 **Reserve**。是否顯示及顯示數量可在「歌單外觀」設定；不建立待播清單不會影響直接播放歌曲。
+
+<figure class="manual-figure manual-figure--medium">
+  <a href="assets/images/reserve-list.png">
+    <img src="assets/images/reserve-list.png" alt="直播操作頁的待播與已唱清單，兩首待播歌曲顯示已就緒" loading="lazy" decoding="async">
+  </a>
+  <figcaption>「待播」依演唱順序列出已排入的歌曲；可拖曳重新排序，也可直接雙擊其中一首開始播放。歌曲完成後會移到旁邊的「已唱」。</figcaption>
+</figure>
+
+> **待播是軟體內的演唱順序；Next On／Reserve 是 OBS 的顯示方式。** 兩者使用同一份待播資料，不需要建立兩份清單。OBS 顯示開關、數量與主題限制請接著參考「歌單外觀與 OBS」章節。
 
 [上一頁：安裝、啟動與建立專案](getting-started.md) · [下一頁：歌詞、同步歌詞與日文讀音](lyrics.md)

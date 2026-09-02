@@ -40,9 +40,15 @@ published: true
 
 黄色の表示には 2 種類あります。**ドロップアウトを確認**は、マイク／モニターの underrun・overrun、正式な Stream 経路の不連続、またはデバイスの中断／復旧を検出した場合に表示します。**オーディオタイミングを確認**は、同じ callback、クロック、遅延計算の異常が約 2 秒続いた場合に表示します。一度だけの瞬間的な callback peak は、聞こえるドロップアウトが発生した証拠ではありません。「安定性」にポインターを置くと、各経路のカウンター、デバイス復旧、callback peak／period、異常フラグを確認できます。
 
-### 開発機での実測値と一般推奨
+### 一般ユーザー向けの推奨開始設定
 
-{% include audio-test-results-ja.html %}
+> **最も簡単な開始点は、対応インターフェースでは ASIO、アプリ安全 Buffer は「自動（推奨）・512 frames」、OBS は専用音声ソースです。** 最初から技術表を読んだり、すべての Buffer を手動で試したりする必要はありません。
+
+- メーカー製 ASIO がある場合は優先して使い、インターフェースの hardware buffer は既に安定している値（一般には 128 または 256 frames）を維持します。App Buffer とは別設定です。
+- ASIO がない場合は Windows Audio と自動 512 を使い、最初から 128／256 を強制しません。
+- ソフトウェア Dry Monitor をさらに短くしたい場合だけ完全チェックを実行し、推奨された場合だけ 256 を適用します。歌唱の主モニターには Direct Monitor を優先します。
+- OBS は Singing Stream Savior 専用音声ソースを優先し、他アプリにも完全 Mix が必要な場合だけ仮想ケーブルを使います。
+- 配信前にクイックチェックと短い OBS 録画を行い、黄色状態、増え続けるカウンター、聞こえる途切れがある場合は配信を止めて完全チェックを実行し、必要なら 1024 を使います。
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">VOICE CHAIN</p><h2>音声 Profiles を作成・編集する</h2><p>Profile は再利用できるボーカルエフェクトチェーンです。内蔵エフェクトや VST3 Plugin を追加し、Block の順序変更、一時バイパス、試聴を行ってから保存できます。</p></div>
@@ -177,5 +183,13 @@ Singing Stream Savior → 仮想オーディオケーブル → OBS／Discord
 - 完全に展開したフォルダーから、管理者として Setup を実行したか確認します。
 - Singing Stream Savior の仮想出力設定で**デバイスを更新**します。
 - オーディオデバイスを使用中のアプリを閉じます。解決しない場合は [VB-Audio 公式リファレンスマニュアル](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf)を参照してください。
+
+## 開発機の完全なテストデータ（補足）
+
+通常設定で以下の技術データを一行ずつ理解する必要はありません。作者 PC でのテスト証拠と、遅延／安定性を詳しく調べる場合の参考として残しています。
+
+<div class="effect-reference"><details><summary><strong>ASIO、Windows Audio、OBS、仮想出力の完全な結果を表示</strong><span>遅延、連続性、長時間ストレス試験</span></summary><div class="effect-reference__body">
+{% include audio-test-results-ja.html %}
+</div></details></div>
 
 <small>VB-CABLE の名称、画面、インストーラーは VB-Audio Software の製品です。スクリーンショットは手順説明のために掲載しています。</small>

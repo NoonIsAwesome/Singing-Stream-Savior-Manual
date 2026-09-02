@@ -64,7 +64,12 @@ translation_key: workspace-modes
 
 如果直播時不需要保留主視窗，可在設定中讓關閉按鈕改為「縮到系統通知區」。程式與播放流程會繼續在背景執行；在工作列通知區對歌回救星圖示按右鍵，即可依目前狀態操作播放／暫停、停止、從頭播放、Key、速度、Profile、麥克風靜音／恢復、歌詞視窗與 Meter。選擇選單底部的「關閉軟體」才會完整結束主程式與相關 helper。
 
-{% include localized-release-screenshot.html name="notification-area-menu.png" alt="歌回救星未播放時的 Windows 系統通知區右鍵選單" caption="未播放時只顯示精簡項目；播放伴奏或開啟進階直播模式後，選單會依狀態增加播放、Key、速度、Profile、麥克風與 Meter 操作。" size="medium" %}
+<figure class="manual-figure manual-figure--medium">
+  <a href="assets/images/notification-area-menu.png">
+    <img src="assets/images/notification-area-menu.png" alt="歌回救星未播放時的 Windows 系統通知區右鍵選單" loading="lazy" decoding="async">
+  </a>
+  <figcaption>未播放時只顯示精簡項目；播放伴奏或開啟進階直播模式後，選單會依狀態增加播放、Key、速度、Profile、麥克風與 Meter 操作。</figcaption>
+</figure>
 
 ## 視窗配置記憶
 

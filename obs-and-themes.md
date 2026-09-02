@@ -86,8 +86,15 @@ translation_key: obs-and-themes
 ### 待播與時間戳選項
 
 - **在 OBS 顯示待播清單：** 讓支援的主題顯示 Reserve 或 Next On。
-- **顯示數量：** 設定 OBS 最多顯示 1–10 首待播歌曲；若主題只提供 Next On，畫面只會顯示下一首。
+- **顯示數量：** 可選「只顯示下一首」或顯示 2、3、5、10 首；若主題本身只提供 Next On，無論選擇多少都只會顯示下一首。
 - **在歌單中顯示時間：** 僅在啟用 OBS WebSocket 後出現。開啟後，支援的 Set List 會在已唱歌曲前顯示直播時間戳；時間不會加在 Reserve 或 Next On 前面。
+
+<figure class="manual-figure manual-figure--compact">
+  <a href="assets/images/reserve-display-setting.png">
+    <img src="assets/images/reserve-display-setting.png" alt="歌單外觀頁的在 OBS 顯示待播清單開關與只顯示下一首選項" loading="lazy" decoding="async">
+  </a>
+  <figcaption>先開啟「在 OBS 顯示待播清單」，再從右側選單決定只顯示下一首，或最多顯示 2、3、5、10 首。</figcaption>
+</figure>
 
 ### 即時預覽工具
 
@@ -157,13 +164,28 @@ Default 主題預設使用白色預覽背景；透明主題與精緻主題可使
 
 ## Reserve 與 Next On
 
-開啟「在 OBS 顯示待播清單」後，可設定最多顯示幾首歌曲。不同主題的呈現方式不同：
+開啟「在 OBS 顯示待播清單」後，可設定最多顯示幾首歌曲。這只改變 OBS Overlay 的呈現數量，不會刪除、複製或改變軟體內的待播順序。不同主題的呈現方式如下：
 
-- Reserve：顯示多首待播。
-- Next On：只顯示下一首。
+- **Next On：** 選擇「只顯示下一首」時，只取待播清單第一首；標題會顯示 Next On。
+- **Reserve：** 選擇 2、3、5 或 10 首時，最多顯示對應數量；待播較少時只顯示實際存在的歌曲。
 - 不支援待播的主題：維持 Now Singing 或 Set List 版面。
 
 待播清單不是播放歌曲的必要條件。它主要用於觀眾點歌或預排接下來要唱的歌曲；若沒有建立待播，仍可在歌曲表格雙擊歌曲直接播放。
+
+<div class="feature-shot-grid">
+  <figure class="manual-figure">
+    <a href="assets/images/reserve-overlay-next.png">
+      <img src="assets/images/reserve-overlay-next.png" alt="OBS 歌單 Overlay 以 Next On 顯示第一首待播歌曲" loading="lazy" decoding="async">
+    </a>
+    <figcaption>只顯示下一首：OBS 使用 Next On，只呈現待播清單第一首。</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="assets/images/reserve-overlay-multiple.png">
+      <img src="assets/images/reserve-overlay-multiple.png" alt="OBS 歌單 Overlay 以 Reserve 顯示多首待播歌曲" loading="lazy" decoding="async">
+    </a>
+    <figcaption>顯示多首：OBS 使用 Reserve，依設定上限列出待播歌曲。</figcaption>
+  </figure>
+</div>
 
 ## 歌詞畫面
 
