@@ -1,12 +1,12 @@
 ﻿# 發布正式檔案後，只要更新這裡的連結與版本即可。
 software:
-  version: "2.1.0.3"
+  version: "2.1.1.0"
   launcher_version: "1.2.0.1"
-  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.1.0.3/Singing.Stream.Savior.2.1.0.3.zip"
-  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.0.3"
-  file_size: "415 MB"
-  sha256: "6c2c912c6bb5b52cab007d4edd58ed89d398b469713e7427e6dd622948b395a4"
-  updated_at: "2026-09-03"
+  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.1.1.0/Singing.Stream.Savior.2.1.1.0.zip"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.1.0"
+  file_size: "534 MB"
+  sha256: "f32e34ba2b28eb1aa254a272006a2a0cb32c95115ab4d88da49207fa9948987a"
+  updated_at: "2026-09-04"
 
 support:
   ecpay_url: "https://p.ecpay.com.tw/3604623"
