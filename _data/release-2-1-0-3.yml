@@ -1,0 +1,43 @@
+release:
+  version: "2.1.0.3"
+  date: "2026-09-03"
+  latest: true
+  type:
+    zh-TW: 歌單、狀態訊息與啟動器熱修正
+    zh-CN: 歌单、状态消息与启动器热修复
+    ja: プレイリスト・ステータス・Launcher のホットフィックス
+    ko: 재생 목록·상태 메시지·Launcher 핫픽스
+    en: Playlist, status, and launcher hotfix
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.0.3"
+  summary:
+    zh-TW: 修正歌單拖曳與狀態訊息顯示問題，並隨附更新畫面更穩定的啟動器 1.2.0.1。
+    zh-CN: 修复歌单拖动与状态消息显示问题，并附带更新画面更稳定的启动器 1.2.0.1。
+    ja: プレイリストの並べ替えとステータス表示を修正し、更新画面の描画を安定させた Launcher 1.2.0.1 を同梱します。
+    ko: 재생 목록 순서 변경과 상태 메시지 표시 문제를 수정하고, 업데이트 화면 렌더링이 더 안정적인 Launcher 1.2.0.1을 포함합니다.
+    en: Hotfixes playlist reordering and status visibility, and includes Launcher 1.2.0.1 with steadier update rendering.
+  items:
+    zh-TW:
+      - 修正歌曲列表拖曳時，藍色插入線與放開後實際落點不一致的問題。
+      - 將 YouTube 載入與播放訊息移至主畫面左下角的狀態區，不再於播放器進度條下方顯示載入文字，並恢復其他播放狀態訊息。
+      - 迷你模式的長狀態訊息新增由頭到尾、回到開頭再重播的單向跑馬燈；監聽來源選單也改用相同行為，不再反向回彈。
+      - 啟動器 1.2.0.1 減少處理更新資料時的 icon 閃爍，以及滑動更新資訊時的卡片區域閃爍。
+    zh-CN:
+      - 修复歌曲列表拖动时，蓝色插入线与松开后实际落点不一致的问题。
+      - 将 YouTube 加载与播放消息移至主界面左下角的状态区，不再于播放器进度条下方显示加载文字，并恢复其他播放状态消息。
+      - 迷你模式的长状态消息新增从头到尾、回到开头后重新播放的单向跑马灯；监听来源选择框也改用相同行为，不再反向回弹。
+      - 启动器 1.2.0.1 减少处理更新数据时的图标闪烁，以及滚动更新信息时的卡片区域闪烁。
+    ja:
+      - 曲をドラッグして並べ替えるとき、青い挿入ラインとドロップ後の実際の位置が一致しない問題を修正しました。
+      - YouTube の読み込み・再生メッセージをプレイヤー下部ではなくメイン画面左下のステータス領域に移動し、その他の再生ステータスも再び表示されるようにしました。
+      - ミニモードの長いステータスメッセージに、先頭から末尾へ進み、先頭に戻って繰り返す一方向マーキーを追加しました。モニターソース選択欄も、逆方向へ戻らない同じ動作に変更しました。
+      - Launcher 1.2.0.1 では、更新データ処理中のアイコンのちらつきと、更新情報をスクロールしたときのカード領域のちらつきを軽減しました。
+    ko:
+      - 곡을 끌어 순서를 바꿀 때 파란색 삽입선과 놓은 뒤의 실제 위치가 일치하지 않던 문제를 수정했습니다.
+      - YouTube 로딩 및 재생 메시지를 플레이어 아래가 아닌 메인 화면 왼쪽 아래 상태 영역으로 옮기고, 다른 재생 상태 메시지도 다시 표시되도록 했습니다.
+      - 미니 모드의 긴 상태 메시지에 처음부터 끝까지 이동한 뒤 처음으로 돌아가 반복하는 단방향 마키를 추가했습니다. 모니터 소스 선택 상자도 뒤로 되돌아가지 않는 같은 방식으로 변경했습니다.
+      - Launcher 1.2.0.1은 업데이트 데이터를 처리할 때의 아이콘 깜박임과 업데이트 정보를 스크롤할 때의 카드 영역 깜박임을 줄였습니다.
+    en:
+      - Fixes the playlist drag indicator and the actual dropped position disagreeing when a song is moved between other songs.
+      - Moves YouTube loading and playback messages to the main window's lower-left status area instead of showing a loading label below the player, and restores other playback status messages there.
+      - Adds a one-way, start-to-end marquee for long status messages in Mini mode. The Monitor source selector now uses the same reset-to-start behavior instead of bouncing backward.
+      - Launcher 1.2.0.1 reduces icon flicker while update data is processed and card-area flicker while release notes are scrolled.

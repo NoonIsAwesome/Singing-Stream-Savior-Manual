@@ -1,7 +1,7 @@
 release:
   version: "2.1.0.2"
   date: "2026-09-02"
-  latest: true
+  latest: false
   type:
     zh-TW: 一般播放器音訊路由改善
     zh-CN: 一般播放器音频路由改善
