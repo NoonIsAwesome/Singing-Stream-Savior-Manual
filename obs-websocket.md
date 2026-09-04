@@ -27,17 +27,17 @@ OBS WebSocket 預設關閉，可提供以下功能：
 7. 關閉連線資訊視窗後，按「確定」儲存並關閉設定。
 
 <figure class="manual-figure manual-figure--small">
-  <a href="{{ '/assets/images/obs-websocket-tools-menu.jpg' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-tools-menu.jpg' | relative_url }}" alt="OBS Studio 工具選單中的 WebSocket 伺服器設定" loading="lazy" decoding="async"></a>
+  <a href="assets/images/obs-websocket-tools-menu.jpg"><img src="assets/images/obs-websocket-tools-menu.jpg" alt="OBS Studio 工具選單中的 WebSocket 伺服器設定" loading="lazy" decoding="async"></a>
   <figcaption>在 OBS Studio 的「工具」選單開啟「WebSocket 伺服器設定」。</figcaption>
 </figure>
 
 <div class="figure-grid">
   <figure class="manual-figure">
-    <a href="{{ '/assets/images/obs-websocket-server-settings-redacted.png' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-server-settings-redacted.png' | relative_url }}" alt="OBS WebSocket 伺服器設定，伺服器密碼已遮蔽" loading="lazy" decoding="async"></a>
+    <a href="assets/images/obs-websocket-server-settings-redacted.png"><img src="assets/images/obs-websocket-server-settings-redacted.png" alt="OBS WebSocket 伺服器設定，伺服器密碼已遮蔽" loading="lazy" decoding="async"></a>
     <figcaption>啟用伺服器與驗證、維持連接埠 4455，再按「顯示連線資訊」。範例中的密碼已永久遮蔽。</figcaption>
   </figure>
   <figure class="manual-figure">
-    <a href="{{ '/assets/images/obs-websocket-connection-info-redacted.png' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-connection-info-redacted.png' | relative_url }}" alt="OBS WebSocket 連線資訊，IP、伺服器密碼與 QR code 已遮蔽" loading="lazy" decoding="async"></a>
+    <a href="assets/images/obs-websocket-connection-info-redacted.png"><img src="assets/images/obs-websocket-connection-info-redacted.png" alt="OBS WebSocket 連線資訊，IP、伺服器密碼與 QR code 已遮蔽" loading="lazy" decoding="async"></a>
     <figcaption>從連線資訊複製密碼；同一台電腦連線時主機填 127.0.0.1。範例中的 IP、密碼與 QR code 均已永久遮蔽。</figcaption>
   </figure>
 </div>

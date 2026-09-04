@@ -189,22 +189,22 @@ BGM 播放器有獨立的播放、暫停、停止、循環、靜音、音量與�
   </thead>
   <tbody>
     <tr>
-      <td><span class="playback-mode-icon"><img src="{{ '/assets/images/karaoke-mode-play-once.svg' | relative_url }}" alt="單次播放按鈕圖示"></span></td>
+      <td><span class="playback-mode-icon"><img src="assets/images/karaoke-mode-play-once.svg" alt="單次播放按鈕圖示"></span></td>
       <td><strong>單次播放</strong></td>
       <td>目前歌曲播放一次。自然播完或按停止後移入已唱，接著恢復先前的 BGM。</td>
     </tr>
     <tr>
-      <td><span class="playback-mode-icon"><img src="{{ '/assets/images/karaoke-mode-repeat-one.svg' | relative_url }}" alt="單曲循環按鈕圖示"></span></td>
+      <td><span class="playback-mode-icon"><img src="assets/images/karaoke-mode-repeat-one.svg" alt="單曲循環按鈕圖示"></span></td>
       <td><strong>單曲循環</strong></td>
       <td>持續重播目前歌曲；每一輪結束不會重複加入已唱。最後按停止時才移入已唱一次，並恢復 BGM。</td>
     </tr>
     <tr>
-      <td><span class="playback-mode-icon"><img src="{{ '/assets/images/karaoke-mode-reserve-sequential.svg' | relative_url }}" alt="全曲依序自動播放按鈕圖示"></span></td>
+      <td><span class="playback-mode-icon"><img src="assets/images/karaoke-mode-reserve-sequential.svg" alt="全曲依序自動播放按鈕圖示"></span></td>
       <td><strong>全曲依序自動播放</strong></td>
       <td>依待播順序逐首播放；每首完成後移入已唱並接著播放下一首。整份待播清單播完才停止並恢復 BGM。</td>
     </tr>
     <tr>
-      <td><span class="playback-mode-icon"><img src="{{ '/assets/images/karaoke-mode-reserve-shuffle.svg' | relative_url }}" alt="全曲隨機播放按鈕圖示"></span></td>
+      <td><span class="playback-mode-icon"><img src="assets/images/karaoke-mode-reserve-shuffle.svg" alt="全曲隨機播放按鈕圖示"></span></td>
       <td><strong>全曲隨機播放</strong></td>
       <td>從剩餘待播歌曲中隨機選擇；完成的歌曲會移入已唱，不會在同一輪重複抽到。全部播完後停止並恢復 BGM。</td>
     </tr>

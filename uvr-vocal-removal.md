@@ -15,15 +15,15 @@ translation_key: uvr-vocal-removal
 
   <div class="release-preview-gallery">
     <figure class="manual-figure release-preview-gallery__wide">
-      <a href="{{ '/assets/images/uvr-processing-redacted.png' | relative_url }}"><img src="{{ '/assets/images/uvr-processing-redacted.png' | relative_url }}" alt="UVR 人聲消除正在以 GPU 處理一首 YouTube 歌曲" loading="lazy" decoding="async"></a>
+      <a href="assets/images/uvr-processing-redacted.png"><img src="assets/images/uvr-processing-redacted.png" alt="UVR 人聲消除正在以 GPU 處理一首 YouTube 歌曲" loading="lazy" decoding="async"></a>
       <figcaption>單曲狀態與底部總進度會同步更新；處理中可隨時「全部停止」。範例中的輸出資料夾路徑已永久遮蔽。</figcaption>
     </figure>
     <figure class="manual-figure">
-      <a href="{{ '/assets/images/uvr-completed-redacted.png' | relative_url }}"><img src="{{ '/assets/images/uvr-completed-redacted.png' | relative_url }}" alt="UVR 人聲消除完成並可匯入歌曲列表" loading="lazy" decoding="async"></a>
+      <a href="assets/images/uvr-completed-redacted.png"><img src="assets/images/uvr-completed-redacted.png" alt="UVR 人聲消除完成並可匯入歌曲列表" loading="lazy" decoding="async"></a>
       <figcaption>全部處理完成後，可逐首匯入或使用右下角的「全部匯入歌曲列表」。</figcaption>
     </figure>
     <figure class="manual-figure">
-      <a href="{{ '/assets/images/uvr-imported-redacted.png' | relative_url }}"><img src="{{ '/assets/images/uvr-imported-redacted.png' | relative_url }}" alt="UVR 伴奏已成功匯入歌曲列表" loading="lazy" decoding="async"></a>
+      <a href="assets/images/uvr-imported-redacted.png"><img src="assets/images/uvr-imported-redacted.png" alt="UVR 伴奏已成功匯入歌曲列表" loading="lazy" decoding="async"></a>
       <figcaption>匯入完成後，主視窗左下角會顯示結果；列表中的狀態也會改為「已匯入歌曲列表」。</figcaption>
     </figure>
   </div>
