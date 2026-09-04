@@ -97,64 +97,56 @@ translation_key: home
     <p>功能不是彼此分離的工具，而是從準備歌曲、開始演唱到更新 OBS 畫面的同一條工作流程。</p>
   </div>
   <div class="feature-grid">
-    <article class="feature-card feature-card--signal">
-      <span class="feature-card__label">播放協調</span>
-      <h3>BGM 與伴奏自動交接</h3>
-      <p>請先選擇 BGM 並開始播放。伴奏開始時會自動暫停或淡出 BGM；伴奏停止或播放完畢後，會自動恢復原本的背景音樂。</p>
+    <article class="feature-card feature-card--signal feature-card--illustrated">
+      <a class="feature-card__visual" href="{{ '/assets/images/bgm-playlist.png' | relative_url }}"><img src="{{ '/assets/images/bgm-playlist.png' | relative_url }}" alt="背景音樂播放器正在播放 BGM，並顯示循環播放清單與控制按鈕" loading="lazy" decoding="async"></a>
+      <div class="feature-card__body"><span class="feature-card__label">播放協調</span><h3>BGM 與伴奏自動交接</h3><p>請先選擇 BGM 並開始播放。伴奏開始時會自動暫停或淡出 BGM；伴奏停止或播放完畢後，會自動恢復原本的背景音樂。</p></div>
     </article>
-    <article class="feature-card">
-      <span class="feature-card__label">歌曲與待播</span>
-      <h3>整理歌曲，也保留臨場彈性</h3>
-      <p>建立歌曲庫、自訂歌單、我的最愛與待播順序。可以直接播放伴奏，也能建立清唱或自彈自唱使用的無伴奏演出。</p>
+    <article class="feature-card feature-card--illustrated">
+      <a class="feature-card__visual" href="{{ '/assets/images/song-library.png' | relative_url }}"><img src="{{ '/assets/images/song-library.png' | relative_url }}" alt="歌曲庫顯示歌單、搜尋欄與多首歌曲" loading="lazy" decoding="async"></a>
+      <div class="feature-card__body"><span class="feature-card__label">歌曲與待播</span><h3>整理歌曲，也保留臨場彈性</h3><p>建立歌曲庫、自訂歌單、我的最愛與待播順序。可以直接播放伴奏，也能建立清唱或自彈自唱使用的無伴奏演出。</p></div>
     </article>
-    <article class="feature-card">
-      <span class="feature-card__label">OBS 歌單</span>
-      <h3>切換主題，不必手動重打歌單</h3>
-      <p>選擇 Default、透明、Card、CD 或各種精緻主題，先用全自動展示確認完整狀態，再將畫面拖入 OBS；內容會依播放狀態更新。</p>
+    <article class="feature-card feature-card--illustrated">
+      <a class="feature-card__visual" href="{{ '/assets/images/theme-workspace.png' | relative_url }}"><img src="{{ '/assets/images/theme-workspace.png' | relative_url }}" alt="歌單外觀頁顯示多種 OBS 歌單主題與即時預覽" loading="lazy" decoding="async"></a>
+      <div class="feature-card__body"><span class="feature-card__label">OBS 歌單</span><h3>切換主題，不必手動重打歌單</h3><p>選擇 Default、透明、Card、CD 或各種精緻主題，先用全自動展示確認完整狀態，再將畫面拖入 OBS；內容會依播放狀態更新。</p></div>
     </article>
-    <article class="feature-card">
-      <span class="feature-card__label">歌詞</span>
-      <h3>自己看，也可以顯示給觀眾</h3>
-      <p>搜尋或匯入同步歌詞，使用可自由移動的「歌詞視窗」閱讀，也能建立 OBS 歌詞畫面。日文支援平假名與羅馬拼音，韓文也可顯示羅馬拼音。</p>
+    <article class="feature-card feature-card--illustrated">
+      <a class="feature-card__visual" href="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-manager-linked.png' | relative_url }}" alt="歌詞管理視窗顯示同步歌詞搜尋結果與已連結歌詞" loading="lazy" decoding="async"></a>
+      <div class="feature-card__body"><span class="feature-card__label">歌詞</span><h3>自己看，也可以顯示給觀眾</h3><p>搜尋或匯入同步歌詞，使用可自由移動的「歌詞視窗」閱讀，也能建立 OBS 歌詞畫面。日文支援平假名與羅馬拼音，韓文也可顯示羅馬拼音。</p></div>
     </article>
     <article class="feature-card">
       <span class="feature-card__label">伴奏來源</span>
       <h3>本機音檔與 YouTube 伴奏，放在同一個播放器</h3>
       <p>本機檔案與 YouTube 伴奏都在同一個播放器，並共用貼近日常播放器的感知音量曲線；YouTube 播放另有分階段備援，不必在播放器與瀏覽器之間切換。</p>
     </article>
-    <article class="feature-card">
-      <span class="feature-card__label">工作區</span>
-      <h3>完整、精簡、迷你三種模式</h3>
-      <p>準備直播時使用完整模式；開播後可縮成精簡或迷你模式。也能隱藏到 Windows 系統通知區，繼續用右鍵選單或全域快捷鍵控制直播。</p>
+    <article class="feature-card feature-card--illustrated">
+      <a class="feature-card__visual" href="{{ '/assets/images/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/compact-workspace.png' | relative_url }}" alt="精簡工作區顯示歌詞、BGM、伴奏與待播控制" loading="lazy" decoding="async"></a>
+      <div class="feature-card__body"><span class="feature-card__label">工作區</span><h3>完整、精簡、迷你三種模式</h3><p>準備直播時使用完整模式；開播後可縮成精簡或迷你模式。也能隱藏到 Windows 系統通知區，繼續用右鍵選單或全域快捷鍵控制直播。</p></div>
     </article>
     <article class="feature-card">
       <span class="feature-card__label">歌曲人聲</span>
       <h3>播放伴奏時，自動切換歌曲的人聲效果</h3>
       <p>每首歌可指定不同的麥克風 Profile；伴奏開始時自動套用，結束後回到聊天設定，也能在直播中手動切換。</p>
     </article>
-    <article class="feature-card">
-      <span class="feature-card__label">人聲 Profiles</span>
-      <h3>內建效果器與 VST3，組成自己的效果鏈</h3>
-      <p>使用噪音閥、壓縮器、EQ、Reverb、Delay、Shimmer 等 15 顆內建效果器，或加入 VST3；可調參數、Bypass 並拖曳處理順序。</p>
+    <article class="feature-card feature-card--illustrated">
+      <a class="feature-card__visual" href="{{ '/assets/images/profile-horizontal-rack.png' | relative_url }}"><img src="{{ '/assets/images/profile-horizontal-rack.png' | relative_url }}" alt="人聲 Profile 編輯器以橫向 Rack 顯示多顆效果器" loading="lazy" decoding="async"></a>
+      <div class="feature-card__body"><span class="feature-card__label">人聲 Profiles</span><h3>內建效果器與 VST3，組成自己的效果鏈</h3><p>使用噪音閥、壓縮器、EQ、Reverb、Delay、Shimmer 等 15 顆內建效果器，或加入 VST3；可調參數、Bypass 並拖曳處理順序。</p></div>
     </article>
-    <article class="feature-card">
-      <span class="feature-card__label">直播音訊</span>
-      <h3>把伴奏與人聲混合後直接送到 OBS</h3>
-      <p>支援 ASIO、Windows Audio、OBS 專用音訊外掛與虛擬音源；Final Mix、OBS 與完整輸出錄音共用穩定且對齊的正式路徑。</p>
+    <article class="feature-card feature-card--illustrated">
+      <a class="feature-card__visual" href="{{ '/assets/images/audio-routing-bottom.png' | relative_url }}"><img src="{{ '/assets/images/audio-routing-bottom.png' | relative_url }}" alt="音訊路由圖顯示麥克風、Profile、直播混音、輸出與監聽" loading="lazy" decoding="async"></a>
+      <div class="feature-card__body"><span class="feature-card__label">直播音訊</span><h3>把伴奏與人聲混合後直接送到 OBS</h3><p>支援 ASIO、Windows Audio、OBS 專用音訊外掛與虛擬音源；Final Mix、OBS 與完整輸出錄音共用穩定且對齊的正式路徑。</p></div>
     </article>
     <article class="feature-card">
       <span class="feature-card__label">監聽與錄音</span>
       <h3>自己聽的內容，不必改變觀眾收到的訊號</h3>
       <p>可監聽或錄製伴奏、乾聲、濕聲與完整輸出；「伴奏＋乾聲」使用獨立低延遲 Cue，主監聽仍建議使用錄音介面的 Direct Monitor。</p>
     </article>
-    <article class="feature-card">
-      <span class="feature-card__label">Meter 與健檢</span>
-      <h3>查看音量、Buffer、延遲與斷訊</h3>
-      <p>五軌 Meter 顯示 Peak 與 Stream Output 的 LUFS-S；Buffer 健檢可比較穩定度、預估延遲並提供可直接套用的建議。</p>
+    <article class="feature-card feature-card--illustrated">
+      <a class="feature-card__visual" href="{{ '/assets/images/audio-health-check.png' | relative_url }}"><img src="{{ '/assets/images/audio-health-check.png' | relative_url }}" alt="音訊 Buffer 健檢結果顯示穩定度、延遲與建議設定" loading="lazy" decoding="async"></a>
+      <div class="feature-card__body"><span class="feature-card__label">Meter 與健檢</span><h3>查看音量、Buffer、延遲與斷訊</h3><p>五軌 Meter 顯示 Peak 與 Stream Output 的 LUFS-S；Buffer 健檢可比較穩定度、預估延遲並提供可直接套用的建議。</p></div>
     </article>
-    <article class="feature-card feature-card--media">
-      <a class="feature-card__media" href="{{ '/assets/images/live-timeline-card.jpg' | relative_url }}"><img src="{{ '/assets/images/live-timeline-card.jpg' | relative_url }}" alt="直播畫面中的 Now Singing、Next On 與歌曲時間戳" loading="lazy" decoding="async"></a>
-      <div class="feature-card__copy"><span class="feature-card__label">直播時間戳</span><h3>讓 Set List 顯示實際直播時間軸</h3><p>透過 OBS WebSocket 記錄每首伴奏開始的直播時間，並在支援的 Set List 顯示時間戳；一般歌單與歌詞不必啟用。</p></div>
+    <article class="feature-card feature-card--illustrated">
+      <a class="feature-card__visual" href="{{ '/assets/images/live-timeline-card.jpg' | relative_url }}"><img src="{{ '/assets/images/live-timeline-card.jpg' | relative_url }}" alt="直播畫面中的 Now Singing、Next On 與歌曲時間戳" loading="lazy" decoding="async"></a>
+      <div class="feature-card__body"><span class="feature-card__label">直播時間戳</span><h3>讓 Set List 顯示實際直播時間軸</h3><p>透過 OBS WebSocket 記錄每首伴奏開始的直播時間，並在支援的 Set List 顯示時間戳；一般歌單與歌詞不必啟用。</p></div>
     </article>
   </div>
 </section>

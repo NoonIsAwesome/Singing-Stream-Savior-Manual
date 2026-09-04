@@ -32,15 +32,16 @@ manual_bundle: true
   <div>
     <p class="chapter-quick-start__eyebrow">第一次打开</p>
     <h2 id="getting-started-quick-start">5 分钟完成第一次测试播放</h2>
-    <p class="chapter-quick-start__intro">按照下面的步骤，即可打开软件、播放第一首伴奏，并保存下次可以继续使用的项目。</p>
+    <p class="chapter-quick-start__intro">按照下面的步骤，即可打开软件、设置循环播放的 BGM、测试第一首伴奏，并保存下次可以继续使用的项目。</p>
     <ol class="chapter-quick-start__steps">
       <li><div><strong>完整解压 ZIP</strong><span>将文件解压到普通文件夹，不要直接在 ZIP 中运行软件。</span></div></li>
       <li><div><strong>打开主程序</strong><span>在最外层文件夹双击 <code>Singing Stream Savior.exe</code>。</span></div></li>
       <li><div><strong>新建项目</strong><span>选择“文件 &gt; 新建项目”。</span></div></li>
+      <li><div><strong>添加直播 BGM</strong><span>从 BGM 播放器选择本地文件或粘贴 YouTube 链接，也可直接把文件／链接拖进播放器；载入后会自动开始循环播放。</span></div></li>
       <li><div><strong>加入并播放一首歌</strong><span>把本地音频或单个 YouTube 链接拖进歌曲表格，再双击该歌曲。</span></div></li>
       <li><div><strong>保存项目</strong><span>选择“文件 &gt; 保存”，建立一个 <code>.bgmsproj</code> 文件。</span></div></li>
     </ol>
-    <p class="chapter-quick-start__done"><strong>完成时：</strong>伴奏播放器会显示歌名与进度并开始播放；保存后，窗口标题中的 <code>*</code> 会消失。</p>
+    <p class="chapter-quick-start__done"><strong>完成时：</strong>BGM 已载入并会自动循环；双击歌曲后，伴奏播放器会显示歌名与进度，BGM 也会自动暂停。保存项目后，窗口标题中的 <code>*</code> 会消失。</p>
   </div>
 </section>
 

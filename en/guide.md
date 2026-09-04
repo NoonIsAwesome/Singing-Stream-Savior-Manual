@@ -37,15 +37,16 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
   <div>
     <p class="chapter-quick-start__eyebrow">FIRST LAUNCH</p>
     <h2 id="getting-started-quick-start">Play and save your first song in 5 minutes</h2>
-    <p class="chapter-quick-start__intro">Follow these steps to open the app, play one karaoke track, and save a project you can continue later.</p>
+    <p class="chapter-quick-start__intro">Follow these steps to open the app, set a looping BGM, test one karaoke track, and save a project you can continue later.</p>
     <ol class="chapter-quick-start__steps">
       <li><div><strong>Extract the complete ZIP</strong><span>Extract it to a normal folder; do not run the app from inside the ZIP.</span></div></li>
       <li><div><strong>Open the main app</strong><span>Double-click <code>Singing Stream Savior.exe</code> in the outermost folder.</span></div></li>
       <li><div><strong>Create a project</strong><span>Choose File &gt; New project.</span></div></li>
+      <li><div><strong>Add your stream BGM</strong><span>Choose a local file or paste a YouTube link in the BGM player, or drag the file or link directly onto the player. It starts looping automatically after it loads.</span></div></li>
       <li><div><strong>Add and play one song</strong><span>Drag a local audio file or single YouTube link into the song table, then double-click the song.</span></div></li>
       <li><div><strong>Save the project</strong><span>Choose File &gt; Save and create a <code>.bgmsproj</code> file.</span></div></li>
     </ol>
-    <p class="chapter-quick-start__done"><strong>You are done when:</strong> the karaoke player shows the title and progress and starts playing; after saving, the <code>*</code> disappears from the window title.</p>
+    <p class="chapter-quick-start__done"><strong>You are done when:</strong> the BGM has loaded and loops automatically; double-clicking the song shows its title and progress in the karaoke player and pauses the BGM. After you save the project, the <code>*</code> disappears from the window title.</p>
   </div>
 </section>
 

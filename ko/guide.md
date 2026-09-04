@@ -32,15 +32,16 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
   <div>
     <p class="chapter-quick-start__eyebrow">처음 실행</p>
     <h2 id="getting-started-quick-start">5분 안에 첫 곡 재생하고 저장하기</h2>
-    <p class="chapter-quick-start__intro">아래 순서대로 앱을 열고 반주 한 곡을 재생한 뒤, 다음에도 이어서 사용할 프로젝트를 저장할 수 있습니다.</p>
+    <p class="chapter-quick-start__intro">아래 순서대로 앱을 열고 반복 재생할 BGM을 설정한 뒤 반주 한 곡을 시험 재생하고, 다음에도 이어서 사용할 프로젝트를 저장할 수 있습니다.</p>
     <ol class="chapter-quick-start__steps">
       <li><div><strong>ZIP 전체 압축 해제</strong><span>일반 폴더에 완전히 풀고 ZIP 안에서 앱을 직접 실행하지 마세요.</span></div></li>
       <li><div><strong>메인 앱 열기</strong><span>가장 바깥쪽 폴더의 <code>Singing Stream Savior.exe</code>를 두 번 클릭합니다.</span></div></li>
       <li><div><strong>프로젝트 만들기</strong><span>파일 &gt; 새 프로젝트를 선택합니다.</span></div></li>
+      <li><div><strong>방송 BGM 추가</strong><span>BGM 플레이어에서 로컬 파일을 선택하거나 YouTube 링크를 붙여 넣으세요. 파일이나 링크를 플레이어로 직접 끌어다 놓을 수도 있으며, 불러오기가 끝나면 자동으로 반복 재생합니다.</span></div></li>
       <li><div><strong>곡 하나 추가하고 재생</strong><span>로컬 오디오 파일이나 YouTube 단일 영상 링크를 곡 표로 끌어다 놓고 해당 곡을 두 번 클릭합니다.</span></div></li>
       <li><div><strong>프로젝트 저장</strong><span>파일 &gt; 저장을 선택해 <code>.bgmsproj</code> 파일을 만듭니다.</span></div></li>
     </ol>
-    <p class="chapter-quick-start__done"><strong>완료 확인:</strong> 반주 플레이어에 곡명과 진행 시간이 표시되고 재생이 시작됩니다. 저장을 마치면 창 제목의 <code>*</code>가 사라집니다.</p>
+    <p class="chapter-quick-start__done"><strong>완료 확인:</strong> BGM을 불러오면 자동으로 반복 재생합니다. 곡을 두 번 클릭하면 반주 플레이어에 곡명과 진행 시간이 표시되고 BGM은 자동으로 일시 정지합니다. 프로젝트를 저장하면 창 제목의 <code>*</code>가 사라집니다.</p>
   </div>
 </section>
 
