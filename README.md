@@ -122,10 +122,9 @@ translation_key: home
       <a class="feature-card__visual" href="{{ '/assets/images/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/compact-workspace.png' | relative_url }}" alt="精簡工作區顯示歌詞、BGM、伴奏與待播控制" loading="lazy" decoding="async"></a>
       <div class="feature-card__body"><span class="feature-card__label">工作區</span><h3>完整、精簡、迷你三種模式</h3><p>準備直播時使用完整模式；開播後可縮成精簡或迷你模式。也能隱藏到 Windows 系統通知區，繼續用右鍵選單或全域快捷鍵控制直播。</p></div>
     </article>
-    <article class="feature-card">
-      <span class="feature-card__label">歌曲人聲</span>
-      <h3>播放伴奏時，自動切換歌曲的人聲效果</h3>
-      <p>每首歌可指定不同的麥克風 Profile；伴奏開始時自動套用，結束後回到聊天設定，也能在直播中手動切換。</p>
+    <article class="feature-card feature-card--illustrated">
+      <a class="feature-card__visual" href="{{ '/assets/images/advanced-streaming/26-song-profile-tag-menu.png' | relative_url }}"><img src="{{ '/assets/images/advanced-streaming/26-song-profile-tag-menu.png' | relative_url }}" alt="歌曲列表開啟人聲 Profile 標籤選單，為歌曲指定演唱效果" loading="lazy" decoding="async"></a>
+      <div class="feature-card__body"><span class="feature-card__label">歌曲人聲</span><h3>播放伴奏時，自動切換歌曲的人聲效果</h3><p>每首歌可指定不同的麥克風 Profile；伴奏開始時自動套用，結束後回到聊天設定，也能在直播中手動切換。</p></div>
     </article>
     <article class="feature-card feature-card--illustrated">
       <a class="feature-card__visual" href="{{ '/assets/images/profile-horizontal-rack.png' | relative_url }}"><img src="{{ '/assets/images/profile-horizontal-rack.png' | relative_url }}" alt="人聲 Profile 編輯器以橫向 Rack 顯示多顆效果器" loading="lazy" decoding="async"></a>
@@ -141,7 +140,7 @@ translation_key: home
       <p>可監聽或錄製伴奏、乾聲、濕聲與完整輸出；「伴奏＋乾聲」使用獨立低延遲 Cue，主監聽仍建議使用錄音介面的 Direct Monitor。</p>
     </article>
     <article class="feature-card feature-card--illustrated">
-      <a class="feature-card__visual" href="{{ '/assets/images/audio-health-check.png' | relative_url }}"><img src="{{ '/assets/images/audio-health-check.png' | relative_url }}" alt="音訊 Buffer 健檢結果顯示穩定度、延遲與建議設定" loading="lazy" decoding="async"></a>
+      <a class="feature-card__visual" href="{{ '/assets/images/audio-meter-horizontal.png' | relative_url }}"><img src="{{ '/assets/images/audio-meter-horizontal.png' | relative_url }}" alt="橫向 Meter 顯示 BGM、伴奏、人聲與直播輸出的即時音量" loading="lazy" decoding="async"></a>
       <div class="feature-card__body"><span class="feature-card__label">Meter 與健檢</span><h3>查看音量、Buffer、延遲與斷訊</h3><p>五軌 Meter 顯示 Peak 與 Stream Output 的 LUFS-S；Buffer 健檢可比較穩定度、預估延遲並提供可直接套用的建議。</p></div>
     </article>
     <article class="feature-card feature-card--illustrated">
