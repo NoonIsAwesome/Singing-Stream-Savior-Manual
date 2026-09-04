@@ -31,7 +31,7 @@ jobs:
           source: ./
           destination: ./_site
 
-      - name: Validate rendered image paths
+      - name: Validate rendered site
         run: node scripts/validate-built-site.mjs _site
 
       - name: Upload GitHub Pages artifact

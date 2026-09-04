@@ -10,7 +10,26 @@ translation_key: workspace-modes
 
 快捷鍵：`Ctrl + Shift + M`
 
-## 完整模式
+<section class="chapter-quick-start" aria-labelledby="modes-quick-choice">
+  <div>
+    <p class="chapter-quick-start__eyebrow">依現在的工作選模式</p>
+    <h2 id="modes-quick-choice">不用重新設定，隨時切換畫面大小</h2>
+    <p class="chapter-quick-start__intro">切換模式只會收起或顯示控制項；播放、待播順序與 OBS 畫面都不會重設。</p>
+    <div class="quick-task-links">
+      <a href="#full-mode"><strong>完整模式</strong><span>整理歌曲、歌詞、主題與直播設定</span></a>
+      <a href="#compact-mode"><strong>精簡模式</strong><span>直播中仍需要選歌與調整內容</span></a>
+      <a href="#mini-mode"><strong>迷你模式</strong><span>歌曲已排好，只保留播放與待播</span></a>
+      <a href="#notification-area"><strong>系統通知區</strong><span>主視窗不用顯示，從右鍵選單控制</span></a>
+    </div>
+    <p class="chapter-quick-start__done"><strong>切換方式：</strong>點右上角模式按鈕循環切換，或按右側倒三角形直接選擇。</p>
+  </div>
+  <figure class="manual-figure">
+    <a href="assets/images/full-workspace.png"><img src="assets/images/full-workspace.png" alt="完整模式顯示歌曲庫、播放器與待播清單"></a>
+    <figcaption>完整模式適合直播前準備；直播中可再切換成精簡或迷你模式。</figcaption>
+  </figure>
+</section>
+
+## 完整模式 {#full-mode}
 
 適合準備直播與調整設定：
 
@@ -19,14 +38,7 @@ translation_key: workspace-modes
 - 顯示歌單外觀即時預覽與主題指南。
 - 適合管理歌曲、封面、歌詞及 OBS 畫面。
 
-<figure class="manual-figure">
-  <a href="assets/images/full-workspace.png">
-    <img src="assets/images/full-workspace.png" alt="完整模式顯示歌曲庫、背景音樂、歌唱伴奏與待播清單">
-  </a>
-  <figcaption>完整模式的歌曲頁保留完整歌曲資料、播放器與待播清單；也可切換到歌詞或歌單外觀頁進行設定。</figcaption>
-</figure>
-
-## 精簡模式
+## 精簡模式 {#compact-mode}
 
 適合直播進行中、仍需要選歌與調整內容時：
 
@@ -42,7 +54,7 @@ translation_key: workspace-modes
   <figcaption>精簡模式保留歌曲庫與直播操作，同時縮小工作區寬度。</figcaption>
 </figure>
 
-## 迷你模式
+## 迷你模式 {#mini-mode}
 
 適合在開播前已完成待唱歌曲與畫面設定，並已將歌曲排入待播清單的主播。這個模式把畫面縮到最精簡，直播中只要從待播清單選擇下一首歌曲播放即可。
 
@@ -60,7 +72,7 @@ translation_key: workspace-modes
   <figcaption>迷你模式隱藏 BGM 與歌曲庫，把空間留給歌唱伴奏、待播和已唱清單；需要閱讀歌詞時可另外開啟「歌詞視窗」。</figcaption>
 </figure>
 
-## 縮到 Windows 系統通知區
+## 縮到 Windows 系統通知區 {#notification-area}
 
 如果直播時不需要保留主視窗，可在設定中讓關閉按鈕改為「縮到系統通知區」。程式與播放流程會繼續在背景執行；在工作列通知區對歌回救星圖示按右鍵，即可依目前狀態操作播放／暫停、停止、從頭播放、Key、速度、Profile、麥克風靜音／恢復、歌詞視窗與 Meter。選擇選單底部的「關閉軟體」才會完整結束程式。
 

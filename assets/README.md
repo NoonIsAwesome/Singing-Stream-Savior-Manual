@@ -15,7 +15,6 @@
 - `theme-workspace.png`：歌單外觀與全自動主題展示
 - `card-theme-cover.png`：Card 主題的封面效果
 - `cd-theme-cover.png`：CD 主題的封面效果
-- `obs-websocket-settings.png`：OBS WebSocket 進階設定
 - `obs-websocket-tools-menu.jpg`：OBS Studio 工具選單中的 WebSocket 伺服器設定入口
 - `obs-websocket-server-settings-redacted.png`：OBS WebSocket 伺服器設定教學（密碼已永久遮蔽）
 - `obs-websocket-connection-info-redacted.png`：OBS WebSocket 連線資訊教學（IP、密碼與 QR code 已永久遮蔽）

@@ -8,6 +8,27 @@ translation_key: obs-websocket
 
 > **選用功能。** 直播時間戳擷取會透過 OBS WebSocket 讀取實際直播時間。一般歌單主題與歌詞 Overlay 不需要啟用這項連線。
 
+<section class="chapter-quick-start" aria-labelledby="timestamp-quick-start">
+  <div>
+    <p class="chapter-quick-start__eyebrow">OBS 與歌回救星各設定一次</p>
+    <h2 id="timestamp-quick-start">讓歌單記錄直播時間戳</h2>
+    <ol class="chapter-quick-start__steps">
+      <li><div><strong>在 OBS 開啟伺服器設定</strong><span>選擇「工具 > WebSocket 伺服器設定」，勾選啟用伺服器與驗證，連接埠通常維持 4455。</span></div></li>
+      <li><div><strong>取得密碼並儲存</strong><span>按「顯示連線資訊」複製密碼，關閉資訊視窗後按「確定」。</span></div></li>
+      <li><div><strong>在歌回救星連線</strong><span>開啟「設定 > 直播時間戳」，勾選「啟用 OBS WebSocket 連線」，主機填 127.0.0.1，再輸入相同連接埠與密碼並按「連線」。</span></div></li>
+      <li><div><strong>確認連線</strong><span>主視窗右下角顯示綠燈／已連線後，播放伴奏時就能記錄實際直播時間。</span></div></li>
+      <li><div><strong>顯示在歌單（選用）</strong><span>到「歌單外觀」勾選「在歌單中顯示時間」，支援的 Set List 主題便會顯示歌曲時間戳。</span></div></li>
+    </ol>
+    <p class="chapter-quick-start__done"><strong>完成時：</strong>播放伴奏會記錄它在直播中的開始時間；不需要時間戳時可維持關閉。</p>
+  </div>
+  <figure class="manual-figure">
+    <a href="assets/images/obs-websocket-server-settings-redacted.png"><img src="assets/images/obs-websocket-server-settings-redacted.png" alt="OBS WebSocket 伺服器設定畫面" loading="lazy" decoding="async"></a>
+    <figcaption>啟用伺服器與驗證、維持連接埠 4455，再按「顯示連線資訊」。</figcaption>
+  </figure>
+</section>
+
+## 啟用後能做什麼
+
 OBS WebSocket 預設關閉，可提供以下功能：
 
 - 讀取 OBS 實際直播時間。
@@ -31,16 +52,10 @@ OBS WebSocket 預設關閉，可提供以下功能：
   <figcaption>在 OBS Studio 的「工具」選單開啟「WebSocket 伺服器設定」。</figcaption>
 </figure>
 
-<div class="figure-grid">
-  <figure class="manual-figure">
-    <a href="assets/images/obs-websocket-server-settings-redacted.png"><img src="assets/images/obs-websocket-server-settings-redacted.png" alt="OBS WebSocket 伺服器設定畫面" loading="lazy" decoding="async"></a>
-    <figcaption>啟用伺服器與驗證、維持連接埠 4455，再按「顯示連線資訊」。</figcaption>
-  </figure>
-  <figure class="manual-figure">
-    <a href="assets/images/obs-websocket-connection-info-redacted.png"><img src="assets/images/obs-websocket-connection-info-redacted.png" alt="OBS WebSocket 連線資訊畫面" loading="lazy" decoding="async"></a>
-    <figcaption>從連線資訊複製密碼；同一台電腦連線時，歌回救星的主機填入 127.0.0.1。</figcaption>
-  </figure>
-</div>
+<figure class="manual-figure manual-figure--medium">
+  <a href="assets/images/obs-websocket-connection-info-redacted.png"><img src="assets/images/obs-websocket-connection-info-redacted.png" alt="OBS WebSocket 連線資訊畫面" loading="lazy" decoding="async"></a>
+  <figcaption>從連線資訊複製密碼；同一台電腦連線時，歌回救星的主機填入 127.0.0.1。</figcaption>
+</figure>
 
 若找不到 WebSocket 伺服器設定，請更新 OBS Studio。OBS Studio 28 以上版本已內建 obs-websocket。
 

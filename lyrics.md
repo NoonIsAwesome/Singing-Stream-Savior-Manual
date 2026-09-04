@@ -6,6 +6,25 @@ translation_key: lyrics
 
 # 歌詞、同步歌詞與日韓讀音
 
+<section class="chapter-quick-start" aria-labelledby="lyrics-quick-start">
+  <div>
+    <p class="chapter-quick-start__eyebrow">先完成一份歌詞</p>
+    <h2 id="lyrics-quick-start">替目前歌曲加入同步歌詞</h2>
+    <p class="chapter-quick-start__intro">可以搜尋線上歌詞，也可以直接匯入已準備好的 LRC。</p>
+    <ol class="chapter-quick-start__steps">
+      <li><div><strong>選擇歌曲</strong><span>在歌曲列表點該歌曲的「歌詞」圖示，或到「歌詞」頁按「管理歌詞…」。</span></div></li>
+      <li><div><strong>取得歌詞</strong><span>從右側搜尋 LRCLIB／YouTube 字幕，或按「選擇 LRC 檔案」匯入本機歌詞。</span></div></li>
+      <li><div><strong>預覽並附加</strong><span>確認文字與歌曲長度後，按「附加歌詞」。</span></div></li>
+      <li><div><strong>播放確認</strong><span>播放伴奏，確認目前句會跟著進度醒目顯示；需要時再調整提前或延後。</span></div></li>
+    </ol>
+    <p class="chapter-quick-start__done"><strong>完成時：</strong>主畫面預覽、獨立歌詞視窗與 OBS 歌詞畫面都能使用這份歌詞。</p>
+  </div>
+  <figure class="manual-figure">
+    <a href="assets/images/lyrics-manager.png"><img src="assets/images/lyrics-manager.png" alt="管理歌詞視窗，左側為歌詞預覽，右側為線上搜尋結果"></a>
+    <figcaption>右側選擇候選歌詞，左側先確認內容，再按「附加歌詞」。</figcaption>
+  </figure>
+</section>
+
 歌詞是選用功能，不設定歌詞也能正常播放伴奏。設定歌詞後有兩種主要用途：
 
 1. 主播可開啟獨立的「歌詞視窗」，移到最容易閱讀的位置。
@@ -37,13 +56,6 @@ translation_key: lyrics
 線上搜尋最多顯示 50 筆結果，並優先排列同步歌詞；若伴奏長度已知，與伴奏長度較接近的結果會排在前面。
 
 選取搜尋結果後，待預覽載入完成即可直接按「附加歌詞」，不需要先按另一個採用按鈕。
-
-<figure class="manual-figure manual-figure--medium">
-  <a href="assets/images/lyrics-manager.png">
-    <img src="assets/images/lyrics-manager.png" alt="管理歌詞視窗，左側為歌詞預覽，右側為線上搜尋結果">
-  </a>
-  <figcaption>尚未附加歌詞時，可在右側搜尋同步歌詞並於左側確認內容。</figcaption>
-</figure>
 
 ### 匯入 LRC 與取消歌詞連結
 

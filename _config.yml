@@ -38,5 +38,7 @@ defaults:
       layout: default
 
 exclude:
+  - AGENTS.md
   - assets/README.md
   - scripts
+  - 查看網站統計.cmd

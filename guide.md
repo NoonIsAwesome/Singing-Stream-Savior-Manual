@@ -8,7 +8,7 @@ manual_bundle: true
 
 # 歌回救星 2.1 使用說明
 
-這一頁依照實際使用流程整理所有操作章節。可以從左側選擇章節，也可以直接向下閱讀；目前閱讀的位置會同步顯示在章節列表。
+這是將全部操作集中在一起的完整閱讀版。手機或只想處理單一功能時，建議從章節選單開啟獨立頁面；每頁會先顯示最短操作流程，再提供完整設定與排錯說明。
 
 {% assign chapter_keys = "getting-started,library-and-playback,lyrics,obs-and-themes,obs-websocket,uvr-vocal-removal,workspace-modes,settings-and-troubleshooting" | split: "," %}
 {% for chapter_key in chapter_keys %}

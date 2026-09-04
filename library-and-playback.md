@@ -6,12 +6,24 @@ translation_key: library-and-playback
 
 # 歌曲庫、歌單與播放器
 
-<figure class="manual-figure">
-  <a href="assets/images/full-workspace.png">
-    <img src="assets/images/full-workspace.png" alt="完整模式中的歌曲庫、歌曲表格、背景音樂、歌唱伴奏與待播清單">
-  </a>
-  <figcaption>完整模式會同時顯示歌曲庫分類、歌曲資料、兩個播放器，以及待播／已唱清單。</figcaption>
-</figure>
+<section class="chapter-quick-start" aria-labelledby="library-quick-start">
+  <div>
+    <p class="chapter-quick-start__eyebrow">最快開始</p>
+    <h2 id="library-quick-start">60 秒加入並播放第一首歌</h2>
+    <p class="chapter-quick-start__intro">第一次使用只要先完成播放；歌單分類、封面與待播都能稍後再整理。</p>
+    <ol class="chapter-quick-start__steps">
+      <li><div><strong>加入音源</strong><span>把本機音訊或單一 YouTube 連結拖進歌曲表格，也可以按「匯入伴奏」。</span></div></li>
+      <li><div><strong>確認歌名</strong><span>YouTube 會自動帶入標題；長影片若出現範圍視窗，可先選擇真正要唱的段落。</span></div></li>
+      <li><div><strong>開始播放</strong><span>在歌曲表格雙擊歌曲，播放器會載入並以「單次播放」開始。</span></div></li>
+      <li><div><strong>準備下一首（選用）</strong><span>對歌曲按右鍵選「加入待播」，再拖曳待播項目調整順序。</span></div></li>
+    </ol>
+    <p class="chapter-quick-start__done"><strong>完成時：</strong>伴奏播放器會顯示歌名與進度；開始播放伴奏後，正在播放的 BGM 會自動暫停。</p>
+  </div>
+  <figure class="manual-figure">
+    <a href="assets/images/full-workspace.png"><img src="assets/images/full-workspace.png" alt="完整模式中的歌曲庫、歌曲表格、背景音樂、歌唱伴奏與待播清單"></a>
+    <figcaption>完整模式會同時顯示歌曲庫、兩個播放器，以及待播／已唱清單。</figcaption>
+  </figure>
+</section>
 
 ## 歌曲庫分類
 

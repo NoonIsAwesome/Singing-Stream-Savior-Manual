@@ -1,7 +1,7 @@
 release:
   version: "2.1.0.3"
   date: "2026-09-03"
-  latest: true
+  latest: false
   type:
     zh-TW: 歌單、狀態訊息與啟動器熱修正
     zh-CN: 歌单、状态消息与启动器热修复

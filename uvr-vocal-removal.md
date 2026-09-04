@@ -6,27 +6,23 @@ translation_key: uvr-vocal-removal
 
 # UVR 人聲消除
 
-<section class="release-preview-section uvr-guide" aria-labelledby="uvr-211-title">
-  <div class="section-heading">
-    <p class="section-kicker">2.1.1 新功能</p>
-    <h2 id="uvr-211-title">從音源到可演唱伴奏，在同一個頁面完成</h2>
-    <p>UVR 會用 MDX 模型把音源分離成伴奏與人聲。完成後可直接把伴奏匯入歌曲列表，不必在多個工具之間來回整理檔案。</p>
+<section class="chapter-quick-start" aria-labelledby="uvr-quick-start">
+  <div>
+    <p class="chapter-quick-start__eyebrow">2.1.1 新功能</p>
+    <h2 id="uvr-quick-start">四步產生可演唱伴奏</h2>
+    <p class="chapter-quick-start__intro">本機音檔與 YouTube 連結都能直接處理，完成後不必離開軟體就能加入歌曲列表。</p>
+    <ol class="chapter-quick-start__steps">
+      <li><div><strong>拖入待處理清單</strong><span>把一個或多個音訊檔，或 YouTube 影片連結，直接拖到表格。</span></div></li>
+      <li><div><strong>確認每首設定</strong><span>預設會保留合音；需要時可逐首改成完全消除人聲，並確認輸出格式與取樣率。</span></div></li>
+      <li><div><strong>開始處理</strong><span>按「開始處理」，從每首歌曲狀態與底部總進度查看進度；處理中可「全部停止」。</span></div></li>
+      <li><div><strong>匯入伴奏</strong><span>完成後逐首匯入，或等全部完成再按「全部匯入歌曲列表」。</span></div></li>
+    </ol>
+    <p class="chapter-quick-start__done"><strong>完成時：</strong>歌曲列表只會加入實際伴奏；人聲與伴奏兩個輸出檔仍會保留在輸出資料夾。</p>
   </div>
-
-  <div class="release-preview-gallery">
-    <figure class="manual-figure release-preview-gallery__wide">
-      <a href="assets/images/uvr-processing-redacted.png"><img src="assets/images/uvr-processing-redacted.png" alt="UVR 人聲消除正在以 GPU 處理一首 YouTube 歌曲" loading="lazy" decoding="async"></a>
-      <figcaption>單曲狀態與底部總進度會同步更新；處理中可隨時「全部停止」。</figcaption>
-    </figure>
-    <figure class="manual-figure">
-      <a href="assets/images/uvr-completed-redacted.png"><img src="assets/images/uvr-completed-redacted.png" alt="UVR 人聲消除完成並可匯入歌曲列表" loading="lazy" decoding="async"></a>
-      <figcaption>全部處理完成後，可逐首匯入或使用右下角的「全部匯入歌曲列表」。</figcaption>
-    </figure>
-    <figure class="manual-figure">
-      <a href="assets/images/uvr-imported-redacted.png"><img src="assets/images/uvr-imported-redacted.png" alt="UVR 伴奏已成功匯入歌曲列表" loading="lazy" decoding="async"></a>
-      <figcaption>匯入完成後，主視窗左下角會顯示結果；列表中的狀態也會改為「已匯入歌曲列表」。</figcaption>
-    </figure>
-  </div>
+  <figure class="manual-figure">
+    <a href="assets/images/uvr-processing-redacted.png"><img src="assets/images/uvr-processing-redacted.png" alt="UVR 人聲消除正在處理一首 YouTube 歌曲" loading="lazy" decoding="async"></a>
+    <figcaption>歌曲狀態與底部總進度會同步更新；圖中示範「完全消除人聲」，新加入項目的預設仍是「保留合音」。</figcaption>
+  </figure>
 </section>
 
 ## 加入待處理清單
@@ -47,6 +43,17 @@ translation_key: uvr-vocal-removal
 按「開始處理」後，清單會依序處理所有歌曲，並顯示每首歌曲與整批工作的進度。完成時會產生名稱帶有 `(Instrumental)` 與 `(Vocal)` 的兩個檔案。
 
 「匯入歌曲列表」只會把實際的伴奏檔加入歌曲庫；人聲檔仍會保留在輸出資料夾。所有歌曲都完成後，也可以一次全部匯入。
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="assets/images/uvr-completed-redacted.png"><img src="assets/images/uvr-completed-redacted.png" alt="UVR 人聲消除完成並可匯入歌曲列表" loading="lazy" decoding="async"></a>
+    <figcaption>全部處理完成後，可逐首匯入或使用「全部匯入歌曲列表」。</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="assets/images/uvr-imported-redacted.png"><img src="assets/images/uvr-imported-redacted.png" alt="UVR 伴奏已成功匯入歌曲列表" loading="lazy" decoding="async"></a>
+    <figcaption>匯入完成後，主視窗左下角與清單狀態都會顯示結果。</figcaption>
+  </figure>
+</div>
 
 > **建議在直播前先處理。** 人聲分離會使用 CPU 或 GPU 資源；直播中執行前，請先確認電腦仍有足夠效能處理音訊與 OBS。
 

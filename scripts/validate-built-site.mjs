@@ -3,6 +3,14 @@ import { dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const DEFAULT_BASE_PATH = "/Singing-Stream-Savior-Manual/";
+const FORBIDDEN_ROOT_FILES = ["AGENTS.html", "AGENTS.md", "查看網站統計.cmd"];
+const CHANGELOG_PAGES = [
+  "changelog.html",
+  "en/changelog.html",
+  "ja/changelog.html",
+  "ko/changelog.html",
+  "zh-CN/changelog.html",
+];
 
 function collectHtmlFiles(root) {
   const files = [];
@@ -38,6 +46,29 @@ function localAssetPath(siteRoot, htmlPath, source, basePath) {
 
 export function validateBuiltSite(siteRoot, basePath = DEFAULT_BASE_PATH) {
   const errors = [];
+
+  for (const file of FORBIDDEN_ROOT_FILES) {
+    if (existsSync(join(siteRoot, file))) {
+      errors.push(`${file}: maintenance file must not be published`);
+    }
+  }
+
+  for (const page of CHANGELOG_PAGES) {
+    const changelogPath = join(siteRoot, ...page.split("/"));
+    if (!existsSync(changelogPath)) {
+      errors.push(`${page}: changelog page is missing`);
+      continue;
+    }
+
+    const changelogHtml = readFileSync(changelogPath, "utf8");
+    const latestCount = changelogHtml.match(/\brelease-entry--latest\b/g)?.length || 0;
+    if (latestCount !== 1) {
+      errors.push(
+        `${page}: expected exactly one release-entry--latest marker, found ${latestCount}`,
+      );
+    }
+  }
+
   for (const htmlPath of collectHtmlFiles(siteRoot)) {
     const html = readFileSync(htmlPath, "utf8");
     const page = relative(siteRoot, htmlPath).split(sep).join("/");
@@ -72,5 +103,7 @@ if (import.meta.url === invokedPath) {
     for (const error of errors) console.error(`- ${error}`);
     process.exit(1);
   }
-  console.log("Built-site validation passed: no unresolved asset paths or missing images.");
+  console.log(
+    "Built-site validation passed: assets resolve, maintenance files are excluded, and each changelog has one current release.",
+  );
 }

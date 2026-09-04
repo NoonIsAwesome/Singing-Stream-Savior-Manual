@@ -10,7 +10,9 @@ published: true
 
 從 **2.1.0.0** 起，進階直播模式可以在 Singing Stream Savior 內混合 BGM、伴奏與處理後的麥克風，再把完整 Stream Mix 送到 OBS、Discord 或其他直播軟體。
 
+<section data-article-lead aria-labelledby="advanced-quick-start">
 {% include advanced-quick-start.html %}
+</section>
 
 ## 詳細說明與附錄
 
@@ -47,7 +49,7 @@ published: true
 
 ### 建議設定：一般使用者先照這樣做
 
-> **最省事的起點是 ASIO（有錄音介面時）＋程式安全 Buffer「自動（建議）· 512 frames」＋ OBS 專用音訊來源。** 不需要先讀完整測試表，也不必為了追求最低數字手動嘗試每一種 Buffer。
+> **最省事的起點是 ASIO（有錄音介面時）＋程式安全 Buffer「自動（建議）· 512 frames」＋ OBS 專用音訊來源。** 一開始不必為了追求最低數字手動嘗試每一種 Buffer。
 
 - 錄音介面有原廠 ASIO 時優先使用 ASIO；介面的 hardware buffer 維持原本已穩定的設定，常見起點是 128 或 256 frames。App Buffer 與它是兩個不同設定。
 - 沒有 ASIO 時選 Windows Audio，App Buffer 先維持自動 512。不要一開始就強迫使用 128／256。

@@ -6,12 +6,24 @@ translation_key: obs-and-themes
 
 # 歌單外觀、歌詞畫面與 OBS
 
-<figure class="manual-figure">
-  <a href="assets/images/theme-workspace.png">
-    <img src="assets/images/theme-workspace.png" alt="歌單外觀頁以 Transparent Black v2 自動展示目前歌曲、長歌單、時間戳與 Next On">
-  </a>
-  <figcaption>歌單外觀頁會同時顯示主題卡片、畫面設定、全自動展示與主題指南。</figcaption>
-</figure>
+<section class="chapter-quick-start" aria-labelledby="themes-quick-start">
+  <div>
+    <p class="chapter-quick-start__eyebrow">從預覽到直播畫面</p>
+    <h2 id="themes-quick-start">四步把歌單加入 OBS</h2>
+    <p class="chapter-quick-start__intro">先在軟體裡確認主題，再加入 OBS；不需要先設定 WebSocket。</p>
+    <ol class="chapter-quick-start__steps">
+      <li><div><strong>選擇主題</strong><span>開啟「歌單外觀」，在上方主題列點選想使用的樣式。</span></div></li>
+      <li><div><strong>查看各種狀態</strong><span>開啟「自動展示」，確認 Now Singing、Set List 與 Next On／Reserve 的配置。</span></div></li>
+      <li><div><strong>調整支援項目</strong><span>依右側主題指南調整顏色、字型、透明度或版面；沒有顯示的選項代表該主題不支援。</span></div></li>
+      <li><div><strong>加入 OBS</strong><span>按住「拖曳至 OBS」拖進 OBS；若拖曳失敗，單擊同一個按鈕複製來源路徑，再新增 Browser Source。</span></div></li>
+    </ol>
+    <p class="chapter-quick-start__done"><strong>完成時：</strong>OBS 會顯示透明歌單畫面；之後切歌、加入待播或完成歌曲時會自動更新。</p>
+  </div>
+  <figure class="manual-figure">
+    <a href="assets/images/theme-workspace.png"><img src="assets/images/theme-workspace.png" alt="歌單外觀頁顯示主題卡片、設定與即時預覽"></a>
+    <figcaption>先用中央預覽確認主題，再使用「拖曳至 OBS」。</figcaption>
+  </figure>
+</section>
 
 ## 歌單外觀頁
 
@@ -32,12 +44,6 @@ translation_key: obs-and-themes
 其他主題可能支援封面、Reserve、Next On、固定版面、動畫或直向設計。右側「主題指南」會說明目前主題的特性及可調整項目。
 
 ### 切換與預覽主題
-
-1. 在上方主題列點選主題卡片。
-2. 開啟「自動展示」，查看中央預覽依序模擬 Now Singing、長 Set List、時間戳與 Next On／Reserve。
-3. 先查看最左側的「版面配置」，再依主題指南調整該主題實際支援的顏色、透明度、字型或版面位置。
-4. 讓展示循環跑過不同狀態，確認清單移動、Card／CD 封面與待播區塊；不支援的內容不會被硬塞進主題。
-5. 確認後再將「拖曳至 OBS」拖入 OBS。
 
 切換主題只會改變顯示方式，不會修改歌曲、待播順序或已唱紀錄。完整模式最適合比較主題，因為主題列、設定、預覽及指南可以同時顯示。
 

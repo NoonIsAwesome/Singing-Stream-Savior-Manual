@@ -208,9 +208,13 @@
       });
 
       outline.append(outlineTitle, outlineList);
+      const quickStart = article.querySelector(
+        ":scope > .chapter-quick-start, :scope > [data-article-lead]",
+      );
       const firstHeading = article.querySelector(":scope > h1");
-      if (firstHeading) {
-        firstHeading.insertAdjacentElement("afterend", outline);
+      const outlineAnchor = quickStart || firstHeading;
+      if (outlineAnchor) {
+        outlineAnchor.insertAdjacentElement("afterend", outline);
       }
     }
   }

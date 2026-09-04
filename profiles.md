@@ -1,6 +1,6 @@
 ---
-title: 人聲 Profiles 與效果器完整教學｜2.1.0.0
-description: 使用歌回救星 2.1.0.0 為每首歌曲指定麥克風效果器訊號鏈，並編輯內建效果器、Shimmer 與 VST3
+title: 人聲 Profiles 與效果器完整教學
+description: 使用歌回救星為每首歌曲指定麥克風效果器訊號鏈，並編輯內建效果器、Shimmer 與 VST3
 lang: zh-TW
 translation_key: profiles
 ---
@@ -14,7 +14,7 @@ Profile 是一組可以重複使用的「麥克風效果器訊號鏈」。你可
   <div><strong>本章與「音訊路由」需要搭配閱讀。</strong><p>Profile 決定人聲音色；音訊路由決定麥克風從哪裡進來、自己如何監聽，以及處理後的聲音如何送到 OBS。</p></div>
 </aside>
 
-<nav class="paired-guides" aria-label="2.1.0.0 音訊設定教學">
+<nav class="paired-guides" aria-label="進階音訊設定教學">
   <a class="paired-guide" href="{{ '/advanced-streaming.html' | relative_url }}"><span class="paired-guide__node">IN</span><span class="paired-guide__copy"><strong>進階直播設定</strong><small>麥克風、伴奏、監聽、OBS 與錄音</small></span><span class="paired-guide__arrow" aria-hidden="true">›</span></a>
   <a class="paired-guide" href="{{ '/profiles.html' | relative_url }}" aria-current="page"><span class="paired-guide__node">FX</span><span class="paired-guide__copy"><strong>人聲 Profiles</strong><small>效果器訊號鏈、歌曲標籤與自動切換</small></span><span class="paired-guide__arrow" aria-hidden="true">›</span></a>
 </nav>

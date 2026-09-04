@@ -125,7 +125,7 @@
                 {% elsif key == 'advanced-streaming' %}
                   {% assign target = '/advanced-streaming.html' %}
                 {% else %}
-                  {% capture target %}/guide.html#{{ key }}{% endcapture %}
+                  {% capture target %}/{{ key }}.html{% endcapture %}
                 {% endif %}
               {% else %}
                 {% if key == 'home' %}

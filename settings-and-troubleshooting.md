@@ -6,13 +6,31 @@ translation_key: settings-and-troubleshooting
 
 # 設定、備份與疑難排解
 
+<section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="settings-quick-links">
+  <div>
+    <p class="chapter-quick-start__eyebrow">直接前往需要的答案</p>
+    <h2 id="settings-quick-links">你現在想處理什麼？</h2>
+    <p class="chapter-quick-start__intro">先選最接近的項目；每一段都從可以立即檢查的步驟開始。</p>
+    <div class="quick-task-links">
+      <a href="#files-and-projects"><strong>修改資料夾或下載格式</strong><span>專案、媒體、YouTube 與 UVR 輸出位置</span></a>
+      <a href="#project-backup"><strong>備份或搬移專案</strong><span>一起保存 .bgmsproj、音訊與歌詞</span></a>
+      <a href="#startup-error"><strong>程式無法啟動</strong><span>處理 Qt platform plugin 或解壓縮問題</span></a>
+      <a href="#youtube-troubleshooting"><strong>YouTube 無法播放</strong><span>檢查網路、連結與必要檔案</span></a>
+      <a href="#lyrics-troubleshooting"><strong>歌詞找不到或不同步</strong><span>搜尋、匯入與時間校正</span></a>
+      <a href="#obs-troubleshooting"><strong>OBS 畫面沒有更新</strong><span>重新載入預覽與 Browser Source</span></a>
+      <a href="#antivirus-false-positive"><strong>防毒軟體顯示警告</strong><span>核對官方來源與 SHA-256</span></a>
+      <a href="#safe-update"><strong>更新或啟動器問題</strong><span>安全取消、修復與重新下載</span></a>
+    </div>
+  </div>
+</section>
+
 ## 設定分類
 
 ### 一般
 
 - 介面語言與一般應用程式偏好。
 
-### 檔案與專案
+### 檔案與專案 {#files-and-projects}
 
 - 預設專案資料夾。
 - 收集專案媒體的輸出位置。
@@ -34,7 +52,7 @@ translation_key: settings-and-troubleshooting
 
 包含 OBS WebSocket 功能說明、OBS 端啟用步驟、主機、連接埠、密碼及「連線」按鈕。這項設定主要用於直播時間戳，並非使用歌單或歌詞 Overlay 的必要條件。OBS 密碼屬於本機連線憑證，請勿公開分享包含密碼的設定畫面。
 
-## 專案與媒體備份
+## 專案與媒體備份 {#project-backup}
 
 `.bgmsproj` 保存專案資料，但本機音訊原檔仍可能位於其他資料夾。要搬到另一台電腦前，建議：
 
@@ -43,7 +61,7 @@ translation_key: settings-and-troubleshooting
 3. 備份 `.bgmsproj`、收集後的媒體及自行匯入的歌詞。
 4. 在新電腦保持相對位置，或重新連結缺少的檔案。
 
-## 程式無法啟動：Qt platform plugin
+## 程式無法啟動：Qt platform plugin {#startup-error}
 
 若看到「no Qt platform plugin could be initialized」：
 
@@ -60,14 +78,14 @@ translation_key: settings-and-troubleshooting
 4. 如果仍然無法啟動，請刪除這份不完整的解壓縮結果，重新下載 ZIP 並再次完整解壓縮。
 5. 需要桌面捷徑時，請替最外層的 `Singing Stream Savior.exe` 建立 Windows 捷徑，不要直接移動檔案。
 
-## YouTube 無法解析或播放
+## YouTube 無法解析或播放 {#youtube-troubleshooting}
 
 - 確認網路連線。
 - 確認連結是有效的 YouTube 影片或播放清單。
 - 稍候後重試；YouTube 端變更可能暫時影響解析。
 - 確認 `yt-dlp/ytdlp_helper.exe` 仍在程式資料夾中。
 
-## 找不到歌詞
+## 找不到歌詞 {#lyrics-troubleshooting}
 
 - 確認歌曲顯示歌名與歌手拼寫。
 - 搜尋時可改用較短的關鍵字。
@@ -84,7 +102,7 @@ translation_key: settings-and-troubleshooting
 
 自動讀音無法完全理解所有人名、熟字訓、特殊語氣及歌手唱法。這不是歌詞時間錯誤，可關閉讀音或將它視為閱讀提示。
 
-## OBS 畫面沒有更新
+## OBS 畫面沒有更新 {#obs-troubleshooting}
 
 1. 在程式確認目前歌曲、待播或歌詞已更新。
 2. 按「重新載入」更新程式內預覽。
@@ -115,7 +133,7 @@ translation_key: settings-and-troubleshooting
 4. 若來源或雜湊不同，請停止執行並刪除檔案。
 5. 若來源與雜湊相符，仍可先保留警告畫面、偵測名稱與 SHA-256，回報給開發者確認；如果仍有疑慮，請先不要下載或執行，等待未來提供可信任簽章的版本。
 
-## 安全更新
+## 安全更新 {#safe-update}
 
 平常從最外層的 `Singing Stream Savior.exe` 啟動時，Launcher 1.2 會先檢查更新。**沒有新版本時不會停在提示頁**，檢查完成便自動開啟目前安裝的主程式；離線或尚未到下一次檢查時間時，也會使用已驗證的目前版本，不必等待網路。
 
