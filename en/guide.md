@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 User Manual
-description: English manual for Singing Stream Savior 2.1.1.0
+description: English manual for Singing Stream Savior 2.1.1.1
 lang: en
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 User Manual
 
-Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.1.0**.
+Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.1.1**.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
@@ -100,7 +100,11 @@ Version 2.1 maps both BGM and karaoke volume through a more perceptual loudness 
 
 The app remembers the adjusted speed and key separately for every song. When you switch away and return, that song’s preferred settings are restored; use the reset controls to return to `100%` speed and `0` semitones. These adjustments affect playback only and never rewrite or reduce the quality of the source file.
 
-The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** for viewer requests or a prepared running order, drag its rows to reorder them, or double-click a queued row to start it. In Playlist Appearance, enable **Show Reserve in OBS**, then choose **Next song only** or a limit of 2, 3, 5, or 10. One song is labelled **Next On**; a multi-song list is labelled **Reserve**, unless the selected theme supports only one presentation. Completed songs move to **History**. History is cleared after a normal app exit; after an unexpected interruption, the recovery snapshot can restore the queue and History for that live session.
+The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** for viewer requests or a prepared running order, drag its rows to reorder them, or double-click a queued row to start it. A song stays in Reserve when playback starts and moves to **History** only after it finishes naturally or you finally stop it.
+
+The karaoke playback-mode button cycles through four choices: **Play once**, **Repeat one**, **Play Reserve in order**, and **Shuffle Reserve**. Repeat one does not add another History entry after every loop; stopping it adds the song once. Both Reserve modes move each finished song to History, keep BGM paused between songs, and restore BGM only after every queued song has played. Shuffle chooses from the songs still in Reserve, so one pass does not repeat a completed item. The same four choices are available from the Windows notification-area menu.
+
+Pressing Play in either Reserve mode with an empty queue only shows a message and does not interrupt BGM. Double-clicking a song directly in the library automatically returns the mode to **Play once**. In Playlist Appearance, enable **Show Reserve in OBS**, then choose **Next song only** or a limit of 2, 3, 5, or 10. One song is labelled **Next On**; a multi-song list is labelled **Reserve**, unless the selected theme supports only one presentation. History is cleared after a normal app exit; after an unexpected interruption, the recovery snapshot can restore the queue and History for that live session.
 
 <a id="lyrics"></a>
 ## 03 · Lyrics
@@ -165,16 +169,25 @@ You can also enable Reserve, choose **Next song only** or a 2-, 3-, 5-, or 10-so
 Preview-only tools provide transparent, dark, light, custom-color, or image backgrounds; image fit/fill/stretch; and temporary source sizing/positioning. They never change the transparent OBS output. Unsupported controls are hidden rather than merely disabled. Default exposes the broadest typography and layout controls; legacy Transparent Black/White retain Current and History typography controls; both v2 themes, Signal Line, and Stage Caption expose their supported color/opacity controls.
 
 <a id="obs-websocket"></a>
-## 05 · OBS WebSocket
+## 05 · Livestream timestamp capture
 
 OBS WebSocket is optional and disabled by default. Its primary purpose is to read the live OBS timer, record when a karaoke track starts, and show timestamps before songs in supported Set Lists. Normal set-list and lyric overlays work without it.
 
-In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable the server, keep port `4455` unless you changed it, and copy the password. In Singing Stream Savior, open **Settings > Stream Timestamps**, enable OBS WebSocket, enter `127.0.0.1`, the matching port and password, then choose **Connect**. Treat the OBS password as a local connection credential and do not publish screenshots that reveal it.
+In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable the server, keep port `4455` unless you changed it, and copy the password. Close the connection-information window, then choose **OK** to save and close the settings. In Singing Stream Savior, open **Settings > Stream Timestamps**, enable OBS WebSocket, enter `127.0.0.1`, the matching port and password, then choose **Connect**. Treat the OBS password as a local connection credential and do not publish screenshots that reveal it.
 
 The status indicator appears at the lower-right only when enabled: green means connected, yellow means connecting/reconnecting, and red means disconnected. Test timestamps with a private test stream before relying on them live.
 
+<a id="uvr-vocal-removal"></a>
+## 06 · UVR vocal removal
+
+**New in 2.1.1.** Drag local audio files or YouTube links directly into the UVR processing queue. YouTube titles are detected automatically, and videos longer than 15 minutes can be trimmed to a selected range before processing. The default MDX preset preserves backing vocals; each item can be changed to full vocal removal before the batch starts.
+
+Choose WAV or FLAC and either 48 kHz (default) or 44.1 kHz. DirectML GPU acceleration is used when available; otherwise the app falls back to CPU and reports that change in the lower-left main-window message area. The output folder is managed under **Settings > Files & Project**.
+
+When separation finishes, import the instrumental for one song or import all completed songs at once. The paired `(Instrumental)` and `(Vocal)` files remain in the output folder, while only the actual accompaniment is added to the song library.
+
 <a id="workspace-modes"></a>
-## 06 · Workspace modes
+## 07 · Workspace modes
 
 Use the top-right mode button or `Ctrl + Shift + M`:
 
@@ -195,7 +208,7 @@ When the main window is not needed, its close button can minimize Singing Stream
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior Windows notification-area menu while idle" caption="The idle menu stays compact. Playback and Advanced Streaming Mode add the relevant playback, Key, speed, Profile, microphone, and Meter actions." size="medium" %}
 
 <a id="settings-and-troubleshooting"></a>
-## 07 · Settings and troubleshooting
+## 08 · Settings and troubleshooting
 
 Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
 

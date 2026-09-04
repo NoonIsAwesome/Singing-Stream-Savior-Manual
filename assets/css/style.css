@@ -978,6 +978,40 @@ body.has-image-lightbox {
   background: var(--table-cell-stripe);
 }
 
+.playback-mode-table {
+  margin: 1.3em 0 1.7em;
+}
+
+.playback-mode-table th:first-child,
+.playback-mode-table td:first-child {
+  width: 86px;
+  text-align: center;
+}
+
+.playback-mode-table th:nth-child(2),
+.playback-mode-table td:nth-child(2) {
+  min-width: 150px;
+}
+
+.playback-mode-icon {
+  display: inline-grid;
+  width: 40px;
+  height: 36px;
+  place-items: center;
+  background: linear-gradient(180deg, #242d38, #1b232d);
+  border: 1px solid #3b4754;
+  border-radius: 6px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.04), 0 4px 10px rgba(3, 9, 15, 0.18);
+}
+
+.manual-article .playback-mode-icon img {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
 .manual-article > p:last-child {
   display: flex;
   flex-wrap: wrap;

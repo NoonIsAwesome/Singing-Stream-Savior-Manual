@@ -16,6 +16,16 @@
 - `card-theme-cover.png`：Card 主題的封面效果
 - `cd-theme-cover.png`：CD 主題的封面效果
 - `obs-websocket-settings.png`：OBS WebSocket 進階設定
+- `obs-websocket-tools-menu.jpg`：OBS Studio 工具選單中的 WebSocket 伺服器設定入口
+- `obs-websocket-server-settings-redacted.png`：OBS WebSocket 伺服器設定教學（密碼已永久遮蔽）
+- `obs-websocket-connection-info-redacted.png`：OBS WebSocket 連線資訊教學（IP、密碼與 QR code 已永久遮蔽）
+- `uvr-processing-redacted.png`：UVR 以 GPU 進行人聲分離（輸出資料夾路徑已永久遮蔽）
+- `uvr-completed-redacted.png`：UVR 完成處理並可匯入歌曲列表（輸出資料夾路徑已永久遮蔽）
+- `uvr-imported-redacted.png`：UVR 伴奏已匯入歌曲列表（輸出資料夾路徑已永久遮蔽）
+- `karaoke-mode-play-once.svg`：伴奏播放器的單次播放圖示
+- `karaoke-mode-repeat-one.svg`：伴奏播放器的單曲循環圖示
+- `karaoke-mode-reserve-sequential.svg`：伴奏播放器的全曲依序自動播放圖示
+- `karaoke-mode-reserve-shuffle.svg`：伴奏播放器的全曲隨機播放圖示
 - `mini-workspace.png`：迷你模式
 - `qt-platform-error.png`：Qt 外掛錯誤
 - `audio-routing.png`：2.1.0.0 進階直播音訊路由頁面上半部，包含 OBS 外掛／虛擬輸出入口、App Buffer 與路由圖上半部

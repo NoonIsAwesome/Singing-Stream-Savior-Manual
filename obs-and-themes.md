@@ -191,4 +191,4 @@ Default 主題預設使用白色預覽背景；透明主題與精緻主題可使
 
 歌詞 Overlay 是選用畫面，與歌單 Overlay 屬於兩個獨立 Browser Source，可分別放置、縮放與顯示。主播也能只使用獨立歌詞視窗而不輸出給觀眾；詳細設定請參考[歌詞章節](lyrics.md)。
 
-[上一頁：歌詞、同步歌詞與日韓讀音](lyrics.md) · [下一頁：OBS WebSocket 與直播時間戳](obs-websocket.md)
+[上一頁：歌詞、同步歌詞與日韓讀音](lyrics.md) · [下一頁：直播時間戳擷取](obs-websocket.md)

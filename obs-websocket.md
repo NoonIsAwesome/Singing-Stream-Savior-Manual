@@ -1,12 +1,12 @@
 ---
-title: OBS WebSocket 與直播時間戳
+title: 直播時間戳擷取
 lang: zh-TW
 translation_key: obs-websocket
 ---
 
-# OBS WebSocket 與直播時間戳
+# 直播時間戳擷取
 
-> **選用功能。** OBS WebSocket 主要為直播時間戳設計。一般歌單主題與歌詞 Overlay 不需要啟用這項連線。
+> **選用功能。** 直播時間戳擷取會透過 OBS WebSocket 讀取實際直播時間。一般歌單主題與歌詞 Overlay 不需要啟用這項連線。
 
 OBS WebSocket 預設關閉，可提供以下功能：
 
@@ -22,8 +22,25 @@ OBS WebSocket 預設關閉，可提供以下功能：
 2. 開啟「工具 > WebSocket 伺服器設定」。
 3. 勾選啟用 WebSocket 伺服器。
 4. 連接埠通常維持 `4455`。
-5. 建議保留驗證功能，複製 OBS 顯示的密碼。
-6. 按「套用」或「確定」。
+5. 建議保留驗證功能；第一次設定時可按「產生密碼」。
+6. 按「顯示連線資訊」，確認連接埠並複製伺服器密碼。若歌回救星與 OBS 在同一台電腦，歌回救星的主機仍填 `127.0.0.1`，不必填畫面中的區域網路 IP。
+7. 關閉連線資訊視窗後，按「確定」儲存並關閉設定。
+
+<figure class="manual-figure manual-figure--small">
+  <a href="{{ '/assets/images/obs-websocket-tools-menu.jpg' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-tools-menu.jpg' | relative_url }}" alt="OBS Studio 工具選單中的 WebSocket 伺服器設定" loading="lazy" decoding="async"></a>
+  <figcaption>在 OBS Studio 的「工具」選單開啟「WebSocket 伺服器設定」。</figcaption>
+</figure>
+
+<div class="figure-grid">
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/obs-websocket-server-settings-redacted.png' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-server-settings-redacted.png' | relative_url }}" alt="OBS WebSocket 伺服器設定，伺服器密碼已遮蔽" loading="lazy" decoding="async"></a>
+    <figcaption>啟用伺服器與驗證、維持連接埠 4455，再按「顯示連線資訊」。範例中的密碼已永久遮蔽。</figcaption>
+  </figure>
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/obs-websocket-connection-info-redacted.png' | relative_url }}"><img src="{{ '/assets/images/obs-websocket-connection-info-redacted.png' | relative_url }}" alt="OBS WebSocket 連線資訊，IP、伺服器密碼與 QR code 已遮蔽" loading="lazy" decoding="async"></a>
+    <figcaption>從連線資訊複製密碼；同一台電腦連線時主機填 127.0.0.1。範例中的 IP、密碼與 QR code 均已永久遮蔽。</figcaption>
+  </figure>
+</div>
 
 若找不到 WebSocket 伺服器設定，請更新 OBS Studio。OBS Studio 28 以上版本已內建 obs-websocket。
 
@@ -74,4 +91,4 @@ OBS WebSocket 預設關閉，可提供以下功能：
 6. OBS 是否正在顯示驗證失敗。
 7. 關閉後重新勾選，再按一次「連線」。
 
-[上一頁：歌單外觀、歌詞畫面與 OBS](obs-and-themes.md) · [下一頁：完整、精簡與迷你模式](workspace-modes.md)
+[上一頁：歌單外觀、歌詞畫面與 OBS](obs-and-themes.md) · [下一頁：UVR 人聲消除](uvr-vocal-removal.md)

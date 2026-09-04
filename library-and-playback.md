@@ -177,7 +177,41 @@ BGM 播放器有獨立的播放、暫停、停止、循環、靜音、音量與�
 
 待播清單是選用的直播管理功能，不是開始播放的必要步驟。直接在歌曲表格中雙擊歌曲，就能立即載入並播放。
 
-若有觀眾點歌、臨時加歌，或已經預定接下來要唱的曲目，可將歌曲拖曳或使用右鍵選單加入「待播」。待播歌曲可以重新排序；播放完成後會進入「已唱」。
+若有觀眾點歌、臨時加歌，或已經預定接下來要唱的曲目，可將歌曲拖曳或使用右鍵選單加入「待播」。待播歌曲可以重新排序。歌曲開始播放時仍會留在待播；自然播放完畢，或使用者最後按下停止結束歌曲後，才會移入「已唱」。
+
+### 待播播放模式
+
+伴奏播放器的播放模式按鈕每按一次，會依序切換以下四種模式。Windows 通知區的右鍵選單也有相同選項，兩邊的狀態會同步。
+
+<table class="playback-mode-table">
+  <thead>
+    <tr><th scope="col">按鈕圖示</th><th scope="col">模式</th><th scope="col">播放方式</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="playback-mode-icon"><img src="{{ '/assets/images/karaoke-mode-play-once.svg' | relative_url }}" alt="單次播放按鈕圖示"></span></td>
+      <td><strong>單次播放</strong></td>
+      <td>目前歌曲播放一次。自然播完或按停止後移入已唱，接著恢復先前的 BGM。</td>
+    </tr>
+    <tr>
+      <td><span class="playback-mode-icon"><img src="{{ '/assets/images/karaoke-mode-repeat-one.svg' | relative_url }}" alt="單曲循環按鈕圖示"></span></td>
+      <td><strong>單曲循環</strong></td>
+      <td>持續重播目前歌曲；每一輪結束不會重複加入已唱。最後按停止時才移入已唱一次，並恢復 BGM。</td>
+    </tr>
+    <tr>
+      <td><span class="playback-mode-icon"><img src="{{ '/assets/images/karaoke-mode-reserve-sequential.svg' | relative_url }}" alt="全曲依序自動播放按鈕圖示"></span></td>
+      <td><strong>全曲依序自動播放</strong></td>
+      <td>依待播順序逐首播放；每首完成後移入已唱並接著播放下一首。整份待播清單播完才停止並恢復 BGM。</td>
+    </tr>
+    <tr>
+      <td><span class="playback-mode-icon"><img src="{{ '/assets/images/karaoke-mode-reserve-shuffle.svg' | relative_url }}" alt="全曲隨機播放按鈕圖示"></span></td>
+      <td><strong>全曲隨機播放</strong></td>
+      <td>從剩餘待播歌曲中隨機選擇；完成的歌曲會移入已唱，不會在同一輪重複抽到。全部播完後停止並恢復 BGM。</td>
+    </tr>
+  </tbody>
+</table>
+
+若待播清單是空的，選擇全曲依序或全曲隨機後按播放只會顯示提示，不會暫停或改變 BGM。直接從歌曲列表雙擊歌曲播放時，軟體會自動切回「單次播放」，避免意外接著播放整份待播清單。
 
 「已唱」是當次直播的暫存進度，正常關閉軟體後不會留到下一場直播。若直播中程式異常中斷，軟體會以復原快照保存待播與已唱進度，重新啟動時可選擇恢復。
 
@@ -193,7 +227,7 @@ BGM 播放器有獨立的播放、暫停、停止、循環、靜音、音量與�
   <a href="assets/images/reserve-list.png">
     <img src="assets/images/reserve-list.png" alt="直播操作頁的待播與已唱清單，兩首待播歌曲顯示已就緒" loading="lazy" decoding="async">
   </a>
-  <figcaption>「待播」依演唱順序列出已排入的歌曲；可拖曳重新排序，也可直接雙擊其中一首開始播放。歌曲完成後會移到旁邊的「已唱」。</figcaption>
+  <figcaption>「待播」依演唱順序列出已排入的歌曲；可拖曳重新排序，也可直接雙擊其中一首開始播放。歌曲結束後才會移到旁邊的「已唱」。</figcaption>
 </figure>
 
 > **待播是軟體內的演唱順序；Next On／Reserve 是 OBS 的顯示方式。** 兩者使用同一份待播資料，不需要建立兩份清單。OBS 顯示開關、數量與主題限制請接著參考「歌單外觀與 OBS」章節。

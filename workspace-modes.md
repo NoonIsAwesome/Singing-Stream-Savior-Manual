@@ -83,4 +83,4 @@ translation_key: workspace-modes
 - **不需要顯示主視窗，但仍要控制直播：** 縮到 Windows 系統通知區，使用右鍵選單或全域快捷鍵。
 - **需要大字閱讀歌詞：** 開啟獨立歌詞視窗並移到適合的螢幕位置。
 
-[上一頁：OBS WebSocket 與直播時間戳](obs-websocket.md) · [下一頁：設定、備份與疑難排解](settings-and-troubleshooting.md)
+[上一頁：UVR 人聲消除](uvr-vocal-removal.md) · [下一頁：設定、備份與疑難排解](settings-and-troubleshooting.md)

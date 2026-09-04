@@ -11,6 +11,7 @@ zh-TW:
   collapse_nav: 收合章節欄
   expand_nav: 展開章節欄
   preview_badge: 2.1 新功能
+  uvr_badge: 2.1.1 新功能
   on_this_page: 本頁內容
   flow: 使用流程
   stream_tip: 直播前建議
@@ -27,7 +28,8 @@ zh-TW:
     library: 歌曲庫與播放
     lyrics: 歌詞功能
     themes: 歌單外觀與主題
-    websocket: OBS WebSocket
+    websocket: 直播時間戳擷取
+    uvr: UVR 人聲消除
     modes: 工作區模式
     audio_routing: 音訊路由
     profiles: 人聲 Profiles
@@ -50,6 +52,7 @@ zh-CN:
   collapse_nav: 收起章节栏
   expand_nav: 展开章节栏
   preview_badge: 2.1 新功能
+  uvr_badge: 2.1.1 新功能
   on_this_page: 本页内容
   flow: 使用流程
   stream_tip: 直播前建议
@@ -66,7 +69,8 @@ zh-CN:
     library: 歌曲库与播放
     lyrics: 歌词功能
     themes: 歌单外观与主题
-    websocket: OBS WebSocket
+    websocket: 直播时间戳获取
+    uvr: UVR 人声消除
     modes: 工作区模式
     audio_routing: 音频路由
     profiles: 人声 Profiles
@@ -89,6 +93,7 @@ en:
   collapse_nav: Collapse chapter sidebar
   expand_nav: Expand chapter sidebar
   preview_badge: 2.1 new
+  uvr_badge: New in 2.1.1
   on_this_page: On this page
   flow: Guide
   stream_tip: Before going live
@@ -105,7 +110,8 @@ en:
     library: Library and playback
     lyrics: Lyrics
     themes: Playlist Appearance
-    websocket: OBS WebSocket
+    websocket: Livestream timestamp capture
+    uvr: UVR vocal removal
     modes: Workspace modes
     audio_routing: Audio routing
     profiles: Vocal Profiles
@@ -128,6 +134,7 @@ ja:
   collapse_nav: 章サイドバーを折りたたむ
   expand_nav: 章サイドバーを展開する
   preview_badge: 2.1 新機能
+  uvr_badge: 2.1.1 新機能
   on_this_page: このページの内容
   flow: 使用ガイド
   stream_tip: 配信前の確認
@@ -144,7 +151,8 @@ ja:
     library: 曲ライブラリと再生
     lyrics: 歌詞機能
     themes: プレイリスト外観
-    websocket: OBS WebSocket
+    websocket: 配信タイムスタンプ取得
+    uvr: UVR ボーカル除去
     modes: ワークスペース
     audio_routing: 音声ルーティング
     profiles: ボーカル Profiles
@@ -167,6 +175,7 @@ ko:
   collapse_nav: 목차 사이드바 접기
   expand_nav: 목차 사이드바 펼치기
   preview_badge: 2.1 새 기능
+  uvr_badge: 2.1.1 새 기능
   on_this_page: 이 페이지의 내용
   flow: 사용 안내
   stream_tip: 방송 전 확인
@@ -183,7 +192,8 @@ ko:
     library: 곡 라이브러리와 재생
     lyrics: 가사 기능
     themes: 재생목록 외관
-    websocket: OBS WebSocket
+    websocket: 방송 타임스탬프 캡처
+    uvr: UVR 보컬 제거
     modes: 작업 공간 모드
     audio_routing: 오디오 라우팅
     profiles: 보컬 Profiles
