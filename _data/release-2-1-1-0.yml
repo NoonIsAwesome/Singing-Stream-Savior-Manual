@@ -1,0 +1,63 @@
+release:
+  version: "2.1.1.0"
+  date: "2026-09-04"
+  latest: false
+  type:
+    zh-TW: 人聲消除與播放工作流程更新
+    zh-CN: 人声消除与播放工作流程更新
+    ja: ボーカル除去と再生ワークフロー更新
+    ko: 보컬 제거 및 재생 작업 흐름 업데이트
+    en: Vocal removal and playback workflow update
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.1.0"
+  summary:
+    zh-TW: 新增整合式 MDX 人聲消除、長 YouTube 影片視覺化範圍選取、待播清單播放模式，以及更安全的 Output Bus 參數更新。
+    zh-CN: 新增集成式 MDX 人声消除、长 YouTube 视频可视化范围选择、待播列表播放模式，以及更安全的 Output Bus 参数更新。
+    ja: MDX ボーカル除去、長い YouTube 動画の視覚的な範囲選択、Reserve の再生モード、安全な Output Bus 更新を追加しました。
+    ko: 통합 MDX 보컬 제거, 긴 YouTube 영상의 시각적 구간 선택, 대기 목록 재생 모드, 더 안전한 Output Bus 업데이트를 추가했습니다.
+    en: Adds integrated MDX vocal removal, visual range selection for long YouTube videos, new Reserve playback modes, and safer Output Bus updates.
+  items:
+    zh-TW:
+      - 在「歌單樣式」與「Profile 編輯」之間新增獨立的 UVR 人聲消除分頁。可直接把音檔或 YouTube 連結拖入待處理清單、編輯標題、查看單曲與整批進度、停止處理，並將完成的伴奏直接匯入歌曲列表。
+      - 內建兩種 MDX 選擇，預設為「保留合音」，每首也可改為「完全消除人聲」。開始整批處理時會固定各項目的設定，之後編輯尚未處理的列也不會改變本批已排定的工作。
+      - 以 48 kHz FLAC 或 WAV 輸出成對的「(Instrumental)」與「(Vocal)」檔案。UVR 輸出資料夾統一由「設定 > 檔案與專案」管理，UVR 分頁可直接連到該設定。
+      - 超過 15 分鐘的 YouTube 影片可開啟含影片預覽、時間軸及「紀錄起點／終點」的範圍選取視窗。匯入伴奏也能使用所選段落；儲存並重開專案後仍會保留，播放器會以所選段落的 00:00 起算。
+      - 開啟 YouTube 範圍選取視窗時會暫停伴奏與 BGM；如果原本正在播放 BGM，無論套用或取消都會恢復原本的 BGM 狀態。
+      - 新增「單次播放」、「單曲循環」、「待播清單依序播放」與「待播清單隨機播放」。Windows 通知區域右鍵選單也提供同步選項；直接從歌曲列表播放時會安全地回到單次播放。
+      - Output Bus 的 Mix、Compressor 與 Limiter 設定改用一份完整且固定記憶體的參數快照，避免即時音訊 callback 在更新期間同時讀到部分新值與部分舊值。
+      - 因為我覺得每次要自己找音檔，還要消除人聲再把檔案拉到歌單裡有點太麻煩，所以熬夜做了人聲消除的功能，並且也支援YouTube
+    zh-CN:
+      - 在“歌单样式”与“Profile 编辑”之间新增独立的 UVR 人声消除页面。可直接将音频文件或 YouTube 链接拖入待处理列表、编辑标题、查看单曲与整批进度、停止处理，并将完成的伴奏直接导入歌曲列表。
+      - 内置两种 MDX 选择，默认为“保留和声”，每首也可改为“完全消除人声”。开始整批处理时会固定各项目的设置，之后编辑尚未处理的行也不会改变本批已排定的任务。
+      - 以 48 kHz FLAC 或 WAV 输出成对的“(Instrumental)”与“(Vocal)”文件。UVR 输出文件夹统一由“设置 > 文件与项目”管理，UVR 页面可直接跳转到该设置。
+      - 超过 15 分钟的 YouTube 视频可打开包含视频预览、时间轴及“记录起点／终点”的范围选择窗口。导入伴奏也能使用所选片段；保存并重新打开项目后仍会保留，播放器会从所选片段的 00:00 开始计时。
+      - 打开 YouTube 范围选择窗口时会暂停伴奏与 BGM；如果原本正在播放 BGM，无论应用还是取消都会恢复原来的 BGM 状态。
+      - 新增“单次播放”、“单曲循环”、“待播列表顺序播放”与“待播列表随机播放”。Windows 通知区域右键菜单也提供同步选项；直接从歌曲列表播放时会安全地回到单次播放。
+      - Output Bus 的 Mix、Compressor 与 Limiter 设置改用一份完整且固定内存的参数快照，避免实时音频 callback 在更新期间同时读取部分新值与部分旧值。
+      - 因为我觉得每次都要自己找音频文件、消除人声，再把文件拖进歌单实在太麻烦，所以熬夜做了人声消除功能，并且也支持 YouTube。
+    ja:
+      - 「プレイリスト表示」と「Profile 編集」の間に、独立した UVR ボーカル除去ページを追加しました。音声ファイルや YouTube リンクを処理リストへ直接ドロップし、タイトル編集、曲別・全体進捗の確認、処理停止、完成した伴奏の曲リストへの直接取り込みができます。
+      - 2 種類の MDX を収録し、初期値は「コーラスを残す」です。曲ごとに「ボーカルをすべて除去」へ変更でき、バッチ開始時に各項目の設定を固定するため、その後の編集が開始済みバッチへ混在することはありません。
+      - 48 kHz の FLAC または WAV で「(Instrumental)」と「(Vocal)」のペアを出力します。UVR の出力先は「設定 > ファイルとプロジェクト」で一元管理し、UVR ページからその設定へ直接移動できます。
+      - 15 分を超える YouTube 動画では、動画プレビュー、タイムライン、「開始点／終了点を記録」を備えた範囲選択画面を使用できます。伴奏の取り込みにも適用でき、プロジェクト保存後も保持され、再度開いたときは選択範囲を 00:00 から再生します。
+      - YouTube の範囲選択画面を開くと伴奏と BGM を一時停止します。事前に BGM が再生中だった場合は、適用でもキャンセルでも元の BGM 状態を復元します。
+      - 「1 回再生」「1 曲リピート」「Reserve を順番に再生」「Reserve をシャッフル再生」を追加しました。Windows 通知領域の右クリックメニューにも同期した選択肢を用意し、曲リストから直接再生した場合は安全に 1 回再生へ戻ります。
+      - Output Bus の Mix、Compressor、Limiter 設定を、固定メモリ上の一貫した単一スナップショットとして公開するようにし、更新中のリアルタイム音声 callback が新旧パラメーターを混在させないようにしました。
+      - 毎回音声ファイルを探してボーカルを消し、それを歌リストへドラッグするのが面倒だと感じたので、徹夜で YouTube にも対応したボーカル除去機能を作りました。
+    ko:
+      - ‘재생 목록 스타일’과 ‘Profile 편집’ 사이에 독립된 UVR 보컬 제거 페이지를 추가했습니다. 오디오 파일이나 YouTube 링크를 처리 목록에 바로 놓고, 제목을 편집하고, 곡별 및 전체 진행률을 확인하고, 처리를 중지하고, 완성된 반주를 곡 목록으로 바로 가져올 수 있습니다.
+      - 두 가지 MDX 선택지를 포함하며 기본값은 ‘코러스 보존’입니다. 곡마다 ‘모든 보컬 제거’로 바꿀 수 있고, 일괄 처리를 시작할 때 각 항목의 설정을 고정하므로 이후 편집이 이미 예약된 작업에 섞이지 않습니다.
+      - 48 kHz FLAC 또는 WAV 형식으로 ‘(Instrumental)’과 ‘(Vocal)’ 파일을 한 쌍으로 출력합니다. UVR 출력 폴더는 ‘설정 > 파일 및 프로젝트’에서 통합 관리하며 UVR 페이지에서 해당 설정으로 바로 이동할 수 있습니다.
+      - 15분이 넘는 YouTube 영상은 영상 미리보기, 타임라인, ‘시작／종료 지점 기록’ 기능이 있는 구간 선택 창을 열 수 있습니다. 반주 가져오기에도 선택 구간을 적용하며, 프로젝트를 저장하고 다시 열어도 유지되고 선택한 구간을 00:00부터 재생합니다.
+      - YouTube 구간 선택 창을 열면 반주와 BGM을 일시 정지합니다. 이전에 BGM이 재생 중이었다면 적용하거나 취소할 때 모두 원래 BGM 상태를 복원합니다.
+      - ‘한 번 재생’, ‘현재 곡 반복’, ‘대기 목록 순서 재생’, ‘대기 목록 무작위 재생’을 추가했습니다. Windows 알림 영역의 오른쪽 클릭 메뉴에서도 동기화된 선택지를 제공하며, 곡 목록에서 직접 재생하면 안전하게 한 번 재생으로 돌아갑니다.
+      - Output Bus의 Mix, Compressor, Limiter 설정을 고정 메모리의 일관된 단일 스냅샷으로 게시하여, 업데이트 중 실시간 오디오 callback이 새 값과 이전 값을 섞어 읽지 않도록 했습니다.
+      - 매번 오디오 파일을 직접 찾고 보컬을 제거한 뒤 다시 곡 목록으로 끌어오는 과정이 너무 번거로워서, 밤을 새워 YouTube까지 지원하는 보컬 제거 기능을 만들었습니다.
+    en:
+      - Adds a dedicated UVR Vocal Removal workspace between Playlist Appearance and Profile Editor. Drop audio files or YouTube links into its queue, edit titles, monitor each item and the whole batch, stop processing, and import completed instrumentals directly to the song list.
+      - Includes two MDX choices with Preserve backing vocals as the default. Each queued item can instead remove all vocals, and the chosen setting is snapshotted when a batch starts so later edits cannot change work already queued in that batch.
+      - Writes paired (Instrumental) and (Vocal) files as 48 kHz FLAC or WAV. The UVR output folder is managed centrally in Settings > Files & Project, while the UVR page links directly to that setting.
+      - YouTube videos longer than 15 minutes can open a video-preview range selector with a timeline and Capture start/end controls. The selected segment is also available when importing accompaniment, persists in the project, and plays from 00:00 for the selected duration after reopening.
+      - Opening the YouTube range selector pauses accompaniment and BGM. If BGM was playing beforehand, both Apply and Cancel restore that original BGM state.
+      - Adds Play once, Repeat current, Play Reserve in order, and Shuffle Reserve modes. The same synchronized choices are available from the Windows notification-area menu, while direct song-list playback safely returns to Play once.
+      - Publishes Output Bus Mix, Compressor, and Limiter settings as one coherent fixed-memory snapshot, preventing a realtime audio callback from combining old and new parameter values during an update.
+      - Because finding an audio file, removing its vocals, and then dragging it into the song list every time felt too cumbersome, I stayed up late and built vocal removal with YouTube support too.

@@ -1,0 +1,63 @@
+release:
+  version: "2.1.1.1"
+  date: "2026-09-04"
+  latest: true
+  type:
+    zh-TW: UVR GPU 加速與播放修正
+    zh-CN: UVR GPU 加速与播放修正
+    ja: UVR GPU アクセラレーションと再生修正
+    ko: UVR GPU 가속 및 재생 수정
+    en: UVR GPU acceleration and playback fixes
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.1.1"
+  summary:
+    zh-TW: 新增 MDX DirectML GPU 加速，並修正 UVR 輸出、長 YouTube 影片預覽與音量微調。
+    zh-CN: 新增 MDX DirectML GPU 加速，并修正 UVR 输出、长 YouTube 视频预览与音量微调。
+    ja: MDX の DirectML GPU アクセラレーションを追加し、UVR 出力、長い YouTube 動画のプレビュー、音量調整を修正しました。
+    ko: MDX DirectML GPU 가속을 추가하고 UVR 출력, 긴 YouTube 영상 미리보기와 음량 조절을 수정했습니다.
+    en: Adds MDX DirectML GPU acceleration and fixes UVR output, long-YouTube preview playback, and volume adjustment.
+  items:
+    zh-TW:
+      - 現有的「保留合音」與「完全消除人聲」模型，現在可在支援 DirectX 12 的 Windows 顯示卡上使用 DirectML GPU 加速。
+      - UVR 輸出取樣率新增 44.1 kHz 選項，預設仍為 48 kHz；選擇結果會保留供之後的批次使用。
+      - 若 GPU runtime 不完整或 DirectML 初始化失敗，目前批次會自動改用 CPU 重試，不會直接讓歌曲處理失敗。
+      - 修正「(Instrumental)」與「(Vocal)」輸出相反的問題，完成後匯入歌曲列表的會是正確伴奏。
+      - 長 YouTube 影片範圍視窗現在會同步影片播放、播放／暫停按鈕與時間軸，並支援正確跳轉。可使用 yt-dlp 直接預覽時不經嵌入式播放器；退回 iframe 備援時會明確提示可能顯示廣告。
+      - YouTube 音訊會優先選擇影片的原始語言，避免誤用自動配音音軌。
+      - UVR 子程序會納入軟體的 CPU 使用率；GPU 改用 CPU 與整批處理完成等通知，也會統一顯示於主視窗左下角的狀態區。
+      - BGM 與伴奏音量使用滑鼠滾輪調整時，每格改為 2%，讓音量微調更精細。
+    zh-CN:
+      - 现有的“保留和声”与“完全消除人声”模型，现在可在支持 DirectX 12 的 Windows 显卡上使用 DirectML GPU 加速。
+      - UVR 输出采样率新增 44.1 kHz 选项，默认仍为 48 kHz；选择结果会保留供之后的批次使用。
+      - 如果 GPU runtime 不完整或 DirectML 初始化失败，当前批次会自动改用 CPU 重试，不会直接让歌曲处理失败。
+      - 修正“(Instrumental)”与“(Vocal)”输出相反的问题，完成后导入歌曲列表的会是正确伴奏。
+      - 长 YouTube 视频范围窗口现在会同步视频播放、播放／暂停按钮与时间轴，并支持正确跳转。可使用 yt-dlp 直接预览时不经过内嵌播放器；退回 iframe 备用方案时会明确提示可能显示广告。
+      - YouTube 音频会优先选择视频的原始语言，避免误用自动配音音轨。
+      - UVR 子进程会计入软件的 CPU 使用率；GPU 改用 CPU 与整批处理完成等通知，也会统一显示在主窗口左下角的状态区域。
+      - 使用鼠标滚轮调整 BGM 与伴奏音量时，每格改为 2%，让音量微调更加精细。
+    ja:
+      - 既存の「コーラスを残す」と「ボーカルをすべて除去」の両モデルで、対応する Windows DirectX 12 GPU の DirectML アクセラレーションを使用できます。
+      - UVR の出力サンプリングレートに 44.1 kHz を追加しました。既定値は引き続き 48 kHz で、選択内容は次回以降のバッチにも保存されます。
+      - GPU runtime が不完全な場合や DirectML の初期化に失敗した場合は、ジョブを失敗させずに現在のバッチを CPU で自動再試行します。
+      - 「(Instrumental)」と「(Vocal)」の出力が逆になる問題を修正し、完了後は正しい伴奏を曲リストへ取り込めるようにしました。
+      - 長い YouTube 動画の範囲選択画面で、動画再生、再生／一時停止ボタン、タイムライン、シークが同期するように修正しました。yt-dlp の直接プレビューが利用できる場合は埋め込みプレーヤーを経由せず、iframe へ切り替わる場合は広告が表示される可能性を明示します。
+      - YouTube 音声は自動吹き替えではなく、動画の元の言語を優先して選択します。
+      - UVR の子プロセスをアプリの CPU 使用率へ含め、GPU から CPU への切り替えとバッチ完了の通知もメイン画面左下へ表示します。
+      - BGM と伴奏の音量をマウスホイールで調整する際、1 ノッチあたり 2% に変更し、細かな調整をしやすくしました。
+    ko:
+      - 기존 ‘코러스 보존’ 및 ‘모든 보컬 제거’ 모델에서 지원되는 Windows DirectX 12 GPU의 DirectML 가속을 사용할 수 있습니다.
+      - UVR 출력 샘플링 레이트에 44.1 kHz 옵션을 추가했습니다. 기본값은 계속 48 kHz이며 선택한 값은 이후 일괄 처리에도 저장됩니다.
+      - GPU runtime이 불완전하거나 DirectML 초기화가 실패하면 작업을 실패시키지 않고 현재 일괄 처리를 CPU로 자동 재시도합니다.
+      - ‘(Instrumental)’과 ‘(Vocal)’ 출력이 뒤바뀌는 문제를 수정하여 완료 후 실제 반주 트랙이 곡 목록으로 가져와집니다.
+      - 긴 YouTube 영상 구간 선택 창에서 영상 재생, 재생／일시 정지 버튼, 타임라인과 탐색 위치가 동기화됩니다. yt-dlp 직접 미리보기를 사용할 수 있으면 내장 플레이어를 거치지 않으며, iframe 대체 방식으로 전환되면 광고가 표시될 수 있음을 안내합니다.
+      - YouTube 오디오는 자동 더빙 트랙 대신 영상의 원래 언어를 우선 선택합니다.
+      - UVR 하위 프로세스를 앱의 CPU 사용률에 포함하며, GPU에서 CPU로 전환되거나 일괄 처리가 완료된 알림도 메인 창 왼쪽 아래 상태 영역에 표시합니다.
+      - 마우스 휠로 BGM과 반주 음량을 조절할 때 한 칸당 2%씩 변경되어 더 세밀하게 조절할 수 있습니다.
+    en:
+      - The existing Preserve backing vocals and Remove all vocals models can now use DirectML GPU acceleration on supported Windows DirectX 12 hardware.
+      - UVR output can now be selected as 48 kHz (default) or 44.1 kHz, and the selected rate is saved for future batches.
+      - If the GPU runtime is incomplete or DirectML initialization fails, the current batch automatically retries with CPU processing instead of losing the job.
+      - Corrects reversed (Instrumental) and (Vocal) outputs so importing a completed UVR result adds the actual instrumental track to the song list.
+      - The long-YouTube range editor now keeps video playback, the play/pause button, and the timeline synchronized, including seeking. Its direct yt-dlp preview avoids embedded-player ads when available and clearly identifies the iframe fallback.
+      - YouTube selection now prefers the video's original audio language instead of an automatically dubbed track.
+      - UVR worker processes are included in the application's CPU reading, while GPU-to-CPU fallback and completed-batch notices appear in the main window's lower-left status area.
+      - The mouse wheel now adjusts both BGM and accompaniment volume by 2 percentage points per notch for finer control.
