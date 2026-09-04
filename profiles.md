@@ -52,7 +52,7 @@ Factory Profile 是調音起點，不是每一支麥克風、房間和唱法的�
 | **唱歌 · 夢幻空靈** | Air、Reverb 與較保守的 Shimmer 光暈；可在歌曲中用快捷鍵切換 Shimmer。 |
 | **唱歌 · 浴室** | 短而明亮的早期反射，模擬磁磚空間感。 |
 | **廣播音色** | 限縮頻段、壓縮與些微飽和的廣播／電話風格。 |
-| **超級爆音** | 故意製造過載麥克風的搞笑效果；內部仍使用噪音閥與限制器控制不必要的噪音與峰值。 |
+| **超級爆音** | 故意製造過載麥克風的搞笑效果，同時控制不必要的背景噪音與音量峰值。 |
 
 ## 編輯一條效果器訊號鏈
 
@@ -130,7 +130,7 @@ Profile 可混合內建效果器與 VST3，並保存 Plugin 的 state、Block �
 
 ## 直播中手動切換、麥克風靜音與歌曲自動化
 
-{% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 進階直播模式完整工作區" caption="此 Release 實圖同時顯示歌曲庫、BGM／伴奏，以及進階模式的監聽、錄音、麥克風與 Profile 控制。" %}
+{% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 進階直播模式完整工作區" caption="完整工作區會同時顯示歌曲庫、BGM／伴奏，以及進階模式的監聽、錄音、麥克風與 Profile 控制。" %}
 
 - **自動切換 Profile**：伴奏開始時使用歌曲標籤；沒有固定標籤時使用預設唱歌 Profile，伴奏結束後回到聊天 Profile。
 - **手動選擇 Profile**：立即改用指定訊號鏈，直到選回自動切換。

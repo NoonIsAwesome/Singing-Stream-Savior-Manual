@@ -33,12 +33,12 @@ OBS WebSocket 預設關閉，可提供以下功能：
 
 <div class="figure-grid">
   <figure class="manual-figure">
-    <a href="assets/images/obs-websocket-server-settings-redacted.png"><img src="assets/images/obs-websocket-server-settings-redacted.png" alt="OBS WebSocket 伺服器設定，伺服器密碼已遮蔽" loading="lazy" decoding="async"></a>
-    <figcaption>啟用伺服器與驗證、維持連接埠 4455，再按「顯示連線資訊」。範例中的密碼已永久遮蔽。</figcaption>
+    <a href="assets/images/obs-websocket-server-settings-redacted.png"><img src="assets/images/obs-websocket-server-settings-redacted.png" alt="OBS WebSocket 伺服器設定畫面" loading="lazy" decoding="async"></a>
+    <figcaption>啟用伺服器與驗證、維持連接埠 4455，再按「顯示連線資訊」。</figcaption>
   </figure>
   <figure class="manual-figure">
-    <a href="assets/images/obs-websocket-connection-info-redacted.png"><img src="assets/images/obs-websocket-connection-info-redacted.png" alt="OBS WebSocket 連線資訊，IP、伺服器密碼與 QR code 已遮蔽" loading="lazy" decoding="async"></a>
-    <figcaption>從連線資訊複製密碼；同一台電腦連線時主機填 127.0.0.1。範例中的 IP、密碼與 QR code 均已永久遮蔽。</figcaption>
+    <a href="assets/images/obs-websocket-connection-info-redacted.png"><img src="assets/images/obs-websocket-connection-info-redacted.png" alt="OBS WebSocket 連線資訊畫面" loading="lazy" decoding="async"></a>
+    <figcaption>從連線資訊複製密碼；同一台電腦連線時，歌回救星的主機填入 127.0.0.1。</figcaption>
   </figure>
 </div>
 
@@ -77,7 +77,7 @@ OBS WebSocket 預設關閉，可提供以下功能：
 
 伴奏開始時會建立一筆紀錄，目標是讓直播結束後更容易整理歌曲時間軸，並讓 Set List 顯示觀眾可辨識的演唱時間。
 
-此功能仍在測試連線穩定性、直播重新開始及短暫斷線等情況。正式直播前請先用測試串流確認；若連線不穩，仍可正常使用播放器、歌單及歌詞，只是無法保證自動時間戳完整。
+短暫斷線時會嘗試自動重新連線，但斷線期間的時間戳可能不完整。播放器、歌單與歌詞不受影響；正式直播前仍建議先用測試串流確認連線。
 
 ## 連不上 OBS
 

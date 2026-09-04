@@ -96,20 +96,14 @@ translation_key: settings-and-troubleshooting
 
 歌回救星目前由個人獨立開發，Windows 執行檔尚未提供可信任的程式碼簽章。部分防毒軟體可能因此依照啟發式特徵顯示警告；這不代表每一個警告都是惡意程式，但也不能反過來假設所有警告都是誤報。
 
-開發者在自行建置與測試時，曾遇到以下兩次啟發式警告。當時的檔案來自開發者自己的建置環境，後續檢查未發現蒐集資料或惡意行為，因此判斷為疑似誤報。圖片中的本機路徑已遮蔽，只保留偵測名稱與檔名。
+啟發式警告的名稱本身不能證明檔案安全或不安全。看到警告時，請先核對下載來源、版本、檔名與 SHA-256；不要為了開啟程式而直接關閉防毒。
 
-<div class="figure-grid security-report-grid">
+<div class="security-report-grid">
   <figure class="manual-figure">
     <a href="assets/images/security/kaspersky-app-heuristic-redacted.png">
-      <img src="assets/images/security/kaspersky-app-heuristic-redacted.png" alt="Kaspersky 將本機建置的 Singing Stream Savior 主程式標示為 PDM Trojan 的疑似誤判畫面，路徑已遮蔽">
+      <img src="assets/images/security/kaspersky-app-heuristic-redacted.png" alt="Kaspersky 對 Singing Stream Savior 顯示啟發式警告">
     </a>
-    <figcaption>2026-08-06：本機建置的主程式被標示為 <code>PDM:Trojan.Win32.Generic</code>。</figcaption>
-  </figure>
-  <figure class="manual-figure">
-    <a href="assets/images/security/kaspersky-diagnostics-heuristic-redacted.png">
-      <img src="assets/images/security/kaspersky-diagnostics-heuristic-redacted.png" alt="Kaspersky 將內部 QA 診斷工具 S3SDiagnostics 標示為 VHO Trojan 的疑似誤判畫面，路徑已遮蔽">
-    </a>
-    <figcaption>2026-08-10：內部 QA 工具 <code>S3SDiagnostics.exe</code> 被啟發式規則標示；這個工具不是公開下載包中的主程式。</figcaption>
+    <figcaption>防毒軟體可能使用通用的啟發式名稱顯示警告；請依下方步驟確認檔案來源與完整性。</figcaption>
   </figure>
 </div>
 
@@ -129,12 +123,12 @@ translation_key: settings-and-troubleshooting
 
 <figure class="manual-figure"><a href="assets/images/launcher-update-prompt.png"><img src="assets/images/launcher-update-prompt.png" alt="Launcher 1.2 卡片式更新提示，顯示版本與更新內容"></a><figcaption>更新內容在可捲動的卡片區顯示；「稍後」保留目前版本，「立即更新」才開始下載。</figcaption></figure>
 
-下載期間可以按「取消」或關閉視窗要求安全取消。Launcher 會保留原本的 `current.json` 與已安裝檔案、清除未完成暫存，再啟動目前版本。進入不可中斷的最終交換階段後，關閉操作會暫時忽略，直到交易安全完成；即使在更新途中被強制結束或電腦重啟，下次啟動也會先依持久化交易紀錄完成回復或收尾，不會把新舊 DLL 混在同一個可啟動版本。
+下載期間可以按「取消」或關閉視窗，繼續使用目前版本。進入最後的安裝階段後，關閉操作會暫時停用，完成後再啟動新版；如果更新途中意外中斷，下次啟動時會先自動修復或完成更新。
 
-<figure class="manual-figure"><a href="assets/images/launcher-update-progress.png"><img src="assets/images/launcher-update-progress.png" alt="Launcher 1.2 下載、驗證與安裝更新的進度畫面"></a><figcaption>套件會先核對 HTTPS 來源、檔案大小與 SHA-256，再以可回復的交易方式切換版本。</figcaption></figure>
+<figure class="manual-figure"><a href="assets/images/launcher-update-progress.png"><img src="assets/images/launcher-update-progress.png" alt="Launcher 1.2 下載、驗證與安裝更新的進度畫面"></a><figcaption>啟動器會先確認下載完整，再安全切換到新版本。</figcaption></figure>
 
-請保留最外層的 `Singing Stream Savior.exe`、`current.json` 和內部資料夾原有的相對位置，不要只移動其中一個檔案。Launcher 會保留一份上一版的已驗證套件供自動修復與交易回復使用，但 1.2 不提供一鍵降版按鈕；舊版不一定能理解新版專案內容。若必須退回，請把官方舊版完整 ZIP 解壓到**另一個資料夾**，先複製 `.bgmsproj` 與媒體再測試，不要用舊版覆蓋新版資料夾。
+請保留最外層的 `Singing Stream Savior.exe` 與程式資料夾內其他檔案的原有位置，不要只移動其中一部分。若必須退回舊版，請把官方舊版完整 ZIP 解壓到**另一個資料夾**，先備份 `.bgmsproj` 與媒體再測試；不要用舊版直接覆蓋新版資料夾。
 
-若啟動器提示需要較新的啟動器，或自動更新仍無法完成，請改從本說明網站下載最新版完整 ZIP，解壓縮到新的資料夾，再用新版開啟原本的 `.bgmsproj`。不要把兩個版本的 DLL 直接混合覆蓋。
+若啟動器提示需要較新的啟動器，或自動更新仍無法完成，請改從本說明網站下載最新版完整 ZIP，解壓縮到新的資料夾，再用新版開啟原本的 `.bgmsproj`。不要混合覆蓋不同版本的程式檔案。
 
 [上一頁：完整、精簡與迷你模式](workspace-modes.md) · [回到說明書首頁](README.md)

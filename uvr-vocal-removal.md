@@ -16,7 +16,7 @@ translation_key: uvr-vocal-removal
   <div class="release-preview-gallery">
     <figure class="manual-figure release-preview-gallery__wide">
       <a href="assets/images/uvr-processing-redacted.png"><img src="assets/images/uvr-processing-redacted.png" alt="UVR 人聲消除正在以 GPU 處理一首 YouTube 歌曲" loading="lazy" decoding="async"></a>
-      <figcaption>單曲狀態與底部總進度會同步更新；處理中可隨時「全部停止」。範例中的輸出資料夾路徑已永久遮蔽。</figcaption>
+      <figcaption>單曲狀態與底部總進度會同步更新；處理中可隨時「全部停止」。</figcaption>
     </figure>
     <figure class="manual-figure">
       <a href="assets/images/uvr-completed-redacted.png"><img src="assets/images/uvr-completed-redacted.png" alt="UVR 人聲消除完成並可匯入歌曲列表" loading="lazy" decoding="async"></a>
@@ -39,7 +39,7 @@ translation_key: uvr-vocal-removal
 
 - 輸出格式可選 WAV 或 FLAC。
 - 取樣率預設為 **48 kHz**，也可改為 **44.1 kHz**。
-- 勾選 GPU 加速後，支援的 Windows 顯示卡會透過 DirectML 處理；若偵測不到 GPU 或 GPU 執行失敗，軟體會自動改用 CPU，並在主視窗左下角說明原因。
+- 勾選 GPU 加速後，軟體會使用相容的顯示卡處理；若無法使用 GPU，會自動改用 CPU，並在主視窗左下角說明原因。
 - 輸出資料夾統一在「設定 > 檔案與專案」管理；UVR 頁面的「開啟設定」會直接帶到該位置。
 
 ## 處理與匯入

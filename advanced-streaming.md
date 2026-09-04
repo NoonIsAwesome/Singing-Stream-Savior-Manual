@@ -18,7 +18,7 @@ published: true
 
 <aside class="version-preview" role="note">
   <span class="version-preview__badge">2.1.0.0 新功能</span>
-  <div><strong>請將音訊路由與人聲 Profile 一起設定。</strong><p>音訊路由負責輸入、監聽、錄音與直播輸出；Profile 負責人聲音色。本頁截圖均來自 Release build，並盡量使用與頁面相同的語言。</p></div>
+  <div><strong>請將音訊路由與人聲 Profile 一起設定。</strong><p>音訊路由負責輸入、監聽、錄音與直播輸出；Profile 負責人聲音色。</p></div>
 </aside>
 
 ## 2.1.0.0 設定位置變更
@@ -29,8 +29,8 @@ published: true
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.1.0.0 · AUDIO ROUTING</p><h2>選擇一般播放或進階直播模式</h2><p>在<strong>設定 → 音訊路由</strong>先選擇路由模式。一般播放模式只輸出本程式的 BGM 與伴奏；進階直播模式會加入麥克風、Profile 效果鏈、完整混音與虛擬輸出。</p></div>
-  {% include localized-release-screenshot.html name="audio-routing.png" alt="2.1 音訊路由頁上半部" caption="Release 實圖上半部顯示 OBS 外掛／虛擬輸出入口、路由模式、Windows Audio、App Buffer、來源、Profile、正式 Mix 與 Stream Output。" %}
-  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="2.1 音訊路由頁下半部" caption="Release 實圖下半部接續顯示 Monitor、錄音、預估延遲與完整可視化訊號路徑。" %}
+  {% include localized-release-screenshot.html name="audio-routing.png" alt="2.1 音訊路由頁上半部" caption="頁面上半部可選擇 OBS 外掛／虛擬輸出、路由模式、Windows Audio、App Buffer、輸入來源、Profile 與 Stream Output。" %}
+  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="2.1 音訊路由頁下半部" caption="向下捲動可設定 Monitor 與錄音，並查看預估延遲和完整訊號路徑。" %}
 </div>
 
 ### App Buffer 健檢與黃色狀態
@@ -41,9 +41,9 @@ published: true
 
 {% include localized-release-screenshot.html name="audio-health-check.png" alt="完整 App Buffer 穩定性健檢完成後的結果視窗" caption="完整健檢完成示例：綠色勾勾表示通過，較深的綠色列是這台電腦的建議值；黃色表示測試完成但安全餘裕不足。每台電腦的建議值與延遲都可能不同。" %}
 
-> **128／256 顯示「尚未驗證」是正常的嗎？** 是。低 Buffer 必須連續兩回合都沒有引擎／錄音事件，且 callback、時鐘、FIFO 與處理效能仍有足夠餘裕，才會標成已驗證。即使「計數器沒有增加」，只要顯示「嚴格效能餘裕檢查失敗」，就代表它沒有留下足夠安全空間，軟體不會推薦；這不等於當下已經爆音。此時直接採用健檢推薦的 512，只有實際需要降低軟體監聽延遲時才再嘗試低值。這裡的 App Buffer 與 ASIO hardware buffer 是兩個不同設定。
+> **128／256 顯示「尚未驗證」是正常的嗎？** 是。低 Buffer 需要連續通過較嚴格的穩定性檢查，才會列為建議值；「尚未驗證」不代表當下已經爆音。此時直接使用健檢推薦的 512，只有確實需要降低軟體監聽延遲時才再嘗試較低數值。App Buffer 與音訊介面的 ASIO hardware buffer 是兩個不同設定。
 
-黃色的 **檢查音訊中斷**會在麥克風／監聽 under/overrun、正式 Stream 斷續或裝置中斷／復原時顯示；**檢查音訊時序**則需同一 callback、時鐘或延遲異常持續約 2 秒。一次瞬時 callback peak 不代表已發生可聽掉訊，將游標停在穩定度文字上可查看各路徑計數、裝置復原、callback peak／period 與異常旗標。
+黃色的 **檢查音訊中斷**表示麥克風、監聽、直播輸出或裝置復原期間可能不穩；**檢查音訊時序**表示處理時間或同步狀態持續異常。短暫的尖峰不一定代表已經出現可聽見的斷音，將游標停在穩定度文字上可查看詳細資訊。
 
 ### 建議設定：一般使用者先照這樣做
 
@@ -144,17 +144,17 @@ Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compres
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>查看五條音訊路徑與系統負載</h2><p>進階直播模式可從「檢視」或系統工具右鍵選單開啟音量 Meter。它可以停駐在主視窗右側，也能獨立懸浮，並用單一切換按鈕改成橫向或直向顯示。</p></div>
   <p>五軌分別是 <strong>BGM／伴奏</strong>、<strong>人聲（Profile 後、Mix 前）</strong>、<strong>直播輸出</strong>、<strong>BGM／伴奏監聽</strong>與<strong>人聲監聽</strong>。每軌顯示 Peak；直播輸出另顯示三秒短期 <strong>LUFS-S</strong>，方便同時觀察瞬間峰值與主觀響度趨勢。</p>
   <p>每軌旋鈕沿用效果器的刻度樣式，範圍為 0–200%。直播路徑旋鈕調整路由階段的音量，監聽旋鈕只調整耳機平衡；這些控制不會直接改寫 Profile 內部參數。</p>
-  <p>橫向 Meter 會在 BGM／伴奏與人聲長時間失衡時，提示提高人聲或調低伴奏；它只提供建議，絕不自動改變任何增益。從頭沒有合格人聲時不會提示；連續 5 秒沒有合格人聲會視為間奏，清除舊提示與判斷資料，下一段歌聲需重新累積。</p>
+  <p>橫向 Meter 會在 BGM／伴奏與人聲持續失衡時，提示提高人聲或調低伴奏；它只提供建議，不會自動改變任何增益。安靜、換氣或歌曲間奏不會立刻被判斷成人聲過小。</p>
   <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="五軌音量 Meter 的橫向電平顯示" caption="實際橫向畫面會同時顯示五軌 Peak 與 0–200% 控制；LUFS-S 和長時間平衡提示只在符合量測條件時出現。" %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="五軌音量 Meter 的直向電平顯示" caption="直向 Meter 使用相同五軌與控制，也能停駐在主視窗右側而不改變音訊路由。" %}</div>
-  <div class="effect-reference"><details><summary><strong>響度提示的判斷方式</strong><span>避免把安靜、換氣或間奏誤判為人聲過小</span></summary><div class="effect-reference__body"><p>系統以正式直播路徑中的 Mix 前 BGM／伴奏與 Profile 後人聲，每 100 ms 建立一筆資料。只有 BGM／伴奏實際處於 Playing、有伴奏訊號、路由與麥克風健康，而且人聲通過活動條件時才累積證據。Noise Gate 有資料時，該區段至少約 25% 時間必須保持開啟；Profile 後人聲平均能量至少為 −45 dBFS，原始麥克風 Peak 至少為 −50 dBFS。顯示失衡提示前，需要至少 10 秒播放、最近 12 秒內至少 6 秒合格人聲，並包含兩段各至少 1.2 秒、彼此相隔至少 300 ms 的人聲；伴奏不比人聲低超過 2 dB，或比人聲更大聲的狀況，還需在最新合格人聲資料中累積至少 6 秒。只有合格人聲平均能量不高於 −26 dBFS，才會同時提示「人聲可能偏小」。若最近資料中原始或處理後人聲 Peak 達到 −6 dBFS 或更高，或 Limiter 增益衰減超過 1 dB，則只保留降低伴奏的建議，不會要求提高人聲。換歌、停止或重新播放、大幅移動播放位置、切換 Profile、路由中斷或等待恢復，以及隱藏 Meter，都會重置判斷。這是訊號活動與長時間響度比較，不是語音辨識。</p></div></details></div>
-  <p>主視窗右下角的無外框 CPU／RAM 狀態會顯示本程式使用率。停留滑鼠可看到系統總 CPU、系統記憶體、本程式 Working Set 與 Private Memory；只有進階直播模式才會加上 Buffer、callback、估計延遲和 underrun／overrun 等音訊資訊。負載可能影響穩定度時會以顏色提示。</p>
+  <div class="effect-reference"><details><summary><strong>響度提示何時會出現？</strong><span>只在有足夠伴奏與演唱資料時判斷</span></summary><div class="effect-reference__body"><p>軟體會先觀察一段持續的伴奏與人聲，再比較兩者的長時間平衡。歌曲剛開始、安靜段落、換氣、間奏、切換 Profile 或音訊裝置正在恢復時，都不會急著顯示建議。若人聲已接近過載，軟體也只會建議調低伴奏，不會要求再提高人聲。換歌、停止、重新播放或大幅移動播放位置後，會重新累積資料。</p></div></details></div>
+  <p>主視窗右下角的 CPU／RAM 狀態會顯示本程式使用率。停留滑鼠可查看系統與本程式的詳細資源用量；進階直播模式還會顯示 Buffer、處理時間、預估延遲及音訊中斷計數。負載可能影響穩定度時會以顏色提示。</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="主視窗右下角收合狀態的 CPU 與記憶體摘要" caption="未停留滑鼠時只保留精簡 CPU／RAM 摘要；指向文字後會展開系統、本程式與進階音訊健康資料。" size="medium" %}
   {% include system-health-interpretation.html %}
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>縮到系統工具後仍可控制直播</h2><p>設定中的「按下關閉軟體時縮到系統工具」預設開啟。按主視窗叉叉後，程式可在背景維持直播流程，不必重新打開完整工作區。</p></div>
-  <p>系統工具右鍵選單會依目前狀態顯示播放／繼續、暫停、停止、從頭播放、升降 Key、原 Key、速度增減、原速、Profile、麥克風靜音／恢復、歌詞視窗與開啟主視窗；進階直播模式另有 Meter。選擇「關閉軟體」才會結束主程式與相關 helper。</p>
+  <p>系統工具右鍵選單會依目前狀態顯示播放／繼續、暫停、停止、從頭播放、升降 Key、原 Key、速度增減、原速、Profile、麥克風靜音／恢復、歌詞視窗與開啟主視窗；進階直播模式另有 Meter。選擇「關閉軟體」才會結束程式與播放功能。</p>
   {% include localized-release-screenshot.html name="notification-area-menu.png" alt="歌回救星未播放時的 Windows 系統通知區右鍵選單" caption="實際截圖為未播放時的精簡選單；播放伴奏或啟用進階直播模式後，會依狀態增加播放、Key、速度、Profile、麥克風與 Meter 操作。" size="medium" %}
   <p>全域快捷鍵也依「播放控制」與「麥克風／監聽」分類並提供預設按鍵；音訊路由不是進階直播模式時，會隱藏不適用的麥克風／監聽項目。快捷鍵在歌回救星執行期間可從其他應用程式觸發，並可在設定中改成自己的組合。</p>
   {% include keyboard-shortcuts-reference.html %}
@@ -244,13 +244,5 @@ Singing Stream Savior → 虛擬音訊線 → OBS／Discord
 - 確認安裝程式是在完整解壓後，以系統管理員身分執行。
 - 在 Singing Stream Savior 的虛擬輸出設定按 **重新整理裝置**。
 - 關閉正在占用音訊裝置的程式後再檢查；仍無法辨識時，依 [VB-Audio 官方參考手冊](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf) 排除安裝問題。
-
-## 開發機完整測試數據（補充）
-
-一般設定不需要逐列理解以下工程數據；它們保留作為本版本在作者電腦上的測試證據，以及進一步排查延遲或穩定度時的參考。
-
-<div class="effect-reference"><details><summary><strong>展開 ASIO、Windows Audio、OBS 與虛擬音源完整實測表</strong><span>包含延遲、連續性與長時間壓力測試</span></summary><div class="effect-reference__body">
-{% include audio-test-results.html %}
-</div></details></div>
 
 <small>VB-CABLE 名稱、介面與安裝程式為 VB-Audio Software 的產品。此處截圖僅用於安裝步驟說明。</small>
