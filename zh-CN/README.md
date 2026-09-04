@@ -43,7 +43,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">从设置到直播画面</p>
     <h2 id="demo-flow-title">先在歌回救星中确认，再把效果显示到 OBS</h2>
-    <p>以下截图使用简体中文界面与隔离的示例数据，显示 2.1.0.0 Release 的实际控件。</p>
+    <p>歌单主题与歌词都能先在软件中预览。加入 OBS 后，两种画面会跟随歌曲与播放进度更新，并可放在自己的直播背景上。</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">

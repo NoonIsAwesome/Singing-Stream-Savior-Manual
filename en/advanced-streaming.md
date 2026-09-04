@@ -29,8 +29,8 @@ If the short test recording above is correct, basic setup is complete and you ca
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.1.0.0 · AUDIO ROUTING</p><h2>Choose normal playback or Advanced Streaming Mode</h2><p>Begin in <strong>Settings → Audio Routing</strong>. Normal Playback outputs the app's BGM and accompaniment only. Advanced Streaming Mode adds the microphone, Profile effect chains, complete mix, and virtual output.</p></div>
-  {% include localized-release-screenshot.html name="audio-routing.png" alt="Upper portion of the 2.1.0.0 Audio Routing page" caption="This real capture shows the OBS plug-in installer and virtual-output entries at the upper right, route mode, Windows Audio, the App Buffer and health-check entry, plus source, Profile, formal Mix, and Stream Output. Scroll down for Monitor, recording, and the lower route graph." %}
-  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="Lower portion of the 2.1.0.0 Audio Routing page" caption="The lower capture shows Monitor, recording, route lines, and latency state. Monitor latency does not change accompaniment-to-vocal alignment in OBS or the formal output." %}
+  {% include localized-release-screenshot.html name="audio-routing.png" alt="Upper portion of the 2.1.0.0 Audio Routing page" caption="The upper part shows the OBS plug-in and virtual-output entries, route mode, Windows Audio, App Buffer, health check, source, Profile, Mix, and Stream Output. Scroll down for Monitor, recording, and the rest of the route." %}
+  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="Lower portion of the 2.1.0.0 Audio Routing page" caption="The lower part shows Monitor, recording, route lines, and latency. Monitor latency does not change accompaniment-to-vocal alignment in OBS or Stream Output." %}
 </div>
 
 ### Default Profiles and BGM Ducking
@@ -53,7 +53,7 @@ The yellow messages have two meanings. **Check dropouts** means the microphone, 
 
 ### Recommended starting point for most users
 
-> **The simplest starting point is ASIO when an interface provides it, App Safety Buffer set to Automatic (Recommended) · 512 frames, and the dedicated OBS audio source.** You do not need to read the engineering table or manually try every buffer first.
+> **The simplest starting point is ASIO when an interface provides it, App Safety Buffer set to Automatic (Recommended) · 512 frames, and the dedicated OBS audio source.** You do not need to manually try every buffer first.
 
 - Prefer the interface vendor's ASIO driver. Keep the interface hardware buffer at an already-stable value—commonly 128 or 256 frames. It is separate from the App Buffer.
 - Without ASIO, choose Windows Audio and leave the App Buffer on automatic 512. Do not force 128 or 256 as the first step.

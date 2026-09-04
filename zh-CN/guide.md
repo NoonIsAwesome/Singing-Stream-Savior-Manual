@@ -40,7 +40,7 @@ manual_bundle: true
 
 <div class="figure-grid">
   {% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 完整工作区与 BGM 播放器" caption="初次使用引导会切换到对应页面并高亮 BGM 设置、拖放与自动切换区域。" %}
-  {% include localized-release-screenshot.html name="theme-workspace.png" alt="2.1 歌单外观工作区" caption="主题步骤会指出自动预览与“拖放至 OBS”的位置；截图会随当前说明语言切换。" %}
+  {% include localized-release-screenshot.html name="theme-workspace.png" alt="2.1 歌单外观工作区" caption="主题步骤会指出自动预览与“拖放至 OBS”的位置。" %}
 </div>
 
 <a id="library-and-playback"></a>

@@ -26,8 +26,8 @@ published: true
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.1.0.0 · AUDIO ROUTING</p><h2>通常再生と高度な配信モードを選ぶ</h2><p>まず<strong>設定 → オーディオルーティング</strong>でモードを選びます。通常再生はアプリの BGM と伴奏だけを出力します。高度な配信モードではマイク、Profile のエフェクトチェーン、完全なミックス、仮想出力を追加します。</p></div>
-  {% include localized-release-screenshot.html name="audio-routing.png" alt="2.1.0.0 オーディオルーティング画面の上半分" caption="この実画面は右上の OBS プラグイン導入／仮想出力入口、ルーティングモード、Windows Audio、App Buffer、チェック入口と、音源、Profile、正式 Mix、Stream Output を表示します。Monitor、録音、下側のルートはスクロールして確認します。" %}
-  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="2.1.0.0 オーディオルーティング画面の下半分" caption="下側には Monitor、録音、完全なルート線、遅延状態を表示します。Monitor の遅延は OBS／正式出力内の伴奏と声の同期を変更しません。" %}
+  {% include localized-release-screenshot.html name="audio-routing.png" alt="2.1.0.0 オーディオルーティング画面の上半分" caption="上側には OBS プラグイン／仮想出力、ルーティングモード、Windows Audio、App Buffer、チェック、音源、Profile、Mix、Stream Output が表示されます。Monitor、録音、残りのルートは下へスクロールして確認します。" %}
+  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="2.1.0.0 オーディオルーティング画面の下半分" caption="下側には Monitor、録音、ルート線、遅延が表示されます。Monitor の遅延は OBS／Stream Output 内の伴奏と声の同期を変更しません。" %}
 </div>
 
 ### 既定 Profile と BGM ダッキング
@@ -50,7 +50,7 @@ published: true
 
 ### 一般ユーザー向けの推奨開始設定
 
-> **最も簡単な開始点は、対応インターフェースでは ASIO、アプリ安全 Buffer は「自動（推奨）・512 frames」、OBS は専用音声ソースです。** 最初から技術表を読んだり、すべての Buffer を手動で試したりする必要はありません。
+> **最も簡単な開始点は、対応インターフェースでは ASIO、アプリ安全 Buffer は「自動（推奨）・512 frames」、OBS は専用音声ソースです。** 最初からすべての Buffer を手動で試す必要はありません。
 
 - メーカー製 ASIO がある場合は優先して使い、インターフェースの hardware buffer は既に安定している値（一般には 128 または 256 frames）を維持します。App Buffer とは別設定です。
 - ASIO がない場合は Windows Audio と自動 512 を使い、最初から 128／256 を強制しません。

@@ -40,7 +40,7 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 
 <div class="figure-grid">
   {% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 전체 작업 화면과 BGM 플레이어" caption="첫 사용 가이드는 관련 페이지로 이동해 BGM 설정, 드래그 앤 드롭과 자동 전환 영역을 강조합니다." %}
-  {% include localized-release-screenshot.html name="theme-workspace.png" alt="2.1 재생목록 외관 작업 화면" caption="테마 단계는 자동 미리보기와 OBS로 드래그 위치를 안내하며 스크린샷도 현재 설명 언어에 맞춰 바뀝니다." %}
+  {% include localized-release-screenshot.html name="theme-workspace.png" alt="2.1 재생목록 외관 작업 화면" caption="테마 단계에서 자동 미리보기와 OBS로 드래그 위치를 안내합니다." %}
 </div>
 
 <a id="library-and-playback"></a>

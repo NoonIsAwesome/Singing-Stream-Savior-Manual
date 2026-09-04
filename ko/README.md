@@ -36,7 +36,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">설정에서 방송 화면까지</p>
     <h2 id="demo-flow-title">Singing Stream Savior에서 미리 확인한 뒤 OBS에 표시하세요</h2>
-    <p>아래 화면은 한국어 UI와 격리된 샘플 데이터를 사용한 2.1.0.0 Release 실제 화면입니다.</p>
+    <p>세트리스트 테마와 가사는 앱에서 먼저 미리 볼 수 있습니다. OBS에 추가하면 두 화면이 곡과 재생 위치를 따라가며 방송 화면 위에 자유롭게 배치할 수 있습니다.</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">

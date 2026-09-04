@@ -36,7 +36,7 @@ translation_key: home
   <div class="section-heading">
     <p class="section-kicker">From setup to live output</p>
     <h2 id="demo-flow-title">Preview the result in Singing Stream Savior, then use it in OBS</h2>
-    <p>The screenshots below use the English interface and real 2.1.0.0 Release controls with isolated sample data.</p>
+    <p>Preview the set-list theme and lyrics in the app first. After adding them to OBS, both views follow the song and playback position and can be placed over your stream layout.</p>
   </div>
   <div class="demo-flow__track">
     <article class="demo-flow__step">

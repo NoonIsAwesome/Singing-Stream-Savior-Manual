@@ -40,7 +40,7 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 
 <div class="figure-grid">
   {% include localized-release-screenshot.html name="full-workspace.png" alt="2.1 のフルワークスペースと BGM プレイヤー" caption="初回ガイドは対応ページへ移動し、BGM 設定、ドラッグ＆ドロップ、自動切替の領域を強調します。" %}
-  {% include localized-release-screenshot.html name="theme-workspace.png" alt="2.1 のプレイリスト外観ワークスペース" caption="テーマのステップでは自動プレビューと「OBSへドラッグ」の位置を案内します。画像も説明言語に合わせて切り替わります。" %}
+  {% include localized-release-screenshot.html name="theme-workspace.png" alt="2.1 のプレイリスト外観ワークスペース" caption="テーマのステップでは、自動プレビューと「OBSへドラッグ」の位置を案内します。" %}
 </div>
 
 <a id="library-and-playback"></a>

@@ -26,8 +26,8 @@ published: true
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.1.0.0 · AUDIO ROUTING</p><h2>일반 재생 또는 고급 방송 모드 선택</h2><p>먼저 <strong>설정 → 오디오 라우팅</strong>에서 모드를 선택하세요. 일반 재생은 앱의 BGM과 반주만 출력합니다. 고급 방송 모드는 마이크, Profile 효과 체인, 전체 믹스와 가상 출력을 추가합니다.</p></div>
-  {% include localized-release-screenshot.html name="audio-routing.png" alt="2.1.0.0 오디오 라우팅 화면의 위쪽 부분" caption="이 실제 화면은 오른쪽 위의 OBS 플러그인 설치／가상 출력 진입점, 라우팅 모드, Windows Audio, App Buffer, 점검 입구와 소스, Profile, 정식 Mix, Stream Output을 보여 줍니다. Monitor, 녹음과 아래쪽 경로는 스크롤해 확인합니다." %}
-  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="2.1.0.0 오디오 라우팅 화면의 아래쪽 부분" caption="아래쪽에는 Monitor, 녹음, 전체 라우팅 선과 지연 상태가 보입니다. Monitor 지연은 OBS／정식 출력의 반주와 보컬 정렬을 바꾸지 않습니다." %}
+  {% include localized-release-screenshot.html name="audio-routing.png" alt="2.1.0.0 오디오 라우팅 화면의 위쪽 부분" caption="위쪽에는 OBS 플러그인／가상 출력, 라우팅 모드, Windows Audio, App Buffer, 점검, 소스, Profile, Mix와 Stream Output이 표시됩니다. Monitor, 녹음과 나머지 경로는 아래로 스크롤해 확인합니다." %}
+  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="2.1.0.0 오디오 라우팅 화면의 아래쪽 부분" caption="아래쪽에는 Monitor, 녹음, 라우팅 선과 지연이 표시됩니다. Monitor 지연은 OBS／Stream Output의 반주와 보컬 정렬을 바꾸지 않습니다." %}
 </div>
 
 ### 기본 Profile과 BGM 덕킹
@@ -50,7 +50,7 @@ published: true
 
 ### 일반 사용자를 위한 권장 시작 설정
 
-> **가장 간단한 시작점은 지원 인터페이스에서 ASIO, 앱 안전 Buffer는 자동(권장) · 512 frames, OBS는 전용 오디오 소스입니다.** 처음부터 기술 표를 읽거나 모든 Buffer를 직접 시험할 필요는 없습니다.
+> **가장 간단한 시작점은 지원 인터페이스에서 ASIO, 앱 안전 Buffer는 자동(권장) · 512 frames, OBS는 전용 오디오 소스입니다.** 처음부터 모든 Buffer를 직접 시험할 필요는 없습니다.
 
 - 제조사 ASIO가 있으면 우선 사용하고 인터페이스 hardware buffer는 이미 안정적인 값(보통 128 또는 256 frames)을 유지합니다. App Buffer와는 별도 설정입니다.
 - ASIO가 없으면 Windows Audio와 자동 512를 사용하며 처음부터 128／256을 강제로 선택하지 않습니다.

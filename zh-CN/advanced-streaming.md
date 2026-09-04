@@ -26,8 +26,8 @@ published: true
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.1.0.0 · AUDIO ROUTING</p><h2>选择普通播放或高级直播模式</h2><p>先到<strong>设置 → 音频路由</strong>选择路由模式。普通播放模式只输出本程序的 BGM 与伴奏；高级直播模式会加入麦克风、Profile 效果链、完整混音与虚拟输出。</p></div>
-  {% include localized-release-screenshot.html name="audio-routing.png" alt="2.1.0.0 音频路由页面的上半部" caption="这张实图显示右上方的 OBS 插件安装与虚拟输出入口、路由模式、Windows Audio、App Buffer、健康检查入口，以及来源、Profile、正式 Mix 与 Stream Output；监听、录音和路由图下半部需向下滚动查看。" %}
-  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="2.1.0.0 音频路由页面的下半部" caption="向下滚动后可查看监听、录音、完整路由线与延迟状态；监听延迟不会改变 OBS／正式输出中伴奏与人声的对齐。" %}
+  {% include localized-release-screenshot.html name="audio-routing.png" alt="2.1.0.0 音频路由页面的上半部" caption="上半部会显示 OBS 插件与虚拟输出、路由模式、Windows Audio、App Buffer、健康检查、来源、Profile、Mix 与 Stream Output；监听、录音和其余路由可向下滚动查看。" %}
+  {% include localized-release-screenshot.html name="audio-routing-bottom.png" alt="2.1.0.0 音频路由页面的下半部" caption="下半部会显示监听、录音、路由线与延迟；监听延迟不会改变 OBS／Stream Output 中伴奏与人声的对齐。" %}
 </div>
 
 ### 默认 Profile 与 BGM 闪避
@@ -50,7 +50,7 @@ published: true
 
 ### 建议设置：普通用户先这样使用
 
-> **最简单的起点是有音频接口时使用 ASIO、程序安全 Buffer 设为“自动（推荐）· 512 frames”，并在 OBS 使用专用音频来源。** 无需先阅读完整工程表格，也不用手动测试每一种 Buffer。
+> **最简单的起点是有音频接口时使用 ASIO、程序安全 Buffer 设为“自动（推荐）· 512 frames”，并在 OBS 使用专用音频来源。** 一开始不用手动测试每一种 Buffer。
 
 - 音频接口提供原厂 ASIO 时优先使用；接口 hardware buffer 保持已经稳定的设置，常见起点为 128 或 256 frames。它与 App Buffer 是两个独立设置。
 - 没有 ASIO 时选择 Windows Audio，App Buffer 先保持自动 512，不要一开始就强制使用 128／256。
