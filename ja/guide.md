@@ -28,6 +28,22 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
 <a id="getting-started"></a>
 ## 01 · はじめに
 
+<section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
+  <div>
+    <p class="chapter-quick-start__eyebrow">初回起動</p>
+    <h2 id="getting-started-quick-start">5 分で最初の曲を再生して保存</h2>
+    <p class="chapter-quick-start__intro">次の手順でアプリを起動し、最初のカラオケ音源を再生して、次回も使えるプロジェクトを保存できます。</p>
+    <ol class="chapter-quick-start__steps">
+      <li><div><strong>ZIP を完全に展開</strong><span>通常のフォルダーへ展開し、ZIP の中から直接実行しないでください。</span></div></li>
+      <li><div><strong>メインアプリを開く</strong><span>一番外側のフォルダーにある <code>Singing Stream Savior.exe</code> をダブルクリックします。</span></div></li>
+      <li><div><strong>プロジェクトを作成</strong><span>「ファイル &gt; 新規プロジェクト」を選びます。</span></div></li>
+      <li><div><strong>1 曲追加して再生</strong><span>ローカル音源または 1 件の YouTube リンクを曲テーブルへドラッグし、その曲をダブルクリックします。</span></div></li>
+      <li><div><strong>プロジェクトを保存</strong><span>「ファイル &gt; 保存」を選び、<code>.bgmsproj</code> ファイルを作成します。</span></div></li>
+    </ol>
+    <p class="chapter-quick-start__done"><strong>完了の目印：</strong>カラオケプレイヤーに曲名と進行状況が表示され、再生が始まります。保存後はウィンドウタイトルの <code>*</code> が消えます。</p>
+  </div>
+</section>
+
 ZIP を通常のフォルダーへ完全に展開します。一番外側のフォルダーにある、下のアイコンの `Singing Stream Savior.exe` をダブルクリックしてください。起動に必要なのはこのファイルだけです。ZIP 内から直接実行したり、データフォルダー内で別の EXE を探したりする必要はありません。
 
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior のアプリアイコン"><div><strong>Singing Stream Savior.exe</strong><span>通常はこのアプリだけを起動します</span></div></div>
@@ -81,7 +97,7 @@ BGM とカラオケ音源は別々に再生・音量・シークを操作でき�
 
 調整した速度とキーは曲ごとに記憶されます。別の曲へ切り替えてから戻っても、その曲に合う設定が復元されます。元に戻す場合は速度を `100%`、キーを `0` 半音にリセットできます。変更は再生時だけに適用され、元の音源ファイルや音質を書き換えません。
 
-「予約」を使わなくても、曲テーブルの曲をダブルクリックすればすぐに再生できます。「予約」は視聴者リクエストや歌唱順を管理する任意機能で、ドラッグによる並べ替えと予約行のダブルクリック再生に対応します。曲は再生開始時には予約に残り、自然終了または最後に停止した時点で「履歴」へ移動します。
+「予約」を使わなくても、曲テーブルの曲をダブルクリックすればすぐに再生できます。視聴者リクエストや歌唱順を準備する場合は、プロジェクトの曲リストまたは全体ライブラリの曲を「予約」へ直接ドラッグするか、右クリックメニューから追加します。予約内ではドラッグで並べ替え、行をダブルクリックして再生できます。曲は再生開始時には予約に残り、自然終了または最後に停止した時点で「履歴」へ移動します。
 
 カラオケプレイヤーのモードボタンは **1 回再生、1 曲リピート、予約を順番に自動再生、予約をシャッフル再生** の順に切り替わります。1 曲リピートはループごとに履歴を増やさず、最後に停止したときだけ 1 回追加します。2 つの予約モードは各曲の終了後に履歴へ移して次の曲を再生し、曲間も BGM を一時停止したままにします。予約全体の再生終了後に停止し、BGM を再開します。シャッフルは残っている予約から選ぶため、同じ一巡で完了曲を重複再生しません。Windows 通知領域メニューにも同じ選択肢があります。
 

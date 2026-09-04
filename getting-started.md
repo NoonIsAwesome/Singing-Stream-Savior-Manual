@@ -6,6 +6,22 @@ translation_key: getting-started
 
 # 安裝、啟動與建立專案
 
+<section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
+  <div>
+    <p class="chapter-quick-start__eyebrow">第一次開啟</p>
+    <h2 id="getting-started-quick-start">5 分鐘完成第一次測試播放</h2>
+    <p class="chapter-quick-start__intro">照著下面做，就能開啟軟體、播放第一首伴奏，並保存下次可以繼續使用的專案。</p>
+    <ol class="chapter-quick-start__steps">
+      <li><div><strong>完整解壓縮</strong><span>將下載的 ZIP 解壓縮到一般資料夾，不要直接在 ZIP 裡執行程式。</span></div></li>
+      <li><div><strong>開啟主程式</strong><span>在最外層資料夾雙擊「Singing Stream Savior.exe」。</span></div></li>
+      <li><div><strong>建立專案</strong><span>選擇「檔案 &gt; 新增專案」。</span></div></li>
+      <li><div><strong>加入並播放一首歌</strong><span>把本機音訊或單一 YouTube 連結拖進歌曲表格，再雙擊該歌曲。</span></div></li>
+      <li><div><strong>儲存專案</strong><span>選擇「檔案 &gt; 儲存」，建立一個 `.bgmsproj` 檔案。</span></div></li>
+    </ol>
+    <p class="chapter-quick-start__done"><strong>完成時：</strong>伴奏播放器會顯示歌名與進度並開始播放；儲存後，視窗標題的 `*` 會消失。</p>
+  </div>
+</section>
+
 ## 解壓縮與啟動
 
 1. 將下載的 ZIP 完整解壓縮到一般資料夾。

@@ -974,6 +974,103 @@ body.has-image-lightbox {
   background: var(--table-cell-background);
 }
 
+.open-source-table {
+  margin: 18px 0 34px;
+}
+
+.open-source-table th[scope="row"] {
+  min-width: 190px;
+  color: var(--table-heading-text);
+  background: var(--table-heading-background);
+}
+
+.open-source-table td:nth-child(2) {
+  min-width: 260px;
+}
+
+.open-source-table td:nth-child(3) {
+  min-width: 230px;
+}
+
+.open-source-links {
+  min-width: 180px;
+}
+
+.open-source-disclaimer {
+  margin-top: 42px;
+  padding: 14px 17px;
+  color: var(--ink-700);
+  background: var(--blue-soft);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+}
+
+@media (max-width: 700px) {
+  .open-source-table {
+    display: block;
+    overflow: visible;
+  }
+
+  .open-source-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .open-source-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  .open-source-table tr {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+
+  .open-source-table th[scope="row"] {
+    display: block;
+    min-width: 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .open-source-table td,
+  .open-source-table td:nth-child(2),
+  .open-source-table td:nth-child(3),
+  .open-source-table .open-source-links {
+    display: grid;
+    grid-template-columns: minmax(92px, 0.34fr) minmax(0, 1fr);
+    gap: 12px;
+    min-width: 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .open-source-table th[scope="row"] + td {
+    border-top: 0;
+  }
+
+  .open-source-table td::before {
+    color: var(--ink-500);
+    font-size: 0.75rem;
+    font-weight: 750;
+    letter-spacing: 0.03em;
+    content: attr(data-label);
+  }
+
+  .manual-article .open-source-table tbody tr:nth-child(even) td {
+    background: var(--table-cell-background);
+  }
+}
+
 .manual-article tbody tr:nth-child(even) td {
   background: var(--table-cell-stripe);
 }
@@ -2240,19 +2337,14 @@ body {
 
 .guide-sidebar {
   position: sticky;
-  background: #0d141f;
+  background:
+    linear-gradient(180deg, var(--blue), rgba(77, 169, 242, 0.08) 68%, var(--amber)) right top / 2px 100% no-repeat,
+    #0d141f;
   border-right-color: #233247;
 }
 
 .guide-sidebar::before {
-  position: absolute;
-  top: 34px;
-  right: 0;
-  bottom: 28px;
-  width: 2px;
-  background: linear-gradient(180deg, var(--blue), rgba(77, 169, 242, 0.08) 68%, var(--amber));
-  content: "";
-  opacity: 0.75;
+  content: none;
 }
 
 .chapter-list a:hover {

@@ -33,6 +33,22 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
 <a id="getting-started"></a>
 ## 01 · Getting started
 
+<section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
+  <div>
+    <p class="chapter-quick-start__eyebrow">FIRST LAUNCH</p>
+    <h2 id="getting-started-quick-start">Play and save your first song in 5 minutes</h2>
+    <p class="chapter-quick-start__intro">Follow these steps to open the app, play one karaoke track, and save a project you can continue later.</p>
+    <ol class="chapter-quick-start__steps">
+      <li><div><strong>Extract the complete ZIP</strong><span>Extract it to a normal folder; do not run the app from inside the ZIP.</span></div></li>
+      <li><div><strong>Open the main app</strong><span>Double-click <code>Singing Stream Savior.exe</code> in the outermost folder.</span></div></li>
+      <li><div><strong>Create a project</strong><span>Choose File &gt; New project.</span></div></li>
+      <li><div><strong>Add and play one song</strong><span>Drag a local audio file or single YouTube link into the song table, then double-click the song.</span></div></li>
+      <li><div><strong>Save the project</strong><span>Choose File &gt; Save and create a <code>.bgmsproj</code> file.</span></div></li>
+    </ol>
+    <p class="chapter-quick-start__done"><strong>You are done when:</strong> the karaoke player shows the title and progress and starts playing; after saving, the <code>*</code> disappears from the window title.</p>
+  </div>
+</section>
+
 Extract the entire ZIP to a normal folder. In the outermost folder, double-click the `Singing Stream Savior.exe` with the app icon shown below. This is the only file you need to open; do not run the app inside the ZIP or look for another EXE inside the data folders.
 
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior app icon"><div><strong>Singing Stream Savior.exe</strong><span>Open this app to start</span></div></div>
@@ -100,7 +116,7 @@ Version 2.1 maps both BGM and karaoke volume through a more perceptual loudness 
 
 The app remembers the adjusted speed and key separately for every song. When you switch away and return, that song’s preferred settings are restored; use the reset controls to return to `100%` speed and `0` semitones. These adjustments affect playback only and never rewrite or reduce the quality of the source file.
 
-The queue is optional: double-click a song in the table to play it immediately. Use **Add to Reserve** for viewer requests or a prepared running order, drag its rows to reorder them, or double-click a queued row to start it. A song stays in Reserve when playback starts and moves to **History** only after it finishes naturally or you finally stop it.
+The queue is optional: double-click a song in the table to play it immediately. For viewer requests or a prepared running order, drag a song from the project list or global library directly into **Reserve**, or use **Add to Reserve**. Drag queued rows to reorder them, or double-click one to start it. A song stays in Reserve when playback starts and moves to **History** only after it finishes naturally or you finally stop it.
 
 The karaoke playback-mode button cycles through four choices: **Play once**, **Repeat one**, **Play Reserve in order**, and **Shuffle Reserve**. Repeat one does not add another History entry after every loop; stopping it adds the song once. Both Reserve modes move each finished song to History, keep BGM paused between songs, and restore BGM only after every queued song has played. Shuffle chooses from the songs still in Reserve, so one pass does not repeat a completed item. The same four choices are available from the Windows notification-area menu.
 

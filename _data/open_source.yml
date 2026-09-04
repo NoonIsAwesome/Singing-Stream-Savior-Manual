@@ -1,0 +1,457 @@
+ui:
+  zh-TW:
+    eyebrow: "OPEN SOURCE · LICENSES"
+    title: "開源專案與授權"
+    lead: "歌回救星使用了許多開源專案，才能完成音訊播放、裝置整合、歌詞轉換與 UVR 人聲消除。謝謝每一位開發者與貢獻者。"
+    package_title: "授權文件在哪裡"
+    package_text: "本頁是方便閱讀的摘要。解壓縮後，可在程式資料夾的 Licenses 查看隨附的授權文字、第三方聲明與原始碼；選用的 UVR runtime 也會保留自己的 licenses 資料夾。各專案條款仍以套件內文件與官方原文為準。"
+    uvr_title: "2.1.1.1 已包含 UVR MIT 與模型來源聲明"
+    uvr_text: "正式發布包包含 Ultimate-Vocal-Remover-MIT.txt 與 UVR-MDX-Models-NOTICE.txt；後者記錄兩個 MDX 模型的來源、開發者署名與適用的上游說明。"
+    project: "專案"
+    purpose: "在歌回救星中的用途"
+    license: "授權／聲明"
+    source: "官方來源"
+    source_label: "專案網站"
+    closing: "本頁只提供辨識元件用途的摘要，不取代各專案的完整授權文字。列出的開源專案不代表其作者或貢獻者為歌回救星背書。"
+    previous: "上一頁：作者與聯絡"
+  zh-CN:
+    eyebrow: "OPEN SOURCE · LICENSES"
+    title: "开源项目与许可"
+    lead: "Singing Stream Savior 使用了许多开源项目，才得以完成音频播放、设备集成、歌词转换与 UVR 人声消除。感谢每一位开发者和贡献者。"
+    package_title: "在哪里查看许可文件"
+    package_text: "本页是便于阅读的摘要。解压后，可在程序文件夹的 Licenses 中查看随附的许可文本、第三方声明与源代码；可选的 UVR runtime 也会保留自己的 licenses 文件夹。各项目条款仍以软件包内文件与官方原文为准。"
+    uvr_title: "2.1.1.1 已包含 UVR MIT 与模型来源声明"
+    uvr_text: "正式发布包包含 Ultimate-Vocal-Remover-MIT.txt 与 UVR-MDX-Models-NOTICE.txt；后者记录两个 MDX 模型的来源、开发者署名与适用的上游说明。"
+    project: "项目"
+    purpose: "在 Singing Stream Savior 中的用途"
+    license: "许可／声明"
+    source: "官方来源"
+    source_label: "项目网站"
+    closing: "本页仅提供用于识别组件用途的摘要，不替代各项目的完整许可文本。列出的开源项目不代表其作者或贡献者为 Singing Stream Savior 背书。"
+    previous: "上一页：作者与联系"
+  en:
+    eyebrow: "OPEN SOURCE · LICENSES"
+    title: "Open-source projects and licenses"
+    lead: "Singing Stream Savior builds on open-source projects for audio playback, device integration, lyric conversion, and UVR vocal removal. Thank you to every developer and contributor."
+    package_title: "Where to find the license files"
+    package_text: "This page is a readable summary. After extracting the package, open its Licenses folder for the license texts, third-party notices, and source code supplied with the app. The optional UVR runtime also keeps its own licenses folder. The packaged files and official upstream terms remain authoritative."
+    uvr_title: "Version 2.1.1.1 includes the UVR MIT license and model provenance notice"
+    uvr_text: "The public package contains Ultimate-Vocal-Remover-MIT.txt and UVR-MDX-Models-NOTICE.txt. The latter records the origin, developer credit, and applicable upstream statement for both MDX models."
+    project: "Project"
+    purpose: "How Singing Stream Savior uses it"
+    license: "License / notice"
+    source: "Official source"
+    source_label: "Project site"
+    closing: "This page identifies components and their roles; it does not replace their complete license texts. No listed project or contributor endorses Singing Stream Savior."
+    previous: "Previous: Creator and support"
+  ja:
+    eyebrow: "OPEN SOURCE · LICENSES"
+    title: "オープンソースプロジェクトとライセンス"
+    lead: "Singing Stream Savior は、音声再生、デバイス連携、歌詞変換、UVR ボーカル除去のために多くのオープンソースプロジェクトを利用しています。すべての開発者と貢献者に感謝します。"
+    package_title: "ライセンス文書の確認場所"
+    package_text: "このページは読みやすい概要です。展開したアプリの Licenses フォルダーで、同梱されたライセンス文、第三者通知、ソースコードを確認できます。任意の UVR runtime にも専用の licenses フォルダーがあります。正式な条件は同梱ファイルと各公式原文を確認してください。"
+    uvr_title: "2.1.1.1 には UVR の MIT ライセンスとモデル出所通知が含まれます"
+    uvr_text: "公開パッケージには Ultimate-Vocal-Remover-MIT.txt と UVR-MDX-Models-NOTICE.txt が含まれます。後者には、2つの MDX モデルの入手元、開発者クレジット、適用される上流の説明を記録しています。"
+    project: "プロジェクト"
+    purpose: "Singing Stream Savior での用途"
+    license: "ライセンス／通知"
+    source: "公式ソース"
+    source_label: "公式サイト"
+    closing: "このページはコンポーネントと用途を確認するための概要であり、完全なライセンス文に代わるものではありません。掲載プロジェクトや貢献者が Singing Stream Savior を推奨していることを示すものではありません。"
+    previous: "前のページ：制作者・お問い合わせ"
+  ko:
+    eyebrow: "OPEN SOURCE · LICENSES"
+    title: "오픈 소스 프로젝트 및 라이선스"
+    lead: "Singing Stream Savior는 오디오 재생, 장치 연동, 가사 변환과 UVR 보컬 제거를 위해 여러 오픈 소스 프로젝트를 사용합니다. 모든 개발자와 기여자에게 감사드립니다."
+    package_title: "라이선스 문서 확인 위치"
+    package_text: "이 페이지는 읽기 쉬운 요약입니다. 압축을 푼 앱의 Licenses 폴더에서 함께 제공된 라이선스 문서, 제3자 고지와 소스 코드를 확인할 수 있습니다. 선택형 UVR runtime에도 별도의 licenses 폴더가 있습니다. 정식 조건은 패키지 문서와 각 공식 원문을 따릅니다."
+    uvr_title: "2.1.1.1에는 UVR MIT 라이선스와 모델 출처 고지가 포함됩니다"
+    uvr_text: "공개 패키지에는 Ultimate-Vocal-Remover-MIT.txt와 UVR-MDX-Models-NOTICE.txt가 포함됩니다. 후자는 두 MDX 모델의 출처, 개발자 표시와 적용되는 업스트림 설명을 기록합니다."
+    project: "프로젝트"
+    purpose: "Singing Stream Savior에서의 용도"
+    license: "라이선스 / 고지"
+    source: "공식 출처"
+    source_label: "프로젝트 사이트"
+    closing: "이 페이지는 구성 요소와 용도를 확인하기 위한 요약이며 각 프로젝트의 전체 라이선스 문서를 대신하지 않습니다. 나열된 프로젝트나 기여자가 Singing Stream Savior를 보증한다는 뜻이 아닙니다."
+    previous: "이전: 제작자 및 문의"
+
+groups:
+  - id: application-audio
+    title:
+      zh-TW: "應用程式與音訊"
+      zh-CN: "应用程序与音频"
+      en: "Application and audio"
+      ja: "アプリと音声"
+      ko: "앱 및 오디오"
+  - id: integrations
+    title:
+      zh-TW: "音訊裝置、外掛與 OBS"
+      zh-CN: "音频设备、插件与 OBS"
+      en: "Audio devices, plug-ins, and OBS"
+      ja: "音声デバイス、プラグイン、OBS"
+      ko: "오디오 장치, 플러그인 및 OBS"
+  - id: online-lyrics
+    title:
+      zh-TW: "YouTube 與歌詞"
+      zh-CN: "YouTube 与歌词"
+      en: "YouTube and lyrics"
+      ja: "YouTube と歌詞"
+      ko: "YouTube 및 가사"
+  - id: uvr-ai
+    title:
+      zh-TW: "UVR 人聲消除與 GPU"
+      zh-CN: "UVR 人声消除与 GPU"
+      en: "UVR vocal removal and GPU"
+      ja: "UVR ボーカル除去と GPU"
+      ko: "UVR 보컬 제거 및 GPU"
+  - id: fonts
+    title:
+      zh-TW: "主題字型"
+      zh-CN: "主题字体"
+      en: "Theme fonts"
+      ja: "テーマフォント"
+      ko: "테마 글꼴"
+
+projects:
+  - group: application-audio
+    name: "Qt 6.9.2 / Qt WebEngine"
+    purpose:
+      zh-TW: "桌面介面、多媒體播放與網頁預覽"
+      zh-CN: "桌面界面、多媒体播放与网页预览"
+      en: "Desktop UI, multimedia playback, and web previews"
+      ja: "デスクトップ UI、メディア再生、Web プレビュー"
+      ko: "데스크톱 UI, 미디어 재생 및 웹 미리보기"
+    license: "LGPL-3.0 or GPL-3.0, depending on the module; Qt exceptions and Chromium notices also apply"
+    links:
+      - label: "Qt"
+        url: "https://code.qt.io/cgit/qt/"
+  - group: application-audio
+    name: "FFmpeg"
+    purpose:
+      zh-TW: "音訊解碼、轉檔與媒體處理"
+      zh-CN: "音频解码、转码与媒体处理"
+      en: "Audio decoding, transcoding, and media processing"
+      ja: "音声デコード、変換、メディア処理"
+      ko: "오디오 디코딩, 변환 및 미디어 처리"
+    license: "LGPL-3.0-or-later (bundled build)"
+    links:
+      - label: "FFmpeg"
+        url: "https://ffmpeg.org/download.html"
+  - group: application-audio
+    name: "TagLib"
+    purpose:
+      zh-TW: "讀寫歌曲標籤與封面"
+      zh-CN: "读写歌曲标签与封面"
+      en: "Reading and writing song tags and cover art"
+      ja: "曲タグとカバー画像の読み書き"
+      ko: "곡 태그 및 커버 이미지 읽기/쓰기"
+    license: "LGPL-2.1 (upstream also offers MPL-1.1)"
+    links:
+      - label: "TagLib"
+        url: "https://invent.kde.org/multimedia/taglib"
+  - group: application-audio
+    name: "SoundTouch"
+    purpose:
+      zh-TW: "伴奏的速度與音高處理"
+      zh-CN: "伴奏的速度与音高处理"
+      en: "Accompaniment tempo and pitch processing"
+      ja: "伴奏のテンポとピッチ処理"
+      ko: "반주 템포 및 피치 처리"
+    license: "LGPL-2.1-or-later"
+    links:
+      - label: "SoundTouch"
+        url: "https://www.surina.net/soundtouch/"
+  - group: application-audio
+    name: "Signalsmith Stretch"
+    purpose:
+      zh-TW: "Voice Changer 與 Harmony 的即時音高／共振峰處理"
+      zh-CN: "Voice Changer 与 Harmony 的实时音高／共振峰处理"
+      en: "Realtime pitch and formant processing for Voice Changer and Harmony"
+      ja: "Voice Changer と Harmony のリアルタイム音高／フォルマント処理"
+      ko: "Voice Changer 및 Harmony의 실시간 피치/포먼트 처리"
+    license: "MIT"
+    links:
+      - label: "Signalsmith Stretch"
+        url: "https://github.com/Signalsmith-Audio/signalsmith-stretch"
+  - group: application-audio
+    name: "Signalsmith Linear"
+    purpose:
+      zh-TW: "頻譜分析與 Signalsmith Stretch 的處理基礎"
+      zh-CN: "频谱分析与 Signalsmith Stretch 的处理基础"
+      en: "Spectrum analysis and spectral support for Signalsmith Stretch"
+      ja: "スペクトラム解析と Signalsmith Stretch の信号処理基盤"
+      ko: "스펙트럼 분석 및 Signalsmith Stretch 처리 기반"
+    license: "MIT"
+    links:
+      - label: "Signalsmith Linear"
+        url: "https://github.com/Signalsmith-Audio/linear"
+  - group: application-audio
+    name: "miniaudio 0.11.23"
+    purpose:
+      zh-TW: "Windows 音訊擷取、播放、監聽與裝置管理"
+      zh-CN: "Windows 音频采集、播放、监听与设备管理"
+      en: "Windows audio capture, playback, monitoring, and device access"
+      ja: "Windows の音声入力、再生、モニター、デバイス制御"
+      ko: "Windows 오디오 캡처, 재생, 모니터 및 장치 접근"
+    license: "MIT-0"
+    links:
+      - label: "miniaudio"
+        url: "https://github.com/mackron/miniaudio"
+  - group: application-audio
+    name: "miniz 3.0.0"
+    purpose:
+      zh-TW: "主題與選用 runtime 套件的壓縮檔處理"
+      zh-CN: "主题与可选 runtime 软件包的压缩文件处理"
+      en: "Archive handling for themes and optional runtime packages"
+      ja: "テーマと任意 runtime パッケージのアーカイブ処理"
+      ko: "테마 및 선택형 runtime 패키지 압축 처리"
+    license: "MIT (some source portions also carry Unlicense/public-domain notices)"
+    links:
+      - label: "miniz"
+        url: "https://github.com/richgel999/miniz"
+  - group: application-audio
+    name: "Monocypher 4.0.2"
+    purpose:
+      zh-TW: "驗證已簽章的主題套件"
+      zh-CN: "验证已签名的主题软件包"
+      en: "Verifying signed theme packages"
+      ja: "署名付きテーマパッケージの検証"
+      ko: "서명된 테마 패키지 검증"
+    license: "BSD-2-Clause"
+    links:
+      - label: "Monocypher"
+        url: "https://monocypher.org/"
+
+  - group: integrations
+    name: "Steinberg VST 3 SDK"
+    purpose:
+      zh-TW: "掃描並載入 VST3 人聲外掛"
+      zh-CN: "扫描并加载 VST3 人声插件"
+      en: "Scanning and hosting VST3 vocal plug-ins"
+      ja: "VST3 ボーカルプラグインの検索とホスト"
+      ko: "VST3 보컬 플러그인 스캔 및 호스팅"
+    license: "MIT"
+    links:
+      - label: "VST 3 SDK"
+        url: "https://github.com/steinbergmedia/vst3sdk"
+  - group: integrations
+    name: "Steinberg ASIO SDK / S3S ASIO helpers"
+    purpose:
+      zh-TW: "透過獨立 helper 使用 ASIO 音訊裝置"
+      zh-CN: "通过独立 helper 使用 ASIO 音频设备"
+      en: "ASIO device support through separate helper processes"
+      ja: "独立 helper プロセスによる ASIO デバイス対応"
+      ko: "독립 helper 프로세스를 통한 ASIO 장치 지원"
+    license: "S3S helpers: GPL-3.0-only; ASIO SDK: GPL-3.0 or proprietary"
+    links:
+      - label: "ASIO SDK"
+        url: "https://github.com/steinbergmedia/asiosdk"
+  - group: integrations
+    name: "OBS Studio / libobs"
+    purpose:
+      zh-TW: "Singing Stream Savior 專用 OBS 音訊來源"
+      zh-CN: "Singing Stream Savior 专用 OBS 音频源"
+      en: "The dedicated Singing Stream Savior audio source for OBS"
+      ja: "Singing Stream Savior 専用 OBS 音声ソース"
+      ko: "Singing Stream Savior 전용 OBS 오디오 소스"
+    license: "GPL-2.0-or-later; connector source is included in the package"
+    links:
+      - label: "OBS Studio"
+        url: "https://github.com/obsproject/obs-studio"
+
+  - group: online-lyrics
+    name: "yt-dlp"
+    purpose:
+      zh-TW: "解析 YouTube 媒體與下載音訊"
+      zh-CN: "解析 YouTube 媒体与下载音频"
+      en: "Resolving YouTube media and downloading audio"
+      ja: "YouTube メディアの解析と音声ダウンロード"
+      ko: "YouTube 미디어 분석 및 오디오 다운로드"
+    license: "The Unlicense"
+    links:
+      - label: "yt-dlp"
+        url: "https://github.com/yt-dlp/yt-dlp"
+  - group: online-lyrics
+    name: "CPython 3.13.9"
+    purpose:
+      zh-TW: "執行隨附的 yt-dlp 背景 helper"
+      zh-CN: "运行随附的 yt-dlp 后台 helper"
+      en: "Running the bundled yt-dlp background helper"
+      ja: "同梱の yt-dlp バックグラウンド helper を実行"
+      ko: "함께 제공되는 yt-dlp 백그라운드 helper 실행"
+    license: "Python Software Foundation License 2.0; bundled third-party notices also apply"
+    links:
+      - label: "Python"
+        url: "https://www.python.org/downloads/source/"
+  - group: online-lyrics
+    name: "PyInstaller 6.21.0"
+    purpose:
+      zh-TW: "將 yt-dlp helper 封裝成 Windows 執行檔"
+      zh-CN: "将 yt-dlp helper 封装为 Windows 可执行文件"
+      en: "Packaging the yt-dlp helper as a Windows executable"
+      ja: "yt-dlp helper を Windows 実行ファイルとしてパッケージ化"
+      ko: "yt-dlp helper를 Windows 실행 파일로 패키징"
+    license: "GPL-2.0-or-later WITH Bootloader-exception"
+    links:
+      - label: "PyInstaller"
+        url: "https://github.com/pyinstaller/pyinstaller"
+  - group: online-lyrics
+    name: "OpenSSL 3.0.18"
+    purpose:
+      zh-TW: "讓 yt-dlp helper 建立 HTTPS 連線"
+      zh-CN: "让 yt-dlp helper 建立 HTTPS 连接"
+      en: "HTTPS connections used by the yt-dlp helper"
+      ja: "yt-dlp helper の HTTPS 接続"
+      ko: "yt-dlp helper의 HTTPS 연결"
+    license: "Apache-2.0"
+    links:
+      - label: "OpenSSL"
+        url: "https://github.com/openssl/openssl"
+  - group: online-lyrics
+    name: "OpenCC 1.4.1"
+    purpose:
+      zh-TW: "中文歌詞的繁簡轉換"
+      zh-CN: "中文歌词的繁简转换"
+      en: "Traditional and Simplified Chinese lyric conversion"
+      ja: "中国語歌詞の繁体字／簡体字変換"
+      ko: "중국어 가사의 번체/간체 변환"
+    license: "Apache-2.0"
+    links:
+      - label: "OpenCC"
+        url: "https://github.com/BYVoid/OpenCC"
+  - group: online-lyrics
+    name: "Kuroshiro 1.2.0"
+    purpose:
+      zh-TW: "日文歌詞讀音轉換流程"
+      zh-CN: "日文歌词读音转换流程"
+      en: "Japanese lyric reading conversion"
+      ja: "日本語歌詞の読み変換"
+      ko: "일본어 가사 읽기 변환"
+    license: "MIT"
+    links:
+      - label: "Kuroshiro"
+        url: "https://github.com/hexenq/kuroshiro"
+  - group: online-lyrics
+    name: "kuroshiro-analyzer-kuromoji 1.1.0"
+    purpose:
+      zh-TW: "Kuroshiro 使用的日文分析器"
+      zh-CN: "Kuroshiro 使用的日文分析器"
+      en: "Japanese analyzer used by Kuroshiro"
+      ja: "Kuroshiro が使用する日本語解析器"
+      ko: "Kuroshiro가 사용하는 일본어 분석기"
+    license: "MIT"
+    links:
+      - label: "kuroshiro-analyzer-kuromoji"
+        url: "https://github.com/hexenq/kuroshiro-analyzer-kuromoji"
+  - group: online-lyrics
+    name: "kuromoji.js 0.1.2"
+    purpose:
+      zh-TW: "日文斷詞與形態分析"
+      zh-CN: "日文分词与形态分析"
+      en: "Japanese tokenization and morphological analysis"
+      ja: "日本語の分かち書きと形態素解析"
+      ko: "일본어 토큰화 및 형태소 분석"
+    license: "Apache-2.0; upstream dictionary and NOTICE terms also apply"
+    links:
+      - label: "kuromoji.js"
+        url: "https://github.com/takuyaa/kuromoji.js"
+  - group: online-lyrics
+    name: "Aromanize-js 0.1.5"
+    purpose:
+      zh-TW: "韓文歌詞的羅馬字讀音"
+      zh-CN: "韩文歌词的罗马字读音"
+      en: "Romanized readings for Korean lyrics"
+      ja: "韓国語歌詞のローマ字読み"
+      ko: "한국어 가사의 로마자 표기"
+    license: "MIT"
+    links:
+      - label: "Aromanize-js"
+        url: "https://github.com/fujaru/aromanize-js"
+
+  - group: uvr-ai
+    name: "sherpa-onnx 1.13.7"
+    purpose:
+      zh-TW: "執行離線 MDX 人聲分離"
+      zh-CN: "执行离线 MDX 人声分离"
+      en: "Running offline MDX source separation"
+      ja: "オフライン MDX 音源分離の実行"
+      ko: "오프라인 MDX 음원 분리 실행"
+    license: "Apache-2.0"
+    links:
+      - label: "sherpa-onnx"
+        url: "https://github.com/k2-fsa/sherpa-onnx"
+  - group: uvr-ai
+    name: "ONNX Runtime 1.27.1 / 1.24.4 DirectML"
+    purpose:
+      zh-TW: "在 CPU 或 DirectML GPU 上執行 MDX 模型"
+      zh-CN: "在 CPU 或 DirectML GPU 上运行 MDX 模型"
+      en: "Running MDX models on the CPU or a DirectML GPU"
+      ja: "CPU または DirectML GPU で MDX モデルを実行"
+      ko: "CPU 또는 DirectML GPU에서 MDX 모델 실행"
+    license: "MIT; ONNX Runtime dependency notices are packaged"
+    links:
+      - label: "ONNX Runtime"
+        url: "https://github.com/microsoft/onnxruntime"
+  - group: uvr-ai
+    name: "Microsoft DirectML 1.15.2"
+    purpose:
+      zh-TW: "在相容的 DirectX 12 顯示卡上提供 GPU 加速"
+      zh-CN: "在兼容的 DirectX 12 显卡上提供 GPU 加速"
+      en: "GPU acceleration on compatible DirectX 12 adapters"
+      ja: "対応 DirectX 12 GPU でのアクセラレーション"
+      ko: "호환 DirectX 12 GPU 가속"
+    license: "MIT; DirectML dependency notices are packaged"
+    links:
+      - label: "DirectML"
+        url: "https://github.com/microsoft/DirectML"
+  - group: uvr-ai
+    name: "Ultimate Vocal Remover / UVR-MDX model weights"
+    purpose:
+      zh-TW: "提供保留合音與完全消除人聲使用的 MDX 模型"
+      zh-CN: "提供保留和声与完全消除人声使用的 MDX 模型"
+      en: "MDX models used for backing-vocal preservation and full vocal removal"
+      ja: "コーラス保持と完全ボーカル除去に使う MDX モデル"
+      ko: "코러스 보존 및 완전 보컬 제거에 사용하는 MDX 모델"
+    license: "UVR code: MIT; model weights: upstream attribution and provenance notice"
+    links:
+      - label: "Ultimate Vocal Remover"
+        url: "https://github.com/Anjok07/ultimatevocalremovergui"
+      - label: "sherpa-onnx model release"
+        url: "https://github.com/k2-fsa/sherpa-onnx/releases/tag/source-separation-models"
+
+  - group: fonts
+    name: "Noto Sans / Noto Serif"
+    purpose:
+      zh-TW: "內建主題的中日韓文字顯示"
+      zh-CN: "内置主题的中日韩文字显示"
+      en: "CJK text in built-in themes"
+      ja: "内蔵テーマの日本語・中国語・韓国語表示"
+      ko: "내장 테마의 한중일 문자 표시"
+    license: "SIL Open Font License 1.1"
+    links:
+      - label: "Noto fonts"
+        url: "https://github.com/notofonts"
+  - group: fonts
+    name: "LXGW WenKai"
+    purpose:
+      zh-TW: "內建主題的手寫風中文字型"
+      zh-CN: "内置主题的手写风中文字体"
+      en: "Handwritten-style Chinese text in built-in themes"
+      ja: "内蔵テーマの手書き風中国語フォント"
+      ko: "내장 테마의 손글씨 스타일 중국어 글꼴"
+    license: "SIL Open Font License 1.1"
+    links:
+      - label: "LXGW WenKai"
+        url: "https://github.com/lxgw/LxgwWenKai"
+  - group: fonts
+    name: "Bodoni Moda"
+    purpose:
+      zh-TW: "內建主題的英文字型"
+      zh-CN: "内置主题的英文字体"
+      en: "Latin typography in built-in themes"
+      ja: "内蔵テーマの欧文フォント"
+      ko: "내장 테마의 라틴 문자 글꼴"
+    license: "SIL Open Font License 1.1"
+    links:
+      - label: "Bodoni Moda"
+        url: "https://github.com/googlefonts/bodoni-moda"

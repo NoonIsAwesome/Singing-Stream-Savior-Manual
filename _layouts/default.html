@@ -1,7 +1,7 @@
 ﻿{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign t = site.data.i18n[current_lang] %}
 {% assign section = page.translation_key | default: 'home' %}
-{% assign standalone_sections = "resources,changelog,about,advanced-streaming,audio-routing,profiles" | split: "," %}
+{% assign standalone_sections = "resources,changelog,about,advanced-streaming,audio-routing,profiles,open-source" | split: "," %}
 {% if current_lang == 'zh-TW' %}
   {% assign language_home = '/' %}
 {% else %}
@@ -111,8 +111,8 @@
         <nav aria-label="{{ t.nav_aria }}">
           <p class="nav-label">{{ t.flow }}</p>
           <ol class="chapter-list">
-            {% assign nav_keys = "home,getting-started,library-and-playback,lyrics,obs-and-themes,advanced-streaming,obs-websocket,uvr-vocal-removal,workspace-modes,settings-and-troubleshooting,changelog,about" | split: "," %}
-            {% assign nav_labels = "home,getting_started,library,lyrics,themes,advanced_streaming,websocket,uvr,modes,settings,changelog,about" | split: "," %}
+            {% assign nav_keys = "home,getting-started,library-and-playback,lyrics,obs-and-themes,advanced-streaming,obs-websocket,uvr-vocal-removal,workspace-modes,settings-and-troubleshooting,changelog,about,open-source" | split: "," %}
+            {% assign nav_labels = "home,getting_started,library,lyrics,themes,advanced_streaming,websocket,uvr,modes,settings,changelog,about,open_source" | split: "," %}
             {% for key in nav_keys %}
               {% assign label_key = nav_labels[forloop.index0] %}
               {% if current_lang == 'zh-TW' %}
@@ -134,7 +134,7 @@
                   {% capture target %}/{{ current_lang }}/changelog.html{% endcapture %}
                 {% elsif key == 'about' %}
                   {% capture target %}/{{ current_lang }}/about.html{% endcapture %}
-                {% elsif key == 'advanced-streaming' %}
+                {% elsif key == 'advanced-streaming' or key == 'open-source' %}
                   {% capture target %}/{{ current_lang }}/{{ key }}.html{% endcapture %}
                 {% else %}
                   {% capture target %}{{ language_guide }}#{{ key }}{% endcapture %}

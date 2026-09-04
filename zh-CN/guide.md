@@ -28,6 +28,22 @@ manual_bundle: true
 <a id="getting-started"></a>
 ## 01 · 开始使用
 
+<section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
+  <div>
+    <p class="chapter-quick-start__eyebrow">第一次打开</p>
+    <h2 id="getting-started-quick-start">5 分钟完成第一次测试播放</h2>
+    <p class="chapter-quick-start__intro">按照下面的步骤，即可打开软件、播放第一首伴奏，并保存下次可以继续使用的项目。</p>
+    <ol class="chapter-quick-start__steps">
+      <li><div><strong>完整解压 ZIP</strong><span>将文件解压到普通文件夹，不要直接在 ZIP 中运行软件。</span></div></li>
+      <li><div><strong>打开主程序</strong><span>在最外层文件夹双击 <code>Singing Stream Savior.exe</code>。</span></div></li>
+      <li><div><strong>新建项目</strong><span>选择“文件 &gt; 新建项目”。</span></div></li>
+      <li><div><strong>加入并播放一首歌</strong><span>把本地音频或单个 YouTube 链接拖进歌曲表格，再双击该歌曲。</span></div></li>
+      <li><div><strong>保存项目</strong><span>选择“文件 &gt; 保存”，建立一个 <code>.bgmsproj</code> 文件。</span></div></li>
+    </ol>
+    <p class="chapter-quick-start__done"><strong>完成时：</strong>伴奏播放器会显示歌名与进度并开始播放；保存后，窗口标题中的 <code>*</code> 会消失。</p>
+  </div>
+</section>
+
 将 ZIP 完整解压到普通文件夹。在最外层找到下图图标的 `Singing Stream Savior.exe`，双击即可启动。这是唯一需要打开的程序；不要直接在 ZIP 中运行，也不需要进入其他资料文件夹寻找 EXE。
 
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 软件图标"><div><strong>Singing Stream Savior.exe</strong><span>平时只需要打开这个程序</span></div></div>
@@ -81,7 +97,7 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 软件会为每首歌曲分别记住调整过的速度与音高。切换歌曲后再次回来时会恢复该歌曲的设置；需要回到原始状态时，可重置为 `100%` 速度和 `0` 半音。这些调整只影响播放，不会修改原始文件或降低其音频质量。
 
-待播不是播放歌曲的必要步骤；在歌曲表格中双击歌曲即可直接播放。待播适合管理观众点歌或预定演唱顺序，可拖动重新排序，也可双击待播项目开始播放。歌曲开始播放时仍会留在待播，自然播放完成或最后按停止后才移入“已唱”。
+待播不是播放歌曲的必要步骤；在歌曲表格中双击歌曲即可直接播放。准备观众点歌或预定演唱顺序时，可将项目歌曲列表或全局歌曲库中的歌曲直接拖入“待播”，也可通过右键菜单添加。待播项目可以拖动重新排序，也可双击开始播放。歌曲开始播放时仍会留在待播，自然播放完成或最后按停止后才移入“已唱”。
 
 伴奏播放器的模式按钮会依序切换 **单次播放、单曲循环、全曲依序自动播放、全曲随机播放**。单曲循环不会在每次循环后重复加入已唱，最后停止时只加入一次。两种全曲模式会在每首完成后移入已唱并继续下一首，期间保持 BGM 暂停；整份待播播完后才停止并恢复 BGM。随机模式只会从剩余待播中选择，因此同一轮不会重复已完成的歌曲。Windows 通知区域的右键菜单也有相同选项。
 

@@ -11,6 +11,13 @@ const CHANGELOG_PAGES = [
   "ko/changelog.html",
   "zh-CN/changelog.html",
 ];
+const OPEN_SOURCE_PAGES = [
+  "open-source.html",
+  "en/open-source.html",
+  "ja/open-source.html",
+  "ko/open-source.html",
+  "zh-CN/open-source.html",
+];
 
 function collectHtmlFiles(root) {
   const files = [];
@@ -69,6 +76,24 @@ export function validateBuiltSite(siteRoot, basePath = DEFAULT_BASE_PATH) {
     }
   }
 
+  for (const page of OPEN_SOURCE_PAGES) {
+    const openSourcePath = join(siteRoot, ...page.split("/"));
+    if (!existsSync(openSourcePath)) {
+      errors.push(`${page}: open-source license page is missing`);
+      continue;
+    }
+
+    const openSourceHtml = readFileSync(openSourcePath, "utf8");
+    for (const requiredNotice of [
+      "Ultimate-Vocal-Remover-MIT.txt",
+      "UVR-MDX-Models-NOTICE.txt",
+    ]) {
+      if (!openSourceHtml.includes(requiredNotice)) {
+        errors.push(`${page}: missing required UVR notice ${requiredNotice}`);
+      }
+    }
+  }
+
   for (const htmlPath of collectHtmlFiles(siteRoot)) {
     const html = readFileSync(htmlPath, "utf8");
     const page = relative(siteRoot, htmlPath).split(sep).join("/");
@@ -104,6 +129,6 @@ if (import.meta.url === invokedPath) {
     process.exit(1);
   }
   console.log(
-    "Built-site validation passed: assets resolve, maintenance files are excluded, and each changelog has one current release.",
+    "Built-site validation passed: assets resolve, maintenance files are excluded, each changelog has one current release, and localized open-source pages include the required UVR notices.",
   );
 }

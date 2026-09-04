@@ -149,4 +149,4 @@ translation_key: settings-and-troubleshooting
 
 若啟動器提示需要較新的啟動器，或自動更新仍無法完成，請改從本說明網站下載最新版完整 ZIP，解壓縮到新的資料夾，再用新版開啟原本的 `.bgmsproj`。不要混合覆蓋不同版本的程式檔案。
 
-[上一頁：完整、精簡與迷你模式](workspace-modes.md) · [回到說明書首頁](README.md)
+[上一頁：完整、精簡與迷你模式](workspace-modes.md) · [下一頁：更新日誌](changelog.md)

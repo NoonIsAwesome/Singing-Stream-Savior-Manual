@@ -1,0 +1,64 @@
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign open_source = site.data.open_source %}
+{% assign ui = open_source.ui[current_lang] | default: open_source.ui.en %}
+{% if current_lang == 'zh-TW' %}
+  {% assign previous_target = '/about.html' %}
+{% else %}
+  {% capture previous_target %}/{{ current_lang }}/about.html{% endcapture %}
+{% endif %}
+
+<header class="section-heading" data-article-lead>
+  <p class="section-kicker">{{ ui.eyebrow }}</p>
+  <h1>{{ ui.title }}</h1>
+  <p>{{ ui.lead }}</p>
+</header>
+
+<aside class="version-preview" role="note">
+  <span class="version-preview__badge">2.1.1.1</span>
+  <div>
+    <strong>{{ ui.uvr_title }}</strong>
+    <p>{{ ui.uvr_text }}</p>
+  </div>
+</aside>
+
+<h2 id="complete-license-files">{{ ui.package_title }}</h2>
+
+<p>{{ ui.package_text }}</p>
+
+{% for group in open_source.groups %}
+  {% assign group_title = group.title[current_lang] | default: group.title.en %}
+  <h2 id="{{ group.id }}">{{ group_title }}</h2>
+  <table class="open-source-table">
+    <thead>
+      <tr>
+        <th scope="col">{{ ui.project }}</th>
+        <th scope="col">{{ ui.purpose }}</th>
+        <th scope="col">{{ ui.license }}</th>
+        <th scope="col">{{ ui.source }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for project in open_source.projects %}
+        {% if project.group == group.id %}
+          {% assign purpose = project.purpose[current_lang] | default: project.purpose.en %}
+          <tr>
+            <th scope="row">{{ project.name }}</th>
+            <td data-label="{{ ui.purpose | escape }}">{{ purpose }}</td>
+            <td data-label="{{ ui.license | escape }}"><code>{{ project.license }}</code></td>
+            <td class="open-source-links" data-label="{{ ui.source | escape }}">
+              <span class="open-source-links__items">
+                {% for link in project.links %}
+                  <a href="{{ link.url }}" rel="noopener">{{ link.label | default: ui.source_label }}</a>{% unless forloop.last %}<span aria-hidden="true"> · </span>{% endunless %}
+                {% endfor %}
+              </span>
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+{% endfor %}
+
+<p class="open-source-disclaimer">{{ ui.closing }}</p>
+
+<p class="chapter-pagination"><a href="{{ previous_target | relative_url }}">{{ ui.previous }}</a></p>

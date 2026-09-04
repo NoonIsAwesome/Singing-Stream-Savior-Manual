@@ -28,6 +28,22 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 <a id="getting-started"></a>
 ## 01 · 시작하기
 
+<section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
+  <div>
+    <p class="chapter-quick-start__eyebrow">처음 실행</p>
+    <h2 id="getting-started-quick-start">5분 안에 첫 곡 재생하고 저장하기</h2>
+    <p class="chapter-quick-start__intro">아래 순서대로 앱을 열고 반주 한 곡을 재생한 뒤, 다음에도 이어서 사용할 프로젝트를 저장할 수 있습니다.</p>
+    <ol class="chapter-quick-start__steps">
+      <li><div><strong>ZIP 전체 압축 해제</strong><span>일반 폴더에 완전히 풀고 ZIP 안에서 앱을 직접 실행하지 마세요.</span></div></li>
+      <li><div><strong>메인 앱 열기</strong><span>가장 바깥쪽 폴더의 <code>Singing Stream Savior.exe</code>를 두 번 클릭합니다.</span></div></li>
+      <li><div><strong>프로젝트 만들기</strong><span>파일 &gt; 새 프로젝트를 선택합니다.</span></div></li>
+      <li><div><strong>곡 하나 추가하고 재생</strong><span>로컬 오디오 파일이나 YouTube 단일 영상 링크를 곡 표로 끌어다 놓고 해당 곡을 두 번 클릭합니다.</span></div></li>
+      <li><div><strong>프로젝트 저장</strong><span>파일 &gt; 저장을 선택해 <code>.bgmsproj</code> 파일을 만듭니다.</span></div></li>
+    </ol>
+    <p class="chapter-quick-start__done"><strong>완료 확인:</strong> 반주 플레이어에 곡명과 진행 시간이 표시되고 재생이 시작됩니다. 저장을 마치면 창 제목의 <code>*</code>가 사라집니다.</p>
+  </div>
+</section>
+
 ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴더에서 아래 아이콘의 `Singing Stream Savior.exe`를 두 번 클릭하면 됩니다. 사용자가 열어야 하는 파일은 이것뿐이며, ZIP 안에서 직접 실행하거나 데이터 폴더 안의 다른 EXE를 찾을 필요가 없습니다.
 
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 앱 아이콘"><div><strong>Singing Stream Savior.exe</strong><span>평소에는 이 앱만 실행하세요</span></div></div>
@@ -81,7 +97,7 @@ BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 
 
 조절한 속도와 키는 곡마다 따로 기억됩니다. 다른 곡으로 전환했다가 돌아와도 해당 곡에 맞춘 설정이 복원되며, 필요하면 `100%` 속도와 `0` 반음으로 초기화할 수 있습니다. 이 설정은 재생에만 적용되고 원본 파일이나 음질을 변경하지 않습니다.
 
-**대기 목록**은 선택 기능이며 곡 표에서 곡을 두 번 클릭해도 바로 재생할 수 있습니다. 시청자 신청곡이나 예정 순서를 관리할 때 사용하며, 드래그로 순서를 바꾸거나 대기 행을 두 번 클릭해 재생할 수 있습니다. 곡은 재생을 시작할 때 대기 목록에 남아 있고, 자연스럽게 끝나거나 마지막으로 정지했을 때만 **부른 곡**으로 이동합니다.
+**대기 목록**은 선택 기능이며 곡 표에서 곡을 두 번 클릭해도 바로 재생할 수 있습니다. 시청자 신청곡이나 예정 순서를 준비할 때는 프로젝트 곡 목록 또는 전체 라이브러리의 곡을 대기 목록으로 직접 끌어다 놓거나 오른쪽 클릭 메뉴로 추가하세요. 대기 항목은 드래그로 순서를 바꾸거나 두 번 클릭해 재생할 수 있습니다. 곡은 재생을 시작할 때 대기 목록에 남아 있고, 자연스럽게 끝나거나 마지막으로 정지했을 때만 **부른 곡**으로 이동합니다.
 
 반주 플레이어의 모드 버튼은 **한 번 재생, 한 곡 반복, 대기 목록 순차 자동 재생, 대기 목록 무작위 재생** 순서로 전환됩니다. 한 곡 반복은 매 반복마다 부른 곡을 추가하지 않고 최종 정지 시 한 번만 추가합니다. 두 대기 목록 모드는 곡이 끝날 때마다 부른 곡으로 옮기고 다음 곡을 재생하며, 곡 사이에도 BGM을 일시 정지 상태로 유지합니다. 대기 목록 전체가 끝난 뒤 정지하고 BGM을 다시 재생합니다. 무작위 모드는 남은 곡에서만 선택하므로 한 번의 재생에서 완료한 곡을 반복하지 않습니다. Windows 알림 영역 메뉴에도 같은 선택지가 있습니다.
 
