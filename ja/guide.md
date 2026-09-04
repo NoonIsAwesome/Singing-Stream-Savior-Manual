@@ -155,7 +155,7 @@ OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き�
 
 **2.1.1 の新機能です。** ローカル音源または YouTube リンクを UVR の処理待ちリストへ直接ドラッグできます。YouTube のタイトルは自動取得され、15 分を超える動画は処理前に必要な範囲を指定できます。MDX は「コーラスを残す」が初期設定で、バッチ開始前なら曲ごとに完全除去へ変更できます。
 
-WAV／FLAC、初期設定の 48 kHz または 44.1 kHz を選択できます。対応環境では DirectML GPU を使用し、利用できない場合は CPU へ自動的に切り替え、メイン画面左下に理由を表示します。出力フォルダーは「設定 > ファイルとプロジェクト」で一元管理します。
+WAV／FLAC、初期設定の 48 kHz または 44.1 kHz を選択できます。GPU アクセラレーションを有効にすると、対応する GPU を使用し、利用できない場合は CPU へ自動的に切り替えてメイン画面左下に理由を表示します。出力フォルダーは「設定 > ファイルとプロジェクト」で一元管理します。
 
 完了後は伴奏を 1 曲ずつ、または全曲まとめてライブラリへ追加できます。出力フォルダーには `(Instrumental)` と `(Vocal)` の両方を残し、曲リストには実際の伴奏だけを追加します。
 
@@ -174,7 +174,7 @@ WAV／FLAC、初期設定の 48 kHz または 44.1 kHz を選択できます。�
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/ja/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/mini-workspace.png' | relative_url }}" alt="日本語のミニモード"></a><figcaption>ミニモードは予約リストの表示領域を広く取れます。</figcaption></figure>
 </div>
 
-メインウィンドウが不要なときは、閉じるボタンで終了せず Windows の通知領域へ格納するよう設定できます。再生はバックグラウンドで続き、トレイメニューとグローバルショートカットから再生、Key、速度、Profile、マイク、歌詞ウィンドウ、Meter を操作できます。アプリ本体と helper を完全に終了する場合は、トレイメニューの「アプリを終了」を選びます。
+メインウィンドウが不要なときは、閉じるボタンで終了せず Windows の通知領域へ格納するよう設定できます。再生はバックグラウンドで続き、トレイメニューとグローバルショートカットから再生、Key、速度、Profile、マイク、歌詞ウィンドウ、Meter を操作できます。完全に終了する場合は、トレイメニューの「アプリを終了」を選びます。
 
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="未再生時の Singing Stream Savior Windows 通知領域メニュー" caption="未再生時は簡潔なメニューです。伴奏再生または高度な配信モードでは、再生、Key、速度、Profile、マイク、Meter の必要な項目が追加されます。" size="medium" %}
 
@@ -189,11 +189,11 @@ WAV／FLAC、初期設定の 48 kHz または 44.1 kHz を選択できます。�
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/launcher-update-prompt.png' | relative_url }}"><img src="{{ '/assets/images/ja/launcher-update-prompt.png' | relative_url }}" alt="バージョンと更新内容を表示する Launcher 1.2 のカード形式更新画面"></a><figcaption>更新内容はスクロール可能なカードに表示されます。「後で」は現行版を維持し、「今すぐ更新」で検証付き更新を開始します。</figcaption></figure>
 
-キャンセル可能なダウンロード中は、「キャンセル」またはウィンドウを閉じる操作で安全な中止を要求できます。既存ファイルと `current.json` を完全に維持し、一時ファイルを片付けてから現行版を起動します。短い最終コミット段階では閉じる操作を一時的に無視します。更新中にプロセスや PC が強制終了しても、次回起動時に永続トランザクション記録からロールバックまたは完了処理を行い、整合した版だけを起動します。
+ダウンロード中は「キャンセル」またはウィンドウを閉じると、現在のバージョンをそのまま使用できます。最後のインストール段階では、閉じる操作が一時的に無効になります。更新が予期せず中断した場合は、次回起動時に自動で修復または完了します。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/ja/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/ja/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 のダウンロード、検証、インストール進行画面"></a><figcaption>HTTPS の取得元、想定サイズ、SHA-256 を確認してから、復旧可能なアトミック処理で版を切り替えます。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/ja/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 のダウンロード、検証、インストール進行画面"></a><figcaption>ダウンロードが完全であることを確認してから、安全に新しいバージョンへ切り替えます。</figcaption></figure>
 
-外側のランチャー、`current.json`、内部フォルダーは同じ相対位置に保ってください。Launcher 1.2 は自動修復とトランザクション復旧用に一つ前の検証済みパッケージを保持しますが、ワンクリックのダウングレード機能はありません。古いアプリが新しい版で保存したプロジェクトを理解できない可能性があるためです。旧版を試す必要がある場合は、公式の完全 ZIP を**別フォルダー**へ展開し、`.bgmsproj` とメディアのコピーを使用してください。更新に失敗する場合も、異なる版の DLL を混ぜず最新版の完全 ZIP を展開してください。
+外側のランチャーとアプリフォルダー内のファイルは元の位置に保ち、一部だけを移動しないでください。旧版を使う必要がある場合は、公式の完全 ZIP を**別フォルダー**へ展開し、先に `.bgmsproj` とメディアをバックアップしてください。更新に失敗する場合も、異なるバージョンのプログラムファイルを混ぜず、最新版の完全 ZIP を展開してください。
 
 Qt platform plugin エラーが出る場合は ZIP を再ダウンロードして完全に展開し、一番外側の `Singing Stream Savior.exe` だけを起動してください。データフォルダーの中を確認したり開いたりする必要はありません。デスクトップには、その外側 EXE の Windows ショートカットを作成してください。
 

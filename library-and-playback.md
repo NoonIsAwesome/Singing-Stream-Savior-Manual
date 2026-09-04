@@ -60,7 +60,7 @@ translation_key: library-and-playback
 
 `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA`
 
-拖入 YouTube 播放清單時，軟體會將其中的歌曲加入歌曲庫，並整理到對應的新歌單，不必逐首貼上連結。YouTube 內容需要網路與隨程式提供的 `yt-dlp` 輔助程式；首次解析或歌曲較多時可能需要稍候。
+拖入 YouTube 播放清單時，軟體會將其中的歌曲加入歌曲庫，並整理到對應的新歌單，不必逐首貼上連結。YouTube 內容需要網路連線；首次解析或歌曲較多時可能需要稍候。
 
 ## 顯示歌名與來源
 

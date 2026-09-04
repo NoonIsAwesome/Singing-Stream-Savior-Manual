@@ -16,7 +16,7 @@ published: true
 
 위의 짧은 테스트 녹화가 정상이라면 기본 설정은 끝났으며 여기서 읽기를 멈춰도 됩니다. 아래 내용은 장치 변경, Buffer 수동 조정, 이펙트·Monitor·녹음의 세부 설정 또는 문제 해결이 필요할 때만 확인하세요.
 
-<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 새 기능</span><div><strong>오디오 라우팅과 음성 Profile을 함께 설정하세요.</strong><p>라우팅은 입력, Monitor, 녹음과 방송 출력을, Profile은 보컬 음색을 관리합니다. 모든 이미지는 Release build의 실제 화면이며 현지화 버전이 있을 때 우선 사용합니다.</p></div></aside>
+<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 새 기능</span><div><strong>오디오 라우팅과 음성 Profile을 함께 설정하세요.</strong><p>라우팅은 입력, Monitor, 녹음과 방송 출력을, Profile은 보컬 음색을 관리합니다.</p></div></aside>
 
 ## 2.1.0.0에서 이동한 설정
 
@@ -44,9 +44,9 @@ published: true
 
 {% include localized-release-screenshot.html name="audio-health-check.png" alt="App Buffer 전체 점검 완료 결과" caption="전체 점검 완료 예시입니다. 녹색 체크는 통과, 진한 녹색 행은 이 PC의 권장값, 노란색은 점검을 마쳤지만 안전 여유가 부족함을 뜻합니다. 권장값과 지연은 PC마다 다릅니다." %}
 
-> **128／256이 ‘검증되지 않음’으로 표시되어도 정상인가요?** 정상입니다. 낮은 Buffer는 두 번의 엄격 관찰에서 엔진／녹음 이벤트가 없고 callback, 클록, FIFO와 처리 성능에 충분한 여유가 있을 때만 검증됩니다. ‘카운터 증가 없음’이더라도 ‘엄격 성능 여유 점검 실패’라면 관찰 중 드롭아웃이 집계되지는 않았지만 권장할 안전 여유가 부족하다는 뜻입니다. 소프트웨어 Monitor 지연을 특별히 낮춰야 하는 경우가 아니라면 권장된 512를 사용하세요. App Buffer와 ASIO hardware buffer는 서로 다른 설정입니다.
+> **128／256이 ‘검증되지 않음’으로 표시되어도 정상인가요?** 정상입니다. 낮은 Buffer는 반복된 안정성 점검을 통과한 경우에만 권장됩니다. ‘검증되지 않음’은 이미 들리는 끊김이 발생했다는 뜻이 아닙니다. 소프트웨어 Monitor 지연을 특별히 낮춰야 하는 경우가 아니라면 권장된 512를 사용하세요. App Buffer와 ASIO hardware buffer는 서로 다른 설정입니다.
 
-노란색 메시지는 두 가지 의미로 나뉩니다. **드롭아웃 확인**은 마이크／모니터 underrun 또는 overrun, 정식 Stream 경로의 불연속, 장치 중단／복구가 감지되었을 때 표시됩니다. **오디오 타이밍 확인**은 동일한 callback, 클록 또는 지연 계산 이상이 약 2초 동안 지속될 때 표시됩니다. 순간적인 callback peak 한 번만으로 실제 들리는 드롭아웃이 발생했다고 판단하지 않습니다. 안정성 텍스트에 포인터를 두면 경로별 카운터, 장치 복구, callback peak／period와 이상 플래그를 확인할 수 있습니다.
+노란색 메시지는 두 가지 의미로 나뉩니다. **드롭아웃 확인**은 마이크, Monitor, 방송 출력 또는 복구 중인 장치가 불안정할 수 있음을 뜻합니다. **오디오 타이밍 확인**은 처리 시간이나 동기화 상태의 이상이 계속되고 있음을 뜻합니다. 짧은 피크만으로 들리는 끊김이 발생했다고 단정할 수는 없습니다. 안정성 텍스트에 포인터를 두면 자세한 내용을 확인할 수 있습니다.
 
 ### 일반 사용자를 위한 권장 시작 설정
 
@@ -131,18 +131,18 @@ Profile 뒤에는 전체 방송용 **Mix Bus Compressor**, **Stream Output Limit
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>5개 오디오 경로와 시스템 부하 확인</h2><p>고급 방송 모드에서는 보기 또는 트레이 메뉴에서 Meter를 열 수 있습니다. 오른쪽 도킹, 독립 창, 가로／세로 레이아웃 전환을 지원합니다.</p></div>
   <p><strong>BGM／반주</strong>, <strong>보컬(Profile 후, Mix 전)</strong>, <strong>방송 출력</strong>, <strong>BGM／반주 모니터</strong>, <strong>보컬 모니터</strong>를 표시합니다. 모든 트랙에 Peak, 방송 출력에는 3초 단기 <strong>LUFS-S</strong>도 표시하며 0–200% 눈금 노브로 조절합니다.</p>
-  <p>가로형 Meter는 BGM／반주와 보컬의 균형이 오랫동안 어긋날 때 보컬을 높이거나 반주를 낮추도록 안내합니다. 조언만 제공하며 게인을 자동으로 변경하지 않습니다. 적격 보컬 활동이 아직 감지되지 않은 동안에는 안내를 표시하지 않습니다. 적격 보컬이 5초 동안 연속으로 감지되지 않으면 간주 구간으로 처리하고 이전 안내와 판단 데이터를 지운 뒤 다음 보컬 구간부터 다시 판단합니다.</p>
-  <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="가로 레벨 바를 사용하는 5트랙 오디오 Meter" caption="이 실제 화면은 5개 Peak 경로와 0–200% 제어를 보여 줍니다. LUFS-S와 지속 균형 문구는 측정 조건을 만족할 때만 나타나므로 이 고정 신호 이미지에는 채워지지 않았습니다." %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="세로 레벨 바를 사용하는 5트랙 오디오 Meter 패널" caption="이 이미지는 세로 Meter 패널과 같은 5개 경로／제어를 표시합니다. 오디오 경로를 바꾸지 않고 메인 창 오른쪽에 도킹할 수도 있습니다." %}</div>
-  <div class="effect-reference"><details><summary><strong>음량 균형 안내의 판단 방식</strong><span>무음, 호흡, 간주를 보컬과 구분합니다</span></summary><div class="effect-reference__body"><p>Meter는 실제 방송 경로의 Mix 전 BGM／반주와 Profile 후 보컬을 100ms 단위로 확인합니다. BGM／반주가 실제 Playing 상태이고 신호가 있으며, 라우팅과 마이크 상태가 정상이고 보컬 활동이 조건을 통과할 때만 데이터를 누적합니다. Noise Gate 정보가 있으면 해당 구간의 약 25% 이상에서 Gate가 열려 있어야 하며, Profile 후 보컬의 평균 에너지는 −45 dBFS 이상, 처리 전 마이크 Peak는 −50 dBFS 이상이어야 합니다. 안내가 표시되려면 최소 10초 재생, 최근 12초 중 6초 이상의 적격 보컬, 각각 최소 1.2초이고 서로 최소 300ms 떨어진 두 구절이 필요합니다. BGM／반주 레벨이 보컬보다 2dB 넘게 낮지 않거나 더 큰 상태도 최근 적격 데이터에서 최소 6초 누적되어야 합니다. 적격 구간의 보컬 평균 에너지가 −26 dBFS 이하일 때만 “보컬이 작을 수 있음” 안내도 표시합니다. 최근 처리 전 또는 처리 후 보컬 Peak가 −6 dBFS 이상이거나 Limiter 게인 감소가 1dB를 초과하면 반주를 낮추라는 안내만 유지하고 보컬을 높이라고 권하지 않습니다. 곡 변경, 재생 중지 또는 재시작, 큰 폭의 재생 위치 이동, Profile 변경, 라우팅 중단 또는 복구 대기, Meter 숨김은 판단 데이터를 초기화합니다. 이는 지속적인 신호 활동과 음량 비교이며 음성 인식이 아닙니다.</p></div></details></div>
-  <p>오른쪽 아래의 테두리 없는 CPU／RAM 표시는 시스템 전체와 앱 사용량을 구분합니다. 고급 방송 모드에서는 Buffer, callback, 예상 지연, underrun／overrun도 Tooltip에 표시합니다.</p>
+  <p>가로형 Meter는 BGM／반주와 보컬의 균형이 지속적으로 어긋날 때 보컬을 높이거나 반주를 낮추도록 안내합니다. 조언만 제공하며 게인을 자동으로 변경하지 않습니다. 무음, 호흡, 간주 구간을 곧바로 작은 보컬로 판단하지 않습니다.</p>
+  <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="가로 레벨 바를 사용하는 5트랙 오디오 Meter" caption="가로형 Meter에는 5개 Peak 경로와 0–200% 제어가 표시됩니다. 충분한 오디오가 측정되면 LUFS-S와 균형 안내가 나타납니다." %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="세로 레벨 바를 사용하는 5트랙 오디오 Meter 패널" caption="세로형 Meter에서도 같은 5개 경로를 제어할 수 있으며 메인 창 오른쪽에 도킹할 수 있습니다." %}</div>
+  <div class="effect-reference"><details><summary><strong>음량 균형 안내는 언제 표시되나요?</strong><span>반주와 보컬 데이터가 충분할 때만 판단합니다</span></summary><div class="effect-reference__body"><p>앱은 반주와 보컬을 일정 시간 관찰한 뒤 장기적인 균형을 비교합니다. 곡이 막 시작했거나 무음, 호흡, 간주, Profile 전환, 오디오 장치 복구 중일 때는 바로 안내하지 않습니다. 보컬이 이미 과부하에 가까우면 보컬을 높이라고 하지 않고 반주를 낮추라는 안내만 표시합니다. 곡 변경, 정지, 다시 재생 또는 큰 폭의 탐색 후에는 새로 관찰합니다.</p></div></details></div>
+  <p>오른쪽 아래의 CPU／RAM 표시는 이 앱의 사용량을 보여 줍니다. 포인터를 두면 시스템과 앱의 자세한 사용량을 확인할 수 있으며, 고급 방송 모드에서는 Buffer, 처리 시간, 예상 지연과 오디오 중단 횟수도 표시합니다.</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="메인 창 오른쪽 아래에 접힌 CPU／RAM 요약" caption="이 이미지는 포인터를 두기 전의 간결한 CPU／RAM 요약만 보여 줍니다. 포인터를 두면 위에서 설명한 시스템／앱 부하와 고급 오디오 상태가 펼쳐집니다." size="medium" %}
   {% include system-health-interpretation.html %}
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>시스템 트레이에 둔 채 방송 제어</h2><p>닫기 버튼을 트레이 최소화 또는 완전 종료로 동작하도록 설정할 수 있습니다.</p></div>
-  <p>상태에 따라 재생／계속, 일시 정지, 정지, 처음부터 재생, Key, 속도, Profile, 마이크, 가사 창, 메인 창과 고급 방송 모드 전용 Meter를 표시합니다. “앱 종료”가 본체와 helper를 끝냅니다.</p>
-  {% include localized-release-screenshot.html name="notification-area-menu.png" alt="재생하지 않을 때의 Singing Stream Savior Windows 시스템 트레이 메뉴" caption="이 실제 화면은 재생하지 않을 때의 간결한 메뉴입니다. 반주 재생 또는 고급 방송 모드에서는 위에서 설명한 재생, Key, 속도, Profile, 마이크와 Meter 동작이 추가됩니다. 맨 아래 종료 항목은 본체와 helper를 완전히 종료합니다." size="medium" %}
+  <p>상태에 따라 재생／계속, 일시 정지, 정지, 처음부터 재생, Key, 속도, Profile, 마이크, 가사 창, 메인 창과 고급 방송 모드 전용 Meter를 표시합니다. “앱 종료”를 선택하면 앱과 재생 기능이 종료됩니다.</p>
+  {% include localized-release-screenshot.html name="notification-area-menu.png" alt="재생하지 않을 때의 Singing Stream Savior Windows 시스템 트레이 메뉴" caption="재생하지 않을 때는 간결한 메뉴가 표시됩니다. 반주 재생 또는 고급 방송 모드에서는 위에서 설명한 재생, Key, 속도, Profile, 마이크와 Meter 동작이 추가됩니다. 맨 아래 종료 항목을 선택하면 앱이 완전히 종료됩니다." size="medium" %}
   <p>전역 단축키는 재생 제어와 마이크／모니터로 분류되며 기본 키를 제공합니다. 일반 재생에서는 고급 모드 전용 항목을 숨깁니다.</p>
   {% include keyboard-shortcuts-reference.html %}
   {% include localized-release-screenshot.html name="keyboard-shortcuts.png" alt="재생, 마이크와 모니터로 분류된 키보드 단축키 설정" caption="기본 키를 직접 바꿀 수 있으며 고급 방송 모드가 필요한 항목은 일반 재생에서 숨깁니다." %}
@@ -196,13 +196,5 @@ Singing Stream Savior → 가상 오디오 케이블 → OBS／Discord
 - 완전히 압축을 푼 폴더에서 관리자 권한으로 Setup을 실행했는지 확인하세요.
 - Singing Stream Savior의 가상 출력 설정에서 **장치 새로 고침**을 누르세요.
 - 오디오 장치를 사용 중인 앱을 닫으세요. 계속 보이지 않으면 [VB-Audio 공식 참조 설명서](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf)를 확인하세요.
-
-## 개발 PC 전체 테스트 데이터(참고)
-
-일반 설정에서는 아래 기술 데이터를 행마다 이해할 필요가 없습니다. 작성자 PC의 버전 테스트 근거와 지연／안정성 문제를 자세히 확인할 때의 참고 자료로 남겨 둡니다.
-
-<div class="effect-reference"><details><summary><strong>ASIO, Windows Audio, OBS 및 가상 출력 전체 결과 보기</strong><span>지연, 연속성 및 장시간 스트레스 테스트</span></summary><div class="effect-reference__body">
-{% include audio-test-results-ko.html %}
-</div></details></div>
 
 <small>VB-CABLE 이름, 화면과 설치 프로그램은 VB-Audio Software의 제품입니다. 스크린샷은 설치 단계 설명 목적으로만 사용합니다.</small>

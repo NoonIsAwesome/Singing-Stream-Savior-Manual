@@ -16,7 +16,7 @@ published: true
 
 如果上面的测试录制正常，基本设置已经完成，可以先停止阅读。以下内容只在更换设备、手动微调 Buffer、深入设置效果、监听、录音或排查异常时查阅，第一次设置无需全部读完。
 
-<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新功能</span><div><strong>请将音频路由与人声 Profile 一起设置。</strong><p>音频路由负责输入、监听、录音与直播输出；Profile 负责人声音色。所有截图均来自 Release build，有对应本地化版本时会优先使用。</p></div></aside>
+<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新功能</span><div><strong>请将音频路由与人声 Profile 一起设置。</strong><p>音频路由负责输入、监听、录音与直播输出；Profile 负责人声音色。</p></div></aside>
 
 ## 2.1.0.0 设置位置变更
 
@@ -44,9 +44,9 @@ published: true
 
 {% include localized-release-screenshot.html name="audio-health-check.png" alt="完整 App Buffer 稳定性检查完成后的结果窗口" caption="完整检查完成示例：绿色勾选表示通过，较深的绿色行是这台电脑的建议值；黄色表示测试完成但安全余量不足。每台电脑的建议值与延迟都可能不同。" %}
 
-> **128／256 显示“尚未验证”正常吗？** 正常。低 Buffer 必须连续两轮都没有引擎／录音事件，而且 callback、时钟、FIFO 与处理性能仍有足够余量，才会标记为已验证。即使“计数器没有增加”，只要显示“严格性能余量检查失败”，就表示安全余量不足，软件不会推荐；这并不等于当时已经出现爆音。此时直接使用检查推荐的 512，只在确实需要降低软件监听延迟时再尝试低值。这里的 App Buffer 与 ASIO hardware buffer 是两个不同设置。
+> **128／256 显示“尚未验证”正常吗？** 正常。较低的 Buffer 只有在重复通过稳定性检查后才会被推荐；“尚未验证”不代表当时已经出现爆音。此时直接使用检查推荐的 512，只在确实需要降低软件监听延迟时再尝试较低数值。App Buffer 与音频接口的 ASIO hardware buffer 是两个不同设置。
 
-黄色信息有两种不同含义。**检查音频中断**表示检测到麦克风／监听 underrun、overrun、正式 Stream 路径中断，或设备正在中断／恢复；**检查音频时序**则要求同一 callback、时钟或延迟核算异常持续约 2 秒。单次瞬时 callback peak 不代表已经发生可听见的断音。将鼠标停在“稳定性”上，可查看各路径计数、设备恢复、callback peak／period 与异常标志。
+黄色信息有两种含义。**检查音频中断**表示麦克风、监听、直播输出或正在恢复的设备可能不稳定；**检查音频时序**表示处理时间或同步状态持续异常。短暂峰值不一定代表已经出现可听见的断音，将鼠标停在“稳定性”上可查看详细信息。
 
 ### 建议设置：普通用户先这样使用
 
@@ -141,18 +141,18 @@ Profile 处理后，完整直播输出还会依次经过 **Mix Bus Compressor**�
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>查看五条音频路径与系统负载</h2><p>高级直播模式可从“查看”或系统托盘菜单打开 Meter。它可以停靠在主窗口右侧或独立悬浮，并通过一颗按钮切换横向／纵向布局。</p></div>
   <p>五轨为 <strong>BGM／伴奏</strong>、<strong>人声（Profile 后、Mix 前）</strong>、<strong>直播输出</strong>、<strong>BGM／伴奏监听</strong>与<strong>人声监听</strong>。每轨显示 Peak；直播输出另显示三秒短期 <strong>LUFS-S</strong>。刻度旋钮范围为 0–200%，配色与主界面一致。</p>
-  <p>横向 Meter 会在 BGM／伴奏与人声长时间失衡时提示提高人声或调低伴奏；它只提供建议，绝不自动改变任何增益。尚未检测到合格人声时不会提示；连续 5 秒未检测到合格人声会视为间奏，清除旧提示与判断数据，并从下一段人声重新累计。</p>
-  <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="使用横向电平条的五轨音量 Meter" caption="这张实图显示五轨 Peak 与 0–200% 控制；LUFS-S 和长时间平衡文字只有在满足量测条件时才会出现，因此未填入这张固定信号截图。" %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="使用纵向电平条的五轨音量 Meter 面板" caption="这张裁图显示纵向 Meter 面板本身与相同的五轨控制；它也可以停靠在主窗口右侧而不改变音频路由。" %}</div>
-  <div class="effect-reference"><details><summary><strong>响度提示的判断方式</strong><span>避免把安静、换气或间奏误判为人声过小</span></summary><div class="effect-reference__body"><p>系统每 100 ms 检查一次实际直播路径中的 Mix 前 BGM／伴奏与 Profile 后人声。只有 BGM／伴奏确实处于 Playing 状态、有伴奏信号、路由与麦克风状态正常，并且人声通过活动条件时才会累计数据。Noise Gate 有状态数据时，该区段至少约 25% 的时间必须保持开启；Profile 后人声平均能量至少为 −45 dBFS，原始麦克风 Peak 至少为 −50 dBFS。显示失衡提示前，需要至少播放 10 秒、最近 12 秒内至少 6 秒合格人声，并包含两段各至少 1.2 秒、彼此间隔至少 300 ms 的人声；伴奏不比人声低超过 2 dB，或比人声更大的状态，还必须在最近的合格人声数据中累计至少 6 秒。只有合格人声平均能量不高于 −26 dBFS，才会同时提示“人声可能偏小”。如果最近数据中的原始或处理后人声 Peak 达到 −6 dBFS 或更高，或 Limiter 增益衰减超过 1 dB，则只保留调低伴奏的建议，不会要求提高人声。换曲、停止或重新播放、大幅跳转播放位置、切换 Profile、路由中断或等待恢复，以及隐藏 Meter，都会重置判断。这是信号活动与长时间响度比较，并非语音识别。</p></div></details></div>
-  <p>右下角无边框 CPU／RAM 状态区分系统与本程序用量。高级直播模式的 Tooltip 还会显示 Buffer、callback、估计延迟及 underrun／overrun，并在负载可能影响稳定性时用颜色提醒。</p>
+  <p>横向 Meter 会在 BGM／伴奏与人声持续失衡时提示提高人声或调低伴奏；它只提供建议，不会自动改变任何增益。安静、换气或歌曲间奏不会立刻被判断为人声过小。</p>
+  <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="使用横向电平条的五轨音量 Meter" caption="横向 Meter 会显示五轨 Peak 与 0–200% 控制；测量到足够的音频后会显示 LUFS-S 与平衡建议。" %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="使用纵向电平条的五轨音量 Meter 面板" caption="纵向 Meter 提供相同的五轨控制，也可停靠在主窗口右侧。" %}</div>
+  <div class="effect-reference"><details><summary><strong>响度提示何时会出现？</strong><span>只在有足够伴奏与演唱数据时判断</span></summary><div class="effect-reference__body"><p>软件会先观察一段持续的伴奏与人声，再比较两者的长期平衡。歌曲刚开始、安静段落、换气、间奏、切换 Profile 或音频设备正在恢复时，都不会立刻显示建议。如果人声已经接近过载，软件也只会建议调低伴奏，不会要求继续提高人声。换曲、停止、重新播放或大幅移动播放位置后，会重新累计数据。</p></div></details></div>
+  <p>右下角的 CPU／RAM 状态会显示本程序的使用率。将鼠标停在上面可以查看系统与本程序的详细资源用量；高级直播模式还会显示 Buffer、处理时间、估计延迟与音频中断次数。负载可能影响稳定性时会以颜色提示。</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="主窗口右下角收起状态的 CPU 与 RAM 摘要" caption="这张图只显示鼠标尚未停留时的精简 CPU／RAM 摘要；指向文字后才会展开上文说明的系统／程序负载与高级音频健康资料。" size="medium" %}
   {% include system-health-interpretation.html %}
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>缩到系统托盘后继续控制直播</h2><p>设置可决定点击主窗口关闭按钮时缩到系统托盘或直接退出。缩到后台后，不需要重新打开完整窗口也能完成常用操作。</p></div>
-  <p>右键菜单会按状态显示播放／继续、暂停、停止、从头播放、Key、速度、Profile、麦克风静音／恢复、歌词窗口、打开主窗口，以及高级直播模式限定的 Meter。选择“关闭软件”才会结束主程序与 helper。</p>
-  {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior 未播放时的 Windows 系统托盘菜单" caption="这张实图是未播放时的精简菜单；播放伴奏或启用高级直播模式后，才会增加上文说明的播放、Key、速度、Profile、麦克风与 Meter 操作。底部“结束”会完全关闭主程序与 helper。" size="medium" %}
+  <p>右键菜单会按状态显示播放／继续、暂停、停止、从头播放、Key、速度、Profile、麦克风静音／恢复、歌词窗口、打开主窗口，以及高级直播模式限定的 Meter。选择“关闭软件”才会结束程序与播放功能。</p>
+  {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior 未播放时的 Windows 系统托盘菜单" caption="未播放时会显示精简菜单；播放伴奏或启用高级直播模式后，才会增加上文说明的播放、Key、速度、Profile、麦克风与 Meter 操作。底部“结束”会完全关闭程序。" size="medium" %}
   <p>全局快捷键分为“播放控制”和“麦克风／监听”，并提供默认按键；非高级直播模式会隐藏不适用的麦克风／监听项目。</p>
   {% include keyboard-shortcuts-reference.html %}
   {% include localized-release-screenshot.html name="keyboard-shortcuts.png" alt="设置页中按播放、麦克风与监听分类的键盘快捷键" caption="默认快捷键可直接修改；普通播放模式会隐藏需要高级直播模式的项目。" %}
@@ -206,13 +206,5 @@ Singing Stream Savior → 虚拟音频线 → OBS／Discord
 - 确认安装程序在完整解压后以管理员身份运行。
 - 在 Singing Stream Savior 的虚拟输出设置中点击 **刷新设备**。
 - 关闭可能占用音频设备的程序；仍然找不到时，请参阅 [VB-Audio 官方参考手册](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf)。
-
-## 开发机完整测试数据（补充）
-
-普通设置无需逐行理解以下工程数据；这些内容保留为作者电脑上的版本测试证据，并供排查延迟或稳定性时参考。
-
-<div class="effect-reference"><details><summary><strong>展开 ASIO、Windows Audio、OBS 与虚拟音频完整测试表</strong><span>延迟、连续性与长时间压力测试</span></summary><div class="effect-reference__body">
-{% include audio-test-results-zh-CN.html %}
-</div></details></div>
 
 <small>VB-CABLE 名称、界面与安装程序属于 VB-Audio Software。此处截图仅用于说明安装步骤。</small>

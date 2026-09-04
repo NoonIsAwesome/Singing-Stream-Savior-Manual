@@ -16,7 +16,7 @@ published: true
 
 上の短いテスト録画が正常なら基本設定は完了し、ここで読むのを止めてもかまいません。以下はデバイス変更、Buffer の手動調整、エフェクト、Monitor、録音の詳細設定、またはトラブル解決が必要な場合だけ参照してください。
 
-<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新機能</span><div><strong>オーディオルーティングと音声 Profile を一緒に設定してください。</strong><p>ルーティングは入力、Monitor、録音、配信出力を、Profile はボーカル音色を管理します。画像はすべて Release build の実画面で、対応するローカライズ版がある場合はそちらを使用します。</p></div></aside>
+<aside class="version-preview" role="note"><span class="version-preview__badge">2.1.0.0 新機能</span><div><strong>オーディオルーティングと音声 Profile を一緒に設定してください。</strong><p>ルーティングは入力、Monitor、録音、配信出力を、Profile はボーカル音色を管理します。</p></div></aside>
 
 ## 2.1.0.0 で移動した設定
 
@@ -44,9 +44,9 @@ published: true
 
 {% include localized-release-screenshot.html name="audio-health-check.png" alt="App Buffer の完全チェック完了結果" caption="完全チェック完了例です。緑のチェックは合格、濃い緑の行はこの PC の推奨値、黄色はテスト完了後も安全余裕が不足したことを示します。推奨値と遅延は PC ごとに異なります。" %}
 
-> **128／256 が「未検証」でも正常ですか？** 正常です。低い Buffer は、2 回の厳格な観測でエンジン／録音イベントがなく、callback、クロック、FIFO、処理性能に十分な余裕がある場合だけ検証済みになります。「カウンター増加なし」でも「厳格な余裕チェック失敗」と表示された場合、観測中にドロップアウトは数えられなかったものの、推奨できる安全余裕が不足しています。ソフトウェア Monitor の遅延を特に下げる必要がなければ、推奨された 512 を使用してください。App Buffer と ASIO hardware buffer は別の設定です。
+> **128／256 が「未検証」でも正常ですか？** 正常です。低い Buffer は複数回の安定性チェックを通過した場合だけ推奨されます。「未検証」は、すでに聞こえるドロップアウトが発生したという意味ではありません。ソフトウェア Monitor の遅延を特に下げる必要がなければ、推奨された 512 を使用してください。App Buffer と ASIO hardware buffer は別の設定です。
 
-黄色の表示には 2 種類あります。**ドロップアウトを確認**は、マイク／モニターの underrun・overrun、正式な Stream 経路の不連続、またはデバイスの中断／復旧を検出した場合に表示します。**オーディオタイミングを確認**は、同じ callback、クロック、遅延計算の異常が約 2 秒続いた場合に表示します。一度だけの瞬間的な callback peak は、聞こえるドロップアウトが発生した証拠ではありません。「安定性」にポインターを置くと、各経路のカウンター、デバイス復旧、callback peak／period、異常フラグを確認できます。
+黄色の表示には 2 種類あります。**ドロップアウトを確認**は、マイク、Monitor、配信出力、または復旧中のデバイスが不安定な可能性を示します。**オーディオタイミングを確認**は、処理時間や同期状態の異常が続いていることを示します。短いピークだけで聞こえるドロップアウトが発生したとは限りません。「安定性」にポインターを置くと詳細を確認できます。
 
 ### 一般ユーザー向けの推奨開始設定
 
@@ -131,18 +131,18 @@ Profile の後段には、配信全体用の **Mix Bus Compressor**、**Stream O
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>5 系統の音声とシステム負荷を確認</h2><p>高度な配信モードでは「表示」またはトレイメニューから Meter を開けます。右側へドッキング、独立表示、横／縦レイアウトの切り替えに対応します。</p></div>
   <p><strong>BGM／伴奏</strong>、<strong>ボーカル（Profile 後・Mix 前）</strong>、<strong>配信出力</strong>、<strong>BGM／伴奏モニター</strong>、<strong>ボーカルモニター</strong>を表示します。全系統に Peak、配信出力には 3 秒の短期 <strong>LUFS-S</strong>も表示し、0–200% の目盛り付きノブで調整します。</p>
-  <p>横型 Meter は、BGM／伴奏とボーカルのバランスが長時間崩れた場合、ボーカルを上げるか伴奏を下げるよう提案します。助言だけを表示し、ゲインを自動変更することはありません。適格なボーカル活動がまだ検出されていない間は表示しません。適格なボーカルが 5 秒間連続して検出されない場合は間奏として扱い、古い助言と判定履歴を消去して、次の歌唱から再判定します。</p>
-  <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="横方向のレベルバーを使う 5 トラック音量 Meter" caption="この実画面は 5 系統の Peak と 0–200% 操作を表示します。LUFS-S と継続バランス文字は測定条件を満たした場合だけ表示されるため、この固定信号画像には入りません。" %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="縦方向のレベルバーを使う 5 トラック音量 Meter パネル" caption="この画像は縦向き Meter パネルと同じ 5 系統の操作を表示します。音声経路を変更せずメイン画面右側へドッキングすることもできます。" %}</div>
-  <div class="effect-reference"><details><summary><strong>音量バランス助言の判定方法</strong><span>無音、息継ぎ、間奏を歌声と区別します</span></summary><div class="effect-reference__body"><p>Meter は実際の配信経路にある Mix 前の BGM／伴奏と Profile 後のボーカルを 100 ms 単位で確認します。BGM／伴奏が実際に Playing 状態で信号も存在し、ルーティングとマイクが正常で、ボーカル活動が条件を満たす場合だけ証拠を蓄積します。Noise Gate の情報がある場合は、区間の約 25% 以上で Gate が開いている必要があります。さらに、Profile 後ボーカルの平均エネルギーが −45 dBFS 以上、処理前マイクの Peak が −50 dBFS 以上である必要があります。表示には 10 秒以上の再生、直近 12 秒中 6 秒以上の適格ボーカル、および各 1.2 秒以上で互いに 300 ms 以上離れた 2 つのフレーズが必要です。BGM／伴奏がボーカルより 2 dB を超えて小さくない状態、または伴奏の方が大きい状態も、最新の適格区間で 6 秒以上必要です。適格区間のボーカル平均エネルギーが −26 dBFS 以下の場合だけ「ボーカルが小さい可能性」も表示します。直近データの処理前または処理後 Peak が −6 dBFS 以上、あるいは Limiter のゲインリダクションが 1 dB を超える場合は、伴奏を下げる助言だけを残し、ボーカルを上げるよう提案しません。曲の変更、停止または再生し直し、大幅なシーク、Profile の切り替え、経路の中断または復旧待ち、Meter の非表示で判定をリセットします。これは持続的な信号活動と音量の比較であり、音声認識ではありません。</p></div></details></div>
-  <p>右下の枠なし CPU／RAM 表示はシステム全体と本アプリを区別します。高度な配信モードでは Buffer、callback、推定遅延、underrun／overrun も Tooltip に追加します。</p>
+  <p>横型 Meter は、BGM／伴奏とボーカルのバランスが長時間崩れた場合、ボーカルを上げるか伴奏を下げるよう提案します。助言だけを表示し、ゲインを自動変更することはありません。無音、息継ぎ、間奏をすぐに小さな歌声として判断することもありません。</p>
+  <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="横方向のレベルバーを使う 5 トラック音量 Meter" caption="横向き Meter には 5 系統の Peak と 0～200% の操作が表示されます。LUFS-S とバランスの助言は、十分な音声を測定すると表示されます。" %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="縦方向のレベルバーを使う 5 トラック音量 Meter パネル" caption="縦向き Meter でも同じ 5 系統を操作でき、メイン画面右側へドッキングできます。" %}</div>
+  <div class="effect-reference"><details><summary><strong>音量バランスの助言はいつ表示されますか？</strong><span>十分な伴奏と歌声を確認してから判定します</span></summary><div class="effect-reference__body"><p>アプリは伴奏と歌声をしばらく観察してから、長時間のバランスを比較します。曲の開始直後、無音、息継ぎ、間奏、Profile の切り替え、オーディオデバイスの復旧中は、すぐに助言を表示しません。歌声がすでに過負荷に近い場合は、歌声を上げずに伴奏を下げる助言だけを表示します。曲の変更、停止、再生し直し、大幅なシークの後は観察をやり直します。</p></div></details></div>
+  <p>右下の CPU／RAM 表示には本アプリの使用率が表示されます。ポインターを置くと、システムと本アプリの詳細を確認できます。高度な配信モードでは Buffer、処理時間、推定遅延、音声中断の回数も表示します。</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="メイン画面右下に折りたたまれた CPU／RAM 概要" caption="この画像はポインターを置く前の簡潔な CPU／RAM 表示だけです。ポインターを置くと、上記のシステム／アプリ負荷と高度な音声状態が展開します。" size="medium" %}
   {% include system-health-interpretation.html %}
 </div>
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>システムトレイへ格納したまま配信を操作</h2><p>閉じるボタンをトレイ格納または完全終了のどちらにするか設定できます。</p></div>
-  <p>状態に応じて再生／再開、一時停止、停止、先頭から再生、Key、速度、Profile、マイク、歌詞ウィンドウ、メイン画面、そして高度な配信モード限定の Meter を表示します。「アプリを終了」で本体と helper を終了します。</p>
-  {% include localized-release-screenshot.html name="notification-area-menu.png" alt="未再生時の Singing Stream Savior Windows システムトレイメニュー" caption="この実画面は未再生時の簡潔なメニューです。伴奏再生または高度な配信モードでは、上記の再生、Key、速度、Profile、マイク、Meter 操作が追加されます。最下部の終了項目で本体と helper を完全終了します。" size="medium" %}
+  <p>状態に応じて再生／再開、一時停止、停止、先頭から再生、Key、速度、Profile、マイク、歌詞ウィンドウ、メイン画面、そして高度な配信モード限定の Meter を表示します。「アプリを終了」でアプリと再生機能を終了します。</p>
+  {% include localized-release-screenshot.html name="notification-area-menu.png" alt="未再生時の Singing Stream Savior Windows システムトレイメニュー" caption="未再生時は簡潔なメニューを表示します。伴奏再生または高度な配信モードでは、上記の再生、Key、速度、Profile、マイク、Meter 操作が追加されます。最下部の終了項目でアプリを完全に終了します。" size="medium" %}
   <p>グローバルショートカットは「再生操作」と「マイク／モニター」に分類され、既定キーがあります。通常再生では不要な高度モード操作を非表示にします。</p>
   {% include keyboard-shortcuts-reference.html %}
   {% include localized-release-screenshot.html name="keyboard-shortcuts.png" alt="再生、マイク、モニターに分類されたキーボードショートカット設定" caption="既定キーは直接変更できます。高度な配信モードが必要な項目は通常再生で非表示になります。" %}
@@ -196,13 +196,5 @@ Singing Stream Savior → 仮想オーディオケーブル → OBS／Discord
 - 完全に展開したフォルダーから、管理者として Setup を実行したか確認します。
 - Singing Stream Savior の仮想出力設定で**デバイスを更新**します。
 - オーディオデバイスを使用中のアプリを閉じます。解決しない場合は [VB-Audio 公式リファレンスマニュアル](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf)を参照してください。
-
-## 開発機の完全なテストデータ（補足）
-
-通常設定で以下の技術データを一行ずつ理解する必要はありません。作者 PC でのテスト証拠と、遅延／安定性を詳しく調べる場合の参考として残しています。
-
-<div class="effect-reference"><details><summary><strong>ASIO、Windows Audio、OBS、仮想出力の完全な結果を表示</strong><span>遅延、連続性、長時間ストレス試験</span></summary><div class="effect-reference__body">
-{% include audio-test-results-ja.html %}
-</div></details></div>
 
 <small>VB-CABLE の名称、画面、インストーラーは VB-Audio Software の製品です。スクリーンショットは手順説明のために掲載しています。</small>

@@ -155,7 +155,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 
 **2.1.1 新功能。** 可将本地音频文件或 YouTube 链接直接拖入 UVR 待处理列表。软件会自动识别 YouTube 标题；影片超过 15 分钟时，可在处理前选择需要的范围。MDX 默认使用“保留和声”，也可在整批开始前逐首改为“完全消除人声”。
 
-输出支持 WAV／FLAC，以及默认 48 kHz 或可选 44.1 kHz。硬件支持时可使用 DirectML GPU 加速；无法使用时会自动改用 CPU，并在主窗口左下角显示说明。输出文件夹统一在“设置 > 文件与项目”管理。
+输出支持 WAV／FLAC，以及默认 48 kHz 或可选 44.1 kHz。启用 GPU 加速后会使用兼容的显卡；无法使用 GPU 时会自动改用 CPU，并在主窗口左下角显示说明。输出文件夹统一在“设置 > 文件与项目”管理。
 
 完成后可逐首或一次全部把伴奏导入歌曲列表。输出文件夹会保留 `(Instrumental)` 与 `(Vocal)` 两个文件，歌曲列表只会导入实际伴奏。
 
@@ -174,7 +174,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/zh-CN/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/mini-workspace.png' | relative_url }}" alt="简体中文迷你模式"></a><figcaption>迷你模式把更多垂直空间留给待播列表。</figcaption></figure>
 </div>
 
-不需要保留主窗口时，可在设置中让关闭按钮把 Singing Stream Savior 缩到 Windows 通知区域而不是退出。播放会在后台继续；托盘菜单与全局快捷键仍可操作播放、Key、速度、Profile、麦克风、歌词窗口与 Meter。只有选择托盘菜单中的“关闭软件”，才会完整结束主程序与 helper。
+不需要保留主窗口时，可在设置中让关闭按钮把 Singing Stream Savior 缩到 Windows 通知区域而不是退出。播放会在后台继续；托盘菜单与全局快捷键仍可操作播放、Key、速度、Profile、麦克风、歌词窗口与 Meter。只有选择托盘菜单中的“关闭软件”，才会完整结束程序。
 
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior 未播放时的 Windows 通知区域右键菜单" caption="未播放时菜单保持精简；播放伴奏或开启高级直播模式后，会增加相应的播放、Key、速度、Profile、麦克风与 Meter 项目。" size="medium" %}
 
@@ -189,11 +189,11 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/launcher-update-prompt.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/launcher-update-prompt.png' | relative_url }}" alt="Launcher 1.2 卡片式更新提示，显示版本与更新内容"></a><figcaption>更新内容显示在可滚动卡片中；“稍后”保留当前版本，“立即更新”开始验证更新。</figcaption></figure>
 
-在可取消的下载阶段，按“取消”或关闭窗口会请求安全取消。启动器会保留原有文件与 `current.json`、清理临时残留，再启动当前版本。进入短暂且不可中断的最终提交阶段后，关闭操作会暂时被忽略；即使进程或电脑在更新途中被强制结束，下次启动也会先根据持久化事务记录回滚或完成收尾，再启动一致的版本。
+下载期间可以按“取消”或关闭窗口，继续使用当前版本。进入最后的安装阶段后，关闭操作会暂时停用；如果更新意外中断，下次启动时会自动修复或完成更新。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 下载、验证与安装更新的进度画面"></a><figcaption>更新包会先检查 HTTPS 来源、预期大小与 SHA-256，再以可恢复的原子事务切换版本。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 下载、验证与安装更新的进度画面"></a><figcaption>启动器会先确认下载完整，再安全切换到新版本。</figcaption></figure>
 
-请保持外层启动器、`current.json` 和内部文件夹的相对位置不变。Launcher 1.2 会保留一个上一版的已验证包供自动修复与事务恢复使用，但不提供一键降级：旧版不一定能理解由新版保存的项目。如果必须测试旧版，请将官方旧版完整 ZIP 解压到**另一个文件夹**，并使用 `.bgmsproj` 与媒体的副本。若更新仍无法完成，请下载最新版完整 ZIP，不要混合覆盖不同版本的 DLL。
+请保持外层启动器与程序文件夹内其他文件的原有位置，不要只移动其中一部分。如果必须使用旧版，请将官方旧版完整 ZIP 解压到**另一个文件夹**，并先备份 `.bgmsproj` 与媒体。若更新仍无法完成，请下载最新版完整 ZIP，不要混合覆盖不同版本的程序文件。
 
 若出现 Qt platform plugin 错误，请重新下载并完整解压 ZIP，只打开最外层的 `Singing Stream Savior.exe`。不需要检查或打开资料文件夹中的内容。需要桌面入口时，请为这个外层 EXE 建立 Windows 快捷方式，不要移动文件本身。
 

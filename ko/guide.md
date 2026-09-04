@@ -155,7 +155,7 @@ OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버
 
 **2.1.1 새 기능입니다.** 로컬 오디오 파일이나 YouTube 링크를 UVR 처리 대기 목록으로 바로 끌어다 놓을 수 있습니다. YouTube 제목은 자동으로 인식하며 15분이 넘는 영상은 처리 전에 필요한 구간을 선택할 수 있습니다. MDX 기본값은 코러스를 보존하며, 일괄 처리를 시작하기 전에는 곡마다 완전 보컬 제거로 바꿀 수 있습니다.
 
-WAV／FLAC, 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니다. 지원 환경에서는 DirectML GPU를 사용하며, 사용할 수 없으면 CPU로 자동 전환하고 메인 화면 왼쪽 아래에 이유를 표시합니다. 출력 폴더는 **설정 > 파일 및 프로젝트**에서 통합 관리합니다.
+WAV／FLAC, 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니다. GPU 가속을 켜면 호환되는 GPU를 사용하며, 사용할 수 없으면 CPU로 자동 전환하고 메인 화면 왼쪽 아래에 이유를 표시합니다. 출력 폴더는 **설정 > 파일 및 프로젝트**에서 통합 관리합니다.
 
 처리가 끝나면 반주를 한 곡씩 또는 완료된 모든 곡을 한 번에 곡 목록으로 가져올 수 있습니다. 출력 폴더에는 `(Instrumental)`과 `(Vocal)` 파일이 모두 남고, 곡 목록에는 실제 반주만 추가됩니다.
 
@@ -174,7 +174,7 @@ WAV／FLAC, 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니다. 지원 
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}" alt="한국어 미니 모드"></a><figcaption>미니 모드는 대기 목록을 위한 세로 공간을 더 확보합니다.</figcaption></figure>
 </div>
 
-메인 창이 필요하지 않을 때는 닫기 버튼이 종료 대신 Singing Stream Savior를 Windows 알림 영역으로 숨기도록 설정할 수 있습니다. 재생은 백그라운드에서 계속되며 트레이 메뉴와 전역 단축키로 재생, Key, 속도, Profile, 마이크, 가사 창과 Meter를 제어할 수 있습니다. 앱과 helper를 완전히 끝내려면 트레이 메뉴의 ‘앱 종료’를 선택하세요.
+메인 창이 필요하지 않을 때는 닫기 버튼이 종료 대신 Singing Stream Savior를 Windows 알림 영역으로 숨기도록 설정할 수 있습니다. 재생은 백그라운드에서 계속되며 트레이 메뉴와 전역 단축키로 재생, Key, 속도, Profile, 마이크, 가사 창과 Meter를 제어할 수 있습니다. 완전히 끝내려면 트레이 메뉴의 ‘앱 종료’를 선택하세요.
 
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="재생하지 않을 때의 Singing Stream Savior Windows 알림 영역 메뉴" caption="재생하지 않을 때는 메뉴가 간결합니다. 반주 재생 또는 고급 방송 모드에서는 필요한 재생, Key, 속도, Profile, 마이크와 Meter 항목이 추가됩니다." size="medium" %}
 
@@ -189,11 +189,11 @@ WAV／FLAC, 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니다. 지원 
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/launcher-update-prompt.png' | relative_url }}"><img src="{{ '/assets/images/ko/launcher-update-prompt.png' | relative_url }}" alt="버전과 업데이트 내용을 표시하는 Launcher 1.2 카드형 업데이트 창"></a><figcaption>스크롤 가능한 카드에 업데이트 내용을 표시합니다. ‘나중에’는 현재 버전을 유지하고 ‘지금 업데이트’는 검증 업데이트를 시작합니다.</figcaption></figure>
 
-취소 가능한 다운로드 단계에서는 ‘취소’를 누르거나 창을 닫아 안전한 취소를 요청할 수 있습니다. 기존 파일과 `current.json`을 정확히 보존하고 임시 잔여물을 지운 뒤 현재 버전을 실행합니다. 짧은 최종 커밋 단계에서는 닫기 동작을 잠시 무시합니다. 업데이트 중 프로세스나 PC가 강제로 종료되어도 다음 실행 때 영구 트랜잭션 기록으로 롤백 또는 마무리를 먼저 수행하여 일관된 버전만 실행합니다.
+다운로드 중에는 ‘취소’를 누르거나 창을 닫아 현재 버전을 계속 사용할 수 있습니다. 마지막 설치 단계에서는 닫기 동작이 잠시 비활성화됩니다. 업데이트가 예기치 않게 중단되면 다음 실행 때 자동으로 복구하거나 설치를 마칩니다.
 
-<figure class="manual-figure"><a href="{{ '/assets/images/ko/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/ko/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 다운로드, 검증 및 설치 진행 화면"></a><figcaption>HTTPS 출처, 예상 크기와 SHA-256을 확인한 뒤 복구 가능한 원자적 트랜잭션으로 버전을 전환합니다.</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/ko/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 다운로드, 검증 및 설치 진행 화면"></a><figcaption>다운로드가 완전한지 확인한 뒤 새 버전으로 안전하게 전환합니다.</figcaption></figure>
 
-외부 실행기, `current.json`과 내부 폴더의 상대 위치를 유지하세요. Launcher 1.2는 자동 복구와 트랜잭션 롤백을 위해 이전 검증 패키지 하나를 보관하지만 원클릭 다운그레이드는 제공하지 않습니다. 이전 앱이 새 버전에서 저장한 프로젝트를 이해하지 못할 수 있기 때문입니다. 꼭 이전 버전을 시험해야 한다면 공식 전체 ZIP을 **별도 폴더**에 풀고 `.bgmsproj`와 미디어의 복사본을 사용하세요. 업데이트가 완료되지 않을 때도 서로 다른 버전의 DLL을 섞지 말고 최신 전체 ZIP을 새로 압축 해제하세요.
+외부 실행기와 앱 폴더 안의 파일을 원래 위치에 유지하고 일부만 옮기지 마세요. 이전 버전을 사용해야 한다면 공식 전체 ZIP을 **별도 폴더**에 풀고 먼저 `.bgmsproj`와 미디어를 백업하세요. 업데이트가 완료되지 않을 때도 서로 다른 버전의 프로그램 파일을 섞지 말고 최신 전체 ZIP을 새로 압축 해제하세요.
 
 Qt platform plugin 오류가 나오면 ZIP을 다시 내려받아 완전히 압축 해제하고 가장 바깥쪽 `Singing Stream Savior.exe`만 실행하세요. 데이터 폴더 안의 파일을 확인하거나 열 필요는 없습니다. 바탕 화면에는 이 바깥쪽 EXE의 Windows 바로가기를 만드세요.
 

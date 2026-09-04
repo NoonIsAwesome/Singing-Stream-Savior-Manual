@@ -61,7 +61,7 @@ To place songs in a collection, select one or more rows, right-click, open **Add
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}" alt="Song context menu with Edit display title, Add to Reserve, Add to playlist, and Delete track"></a><figcaption>The menu keeps display-title editing first and also provides Add to Reserve and playlist organization.</figcaption></figure>
 
-In addition to choosing files from the import dialog, you can drag one or more local audio files directly into the app. Paste or drag in a single YouTube video URL to add one song. You can also drag in a YouTube playlist URL: the app recognizes its videos and imports them into a corresponding custom playlist, so you do not need to add every link individually. Supported local formats include `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection and the bundled `yt-dlp` helper.
+In addition to choosing files from the import dialog, you can drag one or more local audio files directly into the app. Paste or drag in a single YouTube video URL to add one song. You can also drag in a YouTube playlist URL: the app recognizes its videos and imports them into a corresponding custom playlist, so you do not need to add every link individually. Supported local formats include `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection.
 
 The **Display title** is used by Reserve, History, and OBS. If it is blank, the app falls back to the file name or YouTube title. Double-clicking a song row loads and plays it; it never opens text editing. To rename the viewer-facing title, right-click the song and choose the first item, **Edit display song name**. Press `Enter` to apply or `Esc` to cancel. This never renames the source audio file.
 
@@ -182,7 +182,7 @@ The status indicator appears at the lower-right only when enabled: green means c
 
 **New in 2.1.1.** Drag local audio files or YouTube links directly into the UVR processing queue. YouTube titles are detected automatically, and videos longer than 15 minutes can be trimmed to a selected range before processing. The default MDX preset preserves backing vocals; each item can be changed to full vocal removal before the batch starts.
 
-Choose WAV or FLAC and either 48 kHz (default) or 44.1 kHz. DirectML GPU acceleration is used when available; otherwise the app falls back to CPU and reports that change in the lower-left main-window message area. The output folder is managed under **Settings > Files & Project**.
+Choose WAV or FLAC and either 48 kHz (default) or 44.1 kHz. When GPU acceleration is enabled, the app uses a compatible GPU when available; otherwise it falls back to CPU and reports that change in the lower-left main-window message area. The output folder is managed under **Settings > Files & Project**.
 
 When separation finishes, import the instrumental for one song or import all completed songs at once. The paired `(Instrumental)` and `(Vocal)` files remain in the output folder, while only the actual accompaniment is added to the song library.
 
@@ -203,7 +203,7 @@ Use the top-right mode button or `Ctrl + Shift + M`:
 
 Switching modes only changes which controls are visible. A song already playing continues, and the existing queue order and OBS scene are not reset. Each mode remembers its window size and layout.
 
-When the main window is not needed, its close button can minimize Singing Stream Savior to the Windows notification area instead of exiting. Playback continues in the background, while the tray menu and global shortcuts keep playback, Key, speed, Profile, microphone, Lyrics Window, and Meter controls available. Use **Exit Application** in the tray menu to close the app and its helpers completely.
+When the main window is not needed, its close button can minimize Singing Stream Savior to the Windows notification area instead of exiting. Playback continues in the background, while the tray menu and global shortcuts keep playback, Key, speed, Profile, microphone, Lyrics Window, and Meter controls available. Use **Exit Application** in the tray menu to close the app completely.
 
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior Windows notification-area menu while idle" caption="The idle menu stays compact. Playback and Advanced Streaming Mode add the relevant playback, Key, speed, Profile, microphone, and Meter actions." size="medium" %}
 
@@ -218,11 +218,11 @@ When an update is available, the card-style prompt shows the current and target 
 
 <figure class="manual-figure"><a href="{{ '/assets/images/en/launcher-update-prompt.png' | relative_url }}"><img src="{{ '/assets/images/en/launcher-update-prompt.png' | relative_url }}" alt="Launcher 1.2 card-style update prompt with versions and release-note cards"></a><figcaption>The scrollable cards contain the update notes. Later keeps the installed version; Update now starts the verified update.</figcaption></figure>
 
-During a cancellable download, **Cancel** or closing the window requests a safe cancellation. The launcher preserves the exact installed files and `current.json`, removes temporary residue, then starts that version. Closing is temporarily ignored during the short non-cancellable commit stage. If the process or PC is forcibly stopped mid-update, the next launch uses the durable transaction journal to roll back or finish consistently before starting the app.
+During download, select **Cancel** or close the window to keep using the installed version. Closing is temporarily disabled during the final installation stage. If the update is unexpectedly interrupted, the launcher repairs or completes it the next time it starts.
 
-<figure class="manual-figure"><a href="{{ '/assets/images/en/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/en/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 download, verification, and installation progress"></a><figcaption>The package is checked for HTTPS origin, expected size, and SHA-256 before an atomic, recoverable version switch.</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/en/launcher-update-progress.png' | relative_url }}"><img src="{{ '/assets/images/en/launcher-update-progress.png' | relative_url }}" alt="Launcher 1.2 download, verification, and installation progress"></a><figcaption>The launcher verifies that the download is complete before safely switching versions.</figcaption></figure>
 
-Keep the outer launcher, `current.json`, and the internal folders together. Launcher 1.2 retains one previous verified package for automatic repair and transaction recovery, but it does not provide a one-click downgrade: an older app may not understand a project saved by a newer version. If you must test an older release, extract its official complete ZIP to a **separate folder** and work on a copy of the `.bgmsproj` and media. If updating still fails, download a fresh complete ZIP instead of mixing DLLs from different versions.
+Keep the outer launcher and all files inside the app folder in their original locations; do not move only part of the installation. If you must use an older release, extract its official complete ZIP to a **separate folder** and first back up the `.bgmsproj` and media. If updating still fails, download a fresh complete ZIP instead of mixing program files from different versions.
 
 If the app reports that no Qt platform plug-in could be initialized, extract a fresh copy of the complete ZIP and launch only the outer `Singing Stream Savior.exe`. You do not need to inspect or open anything in the data folders. For desktop access, create a Windows shortcut to that outer EXE instead of moving it.
 
