@@ -1,7 +1,7 @@
 release:
   version: "2.1.2.0"
   date: "2026-09-06"
-  latest: true
+  latest: false
   type:
     en: "HP models, MP3 export, and reliability"
     zh-TW: "HP 模型、MP3 輸出與穩定性改善"

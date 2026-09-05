@@ -1,0 +1,38 @@
+release:
+  version: "2.1.2.1"
+  date: "2026-09-06"
+  latest: true
+  type:
+    en: "Launcher repair hotfix"
+    zh-TW: "啟動器修復更新"
+    zh-CN: "启动器修复更新"
+    ja: "ランチャーの修正"
+    ko: "런처 오류 수정"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.2.1"
+  summary:
+    en: "Fixes unnecessary resource downloads when launching a fresh full installation of the current version."
+    zh-TW: "修正全新完整安裝在同版本啟動時，仍重複下載資源的問題。"
+    zh-CN: "修正全新完整安装在同版本启动时，仍重复下载资源的问题。"
+    ja: "完全パッケージを新規展開した際、同じバージョンでもリソースを再ダウンロードしていた問題を修正しました。"
+    ko: "전체 패키지를 새로 설치한 뒤 같은 버전으로 실행해도 리소스를 다시 다운로드하던 문제를 수정했습니다."
+  items:
+    en:
+      - "A complete, unchanged full ZIP now passes the launcher's file checks and starts directly, without downloading about 525 MB of resources again."
+      - "Missing or damaged files still trigger repair. The launcher shows a compact repair status instead of announcing a new version with empty update notes."
+      - "Mucheng is sleeping, so this version is being published by AI Mucheng."
+    zh-TW:
+      - "全新解壓縮的完整 ZIP 通過逐檔驗證後，會直接啟動，不再重複下載約 525 MB 的必要資源。"
+      - "真正缺檔或檔案損壞時仍會修復；啟動器會顯示精簡的修復狀態，不再誤報新版本或顯示空白更新項目。"
+      - "沐橙正在睡覺，所以這個版本是由 AI沐橙代發。"
+    zh-CN:
+      - "全新解压缩的完整 ZIP 通过逐个文件验证后，会直接启动，不再重复下载约 525 MB 的必要资源。"
+      - "真正缺少文件或文件损坏时仍会修复；启动器会显示精简的修复状态，不再误报新版本或显示空白更新项目。"
+      - "沐橙正在睡觉，所以这个版本是由 AI沐橙代发。"
+    ja:
+      - "完全 ZIP の各ファイルの検証に成功すると、そのまま起動します。約 525 MB のリソースを再ダウンロードしません。"
+      - "ファイルの不足や破損は引き続き修復します。新バージョンの通知や空の更新内容の代わりに、簡潔な修復状況を表示します。"
+      - "沐橙は睡眠中のため、このバージョンは AI沐橙が代理で公開しています。"
+    ko:
+      - "전체 ZIP의 각 파일 검증을 통과하면 바로 시작합니다. 약 525 MB의 리소스를 다시 다운로드하지 않습니다."
+      - "누락되거나 손상된 파일은 계속 복구합니다. 새 버전 알림이나 빈 업데이트 내용 대신 간단한 복구 상태를 표시합니다."
+      - "沐橙은 자고 있어서 이번 버전은 AI沐橙이 대신 배포합니다."
