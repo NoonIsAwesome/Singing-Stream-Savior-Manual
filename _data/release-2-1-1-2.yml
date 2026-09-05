@@ -22,7 +22,7 @@ release:
       - 暫時使用 Profile 或 Block 監聽結束後，會保留使用者目前選擇的監聽開關狀態，不會意外回到先前的設定。
       - 已儲存的音訊裝置無法使用時，軟體會安全改用可用模式並顯示清楚的狀態訊息，避免畫面設定與實際音訊狀態不一致。
       - 改善音訊啟動與監聽剛開啟時的緩衝準備，降低短暫斷音或聲音不穩定的機率。
-      - 提升 VST3 掃描及效果視窗的穩定性；遇到異常或無回應的外掛時會與主程式隔離，效果視窗在不同顯示縮放與介面語言下也能更可靠地關閉。
+      - 提升 VST3 掃描及效果視窗的穩定性；掃描與編輯會在獨立的輔助程序中執行，降低外掛在這些操作期間異常或無回應時對主程式的影響；效果視窗在不同顯示縮放與介面語言下也能更可靠地關閉。
       - 半夜肚子餓不知道要吃什麼，感覺只有麥當勞了…對了！煮個麵好了，配干貝醬吧！我愛干貝醬！
     zh-CN:
       - 切换 Profile 或 VST3 效果时，会先完成准备再进行实际声音切换；使用不同延迟的效果时，可减少中断、爆音与时间偏移。
@@ -30,7 +30,7 @@ release:
       - 临时使用 Profile 或 Block 监听结束后，会保留用户目前选择的监听开关状态，不会意外回到之前的设置。
       - 已保存的音频设备无法使用时，软件会安全改用可用模式并显示清楚的状态消息，避免界面设置与实际音频状态不一致。
       - 改善音频启动与监听刚开启时的缓冲准备，降低短暂断音或声音不稳定的概率。
-      - 提升 VST3 扫描及效果窗口的稳定性；遇到异常或无响应的插件时会与主程序隔离，效果窗口在不同显示缩放与界面语言下也能更可靠地关闭。
+      - 提升 VST3 扫描及效果窗口的稳定性；扫描与编辑会在独立的辅助进程中运行，降低插件在这些操作期间异常或无响应时对主程序的影响；效果窗口在不同显示缩放与界面语言下也能更可靠地关闭。
       - 半夜肚子饿不知道要吃什么，感觉只有麦当劳了……对了！煮个面好了，配干贝酱吧！我爱干贝酱！
     ja:
       - Profile や VST3 エフェクトを切り替える際、音を切り替える前に準備を完了するようにしました。遅延の異なるエフェクト間でも、中断、クリックノイズ、タイミングのずれを抑えます。
@@ -38,7 +38,7 @@ release:
       - 一時的な Profile または Block のモニターが終了した後も、現在選択しているモニターのオン／オフ状態を維持し、以前の設定へ意図せず戻らないようにしました。
       - 保存済みの音声デバイスが利用できない場合は、安全に利用可能なモードへ切り替えて明確な状態メッセージを表示し、画面と実際のルーティングが一致しない状態を防ぎます。
       - 音声起動時とモニターを有効にした直後のバッファ準備を改善し、短い音切れや不安定な音が発生する可能性を減らしました。
-      - VST3 のスキャンとエフェクト画面をより安定させました。異常終了または応答しないプラグインをメインアプリから隔離し、表示倍率や表示言語が異なる環境でも画面をより確実に閉じられます。
+      - VST3 のスキャンとエフェクト画面をより安定させました。スキャンと編集は独立した補助プロセスで実行されるため、これらの操作中にプラグインが異常終了または応答しなくなった場合のメインアプリへの影響を抑えます。表示倍率や表示言語が異なる環境でも、エフェクト画面をより確実に閉じられます。
       - 夜中にお腹が空いたけれど何を食べるか決まらず、もうマクドナルドしかない気がする……そうだ！麺を作って、ホタテソースを添えよう！ホタテソース大好き！
     ko:
       - Profile 또는 VST3 효과를 전환할 때 실제 소리를 바꾸기 전에 준비를 완료하도록 개선했습니다. 지연 시간이 다른 효과 사이에서도 끊김, 클릭 잡음, 타이밍 어긋남을 줄입니다.
@@ -46,7 +46,7 @@ release:
       - 임시 Profile 또는 Block 모니터링이 끝난 뒤에도 사용자가 현재 선택한 모니터 켜짐／꺼짐 상태를 유지하며 이전 설정으로 갑자기 돌아가지 않습니다.
       - 저장된 오디오 장치를 사용할 수 없으면 안전하게 사용 가능한 모드로 전환하고 명확한 상태 메시지를 표시하여 화면 설정과 실제 라우팅이 어긋나는 상황을 방지합니다.
       - 오디오 시작 및 모니터를 처음 켤 때의 버퍼 준비를 개선하여 짧은 끊김이나 불안정한 소리가 발생할 가능성을 줄였습니다.
-      - VST3 검색과 효과 창의 안정성을 높였습니다. 비정상 종료되거나 응답하지 않는 플러그인은 메인 프로그램과 격리되며, 화면 배율과 인터페이스 언어가 달라도 효과 창을 더 안정적으로 닫을 수 있습니다.
+      - VST3 검색과 효과 창의 안정성을 높였습니다. 검색과 편집은 별도의 보조 프로세스에서 실행되어, 해당 작업 중 플러그인이 비정상 종료되거나 응답하지 않을 때 메인 프로그램에 미치는 영향을 줄입니다. 화면 배율과 인터페이스 언어가 달라도 효과 창을 더 안정적으로 닫을 수 있습니다.
       - 한밤중에 배가 고픈데 뭘 먹어야 할지 모르겠고, 맥도날드밖에 없는 것 같았어요… 아! 면을 끓여서 관자 소스와 같이 먹어야겠다! 관자 소스를 사랑해요!
     en:
       - Profile and VST3 effect changes are prepared before the audible transition, reducing interruptions, clicks, and timing shifts when switching between effects with different latency.
@@ -54,5 +54,5 @@ release:
       - Monitor On or Off now remains consistent after temporary Profile or Block monitoring ends instead of unexpectedly returning to an older setting.
       - When a saved audio device is unavailable, the application falls back safely and shows a clear status message instead of leaving the controls and actual routing out of sync.
       - Audio startup and monitor activation are better protected against brief gaps or unstable sound while the buffers become ready.
-      - VST3 scanning and editor windows are more resilient. A plug-in that crashes or stops responding is isolated from the main application, and effect windows close more reliably across display scaling and interface languages.
+      - VST3 scanning and effect windows are more resilient. Scanning and editing run in a separate helper process, limiting the effect of a plug-in that crashes or stops responding during those operations; effect windows also close more reliably across display scaling and interface languages.
       - Hungry in the middle of the night and not sure what to eat—it felt like McDonald’s was the only option… Wait! I’ll cook some noodles and have them with scallop sauce. I love scallop sauce!
