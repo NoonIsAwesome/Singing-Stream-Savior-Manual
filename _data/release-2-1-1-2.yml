@@ -1,7 +1,7 @@
 release:
   version: "2.1.1.2"
   date: "2026-09-05"
-  latest: true
+  latest: false
   type:
     zh-TW: 音訊切換與監聽穩定性
     zh-CN: 音频切换与监听稳定性

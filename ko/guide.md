@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 사용자 설명서
-description: Singing Stream Savior 2.1.1.2 한국어 설명서
+description: Singing Stream Savior 2.1.2.0 한국어 설명서
 lang: ko
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 사용자 설명서
 
-Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.1.1.2** 버전을 기준으로 합니다.
+Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.1.2.0** 버전을 기준으로 합니다.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 확대 미리보기를 열 수 있습니다.</figcaption></figure>
 
@@ -170,9 +170,11 @@ OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버
 <a id="uvr-vocal-removal"></a>
 ## 06 · UVR 보컬 제거
 
-**2.1.1 새 기능입니다.** 로컬 오디오 파일이나 YouTube 링크를 UVR 처리 대기 목록으로 바로 끌어다 놓을 수 있습니다. YouTube 제목은 자동으로 인식하며 15분이 넘는 영상은 처리 전에 필요한 구간을 선택할 수 있습니다. MDX 기본값은 코러스를 보존하며, 일괄 처리를 시작하기 전에는 곡마다 완전 보컬 제거로 바꿀 수 있습니다.
+**UVR은 2.1.1, HP와 MP3는 2.1.2에서 추가되었습니다.** 오디오 파일이나 YouTube 링크를 처리 대기 목록으로 바로 끌어다 놓으세요. 제목은 자동 인식되며 15분이 넘는 영상은 처리할 구간을 선택할 수 있습니다. 곡마다 HP/MDX와 코러스 유지/전체 보컬 제거를 선택할 수 있습니다. 새 설치의 기본값은 HP 코러스 유지이며, 변경한 기본 설정은 기억됩니다. 연필 아이콘으로 곡명을 편집하세요. 시작 후에는 해당 배치의 설정이 고정되며 최소화해도 처리는 계속됩니다.
 
-WAV／FLAC, 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니다. GPU 가속을 켜면 호환되는 GPU를 사용하며, 사용할 수 없으면 CPU로 자동 전환하고 메인 화면 왼쪽 아래에 이유를 표시합니다. 출력 폴더는 **설정 > 파일 및 프로젝트**에서 통합 관리합니다.
+WAV/FLAC/MP3(320 kbps), 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니다. GPU를 사용할 수 없으면 CPU로 자동 전환하고 메인 화면 왼쪽 아래에 이유를 표시합니다. 출력 폴더는 **설정 > 파일 및 프로젝트**에서 관리합니다.
+
+눈(Noon)은 개인 청음 결과 반주의 세부 음향을 더 잘 보존한다고 느낀 HP를 추천합니다. 곡이나 장르에 따라 결과가 달라질 수 있으므로 참고해 주세요. 동일한 조건에서 HP는 MDX보다 느렸으며 실제 속도는 곡과 컴퓨터에 따라 달라집니다.
 
 처리가 끝나면 반주를 한 곡씩 또는 완료된 모든 곡을 한 번에 곡 목록으로 가져올 수 있습니다. 출력 폴더에는 `(Instrumental)`과 `(Vocal)` 파일이 모두 남고, 곡 목록에는 실제 반주만 추가됩니다.
 

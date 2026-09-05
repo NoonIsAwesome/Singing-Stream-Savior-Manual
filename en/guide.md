@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 User Manual
-description: English manual for Singing Stream Savior 2.1.1.2
+description: English manual for Singing Stream Savior 2.1.2.0
 lang: en
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 User Manual
 
-Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.1.2**.
+Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.2.0**.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
@@ -197,9 +197,11 @@ The status indicator appears at the lower-right only when enabled: green means c
 <a id="uvr-vocal-removal"></a>
 ## 06 · UVR vocal removal
 
-**New in 2.1.1.** Drag local audio files or YouTube links directly into the UVR processing queue. YouTube titles are detected automatically, and videos longer than 15 minutes can be trimmed to a selected range before processing. The default MDX preset preserves backing vocals; each item can be changed to full vocal removal before the batch starts.
+**UVR arrived in 2.1.1; HP and MP3 are new in 2.1.2.** Drag audio files or YouTube links into the processing queue. YouTube titles are detected automatically; videos over 15 minutes can be trimmed before processing. For each song, choose HP or MDX and Preserve Harmony or Remove All Vocals. New installations default to HP Preserve Harmony; your chosen default is remembered. Click the pencil to edit a title. Batch settings are locked after Start, and processing continues while minimized.
 
-Choose WAV or FLAC and either 48 kHz (default) or 44.1 kHz. When GPU acceleration is enabled, the app uses a compatible GPU when available; otherwise it falls back to CPU and reports that change in the lower-left main-window message area. The output folder is managed under **Settings > Files & Project**.
+Choose WAV, FLAC, or MP3 (320 kbps), and either 48 kHz (default) or 44.1 kHz. GPU acceleration uses a compatible GPU when available; otherwise it falls back to CPU and reports the change in the lower-left message area. Manage the output folder under **Settings > Files & Project**.
+
+Noon personally recommends HP for better preservation of accompaniment detail, based on listening tests; results vary by song and genre. Under the same test conditions, HP was slower than MDX. Actual speed depends on the song and computer.
 
 When separation finishes, import the instrumental for one song or import all completed songs at once. The paired `(Instrumental)` and `(Vocal)` files remain in the output folder, while only the actual accompaniment is added to the song library.
 

@@ -87,6 +87,7 @@ export function validateBuiltSite(siteRoot, basePath = DEFAULT_BASE_PATH) {
     for (const requiredNotice of [
       "Ultimate-Vocal-Remover-MIT.txt",
       "UVR-MDX-Models-NOTICE.txt",
+      "UVR-HP-Models-NOTICE.txt",
     ]) {
       if (!openSourceHtml.includes(requiredNotice)) {
         errors.push(`${page}: missing required UVR notice ${requiredNotice}`);

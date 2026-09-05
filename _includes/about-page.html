@@ -1,5 +1,6 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign author = site.data.author %}
+{% assign author_display_name = author.name %}
 {% assign support_encouragement = '有bug是正常的，蘋果的系統都會有bug了，我自己做的軟體怎麼可能沒問題呢？不用害怕，請和我回報問題吧！' %}
 {% if current_lang == 'zh-TW' %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
@@ -53,11 +54,12 @@
   {% assign collaboration_text = '请填写古德文创联系表单，由相关人员统一处理。软件问题请使用上方 Email，以免分流后延误处理。' %}
   {% assign collaboration_action = '打开合作表单' %}
 {% elsif current_lang == 'ja' %}
+  {% assign author_display_name = '沐橙Noon（むちゃん）' %}
   {% assign support_encouragement = 'バグがあるのは普通のことです。Apple のシステムにもバグがあるのですから、私が一人で作ったソフトに問題がないはずはありません。遠慮せず、ぜひ問題を報告してください！' %}
   {% assign eyebrow = 'CREATOR · SUPPORT · COMMUNITY' %}
   {% assign role = 'Singing Stream Savior 制作者 · VTuber' %}
   {% assign title = '歌とギター、ゲームが好きな VTuber です' %}
-  {% assign bio = '沐橙 Noon です。かつては NPC でした。<br>通りかかる冒険者にクエストを渡し、各地から来た旅人を案内していました。<br>長いあいだプレイヤーと会話するうちに、自我が芽生えました……<br><br>「勇者さま、私のクエストを引き受けてくれますか？」' %}
+  {% assign bio = '沐橙Noon（むちゃん）です。かつては NPC でした。<br>通りかかる冒険者にクエストを渡し、各地から来た旅人を案内していました。<br>長いあいだプレイヤーと会話するうちに、自我が芽生えました……<br><br>「勇者さま、私のクエストを引き受けてくれますか？」' %}
   {% assign profile_label = 'いいなと思ったら YouTube チャンネルを登録して、ぜひ配信にも遊びに来てください！' %}
   {% assign support_kicker = 'アプリサポート' %}
   {% assign support_title = '不具合の報告・ご意見' %}
@@ -135,12 +137,12 @@
 <header class="creator-hero">
   <div class="creator-portrait">
     <span class="creator-portrait__orbit" aria-hidden="true"></span>
-    <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" width="400" height="400">
+    <img src="{{ author.avatar | relative_url }}" alt="{{ author_display_name }}" width="400" height="400">
   </div>
   <div class="creator-hero__copy">
     <p class="creator-eyebrow">{{ eyebrow }}</p>
     <p class="creator-role">{{ role }}</p>
-    <h1>{{ author.name }}</h1>
+    <h1>{{ author_display_name }}</h1>
     <h2>{{ title }}</h2>
     <p>{{ bio }}</p>
     <a class="creator-link creator-link--profile" href="{{ author.youtube_subscribe_url }}" rel="noopener">

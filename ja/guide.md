@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 ユーザーマニュアル
-description: Singing Stream Savior 2.1.1.2 日本語マニュアル
+description: Singing Stream Savior 2.1.2.0 日本語マニュアル
 lang: ja
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 ユーザーマニュアル
 
-Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.1.2** に対応しています。
+Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.2.0** に対応しています。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと拡大プレビューを開けます。</figcaption></figure>
 
@@ -170,9 +170,11 @@ OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き�
 <a id="uvr-vocal-removal"></a>
 ## 06 · UVR ボーカル除去
 
-**2.1.1 の新機能です。** ローカル音源または YouTube リンクを UVR の処理待ちリストへ直接ドラッグできます。YouTube のタイトルは自動取得され、15 分を超える動画は処理前に必要な範囲を指定できます。MDX は「コーラスを残す」が初期設定で、バッチ開始前なら曲ごとに完全除去へ変更できます。
+**UVR は 2.1.1、HP と MP3 は 2.1.2 の新機能です。** 音源や YouTube リンクを処理待ちリストへ直接ドラッグできます。タイトルは自動取得され、15 分を超える動画は処理前に範囲を選べます。曲ごとに HP／MDX とコーラス保持／完全除去を選択してください。新規インストールでは HP のコーラス保持が既定で、変更した既定値は記憶されます。曲名は鉛筆アイコンから編集できます。開始後は設定が固定され、最小化しても処理は続きます。
 
-WAV／FLAC、初期設定の 48 kHz または 44.1 kHz を選択できます。GPU アクセラレーションを有効にすると、対応する GPU を使用し、利用できない場合は CPU へ自動的に切り替えてメイン画面左下に理由を表示します。出力フォルダーは「設定 > ファイルとプロジェクト」で一元管理します。
+WAV／FLAC／MP3（320 kbps）、既定の 48 kHz または 44.1 kHz を選択できます。GPU を利用できない場合は CPU へ自動的に切り替え、メイン画面左下に理由を表示します。出力先は「設定 > ファイルとプロジェクト」で管理します。
+
+むちゃん個人の試聴では、伴奏の細部を残しやすい HP をおすすめします。ただし曲やジャンルによって結果が異なるため、参考としてお考えください。同じ条件の実測では HP は MDX より遅く、実際の速度は曲とパソコンによって異なります。
 
 完了後は伴奏を 1 曲ずつ、または全曲まとめてライブラリへ追加できます。出力フォルダーには `(Instrumental)` と `(Vocal)` の両方を残し、曲リストには実際の伴奏だけを追加します。
 

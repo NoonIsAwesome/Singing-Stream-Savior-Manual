@@ -1,6 +1,6 @@
 ﻿---
 title: 歌回救星 2.1 使用说明
-description: Singing Stream Savior 2.1.1.2 简体中文使用说明
+description: Singing Stream Savior 2.1.2.0 简体中文使用说明
 lang: zh-CN
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # 歌回救星 2.1 使用说明
 
-歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.1.2**。
+歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.2.0**。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可放大预览。</figcaption></figure>
 
@@ -170,9 +170,11 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 <a id="uvr-vocal-removal"></a>
 ## 06 · UVR 人声消除
 
-**2.1.1 新功能。** 可将本地音频文件或 YouTube 链接直接拖入 UVR 待处理列表。软件会自动识别 YouTube 标题；影片超过 15 分钟时，可在处理前选择需要的范围。MDX 默认使用“保留和声”，也可在整批开始前逐首改为“完全消除人声”。
+**UVR 为 2.1.1 新功能，HP 与 MP3 于 2.1.2 新增。** 将音频文件或 YouTube 链接直接拖入待处理列表即可。标题会自动识别，超过 15 分钟的视频可先选择范围。每首歌可分别选择 HP/MDX，以及保留和声/完全消除人声。新安装默认使用 HP 保留和声，并会记住你更改的默认设置。点击铅笔可编辑歌名；开始后本批设置会锁定，最小化后仍会继续处理。
 
-输出支持 WAV／FLAC，以及默认 48 kHz 或可选 44.1 kHz。启用 GPU 加速后会使用兼容的显卡；无法使用 GPU 时会自动改用 CPU，并在主窗口左下角显示说明。输出文件夹统一在“设置 > 文件与项目”管理。
+输出支持 WAV、FLAC、MP3（320 kbps），以及默认 48 kHz 或可选 44.1 kHz。无法使用 GPU 时会自动改用 CPU，并在主窗口左下角显示说明。输出文件夹统一在“设置 > 文件与项目”管理。
+
+沐橙个人听感推荐 HP，实测认为较能保留伴奏细节，但效果可能因歌曲或曲风而有差异，仅供参考。相同条件实测，HP 会比 MDX 慢，实际速度依歌曲与电脑而异。
 
 完成后可逐首或一次全部把伴奏导入歌曲列表。输出文件夹会保留 `(Instrumental)` 与 `(Vocal)` 两个文件，歌曲列表只会导入实际伴奏。
 
