@@ -1,0 +1,58 @@
+release:
+  version: "2.1.1.2"
+  date: "2026-09-05"
+  latest: true
+  type:
+    zh-TW: 音訊切換與監聽穩定性
+    zh-CN: 音频切换与监听稳定性
+    ja: 音声切り替えとモニターの安定性
+    ko: 오디오 전환 및 모니터 안정성
+    en: Audio switching and monitor reliability
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.1.2"
+  summary:
+    zh-TW: 提升 Profile 與 VST3 效果切換、監聽裝置切換及音訊啟動時的穩定性。
+    zh-CN: 提升 Profile 与 VST3 效果切换、监听设备切换及音频启动时的稳定性。
+    ja: Profile と VST3 エフェクトの切り替え、モニター出力の変更、音声起動時の安定性を向上しました。
+    ko: Profile 및 VST3 효과 전환, 모니터 출력 장치 변경, 오디오 시작 안정성을 개선했습니다.
+    en: Improves the reliability of Profile and VST3 effect changes, monitor-device switching, and audio startup.
+  items:
+    zh-TW:
+      - 切換 Profile 或 VST3 效果時，會先完成準備再進行實際聲音切換；使用不同延遲的效果時，可減少中斷、爆音與時間偏移。
+      - 切換監聽輸出裝置時，不再連帶重啟其他音訊流程；直播、OBS 輸出與錄音可以繼續運作，裝置切換失敗時也會安全恢復原本的監聽輸出。
+      - 暫時使用 Profile 或 Block 監聽結束後，會保留使用者目前選擇的監聽開關狀態，不會意外回到先前的設定。
+      - 已儲存的音訊裝置無法使用時，軟體會安全改用可用模式並顯示清楚的狀態訊息，避免畫面設定與實際音訊狀態不一致。
+      - 改善音訊啟動與監聽剛開啟時的緩衝準備，降低短暫斷音或聲音不穩定的機率。
+      - 提升 VST3 掃描及效果視窗的穩定性；遇到異常或無回應的外掛時會與主程式隔離，效果視窗在不同顯示縮放與介面語言下也能更可靠地關閉。
+      - 半夜肚子餓不知道要吃什麼，感覺只有麥當勞了…對了！煮個麵好了，配干貝醬吧！我愛干貝醬！
+    zh-CN:
+      - 切换 Profile 或 VST3 效果时，会先完成准备再进行实际声音切换；使用不同延迟的效果时，可减少中断、爆音与时间偏移。
+      - 切换监听输出设备时，不再连带重启其他音频流程；直播、OBS 输出与录音可以继续运行，设备切换失败时也会安全恢复原来的监听输出。
+      - 临时使用 Profile 或 Block 监听结束后，会保留用户目前选择的监听开关状态，不会意外回到之前的设置。
+      - 已保存的音频设备无法使用时，软件会安全改用可用模式并显示清楚的状态消息，避免界面设置与实际音频状态不一致。
+      - 改善音频启动与监听刚开启时的缓冲准备，降低短暂断音或声音不稳定的概率。
+      - 提升 VST3 扫描及效果窗口的稳定性；遇到异常或无响应的插件时会与主程序隔离，效果窗口在不同显示缩放与界面语言下也能更可靠地关闭。
+      - 半夜肚子饿不知道要吃什么，感觉只有麦当劳了……对了！煮个面好了，配干贝酱吧！我爱干贝酱！
+    ja:
+      - Profile や VST3 エフェクトを切り替える際、音を切り替える前に準備を完了するようにしました。遅延の異なるエフェクト間でも、中断、クリックノイズ、タイミングのずれを抑えます。
+      - モニター出力デバイスの変更時に、ほかの音声経路を再起動しないようにしました。配信、OBS 出力、録音を継続でき、変更に失敗した場合は元のモニター出力へ安全に戻ります。
+      - 一時的な Profile または Block のモニターが終了した後も、現在選択しているモニターのオン／オフ状態を維持し、以前の設定へ意図せず戻らないようにしました。
+      - 保存済みの音声デバイスが利用できない場合は、安全に利用可能なモードへ切り替えて明確な状態メッセージを表示し、画面と実際のルーティングが一致しない状態を防ぎます。
+      - 音声起動時とモニターを有効にした直後のバッファ準備を改善し、短い音切れや不安定な音が発生する可能性を減らしました。
+      - VST3 のスキャンとエフェクト画面をより安定させました。異常終了または応答しないプラグインをメインアプリから隔離し、表示倍率や表示言語が異なる環境でも画面をより確実に閉じられます。
+      - 夜中にお腹が空いたけれど何を食べるか決まらず、もうマクドナルドしかない気がする……そうだ！麺を作って、ホタテソースを添えよう！ホタテソース大好き！
+    ko:
+      - Profile 또는 VST3 효과를 전환할 때 실제 소리를 바꾸기 전에 준비를 완료하도록 개선했습니다. 지연 시간이 다른 효과 사이에서도 끊김, 클릭 잡음, 타이밍 어긋남을 줄입니다.
+      - 모니터 출력 장치를 변경해도 나머지 오디오 경로를 다시 시작하지 않습니다. 방송, OBS 출력 및 녹음을 계속할 수 있으며 장치 변경에 실패하면 이전 모니터 출력으로 안전하게 복원됩니다.
+      - 임시 Profile 또는 Block 모니터링이 끝난 뒤에도 사용자가 현재 선택한 모니터 켜짐／꺼짐 상태를 유지하며 이전 설정으로 갑자기 돌아가지 않습니다.
+      - 저장된 오디오 장치를 사용할 수 없으면 안전하게 사용 가능한 모드로 전환하고 명확한 상태 메시지를 표시하여 화면 설정과 실제 라우팅이 어긋나는 상황을 방지합니다.
+      - 오디오 시작 및 모니터를 처음 켤 때의 버퍼 준비를 개선하여 짧은 끊김이나 불안정한 소리가 발생할 가능성을 줄였습니다.
+      - VST3 검색과 효과 창의 안정성을 높였습니다. 비정상 종료되거나 응답하지 않는 플러그인은 메인 프로그램과 격리되며, 화면 배율과 인터페이스 언어가 달라도 효과 창을 더 안정적으로 닫을 수 있습니다.
+      - 한밤중에 배가 고픈데 뭘 먹어야 할지 모르겠고, 맥도날드밖에 없는 것 같았어요… 아! 면을 끓여서 관자 소스와 같이 먹어야겠다! 관자 소스를 사랑해요!
+    en:
+      - Profile and VST3 effect changes are prepared before the audible transition, reducing interruptions, clicks, and timing shifts when switching between effects with different latency.
+      - Changing the monitor output no longer restarts the rest of the audio path. Streaming, OBS output, and recording can continue, and a failed device change safely restores the previous monitor output.
+      - Monitor On or Off now remains consistent after temporary Profile or Block monitoring ends instead of unexpectedly returning to an older setting.
+      - When a saved audio device is unavailable, the application falls back safely and shows a clear status message instead of leaving the controls and actual routing out of sync.
+      - Audio startup and monitor activation are better protected against brief gaps or unstable sound while the buffers become ready.
+      - VST3 scanning and editor windows are more resilient. A plug-in that crashes or stops responding is isolated from the main application, and effect windows close more reliably across display scaling and interface languages.
+      - Hungry in the middle of the night and not sure what to eat—it felt like McDonald’s was the only option… Wait! I’ll cook some noodles and have them with scallop sauce. I love scallop sauce!

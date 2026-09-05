@@ -1,7 +1,7 @@
 release:
   version: "2.1.1.1"
   date: "2026-09-04"
-  latest: true
+  latest: false
   type:
     zh-TW: UVR GPU 加速與播放修正
     zh-CN: UVR GPU 加速与播放修正
