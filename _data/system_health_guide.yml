@@ -1,0 +1,190 @@
+zh-TW:
+  heading: 如何判讀 CPU、RAM 與音訊健康 Tooltip
+  intro: 主視窗右下角每兩秒更新一次。精簡列的 CPU／RAM 是歌回救星本身；將游標停在上面才會看到系統總量、程式記憶體與進階直播音訊資料。單一數字不是爆音證明，應一起看狀態、處理時間與計數器是否持續增加。
+  image_alt: 歌回救星系統資源與音訊健康 Tooltip 的完整內容
+  image_caption: 此範例為 512 frames／48 kHz：callback 間隔 10.67 ms、處理峰值 0.35 ms、underrun／overrun 皆為 0，因此屬於有充足處理餘裕的正常狀態。
+  metric_heading: 欄位
+  meaning_heading: 代表什麼
+  judgement_heading: 如何判讀
+  rows:
+    - metric: 狀態、系統 CPU、歌回救星 CPU
+      meaning: 系統 CPU 是整台電腦的總負載；歌回救星 CPU 是本程式用量。狀態會綜合 CPU、RAM、音訊中斷與裝置復原。
+      judgement: 連續兩次取樣才變色。系統 CPU 85%／95% 以上分別為警告／嚴重；歌回救星 CPU 25%／50% 以上分別為警告／嚴重。瞬間尖峰後恢復通常不必立刻改設定。
+    - metric: 系統記憶體、工作管理員記憶體、工作集、私人已認可記憶體
+      meaning: 系統記憶體是全機已用量；工作管理員數字是程式私人工作集，精簡列 RAM% 也是它占實體記憶體的比例。總工作集包含共享映射；私人已認可記憶體是已承諾的私人虛擬記憶體，不等於全都常駐 RAM。
+      judgement: 系統記憶體 85%／95% 以上或程式顯示記憶體占實體 RAM 15%／30% 以上才進入警告／嚴重門檻。不要只因總工作集比工作管理員數字大就判定記憶體外洩。
+    - metric: 音訊緩衝區與 callback 間隔
+      meaning: Buffer frames ÷ sample rate 就是每次音訊 callback 的時間預算；例如 512 ÷ 48,000 約為 10.67 ms。
+      judgement: Buffer 越大通常越穩但軟體監聽更晚。這是 App Buffer，不是錄音介面的 ASIO hardware buffer，也不會增加硬體 Direct Monitor 延遲。
+    - metric: 音訊處理峰值
+      meaning: 目前音訊引擎觀察到的 callback 處理時間最高值，是高水位紀錄，不是每兩秒的平均 CPU。
+      judgement: 必須明顯低於 callback 間隔。新峰值達週期 85% 以上會觸發音訊注意提示；例如圖中的 0.35 ms 相對 10.67 ms 只有約 3.3%，餘裕充足。一次舊尖峰仍留在數字中，不代表現在持續過載。
+    - metric: 預估麥克風至 Stream 延遲
+      meaning: 依目前路由、Buffer 與效果器延遲帳務估算麥克風到正式 Stream Output 的時間。
+      judgement: 不是類比 ADC 到攝影機嘴形的完整端到端測量，也不是伴奏與人聲的 offset。正式 Mix 會先讓兩者共用時間線；嘴形仍以 OBS 短錄影確認。
+    - metric: 音訊 underrun／overrun
+      meaning: Underrun 表示需要音訊時佇列資料不足，可能補靜音或產生斷續；overrun 表示佇列塞滿，可能丟棄資料。數字是目前音訊引擎啟動以來的累計。
+      judgement: 穩定播放後以 0／0 為理想。啟動最初六秒的裝置預熱有顯示寬限，但若播放途中持續增加、聽到爆音或狀態轉黃，就要處理。
+    - metric: 麥克風／監聽 FIFO、漂移修正與各自計數
+      meaning: FIFO frames 是當下佇列中的取樣數；漂移修正是不同裝置時鐘之間的微量速率補償。ASIO 輸入配 Windows 輸出時出現小幅非零修正很常見。
+      judgement: 單看 FIFO frames 或小幅 drift 不能判定故障；重點是欠載／超載維持 0、狀態正常且沒有可聽中斷。若計數增加或時序警告持續，再檢查 Buffer、驅動與裝置。
+  action_heading: 發現黃色或紅色時怎麼做
+  actions:
+    - 先看是哪個來源變色，並確認 underrun／overrun 是否在穩定播放途中增加；只有舊的處理峰值而計數不動，不必直接判定直播已斷音。
+    - 停止錄音／串流後執行 Buffer 健檢。若 256 不穩，先回到自動 512；512 仍有計數再測 1024。穩定輸出優先於少幾毫秒軟體監聽延遲。
+    - CPU 接近門檻時關閉不必要程式、降低重型 VST3／效果器負擔；系統記憶體接近 85% 時優先關閉占用整機 RAM 的其他程式。
+    - 裝置顯示中斷、復原中或復原失敗時，確認 USB／驅動與取樣率，重新整理裝置；正式直播前再做短錄影，檢查聲道、平衡、斷訊與嘴形。
+  example: 圖中的判讀結果是「正常」：系統 CPU 16%、歌回救星 CPU 0.5%、系統記憶體 65%、程式私人工作集 0.8%，音訊處理峰值只占 callback 預算約 3.3%，而麥克風與監聽欠載／超載皆為 0。FIFO 與小幅漂移修正本身不需要處理。
+
+zh-CN:
+  heading: 如何判断 CPU、RAM 与音频健康 Tooltip
+  intro: 主窗口右下角每两秒更新一次。精简栏中的 CPU／RAM 是 Singing Stream Savior 本身；将鼠标停留在上面后，才会显示系统总量、程序内存和高级直播音频数据。单一数字不能证明已经爆音，应结合状态、处理时间与计数器是否持续增加判断。
+  image_alt: Singing Stream Savior 系统资源与音频健康 Tooltip 的完整内容
+  image_caption: 此示例为 512 frames／48 kHz：callback 间隔 10.67 ms、处理峰值 0.35 ms，underrun／overrun 均为 0，因此有充足处理余量。
+  metric_heading: 字段
+  meaning_heading: 表示什么
+  judgement_heading: 如何判断
+  rows:
+    - metric: 状态、系统 CPU、Singing Stream Savior CPU
+      meaning: 系统 CPU 是整台电脑的总负载；程序 CPU 是本应用的用量。状态会综合 CPU、RAM、音频中断和设备恢复。
+      judgement: 连续两次采样后才会变色。系统 CPU 85%／95% 以上分别为警告／严重；程序 CPU 25%／50% 以上分别为警告／严重。瞬时峰值恢复后通常无需立即更改设置。
+    - metric: 系统内存、任务管理器内存、工作集、专用已提交内存
+      meaning: 系统内存是整机已用量；任务管理器数字是程序专用工作集，精简栏 RAM% 也是它占物理内存的比例。总工作集包含共享映射；专用已提交内存不代表全部常驻 RAM。
+      judgement: 系统内存达到 85%／95%，或程序显示内存占物理 RAM 15%／30% 时，分别进入警告／严重门槛。不要仅因总工作集更大就判断内存泄漏。
+    - metric: 音频缓冲区与 callback 间隔
+      meaning: Buffer frames ÷ sample rate 是每次音频 callback 的时间预算；例如 512 ÷ 48,000 约为 10.67 ms。
+      judgement: Buffer 越大通常越稳定，但软件监听延迟更高。这是 App Buffer，不是音频接口的 ASIO hardware buffer，也不会增加硬件 Direct Monitor 延迟。
+    - metric: 音频处理峰值
+      meaning: 音频引擎记录的 callback 最高处理时间，是高水位值，不是每两秒平均 CPU。
+      judgement: 应明显低于 callback 间隔。新峰值达到周期 85% 以上会提示注意；图中的 0.35 ms 只占 10.67 ms 的约 3.3%，余量充足。旧峰值继续显示不代表当前持续过载。
+    - metric: 预计麦克风至 Stream 延迟
+      meaning: 根据当前路由、Buffer 与效果器延迟核算，估算麦克风到正式 Stream Output 的时间。
+      judgement: 它不是模拟 ADC 到摄像头口型的完整端到端测量，也不是伴奏与人声的 offset。正式 Mix 会先让两者共用时间线；口型仍需通过 OBS 短录影确认。
+    - metric: 音频 underrun／overrun
+      meaning: Underrun 表示需要音频时队列数据不足，可能补静音或产生中断；overrun 表示队列塞满，可能丢弃数据。数值是当前音频引擎启动后的累计。
+      judgement: 稳定播放后以 0／0 为理想。启动前六秒有设备预热宽限，但若播放中持续增加、听到爆音或状态变黄，就需要处理。
+    - metric: 麦克风／监听 FIFO、漂移修正及各自计数
+      meaning: FIFO frames 是当前队列中的采样数；漂移修正是不同设备时钟间的微量速率补偿。ASIO 输入配 Windows 输出时出现小幅非零修正很常见。
+      judgement: 仅凭 FIFO frames 或小幅 drift 不能判断故障；重点是欠载／超载维持 0、状态正常且没有可听中断。计数增加或时序警告持续时，再检查 Buffer、驱动和设备。
+  action_heading: 出现黄色或红色时怎么办
+  actions:
+    - 先确认哪个来源变色，以及 underrun／overrun 是否在稳定播放中增加；只有旧处理峰值而计数不变时，不要直接判断直播已断音。
+    - 停止录音／直播后执行 Buffer 健康检查。256 不稳定时先回到自动 512；512 仍增加计数再测试 1024。稳定输出优先于减少几毫秒软件监听延迟。
+    - CPU 接近门槛时关闭不需要的程序并减少重型 VST3／效果器负担；系统内存接近 85% 时优先关闭占用整机 RAM 的其他程序。
+    - 设备显示中断、恢复中或恢复失败时，检查 USB／驱动与采样率并刷新设备；正式直播前再录制短片，确认声道、平衡、中断与口型。
+  example: 图中的判断结果是“正常”：系统 CPU 16%、程序 CPU 0.5%、系统内存 65%、程序专用工作集 0.8%，音频处理峰值只占 callback 预算约 3.3%，麦克风与监听欠载／超载均为 0。FIFO 与小幅漂移修正本身无需处理。
+
+en:
+  heading: How to read the CPU, RAM, and audio-health tooltip
+  intro: The lower-right status updates every two seconds. Its compact CPU／RAM values belong to Singing Stream Savior; hover to see whole-system load, process memory, and Advanced-mode audio data. One number alone does not prove an audible dropout—read the state together with timing headroom and counters that continue to rise.
+  image_alt: Expanded Singing Stream Savior system-resource and audio-health tooltip
+  image_caption: This 512-frame／48 kHz example has a 10.67 ms callback interval, a 0.35 ms processing peak, and zero underruns／overruns, leaving ample processing headroom.
+  metric_heading: Field
+  meaning_heading: What it means
+  judgement_heading: How to judge it
+  rows:
+    - metric: Status, system CPU, and app CPU
+      meaning: System CPU is total PC load; Singing Stream Savior CPU is this process. Status combines CPU, RAM, audio interruptions, and device recovery.
+      judgement: Color changes require two consecutive samples. System CPU warns／goes critical at 85%／95%; app CPU at 25%／50%. A brief spike that clears usually does not require an immediate setting change.
+    - metric: System memory, Task Manager memory, working set, and private commit
+      meaning: System memory is total used RAM. Task Manager memory is the process private working set, and the compact RAM% is that value divided by physical RAM. Total working set includes shared mappings; private committed memory is not necessarily all resident in RAM.
+      judgement: Warning／critical thresholds are 85%／95% system memory or 15%／30% of physical RAM for displayed app memory. A larger total working set alone is not evidence of a leak.
+    - metric: Audio buffer and callback interval
+      meaning: Buffer frames ÷ sample rate is the time budget for each callback; 512 ÷ 48,000 is about 10.67 ms.
+      judgement: A larger buffer usually adds stability but delays software monitoring. This is the App Buffer, not the interface ASIO hardware buffer, and it does not delay hardware Direct Monitor.
+    - metric: Audio processing peak
+      meaning: The highest callback processing time seen by the current audio engine. It is a high-water mark, not a two-second average CPU reading.
+      judgement: It should stay comfortably below the callback interval. A newly observed peak at 85% or more of the period raises an audio warning. The shown 0.35 ms is only about 3.3% of 10.67 ms. An old peak remaining visible does not mean sustained overload.
+    - metric: Estimated microphone-to-Stream latency
+      meaning: A graph-based estimate from the microphone through the active route, buffers, and effect latency to formal Stream Output.
+      judgement: It is not a complete analog-ADC-to-camera-lip measurement and is not accompaniment-to-vocal offset. The formal Mix first places both on one timeline; verify camera lip sync with a short OBS recording.
+    - metric: Audio underruns／overruns
+      meaning: An underrun means the consumer needed audio before enough queued data was available, which can insert silence or a discontinuity. An overrun means the queue filled and data may be dropped. Counts accumulate for the current engine run.
+      judgement: Zero／zero after stable playback is ideal. Device priming has a six-second startup display grace, but rising counts during playback, audible pops, or a yellow state require attention.
+    - metric: Microphone／Monitor FIFO, drift correction, and path counters
+      meaning: FIFO frames are queued samples at that instant. Drift correction is a small rate adjustment between device clocks; a small non-zero value is common with ASIO input and Windows output.
+      judgement: FIFO size or small drift alone is not a fault. Look for zero path underruns／overruns, Normal status, and clean audio. Investigate the buffer, driver, and device when counts rise or a timing warning persists.
+  action_heading: What to do when the status turns yellow or red
+  actions:
+    - Identify the warning source and see whether underrun／overrun counters rise during stable playback. An old processing peak with unchanged counters is not enough to declare a stream dropout.
+    - Stop recording／streaming and run Buffer Health Check. If 256 is unstable, return to automatic 512; if 512 still accumulates events, test 1024. Stable output matters more than a few milliseconds of software-monitor latency.
+    - Near CPU limits, close unnecessary apps and reduce heavy VST3／effect load. Near 85% system memory, close other applications consuming whole-system RAM.
+    - For an interrupted, recovering, or recovery-exhausted device, check USB, the driver, and sample rate, then refresh devices. Make a short pre-stream recording to verify centering, balance, dropouts, and lip sync.
+  example: >-
+    The screenshot reads Normal: 16% system CPU, 0.5% app CPU, 65% system memory, 0.8% app private working set, a processing peak using only about 3.3% of the callback budget, and zero microphone／Monitor underruns and overruns. The FIFO values and small drift corrections need no action by themselves.
+
+ja:
+  heading: CPU・RAM・オーディオ状態 Tooltip の読み方
+  intro: 右下の状態は 2 秒ごとに更新されます。短い CPU／RAM は Singing Stream Savior 本体の値で、ポインターを置くとシステム全体、プロセスメモリ、高度な配信モードの音声情報を表示します。一つの数値だけでドロップアウトとは判断せず、状態、処理余裕、増え続けるカウンターを合わせて確認します。
+  image_alt: Singing Stream Savior のシステム資源とオーディオ状態 Tooltip の全項目
+  image_caption: 512 frames／48 kHz の例です。callback 間隔 10.67 ms に対して処理ピークは 0.35 ms、underrun／overrun は 0 なので十分な余裕があります。
+  metric_heading: 項目
+  meaning_heading: 意味
+  judgement_heading: 判断方法
+  rows:
+    - metric: 状態、システム CPU、アプリ CPU
+      meaning: システム CPU は PC 全体、Singing Stream Savior CPU は本プロセスの負荷です。状態は CPU、RAM、音声中断、デバイス復旧をまとめて判定します。
+      judgement: 2 回連続で条件に達したとき色が変わります。システム CPU は 85%／95%、アプリ CPU は 25%／50% で警告／重大です。すぐ戻る一時的なピークだけなら設定変更は通常不要です。
+    - metric: システムメモリ、タスクマネージャー値、ワーキングセット、プライベートコミット
+      meaning: システムメモリは PC 全体の使用量です。タスクマネージャー値と短い RAM% はプロセスのプライベートワーキングセットです。総ワーキングセットには共有マッピングが含まれ、プライベートコミットがすべて物理 RAM に常駐するわけではありません。
+      judgement: システム 85%／95%、または表示アプリメモリが物理 RAM の 15%／30% で警告／重大です。総ワーキングセットが大きいだけでリークとは判断しません。
+    - metric: オーディオ Buffer と callback 間隔
+      meaning: Buffer frames ÷ sample rate が callback ごとの時間予算です。512 ÷ 48,000 は約 10.67 ms です。
+      judgement: 大きい Buffer は通常安定しますがソフトウェア Monitor は遅くなります。これは App Buffer であり ASIO hardware buffer とは別で、ハードウェア Direct Monitor の遅延は増えません。
+    - metric: オーディオ処理ピーク
+      meaning: 現在の音声エンジンで観測した callback 処理時間の最大値です。2 秒平均 CPU ではなく高水位値です。
+      judgement: callback 間隔より十分小さい必要があります。新しいピークが周期の 85% 以上になると注意表示します。図の 0.35 ms は 10.67 ms の約 3.3% です。古いピークが残っていても継続過負荷とは限りません。
+    - metric: 推定マイク→Stream 遅延
+      meaning: 現在のルート、Buffer、エフェクト遅延から正式 Stream Output までを見積もった値です。
+      judgement: アナログ ADC からカメラの口の動きまでの完全な測定でも、伴奏と声の offset でもありません。正式 Mix は両方を同じ時間軸へ置き、口の同期は短い OBS 録画で確認します。
+    - metric: オーディオ underrun／overrun
+      meaning: Underrun は必要時にキューのデータが足りず、無音補完や不連続が起こり得る状態です。Overrun はキューが満杯でデータを破棄する可能性があります。現在のエンジン起動後の累計です。
+      judgement: 安定再生後は 0／0 が理想です。起動時の初期化には 6 秒の表示猶予がありますが、再生中に増える、ノイズが聞こえる、黄色になる場合は対処します。
+    - metric: マイク／Monitor FIFO、ドリフト補正、個別カウンター
+      meaning: FIFO frames はその時点の待機サンプル数、ドリフト補正はデバイス間クロック差への微小な速度補正です。ASIO 入力と Windows 出力では小さな非ゼロ値が一般的です。
+      judgement: FIFO 値や小さな drift だけでは故障ではありません。個別 underrun／overrun が 0、状態が正常、音が途切れないことを重視します。増加や継続するタイミング警告があるとき Buffer、ドライバー、デバイスを確認します。
+  action_heading: 黄色／赤色になったとき
+  actions:
+    - どの項目が原因か、安定再生中に underrun／overrun が増えるかを確認します。古い処理ピークだけでカウンターが増えない場合、配信中断とは断定しません。
+    - 録音／配信を止めて Buffer チェックを実行します。256 が不安定なら自動 512、512 でも増える場合は 1024 を試します。数 ms の Monitor 遅延より安定出力を優先します。
+    - CPU が高い場合は不要なアプリを閉じ、重い VST3／エフェクトを減らします。システムメモリが 85% に近い場合は PC 全体の RAM を使う他アプリを閉じます。
+    - デバイス中断、復旧中、復旧失敗では USB、ドライバー、sample rate を確認してデバイスを更新し、本番前の短い録画で定位、バランス、中断、口の同期を確認します。
+  example: 図は「正常」です。システム CPU 16%、アプリ CPU 0.5%、システムメモリ 65%、アプリのプライベートワーキングセット 0.8%、処理ピークは callback 予算の約 3.3%、マイク／Monitor の underrun／overrun は 0 です。FIFO と小さなドリフト補正だけなら対処不要です。
+
+ko:
+  heading: CPU, RAM 및 오디오 상태 Tooltip 읽는 법
+  intro: 오른쪽 아래 상태는 2초마다 갱신됩니다. 짧은 CPU／RAM은 Singing Stream Savior 프로세스 값이며, 포인터를 올리면 전체 시스템 부하, 프로세스 메모리와 고급 방송 오디오 정보를 보여 줍니다. 숫자 하나만으로 드롭아웃을 판단하지 말고 상태, 처리 여유와 계속 증가하는 카운터를 함께 확인하세요.
+  image_alt: Singing Stream Savior 시스템 리소스 및 오디오 상태 Tooltip 전체 내용
+  image_caption: 512 frames／48 kHz 예시입니다. callback 간격 10.67 ms, 처리 피크 0.35 ms, underrun／overrun 0으로 처리 여유가 충분합니다.
+  metric_heading: 항목
+  meaning_heading: 의미
+  judgement_heading: 판단 방법
+  rows:
+    - metric: 상태, 시스템 CPU, 앱 CPU
+      meaning: 시스템 CPU는 PC 전체, Singing Stream Savior CPU는 이 프로세스의 부하입니다. 상태는 CPU, RAM, 오디오 중단과 장치 복구를 종합합니다.
+      judgement: 두 번 연속 조건을 만족해야 색이 바뀝니다. 시스템 CPU 85%／95%, 앱 CPU 25%／50%가 경고／심각 기준입니다. 곧 회복되는 순간 피크만으로 설정을 바꿀 필요는 없습니다.
+    - metric: 시스템 메모리, 작업 관리자 메모리, 작업 집합, 개인 커밋
+      meaning: 시스템 메모리는 전체 PC 사용량입니다. 작업 관리자 값과 짧은 RAM%는 프로세스 개인 작업 집합입니다. 전체 작업 집합에는 공유 매핑이 포함되고 개인 커밋이 모두 실제 RAM에 상주하는 것은 아닙니다.
+      judgement: 시스템 85%／95% 또는 표시 앱 메모리가 물리 RAM의 15%／30%일 때 경고／심각입니다. 전체 작업 집합이 더 크다는 이유만으로 누수라고 판단하지 않습니다.
+    - metric: 오디오 Buffer와 callback 간격
+      meaning: Buffer frames ÷ sample rate가 callback마다 쓸 수 있는 시간입니다. 512 ÷ 48,000은 약 10.67 ms입니다.
+      judgement: 큰 Buffer는 보통 안정적이지만 소프트웨어 Monitor가 늦어집니다. 이는 App Buffer이며 ASIO hardware buffer와 별개이고 하드웨어 Direct Monitor 지연을 늘리지 않습니다.
+    - metric: 오디오 처리 피크
+      meaning: 현재 오디오 엔진이 본 callback 처리 시간 최댓값입니다. 2초 평균 CPU가 아니라 최고 기록입니다.
+      judgement: callback 간격보다 충분히 작아야 합니다. 새 피크가 주기의 85% 이상이면 주의 표시가 나옵니다. 화면의 0.35 ms는 10.67 ms의 약 3.3%입니다. 오래된 피크가 남아 있어도 지속 과부하는 아닐 수 있습니다.
+    - metric: 예상 마이크→Stream 지연
+      meaning: 현재 경로, Buffer와 이펙트 지연을 바탕으로 정식 Stream Output까지 계산한 값입니다.
+      judgement: 아날로그 ADC부터 카메라 입 모양까지의 전체 측정도, 반주와 보컬 offset도 아닙니다. 정식 Mix에서 둘을 같은 시간축에 놓으며 입 모양은 짧은 OBS 녹화로 확인합니다.
+    - metric: 오디오 underrun／overrun
+      meaning: Underrun은 필요한 순간 큐 데이터가 부족해 무음 또는 불연속이 생길 수 있는 상태이고, overrun은 큐가 가득 차 데이터를 버릴 수 있는 상태입니다. 현재 엔진 실행 동안 누적됩니다.
+      judgement: 안정 재생 후 0／0이 이상적입니다. 시작 시 장치 준비에는 6초 표시 유예가 있지만 재생 중 증가하거나 팝이 들리거나 노란 상태가 되면 조치해야 합니다.
+    - metric: 마이크／Monitor FIFO, 드리프트 보정과 개별 카운터
+      meaning: FIFO frames는 현재 대기 샘플 수이고 드리프트 보정은 장치 클록 차이를 맞추는 미세 속도 보정입니다. ASIO 입력과 Windows 출력에서는 작은 0이 아닌 값이 흔합니다.
+      judgement: FIFO 수치나 작은 drift만으로 고장은 아닙니다. 개별 underrun／overrun 0, 정상 상태와 깨끗한 소리가 중요합니다. 카운터가 늘거나 타이밍 경고가 계속되면 Buffer, 드라이버와 장치를 확인합니다.
+  action_heading: 노란색 또는 빨간색일 때
+  actions:
+    - 어떤 항목이 원인인지, 안정 재생 중 underrun／overrun이 늘어나는지 확인합니다. 오래된 처리 피크만 있고 카운터가 그대로라면 방송 드롭아웃이라고 단정하지 않습니다.
+    - 녹음／방송을 멈추고 Buffer 점검을 실행합니다. 256이 불안정하면 자동 512로 돌아가고, 512에서도 증가하면 1024를 시험합니다. 몇 ms의 소프트웨어 Monitor 지연보다 안정 출력을 우선합니다.
+    - CPU가 기준에 가깝다면 불필요한 앱을 닫고 무거운 VST3／이펙트를 줄입니다. 시스템 메모리가 85%에 가깝다면 전체 RAM을 많이 쓰는 다른 앱을 닫습니다.
+    - 장치가 중단, 복구 중 또는 복구 실패라면 USB, 드라이버와 sample rate를 확인하고 장치를 새로 고칩니다. 방송 전에 짧게 녹화해 중앙 정렬, 밸런스, 끊김과 입 모양을 확인합니다.
+  example: 화면은 정상입니다. 시스템 CPU 16%, 앱 CPU 0.5%, 시스템 메모리 65%, 앱 개인 작업 집합 0.8%, 처리 피크는 callback 예산의 약 3.3%, 마이크／Monitor underrun／overrun은 0입니다. FIFO와 작은 드리프트 보정만으로는 조치할 필요가 없습니다.

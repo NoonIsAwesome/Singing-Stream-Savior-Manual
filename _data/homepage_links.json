@@ -1,0 +1,62 @@
+{
+  "zh-TW": {
+    "resources": "/resources.html",
+    "demo": "/resources.html#operation-videos",
+    "about": "/about.html",
+    "guide": "/guide.html",
+    "getting-started": "/getting-started.html",
+    "uvr-vocal-removal": "/uvr-vocal-removal.html",
+    "library-and-playback": "/library-and-playback.html",
+    "lyrics": "/lyrics.html",
+    "obs-and-themes": "/obs-and-themes.html",
+    "profiles": "/profiles.html"
+  },
+  "zh-CN": {
+    "resources": "/zh-CN/resources.html",
+    "demo": "/zh-CN/resources.html#operation-videos",
+    "about": "/zh-CN/about.html",
+    "guide": "/zh-CN/guide.html",
+    "getting-started": "/zh-CN/guide.html#getting-started",
+    "uvr-vocal-removal": "/zh-CN/guide.html#uvr-vocal-removal",
+    "library-and-playback": "/zh-CN/guide.html#library-and-playback",
+    "lyrics": "/zh-CN/guide.html#lyrics",
+    "obs-and-themes": "/zh-CN/guide.html#obs-and-themes",
+    "profiles": "/zh-CN/advanced-streaming.html"
+  },
+  "en": {
+    "resources": "/en/resources.html",
+    "demo": "/en/resources.html#operation-videos",
+    "about": "/en/about.html",
+    "guide": "/en/guide.html",
+    "getting-started": "/en/guide.html#getting-started",
+    "uvr-vocal-removal": "/en/guide.html#uvr-vocal-removal",
+    "library-and-playback": "/en/guide.html#library-and-playback",
+    "lyrics": "/en/guide.html#lyrics",
+    "obs-and-themes": "/en/guide.html#obs-and-themes",
+    "profiles": "/en/advanced-streaming.html"
+  },
+  "ja": {
+    "resources": "/ja/resources.html",
+    "demo": "/ja/resources.html#operation-videos",
+    "about": "/ja/about.html",
+    "guide": "/ja/guide.html",
+    "getting-started": "/ja/guide.html#getting-started",
+    "uvr-vocal-removal": "/ja/guide.html#uvr-vocal-removal",
+    "library-and-playback": "/ja/guide.html#library-and-playback",
+    "lyrics": "/ja/guide.html#lyrics",
+    "obs-and-themes": "/ja/guide.html#obs-and-themes",
+    "profiles": "/ja/advanced-streaming.html"
+  },
+  "ko": {
+    "resources": "/ko/resources.html",
+    "demo": "/ko/resources.html#operation-videos",
+    "about": "/ko/about.html",
+    "guide": "/ko/guide.html",
+    "getting-started": "/ko/guide.html#getting-started",
+    "uvr-vocal-removal": "/ko/guide.html#uvr-vocal-removal",
+    "library-and-playback": "/ko/guide.html#library-and-playback",
+    "lyrics": "/ko/guide.html#lyrics",
+    "obs-and-themes": "/ko/guide.html#obs-and-themes",
+    "profiles": "/ko/advanced-streaming.html"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "zh-TW": {
+    "features": "功能介紹",
+    "guide": "使用說明",
+    "author": "關於作者",
+    "home": "首頁",
+    "navigation": "網站導覽",
+    "appearance": "外觀設定",
+    "auto": "跟隨系統",
+    "light": "淺色",
+    "dark": "深色",
+    "zoom": "軟體截圖放大預覽",
+    "close": "關閉 ✕",
+    "footer": "讓操作自動接手，把時間留給唱歌。"
+  },
+  "zh-CN": {
+    "features": "功能介绍",
+    "guide": "使用说明",
+    "author": "关于作者",
+    "home": "首页",
+    "navigation": "网站导航",
+    "appearance": "外观设置",
+    "auto": "跟随系统",
+    "light": "浅色",
+    "dark": "深色",
+    "zoom": "软件截图放大预览",
+    "close": "关闭 ✕",
+    "footer": "让操作自动完成，把时间留给唱歌。"
+  },
+  "en": {
+    "features": "Features",
+    "guide": "User guide",
+    "author": "About the author",
+    "home": "Home",
+    "navigation": "Site navigation",
+    "appearance": "Appearance",
+    "auto": "Follow system",
+    "light": "Light",
+    "dark": "Dark",
+    "zoom": "Enlarged software screenshot",
+    "close": "Close ✕",
+    "footer": "Let the app handle the steps. Make time for singing."
+  },
+  "ja": {
+    "features": "機能紹介",
+    "guide": "使い方",
+    "author": "作者について",
+    "home": "ホーム",
+    "navigation": "サイトナビゲーション",
+    "appearance": "外観設定",
+    "auto": "システムに従う",
+    "light": "ライト",
+    "dark": "ダーク",
+    "zoom": "ソフトウェア画面の拡大表示",
+    "close": "閉じる ✕",
+    "footer": "操作は自動に。歌う時間をもっと。"
+  },
+  "ko": {
+    "features": "기능 소개",
+    "guide": "사용 안내",
+    "author": "제작자 소개",
+    "home": "홈",
+    "navigation": "사이트 탐색",
+    "appearance": "화면 설정",
+    "auto": "시스템 설정 따르기",
+    "light": "라이트",
+    "dark": "다크",
+    "zoom": "소프트웨어 화면 확대",
+    "close": "닫기 ✕",
+    "footer": "자동으로 처리하고, 노래에 더 집중하세요."
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "zh-TW": {
+    "sing": {
+      "bgm": [
+        "BGM 自動暫停",
+        "讓伴奏接手，背景音樂先暫停。"
+      ],
+      "track": [
+        "伴奏播放中",
+        "目前歌曲同步到 OBS 歌單。"
+      ],
+      "profile": [
+        "套用這首歌的效果（EQ、Reverb等等）",
+        "切換到預先指定的演唱效果。"
+      ]
+    },
+    "chat": {
+      "bgm": [
+        "BGM 恢復播放",
+        "伴奏停止或播放完畢後，恢復原本的背景音樂。"
+      ],
+      "track": [
+        "伴奏已停止",
+        "剛唱完的歌曲保留在歌單裡。"
+      ],
+      "profile": [
+        "回到聊天效果（EQ、Reverb等等）",
+        "恢復預先設定的聊天人聲效果。"
+      ]
+    }
+  },
+  "zh-CN": {
+    "sing": {
+      "bgm": [
+        "BGM 自动暂停",
+        "让伴奏接手，背景音乐先暂停。"
+      ],
+      "track": [
+        "伴奏播放中",
+        "当前歌曲同步到 OBS 歌单。"
+      ],
+      "profile": [
+        "应用这首歌的效果（EQ、Reverb等）",
+        "切换到预先指定的演唱效果。"
+      ]
+    },
+    "chat": {
+      "bgm": [
+        "BGM 恢复播放",
+        "伴奏停止或播放完毕后，恢复原本的背景音乐。"
+      ],
+      "track": [
+        "伴奏已停止",
+        "刚唱完的歌曲保留在歌单里。"
+      ],
+      "profile": [
+        "回到聊天效果（EQ、Reverb等）",
+        "恢复预先设定的聊天人声效果。"
+      ]
+    }
+  },
+  "en": {
+    "sing": {
+      "bgm": [
+        "BGM pauses automatically",
+        "The backing track takes over while BGM pauses."
+      ],
+      "track": [
+        "Backing track is playing",
+        "The current song syncs to your OBS set list."
+      ],
+      "profile": [
+        "Apply this song’s effects (EQ, Reverb, and more)",
+        "Switch to the singing effects you assigned."
+      ]
+    },
+    "chat": {
+      "bgm": [
+        "BGM resumes",
+        "When the backing track stops or ends, the original BGM resumes."
+      ],
+      "track": [
+        "Backing track stopped",
+        "The song you just sang stays in the set list."
+      ],
+      "profile": [
+        "Return to chat effects (EQ, Reverb, and more)",
+        "Restore your chosen chat vocal effects."
+      ]
+    }
+  },
+  "ja": {
+    "sing": {
+      "bgm": [
+        "BGM を自動で一時停止",
+        "BGM を一時停止し、伴奏に切り替えます。"
+      ],
+      "track": [
+        "伴奏を再生中",
+        "現在の曲を OBS の曲目に反映します。"
+      ],
+      "profile": [
+        "この曲のエフェクト（EQ、Reverb など）を適用",
+        "あらかじめ指定した歌用エフェクトに切り替えます。"
+      ]
+    },
+    "chat": {
+      "bgm": [
+        "BGM を再開",
+        "伴奏が停止または終了すると、元の BGM を再開します。"
+      ],
+      "track": [
+        "伴奏を停止",
+        "歌い終わった曲は曲目に残ります。"
+      ],
+      "profile": [
+        "トーク用エフェクト（EQ、Reverb など）に戻る",
+        "設定済みのトーク用エフェクトに戻します。"
+      ]
+    }
+  },
+  "ko": {
+    "sing": {
+      "bgm": [
+        "BGM 자동 일시정지",
+        "반주가 시작되면 배경 음악은 잠시 멈춥니다."
+      ],
+      "track": [
+        "반주 재생 중",
+        "현재 곡이 OBS 세트리스트에 반영됩니다."
+      ],
+      "profile": [
+        "이 곡의 효과(EQ, Reverb 등) 적용",
+        "미리 지정한 노래용 효과로 전환합니다."
+      ]
+    },
+    "chat": {
+      "bgm": [
+        "BGM 재생 재개",
+        "반주가 멈추거나 끝나면 원래 BGM이 다시 재생됩니다."
+      ],
+      "track": [
+        "반주 정지",
+        "방금 부른 곡은 세트리스트에 남습니다."
+      ],
+      "profile": [
+        "대화용 효과(EQ, Reverb 등)로 복귀",
+        "미리 설정한 대화용 보컬 효과로 돌아갑니다."
+      ]
+    }
+  }
+}

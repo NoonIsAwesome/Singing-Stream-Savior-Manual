@@ -1,0 +1,31 @@
+{% assign release = include.release %}
+{% assign content_lang = include.content_lang %}
+{% assign version_anchor = release.version | replace: '.', '-' | prepend: 'v' %}
+{% assign localized_type = release.type[content_lang] | default: release.type.en %}
+{% assign localized_summary = release.summary[content_lang] | default: release.summary.en %}
+{% assign localized_items = release.items[content_lang] | default: release.items.en %}
+<article class="release-entry{% if release.latest %} release-entry--latest{% endif %}" id="{{ version_anchor }}">
+  <div class="release-entry__rail">
+    <span class="release-entry__node" aria-hidden="true"></span>
+    <time datetime="{{ release.date }}">{{ release.date }}</time>
+    <span>{{ localized_type }}</span>
+  </div>
+  <div class="release-entry__card">
+    <header class="release-entry__header">
+      <div>
+        {% if release.latest %}<span class="release-entry__current">{{ include.latest_label }}</span>{% endif %}
+        <h2>{{ release.version }}</h2>
+      </div>
+      <span class="release-entry__count">{{ localized_items | size }}{{ include.items_label }}</span>
+    </header>
+    <p class="release-entry__summary">{{ localized_summary }}</p>
+    <ul class="release-entry__items">
+      {% for item in localized_items %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <a class="release-entry__link" href="{{ release.release_url }}" rel="noopener">
+      {{ include.release_link }} <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</article>

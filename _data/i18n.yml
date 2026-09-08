@@ -1,0 +1,209 @@
+zh-TW:
+  language_name: 繁體中文
+  skip: 跳至主要內容
+  home_aria: 回到使用說明首頁
+  product: 歌回救星
+  manual: 使用說明
+  chapters: 章節
+  nav_aria: 說明書章節
+  search_chapters: 搜尋章節
+  no_chapters: 找不到符合的章節
+  collapse_nav: 收合章節欄
+  expand_nav: 展開章節欄
+  preview_badge: 2.1 新功能
+  uvr_badge: 2.1.1 新功能
+  on_this_page: 本頁內容
+  flow: 使用流程
+  stream_tip: 直播前建議
+  stream_tip_text: 先播放一首測試歌曲，確認音訊、歌詞、歌單與 OBS 畫面。
+  meta: 歌回直播整合工具
+  footer: 歌回救星 2.1 使用說明
+  back_home: 回到首頁
+  language: 語言
+  version: 版本
+  download_windows: 下載 Windows 版
+  nav:
+    home: 軟體介紹
+    getting_started: 開始使用
+    library: 歌曲庫與播放
+    lyrics: 歌詞功能
+    themes: 歌單外觀與主題
+    websocket: 直播時間戳擷取
+    uvr: UVR 人聲消除
+    modes: 工作區模式
+    audio_routing: 音訊路由
+    profiles: 人聲 Profiles
+    advanced_streaming: 進階直播音訊
+    settings: 設定與疑難排解
+    open_source: 開源專案與授權
+    resources: 軟體下載
+    changelog: 更新日誌
+    about: 作者與聯絡
+
+zh-CN:
+  language_name: 简体中文
+  skip: 跳到主要内容
+  home_aria: 返回使用说明首页
+  product: 歌回救星
+  manual: 使用说明
+  chapters: 章节
+  nav_aria: 说明书章节
+  search_chapters: 搜索章节
+  no_chapters: 找不到匹配的章节
+  collapse_nav: 收起章节栏
+  expand_nav: 展开章节栏
+  preview_badge: 2.1 新功能
+  uvr_badge: 2.1.1 新功能
+  on_this_page: 本页内容
+  flow: 使用流程
+  stream_tip: 直播前建议
+  stream_tip_text: 先播放一首测试歌曲，确认音频、歌词、歌单与 OBS 画面。
+  meta: 歌回直播整合工具
+  footer: 歌回救星 2.1 使用说明
+  back_home: 返回首页
+  language: 语言
+  version: 版本
+  download_windows: 下载 Windows 版
+  nav:
+    home: 软件介绍
+    getting_started: 开始使用
+    library: 歌曲库与播放
+    lyrics: 歌词功能
+    themes: 歌单外观与主题
+    websocket: 直播时间戳获取
+    uvr: UVR 人声消除
+    modes: 工作区模式
+    audio_routing: 音频路由
+    profiles: 人声 Profiles
+    advanced_streaming: 高级直播音频
+    settings: 设置与疑难解答
+    open_source: 开源项目与许可
+    resources: 软件下载
+    changelog: 更新日志
+    about: 作者与联系
+
+en:
+  language_name: English
+  skip: Skip to main content
+  home_aria: Go to the manual home page
+  product: Singing Stream Savior
+  manual: User Manual
+  chapters: Chapters
+  nav_aria: Manual chapters
+  search_chapters: Search chapters
+  no_chapters: No matching chapters
+  collapse_nav: Collapse chapter sidebar
+  expand_nav: Expand chapter sidebar
+  preview_badge: 2.1 new
+  uvr_badge: New in 2.1.1
+  on_this_page: On this page
+  flow: Guide
+  stream_tip: Before going live
+  stream_tip_text: Play one test song and check audio, lyrics, set list, and the OBS output.
+  meta: Singing-stream production tool
+  footer: Singing Stream Savior 2.1 User Manual
+  back_home: Back to top
+  language: Language
+  version: Version
+  download_windows: Download for Windows
+  nav:
+    home: About the app
+    getting_started: Getting started
+    library: Library and playback
+    lyrics: Lyrics
+    themes: Playlist Appearance
+    websocket: Livestream timestamp capture
+    uvr: UVR vocal removal
+    modes: Workspace modes
+    audio_routing: Audio routing
+    profiles: Vocal Profiles
+    advanced_streaming: Advanced streaming audio
+    settings: Settings and help
+    open_source: Open source and licenses
+    resources: Software download
+    changelog: Release history
+    about: Creator and support
+
+ja:
+  language_name: 日本語
+  skip: 本文へ移動
+  home_aria: マニュアルのトップへ戻る
+  product: Singing Stream Savior
+  manual: ユーザーマニュアル
+  chapters: 目次
+  nav_aria: マニュアルの章
+  search_chapters: 章を検索
+  no_chapters: 一致する章がありません
+  collapse_nav: 章サイドバーを折りたたむ
+  expand_nav: 章サイドバーを展開する
+  preview_badge: 2.1 新機能
+  uvr_badge: 2.1.1 新機能
+  on_this_page: このページの内容
+  flow: 使用ガイド
+  stream_tip: 配信前の確認
+  stream_tip_text: テスト曲を再生し、音声・歌詞・セットリスト・OBS 画面を確認してください。
+  meta: 歌枠配信統合ツール
+  footer: Singing Stream Savior 2.1 ユーザーマニュアル
+  back_home: トップへ戻る
+  language: 言語
+  version: バージョン
+  download_windows: Windows 版をダウンロード
+  nav:
+    home: アプリ紹介
+    getting_started: はじめに
+    library: 曲ライブラリと再生
+    lyrics: 歌詞機能
+    themes: プレイリスト外観
+    websocket: 配信タイムスタンプ取得
+    uvr: UVR ボーカル除去
+    modes: ワークスペース
+    audio_routing: 音声ルーティング
+    profiles: ボーカル Profiles
+    advanced_streaming: 高度な配信オーディオ
+    settings: 設定とトラブル対処
+    open_source: オープンソースとライセンス
+    resources: アプリをダウンロード
+    changelog: 更新履歴
+    about: 制作者・お問い合わせ
+
+ko:
+  language_name: 한국어
+  skip: 본문으로 이동
+  home_aria: 설명서 홈으로 돌아가기
+  product: Singing Stream Savior
+  manual: 사용자 설명서
+  chapters: 목차
+  nav_aria: 설명서 목차
+  search_chapters: 목차 검색
+  no_chapters: 일치하는 목차가 없습니다
+  collapse_nav: 목차 사이드바 접기
+  expand_nav: 목차 사이드바 펼치기
+  preview_badge: 2.1 새 기능
+  uvr_badge: 2.1.1 새 기능
+  on_this_page: 이 페이지의 내용
+  flow: 사용 안내
+  stream_tip: 방송 전 확인
+  stream_tip_text: 테스트 곡을 재생하고 오디오, 가사, 세트리스트와 OBS 화면을 확인하세요.
+  meta: 노래 방송 통합 도구
+  footer: Singing Stream Savior 2.1 사용자 설명서
+  back_home: 맨 위로
+  language: 언어
+  version: 버전
+  download_windows: Windows용 다운로드
+  nav:
+    home: 앱 소개
+    getting_started: 시작하기
+    library: 곡 라이브러리와 재생
+    lyrics: 가사 기능
+    themes: 재생목록 외관
+    websocket: 방송 타임스탬프 캡처
+    uvr: UVR 보컬 제거
+    modes: 작업 공간 모드
+    audio_routing: 오디오 라우팅
+    profiles: 보컬 Profiles
+    advanced_streaming: 고급 방송 오디오
+    settings: 설정 및 문제 해결
+    open_source: 오픈 소스 및 라이선스
+    resources: 앱 다운로드
+    changelog: 업데이트 기록
+    about: 제작자 및 문의

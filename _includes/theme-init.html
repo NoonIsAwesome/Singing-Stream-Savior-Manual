@@ -1,0 +1,8 @@
+<script>
+(function () {
+  var choice = 'auto';
+  try { choice = localStorage.getItem('s3s-theme') || 'auto'; } catch (_) {}
+  if (!['auto', 'light', 'dark'].includes(choice)) choice = 'auto';
+  document.documentElement.dataset.theme = choice === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : choice;
+})();
+</script>

@@ -1,0 +1,9 @@
+{% assign profile_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign profile_copy = site.data.profile_introduction[profile_lang] | default: site.data.profile_introduction['zh-TW'] %}
+<aside class="profile-introduction" id="what-is-a-profile" aria-labelledby="profile-definition-title">
+  <h3 id="profile-definition-title">{{ profile_copy.title }}</h3>
+  <p>{{ profile_copy.intro }}</p>
+  <p class="signal-example">{{ profile_copy.example }}</p>
+  <div class="signal-chain-example" aria-label="{{ profile_copy.example_aria }}"><b>Noise Gate</b><span aria-hidden="true">→</span><b>EQ</b><span aria-hidden="true">→</span><b>Compressor</b><span aria-hidden="true">→</span><b>Reverb</b></div>
+  <p>{{ profile_copy.outro }}</p>
+</aside>

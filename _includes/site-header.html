@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="{{ language_home | relative_url }}" aria-label="{{ t.home_aria | escape }}"><svg aria-hidden="true"><use href="#wave"></use></svg><span><strong>歌回救星</strong><small>SINGING STREAM SAVIOR</small></span></a>
+    <nav class="nav-links" aria-label="{{ design.navigation | escape }}">
+      <a href="{{ language_home | relative_url }}#prepare">{{ design.features }}</a>
+      <a href="{{ guide_target | relative_url }}"{% unless is_home or section == 'about' %} aria-current="page"{% endunless %}>{{ design.guide }}</a>
+      <a href="{{ about_target | relative_url }}"{% if section == 'about' %} aria-current="page"{% endif %}>{{ design.author }}</a>
+    </nav>
+    <div class="nav-actions">
+      <select class="language" data-site-language aria-label="{{ t.language | escape }}">
+        <option data-lang="zh-TW" value="{{ alternate_zh_tw | relative_url }}"{% if current_lang == 'zh-TW' %} selected{% endif %}>繁體中文</option>
+        <option data-lang="zh-CN" value="{{ alternate_zh_cn | relative_url }}"{% if current_lang == 'zh-CN' %} selected{% endif %}>简体中文</option>
+        <option data-lang="en" value="{{ alternate_en | relative_url }}"{% if current_lang == 'en' %} selected{% endif %}>English</option>
+        <option data-lang="ja" value="{{ alternate_ja | relative_url }}"{% if current_lang == 'ja' %} selected{% endif %}>日本語</option>
+        <option data-lang="ko" value="{{ alternate_ko | relative_url }}"{% if current_lang == 'ko' %} selected{% endif %}>한국어</option>
+      </select>
+      <details class="appearance"><summary aria-label="{{ design.appearance | escape }}" title="{{ design.appearance | escape }}"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.5"></circle><path d="M12 4.5v15M12 4.5a7.5 7.5 0 0 1 0 15" fill="currentColor"></path></svg></summary><div class="appearance-menu"><button type="button" data-theme-choice="auto" aria-pressed="true">{{ design.auto }}</button><button type="button" data-theme-choice="light" aria-pressed="false">{{ design.light }}</button><button type="button" data-theme-choice="dark" aria-pressed="false">{{ design.dark }}</button></div></details>
+      <a class="button small" href="{{ resources_target | relative_url }}">{{ t.download_windows }} ↗</a>
+    </div>
+  </div>
+</header>

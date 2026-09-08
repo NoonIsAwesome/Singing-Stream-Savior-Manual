@@ -1,0 +1,79 @@
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign current_release = site.data["release-2-1-2-1"].release %}
+{% assign previous_hp_release = site.data["release-2-1-2-0"].release %}
+{% assign previous_monitor_release = site.data["release-2-1-1-2"].release %}
+{% assign previous_current_release = site.data["release-2-1-1-1"].release %}
+{% assign previous_uvr_release = site.data["release-2-1-1-0"].release %}
+{% assign previous_hotfix_release = site.data["release-2-1-0-3"].release %}
+{% assign previous_standard_release = site.data["release-2-1-0-2"].release %}
+{% assign previous_feature_release = site.data["release-2-1-0-1"].release %}
+{% assign previous_major_release = site.data["release-2-1-0-0"].release %}
+{% assign releases = site.data.releases.releases %}
+{% assign release_count = releases | size | plus: 9 %}
+{% if current_lang == 'zh-TW' %}
+  {% assign content_lang = 'zh-TW' %}
+  {% assign eyebrow = 'RELEASE HISTORY · FROM NEWEST' %}
+  {% assign title = '更新日誌' %}
+  {% assign lead = '這裡只是紀錄沐橙每次更新補了什麼坑，又挖了什麼新的坑，不用特別看也沒關係，真的' %}
+  {% assign latest_label = '目前版本' %}
+  {% assign release_link = '查看 GitHub Release' %}
+  {% assign items_label = '項更新' %}
+{% elsif current_lang == 'zh-CN' %}
+  {% assign content_lang = 'zh-CN' %}
+  {% assign eyebrow = 'RELEASE HISTORY · FROM NEWEST' %}
+  {% assign title = '更新日志' %}
+  {% assign lead = '从最新版本开始，逐版查看 Singing Stream Savior 新增的功能、操作改善、稳定性修正与兼容性变更。' %}
+  {% assign latest_label = '当前版本' %}
+  {% assign release_link = '查看 GitHub Release' %}
+  {% assign items_label = '项更新' %}
+{% elsif current_lang == 'ja' %}
+  {% assign content_lang = 'ja' %}
+  {% assign eyebrow = 'RELEASE HISTORY · FROM NEWEST' %}
+  {% assign title = '更新履歴' %}
+  {% assign lead = 'Singing Stream Savior の新機能、操作改善、安定性修正、互換性の変更を新しいバージョンから確認できます。' %}
+  {% assign latest_label = '現行バージョン' %}
+  {% assign release_link = 'GitHub Release を見る' %}
+  {% assign items_label = '件の更新' %}
+{% elsif current_lang == 'ko' %}
+  {% assign content_lang = 'ko' %}
+  {% assign eyebrow = 'RELEASE HISTORY · FROM NEWEST' %}
+  {% assign title = '업데이트 기록' %}
+  {% assign lead = '최신 버전부터 Singing Stream Savior의 새 기능, 사용성 개선, 안정성 수정과 호환성 변경을 확인하세요.' %}
+  {% assign latest_label = '현재 버전' %}
+  {% assign release_link = 'GitHub Release 보기' %}
+  {% assign items_label = '개 업데이트' %}
+{% else %}
+  {% assign content_lang = 'en' %}
+  {% assign eyebrow = 'RELEASE HISTORY · FROM NEWEST' %}
+  {% assign title = 'Release history' %}
+  {% assign lead = 'Review every Singing Stream Savior release from newest to oldest, including features, usability improvements, stability fixes, and compatibility changes.' %}
+  {% assign latest_label = 'Current release' %}
+  {% assign release_link = 'View GitHub Release' %}
+  {% assign items_label = ' changes' %}
+{% endif %}
+
+<header class="changelog-hero">
+  <p class="changelog-eyebrow">{{ eyebrow }}</p>
+  <h1>{{ title }}</h1>
+  <p>{{ lead }}</p>
+  <div class="changelog-hero__summary" aria-label="{{ title }}">
+    <strong>{{ release_count }}</strong>
+    <span>{% if current_lang == 'zh-TW' %}個公開版本{% elsif current_lang == 'zh-CN' %}个公开版本{% elsif current_lang == 'ja' %}公開バージョン{% elsif current_lang == 'ko' %}개 공개 버전{% else %}public releases{% endif %}</span>
+    <span class="changelog-hero__range">2.0.0.0 → {{ current_release.version }}</span>
+  </div>
+</header>
+
+<section class="release-timeline" aria-label="{{ title }}">
+  {% include release-entry.html release=current_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=previous_hp_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=previous_monitor_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=previous_current_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=previous_uvr_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=previous_hotfix_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=previous_standard_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=previous_feature_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=previous_major_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% for release in releases %}
+    {% include release-entry.html release=release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% endfor %}
+</section>

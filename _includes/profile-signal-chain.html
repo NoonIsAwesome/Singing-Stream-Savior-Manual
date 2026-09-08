@@ -1,0 +1,30 @@
+{% assign chain_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+<section class="profile-chain-guide" aria-labelledby="profile-chain-heading">
+{% case chain_lang %}
+{% when 'en' %}
+  <h3 id="profile-chain-heading">A safe starting order</h3>
+  <p>Start from a Factory Profile; you do not need every effect. When building your own chain, use this as a practical starting point:</p>
+  <p class="profile-chain-guide__flow"><strong>Input Gain → Background Attenuation → Noise Gate → Compressor → EQ → Saturation／Air (optional) → De-esser → Delay／Reverb／Shimmer (optional) → Limiter</strong></p>
+  <p>Calibrate and clean first, stabilize dynamics and tone in the middle, put space effects near the end, and let Limiter catch only occasional peaks. Add one effect at a time and compare Bypass; remove it if it does not improve the sound.</p>
+{% when 'zh-CN' %}
+  <h3 id="profile-chain-heading">不确定顺序时，先用这条建议链</h3>
+  <p>优先从 Factory Profile 开始，不必放入每一种效果。需要自己创建时，可以使用下面的顺序作为起点：</p>
+  <p class="profile-chain-guide__flow"><strong>Input Gain → Background Attenuation → Noise Gate → Compressor → EQ → Saturation／Air（可选）→ De-esser → Delay／Reverb／Shimmer（可选）→ Limiter</strong></p>
+  <p>前段先校准音量并清理底噪，中段稳定动态与音色，空间效果放在后段，Limiter 最后只拦截偶发峰值。一次只添加一种效果并比较 Bypass；没有改善就无需保留。</p>
+{% when 'ja' %}
+  <h3 id="profile-chain-heading">迷ったときの開始順序</h3>
+  <p>まず Factory Profile を使い、すべてのエフェクトを入れる必要はありません。自分で作る場合は次の順序を出発点にします。</p>
+  <p class="profile-chain-guide__flow"><strong>Input Gain → Background Attenuation → Noise Gate → Compressor → EQ → Saturation／Air（任意）→ De-esser → Delay／Reverb／Shimmer（任意）→ Limiter</strong></p>
+  <p>前段でレベルとノイズを整え、中段でダイナミクスと音色、後段で空間を作り、Limiter は最後の突発ピークだけを保護します。1 つずつ追加して Bypass と比較し、改善しないものは外します。</p>
+{% when 'ko' %}
+  <h3 id="profile-chain-heading">순서를 모를 때의 권장 시작 체인</h3>
+  <p>먼저 Factory Profile을 사용하고 모든 이펙트를 넣을 필요는 없습니다. 직접 만들 때는 다음 순서를 시작점으로 사용하세요.</p>
+  <p class="profile-chain-guide__flow"><strong>Input Gain → Background Attenuation → Noise Gate → Compressor → EQ → Saturation／Air(선택) → De-esser → Delay／Reverb／Shimmer(선택) → Limiter</strong></p>
+  <p>앞에서 레벨과 노이즈를 정리하고, 중간에서 다이내믹과 음색을 다듬고, 공간계는 뒤에 두며 Limiter는 마지막의 순간 Peak만 막습니다. 하나씩 추가해 Bypass와 비교하고 개선되지 않으면 빼세요.</p>
+{% else %}
+  <h3 id="profile-chain-heading">不確定順序時，先用這條建議鏈</h3>
+  <p>一般直播人聲可先從 Factory Profile 開始，不必把每一顆效果器都加進去。需要自己建立時，可用下面的順序當起點：</p>
+  <p class="profile-chain-guide__flow"><strong>Input Gain → Background Attenuation → Noise Gate → Compressor → EQ → Saturation／Air（選用）→ De-esser → Delay／Reverb／Shimmer（選用）→ Limiter</strong></p>
+  <p>前段先校準音量與清理底噪，中段穩定動態並塑造音色，空間效果放在後段，Limiter 最後只攔截偶發峰值。每加一顆就用 Bypass 比較；沒有改善聲音就不必保留。</p>
+{% endcase %}
+</section>

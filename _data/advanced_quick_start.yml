@@ -1,0 +1,279 @@
+zh-TW:
+  heading: 最短設定流程：照著畫面把聲音送到 OBS
+  intro: 先只做下面七步。每一步都附有完成標準；成功錄到一小段聲音後，再依需要查看後面的詳細說明與附錄。
+  steps:
+    - title: 開啟進階直播模式，選擇麥克風
+      body: 到「設定 → 音訊路由」選<strong>進階直播模式（混音輸出）</strong>。有錄音介面時優先用原廠 ASIO；沒有 ASIO 就選 Windows Audio，再選實際使用的麥克風。<strong>完成：</strong>說話時「麥克風輸入」電平會動。
+      images:
+        - file: 21-audio-routing-advanced-mode.png
+          alt: 音訊路由頁啟用進階直播模式並選擇 ASIO 麥克風輸入
+          caption: 裝置名稱不必和圖片相同；請選自己電腦上的麥克風或錄音介面。
+    - title: 選擇直播輸出與自己的耳機
+      body: 只送 OBS 時，按「安裝／修復 OBS 外掛」，並把直播輸出選成<strong>Singing Stream Savior 音訊（OBS 外掛）</strong>。需要讓其他軟體也收到完整混音時，才改用 VB-CABLE 等虛擬音源。監聽請選實際使用的耳機或錄音介面，不要選同一條虛擬音源。<strong>完成：</strong>直播輸出與監聽顯示正確裝置。
+      images:
+        - file: 20-stream-output-device-picker.png
+          alt: 直播輸出的加寬裝置清單，包含 OBS 外掛與虛擬音源
+          caption: OBS 外掛與虛擬音源擇一即可；Monitor 選單則選自己真正要聽的裝置。
+    - title: 讓健檢直接建議 App Buffer
+      body: 第一次完成音訊路由後，至少按一次「檢查 Buffer 穩定性…」執行<strong>完整健檢</strong>並套用建議；之後不必每次開播重跑。若暫時不方便等待，可先保留<strong>自動（建議）· 512 frames</strong>，之後再找時間完整健檢。更換裝置／驅動、大幅改動 Profile／VST3／路由，或真的聽到爆音時再重跑。<strong>完成：</strong>健檢顯示綠色通過與可套用的建議，路由狀態保持穩定。
+      images:
+        - file: audio-health-check.png
+          localized: true
+          alt: App Buffer 穩定性健檢視窗
+          caption: 完整健檢的完成示例；綠色勾勾代表通過，深綠色列是這台電腦的建議值。直接按「套用建議」即可，不必先理解每個工程數值。
+    - title: 在 OBS 加入相符的 Source，確認有訊號
+      body: 使用 OBS 外掛時，在「來源」加入<strong>Singing Stream Savior 音訊</strong>；使用虛擬音源時加入<strong>擷取音訊輸入</strong>，VB-CABLE 範例選 CABLE Output。不要再保留另一條原始麥克風來源。<strong>完成：</strong>播放伴奏並說話時，OBS 混音器電平會動。
+      images:
+        - file: 13-obs-add-s3s-audio-source.png
+          alt: OBS 來源選單中的 Singing Stream Savior 音訊
+          caption: OBS 外掛安裝後，從來源清單加入專用的 Singing Stream Savior 音訊。
+        - file: 15-obs-select-cable-output.png
+          alt: OBS 擷取音訊輸入設定選擇 CABLE Output
+          caption: 使用虛擬音源時，OBS 從錄音端接收；VB-CABLE 範例選 CABLE Output。
+    - title: 設定聊天與唱歌的預設 Profile
+      body: <strong>唱歌人聲 Profile</strong>是伴奏播放時的預設效果；<strong>直播聊天人聲 Profile</strong>用於 BGM／聊天，下方可選說話時是否自動降低 BGM。<strong>完成：</strong>沒有歌曲標籤時，開始／停止伴奏會在這兩個預設 Profile 間自動切換。
+      images:
+        - file: 24-singing-profile-default.png
+          alt: 音訊路由頁的唱歌人聲 Profile 選單
+          caption: 伴奏沒有歌曲 Profile 標籤時，會自動套用這裡選擇的唱歌 Profile；歌曲標籤會優先。
+        - file: 25-chat-profile-ducking.png
+          alt: 音訊路由頁的直播聊天人聲 Profile 與 BGM 閃避選單
+          caption: 聊天 Profile 與 BGM 閃避都在這裡設定；BGM 閃避可決定說話時是否自動降低 BGM 音量。
+    - title: 邊聽邊調整 Profile；只聽人聲就按 S（Solo）
+      body: 到「人聲 Profiles」選擇要編輯的 Profile。開啟監聽後，可以一邊播放伴奏、一邊聽目前 Profile 的預覽效果並調整效果器；如果只想聽 Profile 預覽，按右上角的<strong>S（Solo）</strong>。完成後按「儲存變更」。<strong>完成：</strong>耳機能聽到效果差異，離開 Solo 後回到正常監聽內容。
+      images:
+        - file: profile-horizontal-rack.png
+          localized: true
+          alt: 人聲 Profile 編輯頁與右上角 S Solo 按鈕
+          caption: 右上角 S 是 Solo；開啟後只聽目前編輯的 Profile 預覽，適合獨立確認人聲效果。
+    - title: 為歌曲挑選合適的 Profile 並加上標籤
+      body: 先用上一步試聽音色，再按歌曲列右側的標籤圖示。一般歌曲可選<strong>自動・唱歌 Profile</strong>或「唱歌・通用」；依音域選低／高音域，依風格選搖滾、KTV、古風、夢幻空靈等，特殊效果則留給確實需要的歌曲。沒有標籤仍會使用預設唱歌 Profile。<strong>完成：</strong>歌曲列顯示彩色標籤，播放伴奏時會自動切換到該 Profile。
+      images:
+        - file: 26-song-profile-tag-menu.png
+          alt: 歌曲列展開 Profile 標籤選單
+          caption: 從歌曲列的標籤按鈕選擇適合的 Profile；先依實際試聽決定，不必每首歌都強制設定。
+  note: 最後播放一首伴奏並說話或唱歌，確認歌回救星與 OBS 的電平都有反應。可用歌回救星的錄音功能錄下「完整輸出」，播放檔案確認直播輸出結果；也可錄一小段 OBS 檢查左右聲道、音量與嘴形同步。結果正常，就已完成基本設定。
+
+zh-CN:
+  heading: 最短设置流程：跟着画面把声音发送到 OBS
+  intro: 先只完成下面七步。每一步都写明了完成标准；成功录制一小段声音后，再按需要查看后面的详细说明与附录。
+  steps:
+    - title: 开启高级直播模式并选择麦克风
+      body: 打开“设置 → 音频路由”，选择<strong>高级直播模式（混音输出）</strong>。有音频接口时优先使用原厂 ASIO；没有 ASIO 就选择 Windows Audio，然后选择实际使用的麦克风。<strong>完成：</strong>说话时“麦克风输入”电平会移动。
+      images:
+        - file: 21-audio-routing-advanced-mode.png
+          alt: 音频路由页面启用高级直播模式并选择 ASIO 麦克风输入
+          caption: 设备名称不必与图片相同；请选择自己电脑上的麦克风或音频接口。
+    - title: 选择直播输出与自己的耳机
+      body: 只发送到 OBS 时，点击“安装／修复 OBS 插件”，并将直播输出设为<strong>Singing Stream Savior 音频（OBS 插件）</strong>。只有其他软件也需要完整混音时，才改用 VB-CABLE 等虚拟音频设备。监听请选择实际使用的耳机或音频接口，不要选择同一虚拟设备。<strong>完成：</strong>直播输出与监听显示正确设备。
+      images:
+        - file: 20-stream-output-device-picker.png
+          alt: 直播输出的加宽设备列表，包含 OBS 插件与虚拟音频设备
+          caption: OBS 插件与虚拟音频设备选择一种即可；Monitor 列表用于选择自己真正要听的设备。
+    - title: 让检查功能直接建议 App Buffer
+      body: 第一次完成音频路由后，至少点击一次“检查 Buffer 稳定性…”运行<strong>完整检查</strong>并应用建议；以后无需每次开播都重跑。如果暂时不方便等待，可先保留<strong>自动（推荐）· 512 frames</strong>，之后再完成完整检查。更换设备／驱动、大幅调整 Profile／VST3／路由，或实际听到爆音时再重跑。<strong>完成：</strong>检查显示绿色通过标记与可应用的建议，路由状态保持稳定。
+      images:
+        - file: audio-health-check.png
+          localized: true
+          alt: App Buffer 稳定性检查窗口
+          caption: 完整检查的完成示例；绿色勾选表示通过，深绿色行是这台电脑的建议值。直接点击“应用建议”即可，无需先理解每个工程数值。
+    - title: 在 OBS 中添加对应的 Source 并确认信号
+      body: 使用 OBS 插件时，在“来源”中添加<strong>Singing Stream Savior 音频</strong>；使用虚拟设备时添加<strong>音频输入采集</strong>，VB-CABLE 示例选择 CABLE Output。不要再保留另一条原始麦克风来源。<strong>完成：</strong>播放伴奏并说话时，OBS 混音器电平会移动。
+      images:
+        - file: 13-obs-add-s3s-audio-source.png
+          alt: OBS 来源列表中的 Singing Stream Savior 音频
+          caption: 安装 OBS 插件后，从来源列表添加专用的 Singing Stream Savior 音频。
+        - file: 15-obs-select-cable-output.png
+          alt: OBS 音频输入采集选择 CABLE Output
+          caption: 使用虚拟音频设备时，OBS 从录音端接收；VB-CABLE 示例选择 CABLE Output。
+    - title: 设置聊天与演唱的默认 Profile
+      body: <strong>演唱人声 Profile</strong>是播放伴奏时的默认效果；<strong>直播聊天人声 Profile</strong>用于 BGM／聊天，下面可以选择说话时是否自动降低 BGM。<strong>完成：</strong>没有歌曲标签时，开始／停止伴奏会在这两个默认 Profile 之间自动切换。
+      images:
+        - file: 24-singing-profile-default.png
+          alt: 音频路由页面中的演唱人声 Profile 选项
+          caption: 伴奏没有歌曲 Profile 标签时，会自动使用这里选择的演唱 Profile；歌曲标签优先。
+        - file: 25-chat-profile-ducking.png
+          alt: 音频路由页面中的直播聊天人声 Profile 与 BGM 闪避选项
+          caption: 聊天 Profile 与 BGM 闪避都在这里设置；BGM 闪避决定说话时是否自动降低 BGM 音量。
+    - title: 边听边调整 Profile；只听人声时点击 S（Solo）
+      body: 打开“人声 Profiles”并选择要编辑的 Profile。开启监听后，可以一边播放伴奏，一边试听当前 Profile 并调整效果；如果只想听 Profile 预览，点击右上角的<strong>S（Solo）</strong>。完成后点击“保存更改”。<strong>完成：</strong>耳机能听到效果差异，退出 Solo 后恢复正常监听内容。
+      images:
+        - file: profile-horizontal-rack.png
+          localized: true
+          alt: 人声 Profile 编辑页面与右上角的 S Solo 按钮
+          caption: 右上角 S 是 Solo；开启后只听当前编辑的 Profile 预览，适合单独确认人声效果。
+    - title: 为歌曲选择合适的 Profile 并添加标签
+      body: 先通过上一步试听音色，再点击歌曲行右侧的标签图标。一般歌曲可选择<strong>自动・演唱 Profile</strong>或“演唱・通用”；按音域选择低／高音域，按风格选择摇滚、KTV、古风、梦幻空灵等，特殊效果只用于确实需要的歌曲。没有标签仍会使用默认演唱 Profile。<strong>完成：</strong>歌曲行显示彩色标签，播放伴奏时会自动切换到该 Profile。
+      images:
+        - file: 26-song-profile-tag-menu.png
+          alt: 歌曲行展开 Profile 标签选项
+          caption: 从歌曲行的标签按钮选择合适的 Profile；请先按实际试听决定，无需强制为每首歌设置。
+  note: 最后播放一首伴奏并说话或演唱，确认 Singing Stream Savior 与 OBS 的电平都有反应。可以用 Singing Stream Savior 的录音功能录制“完整输出”，回放文件确认直播输出结果；也可以录制一小段 OBS 检查左右声道、音量与口型同步。结果正常，就已完成基本设置。
+
+en:
+  heading: "Shortest setup: follow the screens to send audio to OBS"
+  intro: Complete only these seven steps first. Each step includes a success check; after a short recording works, use the detailed reference and appendices only when needed.
+  steps:
+    - title: Enable Advanced Streaming Mode and choose the microphone
+      body: Open <strong>Settings → Audio Routing</strong> and select <strong>Advanced Streaming Mode (mix output)</strong>. Prefer the manufacturer ASIO driver when you have an audio interface; otherwise choose Windows Audio, then select the microphone you use. <strong>Done:</strong> the Microphone Input meter moves when you speak.
+      images:
+        - file: 21-audio-routing-advanced-mode.png
+          alt: Advanced Streaming Mode and an ASIO microphone input selected in Audio Routing
+          caption: Your device names do not need to match the image; choose the microphone or interface connected to your computer.
+    - title: Choose Stream Output and your headphones
+      body: When sending only to OBS, install or repair the OBS plug-in and select <strong>Singing Stream Savior Audio (OBS plug-in)</strong> for Stream Output. Use a virtual device such as VB-CABLE only when other apps also need the complete mix. Select your actual headphones or interface for Monitor, not the same virtual device. <strong>Done:</strong> both selectors show the intended devices.
+      images:
+        - file: 20-stream-output-device-picker.png
+          alt: Expanded Stream Output list containing the OBS plug-in and virtual audio devices
+          caption: Choose either the OBS plug-in or a virtual device. The Monitor list selects the device you actually listen through.
+    - title: Let the health check recommend the App Buffer
+      body: After setting up audio routing for the first time, run <strong>Check Buffer Stability…</strong> in <strong>Full</strong> mode at least once and apply its recommendation; you do not need to repeat it before every stream. If you cannot wait yet, keep <strong>Automatic (recommended) · 512 frames</strong> and run the Full check later. Repeat it after changing devices or drivers, making major Profile／VST3／routing changes, or hearing real dropouts. <strong>Done:</strong> the check shows green passes and an applicable recommendation while routing remains stable.
+      images:
+        - file: audio-health-check.png
+          localized: true
+          alt: App Buffer stability health-check window
+          caption: Example of a completed Full check. Green checks passed; the darker green row is this computer's recommendation. Apply it directly without interpreting every engineering value.
+    - title: Add the matching Source in OBS and verify signal
+      body: For the OBS plug-in route, add <strong>Singing Stream Savior Audio</strong> under Sources. For a virtual route, add <strong>Audio Input Capture</strong>; choose CABLE Output for VB-CABLE. Do not keep a second raw-microphone source. <strong>Done:</strong> the OBS mixer moves while accompaniment plays and you speak.
+      images:
+        - file: 13-obs-add-s3s-audio-source.png
+          alt: Singing Stream Savior Audio in the OBS source list
+          caption: After installing the OBS plug-in, add the dedicated Singing Stream Savior Audio source.
+        - file: 15-obs-select-cable-output.png
+          alt: CABLE Output selected in OBS Audio Input Capture
+          caption: With a virtual device, OBS receives from its recording endpoint; choose CABLE Output for VB-CABLE.
+    - title: Set the default Chat and Singing Profiles
+      body: <strong>Singing Voice Profile</strong> is the accompaniment default. <strong>Live Chat Voice Profile</strong> is used for BGM and talking, and its lower option controls automatic BGM ducking. <strong>Done:</strong> without a song tag, starting and stopping accompaniment switches between these two defaults automatically.
+      images:
+        - file: 24-singing-profile-default.png
+          alt: Singing Voice Profile selector in Audio Routing
+          caption: Songs without a Profile tag automatically use this Singing Profile. A tag assigned to the song takes priority.
+        - file: 25-chat-profile-ducking.png
+          alt: Live Chat Voice Profile and BGM ducking selectors in Audio Routing
+          caption: Set the Chat Profile and BGM ducking here. Ducking decides whether speaking automatically lowers the BGM level.
+    - title: Adjust a Profile while listening; press S (Solo) for voice only
+      body: Open <strong>Voice Profiles</strong> and select the Profile to edit. With monitoring enabled, play accompaniment while previewing the current Profile and adjusting effects. To hear only the Profile preview, press <strong>S (Solo)</strong> at the upper right, then save your changes. <strong>Done:</strong> you hear the effect difference, and leaving Solo restores normal monitor content.
+      images:
+        - file: profile-horizontal-rack.png
+          localized: true
+          alt: Voice Profile editor with the S Solo button at the upper right
+          caption: S means Solo. Enable it to hear only the Profile currently being edited and check the vocal effect in isolation.
+    - title: Choose a suitable Profile and tag the song
+      body: Audition the sound in the previous step, then press the tag icon on the song row. Use <strong>Automatic · Singing Profile</strong> or Singing · General for an ordinary song; choose Low／High Range for range, or Rock, KTV, Traditional, Dreamy／Ethereal, and other Profiles for the intended style. Reserve special-effect Profiles for songs that need them. An untagged song still uses the default Singing Profile. <strong>Done:</strong> a colored tag appears on the row and playback selects that Profile automatically.
+      images:
+        - file: 26-song-profile-tag-menu.png
+          alt: Profile tag menu opened from a song row
+          caption: Choose a Profile from the song-row tag button after auditioning it. You do not have to tag every song.
+  note: Finally, play one accompaniment and speak or sing, then confirm activity in both Singing Stream Savior and OBS. You can record “Full Output” in Singing Stream Savior and play the file back to verify the stream result; you can also make a short OBS recording to check channels, balance, and lip sync. If the result is correct, basic setup is complete.
+
+ja:
+  heading: 最短設定：画面どおりに音声を OBS へ送る
+  intro: まず次の 7 手順だけを完了してください。各手順に完了条件があります。短い録画に成功した後、必要な場合だけ後半の詳細説明と付録を確認します。
+  steps:
+    - title: 高度な配信モードを有効にしてマイクを選ぶ
+      body: <strong>設定 → 音声ルーティング</strong>で<strong>高度な配信モード（Mix 出力）</strong>を選びます。オーディオインターフェースがある場合はメーカー純正 ASIO、ない場合は Windows Audio を選び、使用するマイクを設定します。<strong>完了：</strong>話すと「マイク入力」メーターが動きます。
+      images:
+        - file: 21-audio-routing-advanced-mode.png
+          alt: 音声ルーティングで高度な配信モードと ASIO マイク入力を選択した画面
+          caption: デバイス名は画像と同じでなくてもかまいません。自分の PC に接続したマイクまたはインターフェースを選びます。
+    - title: 配信出力と自分のヘッドホンを選ぶ
+      body: OBS だけへ送る場合は OBS プラグインを導入または修復し、配信出力に <strong>Singing Stream Savior Audio（OBS プラグイン）</strong>を選びます。他のアプリにも完全 Mix が必要な場合だけ VB-CABLE などを使います。Monitor は実際に聴くヘッドホンまたはインターフェースを選び、同じ仮想デバイスは選びません。<strong>完了：</strong>両方の欄に意図したデバイスが表示されます。
+      images:
+        - file: 20-stream-output-device-picker.png
+          alt: OBS プラグインと仮想音声デバイスを含む配信出力リスト
+          caption: OBS プラグインと仮想音声デバイスはどちらか一方で十分です。Monitor では自分が聴くデバイスを選びます。
+    - title: ヘルスチェックに App Buffer を提案させる
+      body: 初回の音声ルーティング設定後に「Buffer の安定性を確認…」を<strong>完全チェック</strong>で少なくとも一度実行し、提案を適用します。配信前に毎回やり直す必要はありません。すぐ待てない場合は<strong>自動（推奨）· 512 frames</strong>を保ち、後で完全チェックを実行してください。デバイス／ドライバーの変更、Profile／VST3／ルーティングの大幅な変更、実際の音切れがあった場合に再実行します。<strong>完了：</strong>緑の合格表示と適用可能な推奨値が表示され、経路が安定しています。
+      images:
+        - file: audio-health-check.png
+          localized: true
+          alt: App Buffer 安定性ヘルスチェック画面
+          caption: 完全チェック完了例です。緑のチェックは合格、濃い緑の行はこの PC の推奨値です。各技術値を理解しなくても、そのまま提案を適用できます。
+    - title: OBS に対応する Source を追加して信号を確認する
+      body: OBS プラグインでは Source に <strong>Singing Stream Savior Audio</strong> を追加します。仮想音声では<strong>音声入力キャプチャ</strong>を追加し、VB-CABLE の場合は CABLE Output を選びます。別の生マイク Source は残しません。<strong>完了：</strong>伴奏を再生して話すと OBS ミキサーが動きます。
+      images:
+        - file: 13-obs-add-s3s-audio-source.png
+          alt: OBS のソース一覧にある Singing Stream Savior Audio
+          caption: OBS プラグイン導入後、専用の Singing Stream Savior Audio ソースを追加します。
+        - file: 15-obs-select-cable-output.png
+          alt: OBS の音声入力キャプチャで CABLE Output を選択した画面
+          caption: 仮想デバイスでは OBS が録音側から受信します。VB-CABLE は CABLE Output を選びます。
+    - title: 雑談用と歌唱用の既定 Profile を設定する
+      body: <strong>歌唱用 Voice Profile</strong>は伴奏再生中の既定値です。<strong>配信雑談用 Voice Profile</strong>は BGM／トーク時に使い、下の項目で BGM の自動ダッキングを選べます。<strong>完了：</strong>曲タグがない場合、伴奏の開始／停止でこの二つの既定 Profile が自動切り替えされます。
+      images:
+        - file: 24-singing-profile-default.png
+          alt: 音声ルーティングの歌唱用 Voice Profile 選択欄
+          caption: Profile タグがない曲は、ここで選んだ歌唱 Profile を自動使用します。曲のタグがある場合はそちらが優先です。
+        - file: 25-chat-profile-ducking.png
+          alt: 音声ルーティングの配信雑談用 Voice Profile と BGM ダッキング設定
+          caption: 雑談 Profile と BGM ダッキングをここで設定します。ダッキングは発話時に BGM を自動で下げるか決めます。
+    - title: 聴きながら Profile を調整し、声だけなら S（Solo）を押す
+      body: <strong>ボーカル Profiles</strong>で編集する Profile を選びます。Monitor を有効にすると、伴奏を再生しながら現在の Profile を試聴してエフェクトを調整できます。Profile のプレビューだけを聴く場合は右上の<strong>S（Solo）</strong>を押し、完了後に変更を保存します。<strong>完了：</strong>効果の違いが聴こえ、Solo を解除すると通常の Monitor 内容に戻ります。
+      images:
+        - file: profile-horizontal-rack.png
+          localized: true
+          alt: 右上に S Solo ボタンがあるボーカル Profile 編集画面
+          caption: 右上の S は Solo です。有効にすると編集中の Profile プレビューだけを聴いて声の効果を単独で確認できます。
+    - title: 曲に合う Profile を選び、タグを付ける
+      body: 前の手順で音色を試聴してから、曲リスト右側のタグアイコンを押します。一般的な曲は<strong>自動・歌唱 Profile</strong>または「歌唱・汎用」、音域には低／高音域、曲調には Rock、KTV、古風、夢幻／空気感などを選びます。特殊効果は必要な曲だけに使います。タグがない曲は既定の歌唱 Profile を使います。<strong>完了：</strong>曲の行に色付きタグが表示され、伴奏再生時にその Profile へ自動切り替えされます。
+      images:
+        - file: 26-song-profile-tag-menu.png
+          alt: 曲リストから開いた Profile タグメニュー
+          caption: 実際に試聴してから曲のタグボタンで選びます。すべての曲へ無理にタグを付ける必要はありません。
+  note: 最後に伴奏を 1 曲再生して話すか歌い、Singing Stream Savior と OBS の両方でメーターが動くことを確認します。Singing Stream Savior の録音機能で「完全出力」を録音して再生すれば配信出力を確認できます。短い OBS 録画で左右チャンネル、音量、リップシンクも確認し、結果が正常なら基本設定は完了です。
+
+ko:
+  heading: "최단 설정: 화면을 따라 오디오를 OBS로 보내기"
+  intro: 먼저 아래 일곱 단계만 완료하세요. 각 단계에는 완료 기준이 있으며, 짧은 녹화가 정상일 때만 필요에 따라 뒤의 자세한 설명과 부록을 확인하면 됩니다.
+  steps:
+    - title: 고급 방송 모드를 켜고 마이크 선택
+      body: <strong>설정 → 오디오 라우팅</strong>에서 <strong>고급 방송 모드(믹스 출력)</strong>를 선택합니다. 오디오 인터페이스가 있으면 제조사 ASIO를 우선 사용하고, 없으면 Windows Audio를 선택한 뒤 실제 마이크를 설정합니다. <strong>완료:</strong> 말할 때 마이크 입력 미터가 움직입니다.
+      images:
+        - file: 21-audio-routing-advanced-mode.png
+          alt: 오디오 라우팅에서 고급 방송 모드와 ASIO 마이크 입력을 선택한 화면
+          caption: 장치 이름은 이미지와 같을 필요가 없습니다. 자신의 PC에 연결된 마이크나 인터페이스를 선택하세요.
+    - title: 방송 출력과 자신의 헤드폰 선택
+      body: OBS에만 보낼 때는 OBS 플러그인을 설치 또는 복구하고 방송 출력에 <strong>Singing Stream Savior Audio(OBS 플러그인)</strong>를 선택합니다. 다른 앱에도 전체 Mix가 필요할 때만 VB-CABLE 같은 가상 장치를 사용합니다. Monitor는 실제 헤드폰이나 인터페이스를 선택하고 같은 가상 장치는 선택하지 않습니다. <strong>완료:</strong> 두 선택 항목에 의도한 장치가 표시됩니다.
+      images:
+        - file: 20-stream-output-device-picker.png
+          alt: OBS 플러그인과 가상 오디오 장치가 포함된 방송 출력 목록
+          caption: OBS 플러그인과 가상 오디오 장치 중 하나만 선택하면 됩니다. Monitor 목록에서는 자신이 들을 장치를 선택합니다.
+    - title: 상태 점검으로 App Buffer 권장값 받기
+      body: 처음 오디오 라우팅을 설정한 뒤 “Buffer 안정성 확인…”을 <strong>전체 점검</strong>으로 최소 한 번 실행하고 권장값을 적용하세요. 방송 전마다 다시 실행할 필요는 없습니다. 바로 기다리기 어렵다면 <strong>자동(권장) · 512 frames</strong>를 유지하고 나중에 전체 점검을 완료하세요. 장치／드라이버 변경, Profile／VST3／라우팅의 큰 변경 또는 실제 끊김이 들릴 때 다시 실행합니다. <strong>완료:</strong> 녹색 통과 표시와 적용 가능한 권장값이 보이고 라우팅이 안정적입니다.
+      images:
+        - file: audio-health-check.png
+          localized: true
+          alt: App Buffer 안정성 상태 점검 창
+          caption: 전체 점검 완료 예시입니다. 녹색 체크는 통과, 진한 녹색 행은 이 PC의 권장값입니다. 모든 기술 수치를 이해하지 않아도 권장값을 바로 적용할 수 있습니다.
+    - title: OBS에 맞는 Source를 추가하고 신호 확인
+      body: OBS 플러그인은 Source에 <strong>Singing Stream Savior Audio</strong>를 추가합니다. 가상 장치는 <strong>오디오 입력 캡처</strong>를 추가하고 VB-CABLE이면 CABLE Output을 선택합니다. 별도의 원본 마이크 Source는 남기지 않습니다. <strong>완료:</strong> 반주를 재생하고 말할 때 OBS 믹서 미터가 움직입니다.
+      images:
+        - file: 13-obs-add-s3s-audio-source.png
+          alt: OBS 소스 목록의 Singing Stream Savior Audio
+          caption: OBS 플러그인을 설치한 뒤 전용 Singing Stream Savior Audio 소스를 추가합니다.
+        - file: 15-obs-select-cable-output.png
+          alt: OBS 오디오 입력 캡처에서 CABLE Output을 선택한 화면
+          caption: 가상 장치는 OBS가 녹음 단자에서 받습니다. VB-CABLE은 CABLE Output을 선택합니다.
+    - title: 대화와 노래의 기본 Profile 설정
+      body: <strong>Singing Voice Profile</strong>은 반주 재생 중 기본값입니다. <strong>Live Chat Voice Profile</strong>은 BGM／대화 때 사용하며 아래 항목에서 BGM 자동 더킹을 선택할 수 있습니다. <strong>완료:</strong> 곡 태그가 없으면 반주 시작／정지 때 이 두 기본 Profile 사이에서 자동 전환됩니다.
+      images:
+        - file: 24-singing-profile-default.png
+          alt: 오디오 라우팅의 Singing Voice Profile 선택 항목
+          caption: Profile 태그가 없는 곡은 여기서 선택한 Singing Profile을 자동 사용합니다. 곡 태그가 있으면 곡 설정이 우선합니다.
+        - file: 25-chat-profile-ducking.png
+          alt: 오디오 라우팅의 Live Chat Voice Profile과 BGM 더킹 설정
+          caption: Chat Profile과 BGM 더킹을 여기서 설정합니다. 더킹은 말할 때 BGM을 자동으로 낮출지 결정합니다.
+    - title: 들으면서 Profile 조정; 음성만 들으려면 S(Solo)
+      body: <strong>음성 Profiles</strong>에서 편집할 Profile을 선택합니다. Monitor를 켜면 반주를 재생하면서 현재 Profile을 미리 듣고 이펙트를 조정할 수 있습니다. Profile 미리 듣기만 원하면 오른쪽 위의 <strong>S(Solo)</strong>를 누르고 완료 후 변경 사항을 저장합니다. <strong>완료:</strong> 효과 차이가 들리고 Solo를 끄면 일반 Monitor 내용으로 돌아옵니다.
+      images:
+        - file: profile-horizontal-rack.png
+          localized: true
+          alt: 오른쪽 위에 S Solo 버튼이 있는 음성 Profile 편집 화면
+          caption: 오른쪽 위 S는 Solo입니다. 켜면 편집 중인 Profile 미리 듣기만 들려 음성 효과를 따로 확인할 수 있습니다.
+    - title: 곡에 맞는 Profile을 선택하고 태그 추가
+      body: 앞 단계에서 음색을 미리 들은 뒤 곡 행 오른쪽의 태그 아이콘을 누릅니다. 일반 곡은 <strong>자동 · Singing Profile</strong> 또는 Singing · General, 음역에 따라 Low／High Range, 스타일에 따라 Rock, KTV, 고풍, 몽환／공기감 등을 선택합니다. 특수 효과는 실제로 필요한 곡에만 사용합니다. 태그가 없는 곡은 기본 Singing Profile을 사용합니다. <strong>완료:</strong> 곡 행에 색상 태그가 표시되고 반주 재생 시 해당 Profile로 자동 전환됩니다.
+      images:
+        - file: 26-song-profile-tag-menu.png
+          alt: 곡 행에서 펼친 Profile 태그 메뉴
+          caption: 실제로 미리 들어 본 뒤 곡 행의 태그 버튼에서 선택하세요. 모든 곡에 태그를 강제로 지정할 필요는 없습니다.
+  note: 마지막으로 반주 한 곡을 재생하고 말하거나 노래해 Singing Stream Savior와 OBS 양쪽 미터가 움직이는지 확인하세요. Singing Stream Savior의 녹음 기능으로 “전체 출력”을 녹음하고 재생해 방송 출력을 확인할 수 있습니다. 짧은 OBS 녹화로 좌우 채널, 밸런스와 립싱크도 확인해 정상이면 기본 설정이 완료됩니다.

@@ -1,0 +1,100 @@
+﻿{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign t = site.data.i18n[current_lang] %}
+{% assign section = page.translation_key | default: 'home' %}
+{% assign standalone_sections = "resources,changelog,about,advanced-streaming,audio-routing,profiles,open-source" | split: "," %}
+{% if current_lang == 'zh-TW' %}
+  {% assign language_home = '/' %}
+{% else %}
+  {% capture language_home %}/{{ current_lang }}/{% endcapture %}
+  {% capture language_guide %}/{{ current_lang }}/guide.html{% endcapture %}
+{% endif %}
+{% if section == 'audio-routing' or section == 'profiles' %}
+  {% capture alternate_zh_tw %}/{{ section }}.html{% endcapture %}
+  {% assign alternate_zh_cn = '/zh-CN/advanced-streaming.html' %}
+  {% assign alternate_en = '/en/advanced-streaming.html' %}
+  {% assign alternate_ja = '/ja/advanced-streaming.html' %}
+  {% assign alternate_ko = '/ko/advanced-streaming.html' %}
+{% elsif section == 'advanced-streaming' %}
+  {% assign alternate_zh_tw = '/advanced-streaming.html' %}
+  {% assign alternate_zh_cn = '/zh-CN/advanced-streaming.html' %}
+  {% assign alternate_en = '/en/advanced-streaming.html' %}
+  {% assign alternate_ja = '/ja/advanced-streaming.html' %}
+  {% assign alternate_ko = '/ko/advanced-streaming.html' %}
+{% elsif standalone_sections contains section %}
+  {% capture alternate_zh_tw %}/{{ section }}.html{% endcapture %}
+  {% capture alternate_zh_cn %}/zh-CN/{{ section }}.html{% endcapture %}
+  {% capture alternate_en %}/en/{{ section }}.html{% endcapture %}
+  {% capture alternate_ja %}/ja/{{ section }}.html{% endcapture %}
+  {% capture alternate_ko %}/ko/{{ section }}.html{% endcapture %}
+{% elsif section != 'home' or page.manual_bundle %}
+  {% capture alternate_zh_tw %}/guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endcapture %}
+  {% capture alternate_zh_cn %}/zh-CN/guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endcapture %}
+  {% capture alternate_en %}/en/guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endcapture %}
+  {% capture alternate_ja %}/ja/guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endcapture %}
+  {% capture alternate_ko %}/ko/guide.html{% if section != 'home' %}#{{ section }}{% endif %}{% endcapture %}
+{% else %}
+  {% assign alternate_zh_tw = '/' %}
+  {% assign alternate_zh_cn = '/zh-CN/' %}
+  {% assign alternate_en = '/en/' %}
+  {% assign alternate_ja = '/ja/' %}
+  {% assign alternate_ko = '/ko/' %}
+{% endif %}
+{% assign design = site.data.site_design[current_lang] %}
+{% assign is_home = false %}
+{% if section == 'home' and page.manual_bundle != true %}{% assign is_home = true %}{% endif %}
+{% if current_lang == 'zh-TW' %}
+  {% assign guide_target = '/getting-started.html' %}
+  {% assign resources_target = '/resources.html' %}
+  {% assign about_target = '/about.html' %}
+{% else %}
+  {% capture guide_target %}/{{ current_lang }}/guide.html#getting-started{% endcapture %}
+  {% capture resources_target %}/{{ current_lang }}/resources.html{% endcapture %}
+  {% capture about_target %}/{{ current_lang }}/about.html{% endcapture %}
+{% endif %}
+<!doctype html>
+<html lang="{{ current_lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" sizes="any">
+    {% include theme-init.html %}
+    {% unless is_home %}<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">{% endunless %}
+    <link rel="stylesheet" href="{{ '/assets/css/design.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/reader.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
+    <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_tw }}">
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_cn }}">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}{{ alternate_en }}">
+    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ site.baseurl }}{{ alternate_ja }}">
+    <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ site.baseurl }}{{ alternate_ko }}">
+    {% if is_home %}
+    <title>{{ page.title | escape }}</title>
+    {% seo title=false %}
+    {% else %}
+    {% seo %}
+    {% endif %}
+  </head>
+  <body class="{% if is_home %}home-page{% elsif section == 'about' %}inner-page author-page{% else %}inner-page docs-page{% endif %}"
+    data-analytics-host="{{ site.analytics.production_host | escape }}" data-pageview-endpoint="{{ site.analytics.pageview_endpoint | escape }}" data-outline-label="{{ t.on_this_page | escape }}">
+    {% include site-icons.html %}
+    <a class="skip-link" href="#guide-content">{{ t.skip }}</a>
+    {% include site-header.html %}
+    {% if is_home %}
+      {{ content }}
+    {% elsif section == 'about' %}
+      <main id="guide-content" class="author-main"><article class="manual-article">{{ content }}</article></main>
+    {% else %}
+      <div class="reader-toolbar"><div class="wrap"><div class="reader-breadcrumb"><a href="{{ language_home | relative_url }}">{{ design.home }}</a><span>/</span><span>{{ design.guide }}</span></div><span class="reader-version">Singing Stream Savior · v{{ site.data.resources.software.version }}</span><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav"><span class="nav-toggle-icon" aria-hidden="true"></span>{{ t.chapters }}</button></div></div>
+      <div class="guide-shell reader-shell">
+        {% include guide-sidebar.html %}
+        <main class="guide-content" id="guide-content"><article class="manual-article">{{ content }}</article></main>
+      </div>
+      <button class="nav-backdrop" type="button" aria-label="{{ t.collapse_nav | escape }}" tabindex="-1" hidden></button>
+    {% endif %}
+    <footer class="page-footer"><div class="wrap"><span>SINGING STREAM SAVIOR · 歌回救星</span><span>{{ design.footer }}</span><a href="{% if is_home %}{{ about_target | relative_url }}{% else %}{{ language_home | relative_url }}{% endif %}">{% if is_home %}{{ design.author }}{% else %}{{ design.home }}{% endif %} ↗</a></div></footer>
+    <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>
+    <script src="{{ '/assets/js/site-controls.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>
+    {% if is_home %}<script src="{{ '/assets/js/homepage.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>{% endif %}
+  </body>
+</html>

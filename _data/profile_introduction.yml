@@ -1,0 +1,35 @@
+zh-TW:
+  title: 什麼是 Profile？
+  intro: >-
+    Profile 是一組可重複使用的人聲效果設定：把 Noise Gate（噪音閥）、EQ（等化器）、Compressor（壓縮器）、Reverb（殘響）等效果，依照你想要的順序組成自訂的 Signal Chain（效果處理鏈）。每一組可以保存自己的效果、參數與處理順序。
+  example: 效果鏈範例
+  example_aria: 效果鏈範例
+  outro: 你可以分別準備聊天與唱歌用的 Profile，也能替歌曲指定不同效果。先選好一組，播放時就能自動套用，讓人聲跟著歌曲切換。
+en:
+  title: What is a Profile?
+  intro: >-
+    A Profile is a reusable set of vocal effects. It combines effects such as Noise Gate, EQ, Compressor, and Reverb in a custom Signal Chain: the order in which your voice passes through the effects. Each Profile stores its own effects, settings, and processing order.
+  example: Example signal chain
+  example_aria: Example signal chain
+  outro: Prepare separate Profiles for chatting and singing, or assign different effects to individual songs. Choose a Profile in advance and the app can apply it automatically during playback.
+ja:
+  title: Profile とは？
+  intro: >-
+    Profile は、繰り返し使えるボーカルエフェクトの設定です。Noise Gate（ノイズゲート）、EQ（イコライザー）、Compressor（コンプレッサー）、Reverb（リバーブ）などを好きな順番に並べ、独自の Signal Chain（音声を処理するエフェクトの連なり）を作ります。各 Profile にエフェクト、パラメーター、処理順序を保存できます。
+  example: エフェクトチェーンの例
+  example_aria: エフェクトチェーンの例
+  outro: トーク用と歌唱用を分けたり、曲ごとに異なる Profile を指定したりできます。あらかじめ選んでおけば、再生時にその曲のエフェクトへ自動で切り替わります。
+ko:
+  title: Profile이란 무엇인가요?
+  intro: >-
+    Profile은 반복해서 사용할 수 있는 보컬 효과 설정입니다. Noise Gate(노이즈 게이트), EQ(이퀄라이저), Compressor(컴프레서), Reverb(리버브) 등의 효과를 원하는 순서로 연결한 사용자 지정 Signal Chain(음성을 처리하는 효과의 연결 구조)입니다. 각 Profile에 효과, 매개변수, 처리 순서를 저장할 수 있습니다.
+  example: 효과 체인 예시
+  example_aria: 효과 체인 예시
+  outro: 대화용과 노래용 Profile을 따로 준비하거나 곡마다 다른 효과를 지정할 수 있습니다. 미리 선택해 두면 재생할 때 해당 효과가 자동으로 적용됩니다.
+zh-CN:
+  title: 什么是 Profile？
+  intro: >-
+    Profile 是一组可重复使用的人声效果设置：将 Noise Gate（噪声门）、EQ（均衡器）、Compressor（压缩器）、Reverb（混响）等效果，按照你需要的顺序组成自定义的 Signal Chain（效果处理链）。每一组都可以保存自己的效果、参数与处理顺序。
+  example: 效果链示例
+  example_aria: 效果链示例
+  outro: 你可以分别准备聊天与唱歌用的 Profile，也可以为歌曲指定不同效果。提前选好一组，播放时就能自动应用，让人声效果跟随歌曲切换。

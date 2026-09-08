@@ -1,0 +1,30 @@
+{% assign one_knob_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+<div class="effect-reference one-knob-guide">
+{% case one_knob_lang %}
+{% when 'en' %}
+  <details><summary><strong>How One Knob works</strong><span>Quick control without hiding the real parameters</span></summary><div class="effect-reference__body">
+    <p>Supported effects offer a <strong>One Knob</strong> Simple view. First choose a starting point from the <strong>Presets menu to the left of Bypass</strong>, then use the central knob to make the effect lighter or stronger. At 50%, the selected preset is reproduced exactly; the endpoints are effect-specific safe ranges, not a universal Dry/Maximum scale.</p>
+    <p>One Knob uses one simple control to adjust several internal parameters of that effect at the same time.</p>
+  </div></details>
+{% when 'zh-CN' %}
+  <details><summary><strong>One Knob 的工作方式</strong><span>快速调整，同时保留完整参数</span></summary><div class="effect-reference__body">
+    <p>支持的效果器会提供 <strong>One Knob</strong> 简易界面。先从 <strong>Bypass 按钮左侧的 Presets 菜单</strong>选择一个起始设定，再用中央旋钮调整效果强弱。50% 会准确还原所选 Preset；0% 与 100% 是该效果器专属的安全范围，并不统一代表全干声与最大效果。</p>
+    <p>One Knob 只是用一个简单旋钮，同时调整这颗效果器内部的多个参数。</p>
+  </div></details>
+{% when 'ja' %}
+  <details><summary><strong>One Knob の仕組み</strong><span>実パラメーターを残したまま素早く調整</span></summary><div class="effect-reference__body">
+    <p>対応エフェクトには <strong>One Knob</strong> の簡易画面があります。まず <strong>Bypass ボタン左側の Presets メニュー</strong>から開始設定を選び、中央ノブで効果の強さを調整します。50% は選択した Preset を正確に再現します。0% と 100% はエフェクトごとの安全な範囲であり、共通の Dry／最大値を意味しません。</p>
+    <p>One Knob は、1 つの簡単なノブでそのエフェクト内部の複数パラメーターを同時に調整します。</p>
+  </div></details>
+{% when 'ko' %}
+  <details><summary><strong>One Knob 작동 방식</strong><span>실제 파라미터를 유지한 빠른 조절</span></summary><div class="effect-reference__body">
+    <p>지원되는 이펙트에는 <strong>One Knob</strong> 간단 화면이 있습니다. 먼저 <strong>Bypass 버튼 왼쪽의 Presets 메뉴</strong>에서 시작 설정을 고른 뒤 중앙 노브로 효과 강도를 조절합니다. 50%는 선택한 Preset을 정확히 재현합니다. 0%와 100%는 각 이펙트의 안전 범위이며 공통적인 Dry／최대 효과를 뜻하지 않습니다.</p>
+    <p>One Knob는 하나의 간단한 노브로 해당 이펙트 내부의 여러 파라미터를 동시에 조절합니다.</p>
+  </div></details>
+{% else %}
+  <details><summary><strong>One Knob 的運作方式</strong><span>快速調整，同時保留完整參數</span></summary><div class="effect-reference__body">
+    <p>支援的效果器會提供 <strong>One Knob</strong> 簡易介面。先從 <strong>Bypass 按鈕左側的 Presets 選單</strong>選擇一個起始設定，再用中央旋鈕調整效果強弱。50% 會精確還原所選 Preset；0% 與 100% 是該效果器專屬的安全範圍，並不一律代表全乾聲與最大效果。</p>
+    <p>One Knob 只是用一個簡單旋鈕，同時調整這顆效果器內部的多個參數。</p>
+  </div></details>
+{% endcase %}
+</div>
