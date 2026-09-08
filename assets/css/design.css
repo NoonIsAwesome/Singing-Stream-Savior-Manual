@@ -1480,7 +1480,7 @@ html[data-theme="dark"] .language option:checked {
 html[data-theme="dark"] .reader-shell .chapter-list a[aria-current="page"] {
   background:#223646;
   color:#b7e0f0;
-  box-shadow:inset 2px 0 #7bc5df
+  box-shadow:none
 }
 
 html[data-theme="dark"] .chapter-list a[aria-current="page"] .chapter-preview-badge {

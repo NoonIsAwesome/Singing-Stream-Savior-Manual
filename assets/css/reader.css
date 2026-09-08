@@ -196,7 +196,7 @@ html[data-theme="dark"] .language option:checked {
 .reader-shell .chapter-list a[aria-current="page"] {
   background:var(--mint);
   color:var(--teal);
-  box-shadow:inset 2px 0 var(--teal)
+  box-shadow:none
 }
 .reader-shell .chapter-preview-badge {
   background:var(--paper);
@@ -301,7 +301,6 @@ html[data-theme="dark"] .language option:checked {
   color:var(--ink-800);
   background:var(--blue-soft);
   border:1px solid var(--line);
-  border-left:3px solid var(--teal);
   border-radius:8px
 }
 .inner-page .manual-article blockquote p {
@@ -1058,7 +1057,7 @@ html[data-theme="light"] {
   color:var(--ink);
   background:var(--paper);
   border-color:var(--line);
-  box-shadow:inset 3px 0 var(--amber)
+  box-shadow:none
 }
 
 .inner-page .version-preview strong {
@@ -1156,7 +1155,7 @@ html[data-theme="light"] {
 
 .inner-page .release-entry--latest .release-entry__card {
   border-color:var(--line-strong);
-  box-shadow:inset 2px 0 var(--teal)
+  box-shadow:none
 }
 
 .inner-page .release-entry__current {
@@ -1478,7 +1477,7 @@ html[data-theme="dark"] .language option:checked {
 html[data-theme="dark"] .reader-shell .chapter-list a[aria-current="page"] {
   background:#223646;
   color:#b7e0f0;
-  box-shadow:inset 2px 0 #7bc5df
+  box-shadow:none
 }
 
 html[data-theme="dark"] .chapter-list a[aria-current="page"] .chapter-preview-badge {
@@ -1538,4 +1537,35 @@ html[data-theme="dark"] .chapter-list a[aria-current="page"] .chapter-preview-ba
 .language-picker__chevron { right: 8px; }
 @media (max-width: 600px) {
   .language-picker .language { width: 120px; font-size: 12px; }
+}
+
+/* Reading aids use neutral surfaces; reserve warning color for safety notices. */
+.inner-page .manual-article blockquote,
+.inner-page .launch-target,
+.inner-page .feature-note,
+.inner-page .open-source-disclaimer,
+.inner-page .chapter-quick-start__done,
+.inner-page .profile-chain-guide,
+.inner-page .guide-checklist > div,
+.inner-page .download-support,
+.inner-page .resource-update,
+.inner-page .security-facts article:not(.security-facts__warning) {
+  color:var(--ink-800);
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:none
+}
+
+.inner-page .feature-note > span,
+.inner-page .version-preview__badge {
+  color:var(--ink-700);
+  background:var(--surface);
+  border:1px solid var(--line)
+}
+
+.inner-page .paired-guide[aria-current="page"] {
+  background:var(--code);
+  border-color:var(--line-strong);
+  box-shadow:none
 }
