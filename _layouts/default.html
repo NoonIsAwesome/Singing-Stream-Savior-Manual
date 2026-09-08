@@ -1,4 +1,4 @@
-﻿{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign t = site.data.i18n[current_lang] %}
 {% assign section = page.translation_key | default: 'home' %}
 {% assign standalone_sections = "resources,changelog,about,advanced-streaming,audio-routing,profiles,open-source" | split: "," %}
@@ -58,7 +58,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#ffffff">
-    <link rel="icon" href="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" sizes="any">
+    <link rel="icon" href="{{ '/assets/images/singing-stream-savior-brand.png' | relative_url }}" type="image/png" sizes="400x400">
     {% include theme-init.html %}
     {% unless is_home %}<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">{% endunless %}
     <link rel="stylesheet" href="{{ '/assets/css/design.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
