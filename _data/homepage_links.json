@@ -9,7 +9,8 @@
     "library-and-playback": "/library-and-playback.html",
     "lyrics": "/lyrics.html",
     "obs-and-themes": "/obs-and-themes.html",
-    "profiles": "/profiles.html"
+    "profiles": "/profiles.html",
+    "obs-websocket": "/obs-websocket.html"
   },
   "zh-CN": {
     "resources": "/zh-CN/resources.html",
@@ -21,7 +22,8 @@
     "library-and-playback": "/zh-CN/guide.html#library-and-playback",
     "lyrics": "/zh-CN/guide.html#lyrics",
     "obs-and-themes": "/zh-CN/guide.html#obs-and-themes",
-    "profiles": "/zh-CN/advanced-streaming.html"
+    "profiles": "/zh-CN/advanced-streaming.html",
+    "obs-websocket": "/zh-CN/guide.html#obs-websocket"
   },
   "en": {
     "resources": "/en/resources.html",
@@ -33,7 +35,8 @@
     "library-and-playback": "/en/guide.html#library-and-playback",
     "lyrics": "/en/guide.html#lyrics",
     "obs-and-themes": "/en/guide.html#obs-and-themes",
-    "profiles": "/en/advanced-streaming.html"
+    "profiles": "/en/advanced-streaming.html",
+    "obs-websocket": "/en/guide.html#obs-websocket"
   },
   "ja": {
     "resources": "/ja/resources.html",
@@ -45,7 +48,8 @@
     "library-and-playback": "/ja/guide.html#library-and-playback",
     "lyrics": "/ja/guide.html#lyrics",
     "obs-and-themes": "/ja/guide.html#obs-and-themes",
-    "profiles": "/ja/advanced-streaming.html"
+    "profiles": "/ja/advanced-streaming.html",
+    "obs-websocket": "/ja/guide.html#obs-websocket"
   },
   "ko": {
     "resources": "/ko/resources.html",
@@ -57,6 +61,7 @@
     "library-and-playback": "/ko/guide.html#library-and-playback",
     "lyrics": "/ko/guide.html#lyrics",
     "obs-and-themes": "/ko/guide.html#obs-and-themes",
-    "profiles": "/ko/advanced-streaming.html"
+    "profiles": "/ko/advanced-streaming.html",
+    "obs-websocket": "/ko/guide.html#obs-websocket"
   }
 }

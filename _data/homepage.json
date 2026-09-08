@@ -81,7 +81,14 @@
       "後來又加了自動顯示歌單的功能，想說至少這個軟體對我自己來說還滿有幫助的，就發布給朋友們使用。",
       "前陣子發現有滿多朋友默默地使用，也得到了很多稱讚和成就感，我簡直爽翻了！我喜歡被誇獎！",
       "於是不知不覺越做越多功能，也越做越完整，希望能得到更多的反饋(⁎⁍̴̛ᴗ⁍̴̛⁎)‼"
-    ]
+    ],
+    "timestamp_title": "直播時間戳紀錄",
+    "timestamp_text": "連接 OBS 後，在伴奏開始時記錄歌曲在直播中的時間，方便直播結束後整理歌曲時間軸。",
+    "timestamp_link": "了解時間戳設定 ↗",
+    "playback_feature_title": "音檔、YouTube 與伴奏調整",
+    "playback_feature_text": "各種音檔與 YouTube 連結都能直接播放，還能調整速度與升降 Key，配合自己的節奏與音域。",
+    "playback_feature_caption": "伴奏控制 · 點擊放大",
+    "alt_playback_controls": "伴奏播放器實際畫面，顯示音量、進度、速度、音高半音與重設控制"
   },
   "zh-CN": {
     "Singing Stream Savior · 歌回救星": "Singing Stream Savior · 歌回救星",
@@ -165,7 +172,14 @@
       "后来又加了自动显示歌单的功能，想着至少这个软件对我自己来说还挺有帮助的，就发布给朋友们使用。",
       "前阵子发现有不少朋友一直在默默使用，也收到了很多称赞，特别有成就感，我简直爽翻了！我喜欢被夸奖！",
       "于是不知不觉做了越来越多的功能，也越做越完整，希望能得到更多反馈(⁎⁍̴̛ᴗ⁍̴̛⁎)‼"
-    ]
+    ],
+    "timestamp_title": "直播时间戳记录",
+    "timestamp_text": "连接 OBS 后，在伴奏开始时记录歌曲在直播中的时间，方便直播结束后整理歌曲时间轴。",
+    "timestamp_link": "了解时间戳设置 ↗",
+    "playback_feature_title": "音频、YouTube 与伴奏调整",
+    "playback_feature_text": "各种音频与 YouTube 链接都能直接播放，还能调整速度与升降 Key，配合自己的节奏与音域。",
+    "playback_feature_caption": "伴奏控制 · 点击放大",
+    "alt_playback_controls": "伴奏播放器实际界面，显示音量、进度、速度、音高半音与重置控制"
   },
   "en": {
     "Singing Stream Savior · 歌回救星": "Singing Stream Savior",
@@ -249,7 +263,14 @@
       "Later, I added a feature that automatically displayed the song list. I figured the software was at least pretty useful for me, so I released it for my friends to use.",
       "A little while ago, I realized that quite a few friends had been quietly using it. I also received lots of compliments and got a real sense of accomplishment. I was absolutely thrilled! I love being praised!",
       "Before I knew it, I kept adding more and more features, making it more and more complete. I hope I can get even more feedback (⁎⁍̴̛ᴗ⁍̴̛⁎)‼"
-    ]
+    ],
+    "timestamp_title": "Livestream timestamps",
+    "timestamp_text": "After connecting to OBS, record a livestream timestamp whenever a backing track starts, so it’s easier to organize the song timeline after your stream.",
+    "timestamp_link": "Set up livestream timestamps ↗",
+    "playback_feature_title": "Audio, YouTube, and playback controls",
+    "playback_feature_text": "Play audio files and YouTube links directly, then adjust speed and key to suit your tempo and vocal range.",
+    "playback_feature_caption": "Playback controls · Click to enlarge",
+    "alt_playback_controls": "Actual accompaniment player with volume, progress, speed, pitch in semitones, and reset controls"
   },
   "ja": {
     "Singing Stream Savior · 歌回救星": "Singing Stream Savior",
@@ -333,7 +354,14 @@
       "その後、自動でセットリストを表示する機能も追加しました。少なくとも自分にとってはけっこう役に立つソフトになったので、友達にも使ってもらおうと思って公開しました。",
       "少し前に、けっこう多くの友達がひっそり使ってくれていることに気づきました。しかもたくさん褒めてもらえて、達成感もすごくて、もう最高にうれしかったです！褒められるの大好き！",
       "それで、いつの間にかどんどん機能を追加して、どんどん完成度も上がっていきました。もっとたくさんフィードバックをもらえたらうれしいです (⁎⁍̴̛ᴗ⁍̴̛⁎)‼"
-    ]
+    ],
+    "timestamp_title": "配信タイムスタンプの記録",
+    "timestamp_text": "OBS に接続すると、伴奏を再生した時点の配信タイムスタンプを記録。配信後に曲ごとの時間を整理しやすくなります。",
+    "timestamp_link": "タイムスタンプの設定方法 ↗",
+    "playback_feature_title": "音源・YouTube 再生と伴奏調整",
+    "playback_feature_text": "さまざまな音源や YouTube リンクをそのまま再生。速度とキーも調整でき、自分のペースや音域に合わせて歌えます。",
+    "playback_feature_caption": "伴奏の操作 · クリックで拡大",
+    "alt_playback_controls": "音量、再生位置、速度、半音単位のキー、リセット操作を表示する実際の伴奏プレイヤー"
   },
   "ko": {
     "Singing Stream Savior · 歌回救星": "Singing Stream Savior",
@@ -417,6 +445,13 @@
       "나중에는 노래 목록을 자동으로 표시해 주는 기능도 추가했습니다. 적어도 저한테는 꽤 도움이 되는 프로그램이 된 것 같아서, 친구들도 써 보라고 공개했어요.",
       "얼마 전에는 꽤 많은 친구들이 조용히 사용하고 있다는 걸 알게 됐습니다. 칭찬도 많이 받고 성취감도 느껴져서, 정말 너무 신났어요! 저는 칭찬받는 걸 좋아하거든요!",
       "그러다 보니 어느새 기능을 계속 추가하게 됐고, 프로그램도 점점 더 완성되어 갔습니다. 더 많은 피드백을 받을 수 있으면 좋겠어요 (⁎⁍̴̛ᴗ⁍̴̛⁎)‼"
-    ]
+    ],
+    "timestamp_title": "방송 타임스탬프 기록",
+    "timestamp_text": "OBS에 연결하면 반주가 시작될 때의 방송 타임스탬프를 기록해, 방송이 끝난 뒤 곡별 시간을 정리하기 쉬워져요.",
+    "timestamp_link": "타임스탬프 설정 방법 ↗",
+    "playback_feature_title": "음원·YouTube 재생과 반주 조절",
+    "playback_feature_text": "다양한 음원과 YouTube 링크를 바로 재생하고, 속도와 키를 조절해 자신의 템포와 음역에 맞춰 노래할 수 있어요.",
+    "playback_feature_caption": "반주 조작 · 클릭하여 확대",
+    "alt_playback_controls": "음량, 재생 위치, 속도, 반음 단위 음높이와 초기화 버튼이 표시된 실제 반주 플레이어"
   }
 }
