@@ -1484,3 +1484,58 @@ html[data-theme="dark"] .reader-shell .chapter-list a[aria-current="page"] {
 html[data-theme="dark"] .chapter-list a[aria-current="page"] .chapter-preview-badge {
   color:#b7e0f0
 }
+
+/* A quiet, recognizable language control with native keyboard/mobile behavior. */
+.language-picker {
+  position: relative;
+  flex: 0 0 auto;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--muted);
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+.language-picker:hover {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+}
+.language-picker:has(.language:focus-visible) {
+  background: var(--surface);
+  border-color: #829eac;
+  box-shadow: 0 0 0 3px #829eac22;
+}
+.language-picker .language {
+  display: block;
+  width: 132px;
+  height: 40px;
+  margin: 0;
+  padding: 0 28px 0 34px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 11px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.language-picker .language:focus { outline: none; box-shadow: none; }
+.language-picker svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.language-picker__globe { left: 10px; }
+.language-picker__chevron { right: 8px; }
+@media (max-width: 600px) {
+  .language-picker .language { width: 120px; font-size: 12px; }
+}
