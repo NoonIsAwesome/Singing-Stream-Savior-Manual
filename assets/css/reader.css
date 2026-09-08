@@ -791,7 +791,7 @@ html[data-theme="dark"] .language option:checked {
   .reader-shell .guide-sidebar {
     position:fixed;
     z-index:35;
-    left:0;
+    right:0;
     top:0;
     bottom:0;
     width:min(310px,88vw);
@@ -799,9 +799,11 @@ html[data-theme="dark"] .language option:checked {
     max-height:none;
     padding:28px 21px;
     background:var(--white);
-    transform:translateX(-105%);
+    transform:translateX(105%);
     transition:transform .2s;
-    box-shadow:14px 0 36px #00142233;
+    box-shadow:-14px 0 36px #00142233;
+    border-right:0;
+    border-left:1px solid var(--line);
     overflow:auto
   }
   .reader-shell .guide-sidebar[data-open="true"] {
@@ -970,6 +972,9 @@ html[data-theme="dark"] .language option:checked {
 @media(prefers-reduced-motion:reduce) {
   .author-page .creator-hero__copy,.reader-shell .guide-content {
     animation:none
+  }
+  .reader-shell .guide-sidebar {
+    transition:none
   }
   .author-page .social-links a:hover,.author-page .creator-link:hover {
     transform:none
