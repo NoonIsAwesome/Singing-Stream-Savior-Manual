@@ -1,6 +1,8 @@
 {% assign release = include.release %}
 {% assign content_lang = include.content_lang %}
 {% assign version_anchor = release.version | replace: '.', '-' | prepend: 'v' %}
+{% assign version_anchor = release.anchor | default: version_anchor %}
+{% assign current_label = release.current_label[content_lang] | default: include.latest_label %}
 {% assign localized_type = release.type[content_lang] | default: release.type.en %}
 {% assign localized_summary = release.summary[content_lang] | default: release.summary.en %}
 {% assign localized_items = release.items[content_lang] | default: release.items.en %}
@@ -13,7 +15,7 @@
   <div class="release-entry__card">
     <header class="release-entry__header">
       <div>
-        {% if release.latest %}<span class="release-entry__current">{{ include.latest_label }}</span>{% endif %}
+        {% if release.latest %}<span class="release-entry__current">{{ current_label }}</span>{% endif %}
         <h2>{{ release.version }}</h2>
       </div>
       <span class="release-entry__count">{{ localized_items | size }}{{ include.items_label }}</span>

@@ -1,0 +1,62 @@
+{
+  "release": {
+    "version": "1.2.0.4",
+    "anchor": "launcher-v1-2-0-4",
+    "date": "2026-09-09",
+    "latest": true,
+    "current_label": {
+      "zh-TW": "最新啟動器",
+      "zh-CN": "最新启动器",
+      "en": "Latest launcher",
+      "ja": "最新ランチャー",
+      "ko": "최신 실행기"
+    },
+    "type": {
+      "zh-TW": "啟動器更新",
+      "zh-CN": "启动器更新",
+      "en": "Launcher update",
+      "ja": "ランチャー更新",
+      "ko": "실행기 업데이트"
+    },
+    "release_url": "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/launcher-v1.2.0.4",
+    "summary": {
+      "zh-TW": "本次僅更新啟動器，主程式維持 2.1.2.1。",
+      "zh-CN": "本次仅更新启动器，主程序维持 2.1.2.1。",
+      "en": "This update is for the launcher only. The application remains at version 2.1.2.1.",
+      "ja": "今回はランチャーのみの更新です。アプリ本体はバージョン 2.1.2.1 のままです。",
+      "ko": "이번 업데이트는 실행기만 변경합니다. 앱 본체는 2.1.2.1 버전을 유지합니다."
+    },
+    "items": {
+      "zh-TW": [
+        "縮短重複檢查更新時的等待。",
+        "檢查與驗證檔案時，持續顯示目前項目和進度，方便確認程式仍在運作。",
+        "改善更新檢查時視窗沒有回應的情況。",
+        "沐橙正在睡覺，因此這個啟動器更新是由AI沐橙發布。"
+      ],
+      "zh-CN": [
+        "缩短重复检查更新时的等待。",
+        "检查与验证文件时，持续显示当前项目和进度，方便确认程序仍在运行。",
+        "改善检查更新时窗口无响应的情况。",
+        "沐橙正在睡觉，因此这个启动器更新是由AI沐橙发布。"
+      ],
+      "en": [
+        "Reduce waiting during repeated update checks.",
+        "Keep the current item and progress visible while checking files, so you can see that the launcher is still working.",
+        "Improve responsiveness during update checks.",
+        "Mucheng is sleeping, so this launcher update was published by AI Mucheng."
+      ],
+      "ja": [
+        "更新を繰り返し確認する際の待ち時間を短縮します。",
+        "ファイルの確認中は、現在の項目と進捗を継続して表示し、処理が進んでいることを確認できます。",
+        "更新確認中の応答性を改善します。",
+        "沐橙は睡眠中のため、このランチャー更新は AI沐橙が公開しました。"
+      ],
+      "ko": [
+        "업데이트를 반복해서 확인할 때 기다리는 시간을 줄입니다.",
+        "파일을 확인하는 동안 현재 항목과 진행 상황을 계속 표시하여 작업이 진행 중임을 알 수 있습니다.",
+        "업데이트 확인 중 응답성을 개선합니다.",
+        "沐橙이 자고 있어서 이번 실행기 업데이트는 AI沐橙이 배포했습니다."
+      ]
+    }
+  }
+}
