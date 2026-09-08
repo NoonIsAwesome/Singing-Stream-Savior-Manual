@@ -1,7 +1,7 @@
 release:
   version: "2.1.2.1"
   date: "2026-09-06"
-  latest: true
+  latest: false
   type:
     en: "Launcher repair hotfix"
     zh-TW: "啟動器修復更新"
