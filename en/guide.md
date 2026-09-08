@@ -80,6 +80,8 @@ To place songs in a collection, select one or more rows, right-click, open **Add
 
 In addition to choosing files from the import dialog, you can drag one or more local audio files directly into the app. Paste or drag in a single YouTube video URL to add one song. You can also drag in a YouTube playlist URL: the app recognizes its videos and imports them into a corresponding custom playlist, so you do not need to add every link individually. Supported local formats include `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, and `WMA`. YouTube import requires an internet connection.
 
+> **Audio sources and playback uses:** Adding a song to the library only creates a playback item; it does not grant a music license. Check the source and its terms of use. Personal listening, audio separation, livestreaming, retaining a recording, and sharing output files may require different permissions. YouTube sources are also subject to the applicable platform terms.
+
 The **Display title** is used by Reserve, History, and OBS. If it is blank, the app falls back to the file name or YouTube title. Double-clicking a song row loads and plays it; it never opens text editing. To rename the viewer-facing title, right-click the song and choose the first item, **Edit display song name**. Press `Enter` to apply or `Esc` to cancel. This never renames the source audio file.
 
 The song context menu is arranged for quick live use: **Edit display song name**, **Add to Reserve**, **Add to playlist** (Favorites or a custom playlist), then the delete/remove action appropriate to the selected collection.
@@ -104,7 +106,11 @@ These items appear in the Unaccompanied Performance smart collection, can also
 belong to custom playlists, and are saved with the project. No silent audio file
 is created.
 
-Cover art is optional. It becomes especially useful with the **Card** and **CD** themes. Open **Embed cover** from a local song’s context menu, select an online result or local image, wait for the preview to load, and choose **Embed**.
+Cover art is optional. It becomes especially useful with the **Card** and **CD** themes.
+
+> **Cover-art use:** Search only helps you find images. Before showing an image in a public stream or video, confirm that you have permission to use it. You can also use artwork you created or appropriately licensed artwork.
+
+Open **Embed cover** from a local song’s context menu, select an online result or local image, wait for the preview to load, and choose **Embed**.
 
 <figure class="manual-figure manual-figure--medium">
   <a href="{{ '/assets/images/en/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/en/cover-dialog.png' | relative_url }}" alt="Embed cover window with preview and search results"></a>
@@ -130,6 +136,8 @@ Lyrics are optional. They can be used in a movable host-only **Lyrics window**, 
 
 Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song’s icon in the **Lyrics** column of the song list. Either route opens the same window, where you can search online, import a local lyric file, attach a result, or unlink the current lyrics. Search combines LRCLIB results and YouTube captions, returns up to 50 candidates, and prioritizes synchronized lyrics, language, duration, and artist information. If YouTube temporarily rate-limits caption downloads, other candidates remain available and the dialog explains that you can retry later.
 
+> **Lyrics sources and permissions:** LRCLIB, YouTube captions, and other search sources help you find lyrics; they do not grant permission to use them. Before use, check the lyric source, relevant rights, and service terms.
+
 <figure class="manual-figure manual-figure--medium">
   <a href="{{ '/assets/images/en/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-manager-linked.png' | relative_url }}" alt="Manage lyrics window showing Import lyrics file and Unlink lyrics controls"></a>
   <figcaption>When lyrics are linked, the lower-left controls let you import another file or unlink the current one.</figcaption>
@@ -146,6 +154,10 @@ If the lyrics are out of sync, you do not need to work out positive or negative 
 The numbers of lines shown before and after the current line can be adjusted separately with a slider or value field. Near the beginning or end of a song, fewer lines may be available than the selected setting. Offset changes are reflected immediately in the preview, independent Lyrics window, and OBS lyric data, even while playback is paused.
 
 {% include localized-release-screenshot.html name="lyrics-viewer.png" alt="The 2.1 Lyrics window with timing controls and synchronized lyrics" caption="Selecting a timestamped line seeks to it; returning to the beginning scrolls the lyric list back to the top." size="medium" %}
+
+> **Before showing lyrics publicly:** Search results and import tools do not grant permission to use lyrics. Confirm that you may show the lyrics in a stream or video; permission to use an accompaniment does not by itself include public display of the lyric text.
+
+To show lyrics to viewers, open the **Lyrics** tab and drag **Drag to OBS** into OBS. If dragging is unavailable, click the same button to copy the Browser Source path and add it to OBS.
 
 <a id="obs-and-themes"></a>
 ## 04 · Playlist appearance and OBS
@@ -197,6 +209,16 @@ The status indicator appears at the lower-right only when enabled: green means c
 <a id="uvr-vocal-removal"></a>
 ## 06 · UVR vocal removal
 
+### Why vocal separation is included
+
+Preparing music for singing or practice often means moving between tools to convert files, separate tracks, and organize the results again. Singing Stream Savior brings those steps together to reduce repetitive work when you process material you have the right to use.
+
+> **Before you begin, check how the material may be used.**
+>
+> Use material that you have the relevant rights to obtain and process, material licensed for audio separation, or material you may otherwise use under applicable law. Buying an audio file, being able to play it online, or receiving it from someone else does not by itself permit separation, livestreaming, uploading, or distribution.
+>
+> This feature does not provide a music license. Separated results may still contain protected compositions and recordings. Before public use, confirm that your permission covers the intended use. When using a YouTube source, also follow the applicable platform terms.
+
 **UVR arrived in 2.1.1; HP and MP3 are new in 2.1.2.** Drag audio files or YouTube links into the processing queue. YouTube titles are detected automatically; videos over 15 minutes can be trimmed before processing. For each song, choose HP or MDX and Preserve Harmony or Remove All Vocals. New installations default to HP Preserve Harmony; your chosen default is remembered. Click the pencil to edit a title. Batch settings are locked after Start, and processing continues while minimized.
 
 Choose WAV, FLAC, or MP3 (320 kbps), and either 48 kHz (default) or 44.1 kHz. GPU acceleration uses a compatible GPU when available; otherwise it falls back to CPU and reports the change in the lower-left message area. Manage the output folder under **Settings > Files & Project**.
@@ -204,6 +226,8 @@ Choose WAV, FLAC, or MP3 (320 kbps), and either 48 kHz (default) or 44.1 kHz. GP
 Noon personally recommends HP for better preservation of accompaniment detail, based on listening tests; results vary by song and genre. Under the same test conditions, HP was slower than MDX. Actual speed depends on the song and computer.
 
 When separation finishes, import the instrumental for one song or import all completed songs at once. The paired `(Instrumental)` and `(Vocal)` files remain in the output folder, while only the actual accompaniment is added to the song library.
+
+> **For material you have confirmed may be used in a livestream, process it ahead of time when possible.** Vocal separation uses CPU or GPU resources. Before running it during a stream, confirm that the computer still has enough capacity for audio and OBS.
 
 <a id="workspace-modes"></a>
 ## 07 · Workspace modes

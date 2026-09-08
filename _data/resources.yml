@@ -64,3 +64,21 @@ videos:
 
 # type 可填 free 或 paid；download_url 可連到雲端檔案或販售頁。
 themes: []
+
+# Software licensing does not grant rights to third-party media.
+content_usage:
+  zh-TW:
+    title: "素材使用須知"
+    text: "Singing Stream Savior 免費提供播放、音訊處理與直播輔助功能，不包含第三方歌曲、錄音、歌詞或圖片的使用授權。請依素材授權、適用法律及平台規範使用；人聲分離與格式轉換不會自動取得額外權利。"
+  zh-CN:
+    title: "素材使用须知"
+    text: "Singing Stream Savior 免费提供播放、音频处理与直播辅助功能，不包含第三方歌曲、录音、歌词或图片的使用授权。请依素材授权、适用法律及平台规范使用；人声分离与格式转换不会自动取得额外权利。"
+  en:
+    title: "Content usage"
+    text: "Singing Stream Savior provides playback, audio processing, and livestreaming tools free of charge. It does not include permission to use third-party songs, recordings, lyrics, or images. Follow the content license, applicable law, and platform rules; vocal separation and format conversion do not automatically grant additional rights."
+  ja:
+    title: "素材の利用にあたって"
+    text: "Singing Stream Savior は、再生・音声処理・ライブ配信補助の機能を無料で提供します。第三者の楽曲、録音物、歌詞、画像の利用許諾は含まれません。素材の許諾条件、適用される法律、プラットフォームの規約に従って利用してください。ボーカル分離や形式変換によって、追加の権利が自動的に得られるわけではありません。"
+  ko:
+    title: "콘텐츠 이용 안내"
+    text: "Singing Stream Savior는 재생, 오디오 처리, 라이브 방송 보조 기능을 무료로 제공합니다. 제3자의 곡, 음원, 가사 또는 이미지 이용 허락은 포함하지 않습니다. 소재의 이용 허락, 관련 법률 및 플랫폼 규정에 따라 사용하세요. 보컬 분리나 형식 변환으로 추가적인 권한이 자동으로 생기지는 않습니다."

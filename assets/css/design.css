@@ -1533,3 +1533,12 @@ html[data-theme="dark"] .chapter-list a[aria-current="page"] .chapter-preview-ba
 
 /* Focus the card preview on the real player; the lightbox shows the full screenshot. */
 .feature-grid .playback-feature .screenshot img { object-fit:cover; object-position:center 20% }
+
+/* Rights reminders are readable copy, without a separate colored warning panel. */
+.content-use-note { color:var(--muted); font-size:14px; line-height:1.85 }
+.content-use-note strong { color:var(--ink); font-size:14px; font-weight:600 }
+.content-use-note p { margin:6px 0 0; font-size:14px; line-height:1.85 }
+.uvr > .content-use-note { margin:4px 24px 24px }
+.youtube .content-use-note { margin-top:24px }
+.youtube .content-use-note p { max-width:none }
+.download-content-use { margin:18px 0 24px }

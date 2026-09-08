@@ -1,5 +1,6 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign resources = site.data.resources %}
+{% assign content_usage = resources.content_usage[current_lang] | default: resources.content_usage.en %}
 {% if current_lang == 'zh-TW' %}
   {% assign changelog_target = '/changelog.html#v2-1-1-1' %}
 {% else %}
@@ -242,6 +243,10 @@
       <span class="resource-status">{{ coming_soon }}</span>
     {% endif %}
   </article>
+  <aside class="content-use-note download-content-use" role="note" aria-labelledby="download-content-use-title">
+    <strong id="download-content-use-title">{{ content_usage.title | escape }}</strong>
+    <p>{{ content_usage.text | escape }}</p>
+  </aside>
   <aside class="download-support" aria-labelledby="download-support-title">
     <div class="download-support__copy">
       <strong id="download-support-title">{{ support_title }}</strong>
