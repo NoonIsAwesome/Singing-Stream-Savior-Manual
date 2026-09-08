@@ -318,6 +318,8 @@
     dialog.append(closeButton, stage);
     document.body.append(dialog);
 
+    window.S3SLightbox.attach(dialog, { image: previewImage, caption, closeButton });
+
     let imagePreviewTrigger = null;
 
     const closeImagePreview = () => {
@@ -333,9 +335,10 @@
       }
     });
     dialog.addEventListener("close", () => {
+      if (dialog.open) return;
       document.body.classList.remove("has-image-lightbox");
       previewImage.removeAttribute("src");
-      imagePreviewTrigger?.focus();
+      imagePreviewTrigger?.focus({ preventScroll: true });
       imagePreviewTrigger = null;
     });
 
@@ -370,7 +373,7 @@
         caption.textContent = description;
         document.body.classList.add("has-image-lightbox");
         dialog.showModal();
-        closeButton.focus();
+        dialog.focus({ preventScroll: true });
       });
     });
   }

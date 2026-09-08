@@ -63,6 +63,7 @@
     {% unless is_home %}<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">{% endunless %}
     <link rel="stylesheet" href="{{ '/assets/css/design.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
     <link rel="stylesheet" href="{{ '/assets/css/reader.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/lightbox.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
     <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_tw }}">
     <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_cn }}">
     <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}{{ alternate_en }}">
@@ -93,6 +94,7 @@
       <button class="nav-backdrop" type="button" aria-label="{{ t.collapse_nav | escape }}" tabindex="-1" hidden></button>
     {% endif %}
     <footer class="page-footer"><div class="wrap"><span>SINGING STREAM SAVIOR · 歌回救星</span><span>{{ design.footer }}</span><a href="{% if is_home %}{{ about_target | relative_url }}{% else %}{{ language_home | relative_url }}{% endif %}">{% if is_home %}{{ design.author }}{% else %}{{ design.home }}{% endif %} ↗</a></div></footer>
+    <script src="{{ '/assets/js/lightbox.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>
     <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>
     <script src="{{ '/assets/js/site-controls.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>
     {% if is_home %}<script src="{{ '/assets/js/homepage.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>{% endif %}
