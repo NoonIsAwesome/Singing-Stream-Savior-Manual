@@ -74,7 +74,14 @@
     "alt_song_library_png": "歌回救星歌曲庫實際畫面，包含自訂歌單、搜尋與歌曲列表",
     "alt_lyrics_reading_preview_png": "歌詞頁實際畫面，顯示同步歌詞、日文平假名與羅馬拼音、時間差與 OBS 版面設定",
     "alt_profile_horizontal_rack_png": "人聲 Profile 實際畫面，以橫向效果器 Rack 顯示噪音閥、壓縮器與等化器",
-    "alt_demo_obs_result_png": "原網站的 OBS 實際輸出示範，將透明歌單與同步歌詞疊在直播背景上"
+    "alt_demo_obs_result_png": "原網站的 OBS 實際輸出示範，將透明歌單與同步歌詞疊在直播背景上",
+    "why_free_title": "為什麼免費？",
+    "why_free_paragraphs": [
+      "兩年前，我突發奇想的想說做個軟體來解決自己歌回直播的問題，嘗試做了一個簡單的BGM/伴奏自動切換的播放器。",
+      "後來又加了自動顯示歌單的功能，想說至少這個軟體對我自己來說還滿有幫助的，就發布給朋友們使用。",
+      "前陣子發現有滿多朋友默默地使用，也得到了很多稱讚和成就感，我簡直爽翻了！我喜歡被誇獎！",
+      "於是不知不覺越做越多功能，也越做越完整，希望能得到更多的反饋(⁎⁍̴̛ᴗ⁍̴̛⁎)‼"
+    ]
   },
   "zh-CN": {
     "Singing Stream Savior · 歌回救星": "Singing Stream Savior · 歌回救星",
@@ -151,7 +158,14 @@
     "alt_song_library_png": "歌曲库界面，包含自定义歌单、搜索与歌曲列表",
     "alt_lyrics_reading_preview_png": "歌词界面，显示同步歌词、日文读音、时间差与 OBS 布局设置",
     "alt_profile_horizontal_rack_png": "人声 Profile 编辑器，横向显示噪声门、压缩器与均衡器",
-    "alt_demo_obs_result_png": "实际 OBS 输出示范，将透明歌单与同步歌词叠加在直播背景上"
+    "alt_demo_obs_result_png": "实际 OBS 输出示范，将透明歌单与同步歌词叠加在直播背景上",
+    "why_free_title": "为什么免费？",
+    "why_free_paragraphs": [
+      "两年前，我突发奇想地想做个软件来解决自己唱歌直播时遇到的问题，就尝试做了一个简单的 BGM/伴奏自动切换播放器。",
+      "后来又加了自动显示歌单的功能，想着至少这个软件对我自己来说还挺有帮助的，就发布给朋友们使用。",
+      "前阵子发现有不少朋友一直在默默使用，也收到了很多称赞，特别有成就感，我简直爽翻了！我喜欢被夸奖！",
+      "于是不知不觉做了越来越多的功能，也越做越完整，希望能得到更多反馈(⁎⁍̴̛ᴗ⁍̴̛⁎)‼"
+    ]
   },
   "en": {
     "Singing Stream Savior · 歌回救星": "Singing Stream Savior",
@@ -228,7 +242,14 @@
     "alt_song_library_png": "Song library with custom playlists, search, and song list",
     "alt_lyrics_reading_preview_png": "Lyrics workspace with synchronized lyrics, Japanese readings, timing, and OBS layout settings",
     "alt_profile_horizontal_rack_png": "Vocal Profile editor with Noise Gate, Compressor, and EQ in a horizontal effects rack",
-    "alt_demo_obs_result_png": "Actual OBS output with a transparent set list and synchronized lyrics over a streaming background"
+    "alt_demo_obs_result_png": "Actual OBS output with a transparent set list and synchronized lyrics over a streaming background",
+    "why_free_title": "Why is it free?",
+    "why_free_paragraphs": [
+      "Two years ago, I suddenly got the idea to make some software to solve a problem I was having with my singing livestreams, so I tried building a simple player that could automatically switch between background music and instrumentals.",
+      "Later, I added a feature that automatically displayed the song list. I figured the software was at least pretty useful for me, so I released it for my friends to use.",
+      "A little while ago, I realized that quite a few friends had been quietly using it. I also received lots of compliments and got a real sense of accomplishment. I was absolutely thrilled! I love being praised!",
+      "Before I knew it, I kept adding more and more features, making it more and more complete. I hope I can get even more feedback (⁎⁍̴̛ᴗ⁍̴̛⁎)‼"
+    ]
   },
   "ja": {
     "Singing Stream Savior · 歌回救星": "Singing Stream Savior",
@@ -305,7 +326,14 @@
     "alt_song_library_png": "カスタムプレイリスト、検索、曲一覧を表示する歌曲ライブラリ",
     "alt_lyrics_reading_preview_png": "同期歌詞、日本語の読み、タイミング、OBS レイアウト設定を表示する歌詞画面",
     "alt_profile_horizontal_rack_png": "Noise Gate、Compressor、EQ を横並びに表示するボーカル Profile エディター",
-    "alt_demo_obs_result_png": "配信背景に透明なセットリストと同期歌詞を重ねた実際の OBS 出力"
+    "alt_demo_obs_result_png": "配信背景に透明なセットリストと同期歌詞を重ねた実際の OBS 出力",
+    "why_free_title": "どうして無料なの？",
+    "why_free_paragraphs": [
+      "2年前、歌枠配信で自分が困っていた問題を解決するために、ふと思い立ってソフトを作ってみることにしました。まずはBGMと伴奏を自動で切り替えてくれる、シンプルなプレイヤーを作ってみたんです。",
+      "その後、自動でセットリストを表示する機能も追加しました。少なくとも自分にとってはけっこう役に立つソフトになったので、友達にも使ってもらおうと思って公開しました。",
+      "少し前に、けっこう多くの友達がひっそり使ってくれていることに気づきました。しかもたくさん褒めてもらえて、達成感もすごくて、もう最高にうれしかったです！褒められるの大好き！",
+      "それで、いつの間にかどんどん機能を追加して、どんどん完成度も上がっていきました。もっとたくさんフィードバックをもらえたらうれしいです (⁎⁍̴̛ᴗ⁍̴̛⁎)‼"
+    ]
   },
   "ko": {
     "Singing Stream Savior · 歌回救星": "Singing Stream Savior",
@@ -382,6 +410,13 @@
     "alt_song_library_png": "사용자 지정 재생 목록, 검색, 곡 목록이 있는 라이브러리",
     "alt_lyrics_reading_preview_png": "동기화된 가사, 일본어 읽기, 시간차 및 OBS 배치 설정을 보여 주는 가사 화면",
     "alt_profile_horizontal_rack_png": "Noise Gate, Compressor, EQ가 가로로 배치된 보컬 Profile 편집기",
-    "alt_demo_obs_result_png": "방송 배경 위에 투명한 곡 목록과 동기화된 가사를 표시한 실제 OBS 출력"
+    "alt_demo_obs_result_png": "방송 배경 위에 투명한 곡 목록과 동기화된 가사를 표시한 실제 OBS 출력",
+    "why_free_title": "왜 무료인가요?",
+    "why_free_paragraphs": [
+      "2년 전, 노래 방송을 하면서 제가 겪던 문제를 해결해 보려고 갑자기 소프트웨어를 만들어 보고 싶다는 생각이 들었습니다. 그래서 BGM과 반주를 자동으로 전환해 주는 간단한 플레이어를 만들어 봤어요.",
+      "나중에는 노래 목록을 자동으로 표시해 주는 기능도 추가했습니다. 적어도 저한테는 꽤 도움이 되는 프로그램이 된 것 같아서, 친구들도 써 보라고 공개했어요.",
+      "얼마 전에는 꽤 많은 친구들이 조용히 사용하고 있다는 걸 알게 됐습니다. 칭찬도 많이 받고 성취감도 느껴져서, 정말 너무 신났어요! 저는 칭찬받는 걸 좋아하거든요!",
+      "그러다 보니 어느새 기능을 계속 추가하게 됐고, 프로그램도 점점 더 완성되어 갔습니다. 더 많은 피드백을 받을 수 있으면 좋겠어요 (⁎⁍̴̛ᴗ⁍̴̛⁎)‼"
+    ]
   }
 }
