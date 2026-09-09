@@ -3,7 +3,7 @@
     "version": "1.2.0.4",
     "anchor": "launcher-v1-2-0-4",
     "date": "2026-09-09",
-    "latest": true,
+    "latest": false,
     "current_label": {
       "zh-TW": "最新啟動器",
       "zh-CN": "最新启动器",
