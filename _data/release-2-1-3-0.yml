@@ -1,0 +1,48 @@
+﻿release:
+  version: "2.1.3.0"
+  date: "2026-09-10"
+  latest: true
+  type:
+    en: "Monitoring, lyrics, and launcher improvements"
+    zh-TW: "監聽、歌詞與啟動器改善"
+    zh-CN: "监听、歌词与启动器改善"
+    ja: "モニター、歌詞、ランチャーの改善"
+    ko: "모니터링, 가사 및 런처 개선"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.3.0"
+  summary:
+    en: "Greatly reduces monitored vocal latency, improves lyric updates, and speeds up launcher checks while adding chat topics to the BGM area."
+    zh-TW: "大幅降低監聽的人聲延遲，改善歌詞更新並加快啟動器檢查，也在 BGM 區域加入聊天主題。"
+    zh-CN: "大幅降低监听的人声延迟，改善歌词更新并加快启动器检查，也在 BGM 区域加入聊天主题。"
+    ja: "モニターするボーカルの遅延を大幅に低減し、歌詞更新を改善してランチャーの検証を高速化し、BGMエリアにチャットの話題を追加しました。"
+    ko: "모니터링되는 보컬의 지연을 크게 줄이고 가사 업데이트를 개선하며 런처 검사를 빠르게 하고 BGM 영역에 채팅 주제를 추가했습니다."
+  items:
+    en:
+      - "Greatly reduces monitored vocal latency (ASIO is recommended; its latency is lower than WASAPI)!"
+      - "You can now set a chat topic in the BGM area and display it while BGM is playing."
+      - "Fixes lyric fill progress and some subtitle timing displays, and improves lyric updates when switching songs or changing Traditional/Simplified Chinese settings."
+      - "The launcher checks files faster and continuously shows verification progress, reducing the chance that its window appears stuck."
+      - "I went to the gym today, and I think I'm great!"
+    zh-TW:
+      - "大幅降低監聽的人聲延遲（推薦使用ASIO驅動，延遲相較WASAPI更低）！"
+      - "現在BGM區域可以設定「聊天主題」，播放BGM時會顯示。"
+      - "修正歌詞填色進度與部分字幕時間顯示，並改善切換歌曲或繁簡設定時的歌詞更新。"
+      - "啟動器檢查檔案更快速，驗證時會持續顯示進度，減少視窗看似卡住的情況。"
+      - "今天去健身房了，我覺得我很棒！"
+    zh-CN:
+      - "大幅降低监听的人声延迟（推荐使用 ASIO 驱动，延迟比 WASAPI 更低）！"
+      - "现在可以在 BGM 区域设置“聊天主题”，播放 BGM 时会显示。"
+      - "修正歌词填色进度与部分字幕时间显示，并改善切换歌曲或繁简设置时的歌词更新。"
+      - "启动器检查文件更快速，验证时会持续显示进度，减少窗口看似卡住的情况。"
+      - "今天去健身房了，我觉得我很棒！"
+    ja:
+      - "モニターするボーカルの遅延を大幅に低減しました（ASIOドライバーの使用を推奨します。WASAPIより遅延が小さくなります）！"
+      - "BGMエリアで「チャットの話題」を設定できるようになり、BGM再生中に表示されます。"
+      - "歌詞の色付け進捗と一部の字幕時間表示を修正し、曲の切り替えや繁体字・簡体字設定の変更時に歌詞が更新されるよう改善しました。"
+      - "ランチャーのファイルチェックを高速化し、検証中は進捗を継続表示して、ウィンドウが固まったように見える状況を減らしました。"
+      - "今日はジムに行きました。自分はすごいと思います！"
+    ko:
+      - "모니터링되는 보컬의 지연을 크게 줄였습니다(ASIO 드라이버 사용을 권장하며 WASAPI보다 지연이 낮습니다)!"
+      - "BGM 영역에서 이제 '채팅 주제'를 설정할 수 있으며, BGM 재생 중에 표시됩니다."
+      - "가사 색상 표시 진행률과 일부 자막 시간 표시를 수정하고, 곡을 바꾸거나 번체/간체 설정을 변경할 때 가사가 업데이트되도록 개선했습니다."
+      - "런처의 파일 검사를 더 빠르게 하고 검증 중 진행률을 계속 표시하여 창이 멈춘 것처럼 보이는 상황을 줄였습니다."
+      - "오늘 헬스장에 갔어요. 저는 정말 잘한 것 같아요!"

@@ -1,6 +1,7 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
-{% assign current_release = site.data["release-2-1-2-1"].release %}
+{% assign current_release = site.data["release-2-1-3-0"].release %}
 {% assign launcher_release = site.data["release-launcher-1-2-0-4"].release %}
+{% assign previous_repair_release = site.data["release-2-1-2-1"].release %}
 {% assign previous_hp_release = site.data["release-2-1-2-0"].release %}
 {% assign previous_monitor_release = site.data["release-2-1-1-2"].release %}
 {% assign previous_current_release = site.data["release-2-1-1-1"].release %}
@@ -10,7 +11,7 @@
 {% assign previous_feature_release = site.data["release-2-1-0-1"].release %}
 {% assign previous_major_release = site.data["release-2-1-0-0"].release %}
 {% assign releases = site.data.releases.releases %}
-{% assign release_count = releases | size | plus: 10 %}
+{% assign release_count = releases | size | plus: 11 %}
 {% if current_lang == 'zh-TW' %}
   {% assign content_lang = 'zh-TW' %}
   {% assign eyebrow = 'RELEASE HISTORY · FROM NEWEST' %}
@@ -65,8 +66,9 @@
 </header>
 
 <section class="release-timeline" aria-label="{{ title }}">
-  {% include release-entry.html release=launcher_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
   {% include release-entry.html release=current_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=launcher_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=previous_repair_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
   {% include release-entry.html release=previous_hp_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
   {% include release-entry.html release=previous_monitor_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
   {% include release-entry.html release=previous_current_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
