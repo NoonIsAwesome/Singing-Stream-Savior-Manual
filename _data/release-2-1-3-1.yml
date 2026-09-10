@@ -1,0 +1,38 @@
+release:
+  version: "2.1.3.1"
+  date: "2026-09-10"
+  latest: true
+  type:
+    en: "YouTube playback hotfix"
+    zh-TW: "YouTube 播放修正"
+    zh-CN: "YouTube 播放修复"
+    ja: "YouTube 再生の修正"
+    ko: "YouTube 재생 수정"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.3.1"
+  summary:
+    en: "Improves YouTube accompaniment reliability during output switching and keeps the fallback display and play history accurate."
+    zh-TW: "改善切換輸出時的 YouTube 伴奏穩定性，並讓備援畫面與播放紀錄正確更新。"
+    zh-CN: "改善切换输出时的 YouTube 伴奏稳定性，并让备用画面与播放记录正确更新。"
+    ja: "出力切り替え時の YouTube 伴奏の安定性を改善し、フォールバック画面と再生履歴を正しく更新します。"
+    ko: "출력 전환 중 YouTube 반주의 안정성을 개선하고 대체 재생 화면과 재생 기록을 정확하게 갱신합니다."
+  items:
+    en:
+      - "Prevents valid YouTube sources from being sent to fallback during output switching."
+      - "The fallback video panel no longer appears unnecessarily or remains after playback stops."
+      - "Accompaniment that did not start successfully is no longer incorrectly recorded as played."
+    zh-TW:
+      - "避免在輸出切換期間將有效的 YouTube 來源誤送入備援播放。"
+      - "備援播放畫面不會再無故顯示，也不會在播放停止後殘留。"
+      - "伴奏未成功啟動時，不會再被誤記為已播放。"
+    zh-CN:
+      - "避免在输出切换期间将有效的 YouTube 来源误送到备用播放。"
+      - "备用播放画面不再无故显示，也不会在播放停止后残留。"
+      - "伴奏未成功启动时，不会再被误记为已播放。"
+    ja:
+      - "出力切り替え中に、有効な YouTube ソースが誤ってフォールバックへ送られる問題を防ぎます。"
+      - "フォールバック再生画面が不要に表示されたり、再生停止後に残ったりしなくなります。"
+      - "伴奏の起動に失敗した場合、再生済みとして誤って記録されなくなります。"
+    ko:
+      - "출력 전환 중 정상적인 YouTube 소스가 잘못된 대체 재생으로 넘어가는 문제를 방지합니다."
+      - "대체 재생 화면이 불필요하게 표시되지 않으며 재생 중지 후에도 남지 않습니다."
+      - "반주가 정상적으로 시작되지 않으면 재생한 것으로 잘못 기록되지 않습니다."
