@@ -464,7 +464,7 @@ html[data-theme="dark"] .language option:checked {
   color:var(--ink);
   font-size:12px
 }
-.sidebar-collapsed .reader-shell {
+.sidebar-collapsed .reader-shell.guide-shell {
   grid-template-columns:76px minmax(0,1fr)
 }
 .sidebar-collapsed .reader-shell .chapter-list a {
