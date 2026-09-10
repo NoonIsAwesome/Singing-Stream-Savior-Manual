@@ -185,7 +185,7 @@ BGM 播放器有獨立的播放、暫停、停止、循環、靜音、音量與�
 這只改變 OBS 的顯示文字，不會修改歌曲名稱、待播順序或已唱紀錄。不需要時取消勾選即可。
 
 <figure class="manual-figure manual-figure--compact">
-  <a href="{{ '/assets/images/bgm-chat-topic.png' | relative_url }}"><img src="{{ '/assets/images/bgm-chat-topic.png' | relative_url }}" alt="BGM 聊天主題設定：先開啟顯示，再填入標題與選填話題；圖中開關尚未勾選。" loading="lazy" decoding="async"></a>
+  <a href="assets/images/bgm-chat-topic.png"><img src="assets/images/bgm-chat-topic.png" alt="BGM 聊天主題設定：先開啟顯示，再填入標題與選填話題；圖中開關尚未勾選。" loading="lazy" decoding="async"></a>
   <figcaption>BGM 聊天主題設定：先開啟顯示，再填入標題與選填話題；圖中開關尚未勾選。</figcaption>
 </figure>
 

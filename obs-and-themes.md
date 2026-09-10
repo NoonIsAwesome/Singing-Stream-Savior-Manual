@@ -116,7 +116,7 @@ translation_key: obs-and-themes
 固定設計主題也能移動與等比例縮放整體外觀；主題內部的字型、配色與文字編排，仍依主題支援的選項調整。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/playlist-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/playlist-layout-editor-2132.png' | relative_url }}" alt="選取歌單主題外框後，可在透明畫布中調整整體位置與大小；OBS 會同步顯示變更。" loading="lazy" decoding="async"></a>
+  <a href="assets/images/playlist-layout-editor-2132.png"><img src="assets/images/playlist-layout-editor-2132.png" alt="選取歌單主題外框後，可在透明畫布中調整整體位置與大小；OBS 會同步顯示變更。" loading="lazy" decoding="async"></a>
   <figcaption>選取歌單主題外框後，可在透明畫布中調整整體位置與大小；OBS 會同步顯示變更。</figcaption>
 </figure>
 

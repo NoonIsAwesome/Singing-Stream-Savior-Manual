@@ -107,7 +107,7 @@ translation_key: lyrics
 透明方格代表透明區域，不會輸出到 OBS。此處調整的是 OBS 歌詞版面，不是獨立「歌詞視窗」的位置。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}" alt="Classic Karaoke 的虛線框包住歌詞區塊；可在固定 16:9 畫布內移動及等比例縮放，並即時同步 OBS。" loading="lazy" decoding="async"></a>
+  <a href="assets/images/lyrics-layout-editor-2132.png"><img src="assets/images/lyrics-layout-editor-2132.png" alt="Classic Karaoke 的虛線框包住歌詞區塊；可在固定 16:9 畫布內移動及等比例縮放，並即時同步 OBS。" loading="lazy" decoding="async"></a>
   <figcaption>Classic Karaoke 的虛線框包住歌詞區塊；可在固定 16:9 畫布內移動及等比例縮放，並即時同步 OBS。</figcaption>
 </figure>
 
