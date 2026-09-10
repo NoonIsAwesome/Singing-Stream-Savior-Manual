@@ -1,4 +1,4 @@
-﻿---
+---
 title: Singing Stream Savior 2.1 User Manual
 description: English manual for Singing Stream Savior 2.1.3.2
 lang: en
@@ -129,6 +129,18 @@ The karaoke playback-mode button cycles through four choices: **Play once**, **R
 
 Pressing Play in either Reserve mode with an empty queue only shows a message and does not interrupt BGM. Double-clicking a song directly in the library automatically returns the mode to **Play once**. In Playlist Appearance, enable **Show Reserve in OBS**, then choose **Next song only** or a limit of 2, 3, 5, or 10. One song is labelled **Next On**; a multi-song list is labelled **Reserve**, unless the selected theme supports only one presentation. History is cleared after a normal app exit; after an unexpected interruption, the recovery snapshot can restore the queue and History for that live session.
 
+<a id="bgm-chat-topic"></a>
+### Show a chat topic while BGM plays
+
+Select **Chat topic** beside the BGM playlist button. Enable **Show chat topic while playing BGM**, enter a heading such as “Just chatting,” and optionally add a topic. An empty heading uses the default text. Changes apply immediately and are saved with the project.
+
+The text replaces the current-song display in the OBS playlist theme **only while BGM is playing**. Pausing or stopping BGM hides it; an actively playing karaoke track or an unaccompanied performance takes priority and displays its song title. Song names, the queue, and History are unchanged. Disable the option to hide chat topics.
+
+<figure class="manual-figure manual-figure--compact">
+  <a href="{{ '/assets/images/bgm-chat-topic.png' | relative_url }}"><img src="{{ '/assets/images/bgm-chat-topic.png' | relative_url }}" alt="BGM chat-topic settings; the display option is unchecked in this Traditional Chinese screenshot." loading="lazy" decoding="async"></a>
+  <figcaption>BGM chat-topic settings; the display option is unchecked in this Traditional Chinese screenshot.</figcaption>
+</figure>
+
 <a id="lyrics"></a>
 ## 03 · Lyrics
 
@@ -158,6 +170,18 @@ The numbers of lines shown before and after the current line can be adjusted sep
 > **Before showing lyrics publicly:** Search results and import tools do not grant permission to use lyrics. Confirm that you may show the lyrics in a stream or video; permission to use an accompaniment does not by itself include public display of the lyric text.
 
 To show lyrics to viewers, open the **Lyrics** tab and drag **Drag to OBS** into OBS. If dragging is unavailable, click the same button to copy the Browser Source path and add it to OBS.
+
+<a id="lyrics-layout-editor"></a>
+### Move and resize lyric blocks in the preview
+
+In **2.1.3.2**, Basic Lyrics, Classic Karaoke, and Vertical Verse support layout editing. Open **Live Controls → Lyrics**, choose a style, and select **Edit layout** above the preview. Drag inside a lyric block to move it; drag a corner handle to resize it proportionally. The canvas stays **1920 × 1080 (16:9)**.
+
+An OBS lyric source already using this output updates **while you drag**; releasing the mouse or adding the source again is unnecessary. Center guides help alignment. Select Edit layout again or leave the page to exit editing without losing the position. The adjacent reset icon restores the layout. Save the project to retain changes. The checkerboard represents transparency and is not sent to OBS; the independent Lyrics window is unaffected.
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}" alt="Lyric block editing in version 2.1.3.2 (Traditional Chinese interface)." loading="lazy" decoding="async"></a>
+  <figcaption>Lyric block editing in version 2.1.3.2 (Traditional Chinese interface).</figcaption>
+</figure>
 
 <a id="obs-and-themes"></a>
 ## 04 · Playlist appearance and OBS
@@ -195,7 +219,19 @@ The theme canvas does not restrict how the Browser Source must be used. In OBS, 
 
 You can also enable Reserve, choose **Next song only** or a 2-, 3-, 5-, or 10-song display limit, and—when OBS WebSocket is enabled—show timestamps before sung songs in supported Set Lists. Timestamps are not added to Reserve or Next On.
 
-Preview-only tools provide transparent, dark, light, custom-color, or image backgrounds; image fit/fill/stretch; and temporary source sizing/positioning. They never change the transparent OBS output. Unsupported controls are hidden rather than merely disabled. Default exposes the broadest typography and layout controls; legacy Transparent Black/White retain Current and History typography controls; both v2 themes, Signal Line, and Stage Caption expose their supported color/opacity controls.
+Preview backgrounds can be transparent, dark, light, a custom color, or an image with fit/fill/stretch. Only these backgrounds stay inside the app; positions and sizes changed with Edit layout are synchronized to OBS. Unsupported controls are hidden rather than merely disabled. Default exposes the broadest typography and layout controls; legacy Transparent Black/White retain Current and History typography controls; both v2 themes, Signal Line, and Stage Caption expose their supported color/opacity controls.
+
+<a id="playlist-layout-editor"></a>
+### Move and resize the playlist in the preview
+
+In **Playlist Appearance**, choose a theme and select **Edit layout** above the preview. Drag inside the theme outline to move it, or drag a corner handle to scale it proportionally within the fixed **1920 × 1080 (16:9)** canvas. An existing OBS source using the same output updates **during dragging**, so you can check the stream layout as you edit.
+
+Center guides assist alignment. Select the button again or leave the page to finish; the placement remains. Use the adjacent reset icon to restore the layout and save the project to retain your settings. Fixed-design themes can also be moved and scaled as a whole; their internal font, color, and arrangement options still depend on the theme.
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/playlist-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/playlist-layout-editor-2132.png' | relative_url }}" alt="Playlist layout editing in version 2.1.3.2 (Traditional Chinese interface)." loading="lazy" decoding="async"></a>
+  <figcaption>Playlist layout editing in version 2.1.3.2 (Traditional Chinese interface).</figcaption>
+</figure>
 
 <a id="obs-websocket"></a>
 ## 05 · Livestream timestamp capture

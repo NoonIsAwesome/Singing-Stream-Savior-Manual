@@ -1,4 +1,4 @@
-﻿---
+---
 title: 歌回救星 2.1 使用说明
 description: Singing Stream Savior 2.1.3.2 简体中文使用说明
 lang: zh-CN
@@ -110,6 +110,18 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 待播为空时，在全曲模式按播放只会显示提示，不会打断 BGM。从歌曲列表直接双击歌曲则会自动回到 **单次播放**。在“歌单外观”中开启“在 OBS 显示待播列表”后，可选择“只显示下一首”或最多显示 2、3、5、10 首；一首会显示为 **Next On**，多首会显示为 **Reserve**。正常关闭软件后，已唱记录不会带到下一次直播；若软件异常中断，则可从恢复快照恢复本次直播的待播与已唱进度。
 
+<a id="bgm-chat-topic"></a>
+### 播放 BGM 时显示聊天主题
+
+点击 BGM 播放器右上方、列表按钮旁的「聊天主题」，勾选「播放 BGM 时显示聊天主题」。填写标题（例如「闲聊中」），并按需填写可选话题；标题留空时使用默认文字。修改即时生效，并随项目保存。
+
+聊天文字只在 **BGM 正在播放**时替换 OBS 歌单主题的当前歌曲显示区。BGM 暂停或停止时不显示；播放伴奏或进行无伴奏演出时，仍优先显示歌名。设置不会修改歌曲名称、待播顺序或已唱记录，不需要时取消勾选即可。
+
+<figure class="manual-figure manual-figure--compact">
+  <a href="{{ '/assets/images/bgm-chat-topic.png' | relative_url }}"><img src="{{ '/assets/images/bgm-chat-topic.png' | relative_url }}" alt="BGM 聊天主题设置；图中的显示开关尚未勾选（繁体中文界面）。" loading="lazy" decoding="async"></a>
+  <figcaption>BGM 聊天主题设置；图中的显示开关尚未勾选（繁体中文界面）。</figcaption>
+</figure>
+
 <a id="lyrics"></a>
 ## 03 · 歌词功能
 
@@ -136,6 +148,18 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 > **公开显示歌词前：** 搜索结果与导入功能不等于歌词授权。请确认可以在直播或视频中公开使用该份歌词；伴奏的使用许可也不应直接推定包含歌词文字的公开显示。
 
 需要向观众显示歌词时，请在“歌词”页将“拖放至 OBS”拖入 OBS；若无法拖入，可单击同一个按钮复制 Browser Source 路径，再加入 OBS。
+
+<a id="lyrics-layout-editor"></a>
+### 在预览中移动与缩放歌词区块
+
+从 **2.1.3.2** 起，Basic Lyrics、Classic Karaoke 与 Vertical Verse 都能编辑布局。在「直播操作 → 歌词」选择样式，点击预览上方的「编辑版面配置」。拖动区块外框内部可移动位置，拖动角落控制点可等比例缩放；画布保持 **1920 × 1080（16:9）**。
+
+使用同一份输出的 OBS 歌词来源会在**拖动过程中实时更新**，不必等松开鼠标，也无需重新添加来源。靠近中线时会提供对齐辅助。再次点击按钮或离开页面即可退出编辑，保留调整后的位置。旁边的重置图标可恢复布局；请保存项目以保留设置。方格代表透明，不会输出到 OBS，也不会改变独立歌词窗口的位置。
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}" alt="2.1.3.2 歌词区块编辑画面（繁体中文界面）。" loading="lazy" decoding="async"></a>
+  <figcaption>2.1.3.2 歌词区块编辑画面（繁体中文界面）。</figcaption>
+</figure>
 
 <a id="obs-and-themes"></a>
 ## 04 · 歌单外观与主题
@@ -168,7 +192,19 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 
 还可设置是否在 OBS 显示待播，并选择只显示下一首或最多显示 2、3、5、10 首。启用 OBS WebSocket 后，才会出现 Set List 时间戳选项；时间不会显示在 Reserve／Next On 前。
 
-预览背景可选透明、深色、浅色、自定义颜色或图片；图片支持符合、填满、拉伸。“调整预览”只改变软件内检查画面的大小与位置，不会改变 OBS 输出。不支持的控制项会直接隐藏，而不是以锁定状态保留。Default 提供最多文字与版面设置；旧版 Transparent Black／White 保留演唱与已唱文字设置；v2、Signal Line 与 Stage Caption 可调整各自支持的颜色和背景透明度。
+预览背景可选透明、深色、浅色、自定义颜色或图片；图片支持符合、填满、拉伸。背景只用于软件内检查，不会输出到 OBS；“编辑版面配置”调整的位置与大小则会同步到 OBS。不支持的控制项会直接隐藏，而不是以锁定状态保留。Default 提供最多文字与版面设置；旧版 Transparent Black／White 保留演唱与已唱文字设置；v2、Signal Line 与 Stage Caption 可调整各自支持的颜色和背景透明度。
+
+<a id="playlist-layout-editor"></a>
+### 在预览中移动与缩放歌单
+
+在「歌单外观」选好主题，点击预览上方的「编辑版面配置」。拖动主题外框内部可移动位置，拖动角落控制点可等比例缩放；画布固定为 **1920 × 1080（16:9）**。使用同一份输出的 OBS 来源会在**拖动过程中实时同步**，方便边操作边确认直播画面。
+
+靠近中线时有对齐辅助。再次点击按钮或离开页面会退出编辑并保留位置，旁边的重置图标可恢复布局。请保存项目以保留设置。固定设计主题也能整体移动与缩放，内部字体、颜色和文字编排仍依主题支持的选项调整。
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/playlist-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/playlist-layout-editor-2132.png' | relative_url }}" alt="2.1.3.2 歌单布局编辑画面（繁体中文界面）。" loading="lazy" decoding="async"></a>
+  <figcaption>2.1.3.2 歌单布局编辑画面（繁体中文界面）。</figcaption>
+</figure>
 
 <a id="obs-websocket"></a>
 ## 05 · 直播时间戳获取

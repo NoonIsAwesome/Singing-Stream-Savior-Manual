@@ -93,6 +93,24 @@ translation_key: lyrics
   <figcaption>實際播放伴奏時，即時預覽會依進度醒目顯示目前句；這裡看到的字型、顏色與版面也會套用到 OBS 歌詞畫面。</figcaption>
 </figure>
 
+<a id="lyrics-layout-editor"></a>
+### 在預覽中移動與縮放歌詞區塊
+
+從 **2.1.3.2** 起，Basic Lyrics、Classic Karaoke 與 Vertical Verse 都能直接在歌詞頁的預覽中調整位置與大小。
+
+1. 在「直播操作 → 歌詞」選擇歌詞樣式，按預覽右上方的「編輯版面配置」。
+2. 拖曳歌詞區塊的外框內部來移動位置；拖曳角落的縮放控制點，等比例放大或縮小。調整的是歌詞區塊，畫布維持 `1920 × 1080`、`16:9`。
+3. 已加入 OBS 的同一份歌詞來源會在拖曳過程中即時更新，不必等滑鼠放開，也不用重新拖入 OBS。
+
+拖近水平或垂直中線時會提供對齊輔助。完成後再按一次「編輯版面配置」即可退出；切換到其他頁面也會退出編輯，保留調好的位置。旁邊的重設圖示可恢復版面配置；請儲存專案以保留調整。
+
+透明方格代表透明區域，不會輸出到 OBS。此處調整的是 OBS 歌詞版面，不是獨立「歌詞視窗」的位置。
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}" alt="Classic Karaoke 的虛線框包住歌詞區塊；可在固定 16:9 畫布內移動及等比例縮放，並即時同步 OBS。" loading="lazy" decoding="async"></a>
+  <figcaption>Classic Karaoke 的虛線框包住歌詞區塊；可在固定 16:9 畫布內移動及等比例縮放，並即時同步 OBS。</figcaption>
+</figure>
+
 ## 日文讀音
 
 讀音選項包括：
