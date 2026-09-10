@@ -1,0 +1,53 @@
+release:
+  version: "2.1.3.2"
+  date: "2026-09-11"
+  latest: true
+  type:
+    en: "Karaoke, preview, and playback improvements"
+    zh-TW: "卡拉 OK、預覽與播放改善"
+    zh-CN: "卡拉 OK、预览与播放改善"
+    ja: "カラオケ、プレビュー、再生の改善"
+    ko: "노래방, 미리 보기 및 재생 개선"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.3.2"
+  summary:
+    en: "Fixes the issue where BGM sometimes fails to resume automatically after accompaniment ends."
+    zh-TW: "修正伴奏結束後，BGM 有時無法自動恢復播放的問題。"
+    zh-CN: "修复伴奏结束后，BGM 有时无法自动恢复播放的问题。"
+    ja: "伴奏終了後に BGM が自動再開されないことがある問題を修正しました。"
+    ko: "반주가 끝난 뒤 BGM이 자동으로 다시 재생되지 않는 문제를 수정했습니다."
+  items:
+    en:
+      - "Adds Classic Karaoke with per-character color fill and Vertical Verse with vertical animated lyrics, supporting font and text color adjustments."
+      - "Lyrics and playlist themes can be dragged and proportionally resized in the preview, with live OBS synchronization."
+      - "Improves editing bounds, fixes preview canvases at 16:9, and reduces unnecessary layout calculations."
+      - "Updates the launcher to 1.2.0.5, reuses unchanged files, and reduces downloads when differential packages are available."
+      - "Improves YouTube fallback playback and video range previews."
+      - "I ate delicious mala chicken rice today, and I am very happy!"
+    zh-TW:
+      - "新增 Classic Karaoke 逐字填色與 Vertical Verse 縱向動態歌詞，支援字型及文字顏色調整。"
+      - "歌詞與歌單主題可在預覽中拖曳、等比例縮放，並即時同步 OBS。"
+      - "改善編輯外框，預覽畫布固定為 16:9，減少不必要的版面計算。"
+      - "啟動器更新至 1.2.0.5，可重用未變更的檔案，並在有差異套件時減少下載量。"
+      - "改善 YouTube 備援播放與影片範圍預覽。"
+      - "今天吃了很好吃的椒麻雞飯，我很快樂！"
+    zh-CN:
+      - "新增 Classic Karaoke 逐字填色与 Vertical Verse 纵向动态歌词，支持字体及文字颜色调整。"
+      - "歌词与歌单主题可在预览中拖动、等比例缩放，并实时同步 OBS。"
+      - "改善编辑边框，预览画布固定为 16:9，减少不必要的布局计算。"
+      - "启动器更新至 1.2.0.5，可重用未变化的文件，并在有差异包时减少下载量。"
+      - "改善 YouTube 备用播放与视频范围预览。"
+      - "今天吃了很好吃的椒麻鸡饭，我很快乐！"
+    ja:
+      - "Classic Karaoke の文字ごとの色塗りと、縦方向に動く歌詞の Vertical Verse を追加し、フォントと文字色を調整できるようにしました。"
+      - "プレビューで歌詞や曲リストのテーマを移動・等比拡大縮小でき、OBS に即時反映されます。"
+      - "編集枠を改善し、プレビューを 16:9 に固定して、不要なレイアウト計算を減らしました。"
+      - "ランチャーを 1.2.0.5 に更新し、変更のないファイルを再利用して、差分パッケージがある場合のダウンロード量を減らします。"
+      - "YouTube のフォールバック再生と動画の範囲プレビューを改善しました。"
+      - "今日はおいしい椒麻鶏飯を食べて、とても幸せです！"
+    ko:
+      - "글자마다 색을 채우는 Classic Karaoke와 세로 방향으로 움직이는 가사 스타일 Vertical Verse를 추가하고 글꼴과 글자 색상을 조정할 수 있게 했습니다."
+      - "미리 보기에서 가사와 곡 목록 테마를 이동하고 비율을 유지해 크기를 조절하면 OBS에 바로 반영됩니다."
+      - "편집 테두리를 개선하고 미리 보기 화면을 16:9로 유지하며 불필요한 레이아웃 계산을 줄였습니다."
+      - "런처를 1.2.0.5로 업데이트하고 변경되지 않은 파일을 재사용하며 차이 패키지가 있으면 다운로드 용량을 줄입니다."
+      - "YouTube 대체 재생과 영상 구간 미리 보기를 개선했습니다."
+      - "오늘 맛있는 초마 치킨 덮밥을 먹어서 정말 행복합니다!"
