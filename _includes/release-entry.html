@@ -22,8 +22,9 @@
     </header>
     <p class="release-entry__summary">{{ localized_summary }}</p>
     <ul class="release-entry__items">
+      {% assign localized_emphasis = release.emphasizedItems[content_lang] | default: release.emphasizedItems.en %}
       {% for item in localized_items %}
-        <li>{{ item }}</li>
+        <li>{% if localized_emphasis contains item %}<strong>{{ item }}</strong>{% else %}{{ item }}{% endif %}</li>
       {% endfor %}
     </ul>
     <a class="release-entry__link" href="{{ release.release_url }}" rel="noopener">
