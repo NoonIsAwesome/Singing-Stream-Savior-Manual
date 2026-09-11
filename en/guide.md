@@ -141,6 +141,8 @@ The text replaces the current-song display in the OBS playlist theme **only whil
   <figcaption>BGM chat-topic settings; the display option is unchecked in this Traditional Chinese screenshot.</figcaption>
 </figure>
 
+{% include feature-guide.html section="download" %}
+
 <a id="lyrics"></a>
 ## 03 · Lyrics
 
@@ -170,6 +172,8 @@ The numbers of lines shown before and after the current line can be adjusted sep
 > **Before showing lyrics publicly:** Search results and import tools do not grant permission to use lyrics. Confirm that you may show the lyrics in a stream or video; permission to use an accompaniment does not by itself include public display of the lyric text.
 
 To show lyrics to viewers, open the **Lyrics** tab and drag **Drag to OBS** into OBS. If dragging is unavailable, click the same button to copy the Browser Source path and add it to OBS.
+
+{% include feature-guide.html section="lyrics" %}
 
 <a id="lyrics-layout-editor"></a>
 ### Move and resize lyric blocks in the preview
@@ -220,6 +224,8 @@ The theme canvas does not restrict how the Browser Source must be used. In OBS, 
 You can also enable Reserve, choose **Next song only** or a 2-, 3-, 5-, or 10-song display limit, and—when OBS WebSocket is enabled—show timestamps before sung songs in supported Set Lists. Timestamps are not added to Reserve or Next On.
 
 Preview backgrounds can be transparent, dark, light, a custom color, or an image with fit/fill/stretch. Only these backgrounds stay inside the app; positions and sizes changed with Edit layout are synchronized to OBS. Unsupported controls are hidden rather than merely disabled. Default exposes the broadest typography and layout controls; legacy Transparent Black/White retain Current and History typography controls; both v2 themes, Signal Line, and Stage Caption expose their supported color/opacity controls.
+
+{% include feature-guide.html section="preview" %}
 
 <a id="playlist-layout-editor"></a>
 ### Move and resize the playlist in the preview
@@ -308,3 +314,5 @@ If the app reports that no Qt platform plug-in could be initialized, extract a f
 If lyrics cannot be found, shorten the search terms, check title/artist spelling, prefer synchronized results close to the track duration, or import LRC/SRT/VTT/plain text. If an OBS overlay does not update, reload the app preview and refresh the Browser Source in OBS.
 
 The Recent Projects list automatically removes entries whose `.bgmsproj` file has been moved or deleted.
+
+{% include feature-guide.html section="health" %}

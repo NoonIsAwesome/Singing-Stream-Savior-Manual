@@ -76,6 +76,8 @@ translation_key: library-and-playback
 
 > **音源與播放用途：** 加入歌曲庫只代表建立播放項目，不代表取得音樂授權。請確認素材來源及其使用條件；個人聆聽、音訊分離、直播、錄影留存與分享輸出檔，可能需要不同的權利範圍。YouTube 來源另受平台規範限制。
 
+{% include feature-guide.html section="download" %}
+
 ## 顯示歌名與來源
 
 「顯示歌名」是直播畫面、待播與已唱清單優先使用的名稱。若未填寫，程式會以檔名或 YouTube 標題作為備援，不會顯示空白歌曲。

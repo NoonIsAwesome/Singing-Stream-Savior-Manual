@@ -52,6 +52,8 @@ translation_key: settings-and-troubleshooting
 
 包含 OBS WebSocket 功能說明、OBS 端啟用步驟、主機、連接埠、密碼及「連線」按鈕。這項設定主要用於直播時間戳，並非使用歌單或歌詞 Overlay 的必要條件。OBS 密碼屬於本機連線憑證，請勿公開分享包含密碼的設定畫面。
 
+{% include feature-guide.html section="health" %}
+
 ## 專案與媒體備份 {#project-backup}
 
 `.bgmsproj` 保存專案資料，但本機音訊原檔仍可能位於其他資料夾。要搬到另一台電腦前，建議：

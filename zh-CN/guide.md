@@ -122,6 +122,8 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
   <figcaption>BGM 聊天主题设置；图中的显示开关尚未勾选（繁体中文界面）。</figcaption>
 </figure>
 
+{% include feature-guide.html section="download" %}
+
 <a id="lyrics"></a>
 ## 03 · 歌词功能
 
@@ -148,6 +150,8 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 > **公开显示歌词前：** 搜索结果与导入功能不等于歌词授权。请确认可以在直播或视频中公开使用该份歌词；伴奏的使用许可也不应直接推定包含歌词文字的公开显示。
 
 需要向观众显示歌词时，请在“歌词”页将“拖放至 OBS”拖入 OBS；若无法拖入，可单击同一个按钮复制 Browser Source 路径，再加入 OBS。
+
+{% include feature-guide.html section="lyrics" %}
 
 <a id="lyrics-layout-editor"></a>
 ### 在预览中移动与缩放歌词区块
@@ -193,6 +197,8 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 还可设置是否在 OBS 显示待播，并选择只显示下一首或最多显示 2、3、5、10 首。启用 OBS WebSocket 后，才会出现 Set List 时间戳选项；时间不会显示在 Reserve／Next On 前。
 
 预览背景可选透明、深色、浅色、自定义颜色或图片；图片支持符合、填满、拉伸。背景只用于软件内检查，不会输出到 OBS；“编辑版面配置”调整的位置与大小则会同步到 OBS。不支持的控制项会直接隐藏，而不是以锁定状态保留。Default 提供最多文字与版面设置；旧版 Transparent Black／White 保留演唱与已唱文字设置；v2、Signal Line 与 Stage Caption 可调整各自支持的颜色和背景透明度。
+
+{% include feature-guide.html section="preview" %}
 
 <a id="playlist-layout-editor"></a>
 ### 在预览中移动与缩放歌单
@@ -279,3 +285,5 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 找不到歌词时可缩短关键词、检查歌名/歌手、选择同步且长度接近的结果，或导入 LRC/SRT/VTT/纯文本。OBS 画面未更新时，请重新载入软件预览并刷新 OBS Browser Source。
 
 若最近项目中的 `.bgmsproj` 已被移动或删除，该失效项目会自动从列表移除。
+
+{% include feature-guide.html section="health" %}

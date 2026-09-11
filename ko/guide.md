@@ -122,6 +122,8 @@ OBS 재생목록 테마의 현재 곡 영역이 대화 문구로 바뀌는 것�
   <figcaption>BGM 대화 주제 설정. 사진에서는 표시 옵션이 꺼져 있습니다(번체 중국어 UI).</figcaption>
 </figure>
 
+{% include feature-guide.html section="download" %}
+
 <a id="lyrics"></a>
 ## 03 · 가사 기능
 
@@ -148,6 +150,8 @@ OBS 재생목록 테마의 현재 곡 영역이 대화 문구로 바뀌는 것�
 > **가사를 공개하기 전에:** 검색 결과와 가져오기 기능은 가사 이용 허락을 제공하지 않습니다. 방송이나 영상에서 해당 가사를 공개할 수 있는지 확인하세요. 반주 이용 허락에 가사 텍스트 공개까지 포함된다고 단정할 수 없습니다.
 
 시청자에게 가사를 표시하려면 **가사** 탭의 **OBS로 드래그**를 OBS에 놓으세요. 드래그할 수 없으면 같은 버튼을 클릭해 Browser Source 경로를 복사한 뒤 OBS에 추가하세요.
+
+{% include feature-guide.html section="lyrics" %}
 
 <a id="lyrics-layout-editor"></a>
 ### 미리보기에서 가사 블록 이동 및 크기 조절
@@ -193,6 +197,8 @@ Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니�
 OBS 대기 목록 표시 여부와 다음 한 곡만 또는 2, 3, 5, 10곡 표시 한도도 정할 수 있습니다. OBS WebSocket을 켠 경우에만 Set List 타임스탬프 옵션이 나타나며, Reserve/Next On에는 시간이 붙지 않습니다.
 
 미리보기 배경은 투명, 어두운색, 밝은색, 사용자 색상 또는 이미지 중에서 선택하며 이미지는 맞춤/채우기/늘이기를 지원합니다. 배경은 앱 안에서 확인할 때만 사용되며 OBS로 출력되지 않습니다. 반면 레이아웃 편집으로 바꾼 위치와 크기는 OBS에 동기화됩니다. 지원하지 않는 설정은 잠긴 채 남지 않고 숨겨집니다. Default는 가장 많은 글자와 배치 설정을 제공하고, 기존 Transparent Black/White는 현재 곡과 부른 곡의 글자 설정을 유지합니다. v2, Signal Line, Stage Caption에서는 지원하는 색상과 배경 투명도를 조절할 수 있습니다.
+
+{% include feature-guide.html section="preview" %}
 
 <a id="playlist-layout-editor"></a>
 ### 미리보기에서 재생목록 위치와 크기 조절
@@ -279,3 +285,5 @@ Qt platform plugin 오류가 나오면 ZIP을 다시 내려받아 완전히 압�
 가사를 찾지 못하면 검색어를 줄이고 곡명/가수 표기를 확인하거나 반주 길이에 가까운 동기화 결과를 선택하세요. LRC/SRT/VTT/텍스트를 직접 가져올 수도 있습니다.
 
 최근 프로젝트의 `.bgmsproj` 파일이 이동되거나 삭제된 경우 해당 항목은 목록에서 자동으로 제거됩니다.
+
+{% include feature-guide.html section="health" %}

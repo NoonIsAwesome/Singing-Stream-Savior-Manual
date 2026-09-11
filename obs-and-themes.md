@@ -43,6 +43,8 @@ translation_key: obs-and-themes
 
 其他主題可能支援封面、Reserve、Next On、固定版面、動畫或直向設計。右側「主題指南」會說明目前主題的特性及可調整項目。
 
+{% include feature-guide.html section="preview" %}
+
 ### 切換與預覽主題
 
 切換主題只會改變顯示方式，不會修改歌曲、待播順序或已唱紀錄。完整模式最適合比較主題，因為主題列、設定、預覽及指南可以同時顯示。

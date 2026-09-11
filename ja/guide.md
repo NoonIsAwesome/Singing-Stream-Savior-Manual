@@ -122,6 +122,8 @@ OBS のプレイリストテーマの現在曲表示が雑談の文字に変わ�
   <figcaption>BGM 雑談テーマ設定。画像では表示が無効になっています（繁体字中国語 UI）。</figcaption>
 </figure>
 
+{% include feature-guide.html section="download" %}
+
 <a id="lyrics"></a>
 ## 03 · 歌詞機能
 
@@ -148,6 +150,8 @@ OBS のプレイリストテーマの現在曲表示が雑談の文字に変わ�
 > **歌詞を公開表示する前に：** 検索結果や読み込み機能は歌詞の利用許諾を与えるものではありません。配信や動画でその歌詞を公開できるか確認してください。伴奏の利用許諾に歌詞テキストの公開表示まで含まれるとは限りません。
 
 視聴者に歌詞を表示する場合は、「歌詞」タブの「OBSへドラッグ」を OBS へドロップします。ドラッグできない場合は、同じボタンをクリックして Browser Source のパスをコピーし、OBS に追加してください。
+
+{% include feature-guide.html section="lyrics" %}
 
 <a id="lyrics-layout-editor"></a>
 ### プレビューで歌詞ブロックを移動・拡大縮小する
@@ -193,6 +197,8 @@ Card は縦型ジャケットカード、CD は円盤風の表示になります
 OBS に予約曲を表示するか、「次の1曲のみ」または 2、3、5、10 曲の表示数も設定できます。OBS WebSocket を有効にした場合のみ Set List のタイムスタンプ設定が表示され、Reserve／Next On には時刻を付けません。
 
 プレビュー背景は透明、暗色、明色、任意色、画像から選べ、画像はフィット／フィル／ストレッチに対応します。背景はアプリ内の確認用で、OBS には出力されません。一方、レイアウト編集による位置と大きさの変更は OBS に同期されます。対応しない設定項目は無効表示ではなく非表示になります。Default は最も多くの文字・配置設定に対応し、旧 Transparent Black／White は歌唱中と履歴の文字設定を維持します。v2、Signal Line、Stage Caption では対応する色と透明度を調整できます。
+
+{% include feature-guide.html section="preview" %}
 
 <a id="playlist-layout-editor"></a>
 ### プレビューでプレイリストの位置と大きさを変更する
@@ -279,3 +285,5 @@ Qt platform plugin エラーが出る場合は ZIP を再ダウンロードし�
 歌詞が見つからない場合は検索語を短くし、曲名・歌手名を確認するか、音源時間に近い同期歌詞を選びます。LRC/SRT/VTT/テキストの手動読み込みも可能です。
 
 最近使用したプロジェクトの `.bgmsproj` が移動または削除されている場合、その項目は一覧から自動的に除外されます。
+
+{% include feature-guide.html section="health" %}

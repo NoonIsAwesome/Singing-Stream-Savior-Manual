@@ -1,0 +1,15 @@
+{% assign feature_language = page.lang | default: 'zh-TW' %}
+{% assign feature = site.data.feature_2141[feature_language][include.section] %}
+<section class="manual-feature-update" id="feature-{{ include.section }}">
+  <h3>{{ feature.title | escape }}</h3>
+  <p>{{ feature.intro | escape }}</p>
+  {% if feature.items %}<ul>{% for item in feature.items %}<li>{{ item | escape }}</li>{% endfor %}</ul>{% endif %}
+  {% if feature.steps %}<ol>{% for step in feature.steps %}<li>{{ step | escape }}</li>{% endfor %}</ol>{% endif %}
+  {% if feature.closing %}<p>{{ feature.closing | escape }}</p>{% endif %}
+  {% if include.section == 'download' %}
+  <figure class="manual-figure">
+    <a href="{{ '/assets/images/youtube-download-2141.png' | relative_url }}"><img src="{{ '/assets/images/youtube-download-2141.png' | relative_url }}" alt="{{ feature.caption | escape }}" loading="lazy" decoding="async"></a>
+    <figcaption>{{ feature.caption | escape }}</figcaption>
+  </figure>
+  {% endif %}
+</section>
