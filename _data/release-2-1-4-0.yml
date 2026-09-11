@@ -1,0 +1,53 @@
+release:
+  version: "2.1.4.0"
+  date: "2026-09-11"
+  latest: true
+  type:
+    en: "Animated lyrics and playlist themes"
+    zh-TW: "動態歌詞與歌單主題"
+    zh-CN: "动态歌词与歌单主题"
+    ja: "動く歌詞と曲リストのテーマ"
+    ko: "움직이는 가사 및 곡 목록 테마"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.4.0"
+  summary:
+    en: "Adds seven animated lyrics styles: Kinetic Type, Prism Cut, Lumen Drift, Ink Cascade, Silk Script, Verse Stack, and Glyph Motion, with different text compositions, entrances, and transitions."
+    zh-TW: "新增七款動態歌詞樣式：Kinetic Type、Prism Cut、Lumen Drift、Ink Cascade、Silk Script、Verse Stack、Glyph Motion，提供不同的文字編排、進場與轉場效果。"
+    zh-CN: "新增七款动态歌词样式：Kinetic Type、Prism Cut、Lumen Drift、Ink Cascade、Silk Script、Verse Stack、Glyph Motion，提供不同的文字编排、入场与转场效果。"
+    ja: "Kinetic Type、Prism Cut、Lumen Drift、Ink Cascade、Silk Script、Verse Stack、Glyph Motion の7種類の動く歌詞スタイルを追加し、文字の配置や登場・切り替えの演出を充実させました。"
+    ko: "Kinetic Type, Prism Cut, Lumen Drift, Ink Cascade, Silk Script, Verse Stack, Glyph Motion 등 7가지 움직이는 가사 스타일을 추가하여 다양한 글자 배치, 등장 및 전환 효과를 제공합니다."
+  items:
+    en:
+      - "Improves lyrics synchronization and multilingual display: fixes occasional horizontal lyrics appearing in Vertical Verse's single-area layout, and limits romanization to Basic Lyrics."
+      - "Adds animation previews directly inside playlist theme and lyrics cards, and improves previews of Basic Lyrics scrolling and Classic Karaoke color fill."
+      - "Improves layout editing: lyrics can be moved and resized beyond canvas edges, resized from all four corners, and identified more clearly with playlist and animated lyrics area labels."
+      - "Adds five playlist themes: Signal Veil, Signal Tide, Cue Line, Margin Set, and Oblique Plate. Both Signal themes use actual playback audio to drive waveforms and light points. Removes some older themes, retaining more versatile ones. Quiet Ledger now combines left and right layouts in one theme."
+      - "Refines existing themes: removes the selected extra themes and fixes unnecessary scrolling of short titles in Transparent v2, backgrounds that fail to extend with custom layouts in Transparent, and default placement and dragging issues in some themes."
+      - "Other display fixes and asset improvements: fixes the blurry and partially clipped accompaniment playback button."
+    zh-TW:
+      - "改善歌詞同步與多語顯示：修正 Vertical Verse 單區呈現偶爾混入橫向歌詞的問題，羅馬拼音限定於 Basic Lyrics。"
+      - "卡片直接預覽效果：歌單主題與動態歌詞支援卡片內動畫預覽，並改善 Basic Lyrics 捲動與 Classic Karaoke 填色效果的展示。"
+      - "改善版面配置操作：歌詞區域可拖曳、縮放至畫布邊緣之外，支援四角縮放，並改善歌單與動態歌詞區域的標示。"
+      - "新增五款歌單主題：Signal Veil、Signal Tide、Cue Line、Margin Set、Oblique Plate。兩款 Signal 主題使用實際播放音訊驅動聲紋與光點；移除部分舊款主題，只保留較通用主題。完善主題自訂：Quiet Ledger 合併左右配置選項。"
+      - "精簡與修正既有主題：移除指定的多餘主題，修正 Transparent v2 短歌名誤觸跑馬燈、Transparent 自訂版面底圖未延伸，以及部分主題預設位置與拖曳異常。"
+      - "其他顯示修正與素材最佳化：改善伴奏播放按鈕模糊、裁切問題。"
+    zh-CN:
+      - "改善歌词同步与多语言显示：修复 Vertical Verse 单区域显示偶尔混入横向歌词的问题，罗马拼音仅限 Basic Lyrics 使用。"
+      - "卡片直接预览效果：歌单主题与动态歌词支持卡片内动画预览，并改善 Basic Lyrics 滚动与 Classic Karaoke 填色效果的展示。"
+      - "改善布局操作：歌词区域可拖动、缩放至画布边缘之外，支持四角缩放，并改善歌单与动态歌词区域的标识。"
+      - "新增五款歌单主题：Signal Veil、Signal Tide、Cue Line、Margin Set、Oblique Plate。两款 Signal 主题使用实际播放音频驱动声纹与光点；移除部分旧款主题，仅保留较通用的主题。完善主题自定义：Quiet Ledger 合并左右布局选项。"
+      - "精简与修复现有主题：移除指定的多余主题，修复 Transparent v2 短歌名误触跑马灯、Transparent 自定义布局底图未延伸，以及部分主题默认位置与拖动异常。"
+      - "其他显示修复与素材优化：改善伴奏播放按钮模糊、裁切问题。"
+    ja:
+      - "歌詞の同期と多言語表示を改善しました。Vertical Verse の単一エリア表示に横書きの歌詞が混在することがある問題を修正し、ローマ字表示は Basic Lyrics のみに限定しました。"
+      - "曲リストのテーマと動く歌詞をカード内でアニメーションプレビューできるようにし、Basic Lyrics のスクロールと Classic Karaoke の色塗りプレビューを改善しました。"
+      - "レイアウト編集を改善しました。歌詞エリアをキャンバスの外まで移動・拡大縮小でき、四隅からサイズを変更できます。曲リストと動く歌詞エリアのラベルも改善しました。"
+      - "Signal Veil、Signal Tide、Cue Line、Margin Set、Oblique Plate の5種類の曲リストテーマを追加しました。2つの Signal テーマは実際の再生音声に応じて波形と光点が動きます。一部の旧テーマを削除し、汎用性の高いテーマを残しました。Quiet Ledger の左右配置を1つのテーマ内の設定に統合しました。"
+      - "既存テーマを整理・修正しました。指定された余分なテーマを削除し、Transparent v2 で短い曲名が不要にスクロールする問題、Transparent のカスタム配置で背景が伸びない問題、一部テーマの初期位置やドラッグの不具合を修正しました。"
+      - "その他の表示修正と素材の改善：伴奏の再生ボタンがぼやけたり、一部が切れたりする問題を改善しました。"
+    ko:
+      - "가사 동기화와 다국어 표시를 개선했습니다. Vertical Verse의 단일 영역에 가로 가사가 간헐적으로 섞여 나타나는 문제를 수정하고, 로마자 표시는 Basic Lyrics에서만 지원하도록 했습니다."
+      - "곡 목록 테마와 움직이는 가사의 애니메이션을 카드 안에서 바로 미리 볼 수 있으며, Basic Lyrics의 스크롤 및 Classic Karaoke의 색 채우기 미리 보기를 개선했습니다."
+      - "레이아웃 편집을 개선했습니다. 가사 영역을 캔버스 가장자리 밖으로 이동하거나 크기를 조절할 수 있고, 네 모서리에서 크기를 변경할 수 있습니다. 곡 목록 및 움직이는 가사 영역의 표시도 개선했습니다."
+      - "Signal Veil, Signal Tide, Cue Line, Margin Set, Oblique Plate 등 5가지 곡 목록 테마를 추가했습니다. 두 Signal 테마는 실제 재생 오디오에 따라 파형과 빛점이 움직입니다. 일부 이전 테마를 제거하고 활용도가 높은 테마를 남겼습니다. Quiet Ledger의 왼쪽 및 오른쪽 배치를 하나의 테마 설정으로 통합했습니다."
+      - "기존 테마를 정리하고 수정했습니다. 지정된 불필요한 테마를 제거하고, Transparent v2의 짧은 곡명이 불필요하게 스크롤되는 문제, Transparent 사용자 지정 배치에서 배경이 늘어나지 않는 문제, 일부 테마의 기본 위치 및 드래그 오류를 수정했습니다."
+      - "기타 표시 수정 및 소재 개선: 반주 재생 버튼이 흐릿하거나 일부 잘려 보이는 문제를 개선했습니다."
