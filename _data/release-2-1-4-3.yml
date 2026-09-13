@@ -1,0 +1,75 @@
+﻿release:
+  version: "2.1.4.3"
+  date: "2026-09-14"
+  latest: true
+  type:
+    en: "Audio, video, lyrics, and performance improvements"
+    zh-TW: "音訊、影片、歌詞與效能改善"
+    zh-CN: "音频、视频、歌词与性能改善"
+    ja: "オーディオ、映像、歌詞、パフォーマンスの改善"
+    ko: "오디오, 영상, 가사 및 성능 개선"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.4.3"
+  summary:
+    en: "Fixes brief audio artifacts when switching effects, adds synchronized YouTube video, and improves lyrics and song library performance."
+    zh-TW: "修復效果切換時的短促異音，新增同步 YouTube 畫面，並改善歌詞顯示與歌單操作效能。"
+    zh-CN: "修复效果切换时的短促异音，新增同步 YouTube 画面，并改善歌词显示与歌单操作性能。"
+    ja: "エフェクト切り替え時の短い異音を修正し、YouTube 映像の同期表示、歌詞表示と曲リストの操作性を改善しました。"
+    ko: "효과 전환 시 짧은 이상음을 수정하고 YouTube 영상 동기화를 추가했으며 가사 표시와 곡 목록 성능을 개선했습니다."
+  items:
+    en:
+      - "I found a few small issues while testing my own singing livestream, and they are now fixed. No need to worry—these issues had little impact on livestreams."
+      - "Fixes brief bursts of earlier vocals or reverb that could occasionally occur when switching between chatting and singing effects."
+      - "Adds a “YouTube Video” window that follows accompaniment playback, pause, seeking, and speed changes."
+      - "Uses monochrome icon buttons for “Lyrics Window” and “YouTube Video” in Compact mode to save player space."
+      - "Improves Letter Spread transitions for smoother lyric changes and starts the letter spreading effect earlier."
+      - "Fixes a brief set list shake when songs are added to Set List in Oblique Stream."
+      - "Makes dragging lyrics smoother while reducing unnecessary processing."
+      - "Improves loading, searching, and scrolling performance for large song libraries to reduce stuttering."
+    zh-TW:
+      - "自己做歌回直播測試的時候發現一點小問題，目前已經修正。大家也不用擔心，因為那些小問題對直播並不太影響。"
+      - "修復聊天與唱歌效果切換時，偶爾出現極短先前人聲或殘響的問題。"
+      - "新增「YouTube 畫面」視窗，可跟隨伴奏的播放、暫停、跳轉與變速，同步顯示影片。"
+      - "精簡模式的「歌詞視窗」與「YouTube 畫面」採用單色圖示按鈕，節省播放器空間。"
+      - "改善 Letter Spread 的歌詞轉場，讓句子銜接更自然，並提早開始文字伸展效果。"
+      - "修復 Oblique Stream 在歌曲加入 Set List 時，歌單內容可能短暫抖動的問題。"
+      - "改善拖曳歌詞位置時的畫面更新，讓移動更平順，並減少不必要的處理負擔。"
+      - "改善大型歌單的載入、搜尋與捲動效能，減少操作時的卡頓。"
+    zh-CN:
+      - "自己做歌回直播测试的时候发现一点小问题，目前已经修正。大家也不用担心，因为那些小问题对直播并不太影响。"
+      - "修复聊天与唱歌效果切换时，偶尔出现极短的先前人声或混响的问题。"
+      - "新增“YouTube 画面”窗口，可跟随伴奏的播放、暂停、跳转与变速，同步显示视频。"
+      - "精简模式的“歌词窗口”与“YouTube 画面”采用单色图标按钮，节省播放器空间。"
+      - "改善 Letter Spread 的歌词转场，让句子衔接更自然，并提前开始文字伸展效果。"
+      - "修复 Oblique Stream 在歌曲加入 Set List 时，歌单内容可能短暂抖动的问题。"
+      - "改善拖动歌词位置时的画面更新，让移动更平顺，并减少不必要的处理负担。"
+      - "改善大型歌单的加载、搜索与滚动性能，减少操作时的卡顿。"
+    ja:
+      - "自分の歌配信でテストしていたときに小さな問題をいくつか見つけ、修正しました。配信への影響はわずかでしたので、ご心配なく。"
+      - "雑談用と歌唱用のエフェクトを切り替えた際、以前の声や残響がごく短く聞こえることがある問題を修正しました。"
+      - "伴奏の再生、一時停止、シーク、速度変更に同期して映像を表示する「YouTube 映像」ウィンドウを追加しました。"
+      - "コンパクトモードの「歌詞ウィンドウ」と「YouTube 映像」を単色アイコンボタンにして、プレーヤーのスペースを節約しました。"
+      - "Letter Spread の歌詞の切り替えを滑らかにし、文字が広がる演出の開始を早めました。"
+      - "Oblique Stream で曲が Set List に追加された際、曲リストが一瞬揺れることがある問題を修正しました。"
+      - "歌詞の位置をドラッグするときの画面更新を滑らかにし、不要な処理を減らしました。"
+      - "大きな曲リストの読み込み、検索、スクロールを高速化し、操作時の引っ掛かりを減らしました。"
+    ko:
+      - "직접 노래 방송을 테스트하다가 작은 문제 몇 가지를 발견해 수정했어요. 방송에 미치는 영향은 크지 않았으니 걱정하지 않으셔도 됩니다."
+      - "대화와 노래 효과를 전환할 때 이전 목소리나 잔향이 아주 짧게 들릴 수 있는 문제를 수정했습니다."
+      - "반주의 재생, 일시 정지, 탐색, 속도 변경에 맞춰 영상을 표시하는 “YouTube 영상” 창을 추가했습니다."
+      - "간소 모드의 “가사 창”과 “YouTube 영상”에 단색 아이콘 버튼을 적용해 플레이어 공간을 절약했습니다."
+      - "Letter Spread의 가사 전환을 더 자연스럽게 하고 글자가 펼쳐지는 효과를 더 일찍 시작하도록 개선했습니다."
+      - "Oblique Stream에서 곡이 Set List에 추가될 때 곡 목록이 잠깐 흔들릴 수 있는 문제를 수정했습니다."
+      - "가사 위치를 드래그할 때 화면 이동을 더 부드럽게 하고 불필요한 처리를 줄였습니다."
+      - "큰 곡 목록의 불러오기, 검색, 스크롤 성능을 개선해 조작 중 끊김을 줄였습니다."
+
+  emphasizedItems:
+    en:
+      - "I found a few small issues while testing my own singing livestream, and they are now fixed. No need to worry—these issues had little impact on livestreams."
+    zh-TW:
+      - "自己做歌回直播測試的時候發現一點小問題，目前已經修正。大家也不用擔心，因為那些小問題對直播並不太影響。"
+    zh-CN:
+      - "自己做歌回直播测试的时候发现一点小问题，目前已经修正。大家也不用担心，因为那些小问题对直播并不太影响。"
+    ja:
+      - "自分の歌配信でテストしていたときに小さな問題をいくつか見つけ、修正しました。配信への影響はわずかでしたので、ご心配なく。"
+    ko:
+      - "직접 노래 방송을 테스트하다가 작은 문제 몇 가지를 발견해 수정했어요. 방송에 미치는 영향은 크지 않았으니 걱정하지 않으셔도 됩니다."
