@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 User Manual
-description: English manual for Singing Stream Savior 2.1.4.1
+description: English manual for Singing Stream Savior 2.1.4.2
 lang: en
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 User Manual
 
-Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.4.1**.
+Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.4.2**.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
@@ -218,8 +218,8 @@ The theme canvas does not restrict how the Browser Source must be used. In OBS, 
 | --- | --- |
 | **Layout** | Theme color, background opacity, or optional project block positions when supported; restore the theme defaults at any time |
 | **Current** | Now Singing font, size, color, bold/italic/underline, alignment, and long-title marquee speed |
-| **History** | Set List font, size, color, numbering, bold/italic/underline, alignment, and list scroll speed |
-| **Reserve** | Separate Reserve/Next On font, size, color, numbering, style, and alignment |
+| **History** | Set List font, size, color, numbering style (Off, 1., 01, or ．), bold/italic/underline, alignment, and list scroll speed |
+| **Reserve** | Separate Reserve/Next On font, size, color, numbering style (Off, 1., 01, or ．), text style, and alignment |
 
 You can also enable Reserve, choose **Next song only** or a 2-, 3-, 5-, or 10-song display limit, and—when OBS WebSocket is enabled—show timestamps before sung songs in supported Set Lists. Timestamps are not added to Reserve or Next On.
 

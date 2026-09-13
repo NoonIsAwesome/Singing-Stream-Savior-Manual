@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 사용자 설명서
-description: Singing Stream Savior 2.1.4.1 한국어 설명서
+description: Singing Stream Savior 2.1.4.2 한국어 설명서
 lang: ko
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 사용자 설명서
 
-Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.1.4.1** 버전을 기준으로 합니다.
+Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.1.4.2** 버전을 기준으로 합니다.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 확대 미리보기를 열 수 있습니다.</figcaption></figure>
 
@@ -191,8 +191,8 @@ Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니�
 | --- | --- |
 | **레이아웃** | 지원하는 테마의 테마 색상, 배경 투명도 또는 프로젝트별 블록 위치를 조절하고 테마 기본값으로 복원 |
 | **재생 중** | Now Singing 글꼴, 크기, 색상, 굵게/기울임/밑줄, 정렬과 긴 제목의 흐르는 속도 |
-| **부른 곡** | Set List 글꼴, 크기, 색상, 번호, 글자 스타일, 정렬과 목록 스크롤 속도 |
-| **대기 목록** | Reserve/Next On 전용 글꼴, 크기, 색상, 번호, 글자 스타일과 정렬 |
+| **부른 곡** | Set List 글꼴, 크기, 색상, 번호 스타일(끄기, 1., 01, ．), 글자 스타일, 정렬과 목록 스크롤 속도 |
+| **대기 목록** | Reserve/Next On 전용 글꼴, 크기, 색상, 번호 스타일(끄기, 1., 01, ．), 글자 스타일과 정렬 |
 
 OBS 대기 목록 표시 여부와 다음 한 곡만 또는 2, 3, 5, 10곡 표시 한도도 정할 수 있습니다. OBS WebSocket을 켠 경우에만 Set List 타임스탬프 옵션이 나타나며, Reserve/Next On에는 시간이 붙지 않습니다.
 

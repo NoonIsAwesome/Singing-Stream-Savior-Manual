@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 ユーザーマニュアル
-description: Singing Stream Savior 2.1.4.1 日本語マニュアル
+description: Singing Stream Savior 2.1.4.2 日本語マニュアル
 lang: ja
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 ユーザーマニュアル
 
-Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.4.1** に対応しています。
+Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.4.2** に対応しています。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと拡大プレビューを開けます。</figcaption></figure>
 
@@ -191,8 +191,8 @@ Card は縦型ジャケットカード、CD は円盤風の表示になります
 | --- | --- |
 | **レイアウト** | 対応テーマのテーマ色、背景透明度、またはプロジェクト固有ブロック位置を調整し、テーマ既定値へ復元 |
 | **歌唱中** | Now Singing のフォント、サイズ、色、太字／斜体／下線、配置、長い曲名のマーキー速度 |
-| **履歴** | Set List のフォント、サイズ、色、番号、文字スタイル、配置、リストのスクロール速度 |
-| **予約** | Reserve／Next On 専用のフォント、サイズ、色、番号、文字スタイル、配置 |
+| **履歴** | Set List のフォント、サイズ、色、番号スタイル（オフ、1.、01、．）、文字スタイル、配置、リストのスクロール速度 |
+| **予約** | Reserve／Next On 専用のフォント、サイズ、色、番号スタイル（オフ、1.、01、．）、文字スタイル、配置 |
 
 OBS に予約曲を表示するか、「次の1曲のみ」または 2、3、5、10 曲の表示数も設定できます。OBS WebSocket を有効にした場合のみ Set List のタイムスタンプ設定が表示され、Reserve／Next On には時刻を付けません。
 

@@ -1,6 +1,6 @@
 ﻿---
 title: 歌回救星 2.1 使用说明
-description: Singing Stream Savior 2.1.4.1 简体中文使用说明
+description: Singing Stream Savior 2.1.4.2 简体中文使用说明
 lang: zh-CN
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # 歌回救星 2.1 使用说明
 
-歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.4.1**。
+歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.4.2**。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可放大预览。</figcaption></figure>
 
@@ -191,8 +191,8 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 | --- | --- |
 | **版面配置** | 依主题支持情况调整主题颜色、背景透明度或项目自定义区块位置，并可恢复主题默认值 |
 | **演唱** | Now Singing 的字体、大小、颜色、粗体／斜体／下划线、对齐和长歌名跑马灯速度 |
-| **已唱** | Set List 的字体、大小、颜色、编号、文字样式、对齐和列表滚动速度 |
-| **待播** | Reserve／Next On 独立的字体、大小、颜色、编号、文字样式与对齐 |
+| **已唱** | Set List 的字体、大小、颜色、编号样式（关闭、1.、01、．）、文字样式、对齐和列表滚动速度 |
+| **待播** | Reserve／Next On 独立的字体、大小、颜色、编号样式（关闭、1.、01、．）、文字样式与对齐 |
 
 还可设置是否在 OBS 显示待播，并选择只显示下一首或最多显示 2、3、5、10 首。启用 OBS WebSocket 后，才会出现 Set List 时间戳选项；时间不会显示在 Reserve／Next On 前。
 
