@@ -1,0 +1,28 @@
+release:
+  version: "2.1.5.1"
+  date: "2026-09-15"
+  latest: true
+  type:
+    en: "Lyrics timing hotfix"
+    zh-TW: "歌詞時間標記修正"
+    zh-CN: "歌词时间标记修正"
+    ja: "歌詞タイミングの修正"
+    ko: "가사 타이밍 수정"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.5.1"
+  summary:
+    en: "Fixes word timing getting stuck when a word passes the next original plain-LRC line timestamp."
+    zh-TW: "修正逐字標記跨過原有逐句時間時無法繼續的問題；下一句起點會依第一個字詞的實際標記時間更新。"
+    zh-CN: "修复逐字标记跨过原有逐句时间时无法继续的问题；下一句起点会根据第一个字词的实际标记时间更新。"
+    ja: "単語のタイミングが元のプレーン LRC の次の行時刻を越えると止まる問題を修正し、次の行の開始時刻を最初の単語の実際のマーク時刻に更新します。"
+    ko: "단어 표시 시간이 원래 일반 LRC의 다음 줄 타임스탬프를 넘어가면 멈추던 문제를 수정하고, 다음 줄 시작을 첫 단어의 실제 표시 시간으로 갱신합니다."
+  items:
+    en:
+      - "Fixes word timing getting stuck when a word passes the next original LRC line timestamp; the next line starts at its first actual word mark."
+    zh-TW:
+      - "修正逐字標記跨過原有逐句時間時無法繼續的問題；下一句起點會依第一個字詞的實際標記時間更新。"
+    zh-CN:
+      - "修复逐字标记跨过原有逐句时间时无法继续的问题；下一句起点会根据第一个字词的实际标记时间更新。"
+    ja:
+      - "単語のタイミングが元のプレーン LRC の次の行時刻を越えると止まる問題を修正し、次の行の開始時刻を最初の単語の実際のマーク時刻に更新します。"
+    ko:
+      - "단어 표시 시간이 원래 일반 LRC의 다음 줄 타임스탬프를 넘어가면 멈추던 문제를 수정하고, 다음 줄 시작을 첫 단어의 실제 표시 시간으로 갱신합니다."

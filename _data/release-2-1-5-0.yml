@@ -1,7 +1,7 @@
 release:
   version: "2.1.5.0"
   date: "2026-09-15"
-  latest: true
+  latest: false
   type:
     en: "Lyrics, guide vocal, and workspace improvements"
     zh-TW: "歌詞、導唱與工作區改善"
