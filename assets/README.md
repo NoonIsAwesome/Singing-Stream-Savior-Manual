@@ -29,7 +29,7 @@
 - `qt-platform-error.png`：Qt 外掛錯誤
 - `audio-routing.png`：2.1.0.0 進階直播音訊路由頁面上半部，包含 OBS 外掛／虛擬輸出入口、App Buffer 與路由圖上半部
 - `audio-health-check.png`：完整 App Buffer 健檢完成後的通過狀態、建議值與延遲示例
-- `audio-meter-horizontal.png`／`audio-meter-vertical.png`：五軌音量 Meter 的兩種方向
+- `audio-meter-horizontal.png`／`audio-meter-vertical.png`：含導唱監聽的六軌音量 Meter，Master 位於最後
 - `profile-horizontal-rack.png`／`profile-vertical-rack.png`：Profile 效果鏈的兩種 Rack 方向
 - `notification-area-menu.png`：未播放時的 Windows 系統工具右鍵選單；播放／進階模式會依狀態增加動作
 - `keyboard-shortcuts.png`：鍵盤快捷鍵設定頁與依模式分類的全域快捷鍵
@@ -57,3 +57,7 @@
 - 避免包含個人檔案路徑、OBS 密碼、私人歌單或未公開主題。
 - 檔名使用英文小寫及連字號，例如 `live-workspace-full.png`。
 - 每張圖片在 Markdown 中提供清楚的替代文字。
+
+## 2.1.5.0 歌詞與導唱介面
+
+`lyrics-editor-line-2150.png`、`lyrics-editor-word-2150.png` 展示逐句與字詞標記；`lyrics-layout-editor-2150.png` 展示動態歌詞版面拖曳；`uvr-guide-vocal-2150.png` 展示保留人聲選項。五語圖片皆由產品的隔離介面擷取產生，使用範例資料。完整／精簡／迷你工作區、歌詞頁與 Meter 的既有同名圖片亦同步更新。

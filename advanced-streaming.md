@@ -143,11 +143,11 @@ Profile 處理完成後，完整直播輸出還會依序經過 **Mix Bus Compres
 - 可直接選擇錄音資料夾或開啟目前資料夾，不必離開直播操作頁。
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>查看五條音訊路徑與系統負載</h2><p>進階直播模式可從「檢視」或系統工具右鍵選單開啟音量 Meter。它可以停駐在主視窗右側，也能獨立懸浮，並用單一切換按鈕改成橫向或直向顯示。</p></div>
-  <p>五軌分別是 <strong>BGM／伴奏</strong>、<strong>人聲（Profile 後、Mix 前）</strong>、<strong>直播輸出</strong>、<strong>BGM／伴奏監聽</strong>與<strong>人聲監聽</strong>。每軌顯示 Peak；直播輸出另顯示三秒短期 <strong>LUFS-S</strong>，方便同時觀察瞬間峰值與主觀響度趨勢。</p>
-  <p>每軌旋鈕沿用效果器的刻度樣式，範圍為 0–200%。直播路徑旋鈕調整路由階段的音量，監聽旋鈕只調整耳機平衡；這些控制不會直接改寫 Profile 內部參數。</p>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>查看六條音訊路徑與系統負載</h2><p>進階直播模式可從「檢視」或系統工具右鍵選單開啟音量 Meter。它可以停駐在主視窗右側，也能獨立懸浮，並用單一切換按鈕改成橫向或直向顯示。</p></div>
+  <p>六軌依序是 <strong>BGM／伴奏</strong>、<strong>人聲（Profile 後、Mix 前）</strong>、<strong>BGM／伴奏監聽</strong>、<strong>人聲監聽</strong>、<strong>導唱監聽</strong>與<strong>Master／直播輸出</strong>。每軌顯示 Peak；直播輸出另顯示三秒短期 <strong>LUFS-S</strong>。導唱只供演唱者監聽，不會送入 OBS 的直播混音。</p>
+  <p>每軌旋鈕沿用效果器的刻度樣式：導唱監聽為 0–100%，其餘音軌為 0–200%。直播路徑旋鈕調整路由階段的音量，監聽旋鈕只調整耳機平衡；這些控制不會直接改寫 Profile 內部參數。</p>
   <p>橫向 Meter 會在 BGM／伴奏與人聲持續失衡時，提示提高人聲或調低伴奏；它只提供建議，不會自動改變任何增益。安靜、換氣或歌曲間奏不會立刻被判斷成人聲過小。</p>
-  <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="五軌音量 Meter 的橫向電平顯示" caption="實際橫向畫面會同時顯示五軌 Peak 與 0–200% 控制；LUFS-S 和長時間平衡提示只在符合量測條件時出現。" %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="五軌音量 Meter 的直向電平顯示" caption="直向 Meter 使用相同五軌與控制，也能停駐在主視窗右側而不改變音訊路由。" %}</div>
+  <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="六軌音量 Meter 的橫向電平顯示" caption="橫向音量表可向下捲動，查看導唱監聽與最後的 Master／直播輸出。導唱音量為 0–100%，其餘控制為 0–200%。" %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="六軌音量 Meter 的直向電平顯示" caption="直向 Meter 使用相同六軌與控制，可停駐在主視窗右側或拆出獨立視窗；Master 位於最後。" %}</div>
   <div class="effect-reference"><details><summary><strong>響度提示何時會出現？</strong><span>只在有足夠伴奏與演唱資料時判斷</span></summary><div class="effect-reference__body"><p>軟體會先觀察一段持續的伴奏與人聲，再比較兩者的長時間平衡。歌曲剛開始、安靜段落、換氣、間奏、切換 Profile 或音訊裝置正在恢復時，都不會急著顯示建議。若人聲已接近過載，軟體也只會建議調低伴奏，不會要求再提高人聲。換歌、停止、重新播放或大幅移動播放位置後，會重新累積資料。</p></div></details></div>
   <p>主視窗右下角的 CPU／RAM 狀態會顯示本程式使用率。停留滑鼠可查看系統與本程式的詳細資源用量；進階直播模式還會顯示 Buffer、處理時間、預估延遲及音訊中斷計數。負載可能影響穩定度時會以顏色提示。</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="主視窗右下角收合狀態的 CPU 與記憶體摘要" caption="未停留滑鼠時只保留精簡 CPU／RAM 摘要；指向文字後會展開系統、本程式與進階音訊健康資料。" size="medium" %}

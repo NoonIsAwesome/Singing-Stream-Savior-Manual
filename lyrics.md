@@ -43,6 +43,8 @@ translation_key: lyrics
 
 有時間標記的歌詞可跟隨伴奏進度，自動捲動並醒目顯示目前句。
 
+「歌詞視窗」與「YouTube 影片」圖示常駐在伴奏播放器，完整、精簡與迷你模式都能使用；歌詞頁面上的重複按鈕已移除。YouTube 視窗只有播放 YouTube 連結時才有畫面，影片維持靜音，並可在視窗下方選擇可用字幕。
+
 開啟獨立的「歌詞視窗」後，可直接點選任一行有時間標記的歌詞，讓伴奏跳到該句的時間點。這項功能只適用於 LRC 等同步歌詞；純文字歌詞沒有可跳轉的時間資訊。
 
 ## 使用「管理歌詞」
@@ -66,6 +68,8 @@ translation_key: lyrics
 > **歌詞來源與授權：** LRCLIB 與 YouTube 字幕等搜尋來源提供的是歌詞查找，不代表已取得歌詞的使用授權。使用前請確認歌詞來源、相關權利及服務規範。
 
 當歌曲已經附加歌詞時，管理視窗會明確顯示目前狀態，並提供「取消歌詞連結」。因此不需要回到主畫面尋找重複功能。
+
+如果搜尋結果都不適合，請不要勉強附加；改為將準備好的歌詞貼到歌詞編輯器，或匯入 LRC、SRT、VTT／純文字檔，再自行標記時間。
 
 <figure class="manual-figure manual-figure--medium">
   <a href="assets/images/lyrics-manager-linked.png">
@@ -93,6 +97,11 @@ translation_key: lyrics
   <figcaption>實際播放伴奏時，即時預覽會依進度醒目顯示目前句；這裡看到的字型、顏色與版面也會套用到 OBS 歌詞畫面。</figcaption>
 </figure>
 
+
+### 歌詞使用提醒
+
+Singing Stream Savior 提供歌詞匯入、編輯、同步與顯示工具，不提供第三方歌曲的歌詞使用授權。公開直播、影片或其他用途是否可以顯示歌詞，仍應依作品授權、平台規範及適用法律確認。
+
 {% include feature-guide.html section="lyrics" %}
 
 <a id="lyrics-layout-editor"></a>
@@ -109,7 +118,7 @@ translation_key: lyrics
 透明方格代表透明區域，不會輸出到 OBS。此處調整的是 OBS 歌詞版面，不是獨立「歌詞視窗」的位置。
 
 <figure class="manual-figure">
-  <a href="assets/images/lyrics-layout-editor-2132.png"><img src="assets/images/lyrics-layout-editor-2132.png" alt="Classic Karaoke 的虛線框包住歌詞區塊；可在固定 16:9 畫布內移動及等比例縮放，並即時同步 OBS。" loading="lazy" decoding="async"></a>
+  <a href="assets/images/lyrics-layout-editor-2150.png"><img src="assets/images/lyrics-layout-editor-2150.png" alt="Classic Karaoke 的虛線框包住歌詞區塊；可在固定 16:9 畫布內移動及等比例縮放，並即時同步 OBS。" loading="lazy" decoding="async"></a>
   <figcaption>Classic Karaoke 的虛線框包住歌詞區塊；可在固定 16:9 畫布內移動及等比例縮放，並即時同步 OBS。</figcaption>
 </figure>
 
@@ -173,4 +182,4 @@ translation_key: lyrics
 3. 選擇其中一種方式：按住「拖曳至 OBS」拖入 OBS；或單擊按鈕複製瀏覽器來源路徑。
 4. 若使用複製路徑，請在 OBS 新增瀏覽器來源，將路徑貼到網址欄，並把尺寸設為 1920 × 1080；不必勾選「本機檔案」。
 
-[上一頁：歌曲庫、歌單與播放器](library-and-playback.md) · [下一頁：歌單外觀、歌詞畫面與 OBS](obs-and-themes.md)
+[上一頁：歌曲庫、歌單與播放器](library-and-playback.md) · [下一頁：歌詞編輯器](lyrics-editor.md)

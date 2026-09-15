@@ -18,7 +18,7 @@ manual_bundle: true
 {% capture feature_lyrics_html %}{% include feature-guide.html section="lyrics" %}{% endcapture %}
 {% capture feature_preview_html %}{% include feature-guide.html section="preview" %}{% endcapture %}
 {% capture feature_health_html %}{% include feature-guide.html section="health" %}{% endcapture %}
-{% assign chapter_keys = "getting-started,library-and-playback,lyrics,obs-and-themes,obs-websocket,uvr-vocal-removal,workspace-modes,settings-and-troubleshooting" | split: "," %}
+{% assign chapter_keys = "getting-started,library-and-playback,lyrics,lyrics-editor,obs-and-themes,obs-websocket,uvr-vocal-removal,workspace-modes,settings-and-troubleshooting" | split: "," %}
 {% for chapter_key in chapter_keys %}
   {% assign chapter_page = site.pages | where: "lang", "zh-TW" | where: "translation_key", chapter_key | first %}
   {% if chapter_page %}

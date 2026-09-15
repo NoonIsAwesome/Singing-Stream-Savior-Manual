@@ -12,8 +12,8 @@
         <nav aria-label="{{ t.nav_aria }}">
           <p class="nav-label">{{ t.flow }}</p>
           <ol class="chapter-list">
-            {% assign nav_keys = "getting-started,library-and-playback,lyrics,obs-and-themes,advanced-streaming,obs-websocket,uvr-vocal-removal,workspace-modes,settings-and-troubleshooting,changelog,open-source" | split: "," %}
-            {% assign nav_labels = "getting_started,library,lyrics,themes,advanced_streaming,websocket,uvr,modes,settings,changelog,open_source" | split: "," %}
+            {% assign nav_keys = "getting-started,library-and-playback,lyrics,lyrics-editor,obs-and-themes,advanced-streaming,obs-websocket,uvr-vocal-removal,workspace-modes,settings-and-troubleshooting,changelog,open-source" | split: "," %}
+            {% assign nav_labels = "getting_started,library,lyrics,lyrics_editor,themes,advanced_streaming,websocket,uvr,modes,settings,changelog,open_source" | split: "," %}
             {% for key in nav_keys %}
               {% assign label_key = nav_labels[forloop.index0] %}
               {% if current_lang == 'zh-TW' %}

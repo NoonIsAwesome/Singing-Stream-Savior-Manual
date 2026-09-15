@@ -1,0 +1,79 @@
+release:
+  version: "2.1.5.0"
+  date: "2026-09-15"
+  latest: true
+  type:
+    en: "Lyrics, guide vocal, and workspace improvements"
+    zh-TW: "歌詞、導唱與工作區改善"
+    zh-CN: "歌词、导唱与工作区改善"
+    ja: "歌詞、ガイドボーカル、ワークスペースの改善"
+    ko: "가사, 가이드 보컬 및 작업 공간 개선"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.5.0"
+  summary:
+    en: "Adds a built-in lyrics editor, guide vocal monitoring, dockable Meter controls, and lyrics improvements."
+    zh-TW: "新增逐字歌詞編輯、導唱監聽、可停靠 Meter 與歌詞改善。"
+    zh-CN: "新增逐字歌词编辑、导唱监听、可停靠 Meter 与歌词改善。"
+    ja: "歌詞エディター、ガイドボーカルのモニター、ドッキング可能な Meter、歌詞の改善を追加しました。"
+    ko: "가사 편집기, 가이드 보컬 모니터링, 도킹 가능한 Meter와 가사 개선을 추가했습니다."
+  items:
+    en:
+      - "I went out in the rain to buy a raincoat today, and the rain stopped as soon as I put it on..."
+      - "Adds a lyrics editor for creating LRC files with detailed word-by-word timing."
+      - "Adds guide vocal monitoring from UVR-separated vocals. Guide vocals are heard only in monitoring, never in the OBS mix; their level can be adjusted in Meter and they follow key and speed changes."
+      - "Lyrics Window and YouTube Video buttons now stay in the accompaniment player, and the duplicate buttons on the Lyrics page have been removed. The YouTube window also offers caption selection when playing a YouTube link."
+      - "Lyrics timing offset can now be adjusted by up to ±20 seconds."
+      - "Makes small fixes to some animated lyrics."
+      - "The Meter window can now dock on the right of the main window or float again. Track order was also adjusted, with Master last."
+      - "UVR vocal separation adds a Keep Vocal track option. Kept accompaniment and vocal tracks can be linked together for guide vocal use."
+    zh-TW:
+      - "我今天淋著雨去買了雨衣，結果穿上雨衣雨就停了..."
+      - "新增了歌詞編輯器，現在可以自己做LRC歌詞檔，並且能夠精細到逐字時間標記。"
+      - "新增了導唱功能（利用UVR消除人聲之後分離出來的人聲音軌），只有監聽會聽到導唱，送到OBS的混音不會包含導唱的聲音，並且可以透過Meter調整導唱音量，也支援轉調以及速度調整。"
+      - "YouTube視窗與歌詞視窗的按鈕現在會常駐在伴奏播放器裡，並移除歌詞頁面上重複的兩顆按鈕。YouTube視窗也新增了字幕選擇功能（只有播放YouTube連結才有畫面）。"
+      - "現在歌詞檔如果有太快或太慢，偏移量最多可以調整±20秒。"
+      - "部分動態歌詞小小修正。"
+      - "Meter視窗現在可以停靠在主視窗右側，也可以重新拆出來，並調整了音軌排列，將Master放在最後。"
+      - "UVR人聲消除新增了「保留人聲音軌」選項，保留後可以將伴奏和人聲音軌一起連結，作為導唱使用。"
+    zh-CN:
+      - "今天冒雨去买雨衣，结果刚穿上雨就停了..."
+      - "新增歌词编辑器，现在可以自己制作 LRC 歌词文件，并精细标记到逐字时间。"
+      - "新增导唱功能（使用 UVR 分离出的人声音轨）。只有监听能听到导唱，发送到 OBS 的混音不包含导唱声音；可通过 Meter 调整导唱音量，也支持变调和速度调整。"
+      - "YouTube 窗口和歌词窗口按钮现在常驻在伴奏播放器中，并移除了歌词页面上重复的两个按钮。YouTube 窗口也新增字幕选择功能（仅播放 YouTube 链接时有画面）。"
+      - "歌词太快或太慢时，偏移量现在最多可调整 ±20 秒。"
+      - "小幅修正部分动态歌词。"
+      - "Meter 窗口现在可停靠在主窗口右侧，也可重新拆出；同时调整了音轨顺序，将 Master 放在最后。"
+      - "UVR 人声消除新增“保留人声音轨”选项，保留后可将伴奏和人声音轨一起关联，用作导唱。"
+    ja:
+      - "雨の中でレインコートを買いに行ったら、着た途端に雨が止まりました..."
+      - "LRC 歌詞ファイルを作成し、単語ごとの時刻まで細かく設定できる歌詞エディターを追加しました。"
+      - "UVR で分離したボーカルを使うガイドボーカル機能を追加しました。ガイドボーカルはモニターだけで聞こえ、OBS のミックスには含まれません。Meter で音量を調整でき、キーと速度の変更にも対応します。"
+      - "YouTube 映像と歌詞ウィンドウのボタンが伴奏プレーヤーに常駐し、歌詞ページ上の重複した二つのボタンを削除しました。YouTube 映像ウィンドウには字幕選択も追加しました（YouTube リンクの再生時のみ映像が表示されます）。"
+      - "歌詞のずれは最大 ±20 秒まで調整できます。"
+      - "一部の動く歌詞を小さく修正しました。"
+      - "Meter ウィンドウはメインウィンドウ右側にドッキングでき、再び分離表示もできます。トラック順も調整し、Master を最後にしました。"
+      - "UVR のボーカル分離に「ボーカルトラックを保持」オプションを追加しました。伴奏とボーカルを関連付けてガイドボーカルとして使えます。"
+    ko:
+      - "비를 맞으며 우비를 사러 갔는데, 입자마자 비가 그쳤어요..."
+      - "LRC 가사 파일을 직접 만들고 글자별 시간까지 세밀하게 표시할 수 있는 가사 편집기를 추가했습니다."
+      - "UVR로 분리한 보컬 트랙을 사용하는 가이드 보컬 기능을 추가했습니다. 가이드 보컬은 모니터링에서만 들리고 OBS 믹스에는 포함되지 않습니다. Meter에서 볼륨을 조절할 수 있으며 키와 속도 조절도 지원합니다."
+      - "YouTube 영상과 가사 창 버튼이 반주 플레이어에 항상 표시되며, 가사 페이지에 있던 중복 버튼 두 개를 제거했습니다. YouTube 영상 창에는 자막 선택도 추가했습니다(YouTube 링크 재생 시에만 영상이 표시됩니다)."
+      - "가사가 너무 빠르거나 느릴 때 오프셋을 최대 ±20초까지 조절할 수 있습니다."
+      - "일부 동적 가사를 조금 수정했습니다."
+      - "Meter 창을 메인 창 오른쪽에 도킹하거나 다시 분리할 수 있습니다. 트랙 순서도 조정해 Master를 마지막에 배치했습니다."
+      - "UVR 보컬 분리에 보컬 트랙 유지 옵션을 추가했습니다. 반주와 보컬 트랙을 연결해 가이드 보컬로 사용할 수 있습니다."
+  emphasizedItems:
+    en:
+      - "Adds a lyrics editor for creating LRC files with detailed word-by-word timing."
+      - "Adds guide vocal monitoring from UVR-separated vocals. Guide vocals are heard only in monitoring, never in the OBS mix; their level can be adjusted in Meter and they follow key and speed changes."
+    zh-TW:
+      - "新增了歌詞編輯器，現在可以自己做LRC歌詞檔，並且能夠精細到逐字時間標記。"
+      - "新增了導唱功能（利用UVR消除人聲之後分離出來的人聲音軌），只有監聽會聽到導唱，送到OBS的混音不會包含導唱的聲音，並且可以透過Meter調整導唱音量，也支援轉調以及速度調整。"
+    zh-CN:
+      - "新增歌词编辑器，现在可以自己制作 LRC 歌词文件，并精细标记到逐字时间。"
+      - "新增导唱功能（使用 UVR 分离出的人声音轨）。只有监听能听到导唱，发送到 OBS 的混音不包含导唱声音；可通过 Meter 调整导唱音量，也支持变调和速度调整。"
+    ja:
+      - "LRC 歌詞ファイルを作成し、単語ごとの時刻まで細かく設定できる歌詞エディターを追加しました。"
+      - "UVR で分離したボーカルを使うガイドボーカル機能を追加しました。ガイドボーカルはモニターだけで聞こえ、OBS のミックスには含まれません。Meter で音量を調整でき、キーと速度の変更にも対応します。"
+    ko:
+      - "LRC 가사 파일을 직접 만들고 글자별 시간까지 세밀하게 표시할 수 있는 가사 편집기를 추가했습니다."
+      - "UVR로 분리한 보컬 트랙을 사용하는 가이드 보컬 기능을 추가했습니다. 가이드 보컬은 모니터링에서만 들리고 OBS 믹스에는 포함되지 않습니다. Meter에서 볼륨을 조절할 수 있으며 키와 속도 조절도 지원합니다."

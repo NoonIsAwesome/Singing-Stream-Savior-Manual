@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 User Manual
-description: English manual for Singing Stream Savior 2.1.4.3
+description: English manual for Singing Stream Savior 2.1.5.0
 lang: en
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 User Manual
 
-Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.4.3**.
+Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.5.0**.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
@@ -75,6 +75,8 @@ The library contains **All songs**, **Favorites**, **Recently played**, and remo
 <figure class="manual-figure"><a href="{{ '/assets/images/en/song-library.png' | relative_url }}"><img src="{{ '/assets/images/en/song-library.png' | relative_url }}" alt="Complete song library with All songs, Favorites, Recently played, custom playlists, and a populated song table"></a><figcaption>Select a collection on the left; the table and search field work within that selection.</figcaption></figure>
 
 To place songs in a collection, select one or more rows, right-click, open **Add to playlist**, and choose **Favorites** or a custom playlist. This does not duplicate the audio or remove it from All songs, and one song can belong to several playlists.
+
+If no search result is suitable, do not attach one just to continue. Paste prepared lyrics into the Lyrics Editor, or import an LRC, SRT, VTT, or text file and mark the timing yourself.
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}" alt="Song context menu with Edit display title, Add to Reserve, Add to playlist, and Delete track"></a><figcaption>The menu keeps display-title editing first and also provides Add to Reserve and playlist organization.</figcaption></figure>
 
@@ -148,6 +150,8 @@ The text replaces the current-song display in the OBS playlist theme **only whil
 
 Lyrics are optional. They can be used in a movable host-only **Lyrics window**, as an OBS lyric overlay for viewers, or both. Supported sources include LRC, SRT, VTT, plain text, YouTube captions, and LRCLIB.
 
+The Lyrics Window and YouTube Video icons stay in the accompaniment player in Full, Compact, and Mini modes. Their duplicate buttons have been removed from the Lyrics page. YouTube Video shows video only for YouTube tracks, stays muted, and offers available captions below the video.
+
 Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song’s icon in the **Lyrics** column of the song list. Either route opens the same window, where you can search online, import a local lyric file, attach a result, or unlink the current lyrics. Search combines LRCLIB results and YouTube captions, returns up to 50 candidates, and prioritizes synchronized lyrics, language, duration, and artist information. If YouTube temporarily rate-limits caption downloads, other candidates remain available and the dialog explains that you can retry later.
 
 > **Lyrics sources and permissions:** LRCLIB, YouTube captions, and other search sources help you find lyrics; they do not grant permission to use them. Before use, check the lyric source, relevant rights, and service terms.
@@ -173,6 +177,11 @@ The numbers of lines shown before and after the current line can be adjusted sep
 
 To show lyrics to viewers, open the **Lyrics** tab and drag **Drag to OBS** into OBS. If dragging is unavailable, click the same button to copy the Browser Source path and add it to OBS.
 
+
+### Lyrics usage reminder
+
+Singing Stream Savior provides tools to import, edit, synchronize, and display lyrics. It does not grant permission to use lyrics from third-party songs. Whether lyrics may be displayed in a public livestream, video, or other use must still be checked against the work’s license, platform rules, and applicable law.
+
 {% include feature-guide.html section="lyrics" %}
 
 <a id="lyrics-layout-editor"></a>
@@ -183,12 +192,42 @@ In **2.1.3.2**, Basic Lyrics, Classic Karaoke, and Vertical Verse support layout
 An OBS lyric source already using this output updates **while you drag**; releasing the mouse or adding the source again is unnecessary. Center guides help alignment. Select Edit layout again or leave the page to exit editing without losing the position. The adjacent reset icon restores the layout. Save the project to retain changes. The checkerboard represents transparency and is not sent to OBS; the independent Lyrics window is unaffected.
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}" alt="Lyric block editing in version 2.1.3.2 (Traditional Chinese interface)." loading="lazy" decoding="async"></a>
-  <figcaption>Lyric block editing in version 2.1.3.2 (Traditional Chinese interface).</figcaption>
+  <a href="{{ '/assets/images/en/lyrics-layout-editor-2150.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-layout-editor-2150.png' | relative_url }}" alt="Lyric block editing in version 2.1.5.0 (English interface)." loading="lazy" decoding="async"></a>
+  <figcaption>Lyric block editing in version 2.1.5.0 (English interface).</figcaption>
 </figure>
 
+<a id="lyrics-editor"></a>
+## 04 · Lyrics editor
+
+If search does not find a suitable lyrics file, use the editor to add timing to lyrics you have prepared.
+
+1. Select a song in the song list.
+2. Open **Live → Lyrics Editor** and paste the lyrics on the left, one phrase per line. Linked lyrics load automatically for editing.
+3. Choose **Line timing** and play the accompaniment using the player on the right. Press **Ctrl + Enter** or the mark button at each line start. The shortcut is recommended; you can slow playback to make marking easier.
+4. Turn on **Preview highlights** to check the result. For finer timing, switch to **Word timing** and mark each word as you listen.
+5. Select **Apply lyrics** to save and link the lyrics to the song, then save the project.
+
+<figure class="manual-figure"><a href="{{ '/assets/images/en/lyrics-editor-line-2150.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-editor-line-2150.png' | relative_url }}" alt="Line timing: paste the original lyrics on the left and record timestamps on the right." loading="lazy" decoding="async"></a><figcaption>Line timing: paste the original lyrics on the left and record timestamps on the right.</figcaption></figure>
+
+
+### Select, merge, or split words
+
+English starts with whole-word buttons, Korean uses space-separated groups, and Chinese and Japanese start with individual characters. Marking advances to the next word and then the next line.
+
+- **Ctrl-click** adds or removes individual selections.
+- Select the first unit, then **Shift-click** the last to select the whole range.
+- Select adjacent units and choose **Merge** to combine them. Their individual timings are retained.
+- Select a word and choose **Split** to separate its characters. Existing individual timings are restored; characters without a recorded start stay unmarked for you to finish.
+
+Use Undo, Redo, or Retry previous to correct a mark. Preview works before every line is complete, and clicking a recorded timestamp seeks back to it. Blank lines can mark instrumental breaks. **Ctrl + Enter** only acts on this page.
+
+**All lyrics offset** moves every mark by up to ±20 seconds. **Apply lyrics** saves to the shared lyrics folder, configurable under **Settings → Files & Project**; **Export LRC** lets you choose another location. If you change playback speed while editing, leaving the page asks whether to restore the speed from when you entered.
+
+
+<figure class="manual-figure"><a href="{{ '/assets/images/en/lyrics-editor-word-2150.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-editor-word-2150.png' | relative_url }}" alt="Word timing: select, merge, or split units and preview their highlights." loading="lazy" decoding="async"></a><figcaption>Word timing: select, merge, or split units and preview their highlights.</figcaption></figure>
+
 <a id="obs-and-themes"></a>
-## 04 · Playlist appearance and OBS
+## 05 · Playlist appearance and OBS
 
 Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set List, Next On, and Reserve in the preview. Basic themes appear first: Default, Transparent Black, Transparent White, Transparent Black v2, Transparent White v2, Card, CD, Signal Line, and Stage Caption; illustrated themes follow.
 
@@ -240,7 +279,7 @@ Center guides assist alignment. Select the button again or leave the page to fin
 </figure>
 
 <a id="obs-websocket"></a>
-## 05 · Livestream timestamp capture
+## 06 · Livestream timestamp capture
 
 OBS WebSocket is optional and disabled by default. Its primary purpose is to read the live OBS timer, record when a karaoke track starts, and show timestamps before songs in supported Set Lists. Normal set-list and lyric overlays work without it.
 
@@ -249,7 +288,7 @@ In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable th
 The status indicator appears at the lower-right only when enabled: green means connected, yellow means connecting/reconnecting, and red means disconnected. Test timestamps with a private test stream before relying on them live.
 
 <a id="uvr-vocal-removal"></a>
-## 06 · UVR vocal removal
+## 07 · UVR vocal removal
 
 ### Why vocal separation is included
 
@@ -267,18 +306,25 @@ Choose WAV, FLAC, or MP3 (320 kbps), and either 48 kHz (default) or 44.1 kHz. GP
 
 Noon personally recommends HP for better preservation of accompaniment detail, based on listening tests; results vary by song and genre. Under the same test conditions, HP was slower than MDX. Actual speed depends on the song and computer.
 
-When separation finishes, import the instrumental for one song or import all completed songs at once. The paired `(Instrumental)` and `(Vocal)` files remain in the output folder, while only the actual accompaniment is added to the song library.
+### Guide vocal monitoring
 
+Enable **Keep Vocal track for guide vocal monitoring** in UVR before processing. When you import the finished accompaniment, its matching Vocal track is linked automatically. Without this option, only the Instrumental output is saved. You can import one completed song or all completed songs.
+
+The accompaniment player shows a guide vocal icon only for supported paired tracks. Turn it on to hear the guide through monitoring; it is never included in the Stream or OBS mix. Use Meter or the icon's context menu to adjust its volume or mute it. It follows the accompaniment's Key, speed, seeking, and loops, and turns off when you change songs.
+
+
+
+<figure class="manual-figure"><a href="{{ '/assets/images/en/uvr-guide-vocal-2150.png' | relative_url }}"><img src="{{ '/assets/images/en/uvr-guide-vocal-2150.png' | relative_url }}" alt="Keep the Vocal track in UVR to use the separated voice for guide vocal monitoring." loading="lazy" decoding="async"></a><figcaption>Keep the Vocal track in UVR to use the separated voice for guide vocal monitoring.</figcaption></figure>
 > **For material you have confirmed may be used in a livestream, process it ahead of time when possible.** Vocal separation uses CPU or GPU resources. Before running it during a stream, confirm that the computer still has enough capacity for audio and OBS.
 
 <a id="workspace-modes"></a>
-## 07 · Workspace modes
+## 08 · Workspace modes
 
 Use the top-right mode button or `Ctrl + Shift + M`:
 
 - **Full:** all library fields, lyric/theme previews, and settings. Best for preparation.
 - **Compact:** keeps song selection, players, Reserve, and History while hiding wide source columns and large previews.
-- **Mini:** best when the songs and stream visuals are already prepared before going live. It hides the library and BGM player, leaving the karaoke controls, Reserve, History, and Lyrics Window button. Choose the next song directly from the prepared Reserve list. The separate Lyrics Window can be moved and its text size adjusted to fit around other streaming tools.
+- **Mini:** best when the songs and stream visuals are already prepared before going live. It hides the library and BGM player, leaving the karaoke controls, Reserve, and History; the Lyrics Window and YouTube buttons remain in the accompaniment player. Choose the next song directly from the prepared Reserve list. The separate Lyrics Window can be moved and its text size adjusted to fit around other streaming tools.
 
 <div class="figure-grid">
   <figure class="manual-figure"><a href="{{ '/assets/images/en/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/full-workspace.png' | relative_url }}" alt="Full workspace"></a><figcaption>Full mode keeps the complete library, players, and queue for preparation.</figcaption></figure>
@@ -286,14 +332,14 @@ Use the top-right mode button or `Ctrl + Shift + M`:
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/en/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/mini-workspace.png' | relative_url }}" alt="Mini workspace"></a><figcaption>Mini mode leaves more vertical space for the queue.</figcaption></figure>
 </div>
 
-Switching modes only changes which controls are visible. A song already playing continues, and the existing queue order and OBS scene are not reset. Each mode remembers its window size and layout.
+At each startup, Full mode opens at 1920 × 1080; if the available space is smaller, the window starts reduced to fit the screen. After it opens, you can resize it freely; the window is not locked. Switching modes only changes which controls are visible. A song already playing continues, and the existing queue order and OBS scene are not reset. Each mode remembers its window size and layout.
 
 When the main window is not needed, its close button can minimize Singing Stream Savior to the Windows notification area instead of exiting. Playback continues in the background, while the tray menu and global shortcuts keep playback, Key, speed, Profile, microphone, Lyrics Window, and Meter controls available. Use **Exit Application** in the tray menu to close the app completely.
 
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior Windows notification-area menu while idle" caption="The idle menu stays compact. Playback and Advanced Streaming Mode add the relevant playback, Key, speed, Profile, microphone, and Meter actions." size="medium" %}
 
 <a id="settings-and-troubleshooting"></a>
-## 08 · Settings and troubleshooting
+## 09 · Settings and troubleshooting
 
 Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
 

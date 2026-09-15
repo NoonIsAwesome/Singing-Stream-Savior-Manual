@@ -1,6 +1,6 @@
 ﻿---
 title: 歌回救星 2.1 使用说明
-description: Singing Stream Savior 2.1.4.3 简体中文使用说明
+description: Singing Stream Savior 2.1.5.0 简体中文使用说明
 lang: zh-CN
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # 歌回救星 2.1 使用说明
 
-歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.4.3**。
+歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.5.0**。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可放大预览。</figcaption></figure>
 
@@ -69,6 +69,8 @@ manual_bundle: true
 
 要将歌曲加入分类，先选择一首或多首歌曲，按鼠标右键，展开“加入歌单”，再选择“我的最爱”或自定义歌单。这不会复制音频，也不会将歌曲移出“全部歌曲”；同一首歌可以加入多个歌单。
 
+如果搜索结果都不合适，不要为了继续而强行附加；请把准备好的歌词粘贴到歌词编辑器，或导入 LRC、SRT、VTT／纯文本文件后自行标记时间。
+
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}" alt="歌曲右键菜单包含编辑显示歌名、加入待播、加入歌单与删除歌曲"></a><figcaption>编辑显示歌名位于第一项，同一个菜单也可将歌曲加入待播或其他歌单。</figcaption></figure>
 
 除了通过文件选择窗口导入，也可以把一首或多首本地音频直接拖进软件。单个 YouTube 视频网址可以粘贴或拖入并加入为一首歌曲；YouTube 播放列表网址也可以直接拖入，软件会识别其中的歌曲并导入为对应的自定义歌单，不必逐首粘贴网址。本地歌曲／歌唱伴奏支持 `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` 格式。YouTube 导入需要网络连接。
@@ -127,7 +129,11 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 <a id="lyrics"></a>
 ## 03 · 歌词功能
 
+「歌词窗口」与「YouTube 视频」图标常驻在伴奏播放器，完整、精简和迷你模式都能使用；歌词页面上的重复按钮已移除。YouTube 窗口仅播放 YouTube 链接时有画面，视频保持静音，可在下方选择可用字幕。
+
 歌词可供主播在独立“歌词窗口”阅读，也可作为 OBS 歌词画面给观众观看。支持 LRC、SRT、VTT、纯文本、YouTube 字幕与 LRCLIB。
+
+当伴奏是 YouTube 链接时，YouTube 窗口也可以选择可用的字幕轨道。
 
 在歌曲的“歌词”页面点击“管理歌词…”，或直接点击歌曲列表中该歌曲“歌词”栏的图标，都可以打开管理歌词窗口。你可以在这里搜索、导入本地歌词、附加结果或取消歌词关联。搜索会合并 LRCLIB 与 YouTube 字幕，最多显示 50 条，并依同步状态、语言、伴奏长度与歌手信息排序。YouTube 暂时限制字幕下载时，其他候选仍会保留，并提示稍后重试。
 
@@ -151,6 +157,10 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 需要向观众显示歌词时，请在“歌词”页将“拖放至 OBS”拖入 OBS；若无法拖入，可单击同一个按钮复制 Browser Source 路径，再加入 OBS。
 
+
+### 歌词使用提醒
+
+Singing Stream Savior 提供歌词导入、编辑、同步与显示工具，不提供第三方歌曲的歌词使用授权。公开直播、视频或其他用途是否可以显示歌词，仍应依据作品授权、平台规范及适用法律确认。
 {% include feature-guide.html section="lyrics" %}
 
 <a id="lyrics-layout-editor"></a>
@@ -161,12 +171,42 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 使用同一份输出的 OBS 歌词来源会在**拖动过程中实时更新**，不必等松开鼠标，也无需重新添加来源。靠近中线时会提供对齐辅助。再次点击按钮或离开页面即可退出编辑，保留调整后的位置。旁边的重置图标可恢复布局；请保存项目以保留设置。方格代表透明，不会输出到 OBS，也不会改变独立歌词窗口的位置。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}" alt="2.1.3.2 歌词区块编辑画面（繁体中文界面）。" loading="lazy" decoding="async"></a>
-  <figcaption>2.1.3.2 歌词区块编辑画面（繁体中文界面）。</figcaption>
+  <a href="{{ '/assets/images/zh-CN/lyrics-layout-editor-2150.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-layout-editor-2150.png' | relative_url }}" alt="2.1.5.0 歌词区块编辑画面（简体中文界面）。" loading="lazy" decoding="async"></a>
+  <figcaption>2.1.5.0 歌词区块编辑画面（简体中文界面）。</figcaption>
 </figure>
 
+<a id="lyrics-editor"></a>
+## 04 · 歌词编辑器
+
+搜索不到合适的歌词文件时，可以用编辑器为准备好的歌词添加时间标记。
+
+1. 在歌曲列表选中一首歌曲。
+2. 打开「直播操作 → 歌词制作」，将歌词粘贴到左侧，每句一行。已关联的歌词会自动载入供编辑。
+3. 选择「逐句标记」，用右侧播放器播放伴奏，在每句开始按 **Ctrl + Enter** 或标记按钮。推荐使用快捷键，也可以调慢伴奏，方便标记。
+4. 开启「预览高亮」检查效果。需要更细致的时间时，再切换「字词标记」，边听边标记各个字词。
+5. 点击「应用歌词」自动保存并关联歌曲，然后保存项目。
+
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-editor-line-2150.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-editor-line-2150.png' | relative_url }}" alt="逐句标记：在左侧粘贴原始歌词，在右侧记录时间。" loading="lazy" decoding="async"></a><figcaption>逐句标记：在左侧粘贴原始歌词，在右侧记录时间。</figcaption></figure>
+
+
+### 选择、合并或拆分字词
+
+英文默认使用完整词汇按钮，韩文按空格分词；中文和日文可逐字标记，再合并成需要的词。标记后自动移到下一个字词，一句完成后继续下一句。
+
+- **Ctrl + 点击**可增加或取消单个选取。
+- 先选第一个字词，再按住 **Shift** 点击最后一个，选取整个范围。
+- 选中相邻字词并点击「合并」，原有的单字时间仍会保留。
+- 选中一个词并点击「拆分」，会恢复已有的单字时间；没有时间的字保持未标记，可以继续补标。
+
+标错时可使用撤销、重做或重标上一句。不必全部标完才能预览；点击记录的时间可跳回试听，空白行也可标记为间奏。**Ctrl + Enter** 只在本页生效。
+
+「整份歌词偏移」可让所有标记一起提前或延后最多 ±20 秒。「应用歌词」会保存到统一的歌词文件夹，可在「设置 → 文件与项目」修改默认位置；「导出 LRC」可选择其他位置。编辑时若改变了伴奏速度，离开页面会询问是否恢复进入时的速度。
+
+
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-editor-word-2150.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-editor-word-2150.png' | relative_url }}" alt="字词标记：选择、合并或拆分字词，再预览高亮检查时间。" loading="lazy" decoding="async"></a><figcaption>字词标记：选择、合并或拆分字词，再预览高亮检查时间。</figcaption></figure>
+
 <a id="obs-and-themes"></a>
-## 04 · 歌单外观与主题
+## 05 · 歌单外观与主题
 
 在“歌单外观”选择主题，并检查 Now Singing、Set List、Next On 与 Reserve。基本主题依次为 Default、Transparent Black、Transparent White、Transparent Black v2、Transparent White v2、Card、CD、Signal Line、Stage Caption，之后才是精致主题。
 
@@ -213,7 +253,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 </figure>
 
 <a id="obs-websocket"></a>
-## 05 · 直播时间戳获取
+## 06 · 直播时间戳获取
 
 此功能默认关闭，目前主要用于读取 OBS 直播时间、记录伴奏开始时间，并在 Set List 歌名前显示时间戳。一般歌单与歌词画面不需要 WebSocket。
 
@@ -222,7 +262,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 右下角绿灯为已连接，黄灯为连接中，红灯为未连接。正式直播前请先用测试直播确认时间戳。
 
 <a id="uvr-vocal-removal"></a>
-## 06 · UVR 人声消除
+## 07 · UVR 人声消除
 
 ### 为什么加入人声分离？
 
@@ -240,18 +280,25 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 
 沐橙个人听感推荐 HP，实测认为较能保留伴奏细节，但效果可能因歌曲或曲风而有差异，仅供参考。相同条件实测，HP 会比 MDX 慢，实际速度依歌曲与电脑而异。
 
-完成后可逐首或一次全部把伴奏导入歌曲列表。输出文件夹会保留 `(Instrumental)` 与 `(Vocal)` 两个文件，歌曲列表只会导入实际伴奏。
+### 导唱监听
 
+处理前在 UVR 勾选「保留人声音轨供导唱监听」。完成后导入伴奏，会自动关联对应的 Vocal 音轨；不勾选时只保存 Instrumental 输出。可以逐首或一次导入所有已完成歌曲。
+
+只有支持配对音轨的歌曲才会在伴奏播放器显示导唱图标。开启后只在监听中听到导唱，不会进入 Stream 或 OBS 混音。可用 Meter 或图标右键菜单调整独立音量和静音。导唱会跟随伴奏的 Key、速度、跳转和循环，换歌时自动关闭。
+
+
+
+<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/uvr-guide-vocal-2150.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/uvr-guide-vocal-2150.png' | relative_url }}" alt="在 UVR 保留人声音轨，将分离后的人声用于导唱监听。" loading="lazy" decoding="async"></a><figcaption>在 UVR 保留人声音轨，将分离后的人声用于导唱监听。</figcaption></figure>
 > **已确认可用于直播的素材，建议提前完成处理。** 人声分离会使用 CPU 或 GPU 资源；直播中执行前，请先确认电脑仍有足够性能处理音频与 OBS。
 
 <a id="workspace-modes"></a>
-## 07 · 工作区模式
+## 08 · 工作区模式
 
 - **完整模式：** 显示所有资料、设置与大型预览，适合准备直播。
 - **精简模式：** 保留选歌、播放器、待播和已唱，隐藏宽列与大型预览。
-- **迷你模式：** 适合开播前已经完成待唱歌曲与画面设置，并已排好待播列表的主播。它会隐藏歌曲库与 BGM，只保留伴奏、待播、已唱和“歌词窗口”按钮；直播中可直接从待播列表选择歌曲播放。歌词窗口可以自由移动并调整文字大小，方便配合其他直播软件安排位置。
+- **迷你模式：** 适合开播前已经完成待唱歌曲与画面设置，并已排好待播列表的主播。它会隐藏歌曲库与 BGM，只保留伴奏、待播和已唱；歌词窗口与 YouTube 按钮都保留在伴奏播放器中；直播中可直接从待播列表选择歌曲播放。歌词窗口可以自由移动并调整文字大小，方便配合其他直播软件安排位置。
 
-快捷键为 `Ctrl + Shift + M`。切换模式只会改变画面上显示的控制项目；正在播放的歌曲会继续播放，原有待播顺序与 OBS 画面不会被重置。每种模式会记住各自的窗口配置。
+每次启动时，完整模式会以 1920 × 1080 打开；如果可用空间不足，窗口会先缩小以适应屏幕。打开后可以自由拖动边缘缩放，不会锁定窗口大小。快捷键为 `Ctrl + Shift + M`。切换模式只会改变画面上显示的控制项目；正在播放的歌曲会继续播放，原有待播顺序与 OBS 画面不会被重置。每种模式会记住各自的窗口配置。
 
 <div class="figure-grid">
   <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/full-workspace.png' | relative_url }}" alt="简体中文完整模式"></a><figcaption>完整模式保留完整歌曲库、播放器和待播列表。</figcaption></figure>
@@ -264,7 +311,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior 未播放时的 Windows 通知区域右键菜单" caption="未播放时菜单保持精简；播放伴奏或开启高级直播模式后，会增加相应的播放、Key、速度、Profile、麦克风与 Meter 项目。" size="medium" %}
 
 <a id="settings-and-troubleshooting"></a>
-## 08 · 设置与疑难解答
+## 09 · 设置与疑难解答
 
 搬到其他电脑前，请备份 `.bgmsproj`、本地媒体和自行导入的歌词。
 

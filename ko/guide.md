@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 사용자 설명서
-description: Singing Stream Savior 2.1.4.3 한국어 설명서
+description: Singing Stream Savior 2.1.5.0 한국어 설명서
 lang: ko
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 사용자 설명서
 
-Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.1.4.3** 버전을 기준으로 합니다.
+Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.1.5.0** 버전을 기준으로 합니다.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 확대 미리보기를 열 수 있습니다.</figcaption></figure>
 
@@ -69,6 +69,8 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 
 곡을 분류하려면 한 곡 또는 여러 곡을 선택해 마우스 오른쪽 버튼을 누르고 **재생목록에 추가**에서 **즐겨찾기** 또는 사용자 재생목록을 고르세요. 음원은 복제되지 않고 모든 곡에서도 사라지지 않으며, 한 곡을 여러 재생목록에 넣을 수 있습니다.
 
+적합한 검색 결과가 없으면 억지로 연결하지 마세요. 준비한 가사를 가사 편집기에 붙여넣거나 LRC, SRT, VTT 또는 텍스트 파일을 가져와 직접 시간을 표시할 수 있습니다.
+
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/ko/add-to-playlist-menu.png' | relative_url }}" alt="표시 곡명 편집, 대기 목록에 추가, 재생목록에 추가와 트랙 삭제가 있는 오른쪽 클릭 메뉴"></a><figcaption>표시 곡명 편집이 첫 항목이며 같은 메뉴에서 대기 목록이나 재생목록에도 추가할 수 있습니다.</figcaption></figure>
 
 파일 선택 창에서 가져오는 것뿐 아니라 하나 이상의 로컬 오디오 파일을 소프트웨어로 바로 끌어다 놓을 수 있습니다. YouTube 단일 동영상 URL은 붙여넣거나 끌어다 놓으면 한 곡으로 추가됩니다. YouTube 재생목록 URL도 바로 끌어다 놓을 수 있으며, 포함된 동영상을 인식해 해당 사용자 재생목록으로 가져오므로 링크를 하나씩 추가할 필요가 없습니다. 로컬 곡과 반주는 `MP3`, `WAV`, `FLAC`, `M4A`, `MP4`, `AAC`, `OGG`, `OPUS`, `WMA` 형식을 지원합니다. YouTube 가져오기에는 인터넷 연결이 필요합니다.
@@ -127,7 +129,11 @@ OBS 재생목록 테마의 현재 곡 영역이 대화 문구로 바뀌는 것�
 <a id="lyrics"></a>
 ## 03 · 가사 기능
 
+가사 창과 YouTube 동영상 아이콘은 전체·간소화·미니 모드 모두 반주 플레이어에 표시됩니다. 가사 페이지의 중복 버튼은 제거되었습니다. YouTube 창은 YouTube 링크를 재생할 때만 영상을 표시하고 음소거를 유지하며, 영상 아래에서 사용 가능한 자막을 선택할 수 있습니다.
+
 가사는 선택 기능입니다. 진행자 전용 **가사 창**, 시청자용 OBS 가사 오버레이 또는 둘 다 사용할 수 있습니다. LRC, SRT, VTT, 일반 텍스트, YouTube 자막과 LRCLIB를 지원합니다.
+
+반주가 YouTube 링크라면 YouTube 창에서 사용 가능한 자막 트랙도 선택할 수 있습니다.
 
 곡의 **가사** 페이지에서 **가사 관리…**를 누르거나 곡 목록의 **가사** 열에서 해당 곡의 아이콘을 클릭하면 같은 가사 관리 창이 열립니다. 여기에서 온라인 검색, 로컬 가사 가져오기, 결과 연결 또는 현재 가사 연결 해제를 할 수 있습니다. LRCLIB와 YouTube 자막을 함께 최대 50개 표시하며 동기화 여부, 언어, 반주 길이와 가수 정보에 맞는 후보를 우선합니다. YouTube의 일시적인 요청 제한으로 자막을 받지 못해도 다른 후보는 유지되고 나중에 다시 시도할 수 있다는 안내를 표시합니다.
 
@@ -151,6 +157,10 @@ OBS 재생목록 테마의 현재 곡 영역이 대화 문구로 바뀌는 것�
 
 시청자에게 가사를 표시하려면 **가사** 탭의 **OBS로 드래그**를 OBS에 놓으세요. 드래그할 수 없으면 같은 버튼을 클릭해 Browser Source 경로를 복사한 뒤 OBS에 추가하세요.
 
+
+### 가사 사용 안내
+
+Singing Stream Savior는 가사를 가져오고, 편집하고, 동기화하고, 표시하는 도구를 제공합니다. 제3자 곡의 가사 사용 허가는 제공하지 않습니다. 공개 방송, 동영상 또는 다른 용도에서 가사를 표시할 수 있는지는 작품 이용 허가, 플랫폼 규정 및 적용 법률에 따라 확인해야 합니다.
 {% include feature-guide.html section="lyrics" %}
 
 <a id="lyrics-layout-editor"></a>
@@ -161,12 +171,42 @@ OBS 재생목록 테마의 현재 곡 영역이 대화 문구로 바뀌는 것�
 같은 출력을 사용하는 OBS 가사 소스에는 **드래그하는 동안 실시간으로 반영**됩니다. 마우스를 놓거나 소스를 다시 추가할 필요가 없습니다. 중앙 정렬 안내선도 제공됩니다. 버튼을 다시 누르거나 페이지를 벗어나면 편집이 종료되고 위치는 유지됩니다. 옆의 초기화 아이콘으로 배치를 되돌릴 수 있습니다. 변경 사항은 프로젝트를 저장해 보관하세요. 체크무늬는 투명 영역이며 OBS로 출력되지 않습니다. 독립 가사 창의 위치에는 영향을 주지 않습니다.
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}" alt="2.1.3.2 가사 블록 편집 화면(번체 중국어 UI)." loading="lazy" decoding="async"></a>
-  <figcaption>2.1.3.2 가사 블록 편집 화면(번체 중국어 UI).</figcaption>
+  <a href="{{ '/assets/images/ko/lyrics-layout-editor-2150.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-layout-editor-2150.png' | relative_url }}" alt="2.1.5.0 가사 블록 편집 화면(한국어 UI)." loading="lazy" decoding="async"></a>
+  <figcaption>2.1.5.0 가사 블록 편집 화면(한국어 UI).</figcaption>
 </figure>
 
+<a id="lyrics-editor"></a>
+## 04 · 가사 편집기
+
+검색에서 알맞은 가사 파일을 찾지 못하면 편집기로 준비한 가사에 시간을 표시할 수 있습니다.
+
+1. 곡 목록에서 편집할 곡을 선택하세요.
+2. 「라이브 조작 → 가사 제작」을 열고 왼쪽에 한 구절씩 한 줄로 가사를 붙여 넣으세요. 연결된 가사는 자동으로 불러옵니다.
+3. 「줄 표시」를 선택하고 오른쪽 반주 플레이어로 재생하세요. 각 줄이 시작될 때 **Ctrl + Enter** 또는 표시 버튼을 누르세요. 단축키를 추천하며, 반주 속도를 낮추면 시간을 맞추기 쉽습니다.
+4. 「하이라이트 미리 보기」로 확인하세요. 더 세밀하게 표시하려면 「단어 타이밍」으로 전환해 들으면서 각 단어를 표시하세요.
+5. 「가사 적용」을 누르면 가사를 저장하고 곡에 연결합니다. 그다음 프로젝트를 저장하세요.
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-editor-line-2150.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-editor-line-2150.png' | relative_url }}" alt="줄 타이밍: 왼쪽에 원문 가사를 붙여 넣고 오른쪽에 시간을 기록합니다." loading="lazy" decoding="async"></a><figcaption>줄 타이밍: 왼쪽에 원문 가사를 붙여 넣고 오른쪽에 시간을 기록합니다.</figcaption></figure>
+
+
+### 단어 선택, 병합과 분할
+
+영어는 단어 전체, 한국어는 공백으로 구분된 어절, 중국어와 일본어는 글자 단위 버튼으로 시작합니다. 표시하면 다음 단어로 이동하고, 한 줄이 끝나면 다음 줄로 넘어갑니다.
+
+- **Ctrl + 클릭**으로 개별 선택을 추가하거나 해제하세요.
+- 첫 단어를 선택한 뒤 **Shift**를 누르고 마지막 단어를 클릭하면 범위 전체가 선택됩니다.
+- 인접한 단위를 선택하고 「병합」을 누르면 개별 시간을 보존하면서 하나로 합칩니다.
+- 단어 하나를 선택하고 「분할」을 누르면 저장된 글자별 시간이 복원됩니다. 시간이 없는 글자는 미표시 상태로 남아 나중에 표시할 수 있습니다.
+
+잘못 표시했을 때는 실행 취소, 다시 실행 또는 이전 줄 다시 표시로 수정하세요. 모두 끝내기 전에도 미리 볼 수 있고, 기록된 시간을 클릭하면 해당 위치로 이동합니다. 빈 줄은 간주로 표시할 수 있으며 **Ctrl + Enter**는 이 페이지에서만 작동합니다.
+
+「전체 가사 오프셋」으로 모든 표시를 최대 ±20초 이동할 수 있습니다. 「가사 적용」은 공통 가사 폴더에 저장하며 기본 위치는 「설정 → 파일 및 프로젝트」에서 바꿀 수 있습니다. 「LRC 내보내기」는 다른 위치를 선택합니다. 편집 중 속도를 변경했다면 페이지를 나갈 때 처음 속도로 되돌릴지 묻습니다.
+
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-editor-word-2150.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-editor-word-2150.png' | relative_url }}" alt="단어 타이밍: 단위를 선택, 병합, 분할하고 하이라이트로 확인하세요." loading="lazy" decoding="async"></a><figcaption>단어 타이밍: 단위를 선택, 병합, 분할하고 하이라이트로 확인하세요.</figcaption></figure>
+
 <a id="obs-and-themes"></a>
-## 04 · 재생목록 외관과 OBS
+## 05 · 재생목록 외관과 OBS
 
 **재생목록 외관**에서 테마를 선택하고 Now Singing, Set List, Next On과 Reserve를 미리 봅니다. 기본 테마는 Default, Transparent Black, Transparent White, Transparent Black v2, Transparent White v2, Card, CD, Signal Line, Stage Caption 순서이며 그 뒤에 장식 테마가 표시됩니다.
 
@@ -213,7 +253,7 @@ OBS 대기 목록 표시 여부와 다음 한 곡만 또는 2, 3, 5, 10곡 표�
 </figure>
 
 <a id="obs-websocket"></a>
-## 05 · 방송 타임스탬프 캡처
+## 06 · 방송 타임스탬프 캡처
 
 기본값은 꺼짐입니다. 현재 주요 목적은 OBS 방송 시간을 읽고 반주 시작 시각을 기록하여 Set List의 곡 이름 앞에 타임스탬프를 표시하는 것입니다. 일반 세트리스트와 가사 오버레이에는 필요하지 않습니다.
 
@@ -222,7 +262,7 @@ OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버
 오른쪽 아래 녹색은 연결됨, 노란색은 연결 또는 재연결 중, 빨간색은 연결되지 않음을 뜻합니다. 실제 방송 전에 테스트 방송으로 타임스탬프를 확인하세요.
 
 <a id="uvr-vocal-removal"></a>
-## 06 · UVR 보컬 제거
+## 07 · UVR 보컬 제거
 
 ### 보컬 분리를 추가한 이유
 
@@ -240,18 +280,25 @@ WAV/FLAC/MP3(320 kbps), 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니
 
 눈(Noon)은 개인 청음 결과 반주의 세부 음향을 더 잘 보존한다고 느낀 HP를 추천합니다. 곡이나 장르에 따라 결과가 달라질 수 있으므로 참고해 주세요. 동일한 조건에서 HP는 MDX보다 느렸으며 실제 속도는 곡과 컴퓨터에 따라 달라집니다.
 
-처리가 끝나면 반주를 한 곡씩 또는 완료된 모든 곡을 한 번에 곡 목록으로 가져올 수 있습니다. 출력 폴더에는 `(Instrumental)`과 `(Vocal)` 파일이 모두 남고, 곡 목록에는 실제 반주만 추가됩니다.
+### 가이드 보컬 모니터링
 
+처리 전에 UVR의 「가이드 보컬 모니터링을 위해 보컬 트랙 유지」를 켜세요. 완료된 반주를 가져오면 대응하는 Vocal 트랙이 자동으로 연결됩니다. 끄면 Instrumental 출력만 저장합니다. 완료된 곡은 한 곡씩 또는 한 번에 가져올 수 있습니다.
+
+지원되는 음원 쌍이 있는 곡에만 반주 플레이어의 가이드 보컬 아이콘이 나타납니다. 켜면 모니터에서만 들리며 Stream이나 OBS 믹스에는 포함되지 않습니다. Meter 또는 아이콘의 우클릭 메뉴로 음량과 음소거를 조절하세요. 반주의 Key, 속도, 탐색과 반복을 따르며 곡을 바꾸면 꺼집니다.
+
+
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ko/uvr-guide-vocal-2150.png' | relative_url }}"><img src="{{ '/assets/images/ko/uvr-guide-vocal-2150.png' | relative_url }}" alt="UVR에서 보컬 트랙을 유지하면 분리된 음성을 가이드 보컬로 모니터할 수 있습니다." loading="lazy" decoding="async"></a><figcaption>UVR에서 보컬 트랙을 유지하면 분리된 음성을 가이드 보컬로 모니터할 수 있습니다.</figcaption></figure>
 > **방송에 사용할 수 있다고 확인한 소재는 가능하면 미리 처리하세요.** 보컬 분리는 CPU 또는 GPU 자원을 사용합니다. 방송 중 실행하기 전에는 음원 처리와 OBS에 필요한 컴퓨터 성능이 남아 있는지 확인하세요.
 
 <a id="workspace-modes"></a>
-## 07 · 작업 공간 모드
+## 08 · 작업 공간 모드
 
 - **전체 모드:** 모든 정보, 설정과 큰 미리보기. 방송 준비에 적합합니다.
 - **간단 모드:** 곡 선택, 플레이어, **대기 목록**과 **부른 곡**을 유지하고 넓은 열과 큰 미리보기를 숨깁니다.
-- **미니 모드:** 방송 전에 부를 곡과 화면 설정을 마치고 **대기 목록**까지 준비한 스트리머에게 적합합니다. 라이브러리와 BGM을 숨기고 반주, **대기 목록**, **부른 곡**, ‘가사 창’ 버튼만 표시합니다. 방송 중에는 준비한 대기 목록에서 곡을 골라 바로 재생할 수 있습니다. 별도 가사 창은 자유롭게 이동하고 글자 크기를 조절할 수 있습니다.
+- **미니 모드:** 방송 전에 부를 곡과 화면 설정을 마치고 **대기 목록**까지 준비한 스트리머에게 적합합니다. 라이브러리와 BGM을 숨기고 반주, **대기 목록**과 **부른 곡**을 표시하며 가사 창과 YouTube 버튼은 반주 플레이어에 남습니다. 방송 중에는 준비한 대기 목록에서 곡을 골라 바로 재생할 수 있습니다. 별도 가사 창은 자유롭게 이동하고 글자 크기를 조절할 수 있습니다.
 
-`Ctrl + Shift + M`으로 전환할 수 있습니다. 모드 전환은 화면에 보이는 조작 항목만 바꿉니다. 재생 중인 곡은 계속 재생되고 기존 대기 순서와 OBS 화면도 초기화되지 않습니다. 각 모드의 창 배치는 따로 기억합니다.
+실행할 때마다 전체 모드는 1920 × 1080으로 열립니다. 사용할 수 있는 공간이 부족하면 화면에 맞도록 창을 줄여서 시작합니다. 열린 뒤에는 가장자리를 자유롭게 드래그해 크기를 조절할 수 있으며 창 크기는 고정되지 않습니다. `Ctrl + Shift + M`으로 전환할 수 있습니다. 모드 전환은 화면에 보이는 조작 항목만 바꿉니다. 재생 중인 곡은 계속 재생되고 기존 대기 순서와 OBS 화면도 초기화되지 않습니다. 각 모드의 창 배치는 따로 기억합니다.
 
 <div class="figure-grid">
   <figure class="manual-figure"><a href="{{ '/assets/images/ko/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/full-workspace.png' | relative_url }}" alt="한국어 전체 모드"></a><figcaption>전체 모드는 전체 라이브러리, 플레이어와 대기 목록을 표시합니다.</figcaption></figure>
@@ -264,7 +311,7 @@ WAV/FLAC/MP3(320 kbps), 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="재생하지 않을 때의 Singing Stream Savior Windows 알림 영역 메뉴" caption="재생하지 않을 때는 메뉴가 간결합니다. 반주 재생 또는 고급 방송 모드에서는 필요한 재생, Key, 속도, Profile, 마이크와 Meter 항목이 추가됩니다." size="medium" %}
 
 <a id="settings-and-troubleshooting"></a>
-## 08 · 설정 및 문제 해결
+## 09 · 설정 및 문제 해결
 
 다른 PC로 옮기기 전에 `.bgmsproj`, 로컬 미디어와 가져온 가사를 함께 백업하세요.
 

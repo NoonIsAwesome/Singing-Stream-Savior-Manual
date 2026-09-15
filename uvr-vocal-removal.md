@@ -20,14 +20,14 @@ translation_key: uvr-vocal-removal
   <div>
     <p class="chapter-quick-start__eyebrow">2.1.1 新功能</p>
     <h2 id="uvr-quick-start">四步完成音訊分離與匯入</h2>
-    <p class="chapter-quick-start__intro">選擇有權取得與處理的音訊來源，設定分離方式與輸出格式。完成後可直接將伴奏音軌加入歌曲列表，人聲與伴奏檔案則保留在輸出資料夾。</p>
+    <p class="chapter-quick-start__intro">選擇有權取得與處理的音訊來源，設定分離方式與輸出格式。完成後可直接將伴奏音軌加入歌曲列表；只有啟用導唱保留選項時，才會同時產生 Vocal 音軌。</p>
     <ol class="chapter-quick-start__steps">
       <li><div><strong>拖入待處理清單</strong><span>把一個或多個音訊檔，或 YouTube 影片連結，直接拖到表格。</span></div></li>
       <li><div><strong>確認每首設定</strong><span>可逐首選擇 HP 或 MDX，以及保留合音或完全消除人聲；再選擇輸出格式與取樣率。</span></div></li>
       <li><div><strong>開始處理</strong><span>按「開始處理」，從每首歌曲狀態與底部總進度查看進度；處理中可「全部停止」。</span></div></li>
       <li><div><strong>匯入伴奏</strong><span>完成後逐首匯入，或等全部完成再按「全部匯入歌曲列表」。</span></div></li>
     </ol>
-    <p class="chapter-quick-start__done"><strong>完成時：</strong>歌曲列表只會加入實際伴奏；人聲與伴奏兩個輸出檔仍會保留在輸出資料夾。</p>
+    <p class="chapter-quick-start__done"><strong>完成時：</strong>歌曲列表只會加入實際伴奏；若啟用導唱保留選項，Vocal 與伴奏輸出檔會一起保留在輸出資料夾。</p>
   </div>
   <figure class="manual-figure">
     <a href="assets/images/uvr-model-selection-2-1-2.png"><img src="assets/images/uvr-model-selection-2-1-2.png" alt="UVR 表格中的 HP 與 MDX 四種模型選項、歌名鉛筆與每首歌曲狀態" loading="lazy" decoding="async"></a>
@@ -54,9 +54,16 @@ translation_key: uvr-vocal-removal
 
 ## 處理與匯入
 
-按「開始處理」後，清單會依序處理所有歌曲，並顯示每首歌曲與整批工作的進度。完成時會產生名稱帶有 `(Instrumental)` 與 `(Vocal)` 的兩個檔案。
+按「開始處理」後，清單會依序處理所有歌曲，並顯示每首歌曲與整批工作的進度。完成時一定會產生 `(Instrumental)` 伴奏；只有勾選保留人聲音軌供導唱監聽時，才會另外產生 `(Vocal)` 檔案。
 
-「匯入歌曲列表」只會把實際的伴奏檔加入歌曲庫；人聲檔仍會保留在輸出資料夾。所有歌曲都完成後，也可以一次全部匯入。
+### 導唱監聽
+
+<figure class="manual-figure"><a href="assets/images/uvr-guide-vocal-2150.png"><img src="assets/images/uvr-guide-vocal-2150.png" alt="UVR 的保留人聲選項，可將分離後的人聲用作導唱監聽。" loading="lazy" decoding="async"></a><figcaption>UVR 的保留人聲選項，可將分離後的人聲用作導唱監聽。</figcaption></figure>
+
+
+在 UVR 勾選「保留人聲音軌供導唱監聽」。分離完成後匯入伴奏，程式會一起連結對應的 Vocal 音軌。只有支援的配對歌曲會在伴奏播放器顯示導唱圖示；導唱只送到監聽，不會進入 Stream 或 OBS。可用 Meter 或圖示的右鍵選單調整獨立音量與靜音。導唱會跟隨伴奏的 Key、速度、跳轉與循環，換歌時會重新關閉。
+
+「匯入歌曲列表」只會把實際的伴奏檔加入歌曲庫；啟用導唱保留時，對應的人聲檔也會保留在輸出資料夾供監聽。所有歌曲都完成後，也可以一次全部匯入。
 
 <div class="figure-grid">
   <figure class="manual-figure">

@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 ユーザーマニュアル
-description: Singing Stream Savior 2.1.4.3 日本語マニュアル
+description: Singing Stream Savior 2.1.5.0 日本語マニュアル
 lang: ja
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 ユーザーマニュアル
 
-Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.4.3** に対応しています。
+Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.5.0** に対応しています。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと拡大プレビューを開けます。</figcaption></figure>
 
@@ -69,6 +69,8 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 
 曲を分類するには、1 曲または複数曲を選択して右クリックし、「プレイリストに追加」から「お気に入り」またはカスタムプレイリストを選びます。音源は複製されず、「すべての曲」からも削除されません。同じ曲を複数のプレイリストに登録できます。
 
+検索結果に適したものがなければ、無理に関連付けないでください。用意した歌詞を歌詞エディターへ貼り付けるか、LRC、SRT、VTT、テキストを読み込んで自分で時刻を設定できます。
+
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/ja/add-to-playlist-menu.png' | relative_url }}" alt="表示曲名の編集、予約へ追加、プレイリストに追加、曲の削除を表示した右クリックメニュー"></a><figcaption>表示曲名の編集を先頭に置き、同じメニューから予約やプレイリストへの追加も行えます。</figcaption></figure>
 
 ファイル選択画面から読み込むほか、1 曲または複数のローカル音源をソフトへ直接ドラッグ＆ドロップできます。YouTube の単一動画 URL は貼り付けまたはドラッグで 1 曲として追加できます。YouTube プレイリストの URL もそのままドラッグでき、収録動画を認識して対応するカスタムプレイリストとして読み込むため、URL を 1 件ずつ追加する必要はありません。ローカル音源は `MP3`、`WAV`、`FLAC`、`M4A`、`MP4`、`AAC`、`OGG`、`OPUS`、`WMA` に対応します。YouTube の読み込みにはインターネット接続が必要です。
@@ -127,7 +129,11 @@ OBS のプレイリストテーマの現在曲表示が雑談の文字に変わ�
 <a id="lyrics"></a>
 ## 03 · 歌詞機能
 
+歌詞ウィンドウと YouTube 動画のアイコンは、フル・コンパクト・ミニの全モードで伴奏プレーヤーに表示されます。歌詞ページの重複ボタンは削除されました。YouTube 動画は YouTube リンクの再生時のみ表示され、音声はミュートのままです。動画の下で利用可能な字幕を選べます。
+
 歌詞は任意です。配信者用の独立した「歌詞ウィンドウ」、視聴者向け OBS 歌詞オーバーレイ、または両方に使用できます。LRC、SRT、VTT、テキスト、YouTube 字幕、LRCLIB に対応します。
+
+伴奏が YouTube リンクの場合、YouTube ウィンドウで利用できる字幕トラックも選べます。
 
 曲の「歌詞」ページにある「歌詞を管理…」を押すか、曲一覧の「歌詞」列にある対象曲のアイコンをクリックすると、同じ歌詞管理画面が開きます。オンライン検索、ローカル歌詞の読み込み、検索結果の関連付け、現在の関連付け解除ができます。LRCLIB と YouTube 字幕をまとめて最大 50 件表示し、同期状態、言語、音源時間、歌手情報に合う候補を優先します。YouTube の一時的な制限で字幕を取得できない場合も、他の候補を残して後で再試行できることを案内します。
 
@@ -151,6 +157,10 @@ OBS のプレイリストテーマの現在曲表示が雑談の文字に変わ�
 
 視聴者に歌詞を表示する場合は、「歌詞」タブの「OBSへドラッグ」を OBS へドロップします。ドラッグできない場合は、同じボタンをクリックして Browser Source のパスをコピーし、OBS に追加してください。
 
+
+### 歌詞利用に関する注意
+
+Singing Stream Savior は歌詞の読み込み、編集、同期、表示のためのツールを提供しますが、第三者の楽曲の歌詞を使用する許諾は提供しません。配信、動画、その他の用途で歌詞を表示できるかは、作品の許諾、プラットフォームの規則、適用される法律を確認してください。
 {% include feature-guide.html section="lyrics" %}
 
 <a id="lyrics-layout-editor"></a>
@@ -161,12 +171,42 @@ OBS のプレイリストテーマの現在曲表示が雑談の文字に変わ�
 同じ出力を使用している OBS の歌詞ソースには、**ドラッグ中もリアルタイムで反映**されます。マウスを離すまで待つ必要も、ソースを追加し直す必要もありません。中央付近では整列ガイドが表示されます。ボタンをもう一度押すか別のページへ移ると編集を終了し、位置は保持されます。隣のリセットアイコンで配置を戻せます。設定を残すにはプロジェクトを保存してください。市松模様は透明部分を示すもので、OBS には出力されません。独立した歌詞ウィンドウの位置には影響しません。
 
 <figure class="manual-figure">
-  <a href="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}"><img src="{{ '/assets/images/lyrics-layout-editor-2132.png' | relative_url }}" alt="2.1.3.2 の歌詞ブロック編集画面（繁体字中国語 UI）。" loading="lazy" decoding="async"></a>
-  <figcaption>2.1.3.2 の歌詞ブロック編集画面（繁体字中国語 UI）。</figcaption>
+  <a href="{{ '/assets/images/ja/lyrics-layout-editor-2150.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-layout-editor-2150.png' | relative_url }}" alt="2.1.5.0 の歌詞ブロック編集画面（日本語 UI）。" loading="lazy" decoding="async"></a>
+  <figcaption>2.1.5.0 の歌詞ブロック編集画面（日本語 UI）。</figcaption>
 </figure>
 
+<a id="lyrics-editor"></a>
+## 04 · 歌詞エディター
+
+検索で適した歌詞ファイルが見つからなければ、エディターで用意した歌詞に時刻を付けられます。
+
+1. 曲一覧で編集する曲を選びます。
+2. 「ライブ操作 → 歌詞作成」を開き、左側に歌詞を 1 フレーズずつ 1 行で貼り付けます。リンク済みの歌詞は編集用に自動で読み込まれます。
+3. 「行をマーク」を選び、右側の伴奏プレーヤーで再生します。各行の開始で **Ctrl + Enter** またはマークボタンを押します。ショートカットがおすすめです。再生速度を下げると時刻を合わせやすくなります。
+4. 「ハイライトをプレビュー」で確認します。細かく設定したい場合は「単語タイミング」に切り替え、聴きながら各文字・単語をマークします。
+5. 「歌詞を適用」を押すと保存され、曲にリンクされます。その後、プロジェクトを保存します。
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-editor-line-2150.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-editor-line-2150.png' | relative_url }}" alt="行のタイミング：左側に歌詞を貼り付け、右側で時刻を記録します。" loading="lazy" decoding="async"></a><figcaption>行のタイミング：左側に歌詞を貼り付け、右側で時刻を記録します。</figcaption></figure>
+
+
+### 文字・単語の選択、結合、分割
+
+英語は単語全体、韓国語は空白区切りのまとまり、中国語と日本語は文字単位のボタンから始められます。マークすると次の単語へ進み、行の最後から次の行へ移ります。
+
+- **Ctrl + クリック**で個別の選択を追加・解除します。
+- 最初の文字・単語を選び、**Shift** を押しながら最後をクリックすると範囲を選べます。
+- 隣り合う文字・単語を選んで「結合」すると、個別の時刻を保持したまままとめられます。
+- 1 つの単語を選んで「分割」すると、保存済みの文字ごとの時刻が復元されます。時刻がない文字は未設定のままなので、後からマークできます。
+
+間違えた場合は、元に戻す・やり直し・前の行の再マークで修正できます。すべて終える前でもプレビューでき、記録済みの時刻をクリックするとその位置へ移動します。空行は間奏としてマークでき、**Ctrl + Enter** はこのページでのみ有効です。
+
+「全歌詞のオフセット」で全体を最大 ±20 秒ずらせます。「歌詞を適用」は共通の歌詞フォルダーに保存します。保存先は「設定 → ファイルとプロジェクト」で変更でき、「LRC をエクスポート」では別の場所を選べます。編集時に速度を変更すると、ページを離れる際に開始時の速度へ戻すか確認します。
+
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-editor-word-2150.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-editor-word-2150.png' | relative_url }}" alt="単語タイミング：文字・単語を選択、結合、分割し、ハイライトで確認できます。" loading="lazy" decoding="async"></a><figcaption>単語タイミング：文字・単語を選択、結合、分割し、ハイライトで確認できます。</figcaption></figure>
+
 <a id="obs-and-themes"></a>
-## 04 · プレイリスト外観と OBS
+## 05 · プレイリスト外観と OBS
 
 「プレイリスト外観」でテーマを選び、Now Singing、Set List、Next On、Reserve をプレビューします。基本テーマは Default、Transparent Black、Transparent White、Transparent Black v2、Transparent White v2、Card、CD、Signal Line、Stage Caption の順で、その後に装飾テーマが並びます。
 
@@ -213,7 +253,7 @@ OBS に予約曲を表示するか、「次の1曲のみ」または 2、3、5�
 </figure>
 
 <a id="obs-websocket"></a>
-## 05 · 配信タイムスタンプ取得
+## 06 · 配信タイムスタンプ取得
 
 初期状態では無効です。主に OBS の配信時間を読み取り、カラオケ開始時刻を記録し、Set List の曲名前にタイムスタンプを表示するために使用します。通常のセットリストや歌詞表示には不要です。
 
@@ -222,7 +262,7 @@ OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き�
 右下の緑は接続済み、黄は接続または再接続中、赤は未接続です。本番前にテスト配信でタイムスタンプを確認してください。
 
 <a id="uvr-vocal-removal"></a>
-## 06 · UVR ボーカル除去
+## 07 · UVR ボーカル除去
 
 ### ボーカル分離を追加した理由
 
@@ -240,18 +280,25 @@ WAV／FLAC／MP3（320 kbps）、既定の 48 kHz または 44.1 kHz を選択�
 
 むちゃん個人の試聴では、伴奏の細部を残しやすい HP をおすすめします。ただし曲やジャンルによって結果が異なるため、参考としてお考えください。同じ条件の実測では HP は MDX より遅く、実際の速度は曲とパソコンによって異なります。
 
-完了後は伴奏を 1 曲ずつ、または全曲まとめてライブラリへ追加できます。出力フォルダーには `(Instrumental)` と `(Vocal)` の両方を残し、曲リストには実際の伴奏だけを追加します。
+### ガイドボーカルのモニター
 
+処理前に UVR の「ガイドボーカルのモニター用にボーカルトラックを保持」を有効にします。完成した伴奏を取り込むと、対応する Vocal トラックが自動でリンクされます。無効の場合は Instrumental のみ保存します。完了した曲は 1 曲ずつ、またはまとめて取り込めます。
+
+対応する音源ペアがある曲だけ、伴奏プレーヤーにガイドボーカルのアイコンが表示されます。有効にするとモニターでのみ聴こえ、Stream や OBS のミックスには入りません。Meter またはアイコンの右クリックメニューで音量とミュートを調整できます。伴奏のキー、速度、再生位置、ループに追従し、曲を変えるとオフになります。
+
+
+
+<figure class="manual-figure"><a href="{{ '/assets/images/ja/uvr-guide-vocal-2150.png' | relative_url }}"><img src="{{ '/assets/images/ja/uvr-guide-vocal-2150.png' | relative_url }}" alt="UVR でボーカルトラックを保持すると、分離した歌声をガイドとしてモニターできます。" loading="lazy" decoding="async"></a><figcaption>UVR でボーカルトラックを保持すると、分離した歌声をガイドとしてモニターできます。</figcaption></figure>
 > **配信に利用できることを確認した素材は、できるだけ事前に処理してください。** ボーカル分離は CPU または GPU を使用します。配信中に実行する前に、音声処理と OBS に必要なパソコンの性能が残っているか確認してください。
 
 <a id="workspace-modes"></a>
-## 07 · ワークスペース
+## 08 · ワークスペース
 
 - **フルモード：** 全データ、設定、大きなプレビューを表示。配信準備向け。
 - **コンパクトモード：** 選曲、プレイヤー、「予約」と「履歴」を残し、幅を取る列と大型プレビューを非表示。
-- **ミニモード：** 配信前に歌唱予定曲と画面設定を準備し、「予約」まで並べ終えた配信者向けです。ライブラリと BGM を隠し、カラオケ操作、「予約」「履歴」、［歌詞ウィンドウ］だけを表示します。配信中は準備済みの予約リストから曲を選んで再生できます。歌詞ウィンドウは自由に移動でき、文字サイズも調整できます。
+- **ミニモード：** 配信前に歌唱予定曲と画面設定を準備し、「予約」まで並べ終えた配信者向けです。ライブラリと BGM を隠し、カラオケ操作、「予約」「履歴」を表示し、歌詞ウィンドウと YouTube ボタンは伴奏プレーヤーに残ります。配信中は準備済みの予約リストから曲を選んで再生できます。歌詞ウィンドウは自由に移動でき、文字サイズも調整できます。
 
-`Ctrl + Shift + M` で切り替えられます。切り替わるのは表示する操作項目だけです。再生中の曲はそのまま続き、既存の予約順と OBS 画面もリセットされません。各モードのウィンドウ配置は個別に記憶されます。
+起動するたびにフルモードは 1920 × 1080 で開きます。使用できる画面が狭い場合は、画面に収まるようウィンドウを縮小して開始します。開いた後は端を自由にドラッグしてサイズを変更でき、固定されません。`Ctrl + Shift + M` で切り替えられます。切り替わるのは表示する操作項目だけです。再生中の曲はそのまま続き、既存の予約順と OBS 画面もリセットされません。各モードのウィンドウ配置は個別に記憶されます。
 
 <div class="figure-grid">
   <figure class="manual-figure"><a href="{{ '/assets/images/ja/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/full-workspace.png' | relative_url }}" alt="日本語のフルモード"></a><figcaption>フルモードは曲ライブラリ、プレイヤー、予約リストをすべて表示します。</figcaption></figure>
@@ -264,7 +311,7 @@ WAV／FLAC／MP3（320 kbps）、既定の 48 kHz または 44.1 kHz を選択�
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="未再生時の Singing Stream Savior Windows 通知領域メニュー" caption="未再生時は簡潔なメニューです。伴奏再生または高度な配信モードでは、再生、Key、速度、Profile、マイク、Meter の必要な項目が追加されます。" size="medium" %}
 
 <a id="settings-and-troubleshooting"></a>
-## 08 · 設定とトラブル対処
+## 09 · 設定とトラブル対処
 
 他の PC へ移す前に `.bgmsproj`、ローカル音源、読み込んだ歌詞をバックアップしてください。
 

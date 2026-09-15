@@ -27,6 +27,7 @@ zh-TW:
     getting_started: 開始使用
     library: 歌曲庫與播放
     lyrics: 歌詞功能
+    lyrics_editor: 歌詞編輯器
     themes: 歌單外觀與主題
     websocket: 直播時間戳擷取
     uvr: UVR 人聲消除
@@ -69,6 +70,7 @@ zh-CN:
     getting_started: 开始使用
     library: 歌曲库与播放
     lyrics: 歌词功能
+    lyrics_editor: 歌词编辑器
     themes: 歌单外观与主题
     websocket: 直播时间戳获取
     uvr: UVR 人声消除
@@ -111,6 +113,7 @@ en:
     getting_started: Getting started
     library: Library and playback
     lyrics: Lyrics
+    lyrics_editor: Lyrics editor
     themes: Playlist Appearance
     websocket: Livestream timestamp capture
     uvr: UVR vocal removal
@@ -153,6 +156,7 @@ ja:
     getting_started: はじめに
     library: 曲ライブラリと再生
     lyrics: 歌詞機能
+    lyrics_editor: 歌詞エディター
     themes: プレイリスト外観
     websocket: 配信タイムスタンプ取得
     uvr: UVR ボーカル除去
@@ -195,6 +199,7 @@ ko:
     getting_started: 시작하기
     library: 곡 라이브러리와 재생
     lyrics: 가사 기능
+    lyrics_editor: 가사 편집기
     themes: 재생목록 외관
     websocket: 방송 타임스탬프 캡처
     uvr: UVR 보컬 제거
