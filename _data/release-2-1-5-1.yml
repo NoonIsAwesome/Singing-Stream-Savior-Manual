@@ -1,7 +1,7 @@
 release:
   version: "2.1.5.1"
   date: "2026-09-15"
-  latest: true
+  latest: false
   type:
     en: "Lyrics timing hotfix"
     zh-TW: "歌詞時間標記修正"

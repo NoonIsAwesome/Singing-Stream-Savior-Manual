@@ -1,6 +1,6 @@
 ﻿---
 title: Singing Stream Savior 2.1 ユーザーマニュアル
-description: Singing Stream Savior 2.1.5.1 日本語マニュアル
+description: Singing Stream Savior 2.1.5.2 日本語マニュアル
 lang: ja
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 ユーザーマニュアル
 
-Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.5.1** に対応しています。
+Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.5.2** に対応しています。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと拡大プレビューを開けます。</figcaption></figure>
 
@@ -181,7 +181,7 @@ Singing Stream Savior は歌詞の読み込み、編集、同期、表示のた�
 検索で適した歌詞ファイルが見つからなければ、エディターで用意した歌詞に時刻を付けられます。
 
 1. 曲一覧で編集する曲を選びます。
-2. 「ライブ操作 → 歌詞作成」を開き、左側に歌詞を 1 フレーズずつ 1 行で貼り付けます。リンク済みの歌詞は編集用に自動で読み込まれます。
+2. 「ライブ操作 → 歌詞編集」を開き、左側に歌詞を 1 フレーズずつ 1 行で貼り付けます。リンク済みの歌詞は編集用に自動で読み込まれます。
 3. 「行をマーク」を選び、右側の伴奏プレーヤーで再生します。各行の開始で **Ctrl + Enter** またはマークボタンを押します。ショートカットがおすすめです。再生速度を下げると時刻を合わせやすくなります。
 4. 「ハイライトをプレビュー」で確認します。細かく設定したい場合は「単語タイミング」に切り替え、聴きながら各文字・単語をマークします。
 5. 「歌詞を適用」を押すと保存され、曲にリンクされます。その後、プロジェクトを保存します。

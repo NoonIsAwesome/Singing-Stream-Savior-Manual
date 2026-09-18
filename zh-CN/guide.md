@@ -1,6 +1,6 @@
 ﻿---
 title: 歌回救星 2.1 使用说明
-description: Singing Stream Savior 2.1.5.1 简体中文使用说明
+description: Singing Stream Savior 2.1.5.2 简体中文使用说明
 lang: zh-CN
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # 歌回救星 2.1 使用说明
 
-歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.5.1**。
+歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.5.2**。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可放大预览。</figcaption></figure>
 
@@ -181,7 +181,7 @@ Singing Stream Savior 提供歌词导入、编辑、同步与显示工具，不�
 搜索不到合适的歌词文件时，可以用编辑器为准备好的歌词添加时间标记。
 
 1. 在歌曲列表选中一首歌曲。
-2. 打开「直播操作 → 歌词制作」，将歌词粘贴到左侧，每句一行。已关联的歌词会自动载入供编辑。
+2. 打开「直播操作 → 歌词编辑」，将歌词粘贴到左侧，每句一行。已关联的歌词会自动载入供编辑。
 3. 选择「逐句标记」，用右侧播放器播放伴奏，在每句开始按 **Ctrl + Enter** 或标记按钮。推荐使用快捷键，也可以调慢伴奏，方便标记。
 4. 开启「预览高亮」检查效果。需要更细致的时间时，再切换「字词标记」，边听边标记各个字词。
 5. 点击「应用歌词」自动保存并关联歌曲，然后保存项目。

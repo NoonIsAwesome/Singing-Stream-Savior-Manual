@@ -1,0 +1,53 @@
+release:
+  version: "2.1.5.2"
+  date: "2026-09-18"
+  latest: true
+  type:
+    en: "Stability update"
+    zh-TW: "穩定性更新"
+    zh-CN: "稳定性更新"
+    ja: "安定性の改善"
+    ko: "안정성 업데이트"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.5.2"
+  summary:
+    en: "Several stability improvements across the app."
+    zh-TW: "軟體多項穩定性更新"
+    zh-CN: "软件多项稳定性更新"
+    ja: "アプリ全体の安定性を改善しました。"
+    ko: "앱 전반의 안정성을 개선했습니다."
+  items:
+    en:
+      - "Improves recovery when audio devices disconnect and reconnect."
+      - "Improves VST3 editor stability."
+      - "Standardizes the feature name as Lyrics Editor."
+      - "Improves editing and saving of word-synced lyrics."
+      - "Improves player behavior."
+      - "Scrolled through lots of cat videos."
+    zh-TW:
+      - "改善音訊裝置中斷與重新連線的恢復機制。"
+      - "改善 VST3 編輯器的穩定性。"
+      - "「歌詞製作」重新命名為「歌詞編輯」。"
+      - "改善逐字歌詞的編輯與保存。"
+      - "改善播放器機制。"
+      - "滑了很多貓貓影片。"
+    zh-CN:
+      - "改善音频设备断开与重新连接时的恢复机制。"
+      - "改善 VST3 编辑器的稳定性。"
+      - "“歌词制作”更名为“歌词编辑”。"
+      - "改善逐字歌词的编辑与保存。"
+      - "改善播放器机制。"
+      - "刷了很多猫猫视频。"
+    ja:
+      - "オーディオデバイスの切断・再接続時の復旧を改善しました。"
+      - "VST3 エディターの安定性を改善しました。"
+      - "機能名を「歌詞編集」に統一しました。"
+      - "単語単位で同期する歌詞の編集と保存を改善しました。"
+      - "プレーヤーの動作を改善しました。"
+      - "猫動画をたくさん見ました。"
+    ko:
+      - "오디오 장치 연결 해제 및 재연결 시 복구 기능을 개선했습니다."
+      - "VST3 편집기의 안정성을 개선했습니다."
+      - "기능 이름을 ‘가사 편집’으로 통일했습니다."
+      - "단어별 동기화 가사의 편집과 저장을 개선했습니다."
+      - "플레이어 동작을 개선했습니다."
+      - "고양이 영상을 잔뜩 봤어요."
