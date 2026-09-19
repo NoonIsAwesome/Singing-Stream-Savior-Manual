@@ -18,6 +18,8 @@ const OPEN_SOURCE_PAGES = [
   "ko/open-source.html",
   "zh-CN/open-source.html",
 ];
+const EXPECTED_CURRENT_RELEASE = "2.1.5.3";
+const EXPECTED_CURRENT_RELEASE_ID = "v2-1-5-3";
 
 function collectHtmlFiles(root) {
   const files = [];
@@ -73,6 +75,15 @@ export function validateBuiltSite(siteRoot, basePath = DEFAULT_BASE_PATH) {
       errors.push(
         `${page}: expected exactly one release-entry--latest marker, found ${latestCount}`,
       );
+    }
+    if (!changelogHtml.includes(`2.0.0.0 → ${EXPECTED_CURRENT_RELEASE}`)) {
+      errors.push(`${page}: changelog range does not end at ${EXPECTED_CURRENT_RELEASE}`);
+    }
+    const latestReleasePattern = new RegExp(
+      `<article[^>]+id="${EXPECTED_CURRENT_RELEASE_ID}"[^>]*class="[^"]*\\brelease-entry--latest\\b`,
+    );
+    if (!latestReleasePattern.test(changelogHtml)) {
+      errors.push(`${page}: ${EXPECTED_CURRENT_RELEASE} is not the rendered current release`);
     }
   }
 
