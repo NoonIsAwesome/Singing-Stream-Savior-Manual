@@ -180,11 +180,15 @@ Singing Stream Savior는 가사를 가져오고, 편집하고, 동기화하고, 
 
 검색에서 알맞은 가사 파일을 찾지 못하면 편집기로 준비한 가사에 시간을 표시할 수 있습니다.
 
-1. 곡 목록에서 편집할 곡을 선택하세요.
-2. 「라이브 조작 → 가사 제작」을 열고 왼쪽에 한 구절씩 한 줄로 가사를 붙여 넣으세요. 연결된 가사는 자동으로 불러옵니다.
-3. 「줄 표시」를 선택하고 오른쪽 반주 플레이어로 재생하세요. 각 줄이 시작될 때 **Ctrl + Enter** 또는 표시 버튼을 누르세요. 단축키를 추천하며, 반주 속도를 낮추면 시간을 맞추기 쉽습니다.
-4. 「하이라이트 미리 보기」로 확인하세요. 더 세밀하게 표시하려면 「단어 타이밍」으로 전환해 들으면서 각 단어를 표시하세요.
-5. 「가사 적용」을 누르면 가사를 저장하고 곡에 연결합니다. 그다음 프로젝트를 저장하세요.
+<section class="chapter-quick-start chapter-quick-start--single lyrics-editor-quick-start">
+  <ol class="chapter-quick-start__steps">
+      <li><div><span>곡 목록에서 편집할 곡을 선택하세요.</span></div></li>
+      <li><div><span>「라이브 조작 → 가사 제작」을 열고 왼쪽에 한 구절씩 한 줄로 가사를 붙여 넣으세요. 연결된 가사는 자동으로 불러옵니다.</span></div></li>
+      <li><div><span>「줄 표시」를 선택하고 오른쪽 반주 플레이어로 재생하세요. 각 줄이 시작될 때 <strong>Ctrl + Enter</strong> 또는 표시 버튼을 누르세요. 단축키를 추천하며, 반주 속도를 낮추면 시간을 맞추기 쉽습니다.</span></div></li>
+      <li><div><span>「하이라이트 미리 보기」로 확인하세요. 더 세밀하게 표시하려면 「단어 타이밍」으로 전환해 들으면서 각 단어를 표시하세요.</span></div></li>
+      <li><div><span>「가사 적용」을 누르면 가사를 저장하고 곡에 연결합니다. 그다음 프로젝트를 저장하세요.</span></div></li>
+  </ol>
+</section>
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-editor-line-2150.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-editor-line-2150.png' | relative_url }}" alt="줄 타이밍: 왼쪽에 원문 가사를 붙여 넣고 오른쪽에 시간을 기록합니다." loading="lazy" decoding="async"></a><figcaption>줄 타이밍: 왼쪽에 원문 가사를 붙여 넣고 오른쪽에 시간을 기록합니다.</figcaption></figure>
 

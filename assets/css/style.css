@@ -4144,6 +4144,10 @@ body {
   line-height: 1.65;
 }
 
+.lyrics-editor-quick-start .chapter-quick-start__steps span strong {
+  display: inline;
+}
+
 .chapter-quick-start__done {
   margin: 18px 0 0;
   padding: 10px 13px;

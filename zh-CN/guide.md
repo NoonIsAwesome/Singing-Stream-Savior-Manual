@@ -180,11 +180,15 @@ Singing Stream Savior 提供歌词导入、编辑、同步与显示工具，不�
 
 搜索不到合适的歌词文件时，可以用编辑器为准备好的歌词添加时间标记。
 
-1. 在歌曲列表选中一首歌曲。
-2. 打开「直播操作 → 歌词编辑」，将歌词粘贴到左侧，每句一行。已关联的歌词会自动载入供编辑。
-3. 选择「逐句标记」，用右侧播放器播放伴奏，在每句开始按 **Ctrl + Enter** 或标记按钮。推荐使用快捷键，也可以调慢伴奏，方便标记。
-4. 开启「预览高亮」检查效果。需要更细致的时间时，再切换「字词标记」，边听边标记各个字词。
-5. 点击「应用歌词」自动保存并关联歌曲，然后保存项目。
+<section class="chapter-quick-start chapter-quick-start--single lyrics-editor-quick-start">
+  <ol class="chapter-quick-start__steps">
+      <li><div><span>在歌曲列表选中一首歌曲。</span></div></li>
+      <li><div><span>打开「直播操作 → 歌词编辑」，将歌词粘贴到左侧，每句一行。已关联的歌词会自动载入供编辑。</span></div></li>
+      <li><div><span>选择「逐句标记」，用右侧播放器播放伴奏，在每句开始按 <strong>Ctrl + Enter</strong> 或标记按钮。推荐使用快捷键，也可以调慢伴奏，方便标记。</span></div></li>
+      <li><div><span>开启「预览高亮」检查效果。需要更细致的时间时，再切换「字词标记」，边听边标记各个字词。</span></div></li>
+      <li><div><span>点击「应用歌词」自动保存并关联歌曲，然后保存项目。</span></div></li>
+  </ol>
+</section>
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-editor-line-2150.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-editor-line-2150.png' | relative_url }}" alt="逐句标记：在左侧粘贴原始歌词，在右侧记录时间。" loading="lazy" decoding="async"></a><figcaption>逐句标记：在左侧粘贴原始歌词，在右侧记录时间。</figcaption></figure>
 

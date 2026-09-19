@@ -201,11 +201,15 @@ An OBS lyric source already using this output updates **while you drag**; releas
 
 If search does not find a suitable lyrics file, use the editor to add timing to lyrics you have prepared.
 
-1. Select a song in the song list.
-2. Open **Live → Lyrics Editor** and paste the lyrics on the left, one phrase per line. Linked lyrics load automatically for editing.
-3. Choose **Line timing** and play the accompaniment using the player on the right. Press **Ctrl + Enter** or the mark button at each line start. The shortcut is recommended; you can slow playback to make marking easier.
-4. Turn on **Preview highlights** to check the result. For finer timing, switch to **Word timing** and mark each word as you listen.
-5. Select **Apply lyrics** to save and link the lyrics to the song, then save the project.
+<section class="chapter-quick-start chapter-quick-start--single lyrics-editor-quick-start">
+  <ol class="chapter-quick-start__steps">
+      <li><div><span>Select a song in the song list.</span></div></li>
+      <li><div><span>Open <strong>Live → Lyrics Editor</strong> and paste the lyrics on the left, one phrase per line. Linked lyrics load automatically for editing.</span></div></li>
+      <li><div><span>Choose <strong>Line timing</strong> and play the accompaniment using the player on the right. Press <strong>Ctrl + Enter</strong> or the mark button at each line start. The shortcut is recommended; you can slow playback to make marking easier.</span></div></li>
+      <li><div><span>Turn on <strong>Preview highlights</strong> to check the result. For finer timing, switch to <strong>Word timing</strong> and mark each word as you listen.</span></div></li>
+      <li><div><span>Select <strong>Apply lyrics</strong> to save and link the lyrics to the song, then save the project.</span></div></li>
+  </ol>
+</section>
 
 <figure class="manual-figure"><a href="{{ '/assets/images/en/lyrics-editor-line-2150.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-editor-line-2150.png' | relative_url }}" alt="Line timing: paste the original lyrics on the left and record timestamps on the right." loading="lazy" decoding="async"></a><figcaption>Line timing: paste the original lyrics on the left and record timestamps on the right.</figcaption></figure>
 

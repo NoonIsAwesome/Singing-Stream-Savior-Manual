@@ -180,11 +180,15 @@ Singing Stream Savior は歌詞の読み込み、編集、同期、表示のた�
 
 検索で適した歌詞ファイルが見つからなければ、エディターで用意した歌詞に時刻を付けられます。
 
-1. 曲一覧で編集する曲を選びます。
-2. 「ライブ操作 → 歌詞編集」を開き、左側に歌詞を 1 フレーズずつ 1 行で貼り付けます。リンク済みの歌詞は編集用に自動で読み込まれます。
-3. 「行をマーク」を選び、右側の伴奏プレーヤーで再生します。各行の開始で **Ctrl + Enter** またはマークボタンを押します。ショートカットがおすすめです。再生速度を下げると時刻を合わせやすくなります。
-4. 「ハイライトをプレビュー」で確認します。細かく設定したい場合は「単語タイミング」に切り替え、聴きながら各文字・単語をマークします。
-5. 「歌詞を適用」を押すと保存され、曲にリンクされます。その後、プロジェクトを保存します。
+<section class="chapter-quick-start chapter-quick-start--single lyrics-editor-quick-start">
+  <ol class="chapter-quick-start__steps">
+      <li><div><span>曲一覧で編集する曲を選びます。</span></div></li>
+      <li><div><span>「ライブ操作 → 歌詞編集」を開き、左側に歌詞を 1 フレーズずつ 1 行で貼り付けます。リンク済みの歌詞は編集用に自動で読み込まれます。</span></div></li>
+      <li><div><span>「行をマーク」を選び、右側の伴奏プレーヤーで再生します。各行の開始で <strong>Ctrl + Enter</strong> またはマークボタンを押します。ショートカットがおすすめです。再生速度を下げると時刻を合わせやすくなります。</span></div></li>
+      <li><div><span>「ハイライトをプレビュー」で確認します。細かく設定したい場合は「単語タイミング」に切り替え、聴きながら各文字・単語をマークします。</span></div></li>
+      <li><div><span>「歌詞を適用」を押すと保存され、曲にリンクされます。その後、プロジェクトを保存します。</span></div></li>
+  </ol>
+</section>
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-editor-line-2150.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-editor-line-2150.png' | relative_url }}" alt="行のタイミング：左側に歌詞を貼り付け、右側で時刻を記録します。" loading="lazy" decoding="async"></a><figcaption>行のタイミング：左側に歌詞を貼り付け、右側で時刻を記録します。</figcaption></figure>
 
