@@ -25,6 +25,9 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Test built-site validator
+        run: node --test scripts/test-built-site.mjs
+
       - name: Build manual with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:

@@ -70,7 +70,18 @@ export function validateBuiltSite(siteRoot, basePath = DEFAULT_BASE_PATH) {
     }
 
     const changelogHtml = readFileSync(changelogPath, "utf8");
-    const latestCount = changelogHtml.match(/\brelease-entry--latest\b/g)?.length || 0;
+    // Inspect attributes on actual article openings, irrespective of order.
+    // Text, comments and similarly named CSS classes are not release markers.
+    const articleHtml = changelogHtml.replace(/<!--[\s\S]*?-->/g, "");
+    const attribute = (tag, name) => {
+      const match = tag.match(new RegExp(`\\s${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)')`, "i"));
+      return match?.[1] ?? match?.[2] ?? "";
+    };
+    const releases = [...articleHtml.matchAll(/<article\b[^>]*>/gi)]
+      .map(([tag]) => ({ id: attribute(tag, "id"), classes: attribute(tag, "class").split(/\s+/) }))
+      .filter((entry) => entry.classes.includes("release-entry"));
+    const latest = releases.filter((entry) => entry.classes.includes("release-entry--latest"));
+    const latestCount = latest.length;
     if (latestCount !== 1) {
       errors.push(
         `${page}: expected exactly one release-entry--latest marker, found ${latestCount}`,
@@ -79,10 +90,9 @@ export function validateBuiltSite(siteRoot, basePath = DEFAULT_BASE_PATH) {
     if (!changelogHtml.includes(`2.0.0.0 → ${EXPECTED_CURRENT_RELEASE}`)) {
       errors.push(`${page}: changelog range does not end at ${EXPECTED_CURRENT_RELEASE}`);
     }
-    const latestReleasePattern = new RegExp(
-      `<article[^>]+id="${EXPECTED_CURRENT_RELEASE_ID}"[^>]*class="[^"]*\\brelease-entry--latest\\b`,
-    );
-    if (!latestReleasePattern.test(changelogHtml)) {
+    if (releases[0]?.id !== EXPECTED_CURRENT_RELEASE_ID
+      || latest[0]?.id !== EXPECTED_CURRENT_RELEASE_ID
+      || releases.filter((entry) => entry.id === EXPECTED_CURRENT_RELEASE_ID).length !== 1) {
       errors.push(`${page}: ${EXPECTED_CURRENT_RELEASE} is not the rendered current release`);
     }
   }
