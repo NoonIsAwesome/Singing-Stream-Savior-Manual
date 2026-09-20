@@ -1,7 +1,7 @@
 release:
   version: "2.1.5.3"
   date: "2026-09-19"
-  latest: true
+  latest: false
   type:
     en: "Stability update"
     zh-TW: "穩定性更新"
