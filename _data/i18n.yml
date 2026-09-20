@@ -40,6 +40,7 @@ zh-TW:
     resources: 軟體下載
     changelog: 更新日誌
     about: 作者與聯絡
+    support: 問題回報與建議
 
 zh-CN:
   language_name: 简体中文
@@ -83,6 +84,7 @@ zh-CN:
     resources: 软件下载
     changelog: 更新日志
     about: 作者与联系
+    support: 问题反馈与建议
 
 en:
   language_name: English
@@ -125,7 +127,8 @@ en:
     open_source: Open source and licenses
     resources: Software download
     changelog: Release history
-    about: Creator and support
+    about: Creator and contact
+    support: Bug reports and suggestions
 
 ja:
   language_name: 日本語
@@ -169,6 +172,7 @@ ja:
     resources: アプリをダウンロード
     changelog: 更新履歴
     about: 制作者・お問い合わせ
+    support: 不具合報告・ご提案
 
 ko:
   language_name: 한국어
@@ -212,3 +216,4 @@ ko:
     resources: 앱 다운로드
     changelog: 업데이트 기록
     about: 제작자 및 문의
+    support: 버그 신고 및 제안

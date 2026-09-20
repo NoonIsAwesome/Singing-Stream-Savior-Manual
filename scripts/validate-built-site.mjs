@@ -53,8 +53,71 @@ function localAssetPath(siteRoot, htmlPath, source, basePath) {
   return resolve(siteRoot, assetPath);
 }
 
+// The support chapter is informational until a receiving service is configured.
+// Check the rendered navigation and language URLs, not just source-file presence.
+const SUPPORT_LOCALES = ["zh-TW", "zh-CN", "en", "ja", "ko"];
+const attributeValue = (tag, name) => {
+  const match = tag.match(new RegExp(`\\s${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)')`, "i"));
+  return match?.[1] ?? match?.[2] ?? "";
+};
+const supportPath = (locale) => `${locale === "zh-TW" ? "" : locale + "/"}support.html`;
+
+export function validateSupportPages(siteRoot, basePath = DEFAULT_BASE_PATH) {
+  const errors = [];
+  for (const locale of SUPPORT_LOCALES) {
+    const page = supportPath(locale);
+    const path = join(siteRoot, page);
+    if (!existsSync(path)) { errors.push(`${page}: support page is missing`); continue; }
+    const html = readFileSync(path, "utf8").replace(/<!--[\s\S]*?-->/g, "");
+    const target = basePath + page;
+    const tags = [...html.matchAll(/<[a-z][^>]*>/gi)].map(([tag]) => tag);
+    const openings = (name) => tags.filter((tag) => new RegExp(`^<${name}\\b`, "i").test(tag));
+    if (attributeValue(openings("html")[0] || "", "lang") !== locale)
+      errors.push(`${page}: support language is incorrect`);
+    const headings = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)];
+    if (headings.length !== 1 || !headings[0][1].replace(/<[^>]*>/g, "").trim())
+      errors.push(`${page}: support needs one nonempty title`);
+    for (const id of ["report-a-bug", "share-an-idea", "diagnostic-files", "temporary-contact"])
+      if (tags.filter((tag) => attributeValue(tag, "id") === id).length !== 1)
+        errors.push(`${page}: missing or duplicate support section ${id}`);
+    if (!tags.some((tag) => attributeValue(tag, "data-support-intake") === "not-configured")
+      || !/<strong\b[^>]*id=["']support-intake-title["'][^>]*>[^<\s][\s\S]*?<\/strong>/i.test(html))
+      errors.push(`${page}: support intake availability must be explicit`);
+    if (openings("form").length || openings("iframe").length
+      || openings("input").some((tag) => attributeValue(tag, "type") === "file"))
+      errors.push(`${page}: unconfigured support must not present a submission or upload form`);
+    const active = openings("a").filter((tag) => attributeValue(tag, "aria-current") === "page");
+    if (active.length !== 2 || active.some((tag) => attributeValue(tag, "href") !== target))
+      errors.push(`${page}: header and chapter navigation must select only support`);
+    for (const alternate of SUPPORT_LOCALES) {
+      const expected = basePath + supportPath(alternate);
+      if (!openings("option").some((tag) => attributeValue(tag, "data-lang") === alternate
+        && attributeValue(tag, "value") === expected))
+        errors.push(`${page}: support language switch is missing ${alternate}`);
+      if (!openings("link").some((tag) => attributeValue(tag, "hreflang") === alternate
+        && attributeValue(tag, "href").endsWith(expected)))
+        errors.push(`${page}: support alternate link is missing ${alternate}`);
+    }
+    for (const name of ["style.css", "design.css", "reader.css"])
+      if (!openings("link").some((tag) => attributeValue(tag, "href").split("?")[0].endsWith(`/assets/css/${name}`)))
+        errors.push(`${page}: shared support design stylesheet ${name} is missing`);
+    const prefix = locale === "zh-TW" ? "" : locale + "/";
+    for (const entry of ["index.html", "about.html"]) {
+      const entryPath = join(siteRoot, prefix + entry);
+      const source = existsSync(entryPath) ? readFileSync(entryPath, "utf8") : "";
+      const links = [...source.replace(/<!--[\s\S]*?-->/g, "").matchAll(/<a\b[^>]*>/gi)];
+      if (!links.some(([tag]) => attributeValue(tag, "href") === target))
+        errors.push(`${prefix}${entry}: localized support entry is missing`);
+      if (entry === "about.html" && links.some(([tag]) => /^mailto:/i.test(attributeValue(tag, "href"))))
+        errors.push(`${prefix}${entry}: software contact must lead to the support chapter`);
+    }
+  }
+  return errors;
+}
+
 export function validateBuiltSite(siteRoot, basePath = DEFAULT_BASE_PATH) {
   const errors = [];
+  errors.push(...validateSupportPages(siteRoot, basePath));
 
   for (const file of FORBIDDEN_ROOT_FILES) {
     if (existsSync(join(siteRoot, file))) {

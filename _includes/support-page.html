@@ -1,0 +1,62 @@
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign support_copy = site.data.support[current_lang] | default: site.data.support.en %}
+{% if current_lang == 'zh-TW' %}
+  {% assign help_target = '/settings-and-troubleshooting.html' %}
+  {% assign releases_target = '/changelog.html' %}
+{% else %}
+  {% capture help_target %}/{{ current_lang }}/guide.html#settings-and-troubleshooting{% endcapture %}
+  {% capture releases_target %}/{{ current_lang }}/changelog.html{% endcapture %}
+{% endif %}
+
+<header class="resource-hero support-hero" data-support-page>
+  <p class="resource-eyebrow">SUPPORT · FEEDBACK</p>
+  <h1>{{ support_copy.title }}</h1>
+  <p>{{ support_copy.lead }}</p>
+  <nav class="support-shortcuts" aria-label="{{ support_copy.sections_label | escape }}">
+    <a class="resource-action resource-action--primary" href="#report-a-bug">{{ support_copy.bug_title }} <span aria-hidden="true">↓</span></a>
+    <a class="resource-action" href="#share-an-idea">{{ support_copy.idea_title }} <span aria-hidden="true">↓</span></a>
+    <a class="resource-action" href="#diagnostic-files">{{ support_copy.diagnostic_title }} <span aria-hidden="true">↓</span></a>
+  </nav>
+</header>
+
+<aside class="support-notice" data-support-intake="not-configured" aria-labelledby="support-intake-title">
+  <strong id="support-intake-title">{{ support_copy.intake_title }}</strong>
+  <p>{{ support_copy.intake_text }}</p>
+</aside>
+
+<div class="support-grid">
+  <section class="support-card" id="report-a-bug" aria-labelledby="support-bug-title">
+    <p class="resource-eyebrow">01 · BUG REPORT</p>
+    <h2 id="support-bug-title">{{ support_copy.bug_title }}</h2>
+    <p>{{ support_copy.bug_intro }}</p>
+    <ul>{% for item in support_copy.bug_items %}<li>{{ item }}</li>{% endfor %}</ul>
+    <p class="support-card__note">{{ support_copy.bug_note }}</p>
+    <a class="resource-action" href="{{ help_target | relative_url }}">{{ support_copy.help_label }} <span aria-hidden="true">→</span></a>
+  </section>
+  <section class="support-card" id="share-an-idea" aria-labelledby="support-idea-title">
+    <p class="resource-eyebrow">02 · SUGGESTION</p>
+    <h2 id="support-idea-title">{{ support_copy.idea_title }}</h2>
+    <p>{{ support_copy.idea_intro }}</p>
+    <ul>{% for item in support_copy.idea_items %}<li>{{ item }}</li>{% endfor %}</ul>
+    <p class="support-card__note">{{ support_copy.idea_note }}</p>
+    <a class="resource-action" href="{{ releases_target | relative_url }}">{{ support_copy.releases_label }} <span aria-hidden="true">→</span></a>
+  </section>
+</div>
+
+<section class="support-section" id="diagnostic-files" aria-labelledby="support-diagnostic-title">
+  <p class="resource-eyebrow">03 · DIAGNOSTICS</p>
+  <h2 id="support-diagnostic-title">{{ support_copy.diagnostic_title }}</h2>
+  <p>{{ support_copy.diagnostic_intro }}</p>
+  <p>{{ support_copy.diagnostic_note }}</p>
+  <aside class="support-notice support-notice--privacy" aria-labelledby="support-privacy-title">
+    <strong id="support-privacy-title">{{ support_copy.privacy_title }}</strong>
+    <p>{{ support_copy.privacy_text }}</p>
+  </aside>
+</section>
+
+<details class="support-contact" id="temporary-contact">
+  <summary>{{ support_copy.contact_title }}</summary>
+  <p>{{ support_copy.contact_text }}</p>
+  <a class="resource-action" href="mailto:{{ site.data.author.support_email | escape }}">{{ support_copy.contact_label }} <span aria-hidden="true">↗</span></a>
+</details>
+<p class="support-encouragement-note">{{ support_copy.encouragement }}</p>

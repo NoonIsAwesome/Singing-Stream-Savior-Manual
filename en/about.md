@@ -1,6 +1,6 @@
 ---
-title: Creator and support | Singing Stream Savior
-description: Meet Noon, creator of Singing Stream Savior, report a problem, or share an improvement idea.
+title: Creator and contact | Singing Stream Savior
+description: Meet Noon, creator of Singing Stream Savior, and find social links and collaboration contacts.
 lang: en
 translation_key: about
 ---
