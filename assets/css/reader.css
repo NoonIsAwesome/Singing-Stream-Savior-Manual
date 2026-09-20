@@ -507,7 +507,6 @@ html[data-theme="dark"] .language option:checked {
   margin:24px 0;
   padding:20px 24px;
   border:1px solid var(--line);
-  border-left:3px solid var(--teal);
   border-radius:10px;
   background:var(--paper)
 }
