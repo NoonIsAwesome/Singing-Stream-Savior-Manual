@@ -4,7 +4,6 @@
     <nav class="nav-links" aria-label="{{ design.navigation | escape }}">
       <a href="{{ language_home | relative_url }}#prepare">{{ design.features }}</a>
       <a href="{{ guide_target | relative_url }}"{% unless is_home or section == 'about' or section == 'support' %} aria-current="page"{% endunless %}>{{ design.guide }}</a>
-      <a href="{{ support_target | relative_url }}"{% if section == 'support' %} aria-current="page"{% endif %}>{{ site.data.support[current_lang].nav_label }}</a>
       <a href="{{ about_target | relative_url }}"{% if section == 'about' %} aria-current="page"{% endif %}>{{ design.author }}</a>
     </nav>
     <div class="nav-actions">

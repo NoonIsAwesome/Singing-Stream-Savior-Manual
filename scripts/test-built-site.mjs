@@ -25,8 +25,8 @@ function supportFixture(locale) {
   }).join("");
   return `<html lang="${lang}"><h1>${supportCopy[lang].title}</h1>${languages}
     ${["style.css", "design.css", "reader.css"].map((name) => `<link rel="stylesheet" href="/Singing-Stream-Savior-Manual/assets/css/${name}">`).join("")}
-    <nav><a href="${path}" aria-current="page">Support</a></nav>
-    <aside><a href="${path}" aria-current="page">Support</a></aside>
+    <header class="site-header"><nav><a href="/Singing-Stream-Savior-Manual/">Home</a></nav></header>
+    <aside class="guide-sidebar" id="guide-nav"><a href="${path}" aria-current="page">Support</a></aside>
     <aside data-support-intake="not-configured"><strong id="support-intake-title">${supportCopy[lang].intake_title}</strong></aside>
     <section id="report-a-bug"></section><section id="share-an-idea"></section>
     <section id="diagnostic-files"></section><details id="temporary-contact"></details></html>`;
@@ -35,7 +35,6 @@ function withSite(changelog, check) {
   const root = mkdtempSync(join(tmpdir(), "s3s-site-validator-"));
   try {
     for (const locale of locales) {
-      const supportUrl = `/Singing-Stream-Savior-Manual/${locale ? locale + "/" : ""}support.html`;
       const directory = join(root, locale);
       mkdirSync(directory, { recursive: true });
       writeFileSync(join(directory, "changelog.html"), `2.0.0.0 → 2.1.5.4\n${changelog}`);
@@ -43,9 +42,7 @@ function withSite(changelog, check) {
       writeFileSync(join(directory, "index.html"), '<div data-site-language data-theme-choice="auto" id="homepage-states">OuOb 可以全部自動化！ 自動切換聊天／歌唱效果</div>' + '<div class="capability"></div>'.repeat(5));
       writeFileSync(join(directory, "advanced-streaming.html"), '<h2 id="what-is-a-profile">Profile</h2>');
       writeFileSync(join(directory, "support.html"), supportFixture(locale));
-      writeFileSync(join(directory, "about.html"), `<a href="${supportUrl}">Support</a>`);
-      const home = join(directory, "index.html");
-      writeFileSync(home, readFileSync(home, "utf8") + `<a href="${supportUrl}">Support</a>`);
+      writeFileSync(join(directory, "about.html"), '<h1>About the author</h1><section id="social-links"></section>');
     }
     mkdirSync(join(root, "assets/css"), { recursive: true });
     for (const name of ["style.css", "design.css", "reader.css"])
@@ -102,9 +99,31 @@ test("rejects missing support locale and old about email entry", () => withSite(
   rmSync(join(root, "ko/support.html"));
   writeFileSync(join(root, "en/about.html"), '<a href="mailto:test@example.invalid">Email</a>');
   const errors = validateBuiltSite(root);
-  for (const expected of ["support page is missing", "localized support entry is missing", "software contact must lead"])
+  for (const expected of ["support page is missing", "about must not contain a bug-report contact section"])
     assert.ok(errors.some((error) => error.includes(expected)), expected);
 }));
+rejectsSupport("rejects removal of the sidebar support entry", (html) => html.replace(/<aside class="guide-sidebar"[\s\S]*?<\/aside>/, ""), "sidebar must retain");
+rejectsSupport("rejects restoring a support link to top navigation", (html) => html.replace('</nav>', '<a href="/Singing-Stream-Savior-Manual/en/support.html">Support</a></nav>'), "top navigation must not contain");
+test("rejects a support entry restored on home or about in any locale", () => withSite(current + old, (root) => {
+  for (const locale of locales) for (const entry of ["index.html", "about.html"]) {
+    const file = join(root, locale, entry);
+    writeFileSync(file, readFileSync(file, "utf8") + '<a href="/Singing-Stream-Savior-Manual/support.html">Support</a>');
+  }
+  const errors = validateBuiltSite(root).filter((message) => message.includes('support entry belongs only'));
+  assert.equal(errors.length, 10);
+}));
+test("source templates expose support only in the manual sidebar", () => {
+  const header = readFileSync(new URL('../_includes/site-header.html', import.meta.url), 'utf8');
+  const about = readFileSync(new URL('../_includes/about-page.html', import.meta.url), 'utf8');
+  const sidebar = readFileSync(new URL('../_includes/guide-sidebar.html', import.meta.url), 'utf8');
+  assert.equal((header.match(/<a\b/g) || []).length, 5, 'brand, three navigation items, download');
+  assert.doesNotMatch(header, /support_target|support\.html|site\.data\.support/);
+  assert.doesNotMatch(about, /support_copy|support_page_target|creator-support-title|SUPPORT/);
+  assert.match(about, /id="social-links"/);
+  assert.match(about, /class="collaboration-panel"/);
+  assert.match(sidebar, /open-source,support/);
+  assert.match(sidebar, /key == 'support'/);
+});
 test("support copy is complete and uses one page template in five locales", () => {
   const expectedKeys = Object.keys(supportCopy.en).sort();
   assert.deepEqual(Object.keys(supportCopy).sort(), [...supportLocales].sort());

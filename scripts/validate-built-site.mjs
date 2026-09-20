@@ -87,8 +87,14 @@ export function validateSupportPages(siteRoot, basePath = DEFAULT_BASE_PATH) {
       || openings("input").some((tag) => attributeValue(tag, "type") === "file"))
       errors.push(`${page}: unconfigured support must not present a submission or upload form`);
     const active = openings("a").filter((tag) => attributeValue(tag, "aria-current") === "page");
-    if (active.length !== 2 || active.some((tag) => attributeValue(tag, "href") !== target))
-      errors.push(`${page}: header and chapter navigation must select only support`);
+    if (active.length !== 1 || active.some((tag) => attributeValue(tag, "href") !== target))
+      errors.push(`${page}: chapter navigation must select only support`);
+    const sidebar = [...html.matchAll(/(<aside\b[^>]*>)([\s\S]*?)<\/aside>/gi)]
+      .find(([, tag]) => attributeValue(tag, "id") === "guide-nav")?.[2] || "";
+    const sidebarLinks = [...sidebar.matchAll(/<a\b[^>]*>/gi)]
+      .filter(([tag]) => attributeValue(tag, "href") === target);
+    if (sidebarLinks.length !== 1 || attributeValue(sidebarLinks[0][0], "aria-current") !== "page")
+      errors.push(`${page}: sidebar must retain the current support chapter`);
     for (const alternate of SUPPORT_LOCALES) {
       const expected = basePath + supportPath(alternate);
       if (!openings("option").some((tag) => attributeValue(tag, "data-lang") === alternate
@@ -104,12 +110,17 @@ export function validateSupportPages(siteRoot, basePath = DEFAULT_BASE_PATH) {
     const prefix = locale === "zh-TW" ? "" : locale + "/";
     for (const entry of ["index.html", "about.html"]) {
       const entryPath = join(siteRoot, prefix + entry);
-      const source = existsSync(entryPath) ? readFileSync(entryPath, "utf8") : "";
-      const links = [...source.replace(/<!--[\s\S]*?-->/g, "").matchAll(/<a\b[^>]*>/gi)];
-      if (!links.some(([tag]) => attributeValue(tag, "href") === target))
-        errors.push(`${prefix}${entry}: localized support entry is missing`);
-      if (entry === "about.html" && links.some(([tag]) => /^mailto:/i.test(attributeValue(tag, "href"))))
-        errors.push(`${prefix}${entry}: software contact must lead to the support chapter`);
+      if (!existsSync(entryPath)) {
+        errors.push(`${prefix}${entry}: localized page is missing`);
+        continue;
+      }
+      const source = readFileSync(entryPath, "utf8").replace(/<!--[\s\S]*?-->/g, "");
+      const links = [...source.matchAll(/<a\b[^>]*>/gi)];
+      if (links.some(([tag]) => /(?:^|\/)support\.html(?:[?#]|$)/i.test(attributeValue(tag, "href"))))
+        errors.push(`${prefix}${entry}: support entry belongs only in the manual sidebar`);
+      if (entry === "about.html" && (source.includes('creator-support-title')
+        || links.some(([tag]) => /^mailto:/i.test(attributeValue(tag, "href")))))
+        errors.push(`${prefix}${entry}: about must not contain a bug-report contact section`);
     }
   }
   return errors;
@@ -200,6 +211,15 @@ export function validateBuiltSite(siteRoot, basePath = DEFAULT_BASE_PATH) {
   for (const htmlPath of collectHtmlFiles(siteRoot)) {
     const html = readFileSync(htmlPath, "utf8");
     const page = relative(siteRoot, htmlPath).split(sep).join("/");
+    // The shared site header must stay focused on features, guide and author.
+    const markup = html.replace(/<!--[\s\S]*?-->/g, "");
+    for (const [, tag, body] of markup.matchAll(/(<header\b[^>]*>)([\s\S]*?)<\/header>/gi)) {
+      if (!attributeValue(tag, "class").split(/\s+/).includes("site-header")) continue;
+      if ([...body.matchAll(/<a\b[^>]*>/gi)].some(([link]) =>
+        /(?:^|\/)support\.html(?:[?#]|$)/i.test(attributeValue(link, "href"))))
+        errors.push(`${page}: top navigation must not contain a support entry`);
+    }
+
 
     const unresolvedAttribute = /(?:src|href)\s*=\s*["'][^"']*(?:\{\{|\{%|\}\}|%\})[^"']*["']/i;
     if (unresolvedAttribute.test(html)) {
