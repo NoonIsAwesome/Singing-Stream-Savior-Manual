@@ -1,0 +1,80 @@
+name: Verify delivered advanced intro
+on:
+  push:
+    branches: [verify/advanced-intro-live-20260922]
+    paths: [.github/workflows/verify-advanced-intro-live.yml]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Verify production and collect a static preview without executing scripts
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+          import {join,dirname,resolve} from 'node:path';
+          import {createHash} from 'node:crypto';
+          import {setTimeout as sleep} from 'node:timers/promises';
+          const origin='https://noonisawesome.github.io';
+          const base='/Singing-Stream-Savior-Manual/';
+          const output=join(process.env.RUNNER_TEMP,'advanced-intro-delivered');
+          const root=join(output,'_site');mkdirSync(root,{recursive:true});
+          const copy=JSON.parse(readFileSync('_data/stream_routes.json','utf8'));
+          const expectedCss=readFileSync('assets/css/reader.css','utf8');
+          const stamp=process.env.GITHUB_RUN_ID;
+          async function get(path,kind='text'){
+            const url=new URL(base+path,origin);
+            assert.equal(url.origin,origin);assert.ok(url.pathname.startsWith(base));
+            url.searchParams.set('analytics','off');url.searchParams.set('verification',stamp+'-'+Date.now());
+            const r=await fetch(url,{redirect:'error',cache:'no-store',headers:{'Cache-Control':'no-cache'},signal:AbortSignal.timeout(20000)});
+            assert.equal(r.status,200,`${path}: HTTP ${r.status}`);
+            const bytes=Buffer.from(await r.arrayBuffer());assert.ok(bytes.length<20000000,'Asset unexpectedly large');
+            return kind==='bytes'?bytes:bytes.toString('utf8');
+          }
+          let first;
+          for(let i=0;i<20;i++){
+            first=await get('advanced-streaming.html');
+            if(first.includes('class="advanced-streaming-benefits"'))break;
+            await sleep(15000);
+          }
+          assert.ok(first.includes('class="advanced-streaming-benefits"'),'Expected production revision not yet delivered');
+          const assets=new Set();const checks=[];
+          const save=(name,data)=>{const file=resolve(root,name);assert.ok(file.startsWith(root+'/'));mkdirSync(dirname(file),{recursive:true});writeFileSync(file,data);};
+          for(const [lang,text] of Object.entries(copy)){
+            const path=(lang==='zh-TW'?'':lang+'/')+'advanced-streaming.html';
+            const html=lang==='zh-TW'?first:await get(path);
+            const block=html.match(/<div class="advanced-streaming-benefits">[\s\S]*?<\/div>/)?.[0]||'';
+            assert.ok(block.includes(text.intro));
+            assert.deepEqual([...block.matchAll(/<li>([\s\S]*?)<\/li>/g)].map(m=>m[1].trim()),text.intro_bullets);
+            assert.ok(html.indexOf(block)<html.indexOf('id="advanced-quick-start"'));
+            assert.ok(html.includes('class="advanced-streaming-lead"'));
+            assert.ok(html.includes('audio-route-details audio-route-details--installation'));
+            save(path,html);
+            for(const match of html.matchAll(/(?:src|href)=["']([^"']+)["']/g)){
+              let url;try{url=new URL(match[1].replaceAll('&amp;','&'),origin+base+path);}catch{continue;}
+              if(url.origin===origin&&url.pathname.startsWith(base+'assets/')&&/\.(css|js|png|jpg|jpeg|svg|webp|gif|woff2?)$/i.test(url.pathname))assets.add(decodeURIComponent(url.pathname.slice(base.length)));
+            }
+            checks.push({lang,http:200,exact_bullets:3,placement_verified:true});
+          }
+          const css=await get('assets/css/reader.css');assert.equal(css,expectedCss,'Delivered CSS differs from reviewed source');
+          save('assets/css/reader.css',css);assets.delete('assets/css/reader.css');
+          assert.ok(assets.size<100,'Too many preview assets');
+          let total=0;
+          for(const path of assets){const bytes=await get(path,'bytes');total+=bytes.length;assert.ok(total<120000000,'Preview size limit');save(path,bytes);}
+          mkdirSync(join(output,'_data'),{recursive:true});writeFileSync(join(output,'_data/stream_routes.json'),JSON.stringify(copy));
+          const result={checked_at:new Date().toISOString(),pages:checks,stylesheet_matches_source:true,stylesheet_sha256:createHash('sha256').update(css).digest('hex'),counter_requests:0,release_asset_downloads:0};
+          writeFileSync(join(output,'verification.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: advanced-intro-delivered
+          path: ${{ runner.temp }}/advanced-intro-delivered
+          retention-days: 2
+          if-no-files-found: error
