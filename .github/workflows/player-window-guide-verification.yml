@@ -1,0 +1,115 @@
+name: Player window guide browser verification
+
+on:
+  push:
+    branches: [verify/counterapi-v2-live-20260921]
+    paths: [.github/workflows/player-window-guide-verification.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: 7dc7d18ff099d526c2e54cfb2b351111d5819867
+          persist-credentials: false
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Check browser prerequisites
+        run: |
+          node --version
+          python3 --version
+          /usr/bin/google-chrome --version
+      - name: Inspect real SVG crop in Chrome at mobile and desktop widths
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { mkdirSync, symlinkSync, mkdtempSync, rmSync, writeFileSync, readFileSync, copyFileSync } from 'node:fs';
+          import { resolve, join } from 'node:path';
+          import { tmpdir } from 'node:os';
+          import { spawn } from 'node:child_process';
+          import { setTimeout as sleep } from 'node:timers/promises';
+          const origin='http://127.0.0.1:8765', base='/Singing-Stream-Savior-Manual/';
+          const copies=JSON.parse(readFileSync('_data/player_window_buttons.json','utf8'));
+          const output=resolve('.review-output');mkdirSync(output,{recursive:true});
+          const preview=mkdtempSync(join(tmpdir(),'s3s-guide-http-'));
+          symlinkSync(resolve('_site'),join(preview,'Singing-Stream-Savior-Manual'));
+          const server=spawn('python3',['-m','http.server','8765','--bind','127.0.0.1','--directory',preview],{stdio:'ignore'});
+          const profile=mkdtempSync(join(tmpdir(),'s3s-guide-browser-'));
+          const chrome=spawn('/usr/bin/google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run','--no-default-browser-check','--disable-background-networking','--remote-debugging-address=127.0.0.1','--remote-debugging-port=9222',`--user-data-dir=${profile}`,'about:blank'],{stdio:'ignore'});
+          let socket,seq=0,blocked=0,eventError;
+          const pending=new Map(),results=[];
+          try {
+            let tab;
+            for(let i=0;i<50;i++) {
+              assert.equal(chrome.exitCode,null,'Chrome failed to start');
+              try { const r=await fetch('http://127.0.0.1:9222/json/new?about:blank',{method:'PUT'});if(r.ok){tab=await r.json();break;} } catch {}
+              await sleep(100);
+            }
+            assert.ok(tab?.webSocketDebuggerUrl);
+            socket=new WebSocket(tab.webSocketDebuggerUrl);
+            await new Promise((resolve,reject)=>{const t=setTimeout(()=>reject(Error('CDP connection timeout')),5000);socket.addEventListener('open',()=>{clearTimeout(t);resolve();},{once:true});socket.addEventListener('error',()=>{clearTimeout(t);reject(Error('CDP connection failed'));},{once:true});});
+            const send=(method,params={})=>new Promise((resolve,reject)=>{
+              const id=++seq,timer=setTimeout(()=>{pending.delete(id);reject(Error(`Timeout: ${method}`));},20000);
+              pending.set(id,{resolve,reject,timer});socket.send(JSON.stringify({id,method,params}));
+            });
+            socket.addEventListener('message',async e=>{
+              try {
+                const p=JSON.parse(e.data);
+                if(p.id){const item=pending.get(p.id);if(!item)return;pending.delete(p.id);clearTimeout(item.timer);p.error?item.reject(Error(p.error.message)):item.resolve(p.result);}
+                else if(p.method==='Fetch.requestPaused'){blocked++;await send('Fetch.failRequest',{requestId:p.params.requestId,errorReason:'BlockedByClient'});}
+              } catch(error) {eventError=error;}
+            });
+            const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true,timeout:15000});assert.ok(!r.exceptionDetails,JSON.stringify(r.exceptionDetails));return r.result.value;};
+            await send('Page.enable');await send('Runtime.enable');
+            await send('Fetch.enable',{patterns:[{urlPattern:'https://api.counterapi.dev/*'},{urlPattern:'https://github.com/*/releases/download/*'},{urlPattern:'https://release-assets.githubusercontent.com/*'}]});
+            for(const width of [390,1440]) {
+              await send('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:false});
+              for(const lang of ['zh-TW','en','ja','ko','zh-CN']) {
+                const path=lang==='zh-TW'?'lyrics.html':`${lang}/guide.html`;
+                const target=origin+base+path+'?analytics=off';
+                const n=await send('Page.navigate',{url:target});assert.ok(!n.errorText);
+                let ready=false;
+                for(let i=0;i<150;i++){ready=await evaluate(`document.readyState==='complete' && location.href===${JSON.stringify(target)}`);if(ready)break;await sleep(100);}
+                assert.ok(ready,`${path}: page did not load`);
+                const state=await evaluate(`(()=>{const b=document.getElementById('player-window-buttons');if(!b)throw Error('Missing guide');b.scrollIntoView({block:'start'});const s=b.querySelector('svg.player-window-zoom'),r=s.getBoundingClientRect(),im=s.querySelector('image');return{count:document.querySelectorAll('#player-window-buttons').length,title:b.querySelector('h3').textContent,svgWidth:r.width,svgHeight:r.height,viewBox:s.getAttribute('viewBox'),image:im.getAttribute('href'),viewport:innerWidth,scrollWidth:document.documentElement.scrollWidth,rects:[...s.querySelectorAll('rect')].map(x=>({x:x.x.baseVal.value,y:x.y.baseVal.value,w:x.width.baseVal.value,h:x.height.baseVal.value})),pageviewState:document.body.dataset.analyticsState,clickState:document.body.dataset.downloadAnalyticsState};})()`);
+                assert.equal(state.count,1);assert.equal(state.title,copies[lang].title);
+                assert.ok(state.svgWidth>200&&state.svgHeight>100,'SVG must be visible, not icon-sized');
+                assert.ok(state.scrollWidth<=state.viewport+1,`${path}: horizontal overflow`);
+                assert.ok(Math.abs(state.svgWidth/state.svgHeight-456/292)<0.01,'Crop aspect ratio');
+                assert.equal(state.viewBox,'1048 224 456 292');
+                assert.deepEqual(state.rects,[{x:1411,y:262,w:36,h:36},{x:1451,y:262,w:36,h:36}]);
+                const dimensions=await evaluate(`new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve([i.naturalWidth,i.naturalHeight]);i.onerror=()=>reject(Error('Screenshot image missing'));i.src=${JSON.stringify(origin+base+'assets/images/demo-lyrics-preview.png')};})`);
+                assert.deepEqual(dimensions,[1510,940]);
+                if(lang==='zh-TW') {
+                  const clip=await evaluate(`(()=>{const r=document.getElementById('player-window-buttons').getBoundingClientRect();return{x:r.x+scrollX,y:r.y+scrollY,width:r.width,height:r.height,scale:1};})()`);
+                  const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true,clip});
+                  writeFileSync(join(output,`player-window-guide-${width}.png`),Buffer.from(shot.data,'base64'));
+                }
+                results.push({lang,width,...state});
+                console.log(JSON.stringify({lang,width,guide_visible:true,crop_loaded:true,horizontal_overflow:false}));
+              }
+            }
+            if(eventError)throw eventError;
+            assert.equal(blocked,0,'Local opt-out preview should not request counters or assets');
+            copyFileSync('assets/images/demo-lyrics-preview.png',join(output,'original-screenshot.png'));
+            writeFileSync(join(output,'browser-results.json'),JSON.stringify({commit:'7dc7d18ff099d526c2e54cfb2b351111d5819867',checked_at:new Date().toISOString(),counter_requests:0,release_asset_downloads:0,results},null,2));
+          } finally {
+            if(socket)socket.close();for(const item of pending.values())clearTimeout(item.timer);
+            chrome.kill('SIGTERM');server.kill('SIGTERM');await sleep(500);
+            rmSync(profile,{recursive:true,force:true});rmSync(preview,{recursive:true,force:true});
+          }
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: player-window-guide-review
+          path: .review-output/
+          retention-days: 3
+          if-no-files-found: error
