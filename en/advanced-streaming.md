@@ -8,9 +8,9 @@ published: true
 
 # Advanced audio: microphone effects and mixed output
 
-<section data-article-lead markdown="1">
+<section class="advanced-streaming-lead" data-article-lead markdown="1">
 
-Since **2.1.0.0**, Advanced Streaming Mode mixes **BGM/accompaniment** with the **Profile-processed microphone** inside Singing Stream Savior, then sends the complete **Stream Mix** to OBS, Discord or another calling/streaming app.
+{% include advanced-streaming-benefits.html %}
 
 <nav class="article-outline audio-output-targets" id="advanced-quick-start" aria-label="Choose where to send the mix">
   <strong>Choose where to send the mix</strong><ul><li><a href="#output-obs">Send audio to OBS</a></li><li><a href="#output-discord">Send audio to Discord or another calling app</a></li></ul>
@@ -40,7 +40,7 @@ Since **2.1.0.0**, Advanced Streaming Mode mixes **BGM/accompaniment** with the 
 <p>Discord may still re-encode, compress, or otherwise process call audio, so it can sound worse than a local recording or OBS capture even when routing is correct. Use OBS or local recording when preserving the highest quality matters.</p>
 
 <a id="vb-cable-installation"></a>
-<details class="audio-route-details" markdown="1"><summary>VB-CABLE installation screenshots (expand if needed)</summary>
+<details class="audio-route-details audio-route-details--installation" markdown="1"><summary>VB-CABLE installation screenshots (expand if needed)</summary>
 
 The virtual audio cable is a separate Windows driver. Singing Stream Savior never downloads, runs, or changes the driver for you. Install it only from its official vendor.
 

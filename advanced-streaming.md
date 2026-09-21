@@ -8,9 +8,9 @@ published: true
 
 # 進階直播音訊：麥克風效果與混音輸出
 
-<section data-article-lead markdown="1">
+<section class="advanced-streaming-lead" data-article-lead markdown="1">
 
-從 **2.1.0.0** 起，進階直播模式可以在 Singing Stream Savior 內混合 **BGM、伴奏**與 **Profile 效果器處理後的麥克風**，再把完整 **Stream Mix** 送到 OBS、Discord 或其他通訊／直播軟體。
+{% include advanced-streaming-benefits.html %}
 
 <nav class="article-outline audio-output-targets" id="advanced-quick-start" aria-label="先選擇混音的輸出目的地">
   <strong>先選擇混音的輸出目的地</strong><ul><li><a href="#output-obs">輸出訊號送至 OBS</a></li><li><a href="#output-discord">輸出訊號送至 Discord（或其他通訊軟體）</a></li></ul>
@@ -40,7 +40,7 @@ published: true
 <p>Discord 的通話傳輸仍可能對聲音重新編碼、壓縮或做平台端處理，因此音質可能比本機錄音或 OBS 錄影稍差。這通常不是歌回救星路由異常；需要保留最高音質時，請以 OBS 或本機錄音為準。</p>
 
 <a id="vb-cable-installation"></a>
-<details class="audio-route-details" markdown="1"><summary>VB-CABLE 安裝圖解（尚未安裝時展開）</summary>
+<details class="audio-route-details audio-route-details--installation" markdown="1"><summary>VB-CABLE 安裝圖解（尚未安裝時展開）</summary>
 
 虛擬音訊線是另外安裝的 Windows 驅動。本程式不會替你下載、執行或變更驅動；請只從官方網站取得安裝程式。
 
