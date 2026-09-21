@@ -4,6 +4,7 @@
   <h3 id="player-window-buttons-title">{{ player_window_copy.title | escape }}</h3>
   <p>{{ player_window_copy.intro | escape }}</p>
   <figure class="manual-figure manual-figure--medium">
+    <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" aria-label="{{ player_window_copy.full_image | escape }}">
     <svg class="player-window-zoom" xmlns="http://www.w3.org/2000/svg" viewBox="1048 224 456 292" width="684" height="438" style="display:block;width:100%;height:auto;overflow:hidden" role="img" aria-label="{{ player_window_copy.image_alt | escape }}">
       <image href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" x="0" y="0" width="1510" height="940" />
       <g fill="none" stroke="#70cfff" stroke-width="3">
@@ -20,7 +21,8 @@
         <text x="1469" y="246">2</text>
       </g>
     </svg>
-    <figcaption>{{ player_window_copy.caption | escape }} <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">{{ player_window_copy.full_image | escape }}</a></figcaption>
+    </a>
+    <figcaption>{{ player_window_copy.caption | escape }}</figcaption>
   </figure>
   <p><strong>{{ player_window_copy.lyrics_title | escape }}</strong><br>{{ player_window_copy.lyrics_body | escape }}</p>
   <p><strong>{{ player_window_copy.youtube_title | escape }}</strong><br>{{ player_window_copy.youtube_body | escape }}</p>
