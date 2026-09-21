@@ -80,7 +80,8 @@
   </head>
   <body class="{% if is_home %}home-page{% elsif section == 'about' %}inner-page author-page{% else %}inner-page docs-page{% endif %}"
     data-analytics-provider="{{ site.data.analytics.provider | escape }}" data-analytics-host="{{ site.data.analytics.production_host | escape }}"
-    data-analytics-base-path="{{ site.baseurl | append: '/' | escape }}" data-cloudflare-token="{{ site.data.analytics.cloudflare_token | strip | escape }}"
+    data-analytics-base-path="{{ site.baseurl | append: '/' | escape }}" data-counter-enabled="{{ site.data.analytics.enabled | jsonify | escape }}"
+    data-counter-workspace="{{ site.data.analytics.workspace | strip | escape }}" data-counter-name="{{ site.data.analytics.counter | strip | escape }}"
     data-outline-label="{{ t.on_this_page | escape }}">
     {% include site-icons.html %}
     <a class="skip-link" href="#guide-content">{{ t.skip }}</a>

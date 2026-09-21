@@ -5,8 +5,8 @@ timezone: Asia/Taipei
 url: https://noonisawesome.github.io
 baseurl: /Singing-Stream-Savior-Manual
 
-# Website analytics has one shared configuration: _data/analytics.json.
-# Keep its public Cloudflare site token blank until the owner's site is registered.
+# CounterAPI V2 has one shared configuration: _data/analytics.json.
+# Enable only after the owner's public V2 workspace/counter has been verified.
 # Setup and metric limitations: scripts/ANALYTICS.md.
 
 markdown: kramdown

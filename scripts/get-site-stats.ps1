@@ -1,19 +1,27 @@
 ﻿param(
     [string]$ReleaseTag = "",
     [switch]$Friendly,
-    [switch]$AnalyticsOnly
+    [switch]$AnalyticsOnly,
+    [switch]$ConfigurationOnly,
+    [switch]$Probe
 )
 
 $ErrorActionPreference = "Stop"
 
-$analytics = & (Join-Path $PSScriptRoot "get-site-analytics.ps1")
+$analytics = & (Join-Path $PSScriptRoot "get-site-analytics.ps1") `
+    -ConfigurationOnly:$ConfigurationOnly -Probe:$Probe
 
 function Write-WebsiteAnalyticsStatus {
     Write-Host ("網站統計服務： {0}" -f $analytics.Provider)
     Write-Host ("網站統計狀態： {0}" -f $analytics.Detail)
-    Write-Host "網站瀏覽／造訪：本工具未取得數值（不是 0 人或 0 次）。"
+    if ($null -ne $analytics.WebsitePageViews) {
+        Write-Host ("網站累計瀏覽： {0:N0} 次（不是不重複人數）" -f $analytics.WebsitePageViews)
+    }
+    else {
+        Write-Host "網站累計瀏覽：未取得數值（不是 0 人或 0 次）。"
+    }
     Write-Host ("統計後台：     {0}" -f $analytics.DashboardUrl)
-    Write-Host "請在後台選擇日期範圍；Visits 是造訪次數，不是不重複人數。"
+    Write-Host "瀏覽次數、完整包下載與更新活動不能相加當成使用者人數。"
 }
 
 if ($AnalyticsOnly) {
@@ -160,6 +168,8 @@ if ($Friendly) {
     WebsiteAnalyticsStatus = $analytics.Status
     WebsiteAnalyticsDetail = $analytics.Detail
     WebsiteAnalyticsDashboard = $analytics.DashboardUrl
+    WebsiteAnalyticsReadVerified = $analytics.ReadVerified
+    WebsiteAnalyticsCollectionEnabled = $analytics.CollectionEnabled
     PublishedReleaseCount = $releaseStats.Count
     FullPackageDownloads = [int64]$allFullPackageDownloads
     UpdateAssetDownloads = [int64]$allUpdateAssetDownloads

@@ -1,84 +1,79 @@
-# 官網瀏覽統計（Cloudflare Web Analytics）
+# 官網瀏覽計數：CounterAPI V2
 
-## 狀態與啟用
+官網保留 CounterAPI，不使用 Cloudflare。唯一設定是 `_data/analytics.json`，
+前端與 `查看網站統計.cmd` 共用。這是頁面瀏覽次數，不是不重複訪客或軟體活躍人數。
 
-程式接線不等於服務已啟用。目前 `_data/analytics.json` 的 `cloudflare_token`
-刻意留白：沒有 token 時，官網不載入第三方 beacon，也不送出統計。
-這份 JSON 是前端與維護腳本共用的唯一統計設定，不需要改 DNS 或搬離 GitHub Pages。
+## 先確認服務，再啟用
 
-1. 使用你的 Cloudflare 帳號，在 **Web Analytics → Add a site** 新增
-   `noonisawesome.github.io`（填主機名稱，不要含 `https://` 或路徑）。
-2. 在 **Manage site** 取得網站 JavaScript snippet，將 `data-cf-beacon` 裡
-   `token` 的 **32 位十六進位字串**填入 `_data/analytics.json` 的 `cloudflare_token`。
-   這是原本就要公開放在網站的 site token，**不是 API token、Global API Key、
-   帳號密碼或 dashboard 的授權憑證**。不要將任何私密憑證提交到 repository。
-3. 合併／部署後，在 Cloudflare 後台確認有資料，再視為啟用成功。
-   不要額外手動貼第二份 beacon；共用 layout 已涵蓋所有語言與一般內容頁。
+目前 `enabled: false`。設定中的 `noonisawesome-singing-stream-savior-manual/pageviews`
+沿用舊計數器名稱作為候選，**不代表此 V2 workspace 已註冊或可用**。
+V1 namespace 不會因網址改成 V2 就自動變成你的 workspace，也不會自動回填歷史。
 
-Cloudflare 官方操作說明：
-https://developers.cloudflare.com/web-analytics/get-started/
+1. 登入自己的 CounterAPI 帳號，在後台確認／建立 V2 workspace 與 counter。
+   使用後台實際顯示的 slug（不是顯示標題）。可以保留上述名稱，若不可用則填實際名稱。
+2. 此 GitHub Pages 整合只支援可匿名讀取與累加的公開 counter；不要在 JSON、HTML、
+   JavaScript、Git 或聊天貼上私密 API Key/token。若實際端點回傳 401/403，先檢查公開權限。
+   若帳號方案要求所有寫入都授權，需另行設計伺服器代理；不能把私人金鑰放在靜態頁面。
+3. 先執行唯讀檢查（即使 enabled 為 false 也可探測，不會改變 counter）：
 
-## 查看方式
+   ```powershell
+   powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\get-site-analytics.ps1 -Probe
+   ```
 
-在 Cloudflare Web Analytics 選擇網站與日期範圍，查看 **Page views（瀏覽量）**、
-**Visits（造訪次數）**及來源／頁面變化。
-Visits 的定義是來自外部網站或直接連結的頁面造訪，**不等於去重訪客人數**。
-不要把瀏覽量、Visits、完整包下載及更新下載相加，或宣稱為軟體活躍人數。
+4. 讀取確認可用後，把 `enabled` 改成 `true`，提交、通過測試並部署到 GitHub Pages。
+   共用 layout 已涵蓋各語言的正常頁面，不要再手動貼第二份計數程式。
+5. 正式環境以一次一般瀏覽確認 `/up` 的 CORS 回應及 `data-analytics-state="accepted"`，
+   稍後用唯讀 GET 核對計數。驗收瀏覽也會算一次，請記錄測試量，不用 reset/down 擅自改數值。
+   `accepted` 只代表 API 接受回應；V2 有緩衝，不保證立即讀到 +1 或已永久保存。
 
-https://developers.cloudflare.com/web-analytics/data-metrics/high-level-metrics/
+官方端點：https://docs.counterapi.dev/api/endpoints/v2/
+官方 client／回應結構：https://github.com/counterapi/counter.js
+帳號／workspace：https://docs.counterapi.dev/api/authentication/
 
-`查看網站統計.cmd` 仍整理 GitHub Release 下載，但網站欄位現在會區分：
-- `not_configured`：尚未填公開網站 token。
-- `invalid_token` / `configuration_error`：設定格式不正確或讀取失敗。
-- `configured`：接線設定存在，**尚未驗證部署或 Cloudflare 收集成功**。
+## 查看網站統計
 
-此腳本沒有讀取 Cloudflare 後台報表的帳號授權，因此瀏覽／造訪數值為 `$null`，
-並提供後台入口，不再把未取得的資料顯示為 0。公開 site token 不提供報表讀取權限。
-這不代表 Cloudflare 沒有報表 API；未來需要自動報表時，應另做安全的伺服器端授權，
-不能把私密 API token 放到官網。
-
-只看接線狀態、不查 GitHub：
-
-```powershell
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\get-site-stats.ps1 -AnalyticsOnly -Friendly
-```
-
-也可執行 `查看網站統計.cmd -AnalyticsOnly`。
-
-## 隱私與資料限制
-
-這是**官網**的分析，沒有修改桌面軟體，也沒有新增桌面遙測、使用者 ID 或診斷上傳。
-自訂 loader 不使用 cookie、localStorage、IP hash 或指紋來辨識個人；
-啟用後，瀏覽器會向 Cloudflare 載入官方 beacon 並傳送其網站效能／流量資料，
-因此不是「完全沒有對外連線」。收集方式以 Cloudflare 官方文件為準。
-
-https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
-https://developers.cloudflare.com/speed/observatory/rum-beacon/
-
-loader 只允許 HTTPS、設定的正式主機與 Manual 路徑，排除本機預覽、其他專案、
-`navigator.webdriver`、DNT／GPC 以及帶有 `?analytics=off` 的頁面。
-DNT、GPC、`analytics=off` 是本站 loader 主動遵守的設定，不宣稱是 vendor 預設行為。
-`analytics=off` 只作用於當前 URL，不會寫入持久偏好；跳到其他頁面時需再次帶上，
-或使用瀏覽器的 DNT／GPC。廣告阻擋器、拒絕追蹤、網路失敗會造成少計。
-
-這是多頁 Jekyll 網站，beacon 設定 `spa: false`，不把章節錨點／history 變動當成新頁。
-每頁最多插入一次；載入失敗不影響其他功能，也不改用繞過阻擋器的備援計數。
-重導向頁不載入計數，避免進入同一內容先算兩次。
-
-https://developers.cloudflare.com/web-analytics/get-started/web-analytics-spa/
-
-不會回填／推估停用期間的歷史瀏覽量。填入 token 後，需另外確認 Cloudflare 站點
-登記、網頁部署、beacon 請求與後台資料，不以格式驗證通過冒充端到端收集成功。
-
-## 驗證
+直接執行 `查看網站統計.cmd`，已啟用時會讀取 V2 的 `data.up_count - data.down_count`。
+它不會呼叫 `/up`、`/down`、`/reset`，所以查看報表不會灌入瀏覽量。
+原有 GitHub 完整 ZIP／主程式 EXE／Launcher 分類保留，不合併成使用者人數。
 
 ```text
-node --test scripts/test-site-analytics.mjs
-node scripts/validate-site-analytics.mjs _site
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/test-site-analytics.ps1
+查看網站統計.cmd -AnalyticsOnly
+查看網站統計.cmd -AnalyticsOnly -Probe
+查看網站統計.cmd -AnalyticsOnly -ConfigurationOnly
 ```
 
-`Website analytics checks` 的 PR workflow 會跑整站 Jekyll build、既有頁面檢查、
-新 loader 測試，以及真正 Windows PowerShell 5.1／CMD 的離線測試。
-測試不使用真正 token，不下載 Release assets，也不向計數服務送測試流量。
-本地只有 JavaScript 執行環境時，必須等 Windows／整站 CI 結果，不能宣稱兩者已通過。
+`-AnalyticsOnly` 只跳過 GitHub 查詢，已啟用時仍會讀 CounterAPI。
+`-ConfigurationOnly` 不連線 CounterAPI；`-Probe` 可對停用中的設定做唯讀探測。
+同時使用兩者仍不連線。沒有任何命令會幫你建立帳號、建立 workspace 或啟用網頁計數。
+
+狀態：`disabled`／`not_configured`／`configuration_error`／`configured`（僅設定檢查），
+`available`（唯讀成功）、`request_rejected`（400）、`not_found`（404）、
+`authentication_required`（401/403）、`rate_limited`（429）、`service_error`、
+`request_failed`、`invalid_response`。無有效資料時 `WebsitePageViews` 為 null，
+只有 API 明確回傳有效的 0 才顯示 0。`WebsiteVisits` 永遠為 null，沒有實作訪客去重。
+`ReadVerified` 與 `CollectionEnabled` 分開；讀取成功不代表正式網站已部署／送出計數。
+
+## 隱私及限制
+
+只修改官網，沒有桌面軟體遙測、診斷上傳或使用者 ID。自訂計數程式不讀寫 cookie、
+localStorage 或指紋，只向固定 CounterAPI V2 網域請求；不載入第三方可執行腳本。
+使用 credentials: omit、referrerPolicy: no-referrer；不傳頁面 query、內容或私人金鑰。
+**服務仍會接到連線來源 IP 及一般 HTTP 資料**，不能宣稱完全沒有對外資料傳輸。
+
+只在正式 HTTPS 主機及 Manual 路徑運作。排除 webdriver、本機預覽、DNT、GPC、
+`?analytics=off`；URL opt-out 不持久儲存，換頁需保留參數或使用瀏覽器 DNT/GPC。
+一頁最多一次，不計章節 hash/history 變更，重導向頁不計數。重新整理及換頁仍是新瀏覽。
+網路、CORS、逾時可能發生在服務已累加之後，因此不重試、不用 no-cors 或圖片備援。
+廣告阻擋／拒絕追蹤會少計；公開可寫 counter 可能被重複請求或操弄，僅供粗略趨勢。
+不重建或推估停用期間遺失的歷史，不承諾 V1 資料能自動搬移。
+
+## 測試
+
+```text
+node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs
+node scripts/validate-site-analytics.mjs _site
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\test-site-analytics.ps1
+```
+
+離線測試使用 fixture／mock，不碰真實計數器。Actions 額外唯讀探測候選端點，
+探測成功與否都會回報真實狀態；離線測試或建置成功不等於計數服務已啟用。
