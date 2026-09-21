@@ -1,0 +1,96 @@
+name: Read-only production counter verification
+
+on:
+  push:
+    branches: [verify/counterapi-v2-live-20260921]
+    paths: [.github/workflows/counter-live-verification.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  production-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Read deployed HTML and JS without executing page scripts
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFileSync } from 'node:fs';
+          import { createHash } from 'node:crypto';
+          const config = JSON.parse(readFileSync('_data/analytics.json', 'utf8'));
+          const basePath = '/Singing-Stream-Savior-Manual/';
+          const origin = 'https://noonisawesome.github.io';
+          assert.equal(config.production_host, new URL(origin).hostname);
+          const checkId = `${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}`;
+          async function read(path) {
+            const url = new URL(path, origin);
+            assert.equal(url.origin, origin);
+            assert.ok(url.pathname.startsWith(basePath));
+            url.searchParams.set('analytics', 'off');
+            url.searchParams.set('verification', checkId);
+            const response = await fetch(url, {
+              redirect: 'error', cache: 'no-store', credentials: 'omit',
+              headers: { 'Cache-Control': 'no-cache', 'User-Agent': 'S3S-ReadOnly-Deployment-Check' },
+              signal: AbortSignal.timeout(15000),
+            });
+            const text = await response.text();
+            assert.ok(text.length < 4000000, 'Unexpectedly large response');
+            return { status: response.status, text };
+          }
+          const attr = (tag, name) => tag.match(new RegExp(`\\s${name}\\s*=\\s*["']([^"']*)["']`, 'i'))?.[1];
+          for (const locale of ['', 'en/', 'ja/', 'ko/', 'zh-CN/']) {
+            const path = `${basePath}${locale}`;
+            const { status, text } = await read(path);
+            assert.equal(status, 200, `${path}: HTTP status`);
+            const body = text.match(/<body\b[^>]*>/i)?.[0] || '';
+            for (const [key, value] of Object.entries({
+              'data-analytics-provider': config.provider,
+              'data-analytics-host': config.production_host,
+              'data-analytics-base-path': basePath,
+              'data-counter-enabled': String(config.enabled),
+              'data-counter-workspace': config.workspace,
+              'data-counter-name': config.counter,
+            })) assert.equal(attr(body, key), value, `${path}: ${key}`);
+            const scripts = [...text.matchAll(/<script\b[^>]*>/gi)].map(([tag]) => tag);
+            assert.equal(scripts.filter(tag => attr(tag, 'src')?.split('?')[0] === `${basePath}assets/js/site-analytics.js`).length, 1, 'One loader per page');
+            const visible = text.replace(/<!--[\s\S]*?-->/g, '').replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, '').replace(/<[^>]*>/g, ' ');
+            assert.ok(!/CounterAPI|WebsitePageViews|網站累計瀏覽|網站累積瀏覽/i.test(visible), 'Counter status or values must not be added to public page text');
+            console.log(JSON.stringify({ page: path, http: status, config_matches: true, loader_count: 1, public_counter_label_detected: false }));
+          }
+          const js = await read(`${basePath}assets/js/site-analytics.js`);
+          assert.equal(js.status, 200);
+          const expected = readFileSync('assets/js/site-analytics.js', 'utf8');
+          assert.equal(js.text, expected, 'Deployed loader differs from checked-out source');
+          console.log(JSON.stringify({ deployed_js_matches_source: true, sha256: createHash('sha256').update(js.text).digest('hex') }));
+          for (const file of ['scripts/get-site-stats.ps1', 'scripts/ANALYTICS.md', encodeURIComponent('查看網站統計.cmd')]) {
+            const result = await read(basePath + file);
+            assert.equal(result.status, 404, `${file}: maintenance file must not be published`);
+            console.log(JSON.stringify({ maintenance_file: file, http: result.status }));
+          }
+          console.log(JSON.stringify({ checked_at: new Date().toISOString(), deployment_verified: true, collection_enabled: config.enabled, counter_mutations: 0, browser_collection_verified: false }));
+          NODE
+  counter-availability:
+    runs-on: windows-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Probe the real V2 read endpoint without exposing traffic counts
+        shell: powershell
+        run: |
+          $result = & .\scripts\get-site-analytics.ps1 -Probe
+          $result | Select-Object Provider, Status, ReadVerified, CollectionVerified, CollectionEnabled, HttpStatus, CheckedAt | ConvertTo-Json
+          # No /up, /down, /reset, account creation, secrets or numeric traffic reports.
+          # Failure is a genuine provisioning blocker, not a successful collector.
+          if (-not $result.ReadVerified) {
+            throw ("CounterAPI V2 is not available: {0}; HTTP {1}. Owner account setup is still required." -f $result.Status, $result.HttpStatus)
+          }
+          Write-Host 'Read endpoint verified. Browser increment and ownership have NOT been verified.'
