@@ -8,9 +8,9 @@ published: true
 
 # 고급 방송 오디오: 마이크 효과와 믹스 출력
 
-<section data-article-lead markdown="1">
+<section class="advanced-streaming-lead" data-article-lead markdown="1">
 
-**2.1.0.0**부터 고급 방송 모드는 Singing Stream Savior 안에서 **BGM／반주**와 **Profile 이펙트로 처리한 마이크**를 믹스하고, 완성된 **Stream Mix**를 OBS, Discord 또는 다른 방송／통화 앱으로 보냅니다.
+{% include advanced-streaming-benefits.html %}
 
 <nav class="article-outline audio-output-targets" id="advanced-quick-start" aria-label="믹스를 보낼 곳 선택">
   <strong>믹스를 보낼 곳 선택</strong><ul><li><a href="#output-obs">오디오를 OBS로 보내기</a></li><li><a href="#output-discord">오디오를 Discord 또는 통화 앱으로 보내기</a></li></ul>
@@ -40,7 +40,7 @@ published: true
 <p>라우팅이 정확해도 Discord가 통화 오디오를 다시 인코딩하거나 압축하고 플랫폼 처리를 적용할 수 있어 로컬 녹음이나 OBS 녹화보다 음질이 낮을 수 있습니다. 최고 음질을 보존하려면 OBS 또는 로컬 녹음을 기준으로 사용하세요.</p>
 
 <a id="vb-cable-installation"></a>
-<details class="audio-route-details" markdown="1"><summary>VB-CABLE 설치 그림 안내(필요할 때 펼치기)</summary>
+<details class="audio-route-details audio-route-details--installation" markdown="1"><summary>VB-CABLE 설치 그림 안내(필요할 때 펼치기)</summary>
 
 가상 오디오 케이블은 별도로 설치하는 Windows 드라이버입니다. 이 앱은 드라이버를 대신 다운로드하거나 실행 또는 변경하지 않습니다. 반드시 공식 제공처에서 설치하세요.
 

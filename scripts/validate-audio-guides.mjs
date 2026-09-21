@@ -15,6 +15,18 @@ for(const lang of locales){
   const ap=prefix+'advanced-streaming.html',pp=prefix+'profiles.html';
   const audio=strip(readFileSync(join(root,ap),'utf8'));
   const profile=strip(readFileSync(join(root,pp),'utf8'));
+  const benefits=audio.match(/<div class="advanced-streaming-benefits">[\s\S]*?<\/div>/)?.[0] || '';
+  assert.ok(benefits, `${lang}: concise benefits must be present`);
+  assert.ok(decode(benefits).includes(copy[lang].intro), `${lang}: benefits heading`);
+  assert.equal(copy[lang].intro_bullets.length,3);
+  const bullets=[...benefits.matchAll(/<li>([\s\S]*?)<\/li>/g)].map(m=>decode(m[1]).trim());
+  assert.deepEqual(bullets,copy[lang].intro_bullets,`${lang}: exactly the three intended benefits`);
+  assert.ok(audio.indexOf(benefits)>audio.indexOf('data-article-lead')
+    && audio.indexOf(benefits)<audio.indexOf('id="advanced-quick-start"'),`${lang}: benefits before destination links`);
+  assert.equal((audio.match(/class="advanced-streaming-lead"/g)||[]).length,1,`${lang}: scoped lead spacing hook`);
+  const accordion=audio.match(/<details class="audio-route-details audio-route-details--installation"[^>]*>/g)||[];
+  assert.equal(accordion.length,1,`${lang}: installation-only spacing hook`);
+  assert.ok(!/\sopen(?:\s|=|>)/.test(accordion[0]),`${lang}: installation initially collapsed`);
   const positions=order.map(id=>audio.indexOf(`id="${id}"`));
   assert.ok(positions.every(p=>p>=0),`${lang}: output/mode/default/reference sections required`);
   assert.deepEqual(positions,[...positions].sort((a,b)=>a-b),`${lang}: task-first order`);

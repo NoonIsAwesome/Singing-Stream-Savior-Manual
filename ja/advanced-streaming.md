@@ -8,9 +8,9 @@ published: true
 
 # 高度な配信音声：マイクエフェクトとミックス出力
 
-<section data-article-lead markdown="1">
+<section class="advanced-streaming-lead" data-article-lead markdown="1">
 
-**2.1.0.0** 以降、高度な配信モードでは Singing Stream Savior 内で **BGM・伴奏**と **Profile のエフェクトで処理したマイク音声**をミックスし、完全な **Stream Mix** を OBS・Discord などの配信／通話アプリへ送れます。
+{% include advanced-streaming-benefits.html %}
 
 <nav class="article-outline audio-output-targets" id="advanced-quick-start" aria-label="ミックスの送信先を選ぶ">
   <strong>ミックスの送信先を選ぶ</strong><ul><li><a href="#output-obs">音声を OBS に送る</a></li><li><a href="#output-discord">音声を Discord・通話アプリに送る</a></li></ul>
@@ -40,7 +40,7 @@ published: true
 <p>経路が正しくても Discord 側で再エンコード、圧縮、その他の通話処理が行われる場合があり、ローカル録音や OBS 録画より音質が下がることがあります。最高音質を残す場合は OBS またはローカル録音を基準にしてください。</p>
 
 <a id="vb-cable-installation"></a>
-<details class="audio-route-details" markdown="1"><summary>VB-CABLE のインストール図解（必要な場合に開く）</summary>
+<details class="audio-route-details audio-route-details--installation" markdown="1"><summary>VB-CABLE のインストール図解（必要な場合に開く）</summary>
 
 仮想オーディオケーブルは別途インストールする Windows ドライバーです。本アプリがドライバーをダウンロード、実行、変更することはありません。必ず公式提供元から入手してください。
 

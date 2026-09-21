@@ -6,7 +6,12 @@
     "obs": "輸出訊號送至 OBS",
     "discord": "輸出訊號送至 Discord（或其他通訊軟體）",
     "choose": "先選擇混音的輸出目的地",
-    "intro": "從 **2.1.0.0** 起，進階直播模式可以在 Singing Stream Savior 內混合 **BGM、伴奏**與 **Profile 效果器處理後的麥克風**，再把完整 **Stream Mix** 送到 OBS、Discord 或其他通訊／直播軟體。",
+    "intro": "設定好進階直播模式後，你可以做到：",
+    "intro_bullets": [
+      "播放伴奏時自動切換到唱歌用 Profile",
+      "歌曲結束後自動切回聊天用 Profile",
+      "將伴奏、BGM 與麥克風效果混音後送到 OBS 或 Discord"
+    ],
     "obs_intro": "只需要送到 OBS 時，先使用專用音訊外掛，不必安裝虛擬音源。先完成以下四步，再依後面說明調整預設唱歌 Profile。",
     "obs_install": "在「設定 → 音訊路由」按「安裝／修復 OBS 外掛」，選擇自己的 OBS 安裝位置，完成後重新啟動 OBS。直播輸出選「Singing Stream Savior 音訊（OBS 外掛）」；Monitor 另選實體耳機或錄音介面。",
     "test_title": "用短錄音確認人聲、伴奏與效果",
@@ -214,7 +219,12 @@
     "obs": "Send audio to OBS",
     "discord": "Send audio to Discord or another calling app",
     "choose": "Choose where to send the mix",
-    "intro": "Since **2.1.0.0**, Advanced Streaming Mode mixes **BGM/accompaniment** with the **Profile-processed microphone** inside Singing Stream Savior, then sends the complete **Stream Mix** to OBS, Discord or another calling/streaming app.",
+    "intro": "Once Advanced Streaming Mode is set up, you can:",
+    "intro_bullets": [
+      "Automatically switch to your singing Profile when a backing track starts",
+      "Automatically switch back to your chatting Profile when the song ends",
+      "Mix backing tracks, BGM and your processed microphone, then send the mix to OBS or Discord"
+    ],
     "obs_intro": "For OBS alone, start with the dedicated audio plug-in; no virtual cable is required. Complete these four steps first, then configure the default singing Profile below.",
     "obs_install": "In Settings → Audio Routing select Install / repair OBS plug-in, choose your OBS installation, and restart OBS afterwards. Set Stream Output to Singing Stream Savior Audio (OBS Plugin). Select real headphones or your audio interface separately for Monitor.",
     "test_title": "Check vocals, accompaniment and effects",
@@ -422,7 +432,12 @@
     "obs": "音声を OBS に送る",
     "discord": "音声を Discord・通話アプリに送る",
     "choose": "ミックスの送信先を選ぶ",
-    "intro": "**2.1.0.0** 以降、高度な配信モードでは Singing Stream Savior 内で **BGM・伴奏**と **Profile のエフェクトで処理したマイク音声**をミックスし、完全な **Stream Mix** を OBS・Discord などの配信／通話アプリへ送れます。",
+    "intro": "高度な配信モードを設定すると、次のことができます：",
+    "intro_bullets": [
+      "伴奏の再生時に歌唱用 Profile へ自動切り替え",
+      "曲が終わると雑談用 Profile へ自動で戻る",
+      "伴奏・BGM・エフェクト処理後のマイク音声をミックスして OBS や Discord に送信"
+    ],
     "obs_intro": "OBS だけに送る場合は専用音声プラグインを使い、仮想ケーブルは不要です。まず次の 4 ステップで出力し、既定の歌唱 Profile は後で設定します。",
     "obs_install": "「設定 → 音声ルーティング」で OBS プラグインのインストール／修復を選び、自分の OBS の場所を指定して、完了後に OBS を再起動します。Stream Output は Singing Stream Savior Audio（OBS Plugin）、Monitor は別途実際のヘッドホン／インターフェースを選びます。",
     "test_title": "声・伴奏・エフェクトを確認",
@@ -630,7 +645,12 @@
     "obs": "오디오를 OBS로 보내기",
     "discord": "오디오를 Discord 또는 통화 앱으로 보내기",
     "choose": "믹스를 보낼 곳 선택",
-    "intro": "**2.1.0.0**부터 고급 방송 모드는 Singing Stream Savior 안에서 **BGM／반주**와 **Profile 이펙트로 처리한 마이크**를 믹스하고, 완성된 **Stream Mix**를 OBS, Discord 또는 다른 방송／통화 앱으로 보냅니다.",
+    "intro": "고급 방송 모드를 설정하면 다음과 같은 기능을 사용할 수 있습니다:",
+    "intro_bullets": [
+      "반주를 재생하면 노래용 Profile로 자동 전환",
+      "곡이 끝나면 대화용 Profile로 자동 복귀",
+      "반주, BGM, 이펙트가 적용된 마이크 음성을 믹스하여 OBS 또는 Discord로 전송"
+    ],
     "obs_intro": "OBS만 사용한다면 전용 오디오 플러그인으로 시작하세요. 가상 케이블은 필요하지 않습니다. 네 단계로 출력을 완료하고 기본 노래 Profile은 아래에서 설정합니다.",
     "obs_install": "설정 → 오디오 라우팅에서 OBS 플러그인 설치／복구를 누르고 OBS 위치를 선택한 뒤 OBS를 재시작합니다. Stream Output은 Singing Stream Savior Audio(OBS Plugin), Monitor는 별도로 실제 헤드폰／인터페이스를 선택하세요.",
     "test_title": "보컬·반주·효과 확인",
@@ -838,7 +858,12 @@
     "obs": "输出信号发送至 OBS",
     "discord": "输出信号发送至 Discord（或其他通话软件）",
     "choose": "先选择混音的输出目的地",
-    "intro": "从 **2.1.0.0** 起，高级直播模式可在 Singing Stream Savior 内混合 **BGM、伴奏**与 **Profile 效果器处理后的麦克风**，再把完整 **Stream Mix** 发送到 OBS、Discord 或其他通话／直播软件。",
+    "intro": "设置好高级直播模式后，你可以做到：",
+    "intro_bullets": [
+      "播放伴奏时自动切换到演唱用 Profile",
+      "歌曲结束后自动切回聊天用 Profile",
+      "将伴奏、BGM 与麦克风效果混音后发送到 OBS 或 Discord"
+    ],
     "obs_intro": "只需发送到 OBS 时，先使用专用音频插件，无需安装虚拟音频设备。先完成以下四步，再按后面的说明调整默认演唱 Profile。",
     "obs_install": "在“设置 → 音频路由”点击“安装／修复 OBS 插件”，选择自己的 OBS 安装位置，完成后重新启动 OBS。直播输出选择“Singing Stream Savior 音频（OBS 插件）”；Monitor 另选实体耳机或音频接口。",
     "test_title": "确认人声、伴奏与效果",
