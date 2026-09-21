@@ -1,7 +1,7 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign t = site.data.i18n[current_lang] %}
 {% assign section = page.translation_key | default: 'home' %}
-{% assign standalone_sections = "resources,changelog,about,support,advanced-streaming,audio-routing,profiles,open-source,privacy,website-privacy" | split: "," %}
+{% assign standalone_sections = "resources,changelog,about,support,advanced-streaming,audio-routing,profiles,open-source,privacy" | split: "," %}
 {% if current_lang == 'zh-TW' %}
   {% assign language_home = '/' %}
 {% else %}
@@ -92,7 +92,7 @@
       {{ content }}
     {% elsif section == 'about' %}
       <main id="guide-content" class="author-main"><article class="manual-article">{{ content }}</article></main>
-    {% elsif section == 'privacy' or section == 'website-privacy' %}
+    {% elsif section == 'privacy' %}
       <main id="guide-content" class="privacy-main"><article class="manual-article">{{ content }}</article></main>
     {% else %}
       <div class="reader-toolbar"><div class="wrap"><div class="reader-breadcrumb"><a href="{{ language_home | relative_url }}">{{ design.home }}</a><span>/</span><span>{% if section == 'support' %}{{ t.nav.support }}{% else %}{{ design.guide }}{% endif %}</span></div><span class="reader-version">Singing Stream Savior · v{{ site.data.resources.software.version }}</span><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav"><span class="nav-toggle-icon" aria-hidden="true"></span>{{ t.chapters }}</button></div></div>

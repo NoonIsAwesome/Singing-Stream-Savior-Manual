@@ -1,41 +1,37 @@
-# Privacy notice scope and search-flow verification
+# App privacy scope and search-flow verification
 
-Updated 2026-09-21. This is a maintenance record, excluded from GitHub Pages.
+Updated 2026-09-21. Maintenance record only; scripts/ is excluded from GitHub Pages.
 
-## Owner-requested scope
+## Latest owner instruction
 
-- `/privacy.html` and its five-language equivalents cover only the desktop app and launcher.
-- Emphasize local processing, no automatic uploads of songs/recordings/projects to the developer, and offline-capable core functions.
-- Website counters and theme storage are explained separately at `/website-privacy.html`, not in app copy. Both are discoverable in localized footers.
-- Neither analytics config, either counter script, nor the actual search implementation is changed by this documentation work.
-- No claim that open-source providers keep no service logs or that every optional network feature sends no data.
+Keep the public notice focused on the desktop app and launcher. Remove the separately added website-privacy pages, their footer entry, and displayed website statistics/vendor references. Keep the app's actual LRCLIB and cover-search explanations and project links in all five languages.
+
+This is a presentation/scope change, NOT a claim that the website sends no requests or that third-party providers retain no data. Both website counters, their enabled configurations, JavaScript, privacy opt-out behavior and the owner's read-only statistics scripts remain unchanged. The public app notice is explicitly limited to desktop app/launcher. This work is not a legal-compliance determination.
 
 ## Code verified
 
-Compared relevant code in `NoonIsAwesome/Singing-Stream-Savior` master `edadf66438ec4e7cd87409e1e78951e8bd44c7ca` and the 2.1.5.4 stability snapshot `7e3107456f9d41c3ec7e371bdbe91ed722021b0b`.
-The checked cover coordinator, cover dialog, MusicBrainz client and LRCLIB client have matching blob hashes in those snapshots.
+Compared the relevant files in Singing-Stream-Savior master `edadf66438ec4e7cd87409e1e78951e8bd44c7ca` and the 2.1.5.4 stability snapshot `7e3107456f9d41c3ec7e371bdbe91ed722021b0b`. The checked cover coordinator, cover dialog, MusicBrainz client and LRCLIB client have matching blob hashes.
 
-- `BGMSavior/lyrics/LrcLibClient.cpp`: trims the actual query; GET `https://lrclib.net/api/search?q=...`, with application User-Agent; parses returned lyrics candidates. The query is not hard-restricted to title-only.
-- `BGMSavior/media/OnlineLookupFlowPolicy.h`: builds preferred/original text queries, preserving artist/feature text; do not claim that all extra text is stripped.
-- `BGMSavior/media/CoverArtDialog.cpp::prefillSearchFields/onSearch`: local TagLib title/artist; suggested title or basename fallback; editable fields sent to coordinator.
-- `BGMSavior/media/CoverArtSearchCoordinator.cpp`: production default is MusicBrainzCoverArtProvider only. Do not present unused TheAudioDb provider code or test injection as the active default.
-- `BGMSavior/media/MusicBrainzCoverArtClient.cpp`: GET MusicBrainz recording search with title and optional artist; returned release/release-group IDs used for Cover Art Archive availability and image downloads; local cache.
-- `BGMSavior/lyrics/AutomaticLyricsLookupCoordinator.cpp`: optional automatic lookup includes local tracks, and YouTube subtitle paths are distinct from LRCLIB keyword search.
+- `BGMSavior/lyrics/LrcLibClient.cpp`: trims actual query; GET `https://lrclib.net/api/search?q=...`, with application User-Agent; parses returned candidates. The query is not hard-restricted to title-only.
+- `BGMSavior/media/OnlineLookupFlowPolicy.h`: preferred/original text queries preserve artist/feature text; do not claim all extra text is stripped.
+- `BGMSavior/media/CoverArtDialog.cpp::prefillSearchFields/onSearch`: local TagLib title/artist, suggested title or basename fallback, editable fields to coordinator.
+- `BGMSavior/media/CoverArtSearchCoordinator.cpp`: production default is MusicBrainzCoverArtProvider only. Do not list unused TheAudioDb provider/test injection as the active default.
+- `BGMSavior/media/MusicBrainzCoverArtClient.cpp`: MusicBrainz recording search with title and optional artist; release/release-group IDs for Cover Art Archive availability and images; local cache.
+- `BGMSavior/lyrics/AutomaticLyricsLookupCoordinator.cpp`: optional automatic lookup includes local tracks; YouTube subtitle paths are distinct from LRCLIB keyword search.
 
-This checks these search paths, not all networking in the application, operating system, third-party plug-ins, or all later branches. The notice's no-developer-upload wording describes the app's direct query flow, not a guarantee about third-party retention or unrelated user-submitted support data.
+This verifies these lookup paths, not every network request in the OS, all app versions, or third-party plug-ins. No-developer-upload wording describes direct query flow, not a third-party retention guarantee or unrelated user-submitted support data.
 
-## Public project references
+## Project references retained
 
-- LRCLIB server: https://github.com/tranxuanthang/lrclib
-- LRCLIB API: https://lrclib.net/docs
+- LRCLIB: https://github.com/tranxuanthang/lrclib ; API: https://lrclib.net/docs
 - MusicBrainz server: https://github.com/metabrainz/musicbrainz-server
-- Cover Art Archive service/API: https://musicbrainz.org/doc/Cover_Art_Archive/API
-- TagLib local metadata library: https://github.com/taglib/taglib
+- Cover Art Archive: https://musicbrainz.org/doc/Cover_Art_Archive/API
+- TagLib (local metadata library): https://github.com/taglib/taglib
 
-Do not claim that MusicBrainz Picard, libcoverart, or an unrelated API wrapper is linked into this app just because it is part of the same ecosystem. CAA is identified as the MusicBrainz/Internet Archive artwork service, with official documentation rather than an unverified repository URL. Open-source code and publicly accessible music data are different concepts; image/lyric rights are not waived.
+Do not imply Picard, libcoverart or unrelated API wrappers are linked into the app. Open-source code, public database access and image/lyric usage rights are different concepts.
 
 ## Validation
 
-The existing Actions invoke `scripts/validate-privacy.mjs` for source and rendered output. Checks cover separate scopes, five translations for each notice, four negative fixtures, project links, standalone layouts, language navigation and localized footers. Existing JavaScript, full Jekyll, analytics and Windows tests remain in place. Content tests are not legal-compliance certification.
+Existing JavaScript, full Jekyll, analytics configuration and real Windows PowerShell/CMD checks remain in place. `validate-privacy.mjs` checks five app notices, no published website-privacy pages or stale footer/sitemap links, exact project links, localization, app-only layout and six negative cases. It checks displayed text separately from operational counter code, which intentionally remains present.
 
-Deployment acceptance must read pages without executing counter writes, using `analytics=off` and network interception in any browser test. Do not download Release assets or increment/reset counters for a documentation-only change.
+Deployment verification is read-only: use analytics=off and block all counter requests in browser checks. No Release asset downloads or counter increment/reset/decrement is needed for this documentation-only change.
