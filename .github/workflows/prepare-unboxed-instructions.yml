@@ -1,0 +1,91 @@
+name: Prepare unboxed instruction layout
+on:
+  push:
+    branches: [style/unboxed-instructions-20260921]
+    paths: [.github/workflows/prepare-unboxed-instructions.yml]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: style/unboxed-instructions-20260921
+          fetch-depth: 2
+      - name: Apply only the reviewed CSS changes to the expected clean baseline
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess, hashlib
+          assert subprocess.check_output(['git','status','--porcelain'],text=True)==''
+          assert subprocess.check_output(['git','rev-parse','HEAD^'],text=True).strip()=='5467fd567ef970a7be9431b6b91b96a262d6e84c'
+          path=Path('assets/css/reader.css')
+          original=path.read_bytes()
+          blob=lambda b:hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
+          assert blob(original)=='472a4896d3e858015ab91c5ff40bcc811c96151e'
+          Path('/tmp/reader-before.css').write_bytes(original)
+          text=original.decode()
+          def replace(old,new):
+              global text
+              assert text.count(old)==1,old
+              text=text.replace(old,new)
+          replace('.inner-page .chapter-quick-start__steps li {\n  background:var(--white);\n  border:1px solid var(--line);\n  border-radius:10px;\n  box-shadow:none\n}', '/* Instructions are reading lists, not a stack of individual cards. */\n.inner-page .chapter-quick-start__steps li {\n  background:transparent;\n  border:0;\n  border-radius:0;\n  box-shadow:none\n}')
+          replace('.inner-page .chapter-quick-start__done {\n  background:var(--blue-soft);\n  border-color:var(--line);\n  color:var(--ink-800)\n}', '.inner-page .chapter-quick-start__done {\n  margin:18px 0 0;\n  padding:14px 0 0;\n  color:var(--ink-800);\n  background:transparent;\n  border:0;\n  border-top:1px solid var(--line);\n  border-radius:0;\n  box-shadow:none\n}')
+          replace('.inner-page .manual-article .chapter-quick-start__steps {\n  margin:20px 0 0;\n  padding:0;\n  gap:10px\n}', '.inner-page .manual-article .chapter-quick-start__steps {\n  margin:20px 0 0;\n  padding:0;\n  gap:18px\n}')
+          replace('.inner-page .chapter-quick-start__steps li {\n  padding:13px 15px;\n  margin:0\n}', '.inner-page .chapter-quick-start__steps li {\n  padding:0;\n  margin:0\n}')
+          replace('.inner-page .setup-step {\n  box-shadow:none\n}', '.inner-page .setup-steps {\n  gap:32px\n}\n\n.inner-page .setup-step {\n  padding:0;\n  background:transparent;\n  border:0;\n  border-radius:0;\n  box-shadow:none\n}')
+          replace('.inner-page .setup-step-number {\n  color:var(--teal);\n  background:var(--mint)\n}', '.inner-page .setup-step-number {\n  color:var(--teal);\n  background:var(--mint)\n}\n\n/* Keep a required step identifiable without framing the whole instruction. */\n.inner-page .setup-step--important .setup-step-number {\n  color:var(--amber);\n  background:var(--paper);\n  box-shadow:inset 0 0 0 1px var(--amber)\n}')
+          replace('.inner-page .download-panel,.inner-page .smartscreen-guide,.inner-page .smartscreen-guide__steps figure {', '.inner-page .download-panel,.inner-page .smartscreen-guide {')
+          replace('.inner-page .smartscreen-guide__steps figcaption:before {\n  color:var(--teal);\n  background:var(--mint)\n}\n\n.inner-page .smartscreen-guide__steps img {\n  border-color:var(--line)\n}', '.inner-page .smartscreen-guide__steps {\n  gap:24px\n}\n\n.inner-page .smartscreen-guide__steps figure {\n  color:var(--ink);\n  background:transparent;\n  border:0;\n  border-radius:0;\n  box-shadow:none;\n  overflow:visible\n}\n\n.inner-page .smartscreen-guide__steps figcaption {\n  padding:14px 0 0 38px\n}\n\n.inner-page .smartscreen-guide__steps figcaption:before {\n  left:0;\n  color:var(--teal);\n  background:var(--mint)\n}\n\n.inner-page .smartscreen-guide__steps img {\n  border:0;\n  border-radius:8px\n}')
+          replace('  .inner-page .chapter-quick-start__steps li {\n    padding:12px;\n    gap:10px\n  }', '  .inner-page .chapter-quick-start__steps li {\n    padding:0;\n    gap:10px\n  }')
+          replace('.inner-page .open-source-disclaimer,\n.inner-page .chapter-quick-start__done,\n.inner-page .profile-chain-guide,', '.inner-page .open-source-disclaimer,\n.inner-page .profile-chain-guide,')
+          assert blob(text.encode())=='6b61ef18c1b0eacd94faadeb8d2b907bde56e870'
+          path.write_bytes(text.encode())
+          PY
+          git diff --check
+      - name: Run existing offline regressions
+        run: |
+          node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs scripts/test-download-clicks.mjs scripts/test-download-config.mjs
+          node scripts/validate-privacy.mjs
+      - name: Build the complete multilingual manual without deployment
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Validate all built pages
+        run: |
+          node scripts/validate-built-site.mjs _site
+          node scripts/validate-site-analytics.mjs _site
+          node scripts/validate-download-clicks.mjs _site
+          node scripts/validate-privacy.mjs _site
+          node scripts/validate-player-window-guide.mjs _site
+      - name: Export current built pages and original images for offline browser review
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          import hashlib,json,subprocess
+          with ZipFile('/tmp/instruction-layout-review.zip','w',ZIP_DEFLATED) as z:
+              for p in Path('_site').rglob('*'):
+                  if p.is_file() and p.suffix.lower() in ['.html','.css','.js','.png','.jpg','.jpeg','.svg','.webp','.ico']:
+                      z.write(p,'site/'+str(p.relative_to('_site')))
+              z.write('/tmp/reader-before.css','reader-before.css')
+              z.writestr('source-diff.patch',subprocess.check_output(['git','diff','--','assets/css/reader.css']))
+              z.writestr('manifest.json',json.dumps({'baseline':'5467fd567ef970a7be9431b6b91b96a262d6e84c','changed_files':['assets/css/reader.css'],'new_css_blob':'6b61ef18c1b0eacd94faadeb8d2b907bde56e870','html_pages':len(list(Path('_site').rglob('*.html'))),'counter_requests':0,'release_asset_downloads':0},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: instruction-layout-review
+          path: /tmp/instruction-layout-review.zip
+          retention-days: 2
+      - name: Commit only validated styling and remove the temporary preparation workflow
+        run: |
+          test "$(git diff --name-only)" = 'assets/css/reader.css'
+          git rm .github/workflows/prepare-unboxed-instructions.yml
+          git add assets/css/reader.css
+          git diff --cached --check
+          git -c user.name='NoonIsAwesome' -c user.email='205285011+NoonIsAwesome@users.noreply.github.com' commit -m 'Use numbered, unboxed instructions across the manual without changing content or analytics'
+          git push origin HEAD:refs/heads/style/unboxed-instructions-20260921
