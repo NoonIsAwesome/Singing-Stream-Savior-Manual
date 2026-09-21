@@ -14,31 +14,19 @@ jobs:
         with:
           persist-credentials: false
           ref: b472f9659c1dfa0df42bb0caaf258f8161e8ba3b
-      - name: Inspect existing documents and original screenshots without external requests
+      - name: Package existing documentation and screenshots without running scripts
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import re, base64, io
-          from PIL import Image
-          for f in ['lyrics.md','en/guide.md','ja/guide.md','ko/guide.md','zh-CN/guide.md','_includes/feature-guide.html','_includes/localized-release-screenshot.html']:
-              s=Path(f).read_text(encoding='utf-8')
-              print('DOCUMENT', f)
-              if f.startswith('_includes/'):
-                  print(s)
-                  continue
-              needle='{% include player-window-buttons.html %}'
-              p=s.find(needle)
-              print('WINDOW_INCLUDE_COUNT',s.count(needle))
-              if p>=0:
-                  print(s[max(0,p-500):p+1200])
-              else:
-                  p=s.find('id="lyrics"')
-                  print(s[max(0,p):max(0,p)+4300])
-          for f in ['assets/images/lyrics-viewer.png','assets/images/demo-lyrics-preview.png']:
-              im=Image.open(f)
-              print('SCREENSHOT', f, im.size)
-              if 'viewer' in f:
-                  im=im.convert('RGB'); im.thumbnail((444,600))
-                  out=io.BytesIO(); im.save(out,format='JPEG',quality=40,optimize=True)
-                  print('VIEWER_JPEG_BASE64',base64.b64encode(out.getvalue()).decode())
+          import zipfile, subprocess
+          assert not subprocess.check_output(['git','status','--porcelain']).strip()
+          files=[p for p in Path('.').rglob('*') if p.is_file() and '.git' not in p.parts and (p.suffix in ['.md','.html','.json','.yml','.mjs','.css','.js'] or p.name in ['lyrics-viewer.png','demo-lyrics-preview.png','lyrics-reading-preview.png'])]
+          with zipfile.ZipFile('/tmp/lyrics-source.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in files: z.write(p,p.as_posix())
+          print('Read-only source bundle:',len(files),'files')
           PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lyrics-documentation-source
+          path: /tmp/lyrics-source.zip
+          retention-days: 1
