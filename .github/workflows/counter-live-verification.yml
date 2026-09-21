@@ -1,69 +1,63 @@
-name: Verify registered CounterAPI V2 endpoint
+name: Read-only registered CounterAPI V2 verification
 
 on:
   push:
     branches: [verify/counterapi-v2-live-20260921]
     paths: [.github/workflows/counter-live-verification.yml]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  single-increment:
-    if: github.run_attempt == 1
+  registered-counter:
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 10
     steps:
-      - name: Check existing browser and Node availability
-        run: |
-          node --version
-          command -v google-chrome || command -v chromium || true
-      - name: Anonymous read, one authorized increment, and readback
+      - name: Read persisted counter without further increments
         shell: bash
         run: |
           node --input-type=module <<'NODE'
           import assert from 'node:assert/strict';
           import { appendFileSync } from 'node:fs';
           import { setTimeout as sleep } from 'node:timers/promises';
-          const endpoint = 'https://api.counterapi.dev/v2/noonisawesome-singing-stream-savior-manual/noonisawesome-s3s-manual-pageviews';
+          const base = 'https://api.counterapi.dev/v2/noonisawesome-singing-stream-savior-manual/noonisawesome-s3s-manual-pageviews';
           const origin = 'https://noonisawesome.github.io';
-          const report = (value) => {
-            const text = JSON.stringify({ checked_at: new Date().toISOString(), ...value });
-            console.log(text);
-            appendFileSync(process.env.GITHUB_STEP_SUMMARY, '```json\n' + text + '\n```\n');
+          const report = value => {
+            const line = JSON.stringify({ checked_at: new Date().toISOString(), ...value });
+            console.log(line);
+            appendFileSync(process.env.GITHUB_STEP_SUMMARY, '```json\n' + line + '\n```\n');
           };
-          const validData = (payload) => [200, '200'].includes(payload?.code)
-            && Number.isSafeInteger(payload?.data?.up_count) && payload.data.up_count >= 0
-            && Number.isSafeInteger(payload?.data?.down_count) && payload.data.down_count >= 0
-            && payload.data.down_count <= payload.data.up_count;
-          async function request(suffix = '') {
-            assert.ok(suffix === '' || suffix === '/up');
-            const response = await fetch(endpoint + suffix, {
+          // The new counter was shown at zero in the owner's setup screenshot.
+          // Run 35570042746 sent exactly one /up at 2026-09-21T06:48:23Z.
+          // Do NOT repeat that mutation. A later positive value confirms stored
+          // activity, but cannot by itself rule out another concurrent visitor.
+          let observed = false;
+          for (let attempt = 0; attempt < 8; attempt++) {
+            if (attempt) await sleep(60000);
+            const url = new URL(base);
+            url.searchParams.set('verification', `${process.env.GITHUB_RUN_ID}-${attempt}`);
+            const r = await fetch(url, {
               method: 'GET', redirect: 'error', cache: 'no-store', credentials: 'omit',
-              headers: { Accept: 'application/json', Origin: origin, 'Cache-Control': 'no-cache', 'User-Agent': 'S3S-Counter-Setup-Verification' },
+              headers: { Accept: 'application/json', Origin: origin, 'Cache-Control': 'no-cache' },
               signal: AbortSignal.timeout(15000),
             });
-            const cors = response.headers.get('access-control-allow-origin');
-            report({ operation: suffix ? 'one-test-increment' : 'read-only', http_status: response.status, cors_allows_site: cors === '*' || cors === origin, authorization_sent: false });
-            assert.ok(response.ok, 'Counter endpoint rejected anonymous request; do not enable collection');
-            assert.ok(cors === '*' || cors === origin, 'Counter response does not allow the production browser origin');
-            const payload = await response.json();
-            assert.ok(validData(payload), 'Counter response is incompatible with the existing V2 parser');
-            return payload.data;
+            const cors = r.headers.get('access-control-allow-origin');
+            report({ operation: 'read-only', attempt: attempt + 1, http_status: r.status,
+              cors_allows_site: cors === '*' || cors === origin, authorization_sent: false });
+            assert.equal(r.status, 200, 'Anonymous read rejected');
+            assert.ok(cors === '*' || cors === origin, 'CORS does not allow the site');
+            const p = await r.json();
+            assert.ok([200, '200'].includes(p?.code));
+            assert.ok(Number.isSafeInteger(p?.data?.up_count) && p.data.up_count >= 0);
+            assert.ok(Number.isSafeInteger(p?.data?.down_count) && p.data.down_count >= 0 && p.data.down_count <= p.data.up_count);
+            observed = p.data.up_count > 0;
+            report({ valid_v2_payload: true, persisted_activity_observed: observed,
+              response_date: r.headers.get('date'), cache_status: r.headers.get('cf-cache-status'),
+              counter_mutations: 0 });
+            if (observed) break;
           }
-          const before = await request();
-          // Exactly one deliberate increment for the owner's requested setup test.
-          // No retries, decrement, reset, secrets, or printing actual traffic totals.
-          report({ test_increment_attempts: 1, warning: 'This setup check adds one test view if accepted. Do not rerun the mutation.' });
-          await request('/up');
-          let reflected = false;
-          for (const delay of [0, 5000, 15000, 30000, 60000]) {
-            if (delay) await sleep(delay);
-            const after = await request();
-            if (after.up_count >= before.up_count + 1 && after.down_count === before.down_count) {
-              reflected = true; break;
-            }
-          }
-          report({ anonymous_read_verified: true, anonymous_increment_accepted: true, readback_increase_observed: reflected, authorized_test_increment_attempts: 1, browser_execution_verified: false });
-          assert.ok(reflected, 'Increment accepted but not yet visible within the bounded readback window; do not issue another increment');
+          assert.ok(observed, 'Buffered activity still not reflected; collection not verified. No further mutations were sent.');
+          report({ anonymous_read_verified: true, persisted_activity_observed: true,
+            counter_mutations: 0, browser_execution_verified: false });
           NODE
