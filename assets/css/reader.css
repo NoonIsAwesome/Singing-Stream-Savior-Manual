@@ -1669,3 +1669,31 @@ html[data-theme="dark"] .chapter-list a[aria-current="page"] .chapter-preview-ba
   border-color:var(--line-strong);
   box-shadow:none
 }
+
+/* Short, unboxed benefits before the OBS/Discord destination links. */
+.inner-page .manual-article .advanced-streaming-benefits {
+  margin:0 0 20px
+}
+.inner-page .manual-article .advanced-streaming-benefits > p {
+  margin:0 0 8px
+}
+.inner-page .manual-article .advanced-streaming-benefits > ul {
+  margin:0;
+  padding-left:1.4em;
+  list-style:disc
+}
+.inner-page .manual-article .advanced-streaming-benefits > ul > li {
+  margin:4px 0
+}
+
+/* Keep breathing room even when the installation screenshots are collapsed. */
+.inner-page .manual-article details.audio-route-details--installation {
+  margin-bottom:24px
+}
+.inner-page .manual-article details.audio-route-details--installation[open] {
+  margin-bottom:32px
+}
+/* site.js inserts this outline after the lead; its default -8px margin cancels spacing. */
+.inner-page .manual-article .advanced-streaming-lead + .article-outline {
+  margin-top:0
+}

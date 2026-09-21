@@ -33,8 +33,8 @@ zh-TW:
     uvr: UVR 人聲消除
     modes: 工作區模式
     audio_routing: 音訊路由
-    profiles: 人聲 Profiles
-    advanced_streaming: 進階直播音訊
+    profiles: Profile（直播效果器）設定
+    advanced_streaming: 進階直播音訊（混音輸出）
     settings: 設定與疑難排解
     open_source: 開源專案與授權
     resources: 軟體下載
@@ -77,8 +77,8 @@ zh-CN:
     uvr: UVR 人声消除
     modes: 工作区模式
     audio_routing: 音频路由
-    profiles: 人声 Profiles
-    advanced_streaming: 高级直播音频
+    profiles: Profile（直播效果器）设置
+    advanced_streaming: 高级直播音频（混音输出）
     settings: 设置与疑难解答
     open_source: 开源项目与许可
     resources: 软件下载
@@ -121,8 +121,8 @@ en:
     uvr: UVR vocal removal
     modes: Workspace modes
     audio_routing: Audio routing
-    profiles: Vocal Profiles
-    advanced_streaming: Advanced streaming audio
+    profiles: Profile settings (streaming effects)
+    advanced_streaming: Advanced audio · mix output
     settings: Settings and help
     open_source: Open source and licenses
     resources: Software download
@@ -165,8 +165,8 @@ ja:
     uvr: UVR ボーカル除去
     modes: ワークスペース
     audio_routing: 音声ルーティング
-    profiles: ボーカル Profiles
-    advanced_streaming: 高度な配信オーディオ
+    profiles: Profile（配信エフェクト）設定
+    advanced_streaming: 配信音声（ミックス出力）
     settings: 設定とトラブル対処
     open_source: オープンソースとライセンス
     resources: アプリをダウンロード
@@ -209,8 +209,8 @@ ko:
     uvr: UVR 보컬 제거
     modes: 작업 공간 모드
     audio_routing: 오디오 라우팅
-    profiles: 보컬 Profiles
-    advanced_streaming: 고급 방송 오디오
+    profiles: Profile(방송 이펙트) 설정
+    advanced_streaming: 고급 오디오 · 믹스 출력
     settings: 설정 및 문제 해결
     open_source: 오픈 소스 및 라이선스
     resources: 앱 다운로드

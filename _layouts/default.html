@@ -8,7 +8,7 @@
   {% capture language_home %}/{{ current_lang }}/{% endcapture %}
   {% capture language_guide %}/{{ current_lang }}/guide.html{% endcapture %}
 {% endif %}
-{% if section == 'audio-routing' or section == 'profiles' %}
+{% if section == 'audio-routing' %}
   {% capture alternate_zh_tw %}/{{ section }}.html{% endcapture %}
   {% assign alternate_zh_cn = '/zh-CN/advanced-streaming.html' %}
   {% assign alternate_en = '/en/advanced-streaming.html' %}

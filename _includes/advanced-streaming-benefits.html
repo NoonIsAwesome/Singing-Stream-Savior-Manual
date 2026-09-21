@@ -1,0 +1,10 @@
+{% assign benefit_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign benefit_copy = site.data.stream_routes[benefit_lang] %}
+<div class="advanced-streaming-benefits">
+  <p>{{ benefit_copy.intro | escape }}</p>
+  <ul>
+    {% for benefit in benefit_copy.intro_bullets %}
+    <li>{{ benefit | escape }}</li>
+    {% endfor %}
+  </ul>
+</div>
