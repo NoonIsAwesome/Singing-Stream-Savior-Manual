@@ -9,7 +9,13 @@
     "modes": "完整、精簡與迷你模式都保留這兩個入口；切換到其他頁面也不必回歌詞頁找按鈕。若目前展開 BGM 播放清單而看不到伴奏區，先收合 BGM 清單。",
     "caption": "伴奏播放器的實際截圖局部放大：1 是歌詞視窗，2 是 YouTube 影片。框線與編號為教學標示。",
     "image_alt": "伴奏播放器標題列右上角，左側歌詞視窗按鈕標記為 1，右側 YouTube 影片按鈕標記為 2。",
-    "full_image": "查看完整原始截圖"
+    "full_image": "查看完整原始截圖",
+    "lyrics_section": "歌詞視窗",
+    "youtube_section": "YouTube 影片",
+    "obs_section": "歌詞預覽與 OBS",
+    "viewer_alt": "開啟後的獨立歌詞視窗，上方可調整文字大小、讀音與時間偏移，下方醒目顯示目前歌詞。",
+    "viewer_caption": "開啟後的歌詞視窗（實際軟體截圖）。這是供主播自己閱讀的獨立視窗，不是歌曲列表的「管理歌詞」，也不是 OBS 歌詞預覽。",
+    "viewer_help": "這個視窗可以自由移動，並有自己的文字大小與日韓讀音設定。點選有時間標記的歌詞可讓伴奏跳到該句；純文字歌詞沒有可跳轉的時間。歌曲回到開頭時，歌詞清單也會回到最上方。"
   },
   "zh-CN": {
     "title": "从伴奏播放器打开歌词窗口与 YouTube 画面",
@@ -21,7 +27,13 @@
     "modes": "完整、精简和迷你模式均保留这两个入口，切换页面后也不必回歌词页寻找。如果展开 BGM 播放列表后看不到伴奏区，请先收起 BGM 列表。",
     "caption": "伴奏播放器实际截图的局部放大（繁体中文界面）：1 为歌词窗口，2 为 YouTube 视频。框线与编号是教学标记。",
     "image_alt": "伴奏播放器标题栏右上角，左侧歌词窗口按钮标为 1，右侧 YouTube 视频按钮标为 2。",
-    "full_image": "查看完整原始截图"
+    "full_image": "查看完整原始截图",
+    "lyrics_section": "歌词窗口",
+    "youtube_section": "YouTube 视频",
+    "obs_section": "歌词预览与 OBS",
+    "viewer_alt": "打开后的独立歌词窗口，上方可调整文字大小、读音和时间偏移，下方突出显示当前歌词。",
+    "viewer_caption": "打开后的歌词窗口（实际软件截图）。这是供主播阅读的独立窗口，不是歌曲列表的“管理歌词”，也不是 OBS 歌词预览。",
+    "viewer_help": "窗口可以自由移动，并有独立的文字大小与日、韩读音设置。点击带时间戳的歌词可让伴奏跳到该句；纯文本歌词没有可跳转的时间。歌曲回到开头时，歌词列表也会回到顶部。"
   },
   "en": {
     "title": "Open the Lyrics Window and YouTube video from the player",
@@ -33,7 +45,13 @@
     "modes": "Both buttons remain available in Full, Compact and Mini modes, including while you use another page. If the expanded BGM playlist hides the accompaniment area, collapse that playlist first.",
     "caption": "Enlarged crop of a real player screenshot (Traditional Chinese interface): 1 opens the Lyrics Window; 2 opens YouTube Video. Outlines and numbers are instructional annotations.",
     "image_alt": "At the top-right of the accompaniment title row, 1 marks the left Lyrics Window button and 2 marks the right YouTube Video button.",
-    "full_image": "View the full original screenshot"
+    "full_image": "View the full original screenshot",
+    "lyrics_section": "Lyrics Window",
+    "youtube_section": "YouTube Video",
+    "obs_section": "Lyrics Preview and OBS",
+    "viewer_alt": "The opened independent Lyrics Window with text size, reading and timing controls above the highlighted current line.",
+    "viewer_caption": "The opened Lyrics Window, shown in a real application screenshot. This movable reader is for the streamer; it is neither Manage Lyrics nor the OBS lyrics preview.",
+    "viewer_help": "Move this window to a comfortable reading position and adjust its own text size and Japanese/Korean reading options. Select a timestamped lyric line to seek the accompaniment to that line; plain-text lyrics have no seek positions. Returning the song to the beginning also scrolls the list back to the top."
   },
   "ja": {
     "title": "伴奏プレイヤーから歌詞ウィンドウと YouTube 動画を開く",
@@ -45,7 +63,13 @@
     "modes": "フル・コンパクト・ミニの各モードや、ほかのページを開いている間も利用できます。BGM プレイリストを展開して伴奏欄が隠れている場合は、先にリストを折りたたんでください。",
     "caption": "実際のプレイヤー画面の拡大部分（繁体字中国語表示）。1 は歌詞ウィンドウ、2 は YouTube 動画です。枠と番号は説明用の注釈です。",
     "image_alt": "伴奏プレイヤーのタイトル行右上で、左の歌詞ウィンドウを 1、右の YouTube 動画を 2 と表示。",
-    "full_image": "元の画面全体を見る"
+    "full_image": "元の画面全体を見る",
+    "lyrics_section": "歌詞ウィンドウ",
+    "youtube_section": "YouTube 動画",
+    "obs_section": "歌詞プレビューと OBS",
+    "viewer_alt": "開いた独立歌詞ウィンドウ。上部に文字サイズ、読み方、時刻調整があり、下部で現在行が強調表示されています。",
+    "viewer_caption": "開いた歌詞ウィンドウの実際の画面です。配信者が手元で読むための独立ウィンドウであり、曲一覧の歌詞管理画面や OBS 用歌詞プレビューとは別です。",
+    "viewer_help": "読みやすい位置へ移動し、このウィンドウ専用の文字サイズや日本語・韓国語の読み方を調整できます。タイムスタンプ付きの行を選ぶと伴奏がその時刻へ移動します。テキスト歌詞には移動先の時刻がありません。曲を先頭へ戻すと、歌詞一覧も上端へ戻ります。"
   },
   "ko": {
     "title": "반주 플레이어에서 가사 창과 YouTube 영상 열기",
@@ -57,6 +81,12 @@
     "modes": "전체·간소·미니 모드와 다른 페이지에서도 두 버튼을 사용할 수 있습니다. 펼친 BGM 재생 목록이 반주 영역을 가리면 먼저 목록을 접으세요.",
     "caption": "실제 플레이어 화면의 확대 영역(번체 중국어 UI): 1은 가사 창, 2는 YouTube 영상입니다. 테두리와 번호는 설명용 표시입니다.",
     "image_alt": "반주 플레이어 제목 줄 오른쪽 위에서 왼쪽 가사 창 버튼은 1, 오른쪽 YouTube 영상 버튼은 2로 표시됩니다.",
-    "full_image": "원본 전체 화면 보기"
+    "full_image": "원본 전체 화면 보기",
+    "lyrics_section": "가사 창",
+    "youtube_section": "YouTube 영상",
+    "obs_section": "가사 미리보기와 OBS",
+    "viewer_alt": "열린 독립 가사 창. 위쪽에는 글자 크기, 읽기와 시간 조정 기능이 있고 아래쪽에는 현재 가사가 강조되어 있습니다.",
+    "viewer_caption": "실제 프로그램에서 열린 가사 창입니다. 진행자가 직접 읽는 독립 창이며 곡 목록의 가사 관리 창이나 OBS 가사 미리보기와는 다릅니다.",
+    "viewer_help": "읽기 편한 위치로 옮기고 이 창만의 글자 크기와 일본어·한국어 읽기 옵션을 조정할 수 있습니다. 타임스탬프가 있는 가사를 누르면 반주가 해당 시점으로 이동합니다. 일반 텍스트 가사에는 이동할 시간이 없습니다. 곡을 처음으로 돌리면 목록도 맨 위로 돌아갑니다."
   }
 }
