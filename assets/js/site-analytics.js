@@ -43,7 +43,8 @@
     if (document.querySelector("script[data-cf-beacon]")) return;
     const beacon = document.createElement("script");
     beacon.id = "s3s-cloudflare-beacon";
-    beacon.type = "module";
+    beacon.type = "text/javascript";
+    beacon.crossOrigin = "anonymous";
     beacon.async = true;
     beacon.src = "https://static.cloudflareinsights.com/beacon.min.js";
     // This is a multi-page Jekyll site. Chapter hash/history changes are not views.
