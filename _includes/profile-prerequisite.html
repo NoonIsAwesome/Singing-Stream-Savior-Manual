@@ -1,0 +1,13 @@
+{% assign profile_lang = page.lang | default: 'zh-TW' %}
+{% assign profile_copy = site.data.stream_routes[profile_lang] %}
+{% if profile_lang == 'zh-TW' %}{% assign audio_target = '/advanced-streaming.html' %}{% else %}{% capture audio_target %}/{{ profile_lang }}/advanced-streaming.html{% endcapture %}{% endif %}
+<section data-article-lead id="profile-prerequisite">
+  <p><strong>{{ profile_copy.profile_pre | escape }}</strong></p>
+  <p>{{ profile_copy.profile_intro | escape }}</p>
+  <p>{{ profile_copy.signal | escape }}</p>
+  <p>{{ profile_copy.scope | escape }}</p>
+  <nav class="article-outline" aria-label="{{ profile_copy.route_link | escape }}"><ul>
+    <li><a href="{{ audio_target | relative_url }}">{{ profile_copy.route_link | escape }}</a></li>
+    <li><a href="{{ audio_target | relative_url }}#singing-profile-defaults">{{ profile_copy.defaults | escape }}</a></li>
+  </ul></nav>
+</section>

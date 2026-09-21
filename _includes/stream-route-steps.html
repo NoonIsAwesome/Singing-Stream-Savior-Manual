@@ -1,0 +1,19 @@
+{% assign route_lang = page.lang | default: 'zh-TW' %}
+{% assign route_copy = site.data.stream_routes[route_lang] %}
+{% assign step_key = include.target | append: '_steps' %}
+<div class="setup-steps" data-route-steps="{{ include.target | escape }}">
+{% for step in route_copy[step_key] %}
+<section class="setup-step">
+  <span class="setup-step-number">{{ forloop.index }}</span>
+  <div><h3>{{ step.title | escape }}</h3><p>{{ step.body }}</p>
+  {% if step.images %}<div class="feature-shot-grid{% if step.images.size == 1 %} feature-shot-grid--compact{% endif %}">
+    {% for shot in step.images %}
+    {% if shot.localized %}
+      {% if route_lang == 'zh-TW' %}{% capture route_shot %}/assets/images/{{ shot.file }}{% endcapture %}{% else %}{% capture route_shot %}/assets/images/{{ route_lang }}/{{ shot.file }}{% endcapture %}{% endif %}
+    {% else %}{% capture route_shot %}/assets/images/advanced-streaming/{{ shot.file }}{% endcapture %}{% endif %}
+    <figure class="manual-figure"><a href="{{ route_shot | relative_url }}"><img src="{{ route_shot | relative_url }}" alt="{{ shot.alt | escape }}" loading="lazy" decoding="async"></a><figcaption>{{ shot.caption }}</figcaption></figure>
+    {% endfor %}
+  </div>{% endif %}</div>
+</section>
+{% endfor %}
+</div>

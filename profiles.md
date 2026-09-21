@@ -1,23 +1,13 @@
 ---
-title: 人聲 Profiles 與效果器完整教學
+title: Profile（直播效果器）設定
 description: 使用歌回救星為每首歌曲指定麥克風效果器訊號鏈，並編輯內建效果器、Shimmer 與 VST3
 lang: zh-TW
 translation_key: profiles
 ---
 
-# 人聲 Profiles
+# Profile（直播效果器）設定
 
-Profile 是一組可以重複使用的自訂 Signal Chain（效果處理鏈），包含 Noise Gate（噪音閥）、EQ（等化器）、Compressor（壓縮器）、Reverb（殘響）等效果，並保存你設定的參數與處理順序。你可以先建立古風、搖滾、KTV、空靈等不同風格，再替每一首歌曲指定要使用哪一組；播放伴奏時，歌回救星就會自動切換麥克風效果，不必一邊直播一邊逐顆調整效果器。
-
-<aside class="version-preview" role="note">
-  <span class="version-preview__badge">2.1.0.0 新功能</span>
-  <div><strong>本章與「音訊路由」需要搭配閱讀。</strong><p>Profile 決定人聲音色；音訊路由決定麥克風從哪裡進來、自己如何監聽，以及處理後的聲音如何送到 OBS。</p></div>
-</aside>
-
-<nav class="paired-guides" aria-label="進階音訊設定教學">
-  <a class="paired-guide" href="{{ '/advanced-streaming.html' | relative_url }}"><span class="paired-guide__node">IN</span><span class="paired-guide__copy"><strong>進階直播設定</strong><small>麥克風、伴奏、監聽、OBS 與錄音</small></span><span class="paired-guide__arrow" aria-hidden="true">›</span></a>
-  <a class="paired-guide" href="{{ '/profiles.html' | relative_url }}" aria-current="page"><span class="paired-guide__node">FX</span><span class="paired-guide__copy"><strong>人聲 Profiles</strong><small>效果器訊號鏈、歌曲標籤與自動切換</small></span><span class="paired-guide__arrow" aria-hidden="true">›</span></a>
-</nav>
+{% include profile-prerequisite.html %}
 
 ## 最重要的新功能：每首歌自動切換人聲效果
 
@@ -25,13 +15,15 @@ Profile 是一組可以重複使用的自訂 Signal Chain（效果處理鏈）�
 
 1. 在 **人聲 Profiles** 建立或調整效果器訊號鏈。
 2. 在歌曲列表替歌曲選擇一個 Profile 標籤。
-3. 播放伴奏時，軟體自動套用該歌曲指定的效果；歌曲結束後回到聊天 Profile。
+3. 主畫面維持「自動切換 Profile」時，播放伴奏會套用歌曲指定的效果；停止伴奏回到聊天時切回聊天 Profile。
 
 <div class="manual-feature-update">
   <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">01 · SONG AUTOMATION</p><h2>替歌曲指定一種人聲風格</h2><p>同一場歌回可以讓抒情歌使用空靈效果、搖滾歌曲使用較有力度的壓縮與飽和、KTV 歌曲使用熟悉的 Echo；設定一次後，之後播放同一首歌就會再次套用。</p></div>
 </div>
 
-> Profile 會在伴奏播放狀態改變時切換。正式直播前請逐首試唱，避免不同效果鏈之間的音量落差過大。
+> 自動模式下，Profile 會在伴奏播放狀態改變時切換。手動指定會暫時覆蓋自動化，請選回「自動切換 Profile」恢復。正式直播前請逐首試唱，避免不同效果鏈之間的音量落差過大。
+
+{% include advanced-streaming-screenshot.html name="26-song-profile-tag-menu.png" alt="歌曲列表展開 Profile 標籤選單" caption="按歌曲列右側的標籤圖示後，可選擇自動使用唱歌 Profile、直播聊天或任一自訂／內建 Profile；彩色標籤會直接顯示在歌曲列上。" %}
 
 ## 內建多種可直接使用的 Profiles
 
@@ -136,6 +128,21 @@ Profile 可混合內建效果器與 VST3，並保存 Plugin 的 state、Block �
 - **手動選擇 Profile**：立即改用指定訊號鏈，直到選回自動切換。
 - **麥克風靜音**：只停止麥克風進入直播混音，不會停止 BGM／伴奏播放。
 - **系統工具與快捷鍵**：主視窗縮小後仍可切換 Profile、靜音／恢復麥克風與操作支援的效果器 Switch。
+
+{% include advanced-streaming-screenshot.html name="27-live-profile-menu.png" alt="主畫面上方展開直播中的 Profile 選單" caption="上方 Profile 選單可立即指定效果或回到自動切換；旁邊可同時操作監聽、錄音與麥克風靜音。" size="medium" %}
+
+### 主畫面上方每個控制項的用途
+
+- **監聽來源**：決定耳機中要聽到 BGM／伴奏、完整混音、BGM／伴奏加濕聲、BGM／伴奏加乾聲，或只聽處理後麥克風。
+- **耳機按鈕**：開啟或關閉目前選定的監聽，不會清除已選來源；再次開啟時會沿用同一個來源。
+- **錄音按鈕**：左鍵直接開始／停止錄音；右鍵開啟選單，選擇完整輸出或監聽內容、WAV 格式與資料夾。
+- **麥克風按鈕**：左鍵立即靜音／恢復；右鍵開啟 Profile 選單，可手動指定效果鏈或恢復自動切換。圖示和系統工具選單保持一致。
+- **Profile 選單**：手動指定目前效果鏈，或選回「自動切換 Profile」讓歌曲標籤接管。
+
+
+### 人聲效果與完整混音的控制不同
+
+Profile 主要處理麥克風；和 BGM／伴奏混音後，完整輸出還有 Mix Bus Compressor、Stream Output Limiter 與 Master 音量。這些是整體混音的控制，不代表伴奏會通過同一條人聲 Profile。
 
 ## 儲存與測試
 
