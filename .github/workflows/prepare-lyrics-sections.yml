@@ -1,0 +1,234 @@
+name: Prepare lyrics window documentation
+on:
+  push:
+    branches: [docs/lyrics-window-sections-20260921]
+    paths: [.github/workflows/prepare-lyrics-sections.yml]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+      - name: Apply the reviewed documentation-only changes to the expected baseline
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD^)" = b472f9659c1dfa0df42bb0caaf258f8161e8ba3b
+          test -z "$(git status --porcelain)"
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re,subprocess
+          def replace_once(s,old,new):
+              assert s.count(old)==1, ('Unexpected source count',old[:120],s.count(old))
+              return s.replace(old,new,1)
+          def write(p,s):
+              Path(p).write_text(s,encoding='utf-8',newline='\n')
+          p=Path('_data/player_window_buttons.json')
+          data=json.loads(p.read_text())
+          extra={
+          'zh-TW':{
+           'lyrics_section':'歌詞視窗','youtube_section':'YouTube 影片','obs_section':'歌詞預覽與 OBS',
+           'viewer_alt':'開啟後的獨立歌詞視窗，上方可調整文字大小、讀音與時間偏移，下方醒目顯示目前歌詞。',
+           'viewer_caption':'開啟後的歌詞視窗（實際軟體截圖）。這是供主播自己閱讀的獨立視窗，不是歌曲列表的「管理歌詞」，也不是 OBS 歌詞預覽。',
+           'viewer_help':'這個視窗可以自由移動，並有自己的文字大小與日韓讀音設定。點選有時間標記的歌詞可讓伴奏跳到該句；純文字歌詞沒有可跳轉的時間。歌曲回到開頭時，歌詞清單也會回到最上方。',
+          },
+          'zh-CN':{
+           'lyrics_section':'歌词窗口','youtube_section':'YouTube 视频','obs_section':'歌词预览与 OBS',
+           'viewer_alt':'打开后的独立歌词窗口，上方可调整文字大小、读音和时间偏移，下方突出显示当前歌词。',
+           'viewer_caption':'打开后的歌词窗口（实际软件截图）。这是供主播阅读的独立窗口，不是歌曲列表的“管理歌词”，也不是 OBS 歌词预览。',
+           'viewer_help':'窗口可以自由移动，并有独立的文字大小与日、韩读音设置。点击带时间戳的歌词可让伴奏跳到该句；纯文本歌词没有可跳转的时间。歌曲回到开头时，歌词列表也会回到顶部。',
+          },
+          'en':{
+           'lyrics_section':'Lyrics Window','youtube_section':'YouTube Video','obs_section':'Lyrics Preview and OBS',
+           'viewer_alt':'The opened independent Lyrics Window with text size, reading and timing controls above the highlighted current line.',
+           'viewer_caption':'The opened Lyrics Window, shown in a real application screenshot. This movable reader is for the streamer; it is neither Manage Lyrics nor the OBS lyrics preview.',
+           'viewer_help':'Move this window to a comfortable reading position and adjust its own text size and Japanese/Korean reading options. Select a timestamped lyric line to seek the accompaniment to that line; plain-text lyrics have no seek positions. Returning the song to the beginning also scrolls the list back to the top.',
+          },
+          'ja':{
+           'lyrics_section':'歌詞ウィンドウ','youtube_section':'YouTube 動画','obs_section':'歌詞プレビューと OBS',
+           'viewer_alt':'開いた独立歌詞ウィンドウ。上部に文字サイズ、読み方、時刻調整があり、下部で現在行が強調表示されています。',
+           'viewer_caption':'開いた歌詞ウィンドウの実際の画面です。配信者が手元で読むための独立ウィンドウであり、曲一覧の歌詞管理画面や OBS 用歌詞プレビューとは別です。',
+           'viewer_help':'読みやすい位置へ移動し、このウィンドウ専用の文字サイズや日本語・韓国語の読み方を調整できます。タイムスタンプ付きの行を選ぶと伴奏がその時刻へ移動します。テキスト歌詞には移動先の時刻がありません。曲を先頭へ戻すと、歌詞一覧も上端へ戻ります。',
+          },
+          'ko':{
+           'lyrics_section':'가사 창','youtube_section':'YouTube 영상','obs_section':'가사 미리보기와 OBS',
+           'viewer_alt':'열린 독립 가사 창. 위쪽에는 글자 크기, 읽기와 시간 조정 기능이 있고 아래쪽에는 현재 가사가 강조되어 있습니다.',
+           'viewer_caption':'실제 프로그램에서 열린 가사 창입니다. 진행자가 직접 읽는 독립 창이며 곡 목록의 가사 관리 창이나 OBS 가사 미리보기와는 다릅니다.',
+           'viewer_help':'읽기 편한 위치로 옮기고 이 창만의 글자 크기와 일본어·한국어 읽기 옵션을 조정할 수 있습니다. 타임스탬프가 있는 가사를 누르면 반주가 해당 시점으로 이동합니다. 일반 텍스트 가사에는 이동할 시간이 없습니다. 곡을 처음으로 돌리면 목록도 맨 위로 돌아갑니다.',
+          }}
+          for lang,fields in extra.items(): data[lang].update(fields)
+          write(p,json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+          p=Path('_includes/player-window-buttons.html');s=p.read_text()
+          s=replace_once(s,'<section class="manual-window-buttons"', '''{% assign window_heading = 3 %}
+          {% if include.heading == 2 %}{% assign window_heading = 2 %}{% endif %}
+          <h{{ window_heading }} id="lyrics-window">{{ player_window_copy.lyrics_section | escape }}</h{{ window_heading }}>
+          <section class="manual-window-buttons"''')
+          s=replace_once(s,'<h3 id="player-window-buttons-title">{{ player_window_copy.title | escape }}</h3>','<p id="player-window-buttons-title"><strong>{{ player_window_copy.title | escape }}</strong></p>')
+          s=replace_once(s,'''  <p><strong>{{ player_window_copy.youtube_title | escape }}</strong><br>{{ player_window_copy.youtube_body | escape }}</p>
+            <p>{{ player_window_copy.modes | escape }}</p>
+          </section>''','''  <p>{{ player_window_copy.modes | escape }}</p>
+            <p>{{ player_window_copy.viewer_help | escape }}</p>
+            {% include localized-release-screenshot.html name="lyrics-viewer.png" alt=player_window_copy.viewer_alt caption=player_window_copy.viewer_caption size="compact" %}
+          </section>
+
+          <h{{ window_heading }} id="youtube-video-window">{{ player_window_copy.youtube_section | escape }}</h{{ window_heading }}>
+          <p><strong>{{ player_window_copy.youtube_title | escape }}</strong><br>{{ player_window_copy.youtube_body | escape }}</p>''')
+          write(p,s)
+          p=Path('_includes/feature-guide.html');s=p.read_text()
+          s=replace_once(s,'''{% if include.section == 'lyrics' and feature_language != 'zh-TW' %}
+            {% include player-window-buttons.html %}
+          {% endif %}
+          ''','')
+          write(p,s)
+          p=Path('lyrics.md');s=p.read_text()
+          s=replace_once(s,'開啟獨立的「歌詞視窗」後，可直接點選任一行有時間標記的歌詞，讓伴奏跳到該句的時間點。這項功能只適用於 LRC 等同步歌詞；純文字歌詞沒有可跳轉的時間資訊。\n\n','')
+          s=replace_once(s,'''## 歌詞預覽與 OBS
+
+          {% include player-window-buttons.html %}
+
+          ### 歌詞頁預覽與獨立視窗的差別''','''{% include player-window-buttons.html heading=2 %}
+
+          <a id="lyrics-preview-obs"></a>
+          ## 歌詞預覽與 OBS
+
+          ### 歌詞頁預覽與獨立視窗的差別''')
+          s=replace_once(s,'從伴奏播放器開啟的「歌詞視窗」可自由移動，適合放到主播容易閱讀的位置。它擁有自己的日韓讀音選項，不必和 OBS 使用相同設定。\n\n','')
+          pattern=r'<figure class="manual-figure manual-figure--medium">\n  <a href="assets/images/lyrics-viewer\.png">[\s\S]*?</figure>\n'
+          s,n=re.subn(pattern,'歌詞視窗的實際畫面與開啟方式，請參考上方的[歌詞視窗](#lyrics-window)小節。\n',s)
+          assert n==1
+          write(p,s)
+          preview_start={
+          'en':'The embedded preview uses the same layout, font, color, highlight, and reading option as OBS.',
+          'ja':'日本語読みはオフ、漢字の上の小さなひらがな、',
+          'ko':'일본어 읽기는 끄기, 한자 위의 작은 히라가나,',
+          'zh-CN':'日文读音可关闭、在汉字上方显示小平假名、',
+          }
+          seek_start={
+          'en':'In the independent Lyrics window, choose any timestamped line',
+          'ja':'独立した「歌詞ウィンドウ」では、タイムスタンプ付きの行',
+          'ko':'독립 **가사 창**에서 타임스탬프가 있는 가사 줄',
+          'zh-CN':'在独立“歌词窗口”中，点击有时间戳的任一行歌词',
+          }
+          old_openers={
+          'en':'The Lyrics Window and YouTube Video icons stay in the accompaniment player',
+          'ja':'歌詞ウィンドウと YouTube 動画のアイコンは、',
+          'ko':'가사 창과 YouTube 동영상 아이콘은',
+          'zh-CN':'「歌词窗口」与「YouTube 视频」图标常驻在伴奏播放器',
+          }
+          redundant_captions={
+          'ja':'伴奏が YouTube リンクの場合、YouTube ウィンドウで利用できる字幕トラックも選べます。\n\n',
+          'ko':'반주가 YouTube 링크라면 YouTube 창에서 사용 가능한 자막 트랙도 선택할 수 있습니다.\n\n',
+          'zh-CN':'当伴奏是 YouTube 链接时，YouTube 窗口也可以选择可用的字幕轨道。\n\n',
+          }
+          for lang in ['en','ja','ko','zh-CN']:
+              p=Path(lang+'/guide.md');s=p.read_text()
+              start=s.index('<a id="lyrics"></a>');end=s.index('<a id="lyrics-editor"></a>',start)
+              prefix,chapter,suffix=s[:start],s[start:end],s[end:]
+              pattern=re.escape(old_openers[lang])+r'[^\n]+\n\n'
+              chapter,n=re.subn(pattern,'',chapter);assert n==1
+              if lang in redundant_captions: chapter=replace_once(chapter,redundant_captions[lang],'')
+              needle=preview_start[lang];assert chapter.count(needle)==1
+              insert='''{% include player-window-buttons.html %}
+
+          <h3 id="lyrics-preview-obs">{{ site.data.player_window_buttons[page.lang].obs_section | escape }}</h3>
+
+          '''
+              chapter=chapter.replace(needle,insert+needle,1)
+              pattern=re.escape(seek_start[lang])+r'[^\n]+\n\n'
+              replacement='Japanese readings are generated locally by the bundled offline analyzer, so lyrics do not need to be uploaded.\n\n' if lang=='en' else ''
+              chapter,n=re.subn(pattern,replacement,chapter);assert n==1
+              chapter,n=re.subn(r'\{% include localized-release-screenshot\.html name="lyrics-viewer\.png"[^\n]+%\}\n\n','',chapter);assert n==1
+              write(p,prefix+chapter+suffix)
+          p=Path('scripts/validate-player-window-guide.mjs');s=p.read_text()
+          s=replace_once(s,"'image_alt','full_image']","'image_alt','full_image','lyrics_section','youtube_section','obs_section','viewer_alt','viewer_caption','viewer_help']")
+          s=replace_once(s,"  console.log(`${path}: fixed-button guide, screenshot crop and language verified`);",'''  const ids=['lyrics-window','player-window-buttons','youtube-video-window','lyrics-preview-obs'];
+            for(const id of ids) assert.equal((html.match(new RegExp(`id="${id}"`, 'g'))||[]).length,1,`${path}: unique ${id}`);
+            const positions=ids.map(id=>html.indexOf(`id="${id}"`));
+            assert.ok(positions.every((value,index)=>index===0||value>positions[index-1]),`${path}: Lyrics Window, YouTube, OBS must be separate and ordered`);
+            const level=lang==='zh-TW'?2:3;
+            assert.ok(html.includes(`<h${level} id="lyrics-window">${copy.lyrics_section}</h${level}>`));
+            assert.ok(html.includes(`<h${level} id="youtube-video-window">${copy.youtube_section}</h${level}>`));
+            assert.ok(html.slice(positions[3],positions[3]+240).includes(copy.obs_section),`${path}: OBS heading missing`);
+            const imagePath=`assets/images/${lang==='zh-TW'?'':lang+'/'}lyrics-viewer.png`;
+            const viewer=new RegExp(`<img[^>]+src="/Singing-Stream-Savior-Manual/${imagePath.replaceAll('.','\\\\.')}"[^>]*>`, 'g');
+            const viewerTags=[...html.matchAll(viewer)];
+            assert.equal(viewerTags.length,1,`${path}: one real opened-window screenshot, not duplicated`);
+            assert.ok(viewerTags[0].index>positions[1]&&viewerTags[0].index<positions[2],`${path}: opened window image belongs in Lyrics Window section`);
+            assert.ok(viewerTags[0][0].includes(`alt="${copy.viewer_alt}"`),`${path}: localized screenshot alternative text`);
+            assert.ok(viewerTags[0][0].includes('loading="lazy"'));
+            assert.ok(html.includes(copy.viewer_caption),`${path}: localized screenshot caption`);
+            const viewerBytes=readFileSync(imagePath);
+            assert.equal(viewerBytes.toString('hex',0,8),'89504e470d0a1a0a');
+            assert.deepEqual(readFileSync(join(root,imagePath)),viewerBytes,`${path}: original screenshot published unchanged`);
+            const obsImage=lang==='zh-TW'?'assets/images/demo-lyrics-preview.png':`assets/images/${lang}/lyrics-reading-preview.png`;
+            assert.ok(html.slice(positions[3]).includes(obsImage),`${path}: existing OBS preview screenshot retained`);
+            console.log(`${path}: separate reader/video/OBS sections, opening-button crop and localized opened-window screenshot verified`);''')
+          write(p,s)
+          expected={
+            '_data/player_window_buttons.json':'13348695055b8d3ba0c5ebdd421b0267dc7bdf76',
+            '_includes/feature-guide.html':'c51d5fae813a9f6435731f5de99ea3a92660b971',
+            '_includes/player-window-buttons.html':'85f5457f3670d8e2606ead93db6c4cc5c23ce5a3',
+            'en/guide.md':'1bbba826169c6be374c62bd036fabf8e81b681ba',
+            'ja/guide.md':'1df59bca021a854fca1da06f52c949e2c592ebbf',
+            'ko/guide.md':'d4beb80d06868413bf961c4f8b95794caff77764',
+            'lyrics.md':'573cc7ec8adfa67be0381ad6655370f23599a522',
+            'scripts/validate-player-window-guide.mjs':'d389a708efdf2681241c78f7f31b6a29cf2c5f55',
+            'zh-CN/guide.md':'18dc079a98d4bfad4e4cd152293cab3d05ce8bfd',
+          }
+          for path,sha in expected.items():
+              actual=subprocess.check_output(['git','hash-object',path]).decode().strip()
+              assert actual==sha,(path,actual,sha)
+          # The one-shot preparation workflow is not part of the published change.
+          Path('.github/workflows/prepare-lyrics-sections.yml').unlink()
+          actual=set(subprocess.check_output(['git','diff','--name-only','b472f9659c1dfa0df42bb0caaf258f8161e8ba3b']).decode().splitlines())
+          assert actual==set(expected),(actual,set(expected))
+          print('Exactly nine reviewed documentation files changed. Original screenshots and analytics remain unchanged.')
+          PY
+          git diff --check
+      - name: Run offline regressions
+        run: |
+          node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs scripts/test-download-clicks.mjs scripts/test-download-config.mjs
+          node scripts/validate-privacy.mjs
+      - name: Build complete manual without deploying
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Validate rendered site and new section order
+        run: |
+          node scripts/validate-built-site.mjs _site
+          node scripts/validate-site-analytics.mjs _site
+          node scripts/validate-download-clicks.mjs _site
+          node scripts/validate-privacy.mjs _site
+          node scripts/validate-player-window-guide.mjs _site
+      - name: Export local preview without live counter requests
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile
+          root=Path('_site')
+          with zipfile.ZipFile('/tmp/lyrics-preview.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in root.rglob('*'):
+                  if p.is_file() and (p.suffix in ['.html','.css','.js'] or p.name in ['lyrics-viewer.png','demo-lyrics-preview.png','lyrics-reading-preview.png']):
+                      z.write(p,p.relative_to(root).as_posix())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lyrics-sections-preview
+          path: /tmp/lyrics-preview.zip
+          retention-days: 1
+      - name: Commit validated documentation only to this feature branch
+        shell: bash
+        run: |
+          test "$(git ls-remote origin refs/heads/docs/lyrics-window-sections-20260921 | cut -f1)" = "$(git rev-parse HEAD)"
+          git add -u
+          git diff --cached --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Separate Lyrics Window, YouTube Video and OBS documentation with real opened-window screenshots'
+          git push origin HEAD:refs/heads/docs/lyrics-window-sections-20260921
+          git rev-parse HEAD
