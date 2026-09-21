@@ -1,96 +1,69 @@
-name: Read-only production counter verification
+name: Verify registered CounterAPI V2 endpoint
 
 on:
   push:
     branches: [verify/counterapi-v2-live-20260921]
     paths: [.github/workflows/counter-live-verification.yml]
-  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  production-pages:
+  single-increment:
+    if: github.run_attempt == 1
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 4
     steps:
-      - uses: actions/checkout@v6
-        with:
-          persist-credentials: false
-      - name: Read deployed HTML and JS without executing page scripts
+      - name: Check existing browser and Node availability
+        run: |
+          node --version
+          command -v google-chrome || command -v chromium || true
+      - name: Anonymous read, one authorized increment, and readback
         shell: bash
         run: |
           node --input-type=module <<'NODE'
           import assert from 'node:assert/strict';
-          import { readFileSync } from 'node:fs';
-          import { createHash } from 'node:crypto';
-          const config = JSON.parse(readFileSync('_data/analytics.json', 'utf8'));
-          const basePath = '/Singing-Stream-Savior-Manual/';
+          import { appendFileSync } from 'node:fs';
+          import { setTimeout as sleep } from 'node:timers/promises';
+          const endpoint = 'https://api.counterapi.dev/v2/noonisawesome-singing-stream-savior-manual/noonisawesome-s3s-manual-pageviews';
           const origin = 'https://noonisawesome.github.io';
-          assert.equal(config.production_host, new URL(origin).hostname);
-          const checkId = `${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}`;
-          async function read(path) {
-            const url = new URL(path, origin);
-            assert.equal(url.origin, origin);
-            assert.ok(url.pathname.startsWith(basePath));
-            url.searchParams.set('analytics', 'off');
-            url.searchParams.set('verification', checkId);
-            const response = await fetch(url, {
-              redirect: 'error', cache: 'no-store', credentials: 'omit',
-              headers: { 'Cache-Control': 'no-cache', 'User-Agent': 'S3S-ReadOnly-Deployment-Check' },
+          const report = (value) => {
+            const text = JSON.stringify({ checked_at: new Date().toISOString(), ...value });
+            console.log(text);
+            appendFileSync(process.env.GITHUB_STEP_SUMMARY, '```json\n' + text + '\n```\n');
+          };
+          const validData = (payload) => [200, '200'].includes(payload?.code)
+            && Number.isSafeInteger(payload?.data?.up_count) && payload.data.up_count >= 0
+            && Number.isSafeInteger(payload?.data?.down_count) && payload.data.down_count >= 0
+            && payload.data.down_count <= payload.data.up_count;
+          async function request(suffix = '') {
+            assert.ok(suffix === '' || suffix === '/up');
+            const response = await fetch(endpoint + suffix, {
+              method: 'GET', redirect: 'error', cache: 'no-store', credentials: 'omit',
+              headers: { Accept: 'application/json', Origin: origin, 'Cache-Control': 'no-cache', 'User-Agent': 'S3S-Counter-Setup-Verification' },
               signal: AbortSignal.timeout(15000),
             });
-            const text = await response.text();
-            assert.ok(text.length < 4000000, 'Unexpectedly large response');
-            return { status: response.status, text };
+            const cors = response.headers.get('access-control-allow-origin');
+            report({ operation: suffix ? 'one-test-increment' : 'read-only', http_status: response.status, cors_allows_site: cors === '*' || cors === origin, authorization_sent: false });
+            assert.ok(response.ok, 'Counter endpoint rejected anonymous request; do not enable collection');
+            assert.ok(cors === '*' || cors === origin, 'Counter response does not allow the production browser origin');
+            const payload = await response.json();
+            assert.ok(validData(payload), 'Counter response is incompatible with the existing V2 parser');
+            return payload.data;
           }
-          const attr = (tag, name) => tag.match(new RegExp(`\\s${name}\\s*=\\s*["']([^"']*)["']`, 'i'))?.[1];
-          for (const locale of ['', 'en/', 'ja/', 'ko/', 'zh-CN/']) {
-            const path = `${basePath}${locale}`;
-            const { status, text } = await read(path);
-            assert.equal(status, 200, `${path}: HTTP status`);
-            const body = text.match(/<body\b[^>]*>/i)?.[0] || '';
-            for (const [key, value] of Object.entries({
-              'data-analytics-provider': config.provider,
-              'data-analytics-host': config.production_host,
-              'data-analytics-base-path': basePath,
-              'data-counter-enabled': String(config.enabled),
-              'data-counter-workspace': config.workspace,
-              'data-counter-name': config.counter,
-            })) assert.equal(attr(body, key), value, `${path}: ${key}`);
-            const scripts = [...text.matchAll(/<script\b[^>]*>/gi)].map(([tag]) => tag);
-            assert.equal(scripts.filter(tag => attr(tag, 'src')?.split('?')[0] === `${basePath}assets/js/site-analytics.js`).length, 1, 'One loader per page');
-            const visible = text.replace(/<!--[\s\S]*?-->/g, '').replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, '').replace(/<[^>]*>/g, ' ');
-            assert.ok(!/CounterAPI|WebsitePageViews|網站累計瀏覽|網站累積瀏覽/i.test(visible), 'Counter status or values must not be added to public page text');
-            console.log(JSON.stringify({ page: path, http: status, config_matches: true, loader_count: 1, public_counter_label_detected: false }));
+          const before = await request();
+          // Exactly one deliberate increment for the owner's requested setup test.
+          // No retries, decrement, reset, secrets, or printing actual traffic totals.
+          report({ test_increment_attempts: 1, warning: 'This setup check adds one test view if accepted. Do not rerun the mutation.' });
+          await request('/up');
+          let reflected = false;
+          for (const delay of [0, 5000, 15000, 30000, 60000]) {
+            if (delay) await sleep(delay);
+            const after = await request();
+            if (after.up_count >= before.up_count + 1 && after.down_count === before.down_count) {
+              reflected = true; break;
+            }
           }
-          const js = await read(`${basePath}assets/js/site-analytics.js`);
-          assert.equal(js.status, 200);
-          const expected = readFileSync('assets/js/site-analytics.js', 'utf8');
-          assert.equal(js.text, expected, 'Deployed loader differs from checked-out source');
-          console.log(JSON.stringify({ deployed_js_matches_source: true, sha256: createHash('sha256').update(js.text).digest('hex') }));
-          for (const file of ['scripts/get-site-stats.ps1', 'scripts/ANALYTICS.md', encodeURIComponent('查看網站統計.cmd')]) {
-            const result = await read(basePath + file);
-            assert.equal(result.status, 404, `${file}: maintenance file must not be published`);
-            console.log(JSON.stringify({ maintenance_file: file, http: result.status }));
-          }
-          console.log(JSON.stringify({ checked_at: new Date().toISOString(), deployment_verified: true, collection_enabled: config.enabled, counter_mutations: 0, browser_collection_verified: false }));
+          report({ anonymous_read_verified: true, anonymous_increment_accepted: true, readback_increase_observed: reflected, authorized_test_increment_attempts: 1, browser_execution_verified: false });
+          assert.ok(reflected, 'Increment accepted but not yet visible within the bounded readback window; do not issue another increment');
           NODE
-  counter-availability:
-    runs-on: windows-latest
-    timeout-minutes: 3
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          persist-credentials: false
-      - name: Probe the real V2 read endpoint without exposing traffic counts
-        shell: powershell
-        run: |
-          $result = & .\scripts\get-site-analytics.ps1 -Probe
-          $result | Select-Object Provider, Status, ReadVerified, CollectionVerified, CollectionEnabled, HttpStatus, CheckedAt | ConvertTo-Json
-          # No /up, /down, /reset, account creation, secrets or numeric traffic reports.
-          # Failure is a genuine provisioning blocker, not a successful collector.
-          if (-not $result.ReadVerified) {
-            throw ("CounterAPI V2 is not available: {0}; HTTP {1}. Owner account setup is still required." -f $result.Status, $result.HttpStatus)
-          }
-          Write-Host 'Read endpoint verified. Browser increment and ownership have NOT been verified.'
