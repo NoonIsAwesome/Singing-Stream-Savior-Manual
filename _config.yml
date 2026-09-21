@@ -5,11 +5,9 @@ timezone: Asia/Taipei
 url: https://noonisawesome.github.io
 baseurl: /Singing-Stream-Savior-Manual
 
-analytics:
-  production_host: noonisawesome.github.io
-  # CounterAPI v2 reports this legacy v1 namespace as an unknown workspace.
-  # Re-enable only after the matching public v2 workspace has been registered.
-  pageview_endpoint:
+# Website analytics has one shared configuration: _data/analytics.json.
+# Keep its public Cloudflare site token blank until the owner's site is registered.
+# Setup and metric limitations: scripts/ANALYTICS.md.
 
 markdown: kramdown
 kramdown:

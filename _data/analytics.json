@@ -1,0 +1,5 @@
+{
+  "provider": "cloudflare",
+  "production_host": "noonisawesome.github.io",
+  "cloudflare_token": ""
+}

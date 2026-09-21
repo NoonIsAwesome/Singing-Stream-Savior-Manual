@@ -1,0 +1,33 @@
+name: Website analytics checks
+
+on:
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run offline JavaScript regressions
+        run: node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs
+      - name: Build the complete manual without deploying
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Check rendered pages in all languages
+        run: |
+          node scripts/validate-built-site.mjs _site
+          node scripts/validate-site-analytics.mjs _site
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check Windows PowerShell 5.1, BOM, output and CMD wrapper
+        shell: powershell
+        run: .\scripts\test-site-analytics.ps1
