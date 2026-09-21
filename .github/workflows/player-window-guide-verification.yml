@@ -38,7 +38,7 @@ jobs:
           import { setTimeout as sleep } from 'node:timers/promises';
           const origin='http://127.0.0.1:8765', base='/Singing-Stream-Savior-Manual/';
           const copies=JSON.parse(readFileSync('_data/player_window_buttons.json','utf8'));
-          const output=resolve('.review-output');mkdirSync(output,{recursive:true});
+          const output=resolve('review-output');mkdirSync(output,{recursive:true});
           const preview=mkdtempSync(join(tmpdir(),'s3s-guide-http-'));
           symlinkSync(resolve('_site'),join(preview,'Singing-Stream-Savior-Manual'));
           const server=spawn('python3',['-m','http.server','8765','--bind','127.0.0.1','--directory',preview],{stdio:'ignore'});
@@ -110,6 +110,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: player-window-guide-review
-          path: .review-output/
+          path: review-output/
           retention-days: 3
           if-no-files-found: error
