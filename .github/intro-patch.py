@@ -2,7 +2,7 @@ import json
 import subprocess
 from pathlib import Path
 # Exact reviewed snapshot: original source plus preparation files only.
-BASE = '83ed073359004ea67dc3df995d1a215e30b0e3be'
+BASE = 'b54a46f98a1b0752fde7188ad9277e5a926bc966'
 assert subprocess.check_output(['git', 'rev-parse', 'HEAD^'], text=True).strip() == BASE, 'Unexpected source revision'
 assert not subprocess.check_output(['git', 'status', '--porcelain'], text=True).strip(), 'Checkout must be clean'
 copy = {
