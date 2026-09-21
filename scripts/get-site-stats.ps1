@@ -10,6 +10,8 @@ $ErrorActionPreference = "Stop"
 
 $analytics = & (Join-Path $PSScriptRoot "get-site-analytics.ps1") `
     -ConfigurationOnly:$ConfigurationOnly -Probe:$Probe
+$downloadClicks = & (Join-Path $PSScriptRoot "get-download-clicks.ps1") `
+    -ConfigurationOnly:$ConfigurationOnly -Probe:$Probe
 
 function Write-WebsiteAnalyticsStatus {
     Write-Host ("網站統計服務： {0}" -f $analytics.Provider)
@@ -20,13 +22,26 @@ function Write-WebsiteAnalyticsStatus {
     else {
         Write-Host "網站累計瀏覽：未取得數值（不是 0 人或 0 次）。"
     }
+    Write-Host ("下載點擊狀態： {0}" -f $downloadClicks.Detail)
+    if ($null -ne $downloadClicks.WebsiteDownloadClicks) {
+        Write-Host ("官網下載點擊： {0:N0} 次（不是成功下載或安裝人數）" -f $downloadClicks.WebsiteDownloadClicks)
+    }
+    else {
+        Write-Host "官網下載點擊：未取得數值（尚未啟用或讀取失敗，不是 0 次）。"
+    }
     Write-Host ("統計後台：     {0}" -f $analytics.DashboardUrl)
-    Write-Host "瀏覽次數、完整包下載與更新活動不能相加當成使用者人數。"
+    Write-Host "瀏覽、官網下載點擊、GitHub 檔案下載分開統計，不相加當成使用者人數。"
 }
 
 if ($AnalyticsOnly) {
     if ($Friendly) { Write-WebsiteAnalyticsStatus }
-    else { $analytics }
+    else {
+        $analytics | Add-Member -NotePropertyName WebsiteDownloadClicks -NotePropertyValue $downloadClicks.WebsiteDownloadClicks
+        $analytics | Add-Member -NotePropertyName DownloadClickStatus -NotePropertyValue $downloadClicks.Status
+        $analytics | Add-Member -NotePropertyName DownloadClickReadVerified -NotePropertyValue $downloadClicks.ReadVerified
+        $analytics | Add-Member -NotePropertyName DownloadClickCollectionEnabled -NotePropertyValue $downloadClicks.CollectionEnabled
+        $analytics
+    }
     return
 }
 
@@ -165,6 +180,10 @@ if ($Friendly) {
 [PSCustomObject]@{
     WebsitePageViews = $analytics.WebsitePageViews
     WebsiteVisits = $analytics.WebsiteVisits
+    WebsiteDownloadClicks = $downloadClicks.WebsiteDownloadClicks
+    DownloadClickStatus = $downloadClicks.Status
+    DownloadClickReadVerified = $downloadClicks.ReadVerified
+    DownloadClickCollectionEnabled = $downloadClicks.CollectionEnabled
     WebsiteAnalyticsStatus = $analytics.Status
     WebsiteAnalyticsDetail = $analytics.Detail
     WebsiteAnalyticsDashboard = $analytics.DashboardUrl

@@ -21,29 +21,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-
       - name: Test built-site validator
-        run: node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs
-
+        run: |
+          node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs scripts/test-download-clicks.mjs scripts/test-download-config.mjs
+          node scripts/validate-privacy.mjs
       - name: Build manual with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
-
       - name: Validate rendered site
         run: |
           node scripts/validate-built-site.mjs _site
           node scripts/validate-site-analytics.mjs _site
-
+          node scripts/validate-download-clicks.mjs _site
+          node scripts/validate-privacy.mjs _site
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./_site
-
   deploy:
     environment:
       name: github-pages

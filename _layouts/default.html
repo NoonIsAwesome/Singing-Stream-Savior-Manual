@@ -1,7 +1,7 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign t = site.data.i18n[current_lang] %}
 {% assign section = page.translation_key | default: 'home' %}
-{% assign standalone_sections = "resources,changelog,about,support,advanced-streaming,audio-routing,profiles,open-source" | split: "," %}
+{% assign standalone_sections = "resources,changelog,about,support,advanced-streaming,audio-routing,profiles,open-source,privacy" | split: "," %}
 {% if current_lang == 'zh-TW' %}
   {% assign language_home = '/' %}
 {% else %}
@@ -66,6 +66,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/design.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
     <link rel="stylesheet" href="{{ '/assets/css/reader.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
     <link rel="stylesheet" href="{{ '/assets/css/lightbox.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/privacy.css' | relative_url }}?v={{ site.github.build_revision | default: 'privacy-20260921' }}">
     <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_tw }}">
     <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_cn }}">
     <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}{{ alternate_en }}">
@@ -82,6 +83,7 @@
     data-analytics-provider="{{ site.data.analytics.provider | escape }}" data-analytics-host="{{ site.data.analytics.production_host | escape }}"
     data-analytics-base-path="{{ site.baseurl | append: '/' | escape }}" data-counter-enabled="{{ site.data.analytics.enabled | jsonify | escape }}"
     data-counter-workspace="{{ site.data.analytics.workspace | strip | escape }}" data-counter-name="{{ site.data.analytics.counter | strip | escape }}"
+    data-download-counter-enabled="{{ site.data.download_clicks.enabled | jsonify | escape }}" data-download-counter-name="{{ site.data.download_clicks.counter | strip | escape }}"
     data-outline-label="{{ t.on_this_page | escape }}">
     {% include site-icons.html %}
     <a class="skip-link" href="#guide-content">{{ t.skip }}</a>
@@ -90,6 +92,8 @@
       {{ content }}
     {% elsif section == 'about' %}
       <main id="guide-content" class="author-main"><article class="manual-article">{{ content }}</article></main>
+    {% elsif section == 'privacy' %}
+      <main id="guide-content" class="privacy-main"><article class="manual-article">{{ content }}</article></main>
     {% else %}
       <div class="reader-toolbar"><div class="wrap"><div class="reader-breadcrumb"><a href="{{ language_home | relative_url }}">{{ design.home }}</a><span>/</span><span>{% if section == 'support' %}{{ t.nav.support }}{% else %}{{ design.guide }}{% endif %}</span></div><span class="reader-version">Singing Stream Savior · v{{ site.data.resources.software.version }}</span><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav"><span class="nav-toggle-icon" aria-hidden="true"></span>{{ t.chapters }}</button></div></div>
       <div class="guide-shell reader-shell">
@@ -98,8 +102,9 @@
       </div>
       <button class="nav-backdrop" type="button" aria-label="{{ t.collapse_nav | escape }}" tabindex="-1" hidden></button>
     {% endif %}
-    <footer class="page-footer"><div class="wrap"><span>SINGING STREAM SAVIOR · 歌回救星</span><span>{{ design.footer }}</span><a href="{% if is_home %}{{ about_target | relative_url }}{% else %}{{ language_home | relative_url }}{% endif %}">{% if is_home %}{{ design.author }}{% else %}{{ design.home }}{% endif %} ↗</a></div></footer>
+    <footer class="page-footer"><div class="wrap"><span>SINGING STREAM SAVIOR · 歌回救星</span><span>{{ design.footer }}</span><a href="{% if is_home %}{{ about_target | relative_url }}{% else %}{{ language_home | relative_url }}{% endif %}">{% if is_home %}{{ design.author }}{% else %}{{ design.home }}{% endif %} ↗</a>{% include privacy-footer.html %}</div></footer>
     <script src="{{ '/assets/js/site-analytics.js' | relative_url }}?v={{ site.github.build_revision | default: 'analytics-20260921' }}" defer></script>
+    <script src="{{ '/assets/js/download-clicks.js' | relative_url }}?v={{ site.github.build_revision | default: 'download-clicks-20260921' }}" defer></script>
     <script src="{{ '/assets/js/lightbox.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>
     <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>
     <script src="{{ '/assets/js/site-controls.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>
