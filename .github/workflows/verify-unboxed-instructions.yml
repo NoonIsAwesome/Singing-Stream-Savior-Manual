@@ -1,0 +1,67 @@
+name: Verify deployed instruction styles
+on:
+  push:
+    branches: [verify/unboxed-instructions-20260921]
+    paths: [.github/workflows/verify-unboxed-instructions.yml]
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: 5496a76b2b350b508cab7872bd08e1646cf88308
+          persist-credentials: false
+      - name: Read the deployed CSS and every HTML page without executing scripts
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {readFileSync,appendFileSync} from 'node:fs';
+          import {createHash} from 'node:crypto';
+          import {setTimeout as sleep} from 'node:timers/promises';
+          const base='https://noonisawesome.github.io/Singing-Stream-Savior-Manual/';
+          const revision='5496a76b2b350b508cab7872bd08e1646cf88308';
+          const css=readFileSync('assets/css/reader.css','utf8');
+          const blob=text=>createHash('sha1').update(Buffer.from(`blob ${Buffer.byteLength(text)}\0`)).update(text).digest('hex');
+          assert.equal(blob(css),'6b61ef18c1b0eacd94faadeb8d2b907bde56e870');
+          const pages=['404.html','about.html','advanced-streaming.html','audio-routing.html','changelog.html','en/about.html','en/advanced-streaming.html','en/changelog.html','en/guide.html','en/index.html','en/open-source.html','en/privacy.html','en/resources.html','en/support.html','getting-started.html','guide.html','index.html','ja/about.html','ja/advanced-streaming.html','ja/changelog.html','ja/guide.html','ja/index.html','ja/open-source.html','ja/privacy.html','ja/resources.html','ja/support.html','ko/about.html','ko/advanced-streaming.html','ko/changelog.html','ko/guide.html','ko/index.html','ko/open-source.html','ko/privacy.html','ko/resources.html','ko/support.html','library-and-playback.html','lyrics-editor.html','lyrics.html','obs-and-themes.html','obs-websocket.html','open-source.html','privacy.html','profiles.html','resources.html','settings-and-troubleshooting.html','support.html','uvr-vocal-removal.html','workspace-modes.html','zh-CN/about.html','zh-CN/advanced-streaming.html','zh-CN/changelog.html','zh-CN/guide.html','zh-CN/index.html','zh-CN/open-source.html','zh-CN/privacy.html','zh-CN/resources.html','zh-CN/support.html'];
+          async function read(path,attempt=0){
+            assert.ok(path==='assets/css/reader.css'||pages.includes(path));
+            const url=new URL(path,base);
+            url.searchParams.set('analytics','off');
+            url.searchParams.set('verification',`${process.env.GITHUB_RUN_ID}-${attempt}-${Date.now()}`);
+            const response=await fetch(url,{redirect:'error',cache:'no-store',credentials:'omit',headers:{'Cache-Control':'no-cache','User-Agent':'S3S-ReadOnly-Style-Verification'},signal:AbortSignal.timeout(12000)});
+            const text=await response.text();
+            assert.ok(text.length<4000000,'Unexpected response size');
+            assert.ok(response.ok||(path==='404.html'&&response.status===404),`${path}: HTTP ${response.status}`);
+            return {text,status:response.status};
+          }
+          let matched=false;
+          for(let attempt=0;attempt<9;attempt++){
+            const result=await read('assets/css/reader.css',attempt);
+            if(result.text===css){matched=true;break;}
+            console.log(`Waiting for expected CSS deployment, read attempt ${attempt+1}`);
+            if(attempt<8)await sleep(10000);
+          }
+          assert.ok(matched,'Deployed CSS does not match the merged version');
+          const rows=[];
+          for(let i=0;i<pages.length;i+=4){
+            await Promise.all(pages.slice(i,i+4).map(async path=>{
+              const {text,status}=await read(path);
+              const redirect=/<meta\b[^>]*http-equiv=["']refresh["']/i.test(text);
+              if(!redirect){
+                assert.ok(text.includes(`/assets/css/reader.css?v=${revision}`),`${path}: stale stylesheet version`);
+                assert.ok(text.includes('data-counter-enabled="true"'),`${path}: page-view state changed`);
+                assert.ok(text.includes('data-download-counter-enabled="true"'),`${path}: click state changed`);
+              }
+              rows.push({page:path,http:status,redirect,stylesheet_revision_matches:!redirect});
+            }));
+          }
+          const summary={checked_at:new Date().toISOString(),revision,deployed_css_blob:blob(css),css_matches_source:true,html_pages_verified:rows.length,redirect_pages:rows.filter(r=>r.redirect).length,counter_mutations:0,release_asset_downloads:0,browser_execution:false};
+          console.log(JSON.stringify(summary));
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY,'```json\n'+JSON.stringify(summary,null,2)+'\n```\n');
+          for(const row of rows.sort((a,b)=>a.page.localeCompare(b.page)))console.log(JSON.stringify(row));
+          NODE
