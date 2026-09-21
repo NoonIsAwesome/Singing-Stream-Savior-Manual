@@ -35,6 +35,9 @@ jobs:
         shell: powershell
         run: |
           $result = & .\scripts\get-site-analytics.ps1 -Probe
-          $result | ConvertTo-Json
-          # A missing workspace is a setup requirement, not a successful counter.
+          $result | Select-Object Provider, Status, ReadVerified, CollectionVerified, CollectionEnabled, HttpStatus, CheckedAt | ConvertTo-Json
+          # Report availability only. Do not publish traffic totals in public CI logs.
           # This GET never increments, resets, or decrements the counter.
+          if ($result.CollectionEnabled -and -not $result.ReadVerified) {
+            throw 'The configured, enabled CounterAPI V2 endpoint is not readable.'
+          }
