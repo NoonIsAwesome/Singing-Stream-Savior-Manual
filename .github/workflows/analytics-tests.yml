@@ -29,6 +29,7 @@ jobs:
           node scripts/validate-download-clicks.mjs _site
           node scripts/validate-privacy.mjs _site
           node scripts/validate-player-window-guide.mjs _site
+          node scripts/validate-audio-guides.mjs _site
   windows:
     runs-on: windows-latest
     steps:
