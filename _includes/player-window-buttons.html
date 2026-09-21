@@ -1,7 +1,10 @@
 {% assign player_window_lang = page.lang | default: 'zh-TW' %}
 {% assign player_window_copy = site.data.player_window_buttons[player_window_lang] %}
+{% assign window_heading = 3 %}
+{% if include.heading == 2 %}{% assign window_heading = 2 %}{% endif %}
+<h{{ window_heading }} id="lyrics-window">{{ player_window_copy.lyrics_section | escape }}</h{{ window_heading }}>
 <section class="manual-window-buttons" id="player-window-buttons" aria-labelledby="player-window-buttons-title">
-  <h3 id="player-window-buttons-title">{{ player_window_copy.title | escape }}</h3>
+  <p id="player-window-buttons-title"><strong>{{ player_window_copy.title | escape }}</strong></p>
   <p>{{ player_window_copy.intro | escape }}</p>
   <figure class="manual-figure manual-figure--medium">
     <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" aria-label="{{ player_window_copy.full_image | escape }}">
@@ -25,6 +28,10 @@
     <figcaption>{{ player_window_copy.caption | escape }}</figcaption>
   </figure>
   <p><strong>{{ player_window_copy.lyrics_title | escape }}</strong><br>{{ player_window_copy.lyrics_body | escape }}</p>
-  <p><strong>{{ player_window_copy.youtube_title | escape }}</strong><br>{{ player_window_copy.youtube_body | escape }}</p>
   <p>{{ player_window_copy.modes | escape }}</p>
+  <p>{{ player_window_copy.viewer_help | escape }}</p>
+  {% include localized-release-screenshot.html name="lyrics-viewer.png" alt=player_window_copy.viewer_alt caption=player_window_copy.viewer_caption size="compact" %}
 </section>
+
+<h{{ window_heading }} id="youtube-video-window">{{ player_window_copy.youtube_section | escape }}</h{{ window_heading }}>
+<p><strong>{{ player_window_copy.youtube_title | escape }}</strong><br>{{ player_window_copy.youtube_body | escape }}</p>

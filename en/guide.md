@@ -150,8 +150,6 @@ The text replaces the current-song display in the OBS playlist theme **only whil
 
 Lyrics are optional. They can be used in a movable host-only **Lyrics window**, as an OBS lyric overlay for viewers, or both. Supported sources include LRC, SRT, VTT, plain text, YouTube captions, and LRCLIB.
 
-The Lyrics Window and YouTube Video icons stay in the accompaniment player in Full, Compact, and Mini modes. Their duplicate buttons have been removed from the Lyrics page. YouTube Video shows video only for YouTube tracks, stays muted, and offers available captions below the video.
-
 Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song’s icon in the **Lyrics** column of the song list. Either route opens the same window, where you can search online, import a local lyric file, attach a result, or unlink the current lyrics. Search combines LRCLIB results and YouTube captions, returns up to 50 candidates, and prioritizes synchronized lyrics, language, duration, and artist information. If YouTube temporarily rate-limits caption downloads, other candidates remain available and the dialog explains that you can retry later.
 
 > **Lyrics sources and permissions:** LRCLIB, YouTube captions, and other search sources help you find lyrics; they do not grant permission to use them. Before use, check the lyric source, relevant rights, and service terms.
@@ -161,17 +159,19 @@ Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song�
   <figcaption>When lyrics are linked, the lower-left controls let you import another file or unlink the current one.</figcaption>
 </figure>
 
+{% include player-window-buttons.html %}
+
+<h3 id="lyrics-preview-obs">{{ site.data.player_window_buttons[page.lang].obs_section | escape }}</h3>
+
 The embedded preview uses the same layout, font, color, highlight, and reading option as OBS. The independent Lyrics window has its own reading option. Available Japanese readings are off, small hiragana above kanji, word-spaced romaji below the original line, or hiragana and romaji together. Korean lyrics can show romanization with readable spaces between words. The main preview, Lyrics window, and OBS share the same preloaded background reading service so results remain consistent.
 
-In the independent Lyrics window, choose any timestamped line to seek the karaoke track to that line. This works with synchronized lyrics such as LRC; plain-text lyrics have no seek positions. Japanese readings are generated locally by the bundled offline analyzer, so lyrics do not need to be uploaded.
+Japanese readings are generated locally by the bundled offline analyzer, so lyrics do not need to be uploaded.
 
 {% include localized-release-screenshot.html name="lyrics-reading-preview.png" alt="The 2.1 Lyrics page highlighting the current synchronized line" caption="The embedded preview uses the same lyric layout, font, color, reading, and highlight that will appear in OBS." %}
 
 If the lyrics are out of sync, you do not need to work out positive or negative values. Choose **Lyrics too late → Earlier** when the sung line has already started but the lyric has not appeared, or **Lyrics too early → Later** when the lyric appears before it is sung. The center of the slider is synchronized; drag left for earlier or right for later, and use the reset icon to return to `0 ms`.
 
 The numbers of lines shown before and after the current line can be adjusted separately with a slider or value field. Near the beginning or end of a song, fewer lines may be available than the selected setting. Offset changes are reflected immediately in the preview, independent Lyrics window, and OBS lyric data, even while playback is paused.
-
-{% include localized-release-screenshot.html name="lyrics-viewer.png" alt="The 2.1 Lyrics window with timing controls and synchronized lyrics" caption="Selecting a timestamped line seeks to it; returning to the beginning scrolls the lyric list back to the top." size="medium" %}
 
 > **Before showing lyrics publicly:** Search results and import tools do not grant permission to use lyrics. Confirm that you may show the lyrics in a stream or video; permission to use an accompaniment does not by itself include public display of the lyric text.
 
