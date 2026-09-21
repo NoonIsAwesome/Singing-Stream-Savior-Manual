@@ -1,0 +1,2 @@
+{% if current_lang == 'zh-TW' %}{% assign privacy_target = '/privacy.html' %}{% else %}{% capture privacy_target %}/{{ current_lang }}/privacy.html{% endcapture %}{% endif %}
+<a class="privacy-link" href="{{ privacy_target | relative_url }}">{{ site.data.privacy[current_lang].title | default: site.data.privacy.en.title | escape }}</a>

@@ -14,7 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Run offline JavaScript regressions
-        run: node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs scripts/test-download-clicks.mjs scripts/test-download-config.mjs
+        run: |
+          node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs scripts/test-download-clicks.mjs scripts/test-download-config.mjs
+          node scripts/validate-privacy.mjs
       - name: Build the complete manual without deploying
         uses: actions/jekyll-build-pages@v1
         with:
@@ -25,6 +27,7 @@ jobs:
           node scripts/validate-built-site.mjs _site
           node scripts/validate-site-analytics.mjs _site
           node scripts/validate-download-clicks.mjs _site
+          node scripts/validate-privacy.mjs _site
   windows:
     runs-on: windows-latest
     steps:
@@ -39,12 +42,7 @@ jobs:
         run: |
           $result = & .\scripts\get-site-analytics.ps1 -Probe
           $result | Select-Object Provider, Status, ReadVerified, CollectionVerified, CollectionEnabled, HttpStatus, CheckedAt | ConvertTo-Json
-          # Availability only; no traffic totals, increment or reset in public CI.
-          if ($result.CollectionEnabled -and -not $result.ReadVerified) {
-            throw 'The configured, enabled CounterAPI V2 endpoint is not readable.'
-          }
+          if ($result.CollectionEnabled -and -not $result.ReadVerified) { throw 'Enabled page-view endpoint is not readable.' }
           $clicks = & .\scripts\get-download-clicks.ps1 -Probe
           $clicks | Select-Object Provider, Metric, Status, ReadVerified, CollectionEnabled, HttpStatus, CheckedAt | ConvertTo-Json
-          if ($clicks.CollectionEnabled -and -not $clicks.ReadVerified) {
-            throw 'The configured, enabled download-click counter is not readable.'
-          }
+          if ($clicks.CollectionEnabled -and -not $clicks.ReadVerified) { throw 'Enabled download-click endpoint is not readable.' }

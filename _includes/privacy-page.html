@@ -1,0 +1,25 @@
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign privacy_copy = site.data.privacy[current_lang] | default: site.data.privacy.en %}
+{% if current_lang == 'zh-TW' %}{% assign privacy_contact_target = '/support.html' %}{% else %}{% capture privacy_contact_target %}/{{ current_lang }}/support.html{% endcapture %}{% endif %}
+<header class="resource-hero" data-privacy-page>
+  <p class="resource-eyebrow">PRIVACY</p>
+  <h1>{{ privacy_copy.title | escape }}</h1>
+  <p>{{ privacy_copy.updated_label | escape }}: <time datetime="{{ site.data.privacy.updated }}">{{ site.data.privacy.updated }}</time></p>
+  <p><strong>{{ privacy_copy.summary | escape }}</strong></p>
+  <p>{{ privacy_copy.scope | escape }}</p>
+</header>
+{% for privacy_section in privacy_copy.sections %}
+<section class="privacy-section" aria-labelledby="{{ privacy_section.id | escape }}">
+  <h2 id="{{ privacy_section.id | escape }}">{{ privacy_section.title | escape }}</h2>
+  {% for paragraph in privacy_section.paragraphs %}<p>{{ paragraph | escape }}</p>{% endfor %}
+</section>
+{% endfor %}
+<section class="privacy-section" aria-labelledby="privacy-contact">
+  <h2 id="privacy-contact">{{ privacy_copy.contact_title | escape }}</h2>
+  <p>{{ privacy_copy.contact_text | escape }}</p>
+  <p><a href="{{ privacy_contact_target | relative_url }}#temporary-contact">{{ privacy_copy.contact_label | escape }}</a></p>
+</section>
+<section class="privacy-section" aria-labelledby="privacy-sources">
+  <h2 id="privacy-sources">{{ privacy_copy.sources_title | escape }}</h2>
+  <p><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">GitHub</a> · <a href="https://counterapi.dev/privacy-policy/" rel="noopener noreferrer">CounterAPI</a> · <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google / YouTube</a></p>
+</section>

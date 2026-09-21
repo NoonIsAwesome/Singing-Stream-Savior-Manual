@@ -1,0 +1,7 @@
+.privacy-main { width: min(100% - 2rem, 58rem); margin: 2.5rem auto 4rem; }
+.privacy-main .manual-article { overflow-wrap: anywhere; line-height: 1.85; }
+.privacy-main .resource-hero { margin-bottom: 2.5rem; }
+.privacy-section { margin-block: 2rem; }
+.privacy-section h2 { scroll-margin-top: 6rem; }
+.page-footer .wrap { flex-wrap: wrap; gap: 1rem; }
+.privacy-link { white-space: normal; }
