@@ -1,6 +1,6 @@
 ---
-title: Privacy Notice | Singing Stream Savior
-description: Local data, offline use, online features and website statistics.
+title: App Privacy Notice | Singing Stream Savior
+description: Local data handling, offline use, optional online features and voluntary diagnostics.
 lang: en
 translation_key: privacy
 ---

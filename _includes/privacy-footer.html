@@ -1,2 +1,9 @@
-{% if current_lang == 'zh-TW' %}{% assign privacy_target = '/privacy.html' %}{% else %}{% capture privacy_target %}/{{ current_lang }}/privacy.html{% endcapture %}{% endif %}
-<a class="privacy-link" href="{{ privacy_target | relative_url }}">{{ site.data.privacy[current_lang].title | default: site.data.privacy.en.title | escape }}</a>
+{% if current_lang == 'zh-TW' %}
+  {% assign privacy_target = '/privacy.html' %}
+  {% assign website_privacy_target = '/website-privacy.html' %}
+{% else %}
+  {% capture privacy_target %}/{{ current_lang }}/privacy.html{% endcapture %}
+  {% capture website_privacy_target %}/{{ current_lang }}/website-privacy.html{% endcapture %}
+{% endif %}
+<a class="privacy-link" href="{{ privacy_target | relative_url }}">{{ site.data.privacy[current_lang].footer_label | default: site.data.privacy.en.footer_label | escape }}</a>
+<a class="website-privacy-link" href="{{ website_privacy_target | relative_url }}">{{ site.data.website_privacy[current_lang].footer_label | default: site.data.website_privacy.en.footer_label | escape }}</a>
