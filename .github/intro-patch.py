@@ -1,7 +1,8 @@
 import json
 import subprocess
 from pathlib import Path
-BASE = '8f6f2fe749f4049ebc844e290bb0b48751e53ece'
+# Exact reviewed snapshot: original source plus preparation files only.
+BASE = '83ed073359004ea67dc3df995d1a215e30b0e3be'
 assert subprocess.check_output(['git', 'rev-parse', 'HEAD^'], text=True).strip() == BASE, 'Unexpected source revision'
 assert not subprocess.check_output(['git', 'status', '--porcelain'], text=True).strip(), 'Checkout must be clean'
 copy = {
@@ -18,6 +19,9 @@ for lang,phrases in copy.items():
     path=Path(('' if lang=='zh-TW' else lang+'/')+'advanced-streaming.md');text=path.read_text(encoding='utf-8');old_intro=old_data[lang]['intro']
     assert text.count(old_intro)==1,f'{path}: old lead must be unique'
     text=text.replace(old_intro,'{% include advanced-streaming-benefits.html %}',1)
+    lead='<section data-article-lead markdown="1">'
+    assert text.count(lead)==1,f'{path}: unique lead required'
+    text=text.replace(lead,'<section class="advanced-streaming-lead" data-article-lead markdown="1">',1)
     anchor='<a id="vb-cable-installation"></a>\n<details class="audio-route-details"'
     assert text.count(anchor)==1,f'{path}: unique installation accordion required'
     text=text.replace(anchor,'<a id="vb-cable-installation"></a>\n<details class="audio-route-details audio-route-details--installation"',1)
@@ -70,6 +74,10 @@ replacements[css_path]=css.rstrip()+'''
 .inner-page .manual-article details.audio-route-details--installation[open] {
   margin-bottom:32px
 }
+/* site.js inserts this outline after the lead; its default -8px margin cancels spacing. */
+.inner-page .manual-article .advanced-streaming-lead + .article-outline {
+  margin-top:0
+}
 '''
 validator_path=Path('scripts/validate-audio-guides.mjs');validator=validator_path.read_text(encoding='utf-8')
 anchor='  const positions=order.map(id=>audio.indexOf(`id="${id}"`));'
@@ -82,6 +90,7 @@ extra='''  const benefits=audio.match(/<div class="advanced-streaming-benefits">
   assert.deepEqual(bullets,copy[lang].intro_bullets,`${lang}: exactly the three intended benefits`);
   assert.ok(audio.indexOf(benefits)>audio.indexOf('data-article-lead')
     && audio.indexOf(benefits)<audio.indexOf('id="advanced-quick-start"'),`${lang}: benefits before destination links`);
+  assert.equal((audio.match(/class="advanced-streaming-lead"/g)||[]).length,1,`${lang}: scoped lead spacing hook`);
   const accordion=audio.match(/<details class="audio-route-details audio-route-details--installation"[^>]*>/g)||[];
   assert.equal(accordion.length,1,`${lang}: installation-only spacing hook`);
   assert.ok(!/\\sopen(?:\\s|=|>)/.test(accordion[0]),`${lang}: installation initially collapsed`);
