@@ -1,0 +1,153 @@
+name: Verify enabled counter deployment (read-only)
+
+on:
+  push:
+    branches: [verify/counterapi-v2-live-20260921]
+    paths: [.github/workflows/counter-browser-readonly.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  deployed-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ba69f45fae842ade9a35197b80f7c139288099a5
+          persist-credentials: false
+      - name: Verify the deployed configuration in all five languages
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFileSync } from 'node:fs';
+          import { setTimeout as sleep } from 'node:timers/promises';
+          const config = JSON.parse(readFileSync('_data/analytics.json', 'utf8'));
+          const base = 'https://noonisawesome.github.io/Singing-Stream-Savior-Manual/';
+          const attr = (tag, key) => tag.match(new RegExp(`\\s${key}\\s*=\\s*["']([^"']*)["']`, 'i'))?.[1];
+          const read = async path => {
+            const url = new URL(path, base);
+            url.searchParams.set('analytics', 'off');
+            url.searchParams.set('verification', `${process.env.GITHUB_RUN_ID}-${Date.now()}`);
+            const r = await fetch(url, { redirect:'error', cache:'no-store', headers:{'Cache-Control':'no-cache'}, signal:AbortSignal.timeout(15000) });
+            return { status:r.status, text:await r.text() };
+          };
+          assert.equal(config.enabled, true);
+          let ready = false;
+          for (let attempt=0; attempt<24; attempt++) {
+            const r = await read('');
+            const body = r.text.match(/<body\b[^>]*>/i)?.[0] || '';
+            ready = r.status === 200 && attr(body,'data-counter-enabled') === 'true' && attr(body,'data-counter-name') === config.counter;
+            if (ready) break;
+            await sleep(5000);
+          }
+          assert.ok(ready, 'Enabled deployment did not become available');
+          for (const locale of ['', 'en/', 'ja/', 'ko/', 'zh-CN/']) {
+            const r = await read(locale);
+            assert.equal(r.status, 200);
+            const body = r.text.match(/<body\b[^>]*>/i)?.[0] || '';
+            for (const [key,value] of Object.entries({
+              'data-analytics-provider':config.provider,
+              'data-analytics-host':config.production_host,
+              'data-analytics-base-path':'/Singing-Stream-Savior-Manual/',
+              'data-counter-enabled':'true',
+              'data-counter-workspace':config.workspace,
+              'data-counter-name':config.counter,
+            })) assert.equal(attr(body,key), value, `${locale}: ${key}`);
+            const scripts = [...r.text.matchAll(/<script\b[^>]*>/gi)].map(([tag])=>tag);
+            assert.equal(scripts.filter(tag=>attr(tag,'src')?.split('?')[0]==='/Singing-Stream-Savior-Manual/assets/js/site-analytics.js').length,1);
+            const visible = r.text.replace(/<!--[\s\S]*?-->/g,'').replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi,'').replace(/<[^>]*>/g,' ');
+            assert.ok(!/CounterAPI|WebsitePageViews|網站累計瀏覽|網站累積瀏覽/i.test(visible));
+            console.log(JSON.stringify({page:locale || '/',http:200,enabled:true,config_matches:true,public_counter_label:false}));
+          }
+          const js = await read('assets/js/site-analytics.js');
+          assert.equal(js.status,200);
+          assert.equal(js.text,readFileSync('assets/js/site-analytics.js','utf8'));
+          for (const path of ['scripts/get-site-stats.ps1','scripts/ANALYTICS.md',encodeURIComponent('查看網站統計.cmd')]) assert.equal((await read(path)).status,404);
+          console.log(JSON.stringify({checked_at:new Date().toISOString(),deployed_js_matches:true,maintenance_files_not_published:true,counter_mutations:0}));
+          NODE
+      - name: Verify actual browser CORS with read-only GET
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { mkdtempSync, rmSync } from 'node:fs';
+          import { tmpdir } from 'node:os';
+          import { join } from 'node:path';
+          import { spawn } from 'node:child_process';
+          import { setTimeout as sleep } from 'node:timers/promises';
+          const origin='https://noonisawesome.github.io';
+          const base='/Singing-Stream-Savior-Manual/';
+          const counter='https://api.counterapi.dev/v2/noonisawesome-singing-stream-savior-manual/noonisawesome-s3s-manual-pageviews';
+          const profile=mkdtempSync(join(tmpdir(),'s3s-readonly-chrome-'));
+          const chrome=spawn('/usr/bin/google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--no-first-run','--no-default-browser-check','--disable-background-networking','--remote-debugging-port=9222',`--user-data-dir=${profile}`,'about:blank'],{stdio:'ignore'});
+          let socket;
+          const pending=new Map();
+          let nextId=0, blockedMutations=0, eventFailure;
+          try {
+            let tab;
+            for(let i=0;i<50;i++) {
+              if(chrome.exitCode!==null) throw Error('Chrome exited before DevTools was ready');
+              try {
+                const r=await fetch('http://127.0.0.1:9222/json/new?about:blank',{method:'PUT',signal:AbortSignal.timeout(1000)});
+                if(r.ok) {tab=await r.json();break;}
+              } catch {}
+              await sleep(200);
+            }
+            assert.ok(tab?.webSocketDebuggerUrl,'Chrome DevTools unavailable');
+            socket=new WebSocket(tab.webSocketDebuggerUrl);
+            await new Promise((res,rej)=>{
+              const t=setTimeout(()=>rej(Error('WebSocket timed out')),5000);
+              socket.addEventListener('open',()=>{clearTimeout(t);res();},{once:true});
+              socket.addEventListener('error',()=>{clearTimeout(t);rej(Error('WebSocket failed'));},{once:true});
+            });
+            const send=(method,params={})=>new Promise((resolve,reject)=>{
+              const id=++nextId;
+              const timer=setTimeout(()=>{pending.delete(id);reject(Error(`CDP timeout: ${method}`));},20000);
+              pending.set(id,{resolve,reject,timer});
+              socket.send(JSON.stringify({id,method,params}));
+            });
+            socket.addEventListener('message',async event=>{
+              try {
+                const p=JSON.parse(event.data);
+                if(p.id) {
+                  const item=pending.get(p.id);if(!item)return;
+                  clearTimeout(item.timer);pending.delete(p.id);
+                  if(p.error)item.reject(Error(p.error.message));else item.resolve(p.result);
+                } else if(p.method==='Fetch.requestPaused') {
+                  const req=p.params.request,u=new URL(req.url);
+                  const safe=u.origin==='https://api.counterapi.dev'&&u.pathname===new URL(counter).pathname&&req.method==='GET';
+                  if(!safe)blockedMutations++;
+                  await send(safe?'Fetch.continueRequest':'Fetch.failRequest',safe?{requestId:p.params.requestId}:{requestId:p.params.requestId,errorReason:'BlockedByClient'});
+                }
+              } catch(error){eventFailure=error;}
+            });
+            await send('Page.enable');await send('Runtime.enable');
+            // Block every possible mutation, even if page exclusion were to regress.
+            await send('Fetch.enable',{patterns:[{urlPattern:'https://api.counterapi.dev/*'}]});
+            const evaluate=async expression=>{
+              const r=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,timeout:15000});
+              assert.ok(!r.exceptionDetails,'Browser evaluation failed');return r.result.value;
+            };
+            const nav=await send('Page.navigate',{url:`${origin}${base}?analytics=off&verification=${process.env.GITHUB_RUN_ID}`});
+            assert.ok(!nav.errorText,'Production navigation failed');
+            let page;
+            for(let i=0;i<100;i++) {
+              page=await evaluate(`(()=>({ready:document.readyState,origin:location.origin,provider:document.body?.dataset.analyticsProvider,enabled:document.body?.dataset.counterEnabled,workspace:document.body?.dataset.counterWorkspace,counter:document.body?.dataset.counterName,publicCounterLabel:/CounterAPI|WebsitePageViews|網站累計瀏覽|網站累積瀏覽/i.test(document.body?.innerText||''),state:document.body?.dataset.analyticsState}))()`);
+              if(page.ready==='complete'&&page.provider)break;await sleep(100);
+            }
+            assert.equal(page.origin,origin);assert.equal(page.provider,'counterapi-v2');assert.equal(page.enabled,'true');
+            assert.equal(page.workspace,'noonisawesome-singing-stream-savior-manual');assert.equal(page.counter,'noonisawesome-s3s-manual-pageviews');
+            assert.equal(page.publicCounterLabel,false);
+            assert.ok(['excluded','opted-out'].includes(page.state),'Read-only browser check must not count');
+            const result=await evaluate(`(async()=>{const r=await fetch(${JSON.stringify(counter)},{method:'GET',mode:'cors',credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer',redirect:'error',signal:AbortSignal.timeout(10000)});const p=await r.json();return{http:r.status,cors:r.type,valid:[200,'200'].includes(p?.code)&&Number.isSafeInteger(p?.data?.up_count)&&Number.isSafeInteger(p?.data?.down_count),positive:p?.data?.up_count>0};})()`);
+            assert.equal(result.http,200);assert.equal(result.cors,'cors');assert.equal(result.valid,true);assert.equal(blockedMutations,0);
+            if(eventFailure)throw eventFailure;
+            console.log(JSON.stringify({checked_at:new Date().toISOString(),browser:'Chrome',production_configuration_verified:true,no_public_counter_label:true,browser_cors_read_verified:true,persisted_activity_observed:result.positive,counter_mutations:0,live_browser_increment_executed:false}));
+          } finally {
+            if(socket)socket.close();for(const item of pending.values())clearTimeout(item.timer);
+            chrome.kill('SIGTERM');await sleep(500);rmSync(profile,{recursive:true,force:true});
+          }
+          NODE
