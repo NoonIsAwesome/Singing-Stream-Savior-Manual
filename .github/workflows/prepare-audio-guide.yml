@@ -1,0 +1,72 @@
+name: Prepare task-first audio and Profile guides
+on:
+  push:
+    branches: [docs/audio-output-guides-20260922]
+    paths: [.github/workflows/prepare-audio-guide.yml]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: docs/audio-output-guides-20260922
+          fetch-depth: 8
+      - name: Restructure only the requested documentation
+        run: |
+          python3 .github/prepare-audio-guide.py
+          git diff --check
+      - name: Run existing offline regressions
+        run: |
+          node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs scripts/test-download-clicks.mjs scripts/test-download-config.mjs
+          node scripts/validate-privacy.mjs
+      - name: Build complete multilingual manual
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Run existing built-site validators
+        run: |
+          node scripts/validate-built-site.mjs _site
+          node scripts/validate-site-analytics.mjs _site
+          node scripts/validate-download-clicks.mjs _site
+          node scripts/validate-privacy.mjs _site
+          node scripts/validate-player-window-guide.mjs _site
+      - name: Export real HTML and source for offline review
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          import json, subprocess
+          with ZipFile('/tmp/audio-guide-review.zip','w',ZIP_DEFLATED) as z:
+              for p in Path('_site').rglob('*'):
+                  if p.is_file() and p.suffix.lower() in ['.html','.css','.js','.png','.jpg','.jpeg','.svg','.webp','.ico']:
+                      z.write(p,'site/'+str(p.relative_to('_site')))
+              for directory in ['_data','_includes','_layouts','scripts','.github']:
+                  for p in Path(directory).rglob('*'):
+                      if p.is_file(): z.write(p,'source/'+str(p))
+              for p in Path('.').rglob('*.md'):
+                  if not str(p).startswith(('_site/','.git/')): z.write(p,'source/'+str(p))
+              z.writestr('changes.diff',subprocess.check_output(['git','diff']))
+              if Path('/tmp/audio-guide-changed.json').exists(): z.write('/tmp/audio-guide-changed.json','changed-files.json')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: audio-guide-review
+          path: /tmp/audio-guide-review.zip
+          retention-days: 2
+      - name: Commit only validated documentation; remove preparation files
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          files=json.load(open('/tmp/audio-guide-changed.json'))
+          subprocess.run(['git','add','--',*files],check=True)
+          subprocess.run(['git','rm','.github/prepare-audio-guide.py','.github/workflows/prepare-audio-guide.yml'],check=True)
+          subprocess.run(['git','diff','--cached','--check'],check=True)
+          subprocess.run(['git','-c','user.name=NoonIsAwesome','-c','user.email=205285011+NoonIsAwesome@users.noreply.github.com','commit','-m','Separate OBS and Discord output workflows and introduce standalone Profile chapters'],check=True)
+          subprocess.run(['git','push','origin','HEAD:refs/heads/docs/audio-output-guides-20260922'],check=True)
+          PY
