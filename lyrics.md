@@ -43,7 +43,7 @@ translation_key: lyrics
 
 有時間標記的歌詞可跟隨伴奏進度，自動捲動並醒目顯示目前句。
 
-「歌詞視窗」與「YouTube 影片」圖示常駐在伴奏播放器，完整、精簡與迷你模式都能使用；歌詞頁面上的重複按鈕已移除。YouTube 視窗只有播放 YouTube 連結時才有畫面，影片維持靜音，並可在視窗下方選擇可用字幕。
+「歌詞視窗」與「YouTube 影片」按鈕固定在**伴奏播放器標題列的右上角**，不是歌詞頁面的按鈕。請參考下方的[按鈕位置放大圖與開啟方式](#player-window-buttons)。
 
 開啟獨立的「歌詞視窗」後，可直接點選任一行有時間標記的歌詞，讓伴奏跳到該句的時間點。這項功能只適用於 LRC 等同步歌詞；純文字歌詞沒有可跳轉的時間資訊。
 
@@ -84,17 +84,21 @@ translation_key: lyrics
 
 ## 歌詞預覽與 OBS
 
-歌詞頁的即時預覽使用與 OBS 相同的版面、字型、顏色與日韓讀音設定，用來確認 OBS 實際顯示效果。
+{% include player-window-buttons.html %}
 
-「歌詞視窗」則是可自由移動的獨立視窗，適合放到主播容易閱讀的位置。它擁有自己的日韓讀音選項，不必和 OBS 使用相同設定。
+### 歌詞頁預覽與獨立視窗的差別
+
+歌詞頁的即時預覽使用與 OBS 相同的版面、字型、顏色與日韓讀音設定，用來確認 OBS 實際顯示效果；這裡不是開啟獨立歌詞視窗的入口。
+
+從伴奏播放器開啟的「歌詞視窗」可自由移動，適合放到主播容易閱讀的位置。它擁有自己的日韓讀音選項，不必和 OBS 使用相同設定。
 
 如果只需要自己看歌詞，不必把歌詞 Overlay 加入 OBS；如果只想讓觀眾看，也可以維持歌詞視窗關閉。
 
 <figure class="manual-figure">
   <a href="assets/images/demo-lyrics-preview.png">
-    <img src="assets/images/demo-lyrics-preview.png" alt="播放伴奏時，歌詞頁即時預覽同步顯示目前句與前後歌詞" loading="lazy" decoding="async">
+    <img src="assets/images/demo-lyrics-preview.png" alt="歌詞頁的 OBS 即時預覽；獨立歌詞視窗與 YouTube 影片的入口位於右側伴奏播放器標題列" loading="lazy" decoding="async">
   </a>
-  <figcaption>實際播放伴奏時，即時預覽會依進度醒目顯示目前句；這裡看到的字型、顏色與版面也會套用到 OBS 歌詞畫面。</figcaption>
+  <figcaption>左側歌詞頁用來調整與預覽 OBS 顯示效果；要開啟自己閱讀的歌詞視窗或 YouTube 畫面，請使用右側伴奏播放器的兩個圖示（見上方放大圖）。</figcaption>
 </figure>
 
 
