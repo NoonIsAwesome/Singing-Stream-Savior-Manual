@@ -1,4 +1,7 @@
 {% assign feature_language = page.lang | default: 'zh-TW' %}
+{% if include.section == 'lyrics' and feature_language != 'zh-TW' %}
+  {% include player-window-buttons.html %}
+{% endif %}
 {% assign feature = site.data.feature_2141[feature_language][include.section] %}
 <section class="manual-feature-update" id="feature-{{ include.section }}">
   <h3>{{ feature.title | escape }}</h3>

@@ -38,6 +38,7 @@ jobs:
           node scripts/validate-site-analytics.mjs _site
           node scripts/validate-download-clicks.mjs _site
           node scripts/validate-privacy.mjs _site
+          node scripts/validate-player-window-guide.mjs _site
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:

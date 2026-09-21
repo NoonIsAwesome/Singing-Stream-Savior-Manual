@@ -1,0 +1,28 @@
+{% assign player_window_lang = page.lang | default: 'zh-TW' %}
+{% assign player_window_copy = site.data.player_window_buttons[player_window_lang] %}
+<section class="manual-window-buttons" id="player-window-buttons" aria-labelledby="player-window-buttons-title">
+  <h3 id="player-window-buttons-title">{{ player_window_copy.title | escape }}</h3>
+  <p>{{ player_window_copy.intro | escape }}</p>
+  <figure class="manual-figure manual-figure--medium">
+    <svg class="player-window-zoom" xmlns="http://www.w3.org/2000/svg" viewBox="1048 224 456 292" width="684" height="438" style="display:block;width:100%;height:auto;overflow:hidden" role="img" aria-label="{{ player_window_copy.image_alt | escape }}">
+      <image href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" x="0" y="0" width="1510" height="940" />
+      <g fill="none" stroke="#70cfff" stroke-width="3">
+        <rect x="1411" y="262" width="36" height="36" rx="7" />
+        <rect x="1451" y="262" width="36" height="36" rx="7" />
+        <path d="M1429 252V260 M1469 252V260" />
+      </g>
+      <g fill="#0755a8" stroke="#ffffff" stroke-width="1.5">
+        <circle cx="1429" cy="240" r="12" />
+        <circle cx="1469" cy="240" r="12" />
+      </g>
+      <g fill="#ffffff" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+        <text x="1429" y="246">1</text>
+        <text x="1469" y="246">2</text>
+      </g>
+    </svg>
+    <figcaption>{{ player_window_copy.caption | escape }} <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}">{{ player_window_copy.full_image | escape }}</a></figcaption>
+  </figure>
+  <p><strong>{{ player_window_copy.lyrics_title | escape }}</strong><br>{{ player_window_copy.lyrics_body | escape }}</p>
+  <p><strong>{{ player_window_copy.youtube_title | escape }}</strong><br>{{ player_window_copy.youtube_body | escape }}</p>
+  <p>{{ player_window_copy.modes | escape }}</p>
+</section>
