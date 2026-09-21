@@ -1,4 +1,4 @@
-name: Inspect lyrics documentation assets
+name: Verify deployed lyrics documentation
 on:
   push:
     branches: [verify/lyrics-sections-20260921]
@@ -6,27 +6,59 @@ on:
 permissions:
   contents: read
 jobs:
-  inspect:
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 4
     steps:
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
-          ref: b472f9659c1dfa0df42bb0caaf258f8161e8ba3b
-      - name: Package existing documentation and screenshots without running scripts
+          ref: 5467fd567ef970a7be9431b6b91b96a262d6e84c
+      - name: Fetch deployed documents and images with cache busting
+        shell: bash
         run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import zipfile, subprocess
-          assert not subprocess.check_output(['git','status','--porcelain']).strip()
-          files=[p for p in Path('.').rglob('*') if p.is_file() and '.git' not in p.parts and (p.suffix in ['.md','.html','.json','.yml','.mjs','.css','.js'] or p.name in ['lyrics-viewer.png','demo-lyrics-preview.png','lyrics-reading-preview.png'])]
-          with zipfile.ZipFile('/tmp/lyrics-source.zip','w',zipfile.ZIP_DEFLATED) as z:
-              for p in files: z.write(p,p.as_posix())
-          print('Read-only source bundle:',len(files),'files')
-          PY
-      - uses: actions/upload-artifact@v4
-        with:
-          name: lyrics-documentation-source
-          path: /tmp/lyrics-source.zip
-          retention-days: 1
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {readFileSync} from 'node:fs';
+          import {setTimeout as sleep} from 'node:timers/promises';
+          const base='https://noonisawesome.github.io/Singing-Stream-Savior-Manual/';
+          const copy=JSON.parse(readFileSync('_data/player_window_buttons.json','utf8'));
+          async function read(path) {
+            const u=new URL(path,base);
+            assert.equal(u.origin,'https://noonisawesome.github.io');
+            assert.ok(u.pathname.startsWith('/Singing-Stream-Savior-Manual/'));
+            u.searchParams.set('analytics','off');
+            u.searchParams.set('verification',`${process.env.GITHUB_RUN_ID}-${Date.now()}`);
+            const r=await fetch(u,{redirect:'error',cache:'no-store',credentials:'omit',headers:{'Cache-Control':'no-cache'},signal:AbortSignal.timeout(15000)});
+            assert.equal(r.status,200,`${path}: HTTP status`);
+            return Buffer.from(await r.arrayBuffer());
+          }
+          let ready=false;
+          for(let i=0;i<24;i++) {
+            const text=(await read('lyrics.html')).toString('utf8');
+            if(text.includes('id="lyrics-window"')&&text.includes(copy['zh-TW'].viewer_caption)) { ready=true; break; }
+            await sleep(5000);
+          }
+          assert.ok(ready,'New lyrics documentation was not deployed in the bounded wait');
+          for(const lang of ['zh-TW','en','ja','ko','zh-CN']) {
+            const path=lang==='zh-TW'?'lyrics.html':`${lang}/guide.html`;
+            const text=(await read(path)).toString('utf8');
+            const ids=['lyrics-window','player-window-buttons','youtube-video-window','lyrics-preview-obs'];
+            const pos=ids.map(id=>text.indexOf(`id="${id}"`));
+            for(const id of ids) assert.equal((text.match(new RegExp(`id="${id}"`,'g'))||[]).length,1,`${path}: unique ${id}`);
+            assert.ok(pos.every((v,i)=>i===0||v>pos[i-1]),`${path}: section order`);
+            const image=`assets/images/${lang==='zh-TW'?'':lang+'/'}lyrics-viewer.png`;
+            const tags=[...text.matchAll(/<img\b[^>]*>/g)].filter(([tag])=>tag.includes(image));
+            assert.equal(tags.length,1,`${path}: opened screenshot duplicated or missing`);
+            assert.ok(tags[0].index>pos[1]&&tags[0].index<pos[2]);
+            assert.ok(tags[0][0].includes(copy[lang].viewer_alt));
+            assert.ok(text.includes(copy[lang].viewer_caption));
+            const bytes=await read(image);
+            assert.deepEqual(bytes,readFileSync(image),`${path}: real screenshot must remain unchanged`);
+            const obs=lang==='zh-TW'?'assets/images/demo-lyrics-preview.png':`assets/images/${lang}/lyrics-reading-preview.png`;
+            assert.ok(text.slice(pos[3]).includes(obs),`${path}: OBS preview missing`);
+            assert.deepEqual(await read(obs),readFileSync(obs));
+            console.log(JSON.stringify({path,http:200,ordered_sections:true,opened_window_image:true,original_image_bytes_match:true,obs_preview_retained:true}));
+          }
+          console.log(JSON.stringify({checked_at:new Date().toISOString(),deployed_commit:'5467fd567ef970a7be9431b6b91b96a262d6e84c',languages:5,read_only:true,counter_requests:0}));
+          NODE
