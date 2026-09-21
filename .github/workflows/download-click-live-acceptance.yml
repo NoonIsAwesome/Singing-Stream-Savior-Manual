@@ -1,0 +1,159 @@
+name: Download click and privacy production acceptance
+
+on:
+  push:
+    branches: [verify/counterapi-v2-live-20260921]
+    paths: [.github/workflows/download-click-live-acceptance.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  acceptance:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: 858037f1fa0ba3954a06248ab92e2eeb837c9520
+          persist-credentials: false
+      - name: Verify deployed files, one native browser click and buffered readback
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFileSync, mkdtempSync, rmSync, appendFileSync } from 'node:fs';
+          import { tmpdir } from 'node:os';
+          import { join } from 'node:path';
+          import { spawn } from 'node:child_process';
+          import { setTimeout as sleep } from 'node:timers/promises';
+          const origin='https://noonisawesome.github.io', base='/Singing-Stream-Savior-Manual/';
+          const endpoint='https://api.counterapi.dev/v2/noonisawesome-singing-stream-savior-manual/singing-stream-savior-download-clicks';
+          const privacy=JSON.parse(readFileSync('_data/privacy.json','utf8'));
+          const report=value=>{const line=JSON.stringify({checked_at:new Date().toISOString(),...value});console.log(line);appendFileSync(process.env.GITHUB_STEP_SUMMARY,'```json\n'+line+'\n```\n');};
+          const attr=(tag,key)=>tag.match(new RegExp(`\\s${key}\\s*=\\s*["']([^"']*)["']`,'i'))?.[1];
+          const pageRead=async path=>{
+            const url=new URL(base+path,origin);url.searchParams.set('analytics','off');url.searchParams.set('verification',`${process.env.GITHUB_RUN_ID}-${Date.now()}`);
+            const r=await fetch(url,{redirect:'error',cache:'no-store',headers:{'Cache-Control':'no-cache'},signal:AbortSignal.timeout(15000)});
+            return {status:r.status,text:await r.text()};
+          };
+          let ready=false;
+          for(let i=0;i<24;i++){
+            const p=await pageRead('privacy.html');ready=p.status===200&&p.text.includes('data-privacy-page')&&p.text.includes('singing-stream-savior-download-clicks');
+            if(ready)break;await sleep(5000);
+          }
+          assert.ok(ready,'New deployment not available; no click sent');
+          for(const locale of ['zh-TW','zh-CN','en','ja','ko']){
+            const prefix=locale==='zh-TW'?'':`${locale}/`;
+            for(const page of ['', 'resources.html','privacy.html']){
+              const r=await pageRead(prefix+page);assert.equal(r.status,200);
+              const body=r.text.match(/<body\b[^>]*>/i)?.[0]||'';
+              assert.equal(attr(body,'data-counter-enabled'),'true');
+              assert.equal(attr(body,'data-counter-name'),'noonisawesome-s3s-manual-pageviews');
+              assert.equal(attr(body,'data-download-counter-enabled'),'true');
+              assert.equal(attr(body,'data-download-counter-name'),'singing-stream-savior-download-clicks');
+              assert.ok(r.text.includes(`${base}${prefix}privacy.html`));
+              if(page==='privacy.html')assert.ok(r.text.includes(`<h1>${privacy[locale].title}</h1>`));
+            }
+            report({locale,privacy_and_counter_configuration_verified:true});
+          }
+          for(const file of ['assets/js/site-analytics.js','assets/js/download-clicks.js','assets/css/privacy.css']){
+            const r=await pageRead(file);assert.equal(r.status,200);assert.equal(r.text,readFileSync(file,'utf8'));
+          }
+          for(const file of ['scripts/get-download-clicks.ps1','scripts/PRIVACY_NOTICE_REVIEW.md',encodeURIComponent('查看網站統計.cmd')])assert.equal((await pageRead(file)).status,404);
+          const readCounter=async()=>{
+            const url=new URL(endpoint);url.searchParams.set('verification',`${process.env.GITHUB_RUN_ID}-${Date.now()}`);
+            const r=await fetch(url,{method:'GET',redirect:'error',cache:'no-store',credentials:'omit',headers:{'Cache-Control':'no-cache'},signal:AbortSignal.timeout(15000)});
+            assert.equal(r.status,200,'Anonymous read must work');const p=await r.json();
+            assert.ok([200,'200'].includes(p?.code)&&Number.isSafeInteger(p?.data?.up_count)&&Number.isSafeInteger(p?.data?.down_count)&&p.data.up_count>=p.data.down_count&&p.data.down_count>=0,'Invalid counter payload');
+            return p.data;
+          };
+          const before=await readCounter();
+          const profile=mkdtempSync(join(tmpdir(),'s3s-click-acceptance-'));
+          const chrome=spawn('/usr/bin/google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run','--no-default-browser-check','--disable-background-networking','--remote-debugging-address=127.0.0.1','--remote-debugging-port=9222',`--user-data-dir=${profile}`,'about:blank'],{stdio:'ignore'});
+          let socket,nextId=0,sent=0,blockedPageViews=0,interceptedPackages=0,eventFailure;
+          const pending=new Map();
+          try{
+            let tab;
+            for(let i=0;i<50;i++){
+              assert.equal(chrome.exitCode,null,'Chrome unavailable');
+              try{const r=await fetch('http://127.0.0.1:9222/json/new?about:blank',{method:'PUT',signal:AbortSignal.timeout(1000)});if(r.ok){tab=await r.json();break;}}catch{}
+              await sleep(200);
+            }
+            assert.ok(tab?.webSocketDebuggerUrl);
+            socket=new WebSocket(tab.webSocketDebuggerUrl);
+            await new Promise((resolve,reject)=>{const t=setTimeout(()=>reject(Error('CDP connection timed out')),5000);socket.addEventListener('open',()=>{clearTimeout(t);resolve();},{once:true});socket.addEventListener('error',()=>{clearTimeout(t);reject(Error('CDP failed'));},{once:true});});
+            const send=(method,params={})=>new Promise((resolve,reject)=>{
+              const id=++nextId,timer=setTimeout(()=>{pending.delete(id);reject(Error(`CDP timeout: ${method}`));},20000);
+              pending.set(id,{resolve,reject,timer});socket.send(JSON.stringify({id,method,params}));
+            });
+            socket.addEventListener('message',async event=>{
+              try{
+                const p=JSON.parse(event.data);
+                if(p.id){const item=pending.get(p.id);if(!item)return;clearTimeout(item.timer);pending.delete(p.id);if(p.error)item.reject(Error(p.error.message));else item.resolve(p.result);}
+                else if(p.method==='Fetch.requestPaused'){
+                  const {requestId,request}=p.params;const u=new URL(request.url);
+                  if(u.origin==='https://api.counterapi.dev'){
+                    if(request.url===endpoint+'/up'&&request.method==='GET'&&sent===0){sent++;report({authorized_test_click_attempts:sent,private_credentials_sent:false});await send('Fetch.continueRequest',{requestId});}
+                    else if(u.pathname.endsWith('/noonisawesome-s3s-manual-pageviews/up')){blockedPageViews++;await send('Fetch.failRequest',{requestId,errorReason:'BlockedByClient'});}
+                    else {await send('Fetch.failRequest',{requestId,errorReason:'BlockedByClient'});throw Error('Unexpected or repeated counter request blocked');}
+                  }else{
+                    interceptedPackages++;
+                    // Intercept before network: default link navigation is observed but GitHub is NOT asked for the file.
+                    await send('Fetch.fulfillRequest',{requestId,responseCode:204,responseHeaders:[{name:'Content-Length',value:'0'}],body:''});
+                  }
+                }
+              }catch(error){eventFailure=error;}
+            });
+            const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,timeout:15000});assert.ok(!r.exceptionDetails,'Browser evaluation failed');return r.result.value;};
+            await send('Page.enable');await send('Runtime.enable');
+            await send('Fetch.enable',{patterns:[{urlPattern:'https://api.counterapi.dev/*'},{urlPattern:'https://github.com/*/releases/download/*'},{urlPattern:'https://github.com/*/releases/latest/download/*'},{urlPattern:'https://release-assets.githubusercontent.com/*'}]});
+            await send('Emulation.setDeviceMetricsOverride',{width:1280,height:900,deviceScaleFactor:1,mobile:false});
+            const navigate=async url=>{
+              const result=await send('Page.navigate',{url});assert.ok(!result.errorText,'Navigation failed');
+              let ok=false;
+              for(let i=0;i<200;i++){
+                ok=await evaluate(`document.readyState==='complete' && location.href===${JSON.stringify(url)}`);
+                if(ok)break;await sleep(100);
+              }
+              assert.ok(ok,'Page did not finish loading');
+            };
+            await navigate(`${origin}${base}resources.html?verification=${process.env.GITHUB_RUN_ID}`);
+            const state=await evaluate(`({webdriver:navigator.webdriver,ready:document.body.dataset.downloadAnalyticsState,publicStats:!!document.querySelector('[data-public-counter],#website-stats'),footer:!!document.querySelector('.privacy-link')})`);
+            assert.equal(state.webdriver,false,'Do not bypass production bot exclusion');assert.equal(state.ready,'ready');assert.equal(state.publicStats,false);assert.equal(state.footer,true);
+            const point=await evaluate(`(()=>{const a=[...document.querySelectorAll('a[href]')].find(a=>a.href.startsWith('https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/')&&/\\.zip$/.test(a.href));if(!a)throw Error('Package link missing');a.scrollIntoView({block:'center'});const r=a.getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2};})()`);
+            assert.ok(Number.isFinite(point.x)&&Number.isFinite(point.y));
+            // One real browser input, not a synthetic DOM click. Never retry this activation.
+            await send('Input.dispatchMouseEvent',{type:'mousePressed',x:point.x,y:point.y,button:'left',clickCount:1});
+            await send('Input.dispatchMouseEvent',{type:'mouseReleased',x:point.x,y:point.y,button:'left',clickCount:1});
+            let accepted=false;
+            for(let i=0;i<100;i++){accepted=await evaluate(`document.body?.dataset.downloadAnalyticsState==='accepted'`);if(accepted)break;await sleep(100);}
+            assert.equal(sent,1,'Exactly one counter write allowed');assert.ok(accepted,'Real browser CORS increment was not accepted');assert.equal(interceptedPackages,1,'Default download navigation must be observed without network download');
+            report({live_browser_click_accepted:true,browser_cors_increment_verified:true,github_asset_network_downloads:0,package_navigation_intercepted:true,test_pageview_writes:0,blocked_test_pageview_requests:blockedPageViews});
+            // Remaining browser checks use opt-out URLs and must never trigger another write.
+            for(const width of [390,1280]){
+              await send('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:false});
+              for(const locale of ['zh-TW','zh-CN','en','ja','ko']){
+                const prefix=locale==='zh-TW'?'':`${locale}/`;
+                await navigate(`${origin}${base}${prefix}privacy.html?analytics=off&verification=${process.env.GITHUB_RUN_ID}`);
+                for(const theme of ['light','dark']){
+                  await evaluate(`document.querySelector('[data-theme-choice="${theme}"]').click()`);
+                  const p=await evaluate(`({title:document.querySelector('h1')?.textContent.trim(),width:innerWidth,scroll:document.documentElement.scrollWidth,theme:document.documentElement.dataset.theme,link:document.querySelector('.privacy-link')?.getAttribute('href')})`);
+                  assert.equal(p.title,privacy[locale].title);assert.equal(p.theme,theme);assert.ok(p.scroll<=p.width+1,`${locale}: horizontal overflow at ${width}`);assert.equal(p.link,`${base}${prefix}privacy.html`);
+                }
+              }
+              report({privacy_browser_layout_checked:true,width,languages:5,themes:2});
+            }
+            assert.equal(sent,1);if(eventFailure)throw eventFailure;
+          }finally{
+            if(socket)socket.close();for(const item of pending.values())clearTimeout(item.timer);chrome.kill('SIGTERM');await sleep(500);rmSync(profile,{recursive:true,force:true});
+          }
+          let reflected=false;
+          for(let i=0;i<9;i++){
+            if(i)await sleep(45000);const after=await readCounter();reflected=after.up_count>before.up_count&&after.down_count===before.down_count;
+            report({readback_attempt:i+1,readback_increase_observed:reflected,additional_mutations:0});if(reflected)break;
+          }
+          report({deployment_verified:true,privacy_pages_verified:true,download_click_write_attempts:sent,github_asset_network_downloads:0,readback_increase_observed:reflected,concurrent_traffic_cannot_be_excluded:true});
+          assert.ok(reflected,'Accepted click not yet reflected in bounded readback; do not send another click');
+          NODE
