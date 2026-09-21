@@ -1,0 +1,90 @@
+name: Verify deployed audio and Profile guides
+on:
+  push:
+    branches: [verify/audio-output-guides-20260922]
+    paths: [.github/workflows/verify-audio-guides.yml]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: 8f6f2fe749f4049ebc844e290bb0b48751e53ece
+          persist-credentials: false
+      - name: Read deployed documents and original illustrations without running page scripts
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import {readFileSync,appendFileSync} from 'node:fs';
+          import {setTimeout as sleep} from 'node:timers/promises';
+          const origin='https://noonisawesome.github.io';
+          const base='/Singing-Stream-Savior-Manual/';
+          const revision='8f6f2fe749f4049ebc844e290bb0b48751e53ece';
+          const copy=JSON.parse(readFileSync('_data/stream_routes.json','utf8'));
+          const views=JSON.parse(readFileSync('_data/analytics.json','utf8'));
+          const clicks=JSON.parse(readFileSync('_data/download_clicks.json','utf8'));
+          const report=[];
+          const decode=s=>s.replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'");
+          const attr=(tag,key)=>decode(tag.match(new RegExp(`\\s${key}=["']([^"']*)["']`))?.[1] || '');
+          async function request(path,attempt=0){
+            assert.ok(!path.startsWith('/')&&!path.includes('..'));
+            const url=new URL(base+path,origin);
+            url.searchParams.set('analytics','off');
+            url.searchParams.set('verification',`${process.env.GITHUB_RUN_ID}-${attempt}`);
+            const r=await fetch(url,{redirect:'error',credentials:'omit',cache:'no-store',headers:{'Cache-Control':'no-cache','User-Agent':'S3S-Documentation-ReadOnly-Verification'},signal:AbortSignal.timeout(15000)});
+            assert.equal(r.status,200,`${path}: HTTP ${r.status}`);
+            const bytes=Buffer.from(await r.arrayBuffer());
+            assert.ok(bytes.length<4000000);
+            return bytes;
+          }
+          // Wait only for the Pages deployment; each request is read-only and never evaluates JS.
+          let ready=false;
+          for(let attempt=0;attempt<6;attempt++){
+            const html=(await request('advanced-streaming.html',attempt)).toString('utf8');
+            if(html.includes(revision)&&html.includes('id="output-discord"')){ready=true;break;}
+            await sleep(10000);
+          }
+          assert.ok(ready,'Deployed revision did not appear in the bounded wait');
+          for(const lang of ['zh-TW','en','ja','ko','zh-CN']){
+            const prefix=lang==='zh-TW'?'':lang+'/';
+            for(const name of ['advanced-streaming.html','profiles.html']){
+              const path=prefix+name;
+              const html=(await request(path)).toString('utf8');
+              assert.ok(html.includes(revision),`${path}: stale revision`);
+              const body=html.match(/<body\b[^>]*>/)?.[0] || '';
+              assert.equal(attr(body,'data-counter-enabled'),String(views.enabled));
+              assert.equal(attr(body,'data-counter-name'),views.counter);
+              assert.equal(attr(body,'data-download-counter-enabled'),String(clicks.enabled));
+              assert.equal(attr(body,'data-download-counter-name'),clicks.counter);
+              const article=html.match(/<article\b[^>]*class="manual-article"[^>]*>([\s\S]*?)<\/article>/)?.[1] || '';
+              assert.ok(article,`${path}: article missing`);
+              if(name==='advanced-streaming.html'){
+                const ids=['output-obs','output-discord','route-modes','singing-profile-defaults','audio-reference'];
+                const positions=ids.map(id=>article.indexOf(`id="${id}"`));
+                assert.ok(positions.every(i=>i>=0));
+                assert.deepEqual(positions,[...positions].sort((a,b)=>a-b));
+                const tags=article.match(/<nav\b[^>]*audio-output-targets[\s\S]*?<\/nav>/)?.[0] || '';
+                assert.ok(tags.includes('href="#output-obs"')&&tags.includes('href="#output-discord"'));
+                assert.equal((tags.match(/<a\s/g)||[]).length,2);
+                const discord=article.slice(positions[1],positions[2]);
+                assert.ok(discord.includes('28-discord-virtual-input.png')&&discord.includes('vb-cable/05-restart-required.jpg'));
+              }else{
+                assert.ok(article.includes('id="profile-prerequisite"'));
+                assert.ok(decode(article).includes(copy[lang].profile_pre));
+                assert.ok(article.includes('profile-chain-heading')&&article.includes('VST3'));
+                assert.ok(html.includes(base+prefix+'advanced-streaming.html#singing-profile-defaults'));
+              }
+              report.push({path,http:200,revision_verified:true,structure_verified:true,analytics_configuration_unchanged:true});
+            }
+          }
+          for(const path of ['assets/css/reader.css','assets/images/advanced-streaming/13-obs-add-s3s-audio-source.png','assets/images/advanced-streaming/28-discord-virtual-input.png','assets/images/advanced-streaming/29-discord-studio-mode.png','assets/images/vb-cable/05-restart-required.jpg']){
+            assert.ok((await request(path)).equals(readFileSync(path)),`${path}: deployed bytes differ`);
+            report.push({path,http:200,original_bytes_verified:true});
+          }
+          const result={revision,checked_at:new Date().toISOString(),checks:report,counter_increments:0,release_asset_downloads:0,verification:'HTTP content and image comparison; page scripts were not executed'};
+          console.log(JSON.stringify(result,null,2));
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY,'```json\n'+JSON.stringify(result,null,2)+'\n```\n');
+          JS
