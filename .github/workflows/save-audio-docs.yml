@@ -1,0 +1,67 @@
+name: Save validated audio documentation
+on:
+  push:
+    branches: [docs/audio-output-guides-20260922]
+    paths: [.github/workflows/save-audio-docs.yml]
+permissions:
+  contents: write
+  actions: read
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: docs/audio-output-guides-20260922
+          fetch-depth: 12
+      - uses: actions/download-artifact@v4
+        with:
+          name: audio-guide-review
+          run-id: 35641011301
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/validated-audio
+      - name: Restore only checksum-verified documentation from the successful build
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, subprocess
+          from pathlib import Path
+          from zipfile import ZipFile
+          expected = {
+            '_data/homepage_links.json':'0c945e204242bf9efd592204b3d43340e7a4a34181358d8a7ac4b0b9b2d122d3',
+            '_data/i18n.yml':'fdb0be0c3a7484dc11deecc3810f550bb70b0ae6d921e1877ab9bbf0d6efe622',
+            '_data/stream_routes.json':'769c0900fa00fb96c6bba99668622030bed5e721c275cd22bd4632fdb03c227a',
+            '_includes/guide-sidebar.html':'49202def612c7ee26896898b96916ff0e884ec959bc908fc0d9ae0d2be0ad600',
+            '_includes/profile-prerequisite.html':'a4f1096a4f931d3d05385ccea0ae116abf43e426775a78464ca90b068bcb86bd',
+            '_includes/stream-route-steps.html':'76ba080e071875dc2f86026b587c0fa58507fa316881b66700dcb189baeb06e1',
+            '_layouts/default.html':'f37a96b8c8746d4d42c228a0fd7720a14f00e39ac43ee3a00239f14c3435174d',
+            'advanced-streaming.md':'ac90c2b8401f13f458396a4aa815bbbc9101166b001b1b1cfa7a7554dd97a410',
+            'en/advanced-streaming.md':'aa25925f8a5dce3ae65570fa579c21d854a21cfa2c863f270fecf7232bcf41cb',
+            'en/profiles.md':'659e1bb569904ac6b67a26a6846a25bfea90ecafc79f00510f7e50e2b94c3a43',
+            'ja/advanced-streaming.md':'5a2d823ea6fea529ddde9f984513ddafeea136c8b0de3df2b0fa421579d320f4',
+            'ja/profiles.md':'a792277ed08e67cd95230077480960d25dc382baab95da9b9a06ac9b83506f39',
+            'ko/advanced-streaming.md':'31b8472c9c6ab3ae45f5b59fe514b9e96d519e11d306b26d05947d1a5e9ab283',
+            'ko/profiles.md':'5db6fd4837bab904a92c91f79d012ff7902b47abc2c08ac4a146d5c3fb19a4dd',
+            'profiles.md':'cb19397cb3623a5850edbfef1a7c15b971415f3fca5916ee3e2c78369b38a9b2',
+            'scripts/validate-audio-guides.mjs':'8bdd70fcc1e3c8fbc02c99b7b76b996f379b3323f997b0507645fb9d820a592c',
+            'zh-CN/advanced-streaming.md':'e35b50c320040ad5b779901b76a41385b6812216cdab47286e293f8cd0f1f831',
+            'zh-CN/profiles.md':'66fee9f2912bf35a8516b366ed9e0ab671ac36500e347558120b0955ef14565a'
+          }
+          temporary=['.github/prepare-audio-guide.py','.github/workflows/prepare-audio-guide.yml','.github/workflows/save-audio-docs.yml']
+          assert subprocess.check_output(['git','status','--porcelain'],text=True)==''
+          assert set(subprocess.check_output(['git','diff','--name-only','5496a76b2b350b508cab7872bd08e1646cf88308','HEAD'],text=True).splitlines())==set(temporary)
+          with ZipFile('/tmp/validated-audio/audio-guide-review.zip') as archive:
+              for name,digest in expected.items():
+                  content=archive.read('source/'+name)
+                  assert hashlib.sha256(content).hexdigest()==digest,name
+                  Path(name).parent.mkdir(parents=True,exist_ok=True)
+                  Path(name).write_bytes(content)
+          subprocess.run(['git','add','--',*expected],check=True)
+          subprocess.run(['git','rm','--',*temporary],check=True)
+          subprocess.run(['git','diff','--cached','--check'],check=True)
+          assert set(subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines())==set(expected)|set(temporary)
+          # Only documentation is saved here. The runner cannot update existing workflows.
+          subprocess.run(['git','-c','user.name=NoonIsAwesome','-c','user.email=205285011+NoonIsAwesome@users.noreply.github.com','commit','-m','Separate OBS and Discord recipes and introduce five-language Profile chapters'],check=True)
+          subprocess.run(['git','push','origin','HEAD:refs/heads/docs/audio-output-guides-20260922'],check=True)
+          print('Saved 18 validated documentation files; no existing workflow, audio code, screenshot or counter changed.')
+          PY
