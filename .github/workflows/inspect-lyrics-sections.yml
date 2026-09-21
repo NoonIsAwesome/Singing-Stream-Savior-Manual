@@ -1,0 +1,44 @@
+name: Inspect lyrics documentation assets
+on:
+  push:
+    branches: [verify/lyrics-sections-20260921]
+    paths: [.github/workflows/inspect-lyrics-sections.yml]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          ref: b472f9659c1dfa0df42bb0caaf258f8161e8ba3b
+      - name: Inspect existing documents and original screenshots without external requests
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, base64, io
+          from PIL import Image
+          for f in ['lyrics.md','en/guide.md','ja/guide.md','ko/guide.md','zh-CN/guide.md','_includes/feature-guide.html','_includes/localized-release-screenshot.html']:
+              s=Path(f).read_text(encoding='utf-8')
+              print('DOCUMENT', f)
+              if f.startswith('_includes/'):
+                  print(s)
+                  continue
+              needle='{% include player-window-buttons.html %}'
+              p=s.find(needle)
+              print('WINDOW_INCLUDE_COUNT',s.count(needle))
+              if p>=0:
+                  print(s[max(0,p-500):p+1200])
+              else:
+                  p=s.find('id="lyrics"')
+                  print(s[max(0,p):max(0,p)+4300])
+          for f in ['assets/images/lyrics-viewer.png','assets/images/demo-lyrics-preview.png']:
+              im=Image.open(f)
+              print('SCREENSHOT', f, im.size)
+              if 'viewer' in f:
+                  im=im.convert('RGB'); im.thumbnail((444,600))
+                  out=io.BytesIO(); im.save(out,format='JPEG',quality=40,optimize=True)
+                  print('VIEWER_JPEG_BASE64',base64.b64encode(out.getvalue()).decode())
+          PY
