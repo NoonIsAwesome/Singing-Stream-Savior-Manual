@@ -1,0 +1,57 @@
+name: Prepare concise advanced-audio introduction
+on:
+  push:
+    branches: [fix/advanced-streaming-intro-20260922]
+    paths: [.github/intro-patch.py, .github/intro-browser.mjs, .github/workflows/prepare-advanced-intro.yml]
+permissions:
+  contents: read
+jobs:
+  prepare:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+      - name: Apply bounded edits against the reviewed source
+        run: python3 .github/intro-patch.py
+      - name: Run existing offline tests
+        run: |
+          node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs scripts/test-download-clicks.mjs scripts/test-download-config.mjs
+          node scripts/validate-privacy.mjs
+      - name: Build the complete manual without deploying
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Validate rendered documentation
+        run: |
+          node scripts/validate-built-site.mjs _site
+          node scripts/validate-site-analytics.mjs _site
+          node scripts/validate-download-clicks.mjs _site
+          node scripts/validate-privacy.mjs _site
+          node scripts/validate-player-window-guide.mjs _site
+          node scripts/validate-audio-guides.mjs _site
+      - name: Check desktop and mobile layout in Chrome without external page requests
+        run: node .github/intro-browser.mjs
+      - name: Save layout evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: advanced-intro-layout
+          path: ${{ runner.temp }}/advanced-intro-checks
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Commit only the requested documentation and remove preparation files
+        run: |
+          test "$(git branch --show-current)" = "fix/advanced-streaming-intro-20260922"
+          test "$(git ls-remote origin refs/heads/fix/advanced-streaming-intro-20260922 | cut -f1)" = "$GITHUB_SHA"
+          git diff --check
+          git add -- advanced-streaming.md en/advanced-streaming.md ja/advanced-streaming.md ko/advanced-streaming.md zh-CN/advanced-streaming.md _data/stream_routes.json _includes/advanced-streaming-benefits.html assets/css/reader.css scripts/validate-audio-guides.mjs
+          git rm -- .github/intro-patch.py .github/intro-browser.mjs .github/workflows/prepare-advanced-intro.yml
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Use three concise advanced-streaming benefits and space the VB-CABLE accordion'
+      - name: Push the reviewed feature branch without force
+        run: git push origin HEAD:refs/heads/fix/advanced-streaming-intro-20260922
