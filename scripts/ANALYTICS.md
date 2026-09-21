@@ -3,28 +3,37 @@
 官網保留 CounterAPI，不使用 Cloudflare。唯一設定是 `_data/analytics.json`，
 前端與 `查看網站統計.cmd` 共用。這是頁面瀏覽次數，不是不重複訪客或軟體活躍人數。
 
-## 先確認服務，再啟用
+## 正式計數器與重新驗證
 
-目前 `enabled: false`。設定中的 `noonisawesome-singing-stream-savior-manual/pageviews`
-沿用舊計數器名稱作為候選，**不代表此 V2 workspace 已註冊或可用**。
+網站擁有者於 2026-09-21 提供後台已建立的 V2 公開端點：
+
+```text
+Workspace: noonisawesome-singing-stream-savior-manual
+Counter: noonisawesome-s3s-manual-pageviews
+GET https://api.counterapi.dev/v2/noonisawesome-singing-stream-savior-manual/noonisawesome-s3s-manual-pageviews
+```
+
+設定使用 `enabled: true`。不要改回未建立成功的舊 counter 名稱 `pageviews`。
 V1 namespace 不會因網址改成 V2 就自動變成你的 workspace，也不會自動回填歷史。
 
-1. 登入自己的 CounterAPI 帳號，在後台確認／建立 V2 workspace 與 counter。
-   使用後台實際顯示的 slug（不是顯示標題）。可以保留上述名稱，若不可用則填實際名稱。
+若日後更換工作區、計數器或權限：
+
+1. 先將 `enabled` 改為 `false`，在後台確認實際 slug（不是顯示標題）。
 2. 此 GitHub Pages 整合只支援可匿名讀取與累加的公開 counter；不要在 JSON、HTML、
    JavaScript、Git 或聊天貼上私密 API Key/token。若實際端點回傳 401/403，先檢查公開權限。
-   若帳號方案要求所有寫入都授權，需另行設計伺服器代理；不能把私人金鑰放在靜態頁面。
-3. 先執行唯讀檢查（即使 enabled 為 false 也可探測，不會改變 counter）：
+   若服務要求寫入授權，需另行設計伺服器代理；不能把私人金鑰放在靜態頁面。
+3. 執行唯讀檢查（即使 enabled 為 false 也可探測，不會改變 counter）：
 
    ```powershell
    powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\get-site-analytics.ps1 -Probe
    ```
 
-4. 讀取確認可用後，把 `enabled` 改成 `true`，提交、通過測試並部署到 GitHub Pages。
+4. 確認端點可用後，把 `enabled` 改成 `true`，提交、通過測試並部署到 GitHub Pages。
    共用 layout 已涵蓋各語言的正常頁面，不要再手動貼第二份計數程式。
 5. 正式環境以一次一般瀏覽確認 `/up` 的 CORS 回應及 `data-analytics-state="accepted"`，
    稍後用唯讀 GET 核對計數。驗收瀏覽也會算一次，請記錄測試量，不用 reset/down 擅自改數值。
    `accepted` 只代表 API 接受回應；V2 有緩衝，不保證立即讀到 +1 或已永久保存。
+   讀取尚未反映變化時，只繼續唯讀查詢，不要重送累加。
 
 官方端點：https://docs.counterapi.dev/api/endpoints/v2/
 官方 client／回應結構：https://github.com/counterapi/counter.js
@@ -32,8 +41,12 @@ V1 namespace 不會因網址改成 V2 就自動變成你的 workspace，也不�
 
 ## 查看網站統計
 
-直接執行 `查看網站統計.cmd`，已啟用時會讀取 V2 的 `data.up_count - data.down_count`。
-它不會呼叫 `/up`、`/down`、`/reset`，所以查看報表不會灌入瀏覽量。
+官網不顯示統計數字，也不新增計數器、統計頁面或查詢按鈕。維護腳本排除於 Pages 發布；
+CI 只輸出可用性狀態，不輸出真實流量總數。這不是 API 存取控制：知道公開端點的人仍能查詢，
+需要保密的統計必須改用伺服器端授權架構。
+
+自己查看時，更新本機 Manual 專案後執行 `查看網站統計.cmd`，它讀取 V2 的
+`data.up_count - data.down_count`，不會呼叫 `/up`、`/down`、`/reset`。
 原有 GitHub 完整 ZIP／主程式 EXE／Launcher 分類保留，不合併成使用者人數。
 
 ```text
@@ -75,5 +88,5 @@ node scripts/validate-site-analytics.mjs _site
 powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\test-site-analytics.ps1
 ```
 
-離線測試使用 fixture／mock，不碰真實計數器。Actions 額外唯讀探測候選端點，
+離線測試使用 fixture／mock，不碰真實計數器。Actions 額外唯讀探測設定中的端點，
 探測成功與否都會回報真實狀態；離線測試或建置成功不等於計數服務已啟用。
