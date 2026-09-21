@@ -1,9 +1,10 @@
 ﻿$ErrorActionPreference = "Stop"
-$script:assertions = 0
+# A shared mutable fixture avoids $script: resolving to the reader's script scope.
+$counterV2TestState = @{ Assertions = 0; Calls = 0; Status = 0; ResponseJson = '{"code":"200","data":{"up_count":12,"down_count":2}}' }
 function Assert-True {
     param([bool]$Condition, [string]$Message)
     if (-not $Condition) { throw $Message }
-    $script:assertions++
+    $counterV2TestState.Assertions++
 }
 Assert-True ($PSVersionTable.PSVersion.Major -eq 5) "Run with Windows PowerShell 5.1."
 $root = Split-Path $PSScriptRoot -Parent
@@ -22,9 +23,6 @@ public class CounterTestException : System.Exception {
     public CounterTestException(int status) { Response = new CounterTestResponse { StatusCode = status }; }
 }
 '@
-$script:calls = 0
-$script:status = 0
-$script:responseJson = '{"code":"200","data":{"up_count":12,"down_count":2}}'
 function Invoke-RestMethod {
     param($Uri, $Headers, $Method, $TimeoutSec, $MaximumRedirection, $ErrorAction)
     if ($Uri -like 'https://api.github.com/repos/NoonIsAwesome/Singing-Stream-Savior-Updates/releases*') {
@@ -41,10 +39,10 @@ function Invoke-RestMethod {
     Assert-True ($Uri -match '^https://api\.counterapi\.dev/v2/[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$') "Unexpected endpoint or mutation"
     Assert-True ($Method -eq "Get" -and $TimeoutSec -eq 8 -and $MaximumRedirection -eq 0) "Unsafe request options"
     Assert-True (-not $Headers.ContainsKey("Authorization")) "No credentials in public stats requests"
-    $script:calls++
-    if ($script:status -gt 0) { throw (New-Object CounterTestException($script:status)) }
-    if ($script:status -lt 0) { throw "Simulated timeout" }
-    return ($script:responseJson | ConvertFrom-Json)
+    $counterV2TestState.Calls++
+    if ($counterV2TestState.Status -gt 0) { throw (New-Object CounterTestException($counterV2TestState.Status)) }
+    if ($counterV2TestState.Status -lt 0) { throw "Simulated timeout" }
+    return ($counterV2TestState.ResponseJson | ConvertFrom-Json)
 }
 $fixture = Join-Path ([IO.Path]::GetTempPath()) ("s3s-counter-v2-" + [Guid]::NewGuid().ToString("N"))
 $null = New-Item -ItemType Directory -Path $fixture
@@ -65,20 +63,20 @@ try {
         @{ Json = '{broken'; Expected = "configuration_error" }
     )) {
         Set-Content -LiteralPath $path -Value $case.Json -Encoding UTF8
-        $before = $script:calls
+        $before = $counterV2TestState.Calls
         $result = & $reader -ConfigPath $path
         Assert-True ($result.Status -eq $case.Expected) ("Wrong config status: " + $case.Expected)
         Assert-True ($null -eq $result.WebsitePageViews -and $null -eq $result.WebsiteVisits) "Unavailable metrics must be null"
-        Assert-True ($script:calls -eq $before -and -not $result.ReadVerified) "Invalid/disabled config must not call API"
+        Assert-True ($counterV2TestState.Calls -eq $before -and -not $result.ReadVerified) "Invalid/disabled config must not call API"
     }
     Set-Content -LiteralPath $path -Value $valid -Encoding UTF8
-    $before = $script:calls
+    $before = $counterV2TestState.Calls
     $result = & $reader -ConfigPath $path -ConfigurationOnly
-    Assert-True ($result.Status -eq "configured" -and $script:calls -eq $before) "ConfigurationOnly must be offline"
+    Assert-True ($result.Status -eq "configured" -and $counterV2TestState.Calls -eq $before) "ConfigurationOnly must be offline"
     $result = & $reader -ConfigPath $path
-    Assert-True ($result.Status -eq "available" -and $result.WebsitePageViews -eq 10) "V2 net count not read correctly"
+    Assert-True ($result.Status -eq "available" -and $result.WebsitePageViews -eq 10) ("V2 net count not read correctly: " + ($result | ConvertTo-Json -Compress))
     Assert-True ($result.ReadVerified -and -not $result.CollectionVerified -and $null -eq $result.WebsiteVisits) "Read must not imply collection or unique visitors"
-    $script:responseJson = '{"code":200,"data":{"up_count":0,"down_count":0}}'
+    $counterV2TestState.ResponseJson = '{"code":200,"data":{"up_count":0,"down_count":0}}'
     $result = & $reader -ConfigPath $path
     Assert-True ($null -ne $result.WebsitePageViews -and $result.WebsitePageViews -eq 0 -and $result.ReadVerified) "Real zero must stay zero"
     foreach ($json in @('{}', '{"count":10}', '{"code":"200","data":{}}',
@@ -89,20 +87,20 @@ try {
         '{"code":"200","data":{"up_count":0,"down_count":1}}',
         '{"code":"200","data":{"up_count":9007199254740992,"down_count":0}}',
         '{"code":"404","data":{"up_count":1,"down_count":0}}')) {
-        $script:responseJson = $json
+        $counterV2TestState.ResponseJson = $json
         $result = & $reader -ConfigPath $path
         Assert-True ($result.Status -eq "invalid_response" -and $null -eq $result.WebsitePageViews) "Malformed response became a count"
     }
     foreach ($case in @(@(400, "request_rejected"), @(401, "authentication_required"), @(403, "authentication_required"),
         @(404, "not_found"), @(429, "rate_limited"), @(503, "service_error"), @(-1, "request_failed"))) {
-        $script:status = $case[0]
-        $before = $script:calls
+        $counterV2TestState.Status = $case[0]
+        $before = $counterV2TestState.Calls
         $result = & $reader -ConfigPath $path
         Assert-True ($result.Status -eq $case[1] -and $null -eq $result.WebsitePageViews) ("Wrong error status " + $case[0])
-        Assert-True ($script:calls -eq $before + 1 -and -not $result.ReadVerified) "Error must not retry or invent success"
+        Assert-True ($counterV2TestState.Calls -eq $before + 1 -and -not $result.ReadVerified) "Error must not retry or invent success"
     }
-    $script:status = 0
-    $script:responseJson = '{"code":"200","data":{"up_count":12,"down_count":2}}'
+    $counterV2TestState.Status = 0
+    $counterV2TestState.ResponseJson = '{"code":"200","data":{"up_count":12,"down_count":2}}'
     Set-Content -LiteralPath $path -Value ($valid.Replace('"enabled":true', '"enabled":false')) -Encoding UTF8
     $result = & $reader -ConfigPath $path -Probe
     Assert-True ($result.ReadVerified -and -not $result.CollectionEnabled -and $result.WebsitePageViews -eq 10) "Probe must read without enabling collection"
@@ -116,7 +114,7 @@ try {
     Assert-True ($summary[0].FullPackageDownloads -eq 7) "Updates or LGPL ZIP counted as full packages"
     $friendly = & (Join-Path $PSScriptRoot "get-site-stats.ps1") -Probe -Friendly 6>&1 | Out-String
     Assert-True ($friendly -match "CounterAPI V2" -and $friendly -match "10 次") "Friendly output lost counter value"
-    $script:status = 404
+    $counterV2TestState.Status = 404
     $friendly = & (Join-Path $PSScriptRoot "get-site-stats.ps1") -Probe -Friendly 6>&1 | Out-String
     Assert-True ($friendly -match "不是 0 人或 0 次" -and $friendly -match "完整安裝包下載") "Counter error must not block download stats"
 
@@ -131,4 +129,4 @@ try {
     } finally { Pop-Location }
 }
 finally { Remove-Item -LiteralPath $fixture -Recurse -Force }
-Write-Host ("CounterAPI V2 PowerShell 5.1 assertions passed: {0}" -f $script:assertions)
+Write-Host ("CounterAPI V2 PowerShell 5.1 assertions passed: {0}" -f $counterV2TestState.Assertions)
