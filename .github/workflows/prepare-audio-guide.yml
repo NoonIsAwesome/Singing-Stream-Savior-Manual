@@ -13,10 +13,109 @@ jobs:
       - uses: actions/checkout@v6
         with:
           ref: docs/audio-output-guides-20260922
-          fetch-depth: 8
+          fetch-depth: 10
       - name: Restructure only the requested documentation
         run: |
           python3 .github/prepare-audio-guide.py
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,json
+          for prefix in ['', 'en/', 'ja/', 'ko/', 'zh-CN/']:
+              p=Path(prefix+'advanced-streaming.md')
+              text=p.read_text()
+              marker='{% include stream-route-steps.html target="default" %}'
+              assert text.count(marker)==1
+              # Preserve the existing required definition at its new, task-appropriate location.
+              text=text.replace(marker,'{% include profile-introduction.html %}\n\n'+marker)
+              p.write_text(text)
+          p=Path('profiles.md'); text=p.read_text()
+          start=text.rfind('<div class="manual-feature-update">',0,text.index('>SONG AUTOMATION<'))
+          assert start>=0
+          tail=text[start:]
+          tag=re.search(r'{% include advanced-streaming-screenshot.html name="26-song-profile-tag-menu.png"[^\n]+',tail).group()
+          live=re.search(r'{% include advanced-streaming-screenshot.html name="27-live-profile-menu.png"[^\n]+',tail).group()
+          controls=tail[tail.index('### 主畫面上方每個控制項的用途'):]
+          text=text[:start].rstrip()+'\n'
+          text=text.replace('## 內建多種可直接使用的 Profiles',tag+'\n\n## 內建多種可直接使用的 Profiles',1)
+          mix='### 人聲效果與完整混音的控制不同\n\nProfile 主要處理麥克風；和 BGM／伴奏混音後，完整輸出還有 Mix Bus Compressor、Stream Output Limiter 與 Master 音量。這些是整體混音的控制，不代表伴奏會通過同一條人聲 Profile。\n'
+          text=text.replace('## 儲存與測試',live+'\n\n'+controls+'\n\n'+mix+'\n## 儲存與測試',1)
+          p.write_text(text)
+          extra=['scripts/validate-audio-guides.mjs']
+          for name in ['.github/workflows/analytics-tests.yml','.github/workflows/pages.yml']:
+              p=Path(name); s=p.read_text()
+              marker='node scripts/validate-player-window-guide.mjs _site'
+              assert s.count(marker)==1
+              p.write_text(s.replace(marker,marker+'\n          node scripts/validate-audio-guides.mjs _site'))
+              extra.append(name)
+          p=Path('/tmp/audio-guide-changed.json')
+          p.write_text(json.dumps(sorted(set(json.loads(p.read_text())+extra))))
+          PY
+          cat > scripts/validate-audio-guides.mjs <<'JS'
+          // Documentation regression only: no HTTP requests, audio execution or counter writes.
+          import assert from 'node:assert/strict';
+          import {readFileSync,existsSync} from 'node:fs';
+          import {join,resolve} from 'node:path';
+          const root=resolve(process.argv[2] || '_site');
+          const base='/Singing-Stream-Savior-Manual/';
+          const copy=JSON.parse(readFileSync('_data/stream_routes.json','utf8'));
+          const locales=['zh-TW','en','ja','ko','zh-CN'];
+          const order=['output-obs','output-discord','route-modes','singing-profile-defaults','audio-reference'];
+          const strip=s=>s.replace(/<!--[\s\S]*?-->/g,'');
+          const decode=s=>s.replace(/&amp;/g,'&').replace(/&#39;|&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+          const attr=(tag,name)=>tag.match(new RegExp(`\\s${name}=["']([^"']*)["']`))?.[1];
+          for(const lang of locales){
+            const prefix=lang==='zh-TW'?'':lang+'/';
+            const ap=prefix+'advanced-streaming.html',pp=prefix+'profiles.html';
+            const audio=strip(readFileSync(join(root,ap),'utf8'));
+            const profile=strip(readFileSync(join(root,pp),'utf8'));
+            const positions=order.map(id=>audio.indexOf(`id="${id}"`));
+            assert.ok(positions.every(p=>p>=0),`${lang}: output/mode/default/reference sections required`);
+            assert.deepEqual(positions,[...positions].sort((a,b)=>a-b),`${lang}: task-first order`);
+            for(const id of [...order,'advanced-quick-start','obs-output-walkthrough-title','discord-output-walkthrough-title','vb-cable-installation','what-is-a-profile'])
+              assert.equal(audio.split(`id="${id}"`).length-1,1,`${lang}: unique ${id}`);
+            const tags=audio.match(/<nav\b[^>]*class="[^"]*audio-output-targets[^"]*"[\s\S]*?<\/nav>/)?.[0] || '';
+            assert.ok(tags.includes('href="#output-obs"')&&tags.includes('href="#output-discord"'));
+            assert.equal((tags.match(/<a\s/g)||[]).length,2,`${lang}: exactly two destination tags`);
+            assert.ok(audio.indexOf(tags)<positions[0] && audio.indexOf(tags)>audio.indexOf('data-article-lead'));
+            assert.ok(audio.indexOf('id="what-is-a-profile"')>positions[3],`${lang}: profile definition after output tasks`);
+            for(const [type,count] of [['obs',4],['discord',5],['default',3]]){
+              assert.equal(copy[lang][type+'_steps'].length,count);
+              assert.equal(audio.split(`data-route-steps="${type}"`).length-1,1);
+              for(const step of copy[lang][type+'_steps'])assert.ok(decode(audio).includes(step.title),`${lang}: missing ${step.title}`);
+            }
+            const obs=audio.slice(positions[0],positions[1]),dc=audio.slice(positions[1],positions[2]);
+            assert.ok(obs.includes('13-obs-add-s3s-audio-source.png'));
+            assert.ok(dc.includes('28-discord-virtual-input.png')&&dc.includes('29-discord-studio-mode.png'));
+            for(const image of ['01-official-download.jpg','02-extracted-folder.jpg','03-run-x64-setup.jpg','04-install-driver.jpg','05-restart-required.jpg'])
+              assert.ok(dc.includes('/vb-cable/'+image),`${lang}: installation moved with Discord`);
+            assert.ok(dc.includes('CABLE Input')&&dc.includes('CABLE Output'));
+            assert.ok(audio.includes(base+pp),`${lang}: routing links to own Profile chapter`);
+            assert.ok(!audio.includes('class="effect-editor-gallery"'),`${lang}: full effects belong in separate chapter`);
+            assert.ok(profile.includes('id="profile-prerequisite"'));
+            assert.ok(decode(profile).includes(copy[lang].profile_pre),`${lang}: advanced-routing prerequisite`);
+            assert.ok(profile.indexOf('id="profile-prerequisite"')<profile.indexOf('id="profile-chain-heading"'));
+            assert.ok(profile.includes(base+ap+'#singing-profile-defaults'));
+            assert.ok(profile.includes('profile-horizontal-rack.png')&&profile.includes('profile-vertical-rack.png'));
+            assert.ok(profile.includes('effect-editors/')&&profile.includes('VST3'));
+            const nav=profile.match(/<ol class="chapter-list">[\s\S]*?<\/ol>/)?.[0] || '';
+            assert.ok(new RegExp(`href="${base}${pp}"[^>]*aria-current="page"`).test(nav),`${lang}: current Profile chapter`);
+            for(const alternate of locales){
+              const alternatePath=base+(alternate==='zh-TW'?'':alternate+'/')+'profiles.html';
+              assert.ok([...profile.matchAll(/<option\b[^>]*>/g)].some(([tag])=>attr(tag,'data-lang')===alternate&&attr(tag,'value')===alternatePath),`${lang}: Profile language switch ${alternate}`);
+            }
+            for(const [path,html] of [[ap,audio],[pp,profile]]){
+              const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+              assert.equal(new Set(ids).size,ids.length,`${path}: duplicate IDs`);
+              for(const [,url] of html.matchAll(/<(?:a|img|image)\b[^>]*(?:src|href)="([^"]+)"/g)){
+                if(!url.startsWith(base))continue;
+                const file=decode(url.slice(base.length)).split(/[?#]/)[0];
+                assert.ok(existsSync(join(root,file+(file===''||file.endsWith('/')?'index.html':''))),`${path}: missing ${file}`);
+              }
+            }
+            console.log(`${lang}: OBS, Discord, mode/default order, separate Profiles, illustrations and navigation passed`);
+          }
+          console.log('Audio documentation regression passed. This is not an audio/hardware test.');
+          JS
           git diff --check
       - name: Run existing offline regressions
         run: |
@@ -27,13 +126,14 @@ jobs:
         with:
           source: ./
           destination: ./_site
-      - name: Run existing built-site validators
+      - name: Run existing and new documentation validators
         run: |
           node scripts/validate-built-site.mjs _site
           node scripts/validate-site-analytics.mjs _site
           node scripts/validate-download-clicks.mjs _site
           node scripts/validate-privacy.mjs _site
           node scripts/validate-player-window-guide.mjs _site
+          node scripts/validate-audio-guides.mjs _site
       - name: Export real HTML and source for offline review
         if: always()
         run: |
@@ -49,7 +149,7 @@ jobs:
                   for p in Path(directory).rglob('*'):
                       if p.is_file(): z.write(p,'source/'+str(p))
               for p in Path('.').rglob('*.md'):
-                  if not str(p).startswith(('_site/','.git/')): z.write(p,'source/'+str(p))
+                  if not str(p).startswith(('_site/','.git/','scripts/','_data/','_includes/','_layouts/','.github/')): z.write(p,'source/'+str(p))
               z.writestr('changes.diff',subprocess.check_output(['git','diff']))
               if Path('/tmp/audio-guide-changed.json').exists(): z.write('/tmp/audio-guide-changed.json','changed-files.json')
           PY
