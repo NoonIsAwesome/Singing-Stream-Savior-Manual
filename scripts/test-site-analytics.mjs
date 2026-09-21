@@ -34,11 +34,12 @@ function browser(options = {}) {
   return { scripts, dataset, document, run };
 }
 
-test("valid production page loads one official module with SPA tracking disabled", () => {
+test("valid production page loads one official classic script with SPA tracking disabled", () => {
   const b = browser(); b.run();
   assert.equal(b.scripts.length, 1);
   assert.equal(b.scripts[0].src, "https://static.cloudflareinsights.com/beacon.min.js");
-  assert.equal(b.scripts[0].type, "module");
+  assert.equal(b.scripts[0].type, "text/javascript");
+  assert.equal(b.scripts[0].crossOrigin, "anonymous");
   assert.equal(b.scripts[0].async, true);
   assert.deepEqual(JSON.parse(b.scripts[0].attrs["data-cf-beacon"]), { token, spa: false });
   assert.equal(b.dataset.analyticsState, "loading");
