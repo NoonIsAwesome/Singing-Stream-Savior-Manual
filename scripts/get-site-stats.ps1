@@ -1,11 +1,35 @@
 ﻿param(
     [string]$ReleaseTag = "",
-    [switch]$Friendly
+    [switch]$Friendly,
+    [switch]$AnalyticsOnly,
+    [switch]$ConfigurationOnly,
+    [switch]$Probe
 )
 
 $ErrorActionPreference = "Stop"
 
-$counterUrl = "https://api.counterapi.dev/v2/noonisawesome-singing-stream-savior-manual/pageviews"
+$analytics = & (Join-Path $PSScriptRoot "get-site-analytics.ps1") `
+    -ConfigurationOnly:$ConfigurationOnly -Probe:$Probe
+
+function Write-WebsiteAnalyticsStatus {
+    Write-Host ("網站統計服務： {0}" -f $analytics.Provider)
+    Write-Host ("網站統計狀態： {0}" -f $analytics.Detail)
+    if ($null -ne $analytics.WebsitePageViews) {
+        Write-Host ("網站累計瀏覽： {0:N0} 次（不是不重複人數）" -f $analytics.WebsitePageViews)
+    }
+    else {
+        Write-Host "網站累計瀏覽：未取得數值（不是 0 人或 0 次）。"
+    }
+    Write-Host ("統計後台：     {0}" -f $analytics.DashboardUrl)
+    Write-Host "瀏覽次數、完整包下載與更新活動不能相加當成使用者人數。"
+}
+
+if ($AnalyticsOnly) {
+    if ($Friendly) { Write-WebsiteAnalyticsStatus }
+    else { $analytics }
+    return
+}
+
 $releaseBaseUrl = "https://api.github.com/repos/NoonIsAwesome/Singing-Stream-Savior-Updates/releases"
 $headers = @{
     "Accept" = "application/vnd.github+json"
@@ -24,18 +48,6 @@ function Test-FullPackageAsset {
     # Singing.Stream.Savior.2.0.4.0.zip
     # 同時容許空白、連字號或底線分隔，避免未來只因命名樣式微調而漏算。
     return $AssetName -match '(?i)^Singing[ ._-]+Stream[ ._-]+Savior(?:[ ._-]+v?\d+(?:\.\d+){1,3})?\.zip$'
-}
-
-$pageviews = 0
-try {
-    $counter = Invoke-RestMethod -Uri $counterUrl -Method Get
-    $pageviews = [int64]$counter.data.up_count - [int64]$counter.data.down_count
-}
-catch {
-    $statusCode = [int]$_.Exception.Response.StatusCode
-    if ($statusCode -notin 400, 404) {
-        throw
-    }
 }
 
 $releases = @()
@@ -140,7 +152,7 @@ if ($Friendly) {
     Write-Host ""
     Write-Host "────────────────────────────────"
     Write-Host "統計結果" -ForegroundColor Cyan
-    Write-Host ("網站累積瀏覽：   {0:N0} 次" -f [int64]$pageviews)
+    Write-WebsiteAnalyticsStatus
     Write-Host ("正式版本數：     {0:N0} 個" -f $releaseStats.Count)
     Write-Host ("完整安裝包下載： {0:N0} 次" -f `
         [int64]$allFullPackageDownloads)
@@ -151,7 +163,13 @@ if ($Friendly) {
 }
 
 [PSCustomObject]@{
-    WebsitePageViews = $pageviews
+    WebsitePageViews = $analytics.WebsitePageViews
+    WebsiteVisits = $analytics.WebsiteVisits
+    WebsiteAnalyticsStatus = $analytics.Status
+    WebsiteAnalyticsDetail = $analytics.Detail
+    WebsiteAnalyticsDashboard = $analytics.DashboardUrl
+    WebsiteAnalyticsReadVerified = $analytics.ReadVerified
+    WebsiteAnalyticsCollectionEnabled = $analytics.CollectionEnabled
     PublishedReleaseCount = $releaseStats.Count
     FullPackageDownloads = [int64]$allFullPackageDownloads
     UpdateAssetDownloads = [int64]$allUpdateAssetDownloads
