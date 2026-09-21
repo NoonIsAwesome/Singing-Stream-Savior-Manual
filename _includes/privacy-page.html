@@ -1,10 +1,17 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
-{% assign privacy_copy = site.data.privacy[current_lang] | default: site.data.privacy.en %}
+{% assign privacy_data = site.data.privacy %}
+{% assign privacy_scope = 'app' %}
+{% if page.translation_key == 'website-privacy' %}
+  {% assign privacy_data = site.data.website_privacy %}
+  {% assign privacy_scope = 'website' %}
+{% endif %}
+{% assign privacy_copy = privacy_data[current_lang] | default: privacy_data.en %}
 {% if current_lang == 'zh-TW' %}{% assign privacy_contact_target = '/support.html' %}{% else %}{% capture privacy_contact_target %}/{{ current_lang }}/support.html{% endcapture %}{% endif %}
+<div data-privacy-content="{{ privacy_scope }}">
 <header class="resource-hero" data-privacy-page>
-  <p class="resource-eyebrow">PRIVACY</p>
+  <p class="resource-eyebrow">{% if privacy_scope == 'app' %}APP PRIVACY{% else %}WEBSITE PRIVACY{% endif %}</p>
   <h1>{{ privacy_copy.title | escape }}</h1>
-  <p>{{ privacy_copy.updated_label | escape }}: <time datetime="{{ site.data.privacy.updated }}">{{ site.data.privacy.updated }}</time></p>
+  <p>{{ privacy_copy.updated_label | escape }}: <time datetime="{{ privacy_data.updated }}">{{ privacy_data.updated }}</time></p>
   <p><strong>{{ privacy_copy.summary | escape }}</strong></p>
   <p>{{ privacy_copy.scope | escape }}</p>
 </header>
@@ -14,6 +21,13 @@
   {% for paragraph in privacy_section.paragraphs %}<p>{{ paragraph | escape }}</p>{% endfor %}
 </section>
 {% endfor %}
+{% if privacy_scope == 'app' %}
+<section class="privacy-section" aria-labelledby="privacy-projects">
+  <h2 id="privacy-projects">{{ privacy_copy.projects_title | escape }}</h2>
+  <p>{{ privacy_copy.projects_intro | escape }}</p>
+  <ul>{% for project in privacy_data.projects %}<li><a href="{{ project.url | escape }}" rel="noopener noreferrer">{{ project.label | escape }}</a></li>{% endfor %}</ul>
+</section>
+{% endif %}
 <section class="privacy-section" aria-labelledby="privacy-contact">
   <h2 id="privacy-contact">{{ privacy_copy.contact_title | escape }}</h2>
   <p>{{ privacy_copy.contact_text | escape }}</p>
@@ -21,5 +35,6 @@
 </section>
 <section class="privacy-section" aria-labelledby="privacy-sources">
   <h2 id="privacy-sources">{{ privacy_copy.sources_title | escape }}</h2>
-  <p><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">GitHub</a> · <a href="https://counterapi.dev/privacy-policy/" rel="noopener noreferrer">CounterAPI</a> · <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google / YouTube</a></p>
+  <p>{% for source in privacy_data.sources %}<a href="{{ source.url | escape }}" rel="noopener noreferrer">{{ source.label | escape }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
 </section>
+</div>
