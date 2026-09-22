@@ -34,7 +34,9 @@ jobs:
           source: ./
           destination: ./_site
       - name: Reserve screenshot dimensions
-        run: node scripts/prepare-image-dimensions.mjs _site
+        run: |
+          sudo chown -R "$(id -u):$(id -g)" _site
+          node scripts/prepare-image-dimensions.mjs _site
       - name: Validate rendered site
         run: |
           node scripts/validate-built-site.mjs _site
