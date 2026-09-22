@@ -165,7 +165,7 @@ Now Singing、待播與已唱；結束後再恢復原本的 BGM。建立的項�
 
 YouTube 歌曲預設使用影片縮圖，也可設定自訂封面或恢復預設縮圖。
 
-Card 與 CD 的實際呈現請參考[歌單外觀章節](obs-and-themes.md#card-與-cd封面效果)。
+Card 與 CD 的實際呈現請參考[歌單外觀章節]({{ '/obs-and-themes.html' | relative_url }}#card-與-cd封面效果)。
 
 ## 背景音樂播放器
 

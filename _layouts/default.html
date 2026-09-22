@@ -91,9 +91,9 @@
     {% if is_home %}
       {{ content }}
     {% elsif section == 'about' %}
-      <main id="guide-content" class="author-main"><article class="manual-article">{{ content }}</article></main>
+      <main id="guide-content" tabindex="-1" class="author-main"><article class="manual-article">{{ content }}</article></main>
     {% elsif section == 'privacy' %}
-      <main id="guide-content" class="privacy-main"><article class="manual-article">{{ content }}</article></main>
+      <main id="guide-content" tabindex="-1" class="privacy-main"><article class="manual-article">{{ content }}</article></main>
     {% else %}
       {% assign breadcrumb_chapter = site.data.chapters | where: 'key', section | first %}
       <div class="reader-toolbar"><div class="wrap"><nav class="reader-breadcrumb" aria-label="{{ design.navigation | escape }}"><a href="{{ language_home | relative_url }}">{{ design.home }}</a><span aria-hidden="true">/</span><span aria-current="page">{% if breadcrumb_chapter %}{{ t.nav[breadcrumb_chapter.label] }}{% else %}{{ design.guide }}{% endif %}</span></nav><span class="reader-version">Singing Stream Savior · v{{ site.data.resources.software.version }}</span><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav"><span class="nav-toggle-icon" aria-hidden="true"></span>{{ t.chapters }}</button></div></div>
