@@ -112,10 +112,13 @@
 
     const header = document.querySelector(".site-header");
     const readingLine = (header?.getBoundingClientRect().height || 0) + 48;
+    const scrollPadding = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
     let current = chapterLinks[0];
 
     chapterLinks.forEach((chapter) => {
-      if (chapter.target.getBoundingClientRect().top <= readingLine) {
+      const scrollMargin = parseFloat(getComputedStyle(chapter.target).scrollMarginTop) || 0;
+      // Native anchor alignment adds scroll-padding and scroll-margin together.
+      if (chapter.target.getBoundingClientRect().top <= Math.max(readingLine, scrollPadding + scrollMargin) + 1) {
         current = chapter;
       }
     });
@@ -388,19 +391,29 @@
     });
   }
 
-  const revealAnchor = (hash) => {
+  const revealAnchor = (hash, align = false) => {
     if (!hash) return null;
     let id;
     try { id = decodeURIComponent(hash.slice(1)); } catch (_) { return null; }
     const target = document.getElementById(id);
     if (!target) return null;
-    for (let parent = target.parentElement; parent; parent = parent.parentElement) {
-      if (parent.tagName === 'DETAILS') parent.open = true;
+    let opened = false;
+    let insideDetails = false;
+    for (let parent = target; parent; parent = parent.parentElement) {
+      if (parent.tagName === 'DETAILS') {
+        insideDetails = true;
+        if (!parent.open) { parent.open = true; opened = true; }
+      }
     }
+    if (insideDetails && (opened || align)) window.requestAnimationFrame(() => {
+      if (location.hash === hash) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    });
     return target;
   };
-  revealAnchor(location.hash);
-  window.addEventListener('hashchange', () => revealAnchor(location.hash));
+  revealAnchor(location.hash, true);
+  // Native fragment scrolling can begin while the referenced disclosure is closed.
+  window.addEventListener('load', () => revealAnchor(location.hash, true), { once: true });
+  window.addEventListener('hashchange', () => revealAnchor(location.hash, true));
   document.addEventListener('click', event => {
     const link = event.target.closest('a[href]');
     if (!link) return;

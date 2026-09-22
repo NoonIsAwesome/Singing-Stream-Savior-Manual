@@ -42,7 +42,11 @@
       : null;
     const header = document.querySelector('.site-header');
     const readingLine = (header?.getBoundingClientRect().height || 0) + 48;
-    const currentChapter = chapters.filter(chapter => chapter.target.getBoundingClientRect().top <= readingLine).at(-1);
+    const scrollPadding = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+    const currentChapter = chapters.filter(chapter => {
+      const scrollMargin = parseFloat(getComputedStyle(chapter.target).scrollMarginTop) || 0;
+      return chapter.target.getBoundingClientRect().top <= Math.max(readingLine, scrollPadding + scrollMargin) + 1;
+    }).at(-1);
 
     // Do not turn the introduction into a jump to the first chapter.
     if (!currentChapter) return hashChapter ? '' : anchor;

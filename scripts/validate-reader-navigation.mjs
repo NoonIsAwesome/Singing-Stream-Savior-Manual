@@ -12,6 +12,14 @@ const documents=new Map(files.map(file=>{const html=readFileSync(file,'utf8');co
 let links=0;
 for(const [file,doc] of documents){
  if(doc.duplicate)errors.push(`${file}: duplicate IDs`);
+ for(const [tag] of doc.html.matchAll(/<img\b[^>]*>/gi)){
+  const src=tag.match(/\ssrc=(["'])(.*?)\1/i)?.[2];if(!src)continue;
+  const url=new URL(decode(src),'https://manual.invalid'+base+file);
+  if(url.origin==='https://manual.invalid'&&url.pathname.startsWith(base)&&/\.png$/i.test(url.pathname)){
+   if(!/\swidth=["'][1-9]\d*["']/i.test(tag)||!/\sheight=["'][1-9]\d*["']/i.test(tag))errors.push(file+': PNG has no reserved dimensions: '+src);
+  }
+ }
+
  if(/\{%\s*(?:include|include_relative|assign|capture|for|if|endif)\b/.test(doc.html))errors.push(`${file}: unrendered Liquid`);
  for(const [,raw] of doc.html.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/g)){
   const url=new URL(decode(raw),'https://manual.invalid'+base+file);
