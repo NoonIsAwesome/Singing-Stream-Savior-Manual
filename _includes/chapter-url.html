@@ -1,0 +1,6 @@
+{%- assign link_chapter = include.chapter -%}
+{%- assign link_lang = include.lang | default: current_lang | default: page.lang | default: 'zh-TW' -%}
+{%- if link_lang == 'zh-TW' -%}/{{ link_chapter.key }}.html
+{%- elsif link_chapter.standalone -%}/{{ link_lang }}/{{ link_chapter.key }}.html
+{%- else -%}/{{ link_lang }}/guide.html#{{ link_chapter.key }}
+{%- endif -%}

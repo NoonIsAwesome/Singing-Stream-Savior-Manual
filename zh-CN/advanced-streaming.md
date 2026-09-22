@@ -20,6 +20,7 @@ published: true
 <h2 id="output-obs">输出信号发送至 OBS</h2>
 <p>只需发送到 OBS 时，先使用专用音频插件，无需安装虚拟音频设备。先完成以下四步，再按后面的说明调整默认演唱 Profile。</p>
 {% include stream-route-steps.html target="obs" %}
+{% include route-next-profile.html %}
 
 <details class="audio-route-details" markdown="1"><summary>其他 OBS 接法与插件细节（需要时展开）</summary>
 
@@ -37,6 +38,7 @@ published: true
 <h2 id="output-discord">输出信号发送至 Discord（或其他通话软件）</h2>
 <p>利用 VB-CABLE 等虚拟音频设备，将完成的混音作为通话软件的麦克风输入。无需先开 OBS：Singing Stream Savior 输出到 CABLE Input，Discord 从 CABLE Output 接收。</p>
 {% include stream-route-steps.html target="discord" %}
+{% include route-next-profile.html %}
 <p>Discord 的通话传输仍可能重新编码、压缩或进行平台处理，因此音质可能比本地录音或 OBS 录像略差。这通常不是 Singing Stream Savior 路由异常；需要保留最高音质时，请以 OBS 或本地录音为准。</p>
 
 <a id="vb-cable-installation"></a>
@@ -115,6 +117,19 @@ published: true
 - **唱歌人声 Profile**是播放伴奏时的默认值，单首歌曲的 Profile 标签可以覆盖它。通过麦克风按钮的右键菜单可暂时固定其他 Profile；选择**自动切换 Profile**后，才会重新按聊天／唱歌状态与歌曲标签自动切换。
 - **BGM 闪避 · 自动**只在检测到麦克风人声时暂时降低 BGM，最多降低 9 dB，且不会提高麦克风音量。播放歌唱伴奏时会自动旁路，避免整首伴奏随每句人声忽大忽小；此时伴奏与人声的整体融合由 Mix Bus Compressor 处理。选择**关闭**可完全停用自动降低。
 
+### 建议设置：普通用户先这样使用
+
+> **最简单的起点是有音频接口时使用 ASIO、程序安全 Buffer 设为“自动（推荐）· 512 frames”，并在 OBS 使用专用音频来源。** 一开始不用手动测试每一种 Buffer。
+
+- 音频接口提供原厂 ASIO 时优先使用；接口 hardware buffer 保持已经稳定的设置，常见起点为 128 或 256 frames。它与 App Buffer 是两个独立设置。
+- 没有 ASIO 时选择 Windows Audio，App Buffer 先保持自动 512，不要一开始就强制使用 128／256。
+- 只有希望降低软件 Dry 监听延迟时才运行“完整检查”；仅在检查建议 256 时直接应用。演唱主监听仍优先使用音频接口的 Direct Monitor。
+- OBS 优先使用 Singing Stream Savior 专用音频来源；只有其他程序也需要完整 Mix 时才使用 VB-CABLE 等虚拟音频设备。
+- 完成首次路由设置后至少运行一次完整检查并应用建议值；之后无需每次开播都重跑。只有更换设备／驱动、大幅改变 Profile／VST3／路由，或状态变黄、实际听到爆音时才重新检查。
+
+<details class="audio-route-details" id="buffer-stability" markdown="1">
+<summary>{{ site.data.manual_workflows[page.lang].buffer_summary | escape }}</summary>
+
 ### App Buffer 检查与黄色状态
 
 **程序安全 Buffer** 选单与 **检查 Buffer 稳定性…** 按钮会固定显示在同一行。使用 ASIO 输入时，该行位于 ASIO 采样率／硬件 Buffer 区块下方；即使 **Windows 播放兼容性**的高级设置保持收起，也能直接调整或打开检查。**快速检查**测试 512／1024 frames，约需 25 秒；**完整检查**测试 128／256／512／1024 frames，约需 5 分钟。检查只诊断歌回救星的 App Buffer，不会更改音频接口独立的 ASIO hardware buffer；完成后可以直接应用建议。128／256 等低数值只有在完整检查中的两轮独立严格观察均通过后，才会视为已针对当前设备、Profile、效果与路由完成验证。
@@ -127,18 +142,10 @@ published: true
 
 黄色信息有两种含义。**检查音频中断**表示麦克风、监听、直播输出或正在恢复的设备可能不稳定；**检查音频时序**表示处理时间或同步状态持续异常。短暂峰值不一定代表已经出现可听见的断音，将鼠标停在“稳定性”上可查看详细信息。
 
-### 建议设置：普通用户先这样使用
-
-> **最简单的起点是有音频接口时使用 ASIO、程序安全 Buffer 设为“自动（推荐）· 512 frames”，并在 OBS 使用专用音频来源。** 一开始不用手动测试每一种 Buffer。
-
-- 音频接口提供原厂 ASIO 时优先使用；接口 hardware buffer 保持已经稳定的设置，常见起点为 128 或 256 frames。它与 App Buffer 是两个独立设置。
-- 没有 ASIO 时选择 Windows Audio，App Buffer 先保持自动 512，不要一开始就强制使用 128／256。
-- 只有希望降低软件 Dry 监听延迟时才运行“完整检查”；仅在检查建议 256 时直接应用。演唱主监听仍优先使用音频接口的 Direct Monitor。
-- OBS 优先使用 Singing Stream Savior 专用音频来源；只有其他程序也需要完整 Mix 时才使用 VB-CABLE 等虚拟音频设备。
-- 完成首次路由设置后至少运行一次完整检查并应用建议值；之后无需每次开播都重跑。只有更换设备／驱动、大幅改变 Profile／VST3／路由，或状态变黄、实际听到爆音时才重新检查。
+</details>
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>选择监听内容并录制完整混音</h2><p>耳机按钮控制监听，可选择 BGM／伴奏、完整混音、加入湿声或干声的组合，或只听处理后麦克风。录音可捕捉完整输出或当前监听内容，并使用 WAV 16-bit PCM、WAV 24-bit PCM 或 WAV 32-bit Float。</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2 id="monitor-record">选择监听内容并录制完整混音</h2><p>耳机按钮控制监听，可选择 BGM／伴奏、完整混音、加入湿声或干声的组合，或只听处理后麦克风。录音可捕捉完整输出或当前监听内容，并使用 WAV 16-bit PCM、WAV 24-bit PCM 或 WAV 32-bit Float。</p></div>
   <p><strong>避免回授：</strong>开启麦克风监听时请使用耳机，不要使用会被麦克风再次收到的扬声器。正式直播前先做短录音，确认人声、伴奏、音量与延迟。</p>
 </div>
 
@@ -149,18 +156,20 @@ published: true
 监听是独立的耳机路径。Dry Cue 使用独立的软件采集尽量降低干声监听延迟，但不会改变正式 Mix、OBS 或录音路径；需要最低演唱监听延迟时，请优先使用音频接口的 hardware Direct Monitor。Meter 中的 BGM／伴奏监听与人声监听旋钮可在 0–200% 调整，只改变演唱者听到的平衡，不改变观众的 Stream Output，也不会重写 Profile 内的 Compressor、EQ 或其他效果参数。“完整输出”录音沿用正式 Stream Output 时间轴，BGM／伴奏与人声位于同一条正式时间线；Dry Cue 或其他软件监听延迟不会改变录音中两者的相对 offset。录制“监听内容”则适合检查自己的耳机平衡。
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>查看六条音频路径与系统负载</h2><p>高级直播模式可从“查看”或系统托盘菜单打开 Meter。它可以停靠在主窗口右侧或独立悬浮，并通过一颗按钮切换横向／纵向布局。</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2 id="audio-meter">查看六条音频路径与系统负载</h2><p>高级直播模式可从“查看”或系统托盘菜单打开 Meter。它可以停靠在主窗口右侧或独立悬浮，并通过一颗按钮切换横向／纵向布局。</p></div>
   <p>六轨依次为 <strong>BGM／伴奏</strong>、<strong>人声（Profile 后、Mix 前）</strong>、<strong>BGM／伴奏监听</strong>、<strong>人声监听</strong>、<strong>导唱监听</strong>与<strong>Master／Stream Output</strong>。每轨显示 Peak；Master／Stream Output 另显示三秒短期 <strong>LUFS-S</strong>。除导唱监听为 0–100% 外，其余旋钮为 0–200%；导唱只用于演唱者监听，不会进入 Stream 或 OBS。</p>
   <p>横向 Meter 会在 BGM／伴奏与人声持续失衡时提示提高人声或调低伴奏；它只提供建议，不会自动改变任何增益。安静、换气或歌曲间奏不会立刻被判断为人声过小。</p>
   <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="使用横向电平条的六轨音量 Meter" caption="在横向音量表中向下滚动，可查看导唱监听和最后的 Master／直播输出。导唱音量为 0–100%，其余控制为 0–200%。" %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="使用纵向电平条的六轨音量 Meter 面板" caption="纵向 Meter 提供相同六轨，可停靠在主窗口右侧或独立悬浮；导唱仍只用于监听。" %}</div>
   <div class="effect-reference"><details><summary><strong>响度提示何时会出现？</strong><span>只在有足够伴奏与演唱数据时判断</span></summary><div class="effect-reference__body"><p>软件会先观察一段持续的伴奏与人声，再比较两者的长期平衡。歌曲刚开始、安静段落、换气、间奏、切换 Profile 或音频设备正在恢复时，都不会立刻显示建议。如果人声已经接近过载，软件也只会建议调低伴奏，不会要求继续提高人声。换曲、停止、重新播放或大幅移动播放位置后，会重新累计数据。</p></div></details></div>
+  <details class="audio-route-details"><summary>{{ site.data.manual_workflows[page.lang].health_summary | escape }}</summary>
   <p>右下角的 CPU／RAM 状态会显示本程序的使用率。将鼠标停在上面可以查看系统与本程序的详细资源用量；高级直播模式还会显示 Buffer、处理时间、估计延迟与音频中断次数。负载可能影响稳定性时会以颜色提示。</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="主窗口右下角收起状态的 CPU 与 RAM 摘要" caption="这张图只显示鼠标尚未停留时的精简 CPU／RAM 摘要；指向文字后才会展开上文说明的系统／程序负载与高级音频健康资料。" size="medium" %}
   {% include system-health-interpretation.html %}
+  </details>
 </div>
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>缩到系统托盘后继续控制直播</h2><p>设置可决定点击主窗口关闭按钮时缩到系统托盘或直接退出。缩到后台后，不需要重新打开完整窗口也能完成常用操作。</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2 id="tray-shortcuts">缩到系统托盘后继续控制直播</h2><p>设置可决定点击主窗口关闭按钮时缩到系统托盘或直接退出。缩到后台后，不需要重新打开完整窗口也能完成常用操作。</p></div>
   <p>右键菜单会按状态显示播放／继续、暂停、停止、从头播放、Key、速度、Profile、麦克风静音／恢复、歌词窗口、打开主窗口，以及高级直播模式限定的 Meter。选择“关闭软件”才会结束程序与播放功能。</p>
   {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior 未播放时的 Windows 系统托盘菜单" caption="未播放时会显示精简菜单；播放伴奏或启用高级直播模式后，才会增加上文说明的播放、Key、速度、Profile、麦克风与 Meter 操作。底部“结束”会完全关闭程序。" size="medium" %}
   <p>全局快捷键分为“播放控制”和“麦克风／监听”，并提供默认按键；非高级直播模式会隐藏不适用的麦克风／监听项目。</p>

@@ -16,7 +16,8 @@
   --table-heading-background:#edf3f5;
   --table-cell-background:#fff;
   --table-cell-stripe:#f7f9fa;
-  --content-width:940px
+  --content-width:940px;
+  --reading-measure:48rem
 }
 
 html[data-theme="dark"] {
@@ -174,7 +175,35 @@ html[data-theme="dark"] .language option:checked {
   background:var(--paper);
   border-color:var(--line);
   padding-left:32px;
-  font-size:12px
+  font-size:14px
+}
+.reader-shell .sidebar-close {
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  padding:0;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:8px;
+  font-size:24px;
+  line-height:1
+}
+.reader-shell .sidebar-close:is(:hover,:focus-visible) {
+  color:var(--teal);
+  border-color:var(--teal)
+}
+.reader-shell .chapter-group + .chapter-group {
+  margin-top:24px
+}
+.reader-shell .chapter-group__title {
+  margin:0 0 8px 13px;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.05em;
+  line-height:1.6
 }
 .reader-shell .chapter-list {
   gap:5px
@@ -182,13 +211,16 @@ html[data-theme="dark"] .language option:checked {
 .reader-shell .chapter-list a {
   grid-template-columns:1fr;
   padding:10px 13px;
-  color:var(--muted);
-  font-size:12px;
+  color:var(--ink-700);
+  font-size:14px;
   border-radius:8px;
-  line-height:1.55
+  line-height:1.55;
+  overflow-wrap:anywhere
 }
-.reader-shell .chapter-number {
-  display:none
+.reader-shell .chapter-number,
+.reader-shell .chapter-symbol {
+  display:none;
+  color:inherit
 }
 .reader-shell .chapter-list a:hover {
   background:var(--paper);
@@ -202,7 +234,7 @@ html[data-theme="dark"] .language option:checked {
 .reader-shell .chapter-preview-badge {
   background:var(--paper);
   color:var(--muted);
-  font-size:8px;
+  font-size:11px;
   margin-left:5px;
   border:1px solid var(--line)
 }
@@ -219,7 +251,7 @@ html[data-theme="dark"] .language option:checked {
   color:var(--ink)
 }
 .reader-shell .sidebar-note p {
-  font-size:11px;
+  font-size:12px;
   line-height:1.85;
   margin:5px 0 0
 }
@@ -228,10 +260,10 @@ html[data-theme="dark"] .language option:checked {
   min-width:0
 }
 .reader-shell .manual-article {
-  max-width:940px;
+  max-width:var(--content-width);
   margin:0 auto;
-  font-size:15px;
-  line-height:1.95;
+  font-size:16px;
+  line-height:1.9;
   color:var(--ink-800)
 }
 .inner-page .manual-article h1 {
@@ -260,7 +292,12 @@ html[data-theme="dark"] .language option:checked {
   font-size:19px
 }
 .inner-page .manual-article p {
+  max-width:var(--reading-measure);
   color:var(--ink-800)
+}
+.inner-page .manual-article > :is(ul,ol,blockquote),
+.inner-page .manual-chapter > :is(ul,ol,blockquote) {
+  max-width:var(--reading-measure)
 }
 .inner-page .manual-article a:not(.button):not(.resource-action):not(.intro-button) {
   color:var(--teal)
@@ -279,7 +316,7 @@ html[data-theme="dark"] .language option:checked {
 }
 .inner-page .manual-article figcaption {
   color:var(--muted);
-  font-size:12px;
+  font-size:13px;
   line-height:1.7;
   margin-top:11px
 }
@@ -311,7 +348,8 @@ html[data-theme="dark"] .language option:checked {
   display:block;
   overflow:auto;
   max-width:100%;
-  font-size:13px
+  font-size:14px;
+  line-height:1.75
 }
 .inner-page .manual-article th,.inner-page .manual-article td {
   border-color:var(--line)
@@ -327,8 +365,131 @@ html[data-theme="dark"] .language option:checked {
   color:var(--ink)
 }
 .inner-page .article-outline a {
-  font-size:12px
+  font-size:14px;
+  line-height:1.65
 }
+/* Instruction panels share one theme-aware component, including their contents. */
+.manual-feature-update {
+  position:relative;
+  margin:36px 0;
+  padding:clamp(20px,3vw,32px);
+  color:var(--ink-800);
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:none
+}
+.manual-feature-update__header {
+  max-width:var(--reading-measure);
+  margin-bottom:24px
+}
+.inner-page .manual-article .manual-feature-update__eyebrow {
+  margin:0 0 8px;
+  color:var(--muted);
+  font:600 12px/1.6 "Bahnschrift",sans-serif;
+  letter-spacing:.06em
+}
+.inner-page .manual-article .manual-feature-update h2 {
+  margin:0 0 12px;
+  color:var(--ink)
+}
+.inner-page .manual-article .manual-feature-update h3 {
+  margin-top:28px;
+  color:var(--ink)
+}
+.inner-page .manual-feature-update :is(p,li) {
+  color:var(--ink-800)
+}
+.inner-page .manual-feature-update strong {
+  color:var(--ink)
+}
+.manual-feature-update__copy,
+.manual-feature-update > :is(ul,ol) {
+  max-width:var(--reading-measure)
+}
+.manual-feature-update__figures {
+  display:grid;
+  grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  align-items:start;
+  gap:16px;
+  margin:22px 0 28px
+}
+.inner-page .manual-article .manual-feature-update .manual-figure {
+  width:100%;
+  margin:0;
+  background:var(--surface);
+  border-color:var(--line)
+}
+.inner-page .manual-article .manual-feature-update .manual-feature-update__wide-figure {
+  margin-top:22px
+}
+.manual-feature-update > :last-child,
+.manual-feature-update__copy > :last-child {
+  margin-bottom:0
+}
+@media(max-width:760px) {
+  .manual-feature-update__figures {
+    grid-template-columns:1fr
+  }
+}
+
+/* Completion and chapter links provide a clear continuation after a task. */
+.chapter-next-step {
+  margin:24px 0;
+  padding-top:18px;
+  border-top:1px solid var(--line)
+}
+.inner-page .manual-article .chapter-next-step p {
+  margin:0 0 8px
+}
+.chapter-navigation {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  margin:44px 0 0;
+  padding-top:24px;
+  border-top:1px solid var(--line)
+}
+.chapter-navigation__link {
+  display:grid;
+  align-content:start;
+  gap:6px;
+  min-width:0;
+  padding:18px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:10px;
+  text-decoration:none;
+  overflow-wrap:anywhere
+}
+.chapter-navigation__link[rel=next] {
+  grid-column:2
+}
+.chapter-navigation__link:is(:hover,:focus-visible) {
+  background:var(--blue-soft);
+  border-color:var(--teal)
+}
+.chapter-navigation__label {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6
+}
+.chapter-navigation__title {
+  color:var(--teal);
+  font-size:16px;
+  font-weight:700;
+  line-height:1.6
+}
+@media(max-width:580px) {
+  .chapter-navigation {
+    grid-template-columns:1fr;
+    gap:12px
+  }
+  .chapter-navigation__link[rel=next] {
+    grid-column:auto
+  }
+}
+
 .inner-page .chapter-quick-start {
   background:var(--paper);
   border:1px solid var(--line);
@@ -470,7 +631,7 @@ html[data-theme="dark"] .language option:checked {
   background:var(--surface);
   border-color:var(--line);
   color:var(--ink);
-  font-size:12px
+  font-size:14px
 }
 .sidebar-collapsed .reader-shell.guide-shell {
   grid-template-columns:76px minmax(0,1fr)
@@ -479,9 +640,15 @@ html[data-theme="dark"] .language option:checked {
   display:flex;
   justify-content:center
 }
-.sidebar-collapsed .reader-shell .chapter-number {
+.sidebar-collapsed .reader-shell .chapter-number,
+.sidebar-collapsed .reader-shell .chapter-symbol {
   display:inline;
-  font-size:11px
+  font-size:14px
+}
+.sidebar-collapsed .reader-shell .chapter-group + .chapter-group {
+  padding-top:14px;
+  margin-top:14px;
+  border-top:1px solid var(--line)
 }
 .reader-shell .manual-article [id] {
   scroll-margin-top:110px
@@ -875,13 +1042,28 @@ html[data-theme="dark"] .language option:checked {
     display:none
   }
   .reader-shell .sidebar-tools {
-    grid-template-columns:1fr
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 44px;
+    align-items:center
+  }
+  .reader-shell .sidebar-close {
+    display:flex
+  }
+  .reader-shell .chapter-search input {
+    min-height:44px;
+    font-size:16px
   }
   .sidebar-collapsed .reader-shell .chapter-search,.sidebar-collapsed .reader-shell .chapter-name,.sidebar-collapsed .reader-shell .nav-label,.sidebar-collapsed .reader-shell .sidebar-note {
     display:block
   }
-  .sidebar-collapsed .reader-shell .chapter-number {
+  .sidebar-collapsed .reader-shell .chapter-number,
+  .sidebar-collapsed .reader-shell .chapter-symbol {
     display:none
+  }
+  .sidebar-collapsed .reader-shell .chapter-group + .chapter-group {
+    margin-top:24px;
+    padding-top:0;
+    border-top:0
   }
   .sidebar-collapsed .reader-shell .chapter-list a {
     display:block
@@ -957,7 +1139,7 @@ html[data-theme="dark"] .language option:checked {
     font-size:22px
   }
   .reader-shell .manual-article {
-    font-size:14px
+    font-size:16px
   }
   .inner-page .chapter-quick-start {
     padding:18px;
@@ -1077,7 +1259,7 @@ html[data-theme="light"] {
 }
 
 .inner-page .chapter-quick-start__steps li span {
-  font-size:13px;
+  font-size:inherit;
   line-height:1.8
 }
 
@@ -1166,7 +1348,7 @@ html[data-theme="light"] {
 
 .inner-page .changelog-hero .changelog-eyebrow {
   color:var(--teal);
-  font-size:10px
+  font-size:11px
 }
 
 .inner-page .manual-article .changelog-hero h1 {
@@ -1422,7 +1604,7 @@ html[data-theme="light"] {
     gap:10px
   }
   .inner-page .release-entry__count {
-    font-size:9px
+    font-size:11px
   }
   .inner-page .release-entry__summary {
     font-size:14px
@@ -1462,14 +1644,6 @@ html[data-theme="light"] {
 .author-page .support-privacy>span {
   color:var(--muted);
   border-color:var(--line-strong)
-}
-
-.inner-page .manual-feature-update strong {
-  color:var(--ink)
-}
-
-.inner-page .manual-feature-update li {
-  color:var(--ink-800)
 }
 
 .inner-page .profile-chain-guide__flow {
@@ -1519,7 +1693,7 @@ html[data-theme='light'] .inner-page {
   font-size:21px
 }
 .inner-page .profile-introduction p {
-  font-size:14px;
+  font-size:inherit;
   line-height:1.9
 }
 .profile-introduction .signal-example {

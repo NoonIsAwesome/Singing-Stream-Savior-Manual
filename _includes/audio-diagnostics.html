@@ -1,0 +1,7 @@
+{% assign workflow_lang = page.lang | default: 'zh-TW' %}
+{% assign workflow = site.data.manual_workflows[workflow_lang] %}
+<details class="audio-route-details" id="audio-diagnostics">
+  <summary>{{ workflow.diagnostics_title | escape }}</summary>
+  <p>{{ workflow.diagnostics_intro | escape }}</p>
+  {% include feature-guide.html section="health" %}
+</details>

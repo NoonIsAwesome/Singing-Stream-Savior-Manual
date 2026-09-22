@@ -133,8 +133,13 @@ test("source templates expose support only in the manual sidebar", () => {
   assert.doesNotMatch(about, /support_copy|support_page_target|creator-support-title|SUPPORT/);
   assert.match(about, /id="social-links"/);
   assert.match(about, /class="collaboration-panel"/);
-  assert.match(sidebar, /open-source,support/);
-  assert.match(sidebar, /key == 'support'/);
+  const chapters = JSON.parse(readFileSync(new URL('../_data/chapters.json', import.meta.url), 'utf8'));
+  const support = chapters.filter(chapter => chapter.key === 'support');
+  assert.equal(support.length, 1, 'shared navigation retains exactly one support entry');
+  assert.equal(support[0].standalone, true, 'support uses its own localized page');
+  assert.equal(support[0].group, 'resources');
+  assert.match(sidebar, /site\.data\.chapters/);
+  assert.match(sidebar, /include chapter-url\.html chapter=chapter/);
 });
 test("support copy is complete and uses one page template in five locales", () => {
   const expectedKeys = Object.keys(supportCopy.en).sort();

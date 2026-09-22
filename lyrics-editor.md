@@ -37,5 +37,3 @@ translation_key: lyrics-editor
 
 
 <figure class="manual-figure"><a href="assets/images/lyrics-editor-word-2150.png"><img src="assets/images/lyrics-editor-word-2150.png" alt="字詞標記：可選取、合併、拆開字詞，並用預覽高亮檢查時間。" loading="lazy" decoding="async"></a><figcaption>字詞標記：可選取、合併、拆開字詞，並用預覽高亮檢查時間。</figcaption></figure>
-
-[上一頁：歌詞功能](lyrics.md) · [下一頁：歌單外觀、歌詞畫面與 OBS](obs-and-themes.md)

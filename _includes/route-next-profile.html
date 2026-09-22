@@ -1,0 +1,3 @@
+{% assign workflow_lang = page.lang | default: 'zh-TW' %}
+{% assign workflow = site.data.manual_workflows[workflow_lang] %}
+<p class="chapter-next-step">{{ workflow.route_done | escape }} <a href="#singing-profile-defaults">{{ workflow.profile_next | escape }}</a></p>

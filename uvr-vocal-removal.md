@@ -77,5 +77,3 @@ translation_key: uvr-vocal-removal
 </div>
 
 > **已確認可用於直播的素材，建議提前完成處理。** 人聲分離會使用 CPU 或 GPU 資源；直播中執行前，請先確認電腦仍有足夠效能處理音訊與 OBS。
-
-[上一頁：直播時間戳擷取](obs-websocket.md) · [下一頁：完整、精簡與迷你模式](workspace-modes.md)

@@ -105,5 +105,3 @@ OBS WebSocket 預設關閉，可提供以下功能：
 5. 密碼是否完整且沒有多餘空格。
 6. OBS 是否正在顯示驗證失敗。
 7. 關閉後重新勾選，再按一次「連線」。
-
-[上一頁：歌單外觀、歌詞畫面與 OBS](obs-and-themes.md) · [下一頁：UVR 人聲消除](uvr-vocal-removal.md)

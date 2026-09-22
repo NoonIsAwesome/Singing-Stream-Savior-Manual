@@ -20,6 +20,7 @@ published: true
 <h2 id="output-obs">音声を OBS に送る</h2>
 <p>OBS だけに送る場合は専用音声プラグインを使い、仮想ケーブルは不要です。まず次の 4 ステップで出力し、既定の歌唱 Profile は後で設定します。</p>
 {% include stream-route-steps.html target="obs" %}
+{% include route-next-profile.html %}
 
 <details class="audio-route-details" markdown="1"><summary>OBS の別経路とプラグインの詳細（必要な場合に開く）</summary>
 
@@ -37,6 +38,7 @@ published: true
 <h2 id="output-discord">音声を Discord・通話アプリに送る</h2>
 <p>VB-CABLE などの仮想デバイスで、完成したミックスを通話アプリのマイク入力へ送ります。OBS の起動は不要です。歌回救星は CABLE Input に出力し、Discord は CABLE Output を受信します。</p>
 {% include stream-route-steps.html target="discord" %}
+{% include route-next-profile.html %}
 <p>経路が正しくても Discord 側で再エンコード、圧縮、その他の通話処理が行われる場合があり、ローカル録音や OBS 録画より音質が下がることがあります。最高音質を残す場合は OBS またはローカル録音を基準にしてください。</p>
 
 <a id="vb-cable-installation"></a>
@@ -115,6 +117,19 @@ published: true
 - **歌唱用 Voice Profile**は伴奏再生中の既定値で、曲ごとの Profile タグがある場合はそちらを優先します。マイクボタンの右クリックメニューでは別の Profile を一時的に固定できます。**Profile を自動切り替え**へ戻すと、雑談／歌唱状態と曲タグによる自動選択を再開します。
 - **BGM ダッキング · 自動**はマイク音声を検出している間だけ BGM を最大 9 dB 下げ、マイク音量を上げることはありません。歌唱伴奏では、フレーズごとに伴奏が上下しないよう自動的にバイパスされ、全体のまとまりは Mix Bus Compressor が処理します。**オフ**を選ぶと自動減衰を完全に無効化します。
 
+### 一般ユーザー向けの推奨開始設定
+
+> **最も簡単な開始点は、対応インターフェースでは ASIO、アプリ安全 Buffer は「自動（推奨）・512 frames」、OBS は専用音声ソースです。** 最初からすべての Buffer を手動で試す必要はありません。
+
+- メーカー製 ASIO がある場合は優先して使い、インターフェースの hardware buffer は既に安定している値（一般には 128 または 256 frames）を維持します。App Buffer とは別設定です。
+- ASIO がない場合は Windows Audio と自動 512 を使い、最初から 128／256 を強制しません。
+- ソフトウェア Dry Monitor をさらに短くしたい場合だけ完全チェックを実行し、推奨された場合だけ 256 を適用します。歌唱の主モニターには Direct Monitor を優先します。
+- OBS は Singing Stream Savior 専用音声ソースを優先し、他アプリにも完全 Mix が必要な場合だけ仮想ケーブルを使います。
+- 初回のルーティング設定後に少なくとも一度完全チェックを実行し、推奨値を適用します。配信前に毎回やり直す必要はありません。デバイス／ドライバー、Profile／VST3／ルーティングを大きく変更した場合、黄色状態、または実際の音切れがある場合だけ再実行します。
+
+<details class="audio-route-details" id="buffer-stability" markdown="1">
+<summary>{{ site.data.manual_workflows[page.lang].buffer_summary | escape }}</summary>
+
 ### App バッファのチェックと黄色の状態表示
 
 **アプリ安全バッファ**セレクターと **バッファの安定性をチェック…** ボタンは、同じ行に常時表示されます。ASIO 入力を使用している場合、この行は ASIO サンプルレート／ハードウェアバッファ欄の直下にあります。**Windows 再生互換性**の詳細設定を閉じたままでも、値の変更とチェックを行えます。**クイックチェック**は 512／1024 フレームを約 25 秒で、**フルチェック**は 128／256／512／1024 フレームを約 5 分で確認します。診断対象はアプリ側のバッファであり、オーディオインターフェース側の ASIO hardware buffer は変更しません。推奨値はそのまま適用できますが、128／256 などの低い値は、現在のデバイス、Profile、エフェクト、ルートでフルチェック内の独立した 2 回の厳格な観測の両方に合格した場合だけ検証済みとして扱われます。
@@ -127,18 +142,10 @@ published: true
 
 黄色の表示には 2 種類あります。**ドロップアウトを確認**は、マイク、Monitor、配信出力、または復旧中のデバイスが不安定な可能性を示します。**オーディオタイミングを確認**は、処理時間や同期状態の異常が続いていることを示します。短いピークだけで聞こえるドロップアウトが発生したとは限りません。「安定性」にポインターを置くと詳細を確認できます。
 
-### 一般ユーザー向けの推奨開始設定
-
-> **最も簡単な開始点は、対応インターフェースでは ASIO、アプリ安全 Buffer は「自動（推奨）・512 frames」、OBS は専用音声ソースです。** 最初からすべての Buffer を手動で試す必要はありません。
-
-- メーカー製 ASIO がある場合は優先して使い、インターフェースの hardware buffer は既に安定している値（一般には 128 または 256 frames）を維持します。App Buffer とは別設定です。
-- ASIO がない場合は Windows Audio と自動 512 を使い、最初から 128／256 を強制しません。
-- ソフトウェア Dry Monitor をさらに短くしたい場合だけ完全チェックを実行し、推奨された場合だけ 256 を適用します。歌唱の主モニターには Direct Monitor を優先します。
-- OBS は Singing Stream Savior 専用音声ソースを優先し、他アプリにも完全 Mix が必要な場合だけ仮想ケーブルを使います。
-- 初回のルーティング設定後に少なくとも一度完全チェックを実行し、推奨値を適用します。配信前に毎回やり直す必要はありません。デバイス／ドライバー、Profile／VST3／ルーティングを大きく変更した場合、黄色状態、または実際の音切れがある場合だけ再実行します。
+</details>
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>モニター内容を選び、完全なミックスを録音</h2><p>ヘッドホンボタンでモニターを操作します。BGM／伴奏、完全なミックス、ウェット／ドライマイクを含む組み合わせ、処理後マイクだけを選べます。録音は完全出力またはモニター内容を WAV 16-bit PCM、WAV 24-bit PCM、WAV 32-bit Float で保存できます。</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2 id="monitor-record">モニター内容を選び、完全なミックスを録音</h2><p>ヘッドホンボタンでモニターを操作します。BGM／伴奏、完全なミックス、ウェット／ドライマイクを含む組み合わせ、処理後マイクだけを選べます。録音は完全出力またはモニター内容を WAV 16-bit PCM、WAV 24-bit PCM、WAV 32-bit Float で保存できます。</p></div>
   <p><strong>フィードバック防止：</strong>マイクモニター時は、マイクへ再入力されるスピーカーではなくヘッドホンを使います。本番前に短く録音し、声、伴奏、音量、遅延を確認してください。</p>
 </div>
 
@@ -149,18 +156,20 @@ published: true
 モニターは独立したヘッドホン経路です。Dry Cue は独立したソフトウェアキャプチャーでドライ音声のモニター遅延をできるだけ小さくしますが、正式な Mix、OBS、録音経路は変更しません。歌唱時のモニター遅延を最小にするには、オーディオインターフェースの hardware Direct Monitor を優先してください。Meter の BGM／伴奏モニターとボーカルモニターは 0–200% で調整でき、演奏者が聞くバランスだけを変えます。観客向け Stream Output や Profile 内の Compressor、EQ などには影響しません。**完全出力**の録音は正式な Stream Output のタイムラインを使用するため、BGM／伴奏とボーカルは同じ正式な時間軸に記録されます。Dry Cue などのソフトウェアモニター遅延が、録音内の相対オフセットを変えることはありません。
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>6 系統の音声とシステム負荷を確認</h2><p>高度な配信モードでは「表示」またはトレイメニューから Meter を開けます。右側へドッキング、独立表示、横／縦レイアウトの切り替えに対応します。</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2 id="audio-meter">6 系統の音声とシステム負荷を確認</h2><p>高度な配信モードでは「表示」またはトレイメニューから Meter を開けます。右側へドッキング、独立表示、横／縦レイアウトの切り替えに対応します。</p></div>
   <p><strong>BGM／伴奏</strong>、<strong>ボーカル（Profile 後・Mix 前）</strong>、<strong>BGM／伴奏モニター</strong>、<strong>ボーカルモニター</strong>、<strong>ガイドボーカルモニター</strong>、<strong>Master／Stream Output</strong>の 6 系統をこの順で表示します。全系統に Peak、Master／Stream Output には 3 秒の短期 <strong>LUFS-S</strong>も表示します。ゲインはガイドボーカルモニターだけ 0～100%、その他は 0～200% です。ガイドボーカルはモニター専用で、Stream や OBS には入りません。</p>
   <p>横型 Meter は、BGM／伴奏とボーカルのバランスが長時間崩れた場合、ボーカルを上げるか伴奏を下げるよう提案します。助言だけを表示し、ゲインを自動変更することはありません。無音、息継ぎ、間奏をすぐに小さな歌声として判断することもありません。</p>
   <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="横方向のレベルバーを使う 6 トラック音量 Meter" caption="横向きメーターを下へスクロールすると、ガイドボーカルのモニターと最後の Master／配信出力を確認できます。ガイド音量は 0–100%、その他は 0–200% です。" %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="縦方向のレベルバーを使う 6 トラック音量 Meter パネル" caption="縦向き Meter でも同じ 6 系統を操作でき、メイン画面右側へドッキングまたは独立表示できます。ガイドボーカルはモニター専用です。" %}</div>
   <div class="effect-reference"><details><summary><strong>音量バランスの助言はいつ表示されますか？</strong><span>十分な伴奏と歌声を確認してから判定します</span></summary><div class="effect-reference__body"><p>アプリは伴奏と歌声をしばらく観察してから、長時間のバランスを比較します。曲の開始直後、無音、息継ぎ、間奏、Profile の切り替え、オーディオデバイスの復旧中は、すぐに助言を表示しません。歌声がすでに過負荷に近い場合は、歌声を上げずに伴奏を下げる助言だけを表示します。曲の変更、停止、再生し直し、大幅なシークの後は観察をやり直します。</p></div></details></div>
+  <details class="audio-route-details"><summary>{{ site.data.manual_workflows[page.lang].health_summary | escape }}</summary>
   <p>右下の CPU／RAM 表示には本アプリの使用率が表示されます。ポインターを置くと、システムと本アプリの詳細を確認できます。高度な配信モードでは Buffer、処理時間、推定遅延、音声中断の回数も表示します。</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="メイン画面右下に折りたたまれた CPU／RAM 概要" caption="この画像はポインターを置く前の簡潔な CPU／RAM 表示だけです。ポインターを置くと、上記のシステム／アプリ負荷と高度な音声状態が展開します。" size="medium" %}
   {% include system-health-interpretation.html %}
+  </details>
 </div>
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>システムトレイへ格納したまま配信を操作</h2><p>閉じるボタンをトレイ格納または完全終了のどちらにするか設定できます。</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2 id="tray-shortcuts">システムトレイへ格納したまま配信を操作</h2><p>閉じるボタンをトレイ格納または完全終了のどちらにするか設定できます。</p></div>
   <p>状態に応じて再生／再開、一時停止、停止、先頭から再生、Key、速度、Profile、マイク、歌詞ウィンドウ、メイン画面、そして高度な配信モード限定の Meter を表示します。「アプリを終了」でアプリと再生機能を終了します。</p>
   {% include localized-release-screenshot.html name="notification-area-menu.png" alt="未再生時の Singing Stream Savior Windows システムトレイメニュー" caption="未再生時は簡潔なメニューを表示します。伴奏再生または高度な配信モードでは、上記の再生、Key、速度、Profile、マイク、Meter 操作が追加されます。最下部の終了項目でアプリを完全に終了します。" size="medium" %}
   <p>グローバルショートカットは「再生操作」と「マイク／モニター」に分類され、既定キーがあります。通常再生では不要な高度モード操作を非表示にします。</p>

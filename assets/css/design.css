@@ -220,7 +220,7 @@ p {
 }
 .fine {
   font-size:12px;
-  color:#74828c;
+  color:var(--muted);
   letter-spacing:.02em
 }
 .hero-visual {
@@ -404,8 +404,8 @@ p {
   border-radius:8px
 }
 .caption {
-  font-size:11px!important;
-  color:#71818a;
+  font-size:12px!important;
+  color:var(--muted);
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -567,10 +567,10 @@ p {
   opacity:.6
 }
 .flow-footnote {
-  font-size:11px;
+  font-size:12px;
   text-align:right;
   margin-top:12px;
-  color:#7f8a93
+  color:var(--muted)
 }
 .features {
   background:var(--paper);
@@ -723,15 +723,21 @@ p {
   font-size:13px
 }
 .skip-link {
-  position:absolute;
-  left:10px;
-  top:-100px;
-  z-index:10
+  position:fixed;
+  left:12px;
+  top:12px;
+  z-index:100;
+  color:var(--ink);
+  background:var(--white);
+  border:1px solid var(--line-strong);
+  border-radius:8px;
+  padding:10px 14px;
+  box-shadow:0 4px 18px #00142222;
+  transform:translateY(-180%)
 }
 .skip-link:focus {
-  top:10px;
-  background:white;
-  padding:10px
+  color:var(--ink);
+  transform:translateY(0)
 }
 .mobile-brand {
   display:none
@@ -796,7 +802,7 @@ p {
     font-size:28px
   }
   .capability {
-    font-size:11px;
+    font-size:12px;
     gap:8px
   }
   .capability svg {
@@ -887,7 +893,7 @@ p {
     align-items:flex-start
   }
   .page-footer .wrap {
-    font-size:10px
+    font-size:12px
   }
   .card p {
     font-size:13px
@@ -935,13 +941,13 @@ p {
     padding:12px 14px
   }
   .hero .text-link {
-    font-size:11px
+    font-size:12px
   }
   .hero .fine {
-    font-size:10px
+    font-size:12px
   }
   .hero-visual figcaption {
-    font-size:10px;
+    font-size:12px;
     margin-top:14px;
     padding:6px 12px
   }
@@ -950,7 +956,7 @@ p {
     padding-block:20px
   }
   .capability {
-    font-size:10px
+    font-size:12px
   }
   .capability svg {
     width:18px;
@@ -984,7 +990,7 @@ p {
   }
   .caption {
     margin-inline:14px!important;
-    font-size:10px!important
+    font-size:12px!important
   }
   .prep-grid {
     gap:14px
@@ -1062,7 +1068,7 @@ p {
     max-width:98vw
   }
   .lightbox-bar p {
-    font-size:11px
+    font-size:12px
   }
   .lightbox-bar {
     gap:12px
@@ -1410,7 +1416,7 @@ html:not([lang="zh-TW"]):not([lang="zh-CN"]) .section-title {
   }
   .capability {
     flex-basis:calc(50% - 12px);
-    font-size:10px
+    font-size:12px
   }
   .hero-actions .button {
     white-space:normal

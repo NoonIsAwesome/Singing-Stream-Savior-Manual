@@ -20,6 +20,7 @@ published: true
 <h2 id="output-obs">Send audio to OBS</h2>
 <p>For OBS alone, start with the dedicated audio plug-in; no virtual cable is required. Complete these four steps first, then configure the default singing Profile below.</p>
 {% include stream-route-steps.html target="obs" %}
+{% include route-next-profile.html %}
 
 <details class="audio-route-details" markdown="1"><summary>Alternative OBS route and plug-in details (expand if needed)</summary>
 
@@ -37,6 +38,7 @@ published: true
 <h2 id="output-discord">Send audio to Discord or another calling app</h2>
 <p>Use a virtual device such as VB-CABLE to present the finished mix as a calling app’s microphone input. OBS does not need to be open: Singing Stream Savior sends to CABLE Input and Discord receives CABLE Output.</p>
 {% include stream-route-steps.html target="discord" %}
+{% include route-next-profile.html %}
 <p>Discord may still re-encode, compress, or otherwise process call audio, so it can sound worse than a local recording or OBS capture even when routing is correct. Use OBS or local recording when preserving the highest quality matters.</p>
 
 <a id="vb-cable-installation"></a>
@@ -115,6 +117,19 @@ After output and automatic switching work, use the following reference as needed
 - **Singing Voice Profile** is the default while accompaniment is playing; a song's Profile tag can override it. The microphone button's right-click menu can hold a temporary manual Profile. Choose **Automatically switch Profile** to resume chat/singing and song-tag automation.
 - **BGM Ducking · Automatic** lowers only BGM while microphone voice is detected, by no more than 9 dB, and never boosts the microphone. It is bypassed automatically during singing accompaniment so the track does not pump with every phrase; the Mix Bus Compressor handles overall glue there. Choose **Off** to disable automatic BGM reduction.
 
+### Recommended starting point for most users
+
+> **The simplest starting point is ASIO when an interface provides it, App Safety Buffer set to Automatic (Recommended) · 512 frames, and the dedicated OBS audio source.** You do not need to manually try every buffer first.
+
+- Prefer the interface vendor's ASIO driver. Keep the interface hardware buffer at an already-stable value—commonly 128 or 256 frames. It is separate from the App Buffer.
+- Without ASIO, choose Windows Audio and leave the App Buffer on automatic 512. Do not force 128 or 256 as the first step.
+- Run Full Check only when you want lower software Dry monitoring latency; apply 256 only when the check recommends it. Prefer the interface's Direct Monitor for primary singing monitoring.
+- Prefer the dedicated Singing Stream Savior source in OBS. Use a virtual cable only when another application also needs the complete Mix.
+- Run Full Check and apply its recommendation at least once after the initial route setup; you do not need to repeat it before every stream. Run it again only after device／driver or major Profile／VST3／routing changes, a yellow state, or an audible dropout.
+
+<details class="audio-route-details" id="buffer-stability" markdown="1">
+<summary>{{ site.data.manual_workflows[page.lang].buffer_summary | escape }}</summary>
+
 ### App-buffer health check and yellow status
 
 The **App safety buffer** selector and **Check buffer stability…** button stay together in one visible row. With ASIO input, the row appears directly below the ASIO sample-rate/hardware-buffer panel; it remains available while the advanced **Windows playback compatibility** section is collapsed. **Quick check** tests 512 and 1024 frames in about 25 seconds. **Full check** tests 128, 256, 512, and 1024 frames in about five minutes. It diagnoses the app buffer without changing the audio interface's separate ASIO hardware buffer, and its recommendation can be applied directly. A low value such as 128 or 256 is treated as verified only after both independent strict observations in Full check pass for the current devices, Profile, effects, and route.
@@ -127,18 +142,10 @@ The health check does not play a synthetic test tone or accompaniment. If softwa
 
 The yellow messages have two meanings. **Check dropouts** means the microphone, monitoring, stream output, or a recovering device may be unstable. **Check audio timing** means processing time or synchronization has remained abnormal. A brief spike does not always mean an audible dropout occurred; hover over Stability for details.
 
-### Recommended starting point for most users
-
-> **The simplest starting point is ASIO when an interface provides it, App Safety Buffer set to Automatic (Recommended) · 512 frames, and the dedicated OBS audio source.** You do not need to manually try every buffer first.
-
-- Prefer the interface vendor's ASIO driver. Keep the interface hardware buffer at an already-stable value—commonly 128 or 256 frames. It is separate from the App Buffer.
-- Without ASIO, choose Windows Audio and leave the App Buffer on automatic 512. Do not force 128 or 256 as the first step.
-- Run Full Check only when you want lower software Dry monitoring latency; apply 256 only when the check recommends it. Prefer the interface's Direct Monitor for primary singing monitoring.
-- Prefer the dedicated Singing Stream Savior source in OBS. Use a virtual cable only when another application also needs the complete Mix.
-- Run Full Check and apply its recommendation at least once after the initial route setup; you do not need to repeat it before every stream. Run it again only after device／driver or major Profile／VST3／routing changes, a yellow state, or an audible dropout.
+</details>
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2>Choose what you monitor and record the mix</h2><p>The headphones button controls monitoring. Listen to BGM/accompaniment, the full mix, wet or dry microphone combinations, or the processed microphone alone. Recording can capture the full output or monitored content as WAV 16-bit PCM, WAV 24-bit PCM, or WAV 32-bit Float.</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">MONITOR &amp; RECORD</p><h2 id="monitor-record">Choose what you monitor and record the mix</h2><p>The headphones button controls monitoring. Listen to BGM/accompaniment, the full mix, wet or dry microphone combinations, or the processed microphone alone. Recording can capture the full output or monitored content as WAV 16-bit PCM, WAV 24-bit PCM, or WAV 32-bit Float.</p></div>
   <p><strong>Avoid feedback:</strong> use headphones when microphone monitoring is enabled, not speakers that feed back into the mic. Make a short test recording before a live stream to check voice, accompaniment, levels, and latency.</p>
 </div>
 
@@ -149,18 +156,20 @@ The yellow messages have two meanings. **Check dropouts** means the microphone, 
 Monitoring is a separate headphone path. Dry Cue uses an independent software capture to reduce dry-vocal monitoring latency where possible; it does not change the formal Mix, OBS, or recording path. For the lowest singing-monitor latency, prefer the audio interface's hardware Direct Monitor. The Meter's BGM/accompaniment-monitor and vocal-monitor knobs run from 0–200% and change only the performer's balance—not the audience Stream Output or any Compressor, EQ, or other Profile parameter. **Full Output** recording follows the formal Stream Output timeline, so BGM/accompaniment and Vocal share that timeline; Dry Cue or other software-monitor latency does not shift their relative offset in the recording. Record **Monitored Content** when you specifically want to inspect the headphone balance.
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2>Inspect six audio paths and system load</h2><p>Advanced Streaming Mode exposes the Meter through View or the tray menu. It can dock on the right, float independently, and switch between horizontal and vertical layouts with one split button.</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">METER &amp; HEALTH</p><h2 id="audio-meter">Inspect six audio paths and system load</h2><p>Advanced Streaming Mode exposes the Meter through View or the tray menu. It can dock on the right, float independently, and switch between horizontal and vertical layouts with one split button.</p></div>
   <p>The six tracks appear in this order: <strong>BGM / accompaniment</strong>, <strong>Vocal (after Profile, before Mix)</strong>, <strong>BGM / accompaniment monitor</strong>, <strong>Vocal monitor</strong>, <strong>Guide vocal Monitor</strong>, and <strong>Master / Stream Output</strong>. Every track shows Peak; Master / Stream Output also shows three-second short-term <strong>LUFS-S</strong>. All gains run from 0–200% except Guide vocal Monitor at 0–100%; guide vocal is monitor-only and never enters Stream or OBS.</p>
   <p>The horizontal Meter can suggest raising Vocal or lowering BGM/accompaniment after a sustained imbalance. It is advisory only and never changes gain automatically. Silence, breaths, and instrumental sections are not immediately treated as a quiet vocal.</p>
   <div class="feature-shot-grid">{% include localized-release-screenshot.html name="audio-meter-horizontal.png" alt="Six-track audio Meter with horizontal level bars" caption="Scroll down in the horizontal Meter to see Guide vocal Monitor and the final Master / Stream Output row. Guide volume is 0–100%; other gains are 0–200%." %}{% include localized-release-screenshot.html name="audio-meter-vertical.png" alt="Six-track audio Meter panel with vertical level bars" caption="The vertical Meter provides the same six tracks and can dock on the right side of the main window or float independently; guide vocal remains monitor-only." %}</div>
   <div class="effect-reference"><details><summary><strong>When does loudness advice appear?</strong><span>Only after enough accompaniment and vocal activity</span></summary><div class="effect-reference__body"><p>The app observes a sustained section of accompaniment and vocal before comparing their balance. Advice is delayed at the beginning of a song, during silence, breaths, interludes, Profile changes, or audio-device recovery. If Vocal is already close to overload, the app only suggests lowering the accompaniment instead of raising Vocal. Changing tracks, stopping, restarting, or making a large seek starts a fresh observation.</p></div></details></div>
+  <details class="audio-route-details"><summary>{{ site.data.manual_workflows[page.lang].health_summary | escape }}</summary>
   <p>The CPU/RAM status shows this app's resource use. Hover over it for detailed system and app usage; Advanced Streaming Mode also shows the Buffer, processing time, estimated latency, and audio-interruption counts. Colors warn when load may affect stability.</p>
   {% include localized-release-screenshot.html name="system-resource-status.png" alt="Collapsed CPU and RAM summary at the lower-right of the main window" caption="This capture shows only the compact CPU/RAM summary before hover. Pointing at it expands the system/app load and Advanced-mode audio-health details described above." size="medium" %}
   {% include system-health-interpretation.html %}
+  </details>
 </div>
 
 <div class="manual-feature-update">
-  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2>Keep control after minimizing to the system tray</h2><p>A setting chooses whether the main-window close button minimizes to the tray or exits. When the app stays in the background, common live controls remain available without reopening the workspace.</p></div>
+  <div class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">TRAY &amp; SHORTCUTS</p><h2 id="tray-shortcuts">Keep control after minimizing to the system tray</h2><p>A setting chooses whether the main-window close button minimizes to the tray or exits. When the app stays in the background, common live controls remain available without reopening the workspace.</p></div>
   <p>The state-aware menu includes play/resume, pause, stop, restart from the beginning, Key, speed, Profile, microphone mute/restore, Lyrics Window, Open Main Window, and—only in Advanced Streaming Mode—the Meter. **Exit Application** closes the app and its playback features.</p>
   {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior Windows notification-area menu while idle" caption="The compact menu appears while idle. Playback and Advanced Streaming Mode add the playback, Key, speed, Profile, microphone, and Meter actions described above. Exit at the bottom closes the app completely." size="medium" %}
   <p>Global shortcuts are grouped into Playback Controls and Microphone/Monitoring, include defaults, and hide Advanced-only actions in Normal Playback Mode.</p>

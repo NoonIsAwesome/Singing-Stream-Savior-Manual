@@ -1,0 +1,18 @@
+{% assign current_chapter = site.data.chapters | where: 'key', page.translation_key | first %}
+{% if current_chapter.number and page.manual_bundle != true %}
+  {% assign nav_copy = site.data.navigation_labels[current_lang] %}
+  {% assign previous_number = current_chapter.number | minus: 1 %}
+  {% assign next_number = current_chapter.number | plus: 1 %}
+  {% assign previous_chapter = site.data.chapters | where: 'number', previous_number | first %}
+  {% assign next_chapter = site.data.chapters | where: 'number', next_number | first %}
+  <nav class="chapter-navigation" aria-label="{{ nav_copy.navigation | escape }}">
+  {% if previous_chapter %}
+    {% capture previous_target %}{% include chapter-url.html chapter=previous_chapter %}{% endcapture %}
+    <a class="chapter-navigation__link" rel="prev" href="{{ previous_target | strip | relative_url }}"><span class="chapter-navigation__label">← {{ nav_copy.previous }}</span><strong class="chapter-navigation__title">{{ t.nav[previous_chapter.label] }}</strong></a>
+  {% endif %}
+  {% if next_chapter %}
+    {% capture next_target %}{% include chapter-url.html chapter=next_chapter %}{% endcapture %}
+    <a class="chapter-navigation__link" rel="next" href="{{ next_target | strip | relative_url }}"><span class="chapter-navigation__label">{{ nav_copy.next }} →</span><strong class="chapter-navigation__title">{{ t.nav[next_chapter.label] }}</strong></a>
+  {% endif %}
+  </nav>
+{% endif %}

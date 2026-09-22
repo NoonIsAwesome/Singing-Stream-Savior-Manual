@@ -184,27 +184,27 @@
       },
       {
         "title": "在 OBS 加入音訊輸入擷取",
-        "body": "在 OBS 的「來源」按下加號，選擇「擷取音訊輸入」，再把裝置設為虛擬音源的錄音端；以 VB-CABLE 為例是「CABLE Output」。",
+        "body": "在 OBS 的「來源」按下加號，選擇「音訊輸入擷取」，再把裝置設為虛擬音源的錄音端；以 VB-CABLE 為例是「CABLE Output」。",
         "images": [
           {
             "file": "14-obs-add-audio-input-capture.png",
-            "alt": "OBS 新增來源選單中的擷取音訊輸入",
-            "caption": "虛擬音源使用 OBS 內建的「擷取音訊輸入」來源。"
+            "alt": "OBS 新增來源選單中的音訊輸入擷取",
+            "caption": "虛擬音源使用 OBS 內建的「音訊輸入擷取」來源。"
           },
           {
             "file": "15-obs-select-cable-output.png",
-            "alt": "OBS 擷取音訊輸入選擇 CABLE Output",
+            "alt": "OBS 音訊輸入擷取選擇 CABLE Output",
             "caption": "VB-CABLE 範例中，OBS 裝置選擇 CABLE Output，而不是歌回救星使用的 CABLE Input。"
           }
         ]
       },
       {
         "title": "確認虛擬音源收到訊號",
-        "body": "播放伴奏並輸入人聲，確認 OBS 混音器中的「擷取音訊輸入」有穩定電平，再錄製短片檢查左右聲道、平衡與嘴形同步。",
+        "body": "播放伴奏並輸入人聲，確認 OBS 混音器中的「音訊輸入擷取」有穩定電平，再錄製短片檢查左右聲道、平衡與嘴形同步。",
         "images": [
           {
             "file": "17-obs-mixer-virtual-input.png",
-            "alt": "OBS 混音器中的擷取音訊輸入電平",
+            "alt": "OBS 混音器中的音訊輸入擷取電平",
             "caption": "虛擬音源路徑在 OBS 混音器中的訊號範例。"
           }
         ]

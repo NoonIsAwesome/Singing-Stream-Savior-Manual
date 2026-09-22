@@ -26,7 +26,7 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
 > 最初に表示言語やプロジェクト／メディアフォルダーを設定したり、テスト用の待機リストを作ったりする必要はありません。待機リスト、ジャケット、歌詞、OBS WebSocket は必要になった時点で追加設定できます。
 
 <a id="getting-started"></a>
-## 01 · はじめに
+## {% include chapter-number.html key="getting-started" %} · はじめに
 
 <section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
   <div>
@@ -45,6 +45,8 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
   </div>
 </section>
 
+{% include first-stream-check.html heading=3 %}
+
 ZIP を通常のフォルダーへ完全に展開します。一番外側のフォルダーにある、下のアイコンの `Singing Stream Savior.exe` をダブルクリックしてください。起動に必要なのはこのファイルだけです。ZIP 内から直接実行したり、データフォルダー内で別の EXE を探したりする必要はありません。
 
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior のアプリアイコン"><div><strong>Singing Stream Savior.exe</strong><span>通常はこのアプリだけを起動します</span></div></div>
@@ -61,15 +63,13 @@ ZIP を通常のフォルダーへ完全に展開します。一番外側のフ�
 </div>
 
 <a id="library-and-playback"></a>
-## 02 · 曲ライブラリと再生
+## {% include chapter-number.html key="library-and-playback" %} · 曲ライブラリと再生
 
 ライブラリには「すべての曲」「お気に入り」「最近再生した曲」とカスタムプレイリストがあります。固定分類は削除できません。カスタムプレイリストは配信企画、ジャンル、イベントごとの整理に使用できます。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/song-library.png' | relative_url }}"><img src="{{ '/assets/images/ja/song-library.png' | relative_url }}" alt="すべての曲、お気に入り、最近再生した曲、カスタムプレイリストと曲テーブルを表示した曲ライブラリ"></a><figcaption>左側で分類を選ぶと、右側のテーブルと検索対象が切り替わります。</figcaption></figure>
 
 曲を分類するには、1 曲または複数曲を選択して右クリックし、「プレイリストに追加」から「お気に入り」またはカスタムプレイリストを選びます。音源は複製されず、「すべての曲」からも削除されません。同じ曲を複数のプレイリストに登録できます。
-
-検索結果に適したものがなければ、無理に関連付けないでください。用意した歌詞を歌詞エディターへ貼り付けるか、LRC、SRT、VTT、テキストを読み込んで自分で時刻を設定できます。
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ja/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/ja/add-to-playlist-menu.png' | relative_url }}" alt="表示曲名の編集、予約へ追加、プレイリストに追加、曲の削除を表示した右クリックメニュー"></a><figcaption>表示曲名の編集を先頭に置き、同じメニューから予約やプレイリストへの追加も行えます。</figcaption></figure>
 
@@ -127,9 +127,11 @@ OBS のプレイリストテーマの現在曲表示が雑談の文字に変わ�
 {% include feature-guide.html section="download" %}
 
 <a id="lyrics"></a>
-## 03 · 歌詞機能
+## {% include chapter-number.html key="lyrics" %} · 歌詞機能
 
 歌詞は任意です。配信者用の独立した「歌詞ウィンドウ」、視聴者向け OBS 歌詞オーバーレイ、または両方に使用できます。LRC、SRT、VTT、テキスト、YouTube 字幕、LRCLIB に対応します。
+
+検索結果に適したものがなければ、無理に関連付けないでください。用意した歌詞を[歌詞エディター](#lyrics-editor)へ貼り付けるか、LRC、SRT、VTT、テキストを読み込んで自分で時刻を設定できます。
 
 曲の「歌詞」ページにある「歌詞を管理…」を押すか、曲一覧の「歌詞」列にある対象曲のアイコンをクリックすると、同じ歌詞管理画面が開きます。オンライン検索、ローカル歌詞の読み込み、検索結果の関連付け、現在の関連付け解除ができます。LRCLIB と YouTube 字幕をまとめて最大 50 件表示し、同期状態、言語、音源時間、歌手情報に合う候補を優先します。YouTube の一時的な制限で字幕を取得できない場合も、他の候補を残して後で再試行できることを案内します。
 
@@ -172,7 +174,7 @@ Singing Stream Savior は歌詞の読み込み、編集、同期、表示のた�
 </figure>
 
 <a id="lyrics-editor"></a>
-## 04 · 歌詞エディター
+## {% include chapter-number.html key="lyrics-editor" %} · 歌詞エディター
 
 検索で適した歌詞ファイルが見つからなければ、エディターで用意した歌詞に時刻を付けられます。
 
@@ -206,7 +208,9 @@ Singing Stream Savior は歌詞の読み込み、編集、同期、表示のた�
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-editor-word-2150.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-editor-word-2150.png' | relative_url }}" alt="単語タイミング：文字・単語を選択、結合、分割し、ハイライトで確認できます。" loading="lazy" decoding="async"></a><figcaption>単語タイミング：文字・単語を選択、結合、分割し、ハイライトで確認できます。</figcaption></figure>
 
 <a id="obs-and-themes"></a>
-## 05 · プレイリスト外観と OBS
+## {% include chapter-number.html key="obs-and-themes" %} · プレイリスト外観と OBS
+
+{% include obs-audio-next.html %}
 
 「プレイリスト外観」でテーマを選び、Now Singing、Set List、Next On、Reserve をプレビューします。基本テーマは Default、Transparent Black、Transparent White、Transparent Black v2、Transparent White v2、Card、CD、Signal Line、Stage Caption の順で、その後に装飾テーマが並びます。
 
@@ -253,7 +257,7 @@ OBS に予約曲を表示するか、「次の1曲のみ」または 2、3、5�
 </figure>
 
 <a id="obs-websocket"></a>
-## 06 · 配信タイムスタンプ取得
+## {% include chapter-number.html key="obs-websocket" %} · 配信タイムスタンプ取得
 
 初期状態では無効です。主に OBS の配信時間を読み取り、カラオケ開始時刻を記録し、Set List の曲名前にタイムスタンプを表示するために使用します。通常のセットリストや歌詞表示には不要です。
 
@@ -262,7 +266,7 @@ OBS Studio 28 以降で「ツール > WebSocket サーバー設定」を開き�
 右下の緑は接続済み、黄は接続または再接続中、赤は未接続です。本番前にテスト配信でタイムスタンプを確認してください。
 
 <a id="uvr-vocal-removal"></a>
-## 07 · UVR ボーカル除去
+## {% include chapter-number.html key="uvr-vocal-removal" %} · UVR ボーカル除去
 
 ### ボーカル分離を追加した理由
 
@@ -292,7 +296,7 @@ WAV／FLAC／MP3（320 kbps）、既定の 48 kHz または 44.1 kHz を選択�
 > **配信に利用できることを確認した素材は、できるだけ事前に処理してください。** ボーカル分離は CPU または GPU を使用します。配信中に実行する前に、音声処理と OBS に必要なパソコンの性能が残っているか確認してください。
 
 <a id="workspace-modes"></a>
-## 08 · ワークスペース
+## {% include chapter-number.html key="workspace-modes" %} · ワークスペース
 
 - **フルモード：** 全データ、設定、大きなプレビューを表示。配信準備向け。
 - **コンパクトモード：** 選曲、プレイヤー、「予約」と「履歴」を残し、幅を取る列と大型プレビューを非表示。
@@ -311,7 +315,9 @@ WAV／FLAC／MP3（320 kbps）、既定の 48 kHz または 44.1 kHz を選択�
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="未再生時の Singing Stream Savior Windows 通知領域メニュー" caption="未再生時は簡潔なメニューです。伴奏再生または高度な配信モードでは、再生、Key、速度、Profile、マイク、Meter の必要な項目が追加されます。" size="medium" %}
 
 <a id="settings-and-troubleshooting"></a>
-## 09 · 設定とトラブル対処
+## {% include chapter-number.html key="settings-and-troubleshooting" %} · 設定とトラブル対処
+
+{% include audio-troubleshooting.html heading=3 %}
 
 他の PC へ移す前に `.bgmsproj`、ローカル音源、読み込んだ歌詞をバックアップしてください。
 
@@ -333,4 +339,4 @@ Qt platform plugin エラーが出る場合は ZIP を再ダウンロードし�
 
 最近使用したプロジェクトの `.bgmsproj` が移動または削除されている場合、その項目は一覧から自動的に除外されます。
 
-{% include feature-guide.html section="health" %}
+{% include audio-diagnostics.html %}

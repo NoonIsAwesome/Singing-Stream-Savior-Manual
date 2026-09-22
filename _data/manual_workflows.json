@@ -1,0 +1,372 @@
+{
+  "zh-TW": {
+    "first_stream": {
+      "title": "接著確認 OBS 的聲音與畫面",
+      "intro": "只想在電腦播放或練習，到這裡就完成第一次設定。準備用 OBS 直播時，先選擇一般播放或進階直播的收音方式，再做畫面與錄影測試。",
+      "normal_title": "一般播放：讓 OBS 收到 BGM 與伴奏。",
+      "normal_body": "在 OBS「設定 → 音訊」將「桌面音訊」選為目前播放聲音的裝置，播放歌曲並確認電平。這會收進該裝置的其他桌面聲音；若已有有效的擷取來源，沿用即可。需要演唱人聲時，另外確認 OBS 的麥克風來源。",
+      "obs_reference": "OBS 音訊來源說明",
+      "advanced_title": "選用進階直播：把人聲效果與音樂一起送到 OBS。",
+      "advanced_body": "想使用 Profile（人聲效果設定）時，再啟用進階直播模式，依專用外掛流程輸出完整 Stream Mix。完成後停用會重複收到這份聲音的桌面音訊或原始麥克風來源。",
+      "advanced_link": "設定進階混音輸出 →",
+      "visual_title": "加入歌單／歌詞畫面。",
+      "visual_link": "依 OBS 畫面教學加入 Browser Source。",
+      "visual_body": "歌單和歌詞各自是畫面來源；加入它們之後，仍要另外確認前面的音訊來源。",
+      "record_title": "錄 15 秒並回放。",
+      "record_body": "在 OBS 開始測試錄影，先播放 BGM，再說話並播放伴奏，最後停止伴奏確認 BGM 恢復。停止錄影後，回放檢查人聲、音樂、切換與畫面更新。",
+      "done_label": "可以準備開播的標準：",
+      "done": "OBS 錄影同時有預期的聲音與畫面，人聲沒有重複、音樂沒有爆音。若只做本機練習，不需要為此開啟進階混音或 OBS。"
+    },
+    "route_done": "目的地已收到人聲與伴奏後，這條路徑就完成了。",
+    "profile_next": "下一步：設定唱歌／聊天 Profile 與自動切換 →",
+    "symptom_label": "依音訊症狀找答案",
+    "symptoms": [
+      {
+        "id": "audio-no-sound",
+        "title": "聽不到聲音，或 OBS／觀眾聽不到",
+        "steps": [
+          "先播放一首確定有聲音的歌曲，檢查播放器進度、音量、靜音，以及 Windows 目前使用的播放裝置。",
+          "自己聽得到、OBS 沒有聲音時，核對 OBS 的音訊來源。一般播放檢查桌面音訊；進階直播檢查 Stream Output 與 OBS 專用來源是否對應。Monitor 是自己聽的路徑，不等於 Stream Output。",
+          "如果只有人聲沒有進去，確認麥克風輸入裝置與靜音狀態；進階模式再查看 Meter 的人聲與 Master／直播輸出是否都有電平。"
+        ],
+        "route": "first-stream-check",
+        "link": "重新核對 OBS 收音與短錄影流程 →"
+      },
+      {
+        "id": "audio-echo",
+        "title": "人聲重複、有回音或回授",
+        "steps": [
+          "使用完整 Stream Mix 時，停用 OBS 中重複的原始麥克風來源；也檢查桌面音訊是否再次收到同一份混音。",
+          "開啟麥克風監聽時使用耳機，避免喇叭的聲音被麥克風再次收到。",
+          "Monitor Output 選實體耳機或音訊介面，不要選傳送給 OBS／Discord 的同一個 CABLE Input。"
+        ],
+        "route": "monitor-record",
+        "link": "檢查監聽與直播輸出的分工 →"
+      },
+      {
+        "id": "audio-crackle",
+        "title": "爆音、斷音或聲音忽大忽小",
+        "steps": [
+          "先查看播放器及 Meter；若電平持續接近過載，調低對應來源音量，再錄一段確認。",
+          "若是持續斷音或穩定度轉黃，先停止 OBS 直播、Discord 通話與外部錄音，再執行 App Buffer 穩定性健檢。",
+          "套用健檢建議值後重測；不要只為降低數字而強迫使用尚未驗證的低 Buffer。單次黃色提示或累積計數不能單獨證明已爆音。"
+        ],
+        "route": "buffer-stability",
+        "link": "查看 Buffer 健檢與建議起點 →"
+      },
+      {
+        "id": "audio-delay",
+        "title": "耳機人聲延遲，或錄影聲音不同步",
+        "steps": [
+          "先回放 OBS 測試錄影，分辨延遲只出現在自己的耳機，還是也出現在觀眾收到的輸出。",
+          "只有耳機延遲時，確認 Monitor 的路徑；音訊介面提供 Direct Monitor 時，可用硬體直接監聽降低演唱延遲。",
+          "若錄影也不同步，核對 Stream Output 的單一收音路徑，並依穩定性教學檢查裝置與 Buffer。調整自己耳機的監聽音量不會修正直播輸出的時序。"
+        ],
+        "route": "monitor-record",
+        "link": "了解監聽、完整輸出與錄音時間軸 →"
+      }
+    ],
+    "verify_label": "每次調整後：",
+    "verify": "用同一首歌做短錄影回放；Discord 則請接收端實際確認人聲與伴奏。電平有動只代表有訊號，不代表音量、延遲或重複收音已正確。",
+    "diagnostics_title": "進階診斷：如何閱讀 frames 與健康資訊",
+    "diagnostics_intro": "只有在持續斷音、穩定度轉黃，或需要提供診斷資料時才閱讀這裡。先完成上面的症狀檢查，再將計數變化與實際聽感、短錄音一起判斷。",
+    "buffer_summary": "進階診斷：App Buffer 健檢與黃色狀態（需要時展開）",
+    "health_summary": "進階診斷：CPU、RAM 與音訊健康資訊"
+  },
+  "en": {
+    "first_stream": {
+      "title": "Next, check audio and visuals in OBS",
+      "intro": "If you only want local playback or practice, your first setup is complete. For an OBS stream, choose normal playback or advanced mixing for audio, then check the visuals and a recording.",
+      "normal_title": "Normal playback: capture BGM and accompaniment in OBS.",
+      "normal_body": "In OBS Settings → Audio, set Desktop Audio to the device you are listening through. Play a song and check its level. This captures other desktop sounds on that device too. Reuse a working capture source if you already have one; confirm a separate microphone source if you will sing.",
+      "obs_reference": "OBS audio source guide",
+      "advanced_title": "Optional advanced streaming: send processed vocals and music together.",
+      "advanced_body": "For Profile vocal effects, enable Advanced Streaming Mode and follow the dedicated plug-in route for the complete Stream Mix. Then disable Desktop Audio or raw-microphone sources that capture the same signal again.",
+      "advanced_link": "Set up mixed audio output →",
+      "visual_title": "Add playlist and lyric visuals.",
+      "visual_link": "Follow the OBS visual guide to add Browser Sources.",
+      "visual_body": "The playlist and lyrics are separate visual sources. Their presence does not replace the audio-source check above.",
+      "record_title": "Record 15 seconds and play it back.",
+      "record_body": "Start a test recording in OBS. Play BGM, speak while starting the accompaniment, then stop the accompaniment and confirm BGM resumes. Stop the recording and check the voice, music, transitions, and visual updates.",
+      "done_label": "Ready for a stream when:",
+      "done": "The OBS recording contains the expected audio and visuals, without doubled vocals or distorted music. Local practice does not require advanced mixing or OBS."
+    },
+    "route_done": "Once the destination receives both voice and accompaniment, this route is complete.",
+    "profile_next": "Next: choose singing/chat Profiles and automatic switching →",
+    "symptom_label": "Find help by audio symptom",
+    "symptoms": [
+      {
+        "id": "audio-no-sound",
+        "title": "No sound locally, in OBS, or for viewers",
+        "steps": [
+          "Play a song you know has audio. Check playback progress, volume, mute, and the active Windows playback device.",
+          "If you can hear it but OBS cannot, check its audio source. Normal playback uses desktop capture; advanced streaming needs matching Stream Output and OBS sources. Monitor is your listening path, not Stream Output.",
+          "If only vocals are missing, check microphone input and mute. In advanced mode, inspect both Vocal and Master / Stream Output in the Meter."
+        ],
+        "route": "first-stream-check",
+        "link": "Check OBS capture and make a short recording →"
+      },
+      {
+        "id": "audio-echo",
+        "title": "Doubled vocals, echo, or feedback",
+        "steps": [
+          "With a complete Stream Mix, disable any duplicate raw-microphone source in OBS. Check whether Desktop Audio also captures the same mix.",
+          "Use headphones for microphone monitoring so speakers do not feed back into the microphone.",
+          "Select physical headphones or an audio interface for Monitor Output, not the same CABLE Input used to send audio to OBS or Discord."
+        ],
+        "route": "monitor-record",
+        "link": "Check monitoring and stream output paths →"
+      },
+      {
+        "id": "audio-crackle",
+        "title": "Distortion, dropouts, or uneven volume",
+        "steps": [
+          "Check player and Meter levels. If a source remains near overload, lower its volume and make another test recording.",
+          "For repeated dropouts or a yellow stability state, stop OBS streaming, Discord calls, and external recording before running the App Buffer stability check.",
+          "Apply the recommended value and retest. Do not force an unverified low Buffer. A single yellow warning or cumulative counter cannot establish an audible glitch on its own."
+        ],
+        "route": "buffer-stability",
+        "link": "Read about Buffer checks and starting settings →"
+      },
+      {
+        "id": "audio-delay",
+        "title": "Delayed headphone vocals or out-of-sync recordings",
+        "steps": [
+          "Play back an OBS test recording to separate a headphone-only delay from a delay in the audience output.",
+          "For headphone-only delay, check the Monitor route. If your audio interface offers Direct Monitor, hardware monitoring can reduce singing latency.",
+          "If the recording is also out of sync, confirm a single Stream Output capture route and check devices and Buffer using the stability guide. Changing headphone-monitor volume does not correct stream timing."
+        ],
+        "route": "monitor-record",
+        "link": "Understand monitoring and recording timelines →"
+      }
+    ],
+    "verify_label": "After each change:",
+    "verify": "Record and replay the same test song; for Discord, have the receiving side confirm voice and accompaniment. Moving meters alone do not verify level, delay, or duplicate capture.",
+    "diagnostics_title": "Advanced diagnostics: frames and audio health",
+    "diagnostics_intro": "Use these details for repeated dropouts, a yellow stability state, or a diagnostic report. Complete the symptom checks first, then compare counter changes with listening and a short recording.",
+    "buffer_summary": "Advanced diagnostics: App Buffer checks and yellow states (expand if needed)",
+    "health_summary": "Advanced diagnostics: CPU, RAM, and audio health"
+  },
+  "ja": {
+    "first_stream": {
+      "title": "次に OBS の音声と映像を確認する",
+      "intro": "PC で再生・練習するだけなら、最初の設定は完了です。OBS で配信する場合は、通常再生か高度なミックスの音声経路を選び、映像と録画を確認します。",
+      "normal_title": "通常再生：BGM と伴奏を OBS に取り込む。",
+      "normal_body": "OBS の「設定 → 音声」で「デスクトップ音声」に現在聴いている出力デバイスを選び、曲を再生してメーターを確認します。同じデバイスのほかの音も入ります。すでに動作する音声ソースがあればそのまま使い、歌う場合は別途マイクのソースも確認します。",
+      "obs_reference": "OBS 公式の音声ソース解説",
+      "advanced_title": "必要に応じて高度な配信：処理後の歌声と音楽をまとめて送る。",
+      "advanced_body": "Profile（ボーカルエフェクト設定）を使う場合は高度な配信モードを有効にし、専用プラグインの手順で Stream Mix を送ります。同じ音を重複して取り込むデスクトップ音声や元のマイクソースは無効にします。",
+      "advanced_link": "ミックス出力を設定する →",
+      "visual_title": "曲目と歌詞を画面に追加する。",
+      "visual_link": "OBS の表示ガイドに沿ってブラウザソースを追加します。",
+      "visual_body": "曲目と歌詞は別々の映像ソースです。表示できたら、上の音声ソースも確認してください。",
+      "record_title": "15 秒録画して再生する。",
+      "record_body": "OBS でテスト録画を始め、BGM を流し、話しながら伴奏を開始します。伴奏を止めて BGM の再開を確認したら録画を終了し、声、音楽、切り替え、画面の更新を再生して確認します。",
+      "done_label": "配信準備の完了目安：",
+      "done": "OBS の録画に意図した音声と映像が入り、声の重複や音楽の歪みがないこと。PC 内での練習だけなら、高度なミックスや OBS は不要です。"
+    },
+    "route_done": "送り先で声と伴奏の両方が聞こえれば、この経路の設定は完了です。",
+    "profile_next": "次へ：歌唱・トーク用 Profile と自動切り替え →",
+    "symptom_label": "音声の症状から探す",
+    "symptoms": [
+      {
+        "id": "audio-no-sound",
+        "title": "音が出ない・OBS や視聴者に音が届かない",
+        "steps": [
+          "音声が入っている曲を再生し、再生位置、音量、ミュート、Windows の出力デバイスを確認します。",
+          "自分には聞こえても OBS に届かない場合は音声ソースを確認します。通常再生ではデスクトップ音声、高度な配信では Stream Output と OBS 専用ソースの対応を確認します。Monitor は自分用の経路です。",
+          "声だけ届かない場合はマイク入力とミュートを確認します。高度な配信モードでは Meter の Vocal と Master／Stream Output の両方を見ます。"
+        ],
+        "route": "first-stream-check",
+        "link": "OBS の音声取り込みと短い録画を確認 →"
+      },
+      {
+        "id": "audio-echo",
+        "title": "声が二重になる・エコーやハウリングが出る",
+        "steps": [
+          "完全な Stream Mix を使う場合、OBS で重複する元のマイクソースを無効にします。デスクトップ音声にも同じミックスが入っていないか確認します。",
+          "マイクのモニターにはヘッドホンを使い、スピーカーの音が再びマイクに入らないようにします。",
+          "Monitor Output は実際のヘッドホンやオーディオインターフェースにします。OBS／Discord に送る CABLE Input と同じ出力を選ばないでください。"
+        ],
+        "route": "monitor-record",
+        "link": "モニターと配信出力の経路を確認 →"
+      },
+      {
+        "id": "audio-crackle",
+        "title": "音が歪む・途切れる・音量が不安定",
+        "steps": [
+          "プレイヤーと Meter を確認し、過負荷に近い状態が続く音源は音量を下げて録画し直します。",
+          "音切れが続く、または安定性が黄色の場合、OBS 配信、Discord 通話、外部録音を止めてから App バッファの安定性チェックを行います。",
+          "推奨値を適用して再確認します。未検証の低い Buffer を無理に使わないでください。一度の黄色表示や累積カウンターだけでは、実際の音切れは判断できません。"
+        ],
+        "route": "buffer-stability",
+        "link": "バッファのチェックと推奨開始設定 →"
+      },
+      {
+        "id": "audio-delay",
+        "title": "ヘッドホンの声が遅れる・録画の音がずれる",
+        "steps": [
+          "OBS のテスト録画を再生し、遅延が自分のヘッドホンだけか、視聴者への出力にもあるかを確かめます。",
+          "ヘッドホンだけ遅れる場合は Monitor の経路を確認します。インターフェースに Direct Monitor があれば、ハードウェア監聴で歌唱時の遅延を減らせます。",
+          "録画もずれる場合は Stream Output の取り込み経路が重複していないか確認し、安定性ガイドに沿ってデバイスと Buffer を調べます。ヘッドホンのモニター音量では配信の時刻ずれを修正できません。"
+        ],
+        "route": "monitor-record",
+        "link": "モニターと録音の時間軸を確認 →"
+      }
+    ],
+    "verify_label": "変更するたびに：",
+    "verify": "同じ曲を短く録画して再生します。Discord は受信側で声と伴奏を確認してもらいます。メーターが動くだけでは音量、遅延、二重取り込みは確認できません。",
+    "diagnostics_title": "高度な診断：frames と音声の健康情報",
+    "diagnostics_intro": "音切れが続く、安定性が黄色、または診断情報が必要な場合に参照してください。先に症状別の確認を行い、数値の変化を実際の音や短い録音と合わせて判断します。",
+    "buffer_summary": "高度な診断：App バッファのチェックと黄色表示（必要な場合に開く）",
+    "health_summary": "高度な診断：CPU・RAM と音声の健康情報"
+  },
+  "ko": {
+    "first_stream": {
+      "title": "다음으로 OBS의 소리와 화면 확인하기",
+      "intro": "컴퓨터에서 재생하거나 연습만 한다면 첫 설정은 끝났습니다. OBS 방송을 준비한다면 일반 재생이나 고급 믹싱 중 오디오 경로를 선택한 다음 화면과 녹화 결과를 확인하세요.",
+      "normal_title": "일반 재생: OBS에서 BGM과 반주 받기.",
+      "normal_body": "OBS의 설정 → 오디오에서 데스크톱 오디오를 현재 듣는 출력 장치로 선택하고, 곡을 재생해 레벨을 확인하세요. 같은 장치의 다른 소리도 함께 들어옵니다. 이미 작동하는 캡처 소스가 있다면 그대로 쓰고, 노래할 경우 별도의 마이크 소스도 확인하세요.",
+      "obs_reference": "OBS 공식 오디오 소스 안내",
+      "advanced_title": "선택 사항인 고급 방송: 보컬 효과와 음악을 함께 보내기.",
+      "advanced_body": "Profile 보컬 효과를 사용하려면 고급 방송 모드를 켜고 전용 플러그인 경로로 전체 Stream Mix를 보내세요. 설정 후 같은 소리를 다시 받는 데스크톱 오디오나 원본 마이크 소스는 끄세요.",
+      "advanced_link": "혼합 오디오 출력 설정 →",
+      "visual_title": "곡 목록과 가사 화면 추가하기.",
+      "visual_link": "OBS 화면 안내에 따라 브라우저 소스를 추가하세요.",
+      "visual_body": "곡 목록과 가사는 각각 별도의 화면 소스입니다. 화면이 보이더라도 앞의 오디오 소스 확인은 필요합니다.",
+      "record_title": "15초 녹화하고 다시 보기.",
+      "record_body": "OBS에서 테스트 녹화를 시작하고 BGM을 재생하세요. 말하면서 반주를 시작한 뒤, 반주를 멈춰 BGM이 다시 나오는지 확인하세요. 녹화를 끝내고 보컬, 음악, 전환과 화면 갱신을 확인하세요.",
+      "done_label": "방송 준비 완료 기준:",
+      "done": "OBS 녹화에 원하는 소리와 화면이 함께 들어가고, 보컬이 겹치거나 음악이 찢어지지 않습니다. 컴퓨터에서 연습만 할 때는 고급 믹싱이나 OBS가 필요 없습니다."
+    },
+    "route_done": "받는 쪽에서 보컬과 반주가 모두 들리면 이 경로의 설정은 끝났습니다.",
+    "profile_next": "다음: 노래／대화 Profile과 자동 전환 설정 →",
+    "symptom_label": "오디오 증상별 도움말",
+    "symptoms": [
+      {
+        "id": "audio-no-sound",
+        "title": "소리가 안 나거나 OBS／시청자에게 안 들림",
+        "steps": [
+          "소리가 있는 곡을 재생하고 재생 위치, 음량, 음소거와 Windows 출력 장치를 확인하세요.",
+          "본인에게 들리지만 OBS에 들어오지 않으면 오디오 소스를 확인하세요. 일반 재생은 데스크톱 오디오, 고급 방송은 Stream Output과 OBS 전용 소스의 연결을 확인합니다. Monitor는 본인이 듣는 경로입니다.",
+          "보컬만 빠진다면 마이크 입력 장치와 음소거를 확인하세요. 고급 모드에서는 Meter의 Vocal과 Master／Stream Output 양쪽에 레벨이 있는지 보세요."
+        ],
+        "route": "first-stream-check",
+        "link": "OBS 캡처와 짧은 녹화 확인 →"
+      },
+      {
+        "id": "audio-echo",
+        "title": "보컬이 겹치거나 에코／피드백이 생김",
+        "steps": [
+          "전체 Stream Mix를 사용한다면 OBS의 중복 원본 마이크 소스를 끄세요. 데스크톱 오디오에도 같은 믹스가 들어오는지 확인하세요.",
+          "마이크 모니터링에는 헤드폰을 사용해 스피커 소리가 마이크로 다시 들어가지 않게 하세요.",
+          "Monitor Output에는 실제 헤드폰이나 오디오 인터페이스를 선택하세요. OBS／Discord로 보내는 CABLE Input과 같은 장치를 선택하지 마세요."
+        ],
+        "route": "monitor-record",
+        "link": "모니터링과 방송 출력 경로 확인 →"
+      },
+      {
+        "id": "audio-crackle",
+        "title": "소리가 찢어짐／끊김／음량이 불안정함",
+        "steps": [
+          "플레이어와 Meter를 보고 과부하에 가까운 소스의 음량을 낮춘 뒤 다시 녹화하세요.",
+          "끊김이 계속되거나 안정성이 노란색이면 OBS 방송, Discord 통화와 외부 녹음을 멈춘 뒤 App 버퍼 안정성 점검을 실행하세요.",
+          "권장값을 적용하고 다시 확인하세요. 검증되지 않은 낮은 Buffer를 억지로 사용하지 마세요. 한 번의 노란색 표시나 누적 수치만으로 실제 잡음을 판단할 수는 없습니다."
+        ],
+        "route": "buffer-stability",
+        "link": "버퍼 점검과 권장 시작 설정 →"
+      },
+      {
+        "id": "audio-delay",
+        "title": "헤드폰 보컬이 늦거나 녹화 소리가 어긋남",
+        "steps": [
+          "OBS 테스트 녹화를 재생해 지연이 본인의 헤드폰에만 있는지, 시청자 출력에도 있는지 구분하세요.",
+          "헤드폰만 늦다면 Monitor 경로를 확인하세요. 오디오 인터페이스에 Direct Monitor가 있으면 하드웨어 모니터링으로 노래할 때의 지연을 줄일 수 있습니다.",
+          "녹화도 어긋난다면 Stream Output을 한 경로로만 받는지 확인하고 안정성 안내에 따라 장치와 Buffer를 점검하세요. 헤드폰 모니터 음량은 방송 출력의 시간 차이를 바꾸지 않습니다."
+        ],
+        "route": "monitor-record",
+        "link": "모니터링과 녹음 타임라인 이해하기 →"
+      }
+    ],
+    "verify_label": "설정을 바꿀 때마다:",
+    "verify": "같은 곡을 짧게 녹화해 다시 확인하세요. Discord는 받는 쪽에서 보컬과 반주를 확인해야 합니다. 레벨이 움직이는 것만으로 음량, 지연이나 중복 캡처가 올바르다고 판단할 수 없습니다.",
+    "diagnostics_title": "고급 진단: frames와 오디오 상태 읽기",
+    "diagnostics_intro": "끊김이 반복되거나 안정성이 노란색이거나 진단 정보가 필요할 때 참고하세요. 먼저 증상별 확인을 마치고, 수치 변화와 실제 소리 및 짧은 녹음을 함께 판단하세요.",
+    "buffer_summary": "고급 진단: App 버퍼 점검과 노란색 상태 (필요할 때 펼치기)",
+    "health_summary": "고급 진단: CPU／RAM과 오디오 상태"
+  },
+  "zh-CN": {
+    "first_stream": {
+      "title": "接着确认 OBS 的声音与画面",
+      "intro": "只想在电脑播放或练习，到这里就完成第一次设置。准备用 OBS 直播时，先选择普通播放或高级直播的收音方式，再做画面与录像测试。",
+      "normal_title": "普通播放：让 OBS 收到 BGM 与伴奏。",
+      "normal_body": "在 OBS“设置 → 音频”将“桌面音频”选为当前播放声音的设备，播放歌曲并确认电平。这会收进该设备的其他桌面声音；若已有有效的捕获来源，沿用即可。需要演唱人声时，另外确认 OBS 的麦克风来源。",
+      "obs_reference": "OBS 音频来源说明",
+      "advanced_title": "选用高级直播：把人声效果与音乐一起送到 OBS。",
+      "advanced_body": "想使用 Profile（人声效果设置）时，再启用高级直播模式，依专用插件流程输出完整 Stream Mix。完成后停用会重复收到这份声音的桌面音频或原始麦克风来源。",
+      "advanced_link": "设置高级混音输出 →",
+      "visual_title": "加入歌单／歌词画面。",
+      "visual_link": "按 OBS 画面教程加入浏览器来源。",
+      "visual_body": "歌单和歌词各自是画面来源；加入它们之后，仍要另外确认前面的音频来源。",
+      "record_title": "录 15 秒并回放。",
+      "record_body": "在 OBS 开始测试录像，先播放 BGM，再说话并播放伴奏，最后停止伴奏确认 BGM 恢复。停止录像后，回放检查人声、音乐、切换与画面更新。",
+      "done_label": "可以准备开播的标准：",
+      "done": "OBS 录像同时有预期的声音与画面，人声没有重复、音乐没有爆音。若只做本地练习，不需要为此开启高级混音或 OBS。"
+    },
+    "route_done": "接收端已收到人声与伴奏后，这条路径就完成了。",
+    "profile_next": "下一步：设置演唱／聊天 Profile 与自动切换 →",
+    "symptom_label": "按音频症状找答案",
+    "symptoms": [
+      {
+        "id": "audio-no-sound",
+        "title": "听不到声音，或 OBS／观众听不到",
+        "steps": [
+          "先播放一首确定有声音的歌曲，检查播放器进度、音量、静音，以及 Windows 当前使用的播放设备。",
+          "自己听得到、OBS 没有声音时，核对 OBS 的音频来源。普通播放检查桌面音频；高级直播检查 Stream Output 与 OBS 专用来源是否对应。Monitor 是自己听的路径，不等于 Stream Output。",
+          "如果只有人声没有进去，确认麦克风输入设备与静音状态；高级模式再查看 Meter 的人声与 Master／直播输出是否都有电平。"
+        ],
+        "route": "first-stream-check",
+        "link": "重新核对 OBS 收音与短录像流程 →"
+      },
+      {
+        "id": "audio-echo",
+        "title": "人声重复、有回音或反馈啸叫",
+        "steps": [
+          "使用完整 Stream Mix 时，停用 OBS 中重复的原始麦克风来源；也检查桌面音频是否再次收到同一份混音。",
+          "开启麦克风监听时使用耳机，避免扬声器的声音被麦克风再次收到。",
+          "Monitor Output 选实体耳机或音频接口，不要选发送给 OBS／Discord 的同一个 CABLE Input。"
+        ],
+        "route": "monitor-record",
+        "link": "检查监听与直播输出的分工 →"
+      },
+      {
+        "id": "audio-crackle",
+        "title": "爆音、断音或声音忽大忽小",
+        "steps": [
+          "先查看播放器及 Meter；若电平持续接近过载，调低对应来源音量，再录一段确认。",
+          "若持续断音或稳定度变黄，先停止 OBS 直播、Discord 通话与外部录音，再执行 App Buffer 稳定性检查。",
+          "应用检查建议值后重测；不要只为降低数字而强迫使用尚未验证的低 Buffer。单次黄色提示或累计计数不能单独证明已爆音。"
+        ],
+        "route": "buffer-stability",
+        "link": "查看 Buffer 检查与建议起点 →"
+      },
+      {
+        "id": "audio-delay",
+        "title": "耳机人声延迟，或录像声音不同步",
+        "steps": [
+          "先回放 OBS 测试录像，分辨延迟只出现在自己的耳机，还是也出现在观众收到的输出。",
+          "只有耳机延迟时，确认 Monitor 的路径；音频接口提供 Direct Monitor 时，可用硬件直接监听降低演唱延迟。",
+          "若录像也不同步，核对 Stream Output 的单一收音路径，并依稳定性教程检查设备与 Buffer。调整自己耳机的监听音量不会修正直播输出的时序。"
+        ],
+        "route": "monitor-record",
+        "link": "了解监听、完整输出与录音时间轴 →"
+      }
+    ],
+    "verify_label": "每次调整后：",
+    "verify": "用同一首歌做短录像回放；Discord 则请接收端实际确认人声与伴奏。电平有动只代表有信号，不代表音量、延迟或重复收音已正确。",
+    "diagnostics_title": "高级诊断：如何阅读 frames 与健康信息",
+    "diagnostics_intro": "只有持续断音、稳定度变黄，或需要提供诊断资料时才阅读这里。先完成上面的症状检查，再将计数变化与实际听感、短录音一起判断。",
+    "buffer_summary": "高级诊断：App Buffer 检查与黄色状态（需要时展开）",
+    "health_summary": "高级诊断：CPU、RAM 与音频健康信息"
+  }
+}

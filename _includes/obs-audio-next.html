@@ -1,0 +1,4 @@
+{% assign workflow_lang = page.lang | default: 'zh-TW' %}
+{% assign workflow = site.data.manual_workflows[workflow_lang].first_stream %}
+{% if workflow_lang == 'zh-TW' %}{% assign workflow_check = '/getting-started.html#first-stream-check' %}{% else %}{% assign workflow_check = '/' | append: workflow_lang | append: '/guide.html#first-stream-check' %}{% endif %}
+<p class="chapter-next-step">{{ workflow.visual_body | escape }} <a href="{{ workflow_check | relative_url }}">{{ workflow.title | escape }} →</a></p>

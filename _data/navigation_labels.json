@@ -1,0 +1,57 @@
+{
+  "zh-TW": {
+    "basics": "播放與畫面",
+    "audio": "直播音訊與效果",
+    "tools": "工具與排錯",
+    "resources": "下載與支援",
+    "close": "關閉章節選單",
+    "previous": "上一章",
+    "next": "下一章",
+    "all": "全部教學章節",
+    "navigation": "章節導覽"
+  },
+  "zh-CN": {
+    "basics": "播放与画面",
+    "audio": "直播音频与效果",
+    "tools": "工具与排错",
+    "resources": "下载与支持",
+    "close": "关闭章节菜单",
+    "previous": "上一章",
+    "next": "下一章",
+    "all": "全部教学章节",
+    "navigation": "章节导航"
+  },
+  "en": {
+    "basics": "Playback and visuals",
+    "audio": "Stream audio and effects",
+    "tools": "Tools and troubleshooting",
+    "resources": "Downloads and support",
+    "close": "Close chapter menu",
+    "previous": "Previous chapter",
+    "next": "Next chapter",
+    "all": "All guide chapters",
+    "navigation": "Chapter navigation"
+  },
+  "ja": {
+    "basics": "再生と配信画面",
+    "audio": "配信音声とエフェクト",
+    "tools": "ツールとトラブル対処",
+    "resources": "ダウンロードとサポート",
+    "close": "章メニューを閉じる",
+    "previous": "前の章",
+    "next": "次の章",
+    "all": "すべての章",
+    "navigation": "章のナビゲーション"
+  },
+  "ko": {
+    "basics": "재생 및 방송 화면",
+    "audio": "방송 오디오 및 효과",
+    "tools": "도구 및 문제 해결",
+    "resources": "다운로드 및 지원",
+    "close": "챕터 메뉴 닫기",
+    "previous": "이전 챕터",
+    "next": "다음 챕터",
+    "all": "전체 사용 설명서",
+    "navigation": "챕터 탐색"
+  }
+}

@@ -26,7 +26,7 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 > 처음부터 인터페이스 언어나 프로젝트/미디어 폴더 위치를 설정하거나 시험용 대기 목록을 만들 필요는 없습니다. 대기 목록, 표지, 가사와 OBS WebSocket은 방송에 필요할 때 나중에 설정할 수 있습니다.
 
 <a id="getting-started"></a>
-## 01 · 시작하기
+## {% include chapter-number.html key="getting-started" %} · 시작하기
 
 <section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
   <div>
@@ -45,6 +45,8 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
   </div>
 </section>
 
+{% include first-stream-check.html heading=3 %}
+
 ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴더에서 아래 아이콘의 `Singing Stream Savior.exe`를 두 번 클릭하면 됩니다. 사용자가 열어야 하는 파일은 이것뿐이며, ZIP 안에서 직접 실행하거나 데이터 폴더 안의 다른 EXE를 찾을 필요가 없습니다.
 
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 앱 아이콘"><div><strong>Singing Stream Savior.exe</strong><span>평소에는 이 앱만 실행하세요</span></div></div>
@@ -61,15 +63,13 @@ ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴�
 </div>
 
 <a id="library-and-playback"></a>
-## 02 · 곡 라이브러리와 재생
+## {% include chapter-number.html key="library-and-playback" %} · 곡 라이브러리와 재생
 
 라이브러리에는 모든 곡, 즐겨찾기, 최근 재생과 사용자 재생목록이 있습니다. 고정 분류는 삭제할 수 없으며, 사용자 재생목록은 방송 기획, 장르나 이벤트별로 곡을 정리할 때 사용합니다.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/song-library.png' | relative_url }}"><img src="{{ '/assets/images/ko/song-library.png' | relative_url }}" alt="모든 곡, 즐겨찾기, 최근 재생, 사용자 재생목록과 곡 표가 보이는 전체 라이브러리"></a><figcaption>왼쪽에서 분류를 선택하면 오른쪽 표와 검색 대상이 함께 바뀝니다.</figcaption></figure>
 
 곡을 분류하려면 한 곡 또는 여러 곡을 선택해 마우스 오른쪽 버튼을 누르고 **재생목록에 추가**에서 **즐겨찾기** 또는 사용자 재생목록을 고르세요. 음원은 복제되지 않고 모든 곡에서도 사라지지 않으며, 한 곡을 여러 재생목록에 넣을 수 있습니다.
-
-적합한 검색 결과가 없으면 억지로 연결하지 마세요. 준비한 가사를 가사 편집기에 붙여넣거나 LRC, SRT, VTT 또는 텍스트 파일을 가져와 직접 시간을 표시할 수 있습니다.
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/ko/add-to-playlist-menu.png' | relative_url }}" alt="표시 곡명 편집, 대기 목록에 추가, 재생목록에 추가와 트랙 삭제가 있는 오른쪽 클릭 메뉴"></a><figcaption>표시 곡명 편집이 첫 항목이며 같은 메뉴에서 대기 목록이나 재생목록에도 추가할 수 있습니다.</figcaption></figure>
 
@@ -127,9 +127,11 @@ OBS 재생목록 테마의 현재 곡 영역이 대화 문구로 바뀌는 것�
 {% include feature-guide.html section="download" %}
 
 <a id="lyrics"></a>
-## 03 · 가사 기능
+## {% include chapter-number.html key="lyrics" %} · 가사 기능
 
 가사는 선택 기능입니다. 진행자 전용 **가사 창**, 시청자용 OBS 가사 오버레이 또는 둘 다 사용할 수 있습니다. LRC, SRT, VTT, 일반 텍스트, YouTube 자막과 LRCLIB를 지원합니다.
+
+적합한 검색 결과가 없으면 억지로 연결하지 마세요. 준비한 가사를 [가사 편집기](#lyrics-editor)에 붙여넣거나 LRC, SRT, VTT 또는 텍스트 파일을 가져와 직접 시간을 표시할 수 있습니다.
 
 곡의 **가사** 페이지에서 **가사 관리…**를 누르거나 곡 목록의 **가사** 열에서 해당 곡의 아이콘을 클릭하면 같은 가사 관리 창이 열립니다. 여기에서 온라인 검색, 로컬 가사 가져오기, 결과 연결 또는 현재 가사 연결 해제를 할 수 있습니다. LRCLIB와 YouTube 자막을 함께 최대 50개 표시하며 동기화 여부, 언어, 반주 길이와 가수 정보에 맞는 후보를 우선합니다. YouTube의 일시적인 요청 제한으로 자막을 받지 못해도 다른 후보는 유지되고 나중에 다시 시도할 수 있다는 안내를 표시합니다.
 
@@ -172,7 +174,7 @@ Singing Stream Savior는 가사를 가져오고, 편집하고, 동기화하고, 
 </figure>
 
 <a id="lyrics-editor"></a>
-## 04 · 가사 편집기
+## {% include chapter-number.html key="lyrics-editor" %} · 가사 편집기
 
 검색에서 알맞은 가사 파일을 찾지 못하면 편집기로 준비한 가사에 시간을 표시할 수 있습니다.
 
@@ -206,7 +208,9 @@ Singing Stream Savior는 가사를 가져오고, 편집하고, 동기화하고, 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-editor-word-2150.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-editor-word-2150.png' | relative_url }}" alt="단어 타이밍: 단위를 선택, 병합, 분할하고 하이라이트로 확인하세요." loading="lazy" decoding="async"></a><figcaption>단어 타이밍: 단위를 선택, 병합, 분할하고 하이라이트로 확인하세요.</figcaption></figure>
 
 <a id="obs-and-themes"></a>
-## 05 · 재생목록 외관과 OBS
+## {% include chapter-number.html key="obs-and-themes" %} · 재생목록 외관과 OBS
+
+{% include obs-audio-next.html %}
 
 **재생목록 외관**에서 테마를 선택하고 Now Singing, Set List, Next On과 Reserve를 미리 봅니다. 기본 테마는 Default, Transparent Black, Transparent White, Transparent Black v2, Transparent White v2, Card, CD, Signal Line, Stage Caption 순서이며 그 뒤에 장식 테마가 표시됩니다.
 
@@ -253,7 +257,7 @@ OBS 대기 목록 표시 여부와 다음 한 곡만 또는 2, 3, 5, 10곡 표�
 </figure>
 
 <a id="obs-websocket"></a>
-## 06 · 방송 타임스탬프 캡처
+## {% include chapter-number.html key="obs-websocket" %} · 방송 타임스탬프 캡처
 
 기본값은 꺼짐입니다. 현재 주요 목적은 OBS 방송 시간을 읽고 반주 시작 시각을 기록하여 Set List의 곡 이름 앞에 타임스탬프를 표시하는 것입니다. 일반 세트리스트와 가사 오버레이에는 필요하지 않습니다.
 
@@ -262,7 +266,7 @@ OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버
 오른쪽 아래 녹색은 연결됨, 노란색은 연결 또는 재연결 중, 빨간색은 연결되지 않음을 뜻합니다. 실제 방송 전에 테스트 방송으로 타임스탬프를 확인하세요.
 
 <a id="uvr-vocal-removal"></a>
-## 07 · UVR 보컬 제거
+## {% include chapter-number.html key="uvr-vocal-removal" %} · UVR 보컬 제거
 
 ### 보컬 분리를 추가한 이유
 
@@ -292,7 +296,7 @@ WAV/FLAC/MP3(320 kbps), 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니
 > **방송에 사용할 수 있다고 확인한 소재는 가능하면 미리 처리하세요.** 보컬 분리는 CPU 또는 GPU 자원을 사용합니다. 방송 중 실행하기 전에는 음원 처리와 OBS에 필요한 컴퓨터 성능이 남아 있는지 확인하세요.
 
 <a id="workspace-modes"></a>
-## 08 · 작업 공간 모드
+## {% include chapter-number.html key="workspace-modes" %} · 작업 공간 모드
 
 - **전체 모드:** 모든 정보, 설정과 큰 미리보기. 방송 준비에 적합합니다.
 - **간단 모드:** 곡 선택, 플레이어, **대기 목록**과 **부른 곡**을 유지하고 넓은 열과 큰 미리보기를 숨깁니다.
@@ -311,7 +315,9 @@ WAV/FLAC/MP3(320 kbps), 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="재생하지 않을 때의 Singing Stream Savior Windows 알림 영역 메뉴" caption="재생하지 않을 때는 메뉴가 간결합니다. 반주 재생 또는 고급 방송 모드에서는 필요한 재생, Key, 속도, Profile, 마이크와 Meter 항목이 추가됩니다." size="medium" %}
 
 <a id="settings-and-troubleshooting"></a>
-## 09 · 설정 및 문제 해결
+## {% include chapter-number.html key="settings-and-troubleshooting" %} · 설정 및 문제 해결
+
+{% include audio-troubleshooting.html heading=3 %}
 
 다른 PC로 옮기기 전에 `.bgmsproj`, 로컬 미디어와 가져온 가사를 함께 백업하세요.
 
@@ -333,4 +339,4 @@ Qt platform plugin 오류가 나오면 ZIP을 다시 내려받아 완전히 압�
 
 최근 프로젝트의 `.bgmsproj` 파일이 이동되거나 삭제된 경우 해당 항목은 목록에서 자동으로 제거됩니다.
 
-{% include feature-guide.html section="health" %}
+{% include audio-diagnostics.html %}

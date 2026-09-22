@@ -26,7 +26,7 @@ manual_bundle: true
 > 第一次使用不必先调整界面语言、项目／媒体文件夹位置，也不必建立测试待播列表。待播、封面、歌词与 OBS WebSocket 都可以在直播需要时再设置。
 
 <a id="getting-started"></a>
-## 01 · 开始使用
+## {% include chapter-number.html key="getting-started" %} · 开始使用
 
 <section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
   <div>
@@ -45,6 +45,8 @@ manual_bundle: true
   </div>
 </section>
 
+{% include first-stream-check.html heading=3 %}
+
 将 ZIP 完整解压到普通文件夹。在最外层找到下图图标的 `Singing Stream Savior.exe`，双击即可启动。这是唯一需要打开的程序；不要直接在 ZIP 中运行，也不需要进入其他资料文件夹寻找 EXE。
 
 <div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 软件图标"><div><strong>Singing Stream Savior.exe</strong><span>平时只需要打开这个程序</span></div></div>
@@ -61,15 +63,13 @@ manual_bundle: true
 </div>
 
 <a id="library-and-playback"></a>
-## 02 · 歌曲库与播放
+## {% include chapter-number.html key="library-and-playback" %} · 歌曲库与播放
 
 歌曲库包含全部歌曲、我的最爱、最近播放与自定义歌单。固定分类无法删除；自定义歌单可依直播企划、曲风或活动分类。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/song-library.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/song-library.png' | relative_url }}" alt="完整歌曲库，左侧显示全部歌曲、我的最爱、最近播放与自定义歌单，右侧显示歌曲表格"></a><figcaption>在左侧选择分类后，右侧表格与搜索范围会一起切换。</figcaption></figure>
 
 要将歌曲加入分类，先选择一首或多首歌曲，按鼠标右键，展开“加入歌单”，再选择“我的最爱”或自定义歌单。这不会复制音频，也不会将歌曲移出“全部歌曲”；同一首歌可以加入多个歌单。
-
-如果搜索结果都不合适，不要为了继续而强行附加；请把准备好的歌词粘贴到歌词编辑器，或导入 LRC、SRT、VTT／纯文本文件后自行标记时间。
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/add-to-playlist-menu.png' | relative_url }}" alt="歌曲右键菜单包含编辑显示歌名、加入待播、加入歌单与删除歌曲"></a><figcaption>编辑显示歌名位于第一项，同一个菜单也可将歌曲加入待播或其他歌单。</figcaption></figure>
 
@@ -127,9 +127,11 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 {% include feature-guide.html section="download" %}
 
 <a id="lyrics"></a>
-## 03 · 歌词功能
+## {% include chapter-number.html key="lyrics" %} · 歌词功能
 
 歌词可供主播在独立“歌词窗口”阅读，也可作为 OBS 歌词画面给观众观看。支持 LRC、SRT、VTT、纯文本、YouTube 字幕与 LRCLIB。
+
+如果搜索结果都不合适，不要为了继续而强行附加；请把准备好的歌词粘贴到[歌词编辑器](#lyrics-editor)，或导入 LRC、SRT、VTT／纯文本文件后自行标记时间。
 
 在歌曲的“歌词”页面点击“管理歌词…”，或直接点击歌曲列表中该歌曲“歌词”栏的图标，都可以打开管理歌词窗口。你可以在这里搜索、导入本地歌词、附加结果或取消歌词关联。搜索会合并 LRCLIB 与 YouTube 字幕，最多显示 50 条，并依同步状态、语言、伴奏长度与歌手信息排序。YouTube 暂时限制字幕下载时，其他候选仍会保留，并提示稍后重试。
 
@@ -172,7 +174,7 @@ Singing Stream Savior 提供歌词导入、编辑、同步与显示工具，不�
 </figure>
 
 <a id="lyrics-editor"></a>
-## 04 · 歌词编辑器
+## {% include chapter-number.html key="lyrics-editor" %} · 歌词编辑器
 
 搜索不到合适的歌词文件时，可以用编辑器为准备好的歌词添加时间标记。
 
@@ -206,7 +208,9 @@ Singing Stream Savior 提供歌词导入、编辑、同步与显示工具，不�
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-editor-word-2150.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-editor-word-2150.png' | relative_url }}" alt="字词标记：选择、合并或拆分字词，再预览高亮检查时间。" loading="lazy" decoding="async"></a><figcaption>字词标记：选择、合并或拆分字词，再预览高亮检查时间。</figcaption></figure>
 
 <a id="obs-and-themes"></a>
-## 05 · 歌单外观与主题
+## {% include chapter-number.html key="obs-and-themes" %} · 歌单外观与主题
+
+{% include obs-audio-next.html %}
 
 在“歌单外观”选择主题，并检查 Now Singing、Set List、Next On 与 Reserve。基本主题依次为 Default、Transparent Black、Transparent White、Transparent Black v2、Transparent White v2、Card、CD、Signal Line、Stage Caption，之后才是精致主题。
 
@@ -253,7 +257,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 </figure>
 
 <a id="obs-websocket"></a>
-## 06 · 直播时间戳获取
+## {% include chapter-number.html key="obs-websocket" %} · 直播时间戳获取
 
 此功能默认关闭，目前主要用于读取 OBS 直播时间、记录伴奏开始时间，并在 Set List 歌名前显示时间戳。一般歌单与歌词画面不需要 WebSocket。
 
@@ -262,7 +266,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 右下角绿灯为已连接，黄灯为连接中，红灯为未连接。正式直播前请先用测试直播确认时间戳。
 
 <a id="uvr-vocal-removal"></a>
-## 07 · UVR 人声消除
+## {% include chapter-number.html key="uvr-vocal-removal" %} · UVR 人声消除
 
 ### 为什么加入人声分离？
 
@@ -292,7 +296,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 > **已确认可用于直播的素材，建议提前完成处理。** 人声分离会使用 CPU 或 GPU 资源；直播中执行前，请先确认电脑仍有足够性能处理音频与 OBS。
 
 <a id="workspace-modes"></a>
-## 08 · 工作区模式
+## {% include chapter-number.html key="workspace-modes" %} · 工作区模式
 
 - **完整模式：** 显示所有资料、设置与大型预览，适合准备直播。
 - **精简模式：** 保留选歌、播放器、待播和已唱，隐藏宽列与大型预览。
@@ -311,7 +315,9 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior 未播放时的 Windows 通知区域右键菜单" caption="未播放时菜单保持精简；播放伴奏或开启高级直播模式后，会增加相应的播放、Key、速度、Profile、麦克风与 Meter 项目。" size="medium" %}
 
 <a id="settings-and-troubleshooting"></a>
-## 09 · 设置与疑难解答
+## {% include chapter-number.html key="settings-and-troubleshooting" %} · 设置与疑难解答
+
+{% include audio-troubleshooting.html heading=3 %}
 
 搬到其他电脑前，请备份 `.bgmsproj`、本地媒体和自行导入的歌词。
 
@@ -333,4 +339,4 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 
 若最近项目中的 `.bgmsproj` 已被移动或删除，该失效项目会自动从列表移除。
 
-{% include feature-guide.html section="health" %}
+{% include audio-diagnostics.html %}

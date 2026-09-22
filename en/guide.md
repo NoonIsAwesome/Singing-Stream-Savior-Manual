@@ -31,7 +31,7 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
 > Japanese furigana and romaji are generated from an offline dictionary. They are reading aids and may differ from the singer’s pronunciation.
 
 <a id="getting-started"></a>
-## 01 · Getting started
+## {% include chapter-number.html key="getting-started" %} · Getting started
 
 <section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
   <div>
@@ -49,6 +49,8 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
     <p class="chapter-quick-start__done"><strong>You are done when:</strong> the BGM has loaded and loops automatically; double-clicking the song shows its title and progress in the karaoke player and pauses the BGM. After you save the project, the <code>*</code> disappears from the window title.</p>
   </div>
 </section>
+
+{% include first-stream-check.html heading=3 %}
 
 Extract the entire ZIP to a normal folder. In the outermost folder, double-click the `Singing Stream Savior.exe` with the app icon shown below. This is the only file you need to open; do not run the app inside the ZIP or look for another EXE inside the data folders.
 
@@ -68,15 +70,13 @@ Starting with version 2.0.2.0, the eight-step first-use guide opens automaticall
 Full mode is the default preparation workspace: content and settings on the left, previews in the center, and players plus queue on the right.
 
 <a id="library-and-playback"></a>
-## 02 · Library and playback
+## {% include chapter-number.html key="library-and-playback" %} · Library and playback
 
 The library contains **All songs**, **Favorites**, **Recently played**, and removable custom playlists. Fixed collections cannot be deleted; use custom playlists to group songs by stream, genre, or event.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/en/song-library.png' | relative_url }}"><img src="{{ '/assets/images/en/song-library.png' | relative_url }}" alt="Complete song library with All songs, Favorites, Recently played, custom playlists, and a populated song table"></a><figcaption>Select a collection on the left; the table and search field work within that selection.</figcaption></figure>
 
 To place songs in a collection, select one or more rows, right-click, open **Add to playlist**, and choose **Favorites** or a custom playlist. This does not duplicate the audio or remove it from All songs, and one song can belong to several playlists.
-
-If no search result is suitable, do not attach one just to continue. Paste prepared lyrics into the Lyrics Editor, or import an LRC, SRT, VTT, or text file and mark the timing yourself.
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}"><img src="{{ '/assets/images/en/add-to-playlist-menu.png' | relative_url }}" alt="Song context menu with Edit display title, Add to Reserve, Add to playlist, and Delete track"></a><figcaption>The menu keeps display-title editing first and also provides Add to Reserve and playlist organization.</figcaption></figure>
 
@@ -146,9 +146,11 @@ The text replaces the current-song display in the OBS playlist theme **only whil
 {% include feature-guide.html section="download" %}
 
 <a id="lyrics"></a>
-## 03 · Lyrics
+## {% include chapter-number.html key="lyrics" %} · Lyrics
 
 Lyrics are optional. They can be used in a movable host-only **Lyrics window**, as an OBS lyric overlay for viewers, or both. Supported sources include LRC, SRT, VTT, plain text, YouTube captions, and LRCLIB.
+
+If no search result is suitable, do not attach one just to continue. Paste prepared lyrics into the [Lyrics Editor](#lyrics-editor), or import an LRC, SRT, VTT, or text file and mark the timing yourself.
 
 Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song’s icon in the **Lyrics** column of the song list. Either route opens the same window, where you can search online, import a local lyric file, attach a result, or unlink the current lyrics. Search combines LRCLIB results and YouTube captions, returns up to 50 candidates, and prioritizes synchronized lyrics, language, duration, and artist information. If YouTube temporarily rate-limits caption downloads, other candidates remain available and the dialog explains that you can retry later.
 
@@ -197,7 +199,7 @@ An OBS lyric source already using this output updates **while you drag**; releas
 </figure>
 
 <a id="lyrics-editor"></a>
-## 04 · Lyrics editor
+## {% include chapter-number.html key="lyrics-editor" %} · Lyrics editor
 
 If search does not find a suitable lyrics file, use the editor to add timing to lyrics you have prepared.
 
@@ -231,7 +233,9 @@ Use Undo, Redo, or Retry previous to correct a mark. Preview works before every 
 <figure class="manual-figure"><a href="{{ '/assets/images/en/lyrics-editor-word-2150.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-editor-word-2150.png' | relative_url }}" alt="Word timing: select, merge, or split units and preview their highlights." loading="lazy" decoding="async"></a><figcaption>Word timing: select, merge, or split units and preview their highlights.</figcaption></figure>
 
 <a id="obs-and-themes"></a>
-## 05 · Playlist appearance and OBS
+## {% include chapter-number.html key="obs-and-themes" %} · Playlist appearance and OBS
+
+{% include obs-audio-next.html %}
 
 Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set List, Next On, and Reserve in the preview. Basic themes appear first: Default, Transparent Black, Transparent White, Transparent Black v2, Transparent White v2, Card, CD, Signal Line, and Stage Caption; illustrated themes follow.
 
@@ -251,8 +255,6 @@ Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set 
 
 Card places cover art in a vertical card; CD crops it into a disc. Cover art is not required for playback or other themes. Hold and drag **Drag to OBS** to create a local Browser Source directly. If OBS does not accept a drop while streaming, click the same button to copy the source path, add an OBS Browser Source, paste it into the URL field, and set the size to 1920 × 1080. Do not enable **Local file**. Neither method requires OBS WebSocket.
 
-Default uses a white preview background. Transparent and illustrated themes can use the checkerboard preview to make transparency visible. The preview background itself is not sent to OBS.
-
 The theme canvas does not restrict how the Browser Source must be used. In OBS, freely resize, crop, and position it to fit your own stream layout. Default is especially suitable as a flexible base: use the dashed text-area guides in the preview to crop out the Now Singing, Set List, or other blocks you want, then place them over your own background. Transparent and illustrated themes may be kept as a complete composition or cropped to selected parts. OBS cropping changes only that scene source; it does not modify the theme or song data.
 
 **Layout** is the leftmost appearance tab. The app reads each theme's declared capabilities and shows only controls that actually work with that theme.
@@ -266,7 +268,7 @@ The theme canvas does not restrict how the Browser Source must be used. In OBS, 
 
 You can also enable Reserve, choose **Next song only** or a 2-, 3-, 5-, or 10-song display limit, and—when OBS WebSocket is enabled—show timestamps before sung songs in supported Set Lists. Timestamps are not added to Reserve or Next On.
 
-Preview backgrounds can be transparent, dark, light, a custom color, or an image with fit/fill/stretch. Only these backgrounds stay inside the app; positions and sizes changed with Edit layout are synchronized to OBS. Unsupported controls are hidden rather than merely disabled. Default exposes the broadest typography and layout controls; legacy Transparent Black/White retain Current and History typography controls; both v2 themes, Signal Line, and Stage Caption expose their supported color/opacity controls.
+Default starts with a white preview background; transparent and illustrated themes can use the checkerboard to inspect transparency. Preview backgrounds can also be dark, light, a custom color, or an image with fit/fill/stretch. Only these backgrounds stay inside the app; positions and sizes changed with Edit layout are synchronized to OBS. Unsupported controls are hidden rather than merely disabled. Default exposes the broadest typography and layout controls; legacy Transparent Black/White retain Current and History typography controls; both v2 themes, Signal Line, and Stage Caption expose their supported color/opacity controls.
 
 {% include feature-guide.html section="preview" %}
 
@@ -283,7 +285,7 @@ Center guides assist alignment. Select the button again or leave the page to fin
 </figure>
 
 <a id="obs-websocket"></a>
-## 06 · Livestream timestamp capture
+## {% include chapter-number.html key="obs-websocket" %} · Livestream timestamp capture
 
 OBS WebSocket is optional and disabled by default. Its primary purpose is to read the live OBS timer, record when a karaoke track starts, and show timestamps before songs in supported Set Lists. Normal set-list and lyric overlays work without it.
 
@@ -292,7 +294,7 @@ In OBS Studio 28 or later, open **Tools > WebSocket Server Settings**, enable th
 The status indicator appears at the lower-right only when enabled: green means connected, yellow means connecting/reconnecting, and red means disconnected. Test timestamps with a private test stream before relying on them live.
 
 <a id="uvr-vocal-removal"></a>
-## 07 · UVR vocal removal
+## {% include chapter-number.html key="uvr-vocal-removal" %} · UVR vocal removal
 
 ### Why vocal separation is included
 
@@ -322,7 +324,7 @@ The accompaniment player shows a guide vocal icon only for supported paired trac
 > **For material you have confirmed may be used in a livestream, process it ahead of time when possible.** Vocal separation uses CPU or GPU resources. Before running it during a stream, confirm that the computer still has enough capacity for audio and OBS.
 
 <a id="workspace-modes"></a>
-## 08 · Workspace modes
+## {% include chapter-number.html key="workspace-modes" %} · Workspace modes
 
 Use the top-right mode button or `Ctrl + Shift + M`:
 
@@ -343,7 +345,9 @@ When the main window is not needed, its close button can minimize Singing Stream
 {% include localized-release-screenshot.html name="notification-area-menu.png" alt="Singing Stream Savior Windows notification-area menu while idle" caption="The idle menu stays compact. Playback and Advanced Streaming Mode add the relevant playback, Key, speed, Profile, microphone, and Meter actions." size="medium" %}
 
 <a id="settings-and-troubleshooting"></a>
-## 09 · Settings and troubleshooting
+## {% include chapter-number.html key="settings-and-troubleshooting" %} · Settings and troubleshooting
+
+{% include audio-troubleshooting.html heading=3 %}
 
 Back up both the `.bgmsproj` file and local media/lyrics before moving to another computer.
 
@@ -365,4 +369,4 @@ If lyrics cannot be found, shorten the search terms, check title/artist spelling
 
 The Recent Projects list automatically removes entries whose `.bgmsproj` file has been moved or deleted.
 
-{% include feature-guide.html section="health" %}
+{% include audio-diagnostics.html %}

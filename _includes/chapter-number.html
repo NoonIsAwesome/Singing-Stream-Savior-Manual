@@ -1,0 +1,1 @@
+{%- assign numbered_chapter = site.data.chapters | where: 'key', include.key | first -%}{%- if numbered_chapter.number < 10 -%}0{%- endif -%}{{- numbered_chapter.number -}}

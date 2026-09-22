@@ -56,7 +56,7 @@ for(const lang of locales){
   assert.ok(profile.includes(base+ap+'#singing-profile-defaults'));
   assert.ok(profile.includes('profile-horizontal-rack.png')&&profile.includes('profile-vertical-rack.png'));
   assert.ok(profile.includes('effect-editors/')&&profile.includes('VST3'));
-  const nav=profile.match(/<ol class="chapter-list">[\s\S]*?<\/ol>/)?.[0] || '';
+  const nav=profile.match(/<aside\b[^>]*id="guide-nav"[\s\S]*?<\/aside>/)?.[0] || '';
   assert.ok(new RegExp(`href="${base}${pp}"[^>]*aria-current="page"`).test(nav),`${lang}: current Profile chapter`);
   for(const alternate of locales){
     const alternatePath=base+(alternate==='zh-TW'?'':alternate+'/')+'profiles.html';

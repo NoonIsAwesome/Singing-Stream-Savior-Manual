@@ -1,0 +1,16 @@
+{% assign workflow_lang = page.lang | default: 'zh-TW' %}
+{% assign workflow = site.data.manual_workflows[workflow_lang] %}
+{% assign workflow_heading = include.heading | default: 2 %}
+{% if workflow_lang == 'zh-TW' %}{% assign workflow_prefix = '/' %}{% assign workflow_start = '/getting-started.html' %}{% else %}{% assign workflow_prefix = '/' | append: workflow_lang | append: '/' %}{% assign workflow_start = workflow_prefix | append: 'guide.html' %}{% endif %}
+{% assign workflow_advanced = workflow_prefix | append: 'advanced-streaming.html' %}
+{% unless include.hide_links %}
+<nav class="quick-task-links" aria-label="{{ workflow.symptom_label | escape }}">
+  {% for symptom in workflow.symptoms %}<a href="#{{ symptom.id }}"><strong>{{ symptom.title | escape }}</strong></a>{% endfor %}
+</nav>
+{% endunless %}
+{% for symptom in workflow.symptoms %}
+<h{{ workflow_heading }} id="{{ symptom.id }}">{{ symptom.title | escape }}</h{{ workflow_heading }}>
+<ol>{% for step in symptom.steps %}<li>{{ step | escape }}</li>{% endfor %}</ol>
+<p>{% if symptom.route == 'first-stream-check' %}{% assign symptom_url = workflow_start | append: '#first-stream-check' %}{% else %}{% assign symptom_url = workflow_advanced | append: '#' | append: symptom.route %}{% endif %}<a href="{{ symptom_url | relative_url }}">{{ symptom.link | escape }}</a></p>
+{% endfor %}
+<p><strong>{{ workflow.verify_label | escape }}</strong> {{ workflow.verify | escape }}</p>

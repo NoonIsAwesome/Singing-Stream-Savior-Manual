@@ -12,6 +12,10 @@ translation_key: settings-and-troubleshooting
     <h2 id="settings-quick-links">你現在想處理什麼？</h2>
     <p class="chapter-quick-start__intro">先選最接近的項目；每一段都從可以立即檢查的步驟開始。</p>
     <div class="quick-task-links">
+      <a href="#audio-no-sound"><strong>聽不到聲音／OBS 沒聲音</strong><span>從播放器、輸出裝置到 OBS 逐段核對</span></a>
+      <a href="#audio-echo"><strong>人聲重複／有回音</strong><span>找出重複收音與監聽回授</span></a>
+      <a href="#audio-crackle"><strong>爆音／斷音</strong><span>檢查音量與 Buffer 穩定性</span></a>
+      <a href="#audio-delay"><strong>耳機延遲／聲音不同步</strong><span>分辨自己監聽與觀眾輸出</span></a>
       <a href="#files-and-projects"><strong>修改資料夾或下載格式</strong><span>專案、媒體、YouTube 與 UVR 輸出位置</span></a>
       <a href="#project-backup"><strong>備份或搬移專案</strong><span>一起保存 .bgmsproj、音訊與歌詞</span></a>
       <a href="#startup-error"><strong>程式無法啟動</strong><span>處理 Qt platform plugin 或解壓縮問題</span></a>
@@ -23,6 +27,8 @@ translation_key: settings-and-troubleshooting
     </div>
   </div>
 </section>
+
+{% include audio-troubleshooting.html hide_links=true %}
 
 ## 設定分類
 
@@ -52,7 +58,7 @@ translation_key: settings-and-troubleshooting
 
 包含 OBS WebSocket 功能說明、OBS 端啟用步驟、主機、連接埠、密碼及「連線」按鈕。這項設定主要用於直播時間戳，並非使用歌單或歌詞 Overlay 的必要條件。OBS 密碼屬於本機連線憑證，請勿公開分享包含密碼的設定畫面。
 
-{% include feature-guide.html section="health" %}
+{% include audio-diagnostics.html %}
 
 ## 專案與媒體備份 {#project-backup}
 
@@ -150,5 +156,3 @@ translation_key: settings-and-troubleshooting
 請保留最外層的 `Singing Stream Savior.exe` 與程式資料夾內其他檔案的原有位置，不要只移動其中一部分。若必須退回舊版，請把官方舊版完整 ZIP 解壓到**另一個資料夾**，先備份 `.bgmsproj` 與媒體再測試；不要用舊版直接覆蓋新版資料夾。
 
 若啟動器提示需要較新的啟動器，或自動更新仍無法完成，請改從本說明網站下載最新版完整 ZIP，解壓縮到新的資料夾，再用新版開啟原本的 `.bgmsproj`。不要混合覆蓋不同版本的程式檔案。
-
-[上一頁：完整、精簡與迷你模式](workspace-modes.md) · [下一頁：更新日誌](changelog.md)

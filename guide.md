@@ -1,30 +1,32 @@
 ---
-title: 歌回救星 2.1 使用說明
-description: 從安裝、歌曲庫、歌詞與 OBS 主題，到 UVR 人聲消除、工作區與疑難排解的完整使用指南
+title: 歌回救星使用說明：全部章節與基礎操作
+description: 選擇需要的教學章節，或連續閱讀安裝、播放器、歌詞、OBS 畫面與疑難排解；進階音訊與 Profile 提供獨立完整教學。
 lang: zh-TW
 translation_key: home
 manual_bundle: true
 ---
 
-# 歌回救星 2.1 使用說明
+# 全部教學章節與基礎操作
 
-這是將全部操作集中在一起的完整閱讀版。手機或只想處理單一功能時，建議從章節選單開啟獨立頁面；每頁會先顯示最短操作流程，再提供完整設定與排錯說明。
+先從下方選擇要完成的事。安裝、播放、歌詞與其他基礎操作可在本頁連續閱讀；**進階直播音訊與 Profile（人聲效果器）**提供獨立教學。手機閱讀或只需要一個功能時，建議開啟對應的章節頁。
 
-{% capture feature_download_marker %}{% raw %}{% include feature-guide.html section="download" %}{% endraw %}{% endcapture %}
-{% capture feature_lyrics_marker %}{% raw %}{% include feature-guide.html section="lyrics" %}{% endraw %}{% endcapture %}
-{% capture feature_preview_marker %}{% raw %}{% include feature-guide.html section="preview" %}{% endraw %}{% endcapture %}
-{% capture feature_health_marker %}{% raw %}{% include feature-guide.html section="health" %}{% endraw %}{% endcapture %}
-{% capture feature_download_html %}{% include feature-guide.html section="download" %}{% endcapture %}
-{% capture feature_lyrics_html %}{% include feature-guide.html section="lyrics" %}{% endcapture %}
-{% capture feature_preview_html %}{% include feature-guide.html section="preview" %}{% endcapture %}
-{% capture feature_health_html %}{% include feature-guide.html section="health" %}{% endcapture %}
-{% assign chapter_keys = "getting-started,library-and-playback,lyrics,lyrics-editor,obs-and-themes,obs-websocket,uvr-vocal-removal,workspace-modes,settings-and-troubleshooting" | split: "," %}
-{% for chapter_key in chapter_keys %}
-  {% assign chapter_page = site.pages | where: "lang", "zh-TW" | where: "translation_key", chapter_key | first %}
-  {% if chapter_page %}
-<section class="manual-chapter" id="{{ chapter_key }}" data-manual-chapter>
-{% assign chapter_content = chapter_page.content | replace: feature_download_marker, feature_download_html | replace: feature_lyrics_marker, feature_lyrics_html | replace: feature_preview_marker, feature_preview_html | replace: feature_health_marker, feature_health_html %}
-{{ chapter_content | replace: '# ', '## ' | markdownify }}
+<nav class="article-outline manual-chapter-index" aria-label="全部教學章節">
+<strong>全部教學章節</strong><ul>
+{% for chapter in site.data.chapters %}{% if chapter.number %}
+  {% if chapter.standalone %}{% capture chapter_target %}{% include chapter-url.html chapter=chapter lang='zh-TW' %}{% endcapture %}{% else %}{% assign chapter_target = '#' | append: chapter.key %}{% endif %}
+  <li><a href="{% if chapter.standalone %}{{ chapter_target | strip | relative_url }}{% else %}{{ chapter_target }}{% endif %}">{{ site.data.i18n['zh-TW'].nav[chapter.label] }}{% if chapter.standalone %} ↗{% endif %}</a></li>
+{% endif %}{% endfor %}
+</ul></nav>
+
+{% for chapter in site.data.chapters %}
+{% if chapter.number and chapter.standalone != true %}
+{% assign chapter_file = chapter.key | append: '.md' %}
+{% capture chapter_source %}{% include_relative {{ chapter_file }} %}{% endcapture %}
+{% assign chapter_parts = chapter_source | split: '---' %}
+{% assign chapter_body = chapter_parts | shift | shift | join: '---' %}
+{% assign chapter_html = chapter_body | markdownify %}
+<section class="manual-chapter" id="{{ chapter.key }}" data-manual-chapter>
+{{ chapter_html | replace: '<h5', '<h6' | replace: '</h5>', '</h6>' | replace: '<h4', '<h5' | replace: '</h4>', '</h5>' | replace: '<h3', '<h4' | replace: '</h3>', '</h4>' | replace: '<h2', '<h3' | replace: '</h2>', '</h3>' | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' }}
 </section>
-  {% endif %}
+{% endif %}
 {% endfor %}

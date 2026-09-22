@@ -81,8 +81,9 @@
   const chapterLinks = [...document.querySelectorAll(".chapter-list a")]
     .map((link) => {
       const url = new URL(link.href, window.location.href);
-      const target = url.hash ? document.getElementById(url.hash.slice(1)) : null;
-      return target ? { link, target, hash: url.hash } : null;
+      const chapterId = url.hash.slice(1) || link.dataset.chapterKey;
+      const target = chapterId ? document.getElementById(chapterId) : null;
+      return target ? { link, target, hash: '#' + chapterId } : null;
     })
     .filter(Boolean);
 
@@ -125,7 +126,7 @@
       current = chapterLinks[chapterLinks.length - 1];
     }
 
-    setCurrentChapter(current.hash, true);
+    setCurrentChapter(current.hash);
   };
 
   if (chapterLinks.length) {
@@ -188,7 +189,16 @@
 
   const article = document.querySelector(".manual-article");
   if (article) {
-    const articleHeadings = [...article.querySelectorAll(":scope > h2[id]")];
+    const articleHeadings = article.querySelector('.manual-chapter-index') ? [] : [...article.querySelectorAll('h2')]
+      .filter(heading => !heading.closest('.chapter-quick-start, .effect-reference, [data-outline-exclude]'));
+    articleHeadings.forEach((heading, index) => {
+      if (heading.id) return;
+      const baseId = heading.textContent.trim().normalize('NFKC').toLocaleLowerCase()
+        .replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, '') || 'section';
+      let id = baseId;
+      for (let suffix = 2; document.getElementById(id); suffix += 1) id = baseId + '-' + suffix;
+      heading.id = id;
+    });
     if (articleHeadings.length >= 2) {
       const outline = document.createElement("nav");
       outline.className = "article-outline";
@@ -378,6 +388,26 @@
     });
   }
 
+  const revealAnchor = (hash) => {
+    if (!hash) return null;
+    let id;
+    try { id = decodeURIComponent(hash.slice(1)); } catch (_) { return null; }
+    const target = document.getElementById(id);
+    if (!target) return null;
+    for (let parent = target.parentElement; parent; parent = parent.parentElement) {
+      if (parent.tagName === 'DETAILS') parent.open = true;
+    }
+    return target;
+  };
+  revealAnchor(location.hash);
+  window.addEventListener('hashchange', () => revealAnchor(location.hash));
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+    const target = new URL(link.href, location.href);
+    if (target.origin === location.origin && target.pathname === location.pathname) revealAnchor(target.hash);
+  });
+
   const button = document.querySelector(".nav-toggle");
   const navigation = document.querySelector(".guide-sidebar");
   const backdrop = document.querySelector(".nav-backdrop");
@@ -427,11 +457,15 @@
       const query = chapterSearch.value.trim().toLocaleLowerCase();
       let visibleCount = 0;
       chapterItems.forEach((item) => {
-        const matches = !query || item.textContent.toLocaleLowerCase().includes(query);
+        const searchable = (item.textContent + ' ' + (item.dataset.searchKeywords || '')).normalize('NFKC').toLocaleLowerCase();
+        const matches = !query || query.normalize('NFKC').split(/\s+/).every(term => searchable.includes(term));
         item.classList.toggle("is-filtered", !matches);
         if (matches) {
           visibleCount += 1;
         }
+      });
+      navigation.querySelectorAll('.chapter-group').forEach(group => {
+        group.hidden = !group.querySelector('.chapter-list li:not(.is-filtered)');
       });
       if (chapterSearchEmpty) {
         chapterSearchEmpty.hidden = visibleCount !== 0;
@@ -439,40 +473,85 @@
     });
   }
 
-  const setOpen = (open) => {
-    button.setAttribute("aria-expanded", String(open));
+  const mobileNavigation = window.matchMedia('(max-width: 880px)');
+  const closeButton = navigation.querySelector('.sidebar-close');
+  const backgroundElements = [
+    document.querySelector('.site-header'), document.querySelector('.reader-toolbar'),
+    document.querySelector('.guide-content'), document.querySelector('.page-footer')
+  ].filter(Boolean);
+  const originalInert = new Map();
+  let drawerOpen = false;
+  let savedOverflow = '';
+  const focusableElements = () => [...navigation.querySelectorAll('a[href],button,input,select,textarea,[tabindex="0"]')]
+    .filter(element => !element.disabled && element.getClientRects().length && !element.closest('[hidden],.is-filtered'));
+  const setOpen = (requested, restoreFocus = true) => {
+    const open = requested && mobileNavigation.matches;
+    const wasOpen = drawerOpen;
+    drawerOpen = open;
+    button.setAttribute('aria-expanded', String(open));
     navigation.dataset.open = String(open);
-    if (backdrop) {
-      backdrop.hidden = !open;
+    navigation.inert = mobileNavigation.matches && !open;
+    if (backdrop) backdrop.hidden = !open;
+    if (open) {
+      if (!wasOpen) savedOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      navigation.setAttribute('role', 'dialog');
+      navigation.setAttribute('aria-modal', 'true');
+      backgroundElements.forEach(element => {
+        if (!originalInert.has(element)) originalInert.set(element, element.inert);
+        element.inert = true;
+      });
+      window.requestAnimationFrame(() => (closeButton || focusableElements()[0] || navigation).focus({ preventScroll: true }));
+    } else {
+      if (wasOpen) document.body.style.overflow = savedOverflow;
+      navigation.removeAttribute('role');
+      navigation.removeAttribute('aria-modal');
+      originalInert.forEach((inert, element) => { element.inert = inert; });
+      originalInert.clear();
+      if (wasOpen && restoreFocus) button.focus({ preventScroll: true });
     }
-    document.body.style.overflow = open ? "hidden" : "";
   };
-
-  button.addEventListener("click", () => {
-    setOpen(button.getAttribute("aria-expanded") !== "true");
-  });
-
-  navigation.addEventListener("click", (event) => {
-    if (event.target.closest("a")) {
-      setOpen(false);
+  setOpen(false, false);
+  button.addEventListener('click', () => setOpen(!drawerOpen));
+  closeButton?.addEventListener('click', () => setOpen(false));
+  backdrop?.addEventListener('click', () => setOpen(false));
+  navigation.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    if (!link || !drawerOpen) return;
+    setOpen(false, false);
+    const url = new URL(link.href, location.href);
+    if (url.origin === location.origin && url.pathname === location.pathname && url.hash) {
+      const target = revealAnchor(url.hash);
+      if (target) {
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      }
     }
   });
-
-  backdrop?.addEventListener("click", () => {
-    setOpen(false);
-    button.focus();
-  });
-
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && button.getAttribute("aria-expanded") === "true") {
+  window.addEventListener('keydown', event => {
+    if (!drawerOpen) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
       setOpen(false);
-      button.focus();
+    } else if (event.key === 'Tab') {
+      const elements = focusableElements();
+      const first = elements[0] || navigation;
+      const last = elements[elements.length - 1] || navigation;
+      if (event.shiftKey && (document.activeElement === first || !navigation.contains(document.activeElement))) {
+        event.preventDefault(); last.focus();
+      } else if (!event.shiftKey && (document.activeElement === last || !navigation.contains(document.activeElement))) {
+        event.preventDefault(); first.focus();
+      }
     }
   });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 880) {
-      setOpen(false);
+  mobileNavigation.addEventListener('change', () => {
+    const previousFocus = document.activeElement;
+    const focusWasInDrawer = navigation.contains(previousFocus);
+    setOpen(false, false);
+    if (mobileNavigation.matches && focusWasInDrawer) button.focus({ preventScroll: true });
+    else if (!mobileNavigation.matches && (previousFocus === closeButton || previousFocus === button
+      || (focusWasInDrawer && !previousFocus.getClientRects().length))) {
+      (focusableElements()[0] || navigation).focus({ preventScroll: true });
     }
   });
 })();

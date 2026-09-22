@@ -1,0 +1,122 @@
+[
+  {
+    "key": "getting-started",
+    "label": "getting_started",
+    "group": "basics",
+    "standalone": false,
+    "keywords": "start install unzip project save 安裝 安装 啟動 启动 儲存 保存 專案 项目 インストール 起動 保存 설치 시작 저장",
+    "number": 1
+  },
+  {
+    "key": "library-and-playback",
+    "label": "library",
+    "group": "basics",
+    "standalone": false,
+    "keywords": "BGM YouTube playlist queue playback music volume key speed 歌單 歌单 播放 清單 清单 待播 伴奏 曲 プレイリスト 再生 대기 재생 반주",
+    "number": 2
+  },
+  {
+    "key": "lyrics",
+    "label": "lyrics",
+    "group": "basics",
+    "standalone": false,
+    "keywords": "OBS lyrics LRC YouTube subtitles window 歌詞 歌词 視窗 窗口 同步 字幕 歌詞 ウィンドウ 가사 창",
+    "number": 3
+  },
+  {
+    "key": "lyrics-editor",
+    "label": "lyrics_editor",
+    "group": "basics",
+    "standalone": false,
+    "keywords": "lyrics editor timing timestamp LRC 歌詞 歌词 編輯 编辑 時間 时间 歌詞 編集 タイミング 가사 편집 타이밍",
+    "number": 4
+  },
+  {
+    "key": "obs-and-themes",
+    "label": "themes",
+    "group": "basics",
+    "standalone": false,
+    "keywords": "OBS theme browser source overlay preview 主題 主题 畫面 画面 透明 歌單 歌单 ブラウザ ソース テーマ 화면 테마",
+    "number": 5
+  },
+  {
+    "key": "advanced-streaming",
+    "label": "advanced_streaming",
+    "group": "audio",
+    "standalone": true,
+    "keywords": "OBS Discord BGM microphone audio routing monitor record Stream Mix VB-CABLE no sound echo 麥克風 麦克风 混音 聲音 声音 無聲 无声 回音 錄音 录音 マイク 音声 録音 마이크 소리 녹음",
+    "number": 6
+  },
+  {
+    "key": "profiles",
+    "label": "profiles",
+    "group": "audio",
+    "standalone": true,
+    "keywords": "profile microphone effects EQ Reverb VST3 compressor auto 人聲 人声 效果器 自動 自动 切換 切换 マイク エフェクト 自動 ボーカル 마이크 효과 자동",
+    "number": 7
+  },
+  {
+    "key": "obs-websocket",
+    "label": "websocket",
+    "group": "tools",
+    "standalone": false,
+    "keywords": "OBS WebSocket timestamps Set List 時間戳 时间戳 直播 タイムスタンプ 配信 타임스탬프 방송",
+    "number": 8
+  },
+  {
+    "key": "uvr-vocal-removal",
+    "label": "uvr",
+    "group": "tools",
+    "standalone": false,
+    "keywords": "UVR vocal remove stems BGM YouTube 伴奏 導唱 导唱 人聲 人声 分離 分离 カラオケ ボーカル 分離 보컬 분리",
+    "number": 9
+  },
+  {
+    "key": "workspace-modes",
+    "label": "modes",
+    "group": "tools",
+    "standalone": false,
+    "keywords": "workspace mini compact window 工作區 工作区 精簡 精简 迷你 視窗 窗口 ミニ 画面 ワークスペース 미니 작업공간",
+    "number": 10
+  },
+  {
+    "key": "settings-and-troubleshooting",
+    "label": "settings",
+    "group": "tools",
+    "standalone": false,
+    "keywords": "settings backup restore no sound echo crackle delay OBS microphone 設定 设置 備份 备份 還原 还原 無聲 无声 回音 爆音 延遲 延迟 麥克風 麦克风 設定 バックアップ 音が出ない ノイズ 遅延 설정 백업 소리 지연",
+    "number": 11
+  },
+  {
+    "key": "resources",
+    "label": "resources",
+    "group": "resources",
+    "standalone": true,
+    "keywords": "download install Windows video 下載 下载 安裝 安装 影片 视频 ダウンロード インストール 動画 다운로드 설치 영상",
+    "icon": "download"
+  },
+  {
+    "key": "changelog",
+    "label": "changelog",
+    "group": "resources",
+    "standalone": true,
+    "keywords": "release version changelog update 更新 版本 履歴 リリース 업데이트 버전",
+    "icon": "history"
+  },
+  {
+    "key": "open-source",
+    "label": "open_source",
+    "group": "resources",
+    "standalone": true,
+    "keywords": "license open source credits 授權 授权 開源 开源 ライセンス 라이선스",
+    "icon": "code"
+  },
+  {
+    "key": "support",
+    "label": "support",
+    "group": "resources",
+    "standalone": true,
+    "keywords": "help support bug feedback diagnostics 問題 问题 回報 反馈 診斷 诊断 不具合 問い合わせ 문제 신고 도움",
+    "icon": "help"
+  }
+]

@@ -1,0 +1,16 @@
+{% assign workflow_lang = page.lang | default: 'zh-TW' %}
+{% assign workflow = site.data.manual_workflows[workflow_lang].first_stream %}
+{% assign workflow_heading = include.heading | default: 2 %}
+{% if workflow_lang == 'zh-TW' %}{% assign workflow_prefix = '/' %}{% assign workflow_start = '/getting-started.html' %}{% assign workflow_visual = '/obs-and-themes.html' %}{% else %}{% assign workflow_prefix = '/' | append: workflow_lang | append: '/' %}{% assign workflow_start = workflow_prefix | append: 'guide.html' %}{% assign workflow_visual = workflow_prefix | append: 'guide.html#obs-and-themes' %}{% endif %}
+{% assign workflow_audio = workflow_prefix | append: 'advanced-streaming.html#output-obs' %}
+<h{{ workflow_heading }} id="first-stream-check">{{ workflow.title | escape }}</h{{ workflow_heading }}>
+<p>{{ workflow.intro | escape }}</p>
+<ul>
+  <li><strong>{{ workflow.normal_title | escape }}</strong> {{ workflow.normal_body | escape }} <a href="https://obsproject.com/kb/audio-sources">{{ workflow.obs_reference | escape }}</a></li>
+  <li><strong>{{ workflow.advanced_title | escape }}</strong> {{ workflow.advanced_body | escape }} <a href="{{ workflow_audio | relative_url }}">{{ workflow.advanced_link | escape }}</a></li>
+</ul>
+<ol>
+  <li><strong>{{ workflow.visual_title | escape }}</strong> <a href="{{ workflow_visual | relative_url }}">{{ workflow.visual_link | escape }}</a> {{ workflow.visual_body | escape }}</li>
+  <li><strong>{{ workflow.record_title | escape }}</strong> {{ workflow.record_body | escape }}</li>
+</ol>
+<p class="chapter-next-step"><strong>{{ workflow.done_label | escape }}</strong> {{ workflow.done | escape }}</p>
