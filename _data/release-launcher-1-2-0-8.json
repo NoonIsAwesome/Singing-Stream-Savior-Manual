@@ -1,0 +1,78 @@
+{
+  "release": {
+    "version": "1.2.0.8",
+    "anchor": "launcher-v1-2-0-8",
+    "date": "2026-09-23",
+    "latest": false,
+    "type": {
+      "zh-TW": "啟動器修正",
+      "zh-CN": "启动器修复",
+      "en": "Launcher hotfix",
+      "ja": "ランチャー修正",
+      "ko": "실행기 수정"
+    },
+    "release_url": "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/launcher-v1.2.0.8",
+    "summary": {
+      "zh-TW": "本次僅更新啟動器；主程式維持 2.1.6.0，既有完整安裝 ZIP 與音訊功能不變。",
+      "zh-CN": "本次仅更新启动器；主程序保持 2.1.6.0，现有完整安装 ZIP 和音频功能不变。",
+      "en": "Launcher-only update. The application remains at 2.1.6.0; the existing complete-install ZIP and audio features are unchanged.",
+      "ja": "今回はランチャーのみの更新です。アプリ本体は 2.1.6.0 のままで、既存の完全インストール ZIP と音声機能は変更しません。",
+      "ko": "실행기만 업데이트합니다. 앱은 2.1.6.0을 유지하며, 기존 전체 설치 ZIP과 오디오 기능은 바뀌지 않습니다."
+    },
+    "items": {
+      "zh-TW": [
+        "更新失敗改在啟動器內顯示深色訊息，不再等待額外的系統彈出視窗。確認安裝可安全啟動時會自動開啟目前版本；需要修復時則保留原因與關閉按鈕，不強行啟動。",
+        "顯示下載速度，自動使用 KB/s 或 MB/s，並區分等待、重試、驗證與安裝階段。",
+        "加入有限次重試、重新連線與受驗證的斷點續傳。伺服器不支援續傳或資產已變動時會重新下載；完整大小、SHA-256 與安裝安全檢查維持不變。",
+        "啟動器按鈕加入 Hover 回饋，保留停用、按下及鍵盤焦點狀態。",
+        "下載過程的有限技術紀錄僅保存在本機，不會自動上傳。這不能保證任何網路線路都會加速。"
+      ],
+      "zh-CN": [
+        "更新失败时在启动器内显示深色提示，不再等待额外的系统弹窗。确认可安全启动时自动打开当前版本；需要修复时保留原因与关闭按钮，不强行启动。",
+        "自动以 KB/s 或 MB/s 显示下载速度，并区分等待、重试、验证与安装阶段。",
+        "新增有限次重试、重新连接和经过验证的断点续传。不支持续传或资源发生变化时重新下载，保留完整大小、SHA-256 和安装安全检查。",
+        "启动器按钮新增悬停反馈，保留禁用、按下与键盘焦点状态。",
+        "有限的下载技术记录仅保存在本机，不会自动上传；不保证所有网络线路都能加速。"
+      ],
+      "en": [
+        "Update failures now use an inline dark status panel instead of a separate system dialog. A verified safe installation starts automatically; an unsafe installation remains blocked with an explanation and a Close button.",
+        "Show download speed in KB/s or MB/s, with distinct waiting, retry, verification and installation states.",
+        "Add bounded retries, reconnect and validated resumable payload downloads. Unsupported resume or a changed asset restarts the download. Complete size, SHA-256 and installation checks remain mandatory.",
+        "Add button hover feedback while preserving disabled, pressed and keyboard-focus states.",
+        "Keep bounded download diagnostics locally without automatic uploads. No download-speed improvement is guaranteed for every network route."
+      ],
+      "ja": [
+        "更新失敗の内容をランチャー内のダークな表示にまとめ、別のシステムダイアログを待たないようにしました。安全に起動できる場合は現在のバージョンを自動起動し、修復が必要な場合は理由と閉じるボタンを表示して起動を停止します。",
+        "ダウンロード速度を KB/s または MB/s で表示し、待機・再試行・検証・インストールを区別します。",
+        "回数制限付きの再試行、再接続、検証付きのダウンロード再開を追加しました。再開非対応やファイル変更時は再ダウンロードし、サイズ・SHA-256・インストールの安全確認は維持します。",
+        "ボタンにホバー時の反応を追加し、無効・押下・キーボードフォーカスの表示を維持します。",
+        "ダウンロードの限定的な技術記録はローカルにのみ保存し、自動送信しません。すべての回線で高速化される保証はありません。"
+      ],
+      "ko": [
+        "업데이트 실패 시 별도 시스템 팝업 대신 실행기 내부의 어두운 안내 화면을 사용합니다. 안전하게 실행할 수 있으면 현재 버전을 자동으로 시작하고, 복구가 필요하면 원인과 닫기 버튼을 표시하며 실행을 차단합니다.",
+        "다운로드 속도를 KB/s 또는 MB/s로 표시하고 대기, 재시도, 검증, 설치 상태를 구분합니다.",
+        "횟수가 제한된 재시도, 재연결 및 검증된 이어받기를 추가했습니다. 이어받기를 지원하지 않거나 파일이 바뀌면 다시 다운로드하며, 크기·SHA-256·설치 안전 검사는 유지합니다.",
+        "버튼에 마우스 오버 반응을 추가하고 비활성, 누름, 키보드 포커스 상태를 유지합니다.",
+        "제한된 다운로드 기술 기록은 로컬에만 저장하며 자동 업로드하지 않습니다. 모든 네트워크 경로의 속도 향상을 보장하지는 않습니다."
+      ]
+    }
+  },
+  "launcher": {
+    "version": "1.2.0.8",
+    "download_url": "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/launcher-v1.2.0.8/Singing-Stream-Savior-Launcher.exe",
+    "label": {
+      "zh-TW": "下載啟動器修正版",
+      "zh-CN": "下载启动器修复版",
+      "en": "Download launcher hotfix",
+      "ja": "修正版ランチャーを入手",
+      "ko": "수정된 실행기 다운로드"
+    },
+    "notice": {
+      "zh-TW": "獨立啟動器修正；上方完整 ZIP 仍內含 1.2.0.7。若舊啟動器無法更新，先關閉程式並備份，再將此檔改名為 Singing Stream Savior.exe，僅替換安裝最外層的啟動器，不要覆蓋內層主程式。",
+      "zh-CN": "独立启动器修复；上方完整 ZIP 仍包含 1.2.0.7。若旧启动器无法更新，先关闭程序并备份，再将此文件改名为 Singing Stream Savior.exe，仅替换安装最外层的启动器，不要覆盖内层主程序。",
+      "en": "Standalone launcher fix; the complete ZIP above still bundles 1.2.0.7. If the old launcher cannot update, close the app and back up the outer launcher, then rename this download to Singing Stream Savior.exe and replace only the outer launcher, not the application in the inner folder.",
+      "ja": "独立したランチャー修正です。上の完全 ZIP には引き続き 1.2.0.7 が含まれます。更新できない場合はアプリを閉じてバックアップし、このファイルを Singing Stream Savior.exe に改名して最外層のランチャーのみを置き換えてください。内側のアプリ本体は置き換えないでください。",
+      "ko": "실행기만 별도로 수정합니다. 위 전체 ZIP에는 여전히 1.2.0.7이 포함됩니다. 업데이트가 안 되면 앱을 종료하고 백업한 뒤, 이 파일을 Singing Stream Savior.exe로 바꾸어 최상위 실행기만 교체하세요. 내부 폴더의 앱 본체는 덮어쓰지 마세요."
+    }
+  }
+}

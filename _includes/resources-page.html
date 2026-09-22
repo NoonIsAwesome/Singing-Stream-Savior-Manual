@@ -1,5 +1,6 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign resources = site.data.resources %}
+{% assign launcher_hotfix = site.data["release-launcher-1-2-0-8"].launcher %}
 {% assign content_usage = resources.content_usage[current_lang] | default: resources.content_usage.en %}
 {% if current_lang == 'zh-TW' %}
   {% assign changelog_target = '/changelog.html#v2-1-1-1' %}
@@ -243,6 +244,15 @@
       <span class="resource-status">{{ coming_soon }}</span>
     {% endif %}
   </article>
+  {% if launcher_hotfix %}
+  <aside class="resource-update" id="launcher-hotfix" aria-labelledby="launcher-hotfix-title">
+    <div class="resource-update__copy">
+      <strong id="launcher-hotfix-title">Launcher {{ launcher_hotfix.version }}</strong>
+      <p>{{ launcher_hotfix.notice[current_lang] | default: launcher_hotfix.notice.en | escape }}</p>
+    </div>
+    <a class="resource-update__link" href="{{ launcher_hotfix.download_url }}" rel="noopener">{{ launcher_hotfix.label[current_lang] | default: launcher_hotfix.label.en | escape }} <span aria-hidden="true">↓</span></a>
+  </aside>
+  {% endif %}
   <aside class="content-use-note download-content-use" role="note" aria-labelledby="download-content-use-title">
     <strong id="download-content-use-title">{{ content_usage.title | escape }}</strong>
     <p>{{ content_usage.text | escape }}</p>
