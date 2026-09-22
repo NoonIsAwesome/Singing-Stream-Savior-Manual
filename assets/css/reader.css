@@ -633,22 +633,60 @@ html[data-theme="dark"] .language option:checked {
   color:var(--ink);
   font-size:14px
 }
-.sidebar-collapsed .reader-shell.guide-shell {
-  grid-template-columns:76px minmax(0,1fr)
-}
-.sidebar-collapsed .reader-shell .chapter-list a {
-  display:flex;
-  justify-content:center
-}
-.sidebar-collapsed .reader-shell .chapter-number,
-.sidebar-collapsed .reader-shell .chapter-symbol {
-  display:inline;
-  font-size:14px
-}
-.sidebar-collapsed .reader-shell .chapter-group + .chapter-group {
-  padding-top:14px;
-  margin-top:14px;
-  border-top:1px solid var(--line)
+@media (min-width:881px) {
+  .sidebar-collapsed .reader-shell.guide-shell {
+    grid-template-columns:76px minmax(0,1fr)
+  }
+  .sidebar-collapsed .reader-shell .guide-sidebar {
+    width:100%;
+    min-width:0;
+    padding-inline:4px;
+    overflow-x:hidden;
+    scrollbar-gutter:stable
+  }
+  .sidebar-collapsed .reader-shell .sidebar-tools {
+    display:flex;
+    justify-content:center
+  }
+  .sidebar-collapsed .reader-shell .sidebar-collapse {
+    flex:0 0 44px;
+    width:44px;
+    height:44px;
+    padding:0
+  }
+  .sidebar-collapsed .reader-shell .chapter-list a {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:44px;
+    height:44px;
+    margin-inline:auto;
+    padding:0;
+    gap:0;
+    white-space:nowrap;
+    overflow-wrap:normal
+  }
+  .sidebar-collapsed .reader-shell .chapter-number,
+  .sidebar-collapsed .reader-shell .chapter-symbol {
+    display:block;
+    flex:none;
+    font-size:14px
+  }
+  .sidebar-collapsed .reader-shell .chapter-number {
+    min-width:2ch;
+    white-space:nowrap;
+    word-break:normal;
+    font-variant-numeric:tabular-nums
+  }
+  .sidebar-collapsed .reader-shell .chapter-symbol {
+    width:20px;
+    height:20px
+  }
+  .sidebar-collapsed .reader-shell .chapter-group + .chapter-group {
+    padding-top:14px;
+    margin-top:14px;
+    border-top:1px solid var(--line)
+  }
 }
 .reader-shell .manual-article [id] {
   scroll-margin-top:110px
