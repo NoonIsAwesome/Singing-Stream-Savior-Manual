@@ -2759,7 +2759,6 @@ body {
 }
 
 .security-report-grid .manual-figure img {
-  aspect-ratio: auto;
   max-height: 560px;
 }
 
@@ -4216,10 +4215,6 @@ body {
 .feature-shot-grid .manual-figure {
   width: 100%;
   margin: 0;
-}
-
-.feature-shot-grid .manual-figure img {
-  aspect-ratio: auto;
 }
 
 .feature-shot-grid--wide {
