@@ -1,0 +1,33 @@
+release:
+  version: "2.1.6.1"
+  date: "2026-09-24"
+  latest: true
+  type:
+    en: "Hotfix"
+    zh-TW: "修正更新"
+    zh-CN: "修复更新"
+    ja: "修正アップデート"
+    ko: "수정 업데이트"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.6.1"
+  summary:
+    en: "2.1.6.1 hotfix"
+    zh-TW: "2.1.6.1 修正更新"
+    zh-CN: "2.1.6.1 修复更新"
+    ja: "2.1.6.1 修正アップデート"
+    ko: "2.1.6.1 수정 업데이트"
+  items:
+    en:
+      - "Fixes an issue in advanced streaming mode where the Microphone Block's level meter on the Audio Routing page could remain still even though the microphone signal was working normally."
+      - "Fixes issues that prevented downloading audio from YouTube links and converting downloaded files."
+    zh-TW:
+      - "修正進階直播模式下，部分情況中麥克風已有正常訊號，但「音訊路由」頁面的麥克風 Block 電平不會跳動的問題。"
+      - "修正YouTube連結檔案無法下載及轉檔的問題。"
+    zh-CN:
+      - "修复高级直播模式下，部分情况下麦克风已有正常信号，但“音频路由”页面的麦克风 Block 电平不会跳动的问题。"
+      - "修复YouTube链接文件无法下载及转码的问题。"
+    ja:
+      - "高度な配信モードで、マイクの信号が正常に入力されていても、「オーディオルーティング」ページのマイクブロックのレベルメーターが動かないことがある問題を修正しました。"
+      - "YouTubeリンクから音声ファイルをダウンロード・変換できない問題を修正しました。"
+    ko:
+      - "고급 방송 모드에서 마이크 신호가 정상적으로 입력되어도 ‘오디오 라우팅’ 페이지의 마이크 블록 레벨 미터가 움직이지 않는 경우를 수정했습니다."
+      - "YouTube 링크의 오디오 파일을 다운로드하거나 변환할 수 없는 문제를 수정했습니다."

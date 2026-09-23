@@ -18,8 +18,8 @@ const OPEN_SOURCE_PAGES = [
   "ko/open-source.html",
   "zh-CN/open-source.html",
 ];
-const EXPECTED_CURRENT_RELEASE = "2.1.6.0";
-const EXPECTED_CURRENT_RELEASE_ID = "v2-1-6-0";
+const EXPECTED_CURRENT_RELEASE = "2.1.6.1";
+const EXPECTED_CURRENT_RELEASE_ID = "v2-1-6-1";
 
 function collectHtmlFiles(root) {
   const files = [];
