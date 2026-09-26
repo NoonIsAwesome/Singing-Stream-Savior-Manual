@@ -18,8 +18,20 @@ const OPEN_SOURCE_PAGES = [
   "ko/open-source.html",
   "zh-CN/open-source.html",
 ];
-const EXPECTED_CURRENT_RELEASE = "2.1.6.1";
-const EXPECTED_CURRENT_RELEASE_ID = "v2-1-6-1";
+// The download metadata is the single release-version authority. Reject
+// missing/ambiguous input instead of silently validating against an old version.
+export function parseCurrentReleaseMetadata(text) {
+  const normalized = text.replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n");
+  const sections = [...normalized.matchAll(/^software:[ \t]*(?:#[^\n]*)?\n((?:[ \t]+[^\n]*\n|\n)*)/gm)];
+  if (sections.length !== 1) throw new Error("Expected exactly one software metadata section");
+  const fields = sections[0][1].split("\n").filter((line) => /^ {2}version\s*:/.test(line));
+  const match = fields.length === 1 && fields[0].match(/^ {2}version:[ \t]*(?:"(\d+(?:\.\d+){3})"|'(\d+(?:\.\d+){3})'|(\d+(?:\.\d+){3}))[ \t]*(?:#[^\n]*)?$/);
+  if (!match) throw new Error("Expected exactly one valid software version");
+  return match[1] || match[2] || match[3];
+}
+const EXPECTED_CURRENT_RELEASE = parseCurrentReleaseMetadata(
+  readFileSync(new URL("../_data/resources.yml", import.meta.url), "utf8"));
+const EXPECTED_CURRENT_RELEASE_ID = `v${EXPECTED_CURRENT_RELEASE.replaceAll(".", "-")}`;
 
 function collectHtmlFiles(root) {
   const files = [];

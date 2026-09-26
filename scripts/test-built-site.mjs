@@ -3,16 +3,20 @@ import assert from "node:assert/strict";
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { validateBuiltSite } from "./validate-built-site.mjs";
+import { validateBuiltSite, parseCurrentReleaseMetadata } from "./validate-built-site.mjs";
+
+const resources = readFileSync(new URL("../_data/resources.yml", import.meta.url), "utf8");
+const currentVersion = parseCurrentReleaseMetadata(resources);
+const currentId = `v${currentVersion.replaceAll(".", "-")}`;
 
 const locales = ["", "en", "ja", "ko", "zh-CN"];
 const supportLocales = ["zh-TW", "zh-CN", "en", "ja", "ko"];
 const template = readFileSync(new URL("../_includes/release-entry.html", import.meta.url), "utf8");
 const templateTag = template.match(/<article\b[^>]*>/)[0]
   .replace("{% if release.latest %} release-entry--latest{% endif %}", " release-entry--latest")
-  .replace("{{ version_anchor }}", "v2-1-6-1");
+  .replace("{{ version_anchor }}", currentId);
 assert.ok(!templateTag.includes("{%") && !templateTag.includes("{{"), "fixture renders the real article opening");
-const current = `${templateTag}<h2>2.1.6.1</h2></article>`;
+const current = `${templateTag}<h2>${currentVersion}</h2></article>`;
 const old = '<article class="release-entry" id="v2-1-5-4"></article>';
 const supportCopy = JSON.parse(readFileSync(new URL("../_data/support.json", import.meta.url), "utf8"));
 function supportFixture(locale) {
@@ -37,7 +41,7 @@ function withSite(changelog, check) {
     for (const locale of locales) {
       const directory = join(root, locale);
       mkdirSync(directory, { recursive: true });
-      writeFileSync(join(directory, "changelog.html"), `2.0.0.0 → 2.1.6.1\n${changelog}`);
+      writeFileSync(join(directory, "changelog.html"), `2.0.0.0 → ${currentVersion}\n${changelog}`);
       writeFileSync(join(directory, "open-source.html"), "Ultimate-Vocal-Remover-MIT.txt UVR-MDX-Models-NOTICE.txt UVR-HP-Models-NOTICE.txt");
       writeFileSync(join(directory, "index.html"), '<div data-site-language data-theme-choice="auto" id="homepage-states">OuOb 可以全部自動化！ 自動切換聊天／歌唱效果</div>' + '<div class="capability"></div>'.repeat(5));
       writeFileSync(join(directory, "advanced-streaming.html"), '<h2 id="what-is-a-profile">Profile</h2>');
@@ -59,26 +63,38 @@ test("accepts actual Liquid template attribute order in all five locales", () =>
   withSite(current + old, (_, errors) => assert.deepEqual(errors, []));
 });
 test("accepts reversed attributes and single-quoted class tokens", () => {
-  withSite("<article id='v2-1-6-1'\nclass='release-entry other release-entry--latest'></article>" + old,
+  withSite(`<article id='${currentId}'\nclass='release-entry other release-entry--latest'></article>` + old,
     (_, errors) => assert.deepEqual(errors, []));
 });
-rejects("rejects an old release marked latest", current.replaceAll("v2-1-6-1", "v2-1-5-4"), "not the rendered current release");
-rejects("rejects a current version mentioned only in text", old + "2.1.6.1 release-entry--latest", "not the rendered current release");
+rejects("rejects an old release marked latest", current.replaceAll(currentId, "v2-1-5-4"), "not the rendered current release");
+rejects("rejects a current version mentioned only in text", old + `${currentVersion} release-entry--latest`, "not the rendered current release");
 rejects("rejects a commented-out current article", `<!--${current}-->${old}`, "not the rendered current release");
 rejects("rejects duplicate latest articles", current + current, "expected exactly one");
-rejects("rejects duplicate current IDs even without two latest classes", current + '<article class="release-entry" id="v2-1-6-1"></article>', "not the rendered current release");
+rejects("rejects duplicate current IDs even without two latest classes", current + `<article class="release-entry" id="${currentId}"></article>`, "not the rendered current release");
 rejects("rejects a current release hidden below an old entry", old + current, "not the rendered current release");
 rejects("rejects a similarly named CSS class", current.replace("release-entry--latest", "release-entry--latest-other"), "not the rendered current release");
 test("release fixture agrees with the download metadata", () => {
-  const resources = readFileSync(new URL("../_data/resources.yml", import.meta.url), "utf8");
-  assert.match(resources, /software:\s*\r?\n\s+version:\s*"2\.1\.6\.1"/);
+  assert.ok(current.includes(`id="${currentId}"`));
+  assert.ok(resources.includes(`  version: "${currentVersion}"`));
+});
+test("release metadata supports future releases, BOM, CRLF and quoted versions", () => {
+  for (const version of ["2.1.7.0", "12.34.56.78"]) {
+    for (const quote of ['"', "'", ""]) {
+      assert.equal(parseCurrentReleaseMetadata(`\uFEFFsoftware:\r\n  version: ${quote}${version}${quote} # release\r\n  launcher_version: "1.0.0.0"\r\nsupport:\r\n  version: "0.0.0.0"\r\n`), version);
+    }
+  }
+});
+test("release metadata rejects missing, malformed and duplicate authority", () => {
+  for (const text of ["", 'support:\n  version: "2.1.7.0"\n', 'software:\n  version: "bad"\n', 'software:\n  version: "2.1.7"\n', 'software:\n  version: "2.1.7.0"\n  version: "2.1.6.1"\n', 'software:\n  version: "2.1.7.0"\nsoftware:\n  version: "2.1.6.1"\n']) {
+    assert.throws(() => parseCurrentReleaseMetadata(text));
+  }
 });
 test("rejects a stale changelog range even with the correct current article", () => {
   withSite(current + old, (root) => {
     const file = join(root, "en/changelog.html");
-    writeFileSync(file, readFileSync(file, "utf8").replace("2.0.0.0 → 2.1.6.1", "2.0.0.0 → 2.1.5.4"));
+    writeFileSync(file, readFileSync(file, "utf8").replace(`2.0.0.0 → ${currentVersion}`, "2.0.0.0 → 2.1.5.4"));
     const errors = validateBuiltSite(root);
-    assert.deepEqual(errors, ["en/changelog.html: changelog range does not end at 2.1.6.1"]);
+    assert.deepEqual(errors, [`en/changelog.html: changelog range does not end at ${currentVersion}`]);
   });
 });
 test("still rejects missing locale, maintenance files and unresolved assets", () => {
