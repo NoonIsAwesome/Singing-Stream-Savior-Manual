@@ -1,7 +1,7 @@
 release:
   version: "2.1.6.1"
   date: "2026-09-24"
-  latest: true
+  latest: false
   type:
     en: "Hotfix"
     zh-TW: "修正更新"
