@@ -9,7 +9,7 @@ function browser(options = {}) {
   const calls = [], listeners = {}, timers = new Map(); let nextTimer = 0;
   const dataset = { analyticsProvider: "counterapi-v2", analyticsHost: "noonisawesome.github.io",
     analyticsBasePath: "/Singing-Stream-Savior-Manual/", counterWorkspace: "fixture-workspace", counterName: "views",
-    downloadCounterEnabled: "true", downloadCounterName: "downloads", ...options.dataset };
+    downloadCounterEnabled: "true", downloadCounterName: "downloads", downloadClickMirrorUrl: "", ...options.dataset };
   const forbidden = () => { throw Error("No DOM changes, storage access or navigation hijacking allowed"); };
   const document = { body: { dataset, appendChild: forbidden },
     addEventListener(type, fn, opts) { assert.equal(opts.passive, true); (listeners[type] ||= []).push(fn); } };
@@ -72,5 +72,35 @@ for(const options of [{fail:true},{status:404},{status:429},{status:503},{badJso
 test("timeout does not retry",async()=>{
   const b=browser({fetch:(url,init)=>new Promise((resolve,reject)=>init.signal.addEventListener("abort",()=>reject(Error("timeout"))))});
   b.emit(b.event());for(const fn of b.timers.values())fn();await tick();assert.equal(b.calls.length,1);assert.equal(b.timers.size,0);
+});
+const gigafile = "https://57.gigafile.nu/0105-o91b142bdcfa3da79b0abc49b8830fcdb";
+function gigafileLink(href = gigafile, source = "gigafile") {
+  return { href, getAttribute: name => name === "data-download-source" ? source : null };
+}
+test("configured GigaFile full-package link increments the existing counter once",async()=>{
+  const b=browser({dataset:{downloadClickMirrorUrl:gigafile}}),e=b.event({target:{closest:()=>gigafileLink()}});
+  assert.equal(b.calls.length,0);b.emit(e);b.emit(e);await tick();assert.equal(b.calls.length,1);
+  assert.equal(b.calls[0].url,"https://api.counterapi.dev/v2/fixture-workspace/downloads/up");
+  assert.equal(b.dataset.downloadAnalyticsState,"accepted");
+});
+test("GitHub full-package link remains counted when GigaFile is configured",async()=>{
+  const b=browser({dataset:{downloadClickMirrorUrl:gigafile}});b.emit(b.event());await tick();
+  assert.equal(b.calls.length,1);assert.equal(b.calls[0].url,"https://api.counterapi.dev/v2/fixture-workspace/downloads/up");
+});
+test("empty mirror configuration does not count a GigaFile link",async()=>{
+  const b=browser();b.emit(b.event({target:{closest:()=>gigafileLink()}}));await tick();assert.equal(b.calls.length,0);
+});
+for(const bad of ["https://gigafile.nu/ab12-cd34", "http://12.gigafile.nu/ab12-cd34", "https://12.gigafile.nu:443/ab12-cd34", "https://user@12.gigafile.nu/ab12-cd34", "https://evil.example/ab12-cd34"]) test(`reject invalid configured GigaFile URL ${bad}`,async()=>{
+  const b=browser({dataset:{downloadClickMirrorUrl:bad}});b.emit(b.event({target:{closest:()=>gigafileLink(bad)}}));await tick();assert.equal(b.calls.length,0);
+});
+test("GigaFile configuration and click URLs with queries are rejected",async()=>{
+  const withQuery=`${gigafile}?token=unexpected`,b=browser({dataset:{downloadClickMirrorUrl:withQuery}});
+  b.emit(b.event({target:{closest:()=>gigafileLink(withQuery)}}));await tick();assert.equal(b.calls.length,0);
+});
+test("different GigaFile token URL is not counted",async()=>{
+  const b=browser({dataset:{downloadClickMirrorUrl:gigafile}});b.emit(b.event({target:{closest:()=>gigafileLink(gigafile.replace("0105-o91b","0105-x91b"))}}));await tick();assert.equal(b.calls.length,0);
+});
+test("GigaFile URL requires the explicit gigafile source marker",async()=>{
+  const b=browser({dataset:{downloadClickMirrorUrl:gigafile}});b.emit(b.event({target:{closest:()=>gigafileLink(gigafile,"github")}}));await tick();assert.equal(b.calls.length,0);
 });
 test("missing body is harmless",()=>{browser({noBody:true});});

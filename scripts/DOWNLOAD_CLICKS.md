@@ -1,14 +1,14 @@
-# Two website counters, separate GitHub downloads
+# Two website counters, separate release downloads
 
 全站瀏覽保留 `_data/analytics.json`，不重設、不拆頁面或語言。
 下載點擊使用 `_data/download_clicks.json`，正式 counter 為網站擁有者提供的
 `singing-stream-savior-download-clicks`，同屬 workspace `noonisawesome-singing-stream-savior-manual`。
-GitHub 檔案下載另依 Release 的 download_count 統計，不將三項合計成人數。
+GitHub 檔案下載另依 Release 的 download_count 統計，不將三項合計成人數。官網下載點擊仍使用既有單一 CounterAPI counter。
 
 ## 計數範圍
 
-只計官網中直接指向本專案 GitHub Release 完整安裝 ZIP 的可信任連結啟動。
-進入 resources.html 是頁面瀏覽，不算下載點擊；主題、Runtime、EXE、LGPL 包、
+計算官網中指向本專案 GitHub Release 完整安裝 ZIP，或符合頁面設定之 GigaFile 備援 URL 的可信任連結啟動。GigaFile 必須是 HTTPS 數字子網域 `*.gigafile.nu`、與頁面上的核准 URL 完全相同，且連結帶有 `data-download-source="gigafile"`。
+進入 resources.html 是頁面瀏覽，不算下載點擊；不匹配設定 URL 的 GigaFile 連結，以及主題、Runtime、EXE、LGPL 包、
 Release 說明頁及其他來源不計入。點擊不是成功下載、安裝或活躍人數。
 下載不等待統計回應，不改 href、不攔截預設行為。支援左鍵、鍵盤、Ctrl／Command 與中鍵，
 不計模擬事件、已取消事件、右鍵或同次雙擊第二下；失敗不重試，避免重複計數。
@@ -32,7 +32,7 @@ HTTP 200 接受不等於已保存，需待緩衝後唯讀確認。
 隱私說明見五語 privacy.html；維護腳本和內部驗收文件不隨 Pages 發布。
 
 ```
-node --test scripts/test-download-clicks.mjs scripts/test-download-config.mjs
+node --test scripts/test-download-clicks.mjs scripts/test-download-config.mjs scripts/test-download-mirror.mjs
 node scripts/validate-download-clicks.mjs _site
 node scripts/validate-privacy.mjs _site
 powershell.exe -NoLogo -NoProfile -File scripts/test-download-clicks.ps1
@@ -40,3 +40,11 @@ powershell.exe -NoLogo -NoProfile -File scripts/test-download-clicks.ps1
 
 離線測試使用模擬資料；CI 只印外部服務可用性，不印真實流量總數。
 官方端點：https://docs.counterapi.dev/api/endpoints/v2/
+
+## 2.1.7.0 備援維護（2026-09-27）
+
+本日起官網下載點擊包含 GitHub 與 GigaFile，仍使用同一 counter；GitHub 的 Release download_count 不含 GigaFile。
+`_data/resources.yml` 的 `software.mirror` 保存版本、公開 URL、期限。換版本時必須重新核對 ZIP 的大小與 SHA-256；版本不符時模板不顯示備援。
+GigaFile 本次選擇 100 天，服務頁標示 2027-01-05 到期；官網保守於該日日本時間 00:00 停用。頁面建置與瀏覽器到期檢查都會隱藏備援，GitHub 持續可用。
+到期前重新上傳並更新 URL／期限；GigaFile 不提供延長既有上傳期限。刪除管理碼只留在本機忽略的作業紀錄，不可放入 repository 或網站。
+`download-mirror.js` 與點擊統計分開：過期連結會在 capture 階段停止導向與計數，有效下載不等待統計。

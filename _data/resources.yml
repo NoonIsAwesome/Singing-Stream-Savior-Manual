@@ -7,6 +7,11 @@ software:
   file_size: "867 MB"
   sha256: "e0a1fe38f4523b9acbed818a3c51d1e720b9ec06e273d9815b8f2a4b4a0d8a4c"
   updated_at: "2026-09-26"
+  # Temporary mirror is bound to this exact release; replace all fields when renewing.
+  mirror:
+    version: "2.1.7.0"
+    url: "https://57.gigafile.nu/0105-o91b142bdcfa3da79b0abc49b8830fcdb"
+    expires_at: "2027-01-05T00:00:00+09:00"
 
 support:
   ecpay_url: "https://p.ecpay.com.tw/3604623"

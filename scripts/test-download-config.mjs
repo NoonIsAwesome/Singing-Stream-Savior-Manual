@@ -32,6 +32,14 @@ test("rendered validation covers all languages, independent config, loaders and 
       writeFileSync(join(root, "resources.html"), invalid);
       assert.ok(validateRenderedDownloads(root, views, clicks).length);
     }
+    const mirror = "https://57.gigafile.nu/0105-o91b142bdcfa3da79b0abc49b8830fcdb";
+    const mirrored = html.replace("<body ", `<body data-download-click-mirror-url="${mirror}" `).replace("</body>", `<div data-download-mirror-expires="2027-01-05T00:00:00+09:00"><a data-download-source="gigafile" href="${mirror}">Backup</a></div><script src="${base}assets/js/download-mirror.js" defer></script></body>`);
+    writeFileSync(join(root, "resources.html"), mirrored);
+    assert.deepEqual(validateRenderedDownloads(root, views, clicks), []);
+    for (const invalid of [mirrored.replace('data-download-source="gigafile"', ''), mirrored.replace('data-download-mirror-expires=', 'missing-expiry='), mirrored.replace('download-mirror.js', 'missing.js'), mirrored.replace(`href="${mirror}"`, 'href="https://evil.example/"'), mirrored.replace(`data-download-click-mirror-url="${mirror}"`, ''), mirrored.replaceAll(mirror, mirror + '?query=1')]) {
+      writeFileSync(join(root, "resources.html"), invalid);
+      assert.ok(validateRenderedDownloads(root, views, clicks).length);
+    }
     writeFileSync(join(root, "resources.html"), html);
     writeFileSync(join(root, "redirect.html"), '<meta http-equiv="refresh" content="0;url=index.html">');
     assert.deepEqual(validateRenderedDownloads(root, views, clicks), []);

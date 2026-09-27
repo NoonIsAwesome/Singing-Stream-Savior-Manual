@@ -1,5 +1,6 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign resources = site.data.resources %}
+{% include download-mirror-config.html %}
 {% assign content_usage = resources.content_usage[current_lang] | default: resources.content_usage.en %}
 {% if current_lang == 'zh-TW' %}
   {% assign changelog_target = '/changelog.html#v2-1-1-1' %}
@@ -15,7 +16,10 @@
   {% assign launcher_note = '2.1.2.1 修正完整包在同版本啟動時重複下載資源的問題；缺檔或損壞時仍會修復，並顯示清楚的修復狀態。完整包內含啟動器 1.2.0.3。' %}
   {% assign recent_update = '近期更新' %}
   {% assign release_notes_label = '查看更新內容' %}
-  {% assign download_label = '下載最新版' %}
+  {% assign download_label = 'GitHub 下載' %}
+  {% assign mirror_label = '備援下載 · GigaFile' %}
+  {% assign mirror_expiry_label = '備援期限' %}
+  {% assign mirror_hint = 'GitHub 下載失敗時可改用備援，ZIP 內容相同。開啟 GigaFile 後請點「ダウンロード開始」。' %}
   {% assign hash_label = 'ZIP SHA-256' %}
   {% assign support_title = '喜歡歌回救星嗎？歡迎支持開發' %}
   {% assign support_text = '軟體可以免費使用；如果它讓你的直播準備更輕鬆，也可以透過以下方式贊助沐橙持續開發。' %}
@@ -54,7 +58,10 @@
   {% assign launcher_note = '2.1.2.1 修正完整包在同版本启动时重复下载资源的问题；缺少文件或文件损坏时仍会修复，并显示清楚的修复状态。完整包包含启动器 1.2.0.3。' %}
   {% assign recent_update = '近期更新' %}
   {% assign release_notes_label = '查看更新内容' %}
-  {% assign download_label = '下载最新版' %}
+  {% assign download_label = 'GitHub 下载' %}
+  {% assign mirror_label = '备用下载 · GigaFile' %}
+  {% assign mirror_expiry_label = '备用链接有效期' %}
+  {% assign mirror_hint = 'GitHub 下载失败时可改用备用链接，ZIP 内容相同。打开 GigaFile 后请点击“ダウンロード開始”。' %}
   {% assign hash_label = 'ZIP SHA-256' %}
   {% assign support_title = '喜欢 Singing Stream Savior？欢迎支持开发' %}
   {% assign support_text = '软件可以免费使用；如果它让直播准备更轻松，也可以通过以下方式赞助沐橙继续开发。' %}
@@ -92,7 +99,10 @@
   {% assign launcher_note = '2.1.2.1 は、完全パッケージでも同じバージョンのリソースを再ダウンロードする問題を修正しました。ファイルの不足や破損は引き続き修復し、修復状況を表示します。Launcher 1.2.0.3 を同梱しています。' %}
   {% assign recent_update = '最近の更新' %}
   {% assign release_notes_label = '更新内容を見る' %}
-  {% assign download_label = '最新版をダウンロード' %}
+  {% assign download_label = 'GitHub からダウンロード' %}
+  {% assign mirror_label = '予備ダウンロード · GigaFile' %}
+  {% assign mirror_expiry_label = '予備リンクの期限' %}
+  {% assign mirror_hint = 'GitHub でダウンロードできない場合は予備リンクをご利用ください。同じ ZIP ファイルです。GigaFile では「ダウンロード開始」を選んでください。' %}
   {% assign hash_label = 'ZIP SHA-256' %}
   {% assign support_title = 'Singing Stream Savior の開発を応援' %}
   {% assign support_text = 'アプリは無料で利用できます。配信準備に役立ったと感じたら、以下から沐橙の開発を支援できます。' %}
@@ -130,7 +140,10 @@
   {% assign launcher_note = '2.1.2.1은 전체 패키지에서도 같은 버전의 리소스를 다시 다운로드하던 문제를 수정했습니다. 누락되거나 손상된 파일은 계속 복구하며 복구 상태를 표시합니다. Launcher 1.2.0.3이 포함됩니다.' %}
   {% assign recent_update = '최근 업데이트' %}
   {% assign release_notes_label = '업데이트 내용 보기' %}
-  {% assign download_label = '최신 버전 다운로드' %}
+  {% assign download_label = 'GitHub 다운로드' %}
+  {% assign mirror_label = '대체 다운로드 · GigaFile' %}
+  {% assign mirror_expiry_label = '대체 링크 만료일' %}
+  {% assign mirror_hint = 'GitHub 다운로드가 실패하면 대체 링크를 이용하세요. 동일한 ZIP 파일입니다. GigaFile에서 “ダウンロード開始”를 선택하세요.' %}
   {% assign hash_label = 'ZIP SHA-256' %}
   {% assign support_title = 'Singing Stream Savior 개발 후원' %}
   {% assign support_text = '앱은 무료로 사용할 수 있습니다. 방송 준비에 도움이 되었다면 아래 방법으로 모청의 개발을 후원할 수 있습니다.' %}
@@ -168,7 +181,10 @@
   {% assign launcher_note = '2.1.2.1 fixes repeated resource downloads when launching a complete installation of the same version. Missing or damaged files still trigger repair, with a clear repair status. The complete package includes Launcher 1.2.0.3.' %}
   {% assign recent_update = 'Recent update' %}
   {% assign release_notes_label = 'View release notes' %}
-  {% assign download_label = 'Download latest version' %}
+  {% assign download_label = 'Download from GitHub' %}
+  {% assign mirror_label = 'Backup download · GigaFile' %}
+  {% assign mirror_expiry_label = 'Backup expires' %}
+  {% assign mirror_hint = 'If GitHub fails, try the backup. Both provide the same ZIP. On GigaFile, select “ダウンロード開始” (Start download).' %}
   {% assign hash_label = 'ZIP SHA-256' %}
   {% assign support_title = 'Support Singing Stream Savior' %}
   {% assign support_text = 'The app is free to use. If it makes preparing your streams easier, you can support Noon’s continued development below.' %}
@@ -238,11 +254,20 @@
       {% if resources.software.sha256 != '' %}<small class="download-panel__hash"><b>{{ hash_label }}</b><code>{{ resources.software.sha256 }}</code></small>{% endif %}
     </div>
     {% if resources.software.download_url != '' %}
-      <a class="resource-action resource-action--primary" href="{{ resources.software.download_url }}" rel="noopener">{{ download_label }}</a>
+      <div class="download-panel__actions">
+        <a class="resource-action resource-action--primary" href="{{ resources.software.download_url }}" data-download-source="github" rel="noopener">{{ download_label }}</a>
+        {% if download_mirror_url != '' %}
+          <div class="download-panel__mirror" data-download-mirror-expires="{{ download_mirror.expires_at | escape }}">
+            <a class="resource-action" href="{{ download_mirror_url | escape }}" data-download-source="gigafile" rel="noopener noreferrer">{{ mirror_label }}</a>
+            <small>{{ mirror_expiry_label }} <time datetime="{{ download_mirror.expires_at | escape }}">{{ download_mirror.expires_at | slice: 0, 10 }}</time></small>
+          </div>
+        {% endif %}
+      </div>
     {% else %}
       <span class="resource-status">{{ coming_soon }}</span>
     {% endif %}
   </article>
+  {% if download_mirror_url != '' %}<p class="download-mirror-hint" data-download-mirror-expires="{{ download_mirror.expires_at | escape }}">{{ mirror_hint }}</p>{% endif %}
   <aside class="content-use-note download-content-use" role="note" aria-labelledby="download-content-use-title">
     <strong id="download-content-use-title">{{ content_usage.title | escape }}</strong>
     <p>{{ content_usage.text | escape }}</p>

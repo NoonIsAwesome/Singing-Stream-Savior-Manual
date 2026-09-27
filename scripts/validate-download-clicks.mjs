@@ -44,7 +44,23 @@ export function validateRenderedDownloads(root, views, clicks, base = "/Singing-
     const path = join(root, prefix, "resources.html");
     if (!existsSync(path)) { errors.push(`${prefix}resources.html: download page missing`); continue; }
     const html = readFileSync(path, "utf8");
-    const urls = [...html.matchAll(/<a\b[^>]*>/gi)].map(([tag]) => attr(tag, "href") || "");
+    const links = [...html.matchAll(/<a\b[^>]*>/gi)].map(([tag]) => tag);
+    const urls = links.map(tag => attr(tag, "href") || "");
+    const body = html.match(/<body\b[^>]*>/i)?.[0] || "";
+    const mirror = attr(body, "data-download-click-mirror-url") || "";
+    const mirrorLinks = links.filter(tag => attr(tag, "data-download-source") === "gigafile");
+    if (mirror) {
+      let valid = false;
+      try {
+        const url = new URL(mirror);
+        valid = url.protocol === "https:" && /^\d+\.gigafile\.nu$/.test(url.hostname)
+          && !url.username && !url.password && !url.port && !url.search && !url.hash && url.pathname !== "/";
+      } catch { /* malformed mirror must fail the build */ }
+      if (!valid || mirrorLinks.length !== 1 || attr(mirrorLinks[0] || "", "href") !== mirror)
+        errors.push(`${prefix}resources.html: backup link and click allowlist must match`);
+      if (!html.includes('data-download-mirror-expires="') || !html.includes(`${base}assets/js/download-mirror.js`))
+        errors.push(`${prefix}resources.html: backup expiry guard missing`);
+    } else if (mirrorLinks.length) errors.push(`${prefix}resources.html: backup link missing click allowlist`);
     if (!urls.some(url => /^https:\/\/github\.com\/NoonIsAwesome\/Singing-Stream-Savior-Updates\/releases\/download\/[^/]+\/Singing[ ._-]+Stream[ ._-]+Savior[ ._-]+v?\d+(?:\.\d+){1,3}\.zip(?:[?#]|$)/i.test(url)))
       errors.push(`${prefix}resources.html: expected official full-package download link`);
   }

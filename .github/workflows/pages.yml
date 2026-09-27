@@ -26,7 +26,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Test built-site validator
         run: |
-          node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs scripts/test-download-clicks.mjs scripts/test-download-config.mjs
+          node --test scripts/test-built-site.mjs scripts/test-site-analytics.mjs scripts/test-download-clicks.mjs scripts/test-download-config.mjs scripts/test-download-mirror.mjs
           node scripts/validate-privacy.mjs
       - name: Build manual with Jekyll
         uses: actions/jekyll-build-pages@v1

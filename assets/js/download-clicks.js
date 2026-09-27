@@ -29,6 +29,17 @@
       return /^Singing[ ._-]+Stream[ ._-]+Savior(?:[ ._-]+v?\d+(?:\.\d+){1,3})?\.zip$/i.test(decodeURIComponent(parts[6]));
     } catch { return false; }
   };
+  const isGigafilePackage = (href, link) => {
+    try {
+      if (!config.downloadClickMirrorUrl || link?.getAttribute("data-download-source") !== "gigafile") return false;
+      const expectedText = config.downloadClickMirrorUrl;
+      const expected = new URL(expectedText);
+      const actual = new URL(href, window.location.href);
+      const allowed = (url) => url.protocol === "https:" && /^\d+\.gigafile\.nu$/i.test(url.hostname)
+        && !url.username && !url.password && !url.port && url.pathname !== "/" && !url.search && !url.hash;
+      return allowed(expected) && allowed(actual) && expected.href === expectedText && actual.href === expected.href;
+    } catch { return false; }
+  };
   try {
     if (config.analyticsProvider !== "counterapi-v2") { state("invalid-config"); return; }
     if (!config.downloadCounterEnabled || config.downloadCounterEnabled === "false") { state("disabled"); return; }
@@ -66,7 +77,8 @@
         if (!((event.type === "click" && event.button === 0) || (event.type === "auxclick" && event.button === 1))) return;
         const target = event.target?.nodeType === 3 ? event.target.parentElement : event.target;
         const link = target?.closest?.("a[href]");
-        if (!link || link.getAttribute("aria-disabled") === "true" || !isPackage(link.href) || !eligible()) return;
+        if (!link || link.getAttribute("aria-disabled") === "true"
+          || !(isPackage(link.href) || isGigafilePackage(link.href, link)) || !eligible()) return;
         seen.add(event);
         void record(); // No preventDefault, await, redirect or delay in the download navigation.
       } catch { state("request-failed"); }

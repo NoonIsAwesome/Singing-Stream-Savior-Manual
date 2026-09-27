@@ -1,0 +1,7 @@
+{%- assign download_mirror_url = '' -%}
+{%- assign download_mirror = site.data.resources.software.mirror -%}
+{%- assign mirror_now = site.time | date: '%s' | plus: 0 -%}
+{%- assign mirror_expiry = download_mirror.expires_at | date: '%s' | plus: 0 -%}
+{%- if download_mirror.version == site.data.resources.software.version and download_mirror.url != nil and download_mirror.url != '' and mirror_expiry > mirror_now -%}
+  {%- assign download_mirror_url = download_mirror.url -%}
+{%- endif -%}
