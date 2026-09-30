@@ -1,17 +1,18 @@
 ﻿# 發布正式檔案後，只要更新這裡的連結與版本即可。
 software:
-  version: "2.1.7.0"
+  version: "2.1.7.1"
   launcher_version: "1.2.0.8"
-  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.1.7.0/Singing.Stream.Savior.2.1.7.0.zip"
-  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.7.0"
-  file_size: "867 MB"
-  sha256: "e0a1fe38f4523b9acbed818a3c51d1e720b9ec06e273d9815b8f2a4b4a0d8a4c"
-  updated_at: "2026-09-26"
+  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.1.7.1/Singing.Stream.Savior.2.1.7.1.zip"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.7.1"
+  file_size: "827 MB"
+  sha256: "3f90c566f50f9f5f212e1c89d2d029cf48d05cafa18917c0730afb721927c800"
+  updated_at: "2026-09-30"
+
   # Temporary mirror is bound to this exact release; replace all fields when renewing.
   mirror:
-    version: "2.1.7.0"
-    url: "https://57.gigafile.nu/0105-o91b142bdcfa3da79b0abc49b8830fcdb"
-    expires_at: "2027-01-05T00:00:00+09:00"
+    version: "2.1.7.1"
+    url: "https://115.gigafile.jp/0108-n6e70bf3b2a63adf7399ed9d6aa709509"
+    expires_at: "2027-01-08T00:00:00+09:00"
 
 support:
   ecpay_url: "https://p.ecpay.com.tw/3604623"

@@ -1,0 +1,28 @@
+release:
+  version: "2.1.7.1"
+  date: "2026-09-30"
+  latest: true
+  type:
+    en: "Hotfix"
+    zh-TW: "緊急修正"
+    zh-CN: "紧急修正"
+    ja: "緊急修正"
+    ko: "긴급 수정"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.7.1"
+  summary:
+    en: "Fix a startup error after upgrading when older vocal Profile data remains on the computer."
+    zh-TW: "修正電腦保留舊版人聲 Profile 資料時，升級後可能無法啟動的問題。"
+    zh-CN: "修正电脑保留旧版人声 Profile 数据时，升级后可能无法启动的问题。"
+    ja: "古いボーカル Profile データが残っている環境で、更新後に起動できなくなる問題を修正しました。"
+    ko: "이전 버전의 보컬 Profile 데이터가 남아 있는 환경에서 업데이트 후 시작되지 않을 수 있는 문제를 수정했습니다."
+  items:
+    en:
+      - "Retain the original saved data and preserve custom Profile settings, including per-effect parameters, bypass settings, and VST plug-in state."
+    zh-TW:
+      - "保留原始儲存資料，並在載入自訂 Profile 時保留各效果器參數、旁通狀態與 VST 外掛狀態。"
+    zh-CN:
+      - "保留原始存储数据，并在加载自定义 Profile 时保留各效果器参数、旁通状态与 VST 插件状态。"
+    ja:
+      - "元の保存データを保持し、カスタム Profile の各エフェクトのパラメーター、バイパス設定、VST プラグインの状態を引き継ぎます。"
+    ko:
+      - "원래 저장된 데이터를 보존하고, 사용자 지정 Profile의 각 효과 파라미터, 바이패스 설정, VST 플러그인 상태를 유지합니다."
