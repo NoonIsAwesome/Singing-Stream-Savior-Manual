@@ -35,7 +35,7 @@
       const expectedText = config.downloadClickMirrorUrl;
       const expected = new URL(expectedText);
       const actual = new URL(href, window.location.href);
-      const allowed = (url) => url.protocol === "https:" && /^\d+\.gigafile\.nu$/i.test(url.hostname)
+      const allowed = (url) => url.protocol === "https:" && /^\d+\.gigafile\.(?:nu|jp)$/i.test(url.hostname)
         && !url.username && !url.password && !url.port && url.pathname !== "/" && !url.search && !url.hash;
       return allowed(expected) && allowed(actual) && expected.href === expectedText && actual.href === expected.href;
     } catch { return false; }

@@ -53,7 +53,7 @@ export function validateRenderedDownloads(root, views, clicks, base = "/Singing-
       let valid = false;
       try {
         const url = new URL(mirror);
-        valid = url.protocol === "https:" && /^\d+\.gigafile\.nu$/.test(url.hostname)
+        valid = url.protocol === "https:" && /^\d+\.gigafile\.(?:nu|jp)$/.test(url.hostname)
           && !url.username && !url.password && !url.port && !url.search && !url.hash && url.pathname !== "/";
       } catch { /* malformed mirror must fail the build */ }
       if (!valid || mirrorLinks.length !== 1 || attr(mirrorLinks[0] || "", "href") !== mirror)

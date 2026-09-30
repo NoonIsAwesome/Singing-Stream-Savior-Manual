@@ -90,7 +90,18 @@ test("GitHub full-package link remains counted when GigaFile is configured",asyn
 test("empty mirror configuration does not count a GigaFile link",async()=>{
   const b=browser();b.emit(b.event({target:{closest:()=>gigafileLink()}}));await tick();assert.equal(b.calls.length,0);
 });
-for(const bad of ["https://gigafile.nu/ab12-cd34", "http://12.gigafile.nu/ab12-cd34", "https://12.gigafile.nu:443/ab12-cd34", "https://user@12.gigafile.nu/ab12-cd34", "https://evil.example/ab12-cd34"]) test(`reject invalid configured GigaFile URL ${bad}`,async()=>{
+test("official GigaFile jp mirror increments the counter",async()=>{
+  const mirror=gigafile.replace(".gigafile.nu/", ".gigafile.jp/");
+  const b=browser({dataset:{downloadClickMirrorUrl:mirror}});
+  b.emit(b.event({target:{closest:()=>gigafileLink(mirror)}}));await tick();
+  assert.equal(b.calls.length,1);assert.equal(b.dataset.downloadAnalyticsState,"accepted");
+});
+test("an unconfigured GigaFile domain alias does not count",async()=>{
+  const b=browser({dataset:{downloadClickMirrorUrl:gigafile}});
+  b.emit(b.event({target:{closest:()=>gigafileLink(gigafile.replace(".gigafile.nu/", ".gigafile.jp/"))}}));await tick();
+  assert.equal(b.calls.length,0);
+});
+for(const bad of ["https://gigafile.nu/ab12-cd34", "http://12.gigafile.nu/ab12-cd34", "https://12.gigafile.nu:443/ab12-cd34", "https://user@12.gigafile.nu/ab12-cd34", "https://evil.example/ab12-cd34", "https://gigafile.jp/ab12-cd34", "https://files.gigafile.jp/ab12-cd34", "https://12.gigafile.jp.evil.example/ab12-cd34", "https://12.gigafile.nu.evil.example/ab12-cd34", "http://12.gigafile.jp/ab12-cd34", "https://user@12.gigafile.jp/ab12-cd34"]) test(`reject invalid configured GigaFile URL ${bad}`,async()=>{
   const b=browser({dataset:{downloadClickMirrorUrl:bad}});b.emit(b.event({target:{closest:()=>gigafileLink(bad)}}));await tick();assert.equal(b.calls.length,0);
 });
 test("GigaFile configuration and click URLs with queries are rejected",async()=>{

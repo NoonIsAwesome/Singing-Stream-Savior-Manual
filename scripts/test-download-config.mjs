@@ -36,7 +36,9 @@ test("rendered validation covers all languages, independent config, loaders and 
     const mirrored = html.replace("<body ", `<body data-download-click-mirror-url="${mirror}" `).replace("</body>", `<div data-download-mirror-expires="2027-01-05T00:00:00+09:00"><a data-download-source="gigafile" href="${mirror}">Backup</a></div><script src="${base}assets/js/download-mirror.js" defer></script></body>`);
     writeFileSync(join(root, "resources.html"), mirrored);
     assert.deepEqual(validateRenderedDownloads(root, views, clicks), []);
-    for (const invalid of [mirrored.replace('data-download-source="gigafile"', ''), mirrored.replace('data-download-mirror-expires=', 'missing-expiry='), mirrored.replace('download-mirror.js', 'missing.js'), mirrored.replace(`href="${mirror}"`, 'href="https://evil.example/"'), mirrored.replace(`data-download-click-mirror-url="${mirror}"`, ''), mirrored.replaceAll(mirror, mirror + '?query=1')]) {
+    writeFileSync(join(root, "resources.html"), mirrored.replaceAll(".gigafile.nu/", ".gigafile.jp/"));
+    assert.deepEqual(validateRenderedDownloads(root, views, clicks), []);
+    for (const invalid of [mirrored.replace('data-download-source="gigafile"', ''), mirrored.replace('data-download-mirror-expires=', 'missing-expiry='), mirrored.replace('download-mirror.js', 'missing.js'), mirrored.replace(`href="${mirror}"`, 'href="https://evil.example/"'), mirrored.replace(`data-download-click-mirror-url="${mirror}"`, ''), mirrored.replaceAll(mirror, mirror + '?query=1'), mirrored.replaceAll(".gigafile.nu/", ".gigafile.jp.evil.example/"), mirrored.replaceAll(".gigafile.nu/", ".gigafile.nu.evil.example/")]) {
       writeFileSync(join(root, "resources.html"), invalid);
       assert.ok(validateRenderedDownloads(root, views, clicks).length);
     }
