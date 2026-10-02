@@ -1,0 +1,53 @@
+release:
+  version: "2.1.7.2"
+  date: "2026-10-02"
+  latest: true
+  type:
+    en: "Feature update"
+    zh-TW: "功能更新"
+    zh-CN: "功能更新"
+    ja: "機能更新"
+    ko: "기능 업데이트"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.7.2"
+  summary:
+    en: "Add three dynamic lyrics designs and four customizable playlist themes."
+    zh-TW: "新增三款動態歌詞與四款可自訂歌單主題。"
+    zh-CN: "新增三款动态歌词与四款可自定义歌单主题。"
+    ja: "3種類の動的歌詞と4種類のカスタマイズ可能な曲リストテーマを追加。"
+    ko: "동적 가사 3종과 사용자 지정 곡 목록 테마 4종을 추가합니다."
+  items:
+    en:
+      - "Lyrics search tries Traditional/Simplified Chinese name variants in the background, cleans video titles, retries temporary service failures once and ranks version matches. Confirm a result before attaching it."
+      - "Iris Stage, Echo Rig and Shard Stage follow the shared playback clock, with mask reveals, outline echoes and vertical slices. Choose off, gentle or full motion; hide outer decorations independently. Iris Stage starts without its outer ring."
+      - "Bubble Notes defaults to Comic Outline. Choose Thought Cloud, Folded Note, Rounded Droplet or Double Line. Place the stack left/right and top/bottom; the top stack puts Set List above the current song."
+      - "Corner Duet groups a larger current song with one rotating history row. Place it left or right, without Now Playing or Set List headings."
+      - "Quiet Frame provides optional Next On / Reserve in a compact right column, with paging for longer queues. Quiet Verse places a prominent current song above six text-only rows, aligned left, center or right."
+      - "All four new themes support theme colors, fonts, optional Index and history timestamps. Metadata stays fixed, disabled fields collapse and long song titles scroll within the available space."
+    zh-TW:
+      - "歌詞搜尋在背景嘗試繁簡中文名稱變體、清理影片標題，短暫服務錯誤只重試一次，並依歌曲版本排序；由使用者確認結果後套用。"
+      - "新增環光舞台、浮框殘影、垂直分鏡，使用遮罩揭示、輪廓殘影與垂直切片，沿用共用播放時鐘。動態強度可選關閉、輕柔或完整，外部裝飾可獨立隱藏；環光舞台預設不顯示外圈。"
+      - "對話泡泡預設使用漫畫描邊，可選思緒雲朵、折角信箋、圓潤水滴、細線雙框。整組可靠左／靠右、堆疊在上方／下方；上方配置為歌單在上、目前歌曲在下。"
+      - "左下雙列將放大的目前歌曲與輪播歌單靠近排列，可靠左／靠右，不顯示 Now Playing 或 Set List 標題。"
+      - "靜謐方框可在右側顯示或隱藏 Next On／Reserve，較長待播清單會翻頁。純文字歌單在上方突出目前歌曲，下方顯示六首歌單，可選靠左、置中、靠右。"
+      - "四款新增主題皆可調整色調、字型，支援 Index 與歌單時間戳。資訊固定在歌名前，關閉時收合；長歌名在可用空間內捲動。"
+    zh-CN:
+      - "歌词搜索在后台尝试繁简中文名称变体、清理视频标题，短暂服务错误只重试一次，并按歌曲版本排序；由用户确认结果后应用。"
+      - "新增环光舞台、浮框残影、垂直分镜，使用遮罩揭示、轮廓残影和垂直切片，沿用共用播放时钟。动态强度可选关闭、轻柔或完整，外部装饰可独立隐藏；环光舞台默认不显示外圈。"
+      - "对话气泡默认使用漫画描边，可选思绪云朵、折角信笺、圆润水滴、细线双框。整组可左对齐／右对齐、堆叠在上方／下方；上方配置为歌单在上、当前歌曲在下。"
+      - "左下双行将放大的当前歌曲与轮播歌单靠近排列，可左对齐／右对齐，不显示 Now Playing 或 Set List 标题。"
+      - "静谧方框可在右侧显示或隐藏 Next On／Reserve，较长待播列表会翻页。纯文字歌单在上方突出当前歌曲，下方显示六首歌单，可选左对齐、居中、右对齐。"
+      - "四款新增主题均可调整色调、字体，支持 Index 和歌单时间戳。信息固定在歌名前，关闭时收起；长歌名在可用空间内滚动。"
+    ja:
+      - "繁体字・簡体字の曲名候補をバックグラウンド検索し、動画タイトルを整理します。一時的な障害は1回再試行し、曲のバージョンで候補を並べ替えます。適用前に結果を確認できます。"
+      - "Iris Stage、Echo Rig、Shard Stageを追加。マスク、輪郭の残像、縦スライスが共通の再生時刻に従います。動きはオフ・穏やか・強め、外側の装飾は個別に非表示にできます。Iris Stageの外周リングは初期状態で非表示です。"
+      - "Bubble NotesはComic Outlineが初期設定。Thought Cloud、Folded Note、Rounded Droplet、Double Lineを選択できます。左右・上下に配置でき、上側では曲リストが現在の曲の上に並びます。"
+      - "Corner Duetは大きな現在の曲と1行の切り替わる曲リストを近くに配置します。左右を選択でき、Now Playing / Set Listの見出しはありません。"
+      - "Quiet Frameは右側のNext On / Reserveを表示・非表示にでき、長いキューはページ切替します。Quiet Verseは現在の曲の下に6曲を文字だけで表示し、左・中央・右を選べます。"
+      - "4種類とも色、フォント、番号と履歴の配信時刻に対応。情報は曲名の前に固定され、非表示時は空きを詰めます。長い曲名は利用できる幅の中でスクロールします。"
+    ko:
+      - "번체·간체 중국어 곡명 후보를 백그라운드에서 검색하고 동영상 제목을 정리합니다. 일시적인 오류는 한 번 재시도하고 곡 버전으로 후보를 정렬합니다. 적용 전에 결과를 확인할 수 있습니다."
+      - "Iris Stage, Echo Rig, Shard Stage를 추가합니다. 마스크, 윤곽 잔상, 세로 슬라이스가 공통 재생 시간을 따릅니다. 움직임은 끄기·부드럽게·전체, 바깥 장식은 개별 숨김이 가능합니다. Iris Stage의 바깥 링은 기본적으로 숨겨집니다."
+      - "Bubble Notes의 기본 프레임은 Comic Outline입니다. Thought Cloud, Folded Note, Rounded Droplet, Double Line을 선택할 수 있습니다. 좌우·위아래로 배치하며 위쪽 배치에서는 곡 목록이 현재 곡 위에 표시됩니다."
+      - "Corner Duet는 큰 현재 곡과 전환되는 한 줄 곡 목록을 가깝게 배치합니다. 좌우를 선택할 수 있으며 Now Playing / Set List 제목은 표시하지 않습니다."
+      - "Quiet Frame은 오른쪽 Next On / Reserve를 표시하거나 숨길 수 있으며 긴 대기 목록은 페이지를 전환합니다. Quiet Verse는 현재 곡 아래에 6곡을 텍스트로 표시하고 왼쪽·가운데·오른쪽을 선택합니다."
+      - "새 테마 4종 모두 색상, 글꼴, 번호와 방송 타임스탬프를 지원합니다. 정보는 곡명 앞에 고정되고 숨기면 공간을 접습니다. 긴 곡명은 사용 가능한 영역 안에서 스크롤합니다."
