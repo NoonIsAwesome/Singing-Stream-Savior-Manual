@@ -32,6 +32,17 @@ function browser(options = {}) {
   const emit = e => { for(const fn of listeners[e.type] || []) fn(e); };
   run(); return { calls, dataset, timers, listeners, window, run, event, emit };
 }
+const r2 = "https://updates.noonisawesome.dev/releases/v2.1.7.3/Singing.Stream.Savior.2.1.7.3.zip";
+test("approved R2 full ZIP shares the website click counter", async () => {
+  const b = browser({dataset:{downloadClickMirrorUrl:r2}});
+  b.emit(b.event({target:{closest:()=>({href:r2,getAttribute:name=>name==="data-download-source"?"r2":null})}}));
+  await tick(); assert.equal(b.calls.length,1); assert.equal(b.dataset.downloadAnalyticsState,"accepted");
+});
+for (const bad of [r2.replace(".dev/", ".dev.evil.example/"), r2.replace("https:", "http:"), r2+"?secret=1", r2.replace(".zip", ".exe"), r2.replace("/releases/", "/other/")]) test(`reject R2 mirror ${bad}`, async()=>{
+  const b = browser({dataset:{downloadClickMirrorUrl:bad}});
+  b.emit(b.event({target:{closest:()=>({href:bad,getAttribute:name=>name==="data-download-source"?"r2":null})}}));
+  await tick(); assert.equal(b.calls.length,0);
+});
 test("page load alone sends no download click; navigation is not delayed", async() => {
   const b=browser(); assert.equal(b.calls.length,0); assert.equal(b.dataset.downloadAnalyticsState,"ready");
   b.emit(b.event()); assert.equal(b.calls.length,1); await tick();

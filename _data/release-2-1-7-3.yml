@@ -1,0 +1,43 @@
+release:
+  version: "2.1.7.3"
+  date: "2026-10-03"
+  latest: true
+  type:
+    en: "Readability and updater fixes"
+    zh-TW: "歌詞與更新修正"
+    zh-CN: "歌词与更新修复"
+    ja: "歌詞と更新の改善"
+    ko: "가사 및 업데이트 개선"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.7.3"
+  summary:
+    en: "Improve dynamic lyrics readability and update downloads."
+    zh-TW: "提升動態歌詞辨識度與更新下載體驗。"
+    zh-CN: "提升动态歌词清晰度与更新下载体验。"
+    ja: "動的歌詞の読みやすさと更新ダウンロードを改善。"
+    ko: "동적 가사 가독성과 업데이트 다운로드를 개선합니다."
+  items:
+    en:
+      - "Add a shared text outline toggle, color and width for 13 dynamic lyrics designs. Preview and OBS use the same settings; Basic Lyrics and Classic Karaoke remain unchanged."
+      - "Outline settings stay with the project and are kept when switching designs. Small reading text uses a finer outline; existing projects keep outlines off by default."
+      - "Before downloading, compare GitHub and Cloudflare R2 using a short, bounded sample; keep the selected source for subsequent update files and fall back if it fails."
+      - "Launcher 1.2.1.0 is reissued with improved source selection. “Skip update and open app” cancels safely and starts the installed version; you can update next time. The app detects same-version launcher replacements by SHA-256."
+    zh-TW:
+      - "13 款動態歌詞新增共用文字描邊，可開關、調整顏色及粗細；預覽與 OBS 同步套用。Basic Lyrics 與 Classic Karaoke 維持原有外觀。"
+      - "描邊設定隨專案保存，切換樣式時保留；小字讀音使用較細描邊，舊專案預設關閉。"
+      - "下載前短時間比較 GitHub 與 Cloudflare R2 的實際速度；同一次更新後續檔案沿用選出的來源，失效時仍可切換。"
+      - "啟動器維持 1.2.1.0 重新發布。「取消更新並啟動」可安全取消並進入目前版本，下次再更新；主程式透過 SHA-256 辨識同版號啟動器修正。"
+    zh-CN:
+      - "13 款动态歌词新增共用文字描边，可开关、调整颜色及粗细；预览与 OBS 同步应用。Basic Lyrics 与 Classic Karaoke 保持原有外观。"
+      - "描边设置随项目保存，切换样式时保留；小字注音使用较细描边，旧项目默认关闭。"
+      - "下载前短时间比较 GitHub 与 Cloudflare R2 的实际速度；同一次更新后续文件沿用选出的来源，失效时仍可切换。"
+      - "启动器保持 1.2.1.0 重新发布。“取消更新并启动”可安全取消并进入当前版本，下次再更新；主程序通过 SHA-256 识别同版本号启动器修正。"
+    ja:
+      - "13 種類の動的歌詞に共有の文字縁取り設定を追加。オン・オフ、色、太さを調整し、プレビューと OBS に適用します。Basic Lyrics と Classic Karaoke の外観は維持します。"
+      - "縁取り設定はプロジェクトに保存され、デザイン切替後も保持されます。小さな読み仮名には細い縁取りを使い、既存プロジェクトでは既定で無効です。"
+      - "ダウンロード前に短いサンプルで GitHub と Cloudflare R2 の速度を比較します。同じ更新の後続ファイルにも選択した配信元を使用し、障害時には切り替えます。"
+      - "ランチャー 1.2.1.0 を修正版として再公開。「更新をやめてアプリを起動」で安全に中止し、現在のバージョンを使えます。次回に更新でき、同一バージョンのランチャー修正は SHA-256 で識別します。"
+    ko:
+      - "13가지 동적 가사에 공유 텍스트 외곽선 설정을 추가합니다. 켜기/끄기, 색상, 두께를 조절하며 미리 보기와 OBS에 적용됩니다. Basic Lyrics와 Classic Karaoke의 모양은 유지됩니다."
+      - "외곽선 설정은 프로젝트에 저장되며 디자인을 바꿔도 유지됩니다. 작은 발음 텍스트에는 더 얇은 외곽선을 사용하며 기존 프로젝트에서는 기본적으로 꺼져 있습니다."
+      - "다운로드 전에 짧은 샘플로 GitHub와 Cloudflare R2의 속도를 비교합니다. 같은 업데이트의 다음 파일에도 선택한 소스를 사용하며 실패하면 전환합니다."
+      - "런처 버전 1.2.1.0을 유지하여 수정본을 다시 배포합니다. “업데이트 취소하고 실행”은 안전하게 중단하고 현재 버전을 엽니다. 다음에 업데이트할 수 있으며 같은 버전의 런처 수정은 SHA-256으로 식별합니다."

@@ -1,5 +1,7 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign resources = site.data.resources %}
+{% assign release_data_key = resources.software.version | replace: '.', '-' | prepend: 'release-' %}
+{% assign download_release = site.data[release_data_key].release %}
 {% include download-mirror-config.html %}
 {% assign content_usage = resources.content_usage[current_lang] | default: resources.content_usage.en %}
 {% if current_lang == 'zh-TW' %}
@@ -13,13 +15,12 @@
   {% assign lead = '在這裡取得 Singing Stream Savior，並查看之後加入的操作教學。下載前可先閱讀版本資訊；影片只會在你點擊後載入，不會自動播放。' %}
   {% assign software_title = '下載 Singing Stream Savior' %}
   {% assign software_text = '下載 ZIP 並解壓縮後，只需要開啟最外層的「Singing Stream Savior.exe」。它也會顯示版本檢查狀態，未來有更新時會先詢問是否安裝。請勿單獨移動內部 DLL 或資料夾。' %}
-  {% assign launcher_note = '2.1.2.1 修正完整包在同版本啟動時重複下載資源的問題；缺檔或損壞時仍會修復，並顯示清楚的修復狀態。完整包內含啟動器 1.2.0.3。' %}
   {% assign recent_update = '近期更新' %}
   {% assign release_notes_label = '查看更新內容' %}
   {% assign download_label = 'GitHub 下載' %}
-  {% assign mirror_label = '備援下載 · GigaFile' %}
+  {% assign mirror_label = '備援下載 · Cloudflare R2' %}
   {% assign mirror_expiry_label = '備援期限' %}
-  {% assign mirror_hint = 'GitHub 下載失敗時可改用備援，ZIP 內容相同。開啟 GigaFile 後請點「ダウンロード開始」。' %}
+  {% assign mirror_hint = 'GitHub 下載較慢或無法使用時，可直接由 R2 下載相同的完整 ZIP。' %}
   {% assign hash_label = 'ZIP SHA-256' %}
   {% assign support_title = '喜歡歌回救星嗎？歡迎支持開發' %}
   {% assign support_text = '軟體可以免費使用；如果它讓你的直播準備更輕鬆，也可以透過以下方式贊助沐橙持續開發。' %}
@@ -55,13 +56,12 @@
   {% assign lead = '在这里获取 Singing Stream Savior，并查看之后加入的操作教学。下载前可先阅读版本信息；视频只会在点击后加载，不会自动播放。' %}
   {% assign software_title = '下载 Singing Stream Savior' %}
   {% assign software_text = '下载 ZIP 并解压后，只需打开最外层的“Singing Stream Savior.exe”。它也会显示版本检查状态，今后发现更新时会先询问是否安装。请勿单独移动内部 DLL 或文件夹。' %}
-  {% assign launcher_note = '2.1.2.1 修正完整包在同版本启动时重复下载资源的问题；缺少文件或文件损坏时仍会修复，并显示清楚的修复状态。完整包包含启动器 1.2.0.3。' %}
   {% assign recent_update = '近期更新' %}
   {% assign release_notes_label = '查看更新内容' %}
   {% assign download_label = 'GitHub 下载' %}
-  {% assign mirror_label = '备用下载 · GigaFile' %}
+  {% assign mirror_label = '备用下载 · Cloudflare R2' %}
   {% assign mirror_expiry_label = '备用链接有效期' %}
-  {% assign mirror_hint = 'GitHub 下载失败时可改用备用链接，ZIP 内容相同。打开 GigaFile 后请点击“ダウンロード開始”。' %}
+  {% assign mirror_hint = 'GitHub 下载较慢或无法使用时，可直接从 R2 下载相同的完整 ZIP。' %}
   {% assign hash_label = 'ZIP SHA-256' %}
   {% assign support_title = '喜欢 Singing Stream Savior？欢迎支持开发' %}
   {% assign support_text = '软件可以免费使用；如果它让直播准备更轻松，也可以通过以下方式赞助沐橙继续开发。' %}
@@ -96,13 +96,12 @@
   {% assign lead = 'Singing Stream Savior と今後追加する操作動画をこのページにまとめます。ダウンロード前にバージョン情報を確認できます。動画はクリック後に読み込まれ、自動再生されません。' %}
   {% assign software_title = 'Singing Stream Savior をダウンロード' %}
   {% assign software_text = 'ZIP を展開し、最上位にある「Singing Stream Savior.exe」を起動してください。更新確認の状態も表示され、今後新しい版がある場合はインストール前に確認します。内部の DLL やフォルダーは移動しないでください。' %}
-  {% assign launcher_note = '2.1.2.1 は、完全パッケージでも同じバージョンのリソースを再ダウンロードする問題を修正しました。ファイルの不足や破損は引き続き修復し、修復状況を表示します。Launcher 1.2.0.3 を同梱しています。' %}
   {% assign recent_update = '最近の更新' %}
   {% assign release_notes_label = '更新内容を見る' %}
   {% assign download_label = 'GitHub からダウンロード' %}
-  {% assign mirror_label = '予備ダウンロード · GigaFile' %}
+  {% assign mirror_label = '予備ダウンロード · Cloudflare R2' %}
   {% assign mirror_expiry_label = '予備リンクの期限' %}
-  {% assign mirror_hint = 'GitHub でダウンロードできない場合は予備リンクをご利用ください。同じ ZIP ファイルです。GigaFile では「ダウンロード開始」を選んでください。' %}
+  {% assign mirror_hint = 'GitHub が低速または利用できない場合は、R2 から同じ完全版 ZIP を直接ダウンロードできます。' %}
   {% assign hash_label = 'ZIP SHA-256' %}
   {% assign support_title = 'Singing Stream Savior の開発を応援' %}
   {% assign support_text = 'アプリは無料で利用できます。配信準備に役立ったと感じたら、以下から沐橙の開発を支援できます。' %}
@@ -137,13 +136,12 @@
   {% assign lead = 'Singing Stream Savior와 추후 추가할 사용 영상을 한곳에서 제공합니다. 다운로드 전에 버전 정보를 확인할 수 있으며, 영상은 클릭한 뒤에만 불러오고 자동 재생하지 않습니다.' %}
   {% assign software_title = 'Singing Stream Savior 다운로드' %}
   {% assign software_text = 'ZIP 압축을 푼 뒤 최상위의 “Singing Stream Savior.exe”만 실행하세요. 버전 확인 상태를 표시하고 이후 새 버전이 있으면 설치 전에 먼저 확인합니다. 내부 DLL이나 폴더를 따로 이동하지 마세요.' %}
-  {% assign launcher_note = '2.1.2.1은 전체 패키지에서도 같은 버전의 리소스를 다시 다운로드하던 문제를 수정했습니다. 누락되거나 손상된 파일은 계속 복구하며 복구 상태를 표시합니다. Launcher 1.2.0.3이 포함됩니다.' %}
   {% assign recent_update = '최근 업데이트' %}
   {% assign release_notes_label = '업데이트 내용 보기' %}
   {% assign download_label = 'GitHub 다운로드' %}
-  {% assign mirror_label = '대체 다운로드 · GigaFile' %}
+  {% assign mirror_label = '대체 다운로드 · Cloudflare R2' %}
   {% assign mirror_expiry_label = '대체 링크 만료일' %}
-  {% assign mirror_hint = 'GitHub 다운로드가 실패하면 대체 링크를 이용하세요. 동일한 ZIP 파일입니다. GigaFile에서 “ダウンロード開始”를 선택하세요.' %}
+  {% assign mirror_hint = 'GitHub가 느리거나 사용할 수 없으면 R2에서 동일한 전체 ZIP을 바로 다운로드하세요.' %}
   {% assign hash_label = 'ZIP SHA-256' %}
   {% assign support_title = 'Singing Stream Savior 개발 후원' %}
   {% assign support_text = '앱은 무료로 사용할 수 있습니다. 방송 준비에 도움이 되었다면 아래 방법으로 모청의 개발을 후원할 수 있습니다.' %}
@@ -178,13 +176,12 @@
   {% assign lead = 'Get Singing Stream Savior here and find operation videos as they become available. You can review the release information before downloading; videos load only after you choose to play them and never autoplay.' %}
   {% assign software_title = 'Download Singing Stream Savior' %}
   {% assign software_text = 'Extract the ZIP, then open “Singing Stream Savior.exe” in the top-level folder. It also shows the version-check status and asks before installing a future update. Do not move the internal DLLs or folders separately.' %}
-  {% assign launcher_note = '2.1.2.1 fixes repeated resource downloads when launching a complete installation of the same version. Missing or damaged files still trigger repair, with a clear repair status. The complete package includes Launcher 1.2.0.3.' %}
   {% assign recent_update = 'Recent update' %}
   {% assign release_notes_label = 'View release notes' %}
   {% assign download_label = 'Download from GitHub' %}
-  {% assign mirror_label = 'Backup download · GigaFile' %}
+  {% assign mirror_label = 'Backup download · Cloudflare R2' %}
   {% assign mirror_expiry_label = 'Backup expires' %}
-  {% assign mirror_hint = 'If GitHub fails, try the backup. Both provide the same ZIP. On GigaFile, select “ダウンロード開始” (Start download).' %}
+  {% assign mirror_hint = 'If GitHub is slow or unavailable, download the same complete ZIP directly from R2.' %}
   {% assign hash_label = 'ZIP SHA-256' %}
   {% assign support_title = 'Support Singing Stream Savior' %}
   {% assign support_text = 'The app is free to use. If it makes preparing your streams easier, you can support Noon’s continued development below.' %}
@@ -257,9 +254,9 @@
       <div class="download-panel__actions">
         <a class="resource-action resource-action--primary" href="{{ resources.software.download_url }}" data-download-source="github" rel="noopener">{{ download_label }}</a>
         {% if download_mirror_url != '' %}
-          <div class="download-panel__mirror" data-download-mirror-expires="{{ download_mirror.expires_at | escape }}">
-            <a class="resource-action" href="{{ download_mirror_url | escape }}" data-download-source="gigafile" rel="noopener noreferrer">{{ mirror_label }}</a>
-            <small>{{ mirror_expiry_label }} <time datetime="{{ download_mirror.expires_at | escape }}">{{ download_mirror.expires_at | slice: 0, 10 }}</time></small>
+          <div class="download-panel__mirror"{% if download_mirror.expires_at %} data-download-mirror-expires="{{ download_mirror.expires_at | escape }}"{% endif %}>
+            <a class="resource-action" href="{{ download_mirror_url | escape }}" data-download-source="{{ download_mirror.provider | default: 'gigafile' | escape }}" rel="noopener noreferrer">{{ mirror_label }}</a>
+            {% if download_mirror.expires_at %}<small>{{ mirror_expiry_label }} <time datetime="{{ download_mirror.expires_at | escape }}">{{ download_mirror.expires_at | slice: 0, 10 }}</time></small>{% endif %}
           </div>
         {% endif %}
       </div>
@@ -267,7 +264,7 @@
       <span class="resource-status">{{ coming_soon }}</span>
     {% endif %}
   </article>
-  {% if download_mirror_url != '' %}<p class="download-mirror-hint" data-download-mirror-expires="{{ download_mirror.expires_at | escape }}">{{ mirror_hint }}</p>{% endif %}
+  {% if download_mirror_url != '' %}<p class="download-mirror-hint"{% if download_mirror.expires_at %} data-download-mirror-expires="{{ download_mirror.expires_at | escape }}"{% endif %}>{{ mirror_hint }}</p>{% endif %}
   <aside class="content-use-note download-content-use" role="note" aria-labelledby="download-content-use-title">
     <strong id="download-content-use-title">{{ content_usage.title | escape }}</strong>
     <p>{{ content_usage.text | escape }}</p>
@@ -285,7 +282,7 @@
   <aside class="resource-update" aria-label="{{ recent_update }}">
     <div class="resource-update__copy">
       <strong>{{ recent_update }} · {{ resources.software.version }}</strong>
-      <p>{{ launcher_note }}</p>
+      <p>{{ download_release.summary[current_lang] | escape }}</p>
     </div>
     <a class="resource-update__link" href="{{ changelog_target | relative_url }}">{{ release_notes_label }} <span aria-hidden="true">→</span></a>
   </aside>

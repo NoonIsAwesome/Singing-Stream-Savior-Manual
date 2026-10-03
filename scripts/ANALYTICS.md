@@ -1,6 +1,6 @@
 # 官網瀏覽計數：CounterAPI V2
 
-官網保留 CounterAPI，不使用 Cloudflare。唯一設定是 `_data/analytics.json`，
+官網瀏覽統計保留 CounterAPI，瀏覽器不加入 Cloudflare analytics collector。唯一設定是 `_data/analytics.json`，
 前端與 `查看網站統計.cmd` 共用。這是頁面瀏覽次數，不是不重複訪客或軟體活躍人數。
 
 ## 正式計數器與重新驗證

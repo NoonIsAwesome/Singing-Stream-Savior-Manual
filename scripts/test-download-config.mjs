@@ -42,6 +42,14 @@ test("rendered validation covers all languages, independent config, loaders and 
       writeFileSync(join(root, "resources.html"), invalid);
       assert.ok(validateRenderedDownloads(root, views, clicks).length);
     }
+    const r2 = "https://updates.noonisawesome.dev/releases/v9.9.9.9/Singing.Stream.Savior.9.9.9.9.zip";
+    const permanent = html.replace("<body ", `<body data-download-click-mirror-url="${r2}" `).replace("</body>", `<a data-download-source="r2" href="${r2}">R2 backup</a></body>`);
+    writeFileSync(join(root, "resources.html"), permanent);
+    assert.deepEqual(validateRenderedDownloads(root, views, clicks), []);
+    for (const invalid of [permanent.replaceAll(".dev/", ".dev.evil.example/"), permanent.replace('data-download-source="r2"', ''), permanent.replaceAll(r2, r2+"?secret=1"), permanent.replace(`href="${r2}"`, 'href="https://evil.example/"')]) {
+      writeFileSync(join(root, "resources.html"), invalid);
+      assert.ok(validateRenderedDownloads(root, views, clicks).length);
+    }
     writeFileSync(join(root, "resources.html"), html);
     writeFileSync(join(root, "redirect.html"), '<meta http-equiv="refresh" content="0;url=index.html">');
     assert.deepEqual(validateRenderedDownloads(root, views, clicks), []);

@@ -29,14 +29,17 @@
       return /^Singing[ ._-]+Stream[ ._-]+Savior(?:[ ._-]+v?\d+(?:\.\d+){1,3})?\.zip$/i.test(decodeURIComponent(parts[6]));
     } catch { return false; }
   };
-  const isGigafilePackage = (href, link) => {
+  const isMirrorPackage = (href, link) => {
     try {
-      if (!config.downloadClickMirrorUrl || link?.getAttribute("data-download-source") !== "gigafile") return false;
+      const provider = link?.getAttribute("data-download-source");
+      if (!config.downloadClickMirrorUrl || !["gigafile", "r2"].includes(provider)) return false;
       const expectedText = config.downloadClickMirrorUrl;
       const expected = new URL(expectedText);
       const actual = new URL(href, window.location.href);
-      const allowed = (url) => url.protocol === "https:" && /^\d+\.gigafile\.(?:nu|jp)$/i.test(url.hostname)
-        && !url.username && !url.password && !url.port && url.pathname !== "/" && !url.search && !url.hash;
+      const allowed = (url) => url.protocol === "https:" && !url.username && !url.password
+        && !url.port && !url.search && !url.hash && (provider === "r2"
+          ? url.hostname === "updates.noonisawesome.dev" && /^\/releases\/v\d+(?:\.\d+){3}\/Singing\.Stream\.Savior\.\d+(?:\.\d+){3}\.zip$/.test(url.pathname)
+          : /^\d+\.gigafile\.(?:nu|jp)$/i.test(url.hostname) && url.pathname !== "/");
       return allowed(expected) && allowed(actual) && expected.href === expectedText && actual.href === expected.href;
     } catch { return false; }
   };
@@ -78,7 +81,7 @@
         const target = event.target?.nodeType === 3 ? event.target.parentElement : event.target;
         const link = target?.closest?.("a[href]");
         if (!link || link.getAttribute("aria-disabled") === "true"
-          || !(isPackage(link.href) || isGigafilePackage(link.href, link)) || !eligible()) return;
+          || !(isPackage(link.href) || isMirrorPackage(link.href, link)) || !eligible()) return;
         seen.add(event);
         void record(); // No preventDefault, await, redirect or delay in the download navigation.
       } catch { state("request-failed"); }

@@ -1,5 +1,9 @@
 # Two website counters, separate release downloads
 
+From 2.1.7.3 the official full-ZIP backup uses Cloudflare R2, replacing the temporary GigaFile mirror. Trusted `data-download-source="r2"` links must exactly match the page's configured HTTPS URL on `updates.noonisawesome.dev/releases/v<version>/Singing.Stream.Savior.<version>.zip`. Permanent R2 links have no expiry guard. Historical GigaFile validation is retained for archived pages.
+
+The same existing download-click counter includes GitHub and R2 clicks without resetting totals. `get-site-stats.ps1` separately displays R2 origin requests/bytes over a selected 1–31 day period; see [R2 statistics setup](R2_STATISTICS.md). Neither requests nor clicks mean completed updates or unique users.
+
 全站瀏覽保留 `_data/analytics.json`，不重設、不拆頁面或語言。
 下載點擊使用 `_data/download_clicks.json`，正式 counter 為網站擁有者提供的
 `singing-stream-savior-download-clicks`，同屬 workspace `noonisawesome-singing-stream-savior-manual`。
@@ -7,8 +11,8 @@ GitHub 檔案下載另依 Release 的 download_count 統計，不將三項合計
 
 ## 計數範圍
 
-計算官網中指向本專案 GitHub Release 完整安裝 ZIP，或符合頁面設定之 GigaFile 備援 URL 的可信任連結啟動。GigaFile 必須是 HTTPS 數字子網域 `*.gigafile.nu`、與頁面上的核准 URL 完全相同，且連結帶有 `data-download-source="gigafile"`。
-進入 resources.html 是頁面瀏覽，不算下載點擊；不匹配設定 URL 的 GigaFile 連結，以及主題、Runtime、EXE、LGPL 包、
+計算官網中指向本專案 GitHub Release 完整安裝 ZIP，或符合頁面設定之 R2 備援 ZIP 的可信任連結啟動。R2 連結必須符合上方固定 HTTPS 網域與路徑，與頁面核准 URL 完全相同，並帶有 `data-download-source="r2"`。歷史 GigaFile 連結仍要求 HTTPS 數字子網域 `*.gigafile.nu`、核准 URL 與 `data-download-source="gigafile"`。
+進入 resources.html 是頁面瀏覽，不算下載點擊；不匹配設定 URL 的備援連結，以及主題、Runtime、EXE、LGPL 包、
 Release 說明頁及其他來源不計入。點擊不是成功下載、安裝或活躍人數。
 下載不等待統計回應，不改 href、不攔截預設行為。支援左鍵、鍵盤、Ctrl／Command 與中鍵，
 不計模擬事件、已取消事件、右鍵或同次雙擊第二下；失敗不重試，避免重複計數。

@@ -3,7 +3,8 @@
     [switch]$Friendly,
     [switch]$AnalyticsOnly,
     [switch]$ConfigurationOnly,
-    [switch]$Probe
+    [switch]$Probe,
+    [ValidateRange(1,31)][int]$R2Days = 7
 )
 
 $ErrorActionPreference = "Stop"
@@ -12,8 +13,16 @@ $analytics = & (Join-Path $PSScriptRoot "get-site-analytics.ps1") `
     -ConfigurationOnly:$ConfigurationOnly -Probe:$Probe
 $downloadClicks = & (Join-Path $PSScriptRoot "get-download-clicks.ps1") `
     -ConfigurationOnly:$ConfigurationOnly -Probe:$Probe
+$r2 = & (Join-Path $PSScriptRoot 'get-r2-stats.ps1') -Days $R2Days -ConfigurationOnly:$ConfigurationOnly
 
 function Write-WebsiteAnalyticsStatus {
+    Write-Host ("R2 統計狀態：  {0}" -f $r2.Detail)
+    Write-Host ("R2 統計期間：  {0} 至 {1} (UTC)" -f $r2.FromUtc, $r2.UntilUtc)
+    if ($r2.ReadVerified) {
+        Write-Host ("R2 來源請求：  {0:N0} 次；成功 GetObject：{1:N0} 次" -f $r2.Requests, $r2.SuccessfulGetRequests)
+        Write-Host ("R2 來源下載量：{0:N2} MiB" -f ($r2.DownloadBytes / 1MB))
+    } else { Write-Host 'R2 數值未取得，不代表 0 次。' }
+    Write-Host 'R2 請求含探測／重試、不含 CDN 快取命中；流量排除小於 100 KiB 的傳輸，不等同更新成功或使用者人數。'
     Write-Host ("網站統計服務： {0}" -f $analytics.Provider)
     Write-Host ("網站統計狀態： {0}" -f $analytics.Detail)
     if ($null -ne $analytics.WebsitePageViews) {
@@ -37,6 +46,7 @@ if ($AnalyticsOnly) {
     if ($Friendly) { Write-WebsiteAnalyticsStatus }
     else {
         $analytics | Add-Member -NotePropertyName WebsiteDownloadClicks -NotePropertyValue $downloadClicks.WebsiteDownloadClicks
+        $analytics | Add-Member -NotePropertyName R2 -NotePropertyValue $r2
         $analytics | Add-Member -NotePropertyName DownloadClickStatus -NotePropertyValue $downloadClicks.Status
         $analytics | Add-Member -NotePropertyName DownloadClickReadVerified -NotePropertyValue $downloadClicks.ReadVerified
         $analytics | Add-Member -NotePropertyName DownloadClickCollectionEnabled -NotePropertyValue $downloadClicks.CollectionEnabled
@@ -178,6 +188,7 @@ if ($Friendly) {
 }
 
 [PSCustomObject]@{
+    R2 = $r2
     WebsitePageViews = $analytics.WebsitePageViews
     WebsiteVisits = $analytics.WebsiteVisits
     WebsiteDownloadClicks = $downloadClicks.WebsiteDownloadClicks

@@ -6,6 +6,11 @@
   {% if feature.items %}<ul>{% for item in feature.items %}<li>{{ item | escape }}</li>{% endfor %}</ul>{% endif %}
   {% if feature.steps %}<ol>{% for step in feature.steps %}<li>{{ step | escape }}</li>{% endfor %}</ol>{% endif %}
   {% if feature.closing %}<p>{{ feature.closing | escape }}</p>{% endif %}
+  {% if include.section == 'lyrics' %}
+  {% assign outline_copy = site.data.lyrics_outline[feature_language] %}
+  <h3>{{ outline_copy.title | escape }}</h3>
+  <p>{{ outline_copy.description | escape }}</p>
+  {% endif %}
   {% if include.section == 'download' %}
   <figure class="manual-figure">
     <a href="{{ '/assets/images/youtube-download-2141.png' | relative_url }}"><img src="{{ '/assets/images/youtube-download-2141.png' | relative_url }}" alt="{{ feature.caption | escape }}" loading="lazy" decoding="async"></a>

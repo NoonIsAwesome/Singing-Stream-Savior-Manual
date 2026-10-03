@@ -1,0 +1,7 @@
+{
+  "zh-TW": {"title":"動態歌詞文字描邊", "description":"從 2.1.7.3 起，選擇動態歌詞樣式後，可在主題選項開啟「文字描邊」，調整顏色與粗細，讓文字在複雜背景上更清楚。設定同步套用至預覽與 OBS，隨專案保存，切換樣式也會保留；小字讀音使用較細描邊。Basic Lyrics 與 Classic Karaoke 維持原有外觀，舊專案預設關閉此選項。"},
+  "zh-CN": {"title":"动态歌词文字描边", "description":"从 2.1.7.3 起，选择动态歌词样式后，可在主题选项开启“文字描边”，调整颜色与粗细，让文字在复杂背景上更清楚。设置同步应用到预览与 OBS，随项目保存，切换样式也会保留；小字注音使用较细描边。Basic Lyrics 与 Classic Karaoke 保持原有外观，旧项目默认关闭此选项。"},
+  "en": {"title":"Dynamic lyrics text outline", "description":"From 2.1.7.3, choose a dynamic lyrics design and enable Text outline in its options. Adjust the color and width to improve readability on detailed backgrounds. Preview and OBS share the settings, which are saved with the project and retained when switching designs. Small reading text uses a finer outline. Basic Lyrics and Classic Karaoke retain their existing appearance; outlines are off by default for existing projects."},
+  "ja": {"title":"動的歌詞の文字縁取り", "description":"2.1.7.3 から、動的歌詞のデザインを選び、オプションで文字の縁取りを有効にできます。色と太さを調整すると、複雑な背景でも読みやすくなります。設定はプレビューと OBS に適用され、プロジェクトに保存され、デザイン切替後も保持されます。小さな読み仮名には細い縁取りを使います。Basic Lyrics と Classic Karaoke の外観は維持され、既存プロジェクトでは既定で無効です。"},
+  "ko": {"title":"동적 가사 텍스트 외곽선", "description":"2.1.7.3부터 동적 가사 디자인을 선택한 뒤 옵션에서 텍스트 외곽선을 켤 수 있습니다. 색상과 두께를 조절하면 복잡한 배경에서도 가사를 쉽게 읽을 수 있습니다. 미리 보기와 OBS에 같은 설정이 적용되며 프로젝트에 저장되고 디자인을 바꿔도 유지됩니다. 작은 발음 텍스트에는 더 얇은 외곽선을 사용합니다. Basic Lyrics와 Classic Karaoke는 기존 모양을 유지하며 기존 프로젝트에서는 기본적으로 꺼져 있습니다."}
+}

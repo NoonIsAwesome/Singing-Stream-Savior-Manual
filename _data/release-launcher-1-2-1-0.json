@@ -1,0 +1,40 @@
+{
+  "release": {
+    "version": "1.2.1.0",
+    "anchor": "launcher-v1-2-1-0",
+    "date": "2026-10-03",
+    "latest": false,
+    "type": {
+      "en": "Launcher reissue",
+      "zh-TW": "啟動器重新發布",
+      "zh-CN": "启动器重新发布",
+      "ja": "ランチャー再公開",
+      "ko": "런처 재배포"
+    },
+    "release_url": "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/launcher-v1.2.1.0",
+    "summary": {
+      "en": "Launcher 1.2.1.0 is reissued with improved source selection. “Skip update and open app” cancels safely and starts the installed version; you can update next time. The app detects same-version launcher replacements by SHA-256.",
+      "zh-TW": "啟動器維持 1.2.1.0 重新發布。「取消更新並啟動」可安全取消並進入目前版本，下次再更新；主程式透過 SHA-256 辨識同版號啟動器修正。",
+      "zh-CN": "启动器保持 1.2.1.0 重新发布。“取消更新并启动”可安全取消并进入当前版本，下次再更新；主程序通过 SHA-256 识别同版本号启动器修正。",
+      "ja": "ランチャー 1.2.1.0 を修正版として再公開。「更新をやめてアプリを起動」で安全に中止し、現在のバージョンを使えます。次回に更新でき、同一バージョンのランチャー修正は SHA-256 で識別します。",
+      "ko": "런처 버전 1.2.1.0을 유지하여 수정본을 다시 배포합니다. “업데이트 취소하고 실행”은 안전하게 중단하고 현재 버전을 엽니다. 다음에 업데이트할 수 있으며 같은 버전의 런처 수정은 SHA-256으로 식별합니다."
+    },
+    "items": {
+      "en": [
+        "Before downloading, compare GitHub and Cloudflare R2 using a short, bounded sample; keep the selected source for subsequent update files and fall back if it fails."
+      ],
+      "zh-TW": [
+        "下載前短時間比較 GitHub 與 Cloudflare R2 的實際速度；同一次更新後續檔案沿用選出的來源，失效時仍可切換。"
+      ],
+      "zh-CN": [
+        "下载前短时间比较 GitHub 与 Cloudflare R2 的实际速度；同一次更新后续文件沿用选出的来源，失效时仍可切换。"
+      ],
+      "ja": [
+        "ダウンロード前に短いサンプルで GitHub と Cloudflare R2 の速度を比較します。同じ更新の後続ファイルにも選択した配信元を使用し、障害時には切り替えます。"
+      ],
+      "ko": [
+        "다운로드 전에 짧은 샘플로 GitHub와 Cloudflare R2의 속도를 비교합니다. 같은 업데이트의 다음 파일에도 선택한 소스를 사용하며 실패하면 전환합니다."
+      ]
+    }
+  }
+}

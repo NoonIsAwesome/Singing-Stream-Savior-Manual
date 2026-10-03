@@ -48,17 +48,20 @@ export function validateRenderedDownloads(root, views, clicks, base = "/Singing-
     const urls = links.map(tag => attr(tag, "href") || "");
     const body = html.match(/<body\b[^>]*>/i)?.[0] || "";
     const mirror = attr(body, "data-download-click-mirror-url") || "";
-    const mirrorLinks = links.filter(tag => attr(tag, "data-download-source") === "gigafile");
+    const mirrorLinks = links.filter(tag => ["gigafile", "r2"].includes(attr(tag, "data-download-source")));
     if (mirror) {
       let valid = false;
       try {
         const url = new URL(mirror);
-        valid = url.protocol === "https:" && /^\d+\.gigafile\.(?:nu|jp)$/.test(url.hostname)
-          && !url.username && !url.password && !url.port && !url.search && !url.hash && url.pathname !== "/";
+        const r2 = attr(mirrorLinks[0] || "", "data-download-source") === "r2";
+        valid = url.protocol === "https:" && !url.username && !url.password && !url.port && !url.search && !url.hash
+          && (r2 ? url.hostname === "updates.noonisawesome.dev"
+            && /^\/releases\/v\d+(?:\.\d+){3}\/Singing\.Stream\.Savior\.\d+(?:\.\d+){3}\.zip$/.test(url.pathname)
+            : /^\d+\.gigafile\.(?:nu|jp)$/.test(url.hostname) && url.pathname !== "/");
       } catch { /* malformed mirror must fail the build */ }
       if (!valid || mirrorLinks.length !== 1 || attr(mirrorLinks[0] || "", "href") !== mirror)
         errors.push(`${prefix}resources.html: backup link and click allowlist must match`);
-      if (!html.includes('data-download-mirror-expires="') || !html.includes(`${base}assets/js/download-mirror.js`))
+      if (attr(mirrorLinks[0] || "", "data-download-source") !== "r2" && (!html.includes('data-download-mirror-expires="') || !html.includes(`${base}assets/js/download-mirror.js`)))
         errors.push(`${prefix}resources.html: backup expiry guard missing`);
     } else if (mirrorLinks.length) errors.push(`${prefix}resources.html: backup link missing click allowlist`);
     if (!urls.some(url => /^https:\/\/github\.com\/NoonIsAwesome\/Singing-Stream-Savior-Updates\/releases\/download\/[^/]+\/Singing[ ._-]+Stream[ ._-]+Savior[ ._-]+v?\d+(?:\.\d+){1,3}\.zip(?:[?#]|$)/i.test(url)))

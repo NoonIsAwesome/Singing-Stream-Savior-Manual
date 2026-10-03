@@ -39,6 +39,7 @@ jobs:
         run: |
           .\scripts\test-site-analytics.ps1
           .\scripts\test-download-clicks.ps1
+          .\scripts\test-r2-stats.ps1
       - name: Read-only CounterAPI V2 availability (not a collection test)
         shell: powershell
         run: |
