@@ -15,7 +15,7 @@
     "obs_section": "歌詞預覽與 OBS",
     "viewer_alt": "開啟後的獨立歌詞視窗，上方可調整文字大小、讀音與時間偏移，下方醒目顯示目前歌詞。",
     "viewer_caption": "開啟後的歌詞視窗（實際軟體截圖）。這是供主播自己閱讀的獨立視窗，不是歌曲列表的「管理歌詞」，也不是 OBS 歌詞預覽。",
-    "viewer_help": "這個視窗可以自由移動，並有自己的文字大小與日韓讀音設定。點選有時間標記的歌詞可讓伴奏跳到該句；純文字歌詞沒有可跳轉的時間。歌曲回到開頭時，歌詞清單也會回到最上方。"
+    "viewer_help": "視窗可自由移動，文字大小與時間偏移可用兩側 −／＋按鈕調整，日、韓讀音另有獨立設定。2.1.7.4 起預設加寬、加高，關閉再開啟會記住尺寸。「跟隨播放」開啟時，高亮與自動捲動一起跟上目前播放位置；關閉後可自行閱讀，不再自動捲動。時間偏移即時反映；點選有時間戳的歌詞可跳到該句，純文字歌詞沒有可跳轉的時間。"
   },
   "zh-CN": {
     "title": "从伴奏播放器打开歌词窗口与 YouTube 画面",
@@ -33,7 +33,7 @@
     "obs_section": "歌词预览与 OBS",
     "viewer_alt": "打开后的独立歌词窗口，上方可调整文字大小、读音和时间偏移，下方突出显示当前歌词。",
     "viewer_caption": "打开后的歌词窗口（实际软件截图）。这是供主播阅读的独立窗口，不是歌曲列表的“管理歌词”，也不是 OBS 歌词预览。",
-    "viewer_help": "窗口可以自由移动，并有独立的文字大小与日、韩读音设置。点击带时间戳的歌词可让伴奏跳到该句；纯文本歌词没有可跳转的时间。歌曲回到开头时，歌词列表也会回到顶部。"
+    "viewer_help": "窗口可自由移动，文字大小与时间偏移可用两侧 −／＋按钮调整，日、韩读音另有独立设置。2.1.7.4 起默认加宽、加高，关闭后重新打开会记住尺寸。「跟随播放」开启时，高亮与自动滚动一起跟上当前播放位置；关闭后可自行阅读，不再自动滚动。时间偏移即时生效；点击带时间戳的歌词可跳到该句，纯文本歌词没有可跳转的时间。"
   },
   "en": {
     "title": "Open the Lyrics Window and YouTube video from the player",
@@ -51,7 +51,7 @@
     "obs_section": "Lyrics Preview and OBS",
     "viewer_alt": "The opened independent Lyrics Window with text size, reading and timing controls above the highlighted current line.",
     "viewer_caption": "The opened Lyrics Window, shown in a real application screenshot. This movable reader is for the streamer; it is neither Manage Lyrics nor the OBS lyrics preview.",
-    "viewer_help": "Move this window to a comfortable reading position and adjust its own text size and Japanese/Korean reading options. Select a timestamped lyric line to seek the accompaniment to that line; plain-text lyrics have no seek positions. Returning the song to the beginning also scrolls the list back to the top."
+    "viewer_help": "Move the window to a comfortable position and use the side −/+ buttons for text size and timing offset. Japanese and Korean readings have independent settings. From 2.1.7.4, the default window is wider and taller and remembers its size after reopening. Follow playback turns highlighting and automatic scrolling on or off together; enabling it catches up to the current playback position. Timing changes take effect immediately. Selecting a timestamped line seeks to that line; plain text has no seek time."
   },
   "ja": {
     "title": "伴奏プレイヤーから歌詞ウィンドウと YouTube 動画を開く",
@@ -69,7 +69,7 @@
     "obs_section": "歌詞プレビューと OBS",
     "viewer_alt": "開いた独立歌詞ウィンドウ。上部に文字サイズ、読み方、時刻調整があり、下部で現在行が強調表示されています。",
     "viewer_caption": "開いた歌詞ウィンドウの実際の画面です。配信者が手元で読むための独立ウィンドウであり、曲一覧の歌詞管理画面や OBS 用歌詞プレビューとは別です。",
-    "viewer_help": "読みやすい位置へ移動し、このウィンドウ専用の文字サイズや日本語・韓国語の読み方を調整できます。タイムスタンプ付きの行を選ぶと伴奏がその時刻へ移動します。テキスト歌詞には移動先の時刻がありません。曲を先頭へ戻すと、歌詞一覧も上端へ戻ります。"
+    "viewer_help": "読みやすい位置へ移動し、左右の −／＋ ボタンで文字サイズと時間オフセットを調整できます。日本語・韓国語の読み方はこのウィンドウ専用に設定できます。2.1.7.4 から初期サイズを広く、高くし、再度開くと前回のサイズを復元します。再生追従は強調表示と自動スクロールを一緒に切り替え、オンにすると現在の再生位置へ追従します。時間オフセットは即時反映されます。時刻付きの行を選ぶとその位置へ移動します。テキスト歌詞には移動先の時刻がありません。"
   },
   "ko": {
     "title": "반주 플레이어에서 가사 창과 YouTube 영상 열기",
@@ -87,6 +87,6 @@
     "obs_section": "가사 미리보기와 OBS",
     "viewer_alt": "열린 독립 가사 창. 위쪽에는 글자 크기, 읽기와 시간 조정 기능이 있고 아래쪽에는 현재 가사가 강조되어 있습니다.",
     "viewer_caption": "실제 프로그램에서 열린 가사 창입니다. 진행자가 직접 읽는 독립 창이며 곡 목록의 가사 관리 창이나 OBS 가사 미리보기와는 다릅니다.",
-    "viewer_help": "읽기 편한 위치로 옮기고 이 창만의 글자 크기와 일본어·한국어 읽기 옵션을 조정할 수 있습니다. 타임스탬프가 있는 가사를 누르면 반주가 해당 시점으로 이동합니다. 일반 텍스트 가사에는 이동할 시간이 없습니다. 곡을 처음으로 돌리면 목록도 맨 위로 돌아갑니다."
+    "viewer_help": "읽기 편한 위치로 옮기고 양쪽 −/+ 버튼으로 글자 크기와 시간 오프셋을 조절할 수 있습니다. 일본어·한국어 읽기는 이 창에서 별도로 설정합니다. 2.1.7.4부터 기본 창이 더 넓고 높으며 다시 열 때 이전 크기를 복원합니다. 재생 따라가기는 강조와 자동 스크롤을 함께 켜거나 끄며, 켜면 현재 재생 위치를 따라갑니다. 시간 조정은 즉시 반영됩니다. 타임스탬프가 있는 줄을 누르면 해당 시점으로 이동하며 일반 텍스트에는 이동할 시간이 없습니다."
   }
 }

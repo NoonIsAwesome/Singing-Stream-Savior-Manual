@@ -1,7 +1,7 @@
 release:
   version: "2.1.7.3"
   date: "2026-10-03"
-  latest: true
+  latest: false
   type:
     en: "Readability and updater fixes"
     zh-TW: "歌詞與更新修正"
