@@ -1,0 +1,40 @@
+{% assign launcher_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign launcher_guide = site.data.launcher_startup[launcher_lang] %}
+<ol>
+  <li>{{ launcher_guide.extract }}</li>
+  <li>{{ launcher_guide.open }}</li>
+  <li>{{ launcher_guide.check }}</li>
+</ol>
+
+<div class="launch-target">
+  <img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="{{ launcher_guide.icon_alt | escape }}">
+  <div>
+    <strong>Singing Stream Savior.exe</strong>
+    <span>{{ launcher_guide.target }}</span>
+  </div>
+</div>
+
+<pre><code>Singing Stream Savior 2/
+├─ Singing Stream Savior.exe        ← {{ launcher_guide.outer }}
+└─ Singing Stream Savior/
+   └─ Singing Stream Savior.exe     ← {{ launcher_guide.inner }}</code></pre>
+
+<blockquote><p>{{ launcher_guide.warning }}</p></blockquote>
+
+<p>{{ launcher_guide.startup }}</p>
+<figure class="manual-figure manual-figure--small">
+  <a href="{{ '/assets/images/launcher-startup.png' | relative_url }}">
+    <img src="{{ '/assets/images/launcher-startup.png' | relative_url }}" alt="{{ launcher_guide.startup_alt | escape }}" width="456" height="169" loading="lazy" decoding="async">
+  </a>
+  <figcaption>{{ launcher_guide.startup_caption }}</figcaption>
+</figure>
+
+<p>{{ launcher_guide.update }}</p>
+<figure class="manual-figure manual-figure--medium">
+  <a href="{{ '/assets/images/launcher-update-2173.png' | relative_url }}">
+    <img src="{{ '/assets/images/launcher-update-2173.png' | relative_url }}" alt="{{ launcher_guide.update_alt | escape }}" width="766" height="613" loading="lazy" decoding="async">
+  </a>
+  <figcaption>{{ launcher_guide.update_caption }}</figcaption>
+</figure>
+
+<p>{{ launcher_guide.shortcut }}</p>

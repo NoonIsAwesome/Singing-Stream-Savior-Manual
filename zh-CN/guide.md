@@ -35,7 +35,7 @@ manual_bundle: true
     <p class="chapter-quick-start__intro">按照下面的步骤，即可打开软件、设置循环播放的 BGM、测试第一首伴奏，并保存下次可以继续使用的项目。</p>
     <ol class="chapter-quick-start__steps">
       <li><div><strong>完整解压 ZIP</strong><span>将文件解压到普通文件夹，不要直接在 ZIP 中运行软件。</span></div></li>
-      <li><div><strong>打开主程序</strong><span>在最外层文件夹双击 <code>Singing Stream Savior.exe</code>。</span></div></li>
+      <li><div><strong>打开启动器</strong><span>在最外层文件夹双击 <code>Singing Stream Savior.exe</code>，先经过更新检查再打开软件。</span></div></li>
       <li><div><strong>新建项目</strong><span>选择“文件 &gt; 新建项目”。</span></div></li>
       <li><div><strong>添加直播 BGM</strong><span>从 BGM 播放器选择本地文件或粘贴 YouTube 链接，也可直接把文件／链接拖进播放器；载入后会自动开始循环播放。</span></div></li>
       <li><div><strong>加入并播放一首歌</strong><span>把本地音频或单个 YouTube 链接拖进歌曲表格，再双击该歌曲。</span></div></li>
@@ -47,9 +47,9 @@ manual_bundle: true
 
 {% include first-stream-check.html heading=3 %}
 
-将 ZIP 完整解压到普通文件夹。在最外层找到下图图标的 `Singing Stream Savior.exe`，双击即可启动。这是唯一需要打开的程序；不要直接在 ZIP 中运行，也不需要进入其他资料文件夹寻找 EXE。
+### 解压与启动
 
-<div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 软件图标"><div><strong>Singing Stream Savior.exe</strong><span>平时只需要打开这个程序</span></div></div>
+{% include launcher-startup-guide.html %}
 
 从“文件 > 新建项目”建立项目并保存 `.bgmsproj`。项目会保存歌曲、显示歌名、待播顺序、歌词关联和主题设置。已唱记录属于本次直播，不会写入普通项目存档；如果软件异常中断，重新启动时可从恢复快照找回待播与已唱进度。标题栏出现 `*` 表示还有未保存的更改。
 

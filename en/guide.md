@@ -40,7 +40,7 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
     <p class="chapter-quick-start__intro">Follow these steps to open the app, set a looping BGM, test one karaoke track, and save a project you can continue later.</p>
     <ol class="chapter-quick-start__steps">
       <li><div><strong>Extract the complete ZIP</strong><span>Extract it to a normal folder; do not run the app from inside the ZIP.</span></div></li>
-      <li><div><strong>Open the main app</strong><span>Double-click <code>Singing Stream Savior.exe</code> in the outermost folder.</span></div></li>
+      <li><div><strong>Open the launcher</strong><span>Double-click <code>Singing Stream Savior.exe</code> in the outermost folder to handle the update check and open the app.</span></div></li>
       <li><div><strong>Create a project</strong><span>Choose File &gt; New project.</span></div></li>
       <li><div><strong>Add your stream BGM</strong><span>Choose a local file or paste a YouTube link in the BGM player, or drag the file or link directly onto the player. It starts looping automatically after it loads.</span></div></li>
       <li><div><strong>Add and play one song</strong><span>Drag a local audio file or single YouTube link into the song table, then double-click the song.</span></div></li>
@@ -52,9 +52,9 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
 
 {% include first-stream-check.html heading=3 %}
 
-Extract the entire ZIP to a normal folder. In the outermost folder, double-click the `Singing Stream Savior.exe` with the app icon shown below. This is the only file you need to open; do not run the app inside the ZIP or look for another EXE inside the data folders.
+### Extract and launch
 
-<div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior app icon"><div><strong>Singing Stream Savior.exe</strong><span>Open this app to start</span></div></div>
+{% include launcher-startup-guide.html %}
 
 Create a project from **File > New project**, add songs, then save the `.bgmsproj` file. A project stores songs, display titles, queue order, lyric links, theme, and display settings. Sung history belongs to the current live session and is not written to a normal project save. If the app is interrupted unexpectedly, a recovery snapshot can restore the live-session progress when you restart. An asterisk in the window title means there are unsaved changes.
 

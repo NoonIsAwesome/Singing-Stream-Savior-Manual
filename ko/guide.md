@@ -35,7 +35,7 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
     <p class="chapter-quick-start__intro">아래 순서대로 앱을 열고 반복 재생할 BGM을 설정한 뒤 반주 한 곡을 시험 재생하고, 다음에도 이어서 사용할 프로젝트를 저장할 수 있습니다.</p>
     <ol class="chapter-quick-start__steps">
       <li><div><strong>ZIP 전체 압축 해제</strong><span>일반 폴더에 완전히 풀고 ZIP 안에서 앱을 직접 실행하지 마세요.</span></div></li>
-      <li><div><strong>메인 앱 열기</strong><span>가장 바깥쪽 폴더의 <code>Singing Stream Savior.exe</code>를 두 번 클릭합니다.</span></div></li>
+      <li><div><strong>실행기 열기</strong><span>가장 바깥쪽 <code>Singing Stream Savior.exe</code>를 두 번 클릭하여 업데이트 확인을 거친 뒤 앱을 엽니다.</span></div></li>
       <li><div><strong>프로젝트 만들기</strong><span>파일 &gt; 새 프로젝트를 선택합니다.</span></div></li>
       <li><div><strong>방송 BGM 추가</strong><span>BGM 플레이어에서 로컬 파일을 선택하거나 YouTube 링크를 붙여 넣으세요. 파일이나 링크를 플레이어로 직접 끌어다 놓을 수도 있으며, 불러오기가 끝나면 자동으로 반복 재생합니다.</span></div></li>
       <li><div><strong>곡 하나 추가하고 재생</strong><span>로컬 오디오 파일이나 YouTube 단일 영상 링크를 곡 표로 끌어다 놓고 해당 곡을 두 번 클릭합니다.</span></div></li>
@@ -47,9 +47,9 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 
 {% include first-stream-check.html heading=3 %}
 
-ZIP을 일반 폴더에 완전히 압축 해제하세요. 가장 바깥쪽 폴더에서 아래 아이콘의 `Singing Stream Savior.exe`를 두 번 클릭하면 됩니다. 사용자가 열어야 하는 파일은 이것뿐이며, ZIP 안에서 직접 실행하거나 데이터 폴더 안의 다른 EXE를 찾을 필요가 없습니다.
+### 압축 해제와 실행
 
-<div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior 앱 아이콘"><div><strong>Singing Stream Savior.exe</strong><span>평소에는 이 앱만 실행하세요</span></div></div>
+{% include launcher-startup-guide.html %}
 
 **파일 > 새 프로젝트**에서 `.bgmsproj`를 만듭니다. 곡, 표시 제목, 대기 순서, 가사 연결과 테마 설정이 저장됩니다. 부른 곡 기록은 현재 라이브 세션용이며 일반 프로젝트 저장에는 포함되지 않습니다. 앱이 예기치 않게 중단되면 다시 시작할 때 복구 스냅샷에서 대기 목록과 부른 곡 진행 상황을 복원할 수 있습니다. 창 제목의 `*`는 저장하지 않은 변경 사항을 뜻합니다.
 

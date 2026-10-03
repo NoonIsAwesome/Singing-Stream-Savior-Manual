@@ -13,7 +13,7 @@ translation_key: getting-started
     <p class="chapter-quick-start__intro">照著下面做，就能開啟軟體、設定循環播放的 BGM、測試第一首伴奏，並保存下次可以繼續使用的專案。</p>
     <ol class="chapter-quick-start__steps">
       <li><div><strong>完整解壓縮</strong><span>將下載的 ZIP 解壓縮到一般資料夾，不要直接在 ZIP 裡執行程式。</span></div></li>
-      <li><div><strong>開啟主程式</strong><span>在最外層資料夾雙擊「Singing Stream Savior.exe」。</span></div></li>
+      <li><div><strong>開啟啟動器</strong><span>在最外層資料夾雙擊「Singing Stream Savior.exe」，先經過更新檢查再開啟軟體。</span></div></li>
       <li><div><strong>建立專案</strong><span>選擇「檔案 &gt; 新增專案」。</span></div></li>
       <li><div><strong>加入直播 BGM</strong><span>從 BGM 播放器選擇本機檔案或貼上 YouTube 連結，也可直接把檔案／連結拖進播放器；載入後會自動開始循環播放。</span></div></li>
       <li><div><strong>加入並播放一首歌</strong><span>把本機音訊或單一 YouTube 連結拖進歌曲表格，再雙擊該歌曲。</span></div></li>
@@ -27,24 +27,7 @@ translation_key: getting-started
 
 ## 解壓縮與啟動
 
-1. 將下載的 ZIP 完整解壓縮到一般資料夾。
-2. 在解壓縮後最外層的資料夾中，找到下圖圖示的 `Singing Stream Savior.exe`。
-3. 雙擊它即可啟動歌回救星。
-
-<div class="launch-target">
-  <img src="assets/images/singing-stream-savior.ico" alt="Singing Stream Savior 軟體圖示">
-  <div>
-    <strong>Singing Stream Savior.exe</strong>
-    <span>平常只需要開啟這個程式</span>
-  </div>
-</div>
-
-```text
-Singing Stream Savior 2/
-└─ Singing Stream Savior.exe        ← 平常開啟這個
-```
-
-> 不要直接在 ZIP 壓縮檔預覽視窗中執行程式，也不需要進入其他資料夾尋找主程式。請先完整解壓縮，再開啟最外層這一個 `Singing Stream Savior.exe`。
+{% include launcher-startup-guide.html %}
 
 ## 建立新專案
 

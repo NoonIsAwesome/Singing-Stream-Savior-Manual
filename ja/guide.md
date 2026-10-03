@@ -35,7 +35,7 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
     <p class="chapter-quick-start__intro">次の手順でアプリを起動し、ループ再生する BGM を設定して最初のカラオケ音源をテストし、次回も使えるプロジェクトを保存できます。</p>
     <ol class="chapter-quick-start__steps">
       <li><div><strong>ZIP を完全に展開</strong><span>通常のフォルダーへ展開し、ZIP の中から直接実行しないでください。</span></div></li>
-      <li><div><strong>メインアプリを開く</strong><span>一番外側のフォルダーにある <code>Singing Stream Savior.exe</code> をダブルクリックします。</span></div></li>
+      <li><div><strong>ランチャーを開く</strong><span>一番外側の <code>Singing Stream Savior.exe</code> をダブルクリックし、更新確認を経てアプリを開きます。</span></div></li>
       <li><div><strong>プロジェクトを作成</strong><span>「ファイル &gt; 新規プロジェクト」を選びます。</span></div></li>
       <li><div><strong>配信用 BGM を追加</strong><span>BGM プレイヤーでローカルファイルを選ぶか YouTube リンクを貼り付けます。ファイル／リンクをプレイヤーへ直接ドラッグすることもでき、読み込み後は自動的にループ再生します。</span></div></li>
       <li><div><strong>1 曲追加して再生</strong><span>ローカル音源または 1 件の YouTube リンクを曲テーブルへドラッグし、その曲をダブルクリックします。</span></div></li>
@@ -47,9 +47,9 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
 
 {% include first-stream-check.html heading=3 %}
 
-ZIP を通常のフォルダーへ完全に展開します。一番外側のフォルダーにある、下のアイコンの `Singing Stream Savior.exe` をダブルクリックしてください。起動に必要なのはこのファイルだけです。ZIP 内から直接実行したり、データフォルダー内で別の EXE を探したりする必要はありません。
+### 展開と起動
 
-<div class="launch-target"><img src="{{ '/assets/images/singing-stream-savior.ico' | relative_url }}" alt="Singing Stream Savior のアプリアイコン"><div><strong>Singing Stream Savior.exe</strong><span>通常はこのアプリだけを起動します</span></div></div>
+{% include launcher-startup-guide.html %}
 
 「ファイル > 新規プロジェクト」から `.bgmsproj` を作成します。曲、表示名、待機順、歌詞の関連付け、テーマ設定が保存されます。歌唱履歴は当日の配信セッション用で、通常のプロジェクト保存には含まれません。アプリが異常終了した場合は、再起動時に復元スナップショットから待機リストと歌唱履歴を戻せます。タイトルバーの `*` は未保存の変更を表します。
 
