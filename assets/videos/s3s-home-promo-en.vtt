@@ -11,12 +11,14 @@ BGM pauses automatically.
 After the song, BGM returns for chat.
 
 00:10.000 --> 00:15.000 line:8% position:50% size:94% align:center
-Preset Vocal Profiles for chat and songs.
-Each song uses its assigned vocal effects.
+Customize vocal effects for singing or chat.
+Choose from built-in effects,
+or use VST3 effect plugins.
 
 00:15.000 --> 00:20.000 line:8% position:50% size:94% align:center
 Preview lyrics and change their style.
-Lyrics and song details sync with OBS.
+Song titles, setlists and lyrics
+automatically sync with OBS.
 
 00:20.000 --> 00:25.000 line:8% position:50% size:94% align:center
 Adjust the lyrics layout in the app.
