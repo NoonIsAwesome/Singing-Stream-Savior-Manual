@@ -55,7 +55,8 @@ for(const lang of locales){
   }
  }
  const home=documents.get(prefix+'index.html')?.html||'';
- for(const image of ['full-workspace.png','mini-workspace.png','lyrics-reading-preview.png','profile-horizontal-rack.png']){
+ // The shared English feature film replaces the old localized hero screenshot.
+ for(const image of ['mini-workspace.png','lyrics-reading-preview.png','profile-horizontal-rack.png']){
   if(!home.includes(`/assets/images/${prefix}${image}`))errors.push(`${prefix}index.html: screenshot is not localized: ${image}`);
  }
 }
