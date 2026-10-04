@@ -1,31 +1,13 @@
 WEBVTT
 
-00:00.000 --> 00:05.000 line:8% position:50% size:94% align:center
-방송에서는 노래와 대화에 집중하세요.
-BGM, 보컬 효과와 OBS 업데이트는
-Singing Stream Savior가 자동으로 처리합니다.
+00:00.650 --> 00:03.350 line:-1 position:50% size:92% align:center
+방송 화면에 노래 목록 자동 표시
 
-00:05.000 --> 00:10.000 line:8% position:50% size:94% align:center
-반주를 재생하면 BGM이 자동으로 멈춥니다.
-곡이 끝나면 배경 음악이 돌아와
-바로 대화할 수 있어요.
+00:05.250 --> 00:09.650 line:-1 position:50% size:92% align:center
+노래할 때 BGM 자동 일시정지
 
-00:10.000 --> 00:15.000 line:8% position:50% size:94% align:center
-노래와 대화용 보컬 효과를 설정하세요.
-다양한 내장 효과를 제공하며,
-VST3 효과 플러그인도 지원합니다.
+00:10.250 --> 00:14.650 line:-1 position:50% size:92% align:center
+보컬 효과 설정, 노래할 때 자동 전환
 
-00:15.000 --> 00:20.000 line:8% position:50% size:94% align:center
-앱에서 가사를 미리 보고 스타일을 바꾸세요.
-곡 제목, 노래 목록과 가사가
-OBS에 자동으로 동기화됩니다.
-
-00:20.000 --> 00:25.000 line:8% position:50% size:94% align:center
-가사의 배치와 위치를 조정하세요.
-OBS에도 반영되어 나만의 방송
-배경에 맞출 수 있어요.
-
-00:25.000 --> 00:30.000 line:8% position:50% size:94% align:center
-Singing Stream Savior.
-무료 Windows 소프트웨어로
-노래와 대화 방송을 더 편하게.
+00:15.250 --> 00:24.650 line:-1 position:50% size:92% align:center
+움직이는 가사 조정, OBS에 실시간 동기화

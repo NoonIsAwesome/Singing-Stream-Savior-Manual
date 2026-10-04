@@ -1,31 +1,13 @@
 WEBVTT
 
-00:00.000 --> 00:05.000 line:8% position:50% size:94% align:center
-直播中，专心唱歌、聊天。
-BGM、人声效果与 OBS 更新，
-交给歌回救星自动处理。
+00:00.650 --> 00:03.350 line:-1 position:50% size:92% align:center
+直播画面自动显示歌单
 
-00:05.000 --> 00:10.000 line:8% position:50% size:94% align:center
-播放伴奏时，BGM 自动暂停；
-歌曲结束后接回背景音乐，
-聊天不用手动切换。
+00:05.250 --> 00:09.650 line:-1 position:50% size:92% align:center
+唱歌时，BGM 自动暂停
 
-00:10.000 --> 00:15.000 line:8% position:50% size:94% align:center
-你可以自定义唱歌或聊天时的人声效果器，
-软件有多种内置效果器，
-也支持 VST3 效果器。
+00:10.250 --> 00:14.650 line:-1 position:50% size:92% align:center
+自定义人声效果，唱歌自动切换
 
-00:15.000 --> 00:20.000 line:8% position:50% size:94% align:center
-在软件中预览歌词、切换样式。
-歌曲名称、歌单与歌词，
-都会自动同步到 OBS。
-
-00:20.000 --> 00:25.000 line:8% position:50% size:94% align:center
-调整歌词的布局与位置，
-OBS 画面同步更新，
-搭配自己的直播背景。
-
-00:25.000 --> 00:30.000 line:8% position:50% size:94% align:center
-歌回救星 Singing Stream Savior。
-免费 Windows 软件，
-让歌回、歌杂直播少一点手忙脚乱。
+00:15.250 --> 00:24.650 line:-1 position:50% size:92% align:center
+动态歌词轻松调整，同步 OBS
