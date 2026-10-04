@@ -42,6 +42,11 @@ for (const lang of ['zh-TW', 'zh-CN', 'en', 'ja', 'ko']) {
   assert.ok(video.includes(`poster="${base}${promo.poster.slice(1)}"`), `${page}: real film poster`);
   assert.ok(html.includes(`src="${base}${promo.source.slice(1)}"`), `${page}: film URL`);
   assert.equal((html.match(/<track\b/g) || []).length, 5, `${page}: translated captions`);
+  const tracks = [...html.matchAll(/<track\b[^>]*>/g)].map(([tag]) => tag);
+  const defaults = tracks.filter(tag => /\sdefault(?:\s|=|>)/.test(tag));
+  assert.equal(defaults.length, 1, `${page}: exactly one default subtitle language`);
+  assert.ok(defaults[0].includes(`srclang="${lang}"`), `${page}: subtitles follow website language`);
+  assert.ok(video.includes(`data-caption-language="${lang}"`), `${page}: explicit subtitle language`);
   const replay = html.match(/<button\b[^>]*\bdata-hero-replay[^>]*>/)?.[0];
   assert.ok(replay && /\shidden(?:\s|=|>)/.test(replay), `${page}: progressive replay control`);
   const graphs = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(([, json]) => JSON.parse(json));
@@ -51,6 +56,8 @@ for (const lang of ['zh-TW', 'zh-CN', 'en', 'ja', 'ko']) {
   assert.equal(film.contentUrl, origin + promo.source);
   assert.equal(film.thumbnailUrl, origin + promo.poster);
   assert.equal(film.duration, 'PT30S');
+  assert.match(film.uploadDate, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})$/, `${page}: video publication datetime needs a timezone`);
+  assert.ok(Number.isFinite(Date.parse(film.uploadDate)), `${page}: valid video publication datetime`);
   assert.equal(graph.find(item => item['@type'] === 'SoftwareApplication').operatingSystem, 'Windows');
 }
 assert.ok(readFileSync(join(root, 'robots.txt'), 'utf8').includes(`Sitemap: ${origin}/sitemap.xml`));

@@ -5,6 +5,14 @@
   const replay = document.querySelector('[data-hero-replay]');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const connection = navigator.connection;
+  // Follow the selected website language, independent of the browser's language.
+  // Native subtitle controls can still turn this off or select another track.
+  const captionLanguage = (video.dataset.captionLanguage || document.documentElement.lang || 'en').toLowerCase();
+  for (const track of video.textTracks) {
+    if (track.kind === 'subtitles') {
+      track.mode = track.language.toLowerCase() === captionLanguage ? 'showing' : 'disabled';
+    }
+  }
   let wantsPlayback = !motion.matches && !connection?.saveData;
   let explicitPlayback = false;
   let environmentPause = false;

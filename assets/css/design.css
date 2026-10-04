@@ -1554,6 +1554,16 @@ html[data-theme="dark"] .chapter-list a[aria-current="page"] .chapter-preview-ba
   height:auto;
   aspect-ratio:16/9
 }
+.hero-film video::cue {
+  color:#fff;
+  background-color:rgba(8,16,23,.92);
+  font-family:system-ui,"Microsoft JhengHei",sans-serif;
+  font-size:16px;
+  line-height:1.45
+}
+@media (max-width:600px) {
+  .hero-film video::cue { font-size:13px }
+}
 .hero-visual figcaption.hero-film-caption {
   justify-content:space-between;
   flex-wrap:wrap;
