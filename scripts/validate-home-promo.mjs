@@ -42,7 +42,8 @@ for (const lang of ['zh-TW', 'zh-CN', 'en', 'ja', 'ko']) {
   assert.ok(video.includes(`poster="${base}${promo.poster.slice(1)}"`), `${page}: real film poster`);
   assert.ok(html.includes(`src="${base}${promo.source.slice(1)}"`), `${page}: film URL`);
   assert.equal((html.match(/<track\b/g) || []).length, 5, `${page}: translated captions`);
-  assert.ok(html.includes('data-hero-replay hidden'), `${page}: progressive replay control`);
+  const replay = html.match(/<button\b[^>]*\bdata-hero-replay[^>]*>/)?.[0];
+  assert.ok(replay && /\shidden(?:\s|=|>)/.test(replay), `${page}: progressive replay control`);
   const graphs = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(([, json]) => JSON.parse(json));
   const graph = graphs.find(value => value['@graph']?.some(item => item['@type'] === 'VideoObject'))?.['@graph'];
   assert.ok(graph, `${page}: product and video metadata`);
