@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { dirname, join, resolve, posix } from 'node:path';
+import { join, resolve, posix } from 'node:path';
 import { configuredBasePath } from './site-base-path.mjs';
 
 const root = resolve(process.argv[2] || '_site');

@@ -1,8 +1,9 @@
 import { readdirSync, statSync, readFileSync, writeFileSync, openSync, readSync, closeSync, existsSync } from 'node:fs';
 import { resolve, join, relative, sep } from 'node:path';
+import { configuredBasePath } from './site-base-path.mjs';
 
 const root = resolve(process.argv[2] || '_site');
-const base = '/Singing-Stream-Savior-Manual/';
+const base = configuredBasePath();
 const dimensions = new Map();
 const attributeValue = (tag, name) => {
   const match = tag.match(new RegExp('\\s' + name + '\\s*=\\s*(?:"([^"]*)"|\x27([^\x27]*)\x27|([^\\s>]+))', 'i'));
