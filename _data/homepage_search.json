@@ -30,6 +30,13 @@
         "answer": "如果你需要 OBS 歌單顯示，也想自動暫停 BGM、切換唱歌效果並同步動態歌詞，歌回救星可以把這些操作放在一起。依教學設定歌回救星自己的 OBS 來源，就能從播放歌曲開始更新直播畫面。",
         "guide": "obs-and-themes",
         "link_label": "了解歌單顯示與主題"
+      },
+      {
+        "id": "juicer",
+        "question": "在找 JUICER 的免費替代方案？",
+        "answer": "歌回救星的 OBS 歌單顯示、伴奏升降 Key 和 VST3 效果器支援都可免費使用，不需訂閱。也支援自訂人聲效果、播放歌曲時自動切換 Profile，以及動態歌詞同步。下載 Windows 版，測試自己的直播流程。",
+        "guide": "resources",
+        "link_label": "免費下載歌回救星"
       }
     ]
   },
@@ -64,6 +71,13 @@
         "answer": "如果你需要 OBS 歌单显示，也想自动暂停 BGM、切换唱歌效果并同步动态歌词，歌回救星可以把这些操作放在一起。按教程设置歌回救星自己的 OBS 来源，就能从播放歌曲开始更新直播画面。",
         "guide": "obs-and-themes",
         "link_label": "了解歌单显示与主题"
+      },
+      {
+        "id": "juicer",
+        "question": "在找 JUICER 的免费替代方案？",
+        "answer": "歌回救星的 OBS 歌单显示、伴奏升降 Key 和 VST3 效果器支持都可免费使用，无需订阅。也支持自定义人声效果、播放歌曲时自动切换 Profile，以及动态歌词同步。下载 Windows 版，测试自己的直播流程。",
+        "guide": "resources",
+        "link_label": "免费下载歌回救星"
       }
     ]
   },
@@ -98,6 +112,13 @@
         "answer": "If you need an OBS setlist overlay plus automatic BGM pauses, singing vocal effects and synced live lyrics, Singing Stream Savior brings those tasks together. Follow the guide to add Singing Stream Savior's own OBS sources and update your stream as you play songs.",
         "guide": "obs-and-themes",
         "link_label": "Explore setlist overlays and themes"
+      },
+      {
+        "id": "juicer",
+        "question": "Is there a free JUICER alternative for singing streams?",
+        "answer": "Singing Stream Savior includes OBS setlists, backing-track key changes and VST3 effect hosting for free on Windows, with no subscription. Customize vocal effects, switch Profiles when songs start, and sync live lyrics with OBS. Download it to try your own stream setup.",
+        "guide": "resources",
+        "link_label": "Download Singing Stream Savior for free"
       }
     ]
   },
@@ -132,6 +153,13 @@
         "answer": "OBS のセトリ表示に加え、BGM の自動停止、歌唱エフェクトの切り替え、動く歌詞の同期をまとめて使いたい方に適しています。ガイドに沿って Singing Stream Savior 自身の OBS ソースを追加すると、曲の再生に合わせて配信画面が更新されます。",
         "guide": "obs-and-themes",
         "link_label": "セットリスト表示とテーマを見る"
+      },
+      {
+        "id": "juicer",
+        "question": "JUICER の代わりに無料で使える歌枠ソフトは？",
+        "answer": "Singing Stream Savior は、OBS セットリスト表示、伴奏のキー変更、VST3 ホスト機能を無料で使えます。サブスクは不要です。声のエフェクトを設定し、曲の再生時に Profile を自動切り替え。動く歌詞も OBS と同期できます。Windows 版で自分の配信環境を試してみてください。",
+        "guide": "resources",
+        "link_label": "Singing Stream Savior を無料ダウンロード"
       }
     ]
   },
@@ -166,6 +194,13 @@
         "answer": "OBS 노래 목록 표시와 함께 BGM 자동 일시정지, 노래용 보컬 효과 전환, 움직이는 가사 동기화를 원한다면 Singing Stream Savior로 한곳에서 관리할 수 있어요. 가이드에 따라 Singing Stream Savior의 OBS 소스를 추가하면 곡 재생에 맞춰 방송 화면이 업데이트됩니다.",
         "guide": "obs-and-themes",
         "link_label": "노래 목록 표시와 테마 보기"
+      },
+      {
+        "id": "juicer",
+        "question": "JUICER를 대신할 무료 노래 방송 프로그램이 있나요?",
+        "answer": "Singing Stream Savior는 OBS 노래 목록 표시, 반주 키 변경과 VST3 효과 호스팅을 구독 없이 무료로 제공합니다. 보컬 효과를 설정하고 곡 재생 시 Profile을 자동 전환하며, 움직이는 가사를 OBS와 동기화할 수 있어요. Windows 버전을 내려받아 내 방송 환경에서 테스트해보세요.",
+        "guide": "resources",
+        "link_label": "Singing Stream Savior 무료 다운로드"
       }
     ]
   }
