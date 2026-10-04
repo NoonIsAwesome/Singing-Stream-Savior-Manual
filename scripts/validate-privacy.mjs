@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
+import { configuredBasePath } from './site-base-path.mjs';
 
 const locales = ['zh-TW', 'zh-CN', 'en', 'ja', 'ko'];
 const prefix = lang => lang === 'zh-TW' ? '' : `${lang}/`;
@@ -73,7 +74,7 @@ checkPublicPage('<body data-analytics-provider="counterapi-v2"><script>const pro
 console.log('Privacy source validation passed: app-only notice, five languages, project links and six negative regressions. Not a legal certification.');
 
 if (process.argv[2]) {
-  const root = resolve(process.argv[2]), base = '/Singing-Stream-Savior-Manual/';
+  const root = resolve(process.argv[2]), base = configuredBasePath();
   for (const lang of locales) {
     assert.ok(!existsSync(join(root, prefix(lang) + 'website-privacy.html')), `${lang}: retired website notice was published`);
     const file = join(root, prefix(lang) + 'privacy.html');

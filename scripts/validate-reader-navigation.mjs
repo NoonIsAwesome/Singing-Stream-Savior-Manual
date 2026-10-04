@@ -1,8 +1,9 @@
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { resolve, join, relative, sep } from 'node:path';
 import assert from 'node:assert/strict';
+import { configuredBasePath } from './site-base-path.mjs';
 const root=resolve(process.argv[2] || '_site');
-const base='/Singing-Stream-Savior-Manual/';
+const base=configuredBasePath();
 const chapters=JSON.parse(readFileSync('_data/chapters.json','utf8'));
 const locales=['zh-TW','en','ja','ko','zh-CN'];
 const errors=[];const files=[];

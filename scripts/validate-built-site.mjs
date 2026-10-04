@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { configuredBasePath } from './site-base-path.mjs';
 
 const DEFAULT_BASE_PATH = "/Singing-Stream-Savior-Manual/";
 const FORBIDDEN_ROOT_FILES = ["AGENTS.html", "AGENTS.md", "查看網站統計.cmd"];
@@ -262,7 +263,7 @@ if (import.meta.url === invokedPath) {
     process.exit(1);
   }
 
-  const errors = validateBuiltSite(siteRoot);
+  const errors = validateBuiltSite(siteRoot, configuredBasePath());
   if (errors.length) {
     console.error(`Built-site validation failed (${errors.length} issue(s)):`);
     for (const error of errors) console.error(`- ${error}`);

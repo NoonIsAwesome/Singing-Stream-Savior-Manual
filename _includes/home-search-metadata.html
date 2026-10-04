@@ -1,0 +1,39 @@
+{% assign metadata_lang = page.lang | default: site.lang %}
+{% assign metadata_promo = site.data.promo[metadata_lang] %}
+{% assign software_home = '/' | absolute_url %}
+{% assign software_id = software_home | append: '#software' %}
+{% assign video_id = software_home | append: '#feature-film' %}
+{% assign metadata_download = site.data.homepage_links[metadata_lang].resources | absolute_url %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": {{ software_id | jsonify }},
+      "name": "Singing Stream Savior",
+      "alternateName": "歌回救星",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows",
+      "softwareVersion": {{ site.data.resources.software.version | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "image": {{ site.data.promo.poster | absolute_url | jsonify }},
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "url": {{ metadata_download | jsonify }} },
+      "subjectOf": { "@id": {{ video_id | jsonify }} }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": {{ video_id | jsonify }},
+      "name": {{ metadata_promo.name | jsonify }},
+      "description": {{ metadata_promo.description | jsonify }},
+      "thumbnailUrl": {{ site.data.promo.poster | absolute_url | jsonify }},
+      "contentUrl": {{ site.data.promo.source | absolute_url | jsonify }},
+      "uploadDate": {{ site.data.promo.upload_date | jsonify }},
+      "duration": {{ site.data.promo.duration | jsonify }},
+      "inLanguage": "en",
+      "about": { "@id": {{ software_id | jsonify }} }
+    }
+  ]
+}
+</script>

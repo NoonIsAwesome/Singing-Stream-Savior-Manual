@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import { configuredBasePath } from './site-base-path.mjs';
 
 export function validateAnalyticsConfig(config) {
   const errors = [];
@@ -61,7 +62,7 @@ export function validateRenderedAnalytics(siteRoot, config, basePath = "/Singing
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   try {
     const config = JSON.parse(readFileSync(new URL("../_data/analytics.json", import.meta.url), "utf8"));
-    const errors = validateRenderedAnalytics(resolve(process.argv[2] || "_site"), config);
+    const errors = validateRenderedAnalytics(resolve(process.argv[2] || "_site"), config, configuredBasePath());
     if (errors.length) throw new Error(errors.join("\n"));
     console.log("Rendered CounterAPI V2 checks passed (configuration only; collection is not verified).");
   } catch (error) { console.error(error.message); process.exitCode = 1; }

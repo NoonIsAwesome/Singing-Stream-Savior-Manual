@@ -2,8 +2,9 @@
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {join,resolve} from 'node:path';
+import { configuredBasePath } from './site-base-path.mjs';
 const root=resolve(process.argv[2] || '_site');
-const base='/Singing-Stream-Savior-Manual/';
+const base=configuredBasePath();
 const copy=JSON.parse(readFileSync('_data/stream_routes.json','utf8'));
 const locales=['zh-TW','en','ja','ko','zh-CN'];
 const order=['output-obs','output-discord','route-modes','singing-profile-defaults','audio-reference'];

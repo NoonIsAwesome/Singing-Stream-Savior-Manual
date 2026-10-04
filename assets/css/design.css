@@ -1540,6 +1540,51 @@ html[data-theme="dark"] .chapter-list a[aria-current="page"] .chapter-preview-ba
 /* Focus the card preview on the real player; the lightbox shows the full screenshot. */
 .feature-grid .playback-feature .screenshot img { object-fit:cover; object-position:center 20% }
 
+/* The film stays within the existing hero; playback controls remain native. */
+.hero-film {
+  overflow:hidden;
+  border:1px solid #28343f;
+  border-radius:9px;
+  background:#101518;
+  box-shadow:0 17px 42px #18314020,0 3px 9px #172b3a20
+}
+.hero-film video {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9
+}
+.hero-visual figcaption.hero-film-caption {
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:4px 16px;
+  width:100%;
+  margin:10px 0 0;
+  padding:0;
+  border-radius:0;
+  background:transparent;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:400;
+  text-align:left
+}
+.hero-replay {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:44px;
+  padding:8px 0;
+  border:0;
+  background:transparent;
+  color:var(--teal);
+  font-weight:700
+}
+.hero-replay[hidden] { display:none }
+html[data-theme="dark"] .hero-visual figcaption.hero-film-caption {
+  background:transparent;
+  color:var(--muted)
+}
+
 /* Rights reminders are readable copy, without a separate colored warning panel. */
 .content-use-note { color:var(--muted); font-size:14px; line-height:1.85 }
 .content-use-note strong { color:var(--ink); font-size:14px; font-weight:600 }

@@ -1,6 +1,6 @@
 {
   "provider": "counterapi-v2",
-  "production_host": "noonisawesome.github.io",
+  "production_host": "noonisawesome.dev",
   "enabled": true,
   "workspace": "noonisawesome-singing-stream-savior-manual",
   "counter": "noonisawesome-s3s-manual-pageviews"

@@ -2,6 +2,8 @@
 {% assign h = site.data.homepage[home_lang] %}
 {% assign home_links = site.data.homepage_links[home_lang] %}
 {% assign home_design = site.data.site_design[home_lang] %}
+{% assign promo = site.data.promo %}
+{% assign promo_copy = promo[home_lang] %}
 {% assign home_image_root = '/assets/images/' %}
 {% if home_lang != 'zh-TW' %}{% assign home_image_root = home_image_root | append: home_lang | append: '/' %}{% endif %}
 <main id="guide-content" tabindex="-1">
@@ -12,7 +14,20 @@
         <div class="hero-actions"><a class="button" href="{{ home_links['resources'] | relative_url }}"><svg aria-hidden="true"><use href="#windows"></use></svg>{{ h["免費下載 Windows 版"] | escape }}</a><a class="text-link" href="{{ home_links['demo'] | relative_url }}">{{ h["觀看操作示範 ↗"] | escape }}</a></div>
         <p class="fine">{{ h["release_note"] | replace: '__VERSION__', site.data.resources.software.version | escape }}</p>
       </div>
-      <figure class="hero-visual"><a class="screenshot" href="{{ home_image_root | append: 'full-workspace.png' | relative_url }}" data-preview=""><img src="{{ home_image_root | append: 'full-workspace.png' | relative_url }}" alt="{{ h['alt_full_workspace_png'] | escape }}" width="1920" height="1031" fetchpriority="high"></a><figcaption><svg aria-hidden="true"><use href="#music"></use></svg>{{ h["BGM、歌單、演唱效果，一起跟上"] | escape }}</figcaption></figure>
+      <figure class="hero-visual">
+        <div class="hero-film">
+          <video data-hero-promo muted playsinline controls preload="metadata" width="1280" height="720" poster="{{ promo.poster | relative_url }}" aria-label="{{ promo_copy.name | escape }}" aria-describedby="hero-film-description">
+            <source src="{{ promo.source | relative_url }}" type="video/mp4">
+            {% assign promo_languages = 'zh-TW,zh-CN,en,ja,ko' | split: ',' %}
+            {% for promo_language in promo_languages %}
+            {% capture caption_path %}/assets/videos/s3s-home-promo-{{ promo_language }}.vtt{% endcapture %}
+            <track kind="captions" src="{{ caption_path | relative_url }}" srclang="{{ promo_language }}" label="{{ promo[promo_language].captions | escape }}">
+            {% endfor %}
+            <a href="{{ promo.source | relative_url }}">{{ promo_copy.fallback | escape }}</a>
+          </video>
+        </div>
+        <figcaption class="hero-film-caption"><span id="hero-film-description">{{ promo_copy.caption | escape }}</span><button class="hero-replay" type="button" data-hero-replay hidden><svg aria-hidden="true"><use href="#music"></use></svg>{{ promo_copy.replay | escape }}</button></figcaption>
+      </figure>
     </div></section>
     <div class="capabilities"><div class="wrap">
       <div class="capability"><svg aria-hidden="true"><use href="#wave"></use></svg>{{ h["UVR 人聲消除"] | escape }}</div><div class="capability"><svg aria-hidden="true"><use href="#file"></use></svg>{{ h["音檔與 YouTube 播放"] | escape }}</div><div class="capability"><svg aria-hidden="true"><use href="#music"></use></svg>{{ h["BGM 自動交接"] | escape }}</div><div class="capability"><svg aria-hidden="true"><use href="#sliders"></use></svg>{{ h["自動切換聊天／歌唱效果"] | escape }}</div><div class="capability"><svg aria-hidden="true"><use href="#screen"></use></svg>{{ h["OBS 歌單與歌詞"] | escape }}</div>

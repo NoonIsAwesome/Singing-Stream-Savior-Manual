@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {resolve, join} from 'node:path';
+import { configuredBasePath } from './site-base-path.mjs';
+const base = configuredBasePath();
 const root = resolve(process.argv[2] || '_site');
 const data = JSON.parse(readFileSync('_data/player_window_buttons.json','utf8'));
 const image = readFileSync('assets/images/demo-lyrics-preview.png');
@@ -20,7 +22,7 @@ for(const lang of ['zh-TW','zh-CN','en','ja','ko']) {
   assert.equal((html.match(/id="player-window-buttons"/g)||[]).length,1,`${path}: one guide block only`);
   assert.ok(html.includes(copy.title)&&html.includes(copy.lyrics_title)&&html.includes(copy.youtube_title),`${path}: translated headings missing`);
   assert.ok(html.includes('viewBox="1048 224 456 292"'));
-  assert.ok(html.includes('href="/Singing-Stream-Savior-Manual/assets/images/demo-lyrics-preview.png"'));
+  assert.ok(html.includes(`href="${base}assets/images/demo-lyrics-preview.png"`));
   assert.ok(html.includes('role="img"')&&html.includes('player-window-buttons-title'));
   const ids=['lyrics-window','player-window-buttons','youtube-video-window','lyrics-preview-obs'];
   for(const id of ids) assert.equal((html.match(new RegExp(`id="${id}"`, 'g'))||[]).length,1,`${path}: unique ${id}`);
@@ -31,7 +33,7 @@ for(const lang of ['zh-TW','zh-CN','en','ja','ko']) {
   assert.ok(html.includes(`<h${level} id="youtube-video-window">${copy.youtube_section}</h${level}>`));
   assert.ok(html.slice(positions[3],positions[3]+240).includes(copy.obs_section),`${path}: OBS heading missing`);
   const imagePath=`assets/images/${lang==='zh-TW'?'':lang+'/'}lyrics-viewer.png`;
-  const viewer=new RegExp(`<img[^>]+src="/Singing-Stream-Savior-Manual/${imagePath.replaceAll('.','\\.')}"[^>]*>`, 'g');
+  const viewer=new RegExp(`<img[^>]+src="${base}${imagePath.replaceAll('.','\\.')}"[^>]*>`, 'g');
   const viewerTags=[...html.matchAll(viewer)];
   assert.equal(viewerTags.length,1,`${path}: one real opened-window screenshot, not duplicated`);
   assert.ok(viewerTags[0].index>positions[1]&&viewerTags[0].index<positions[2],`${path}: opened window image belongs in Lyrics Window section`);

@@ -76,6 +76,7 @@
     {% if is_home %}
     <title>{{ page.title | escape }}</title>
     {% seo title=false %}
+    {% include home-search-metadata.html %}
     {% else %}
     {% seo %}
     {% endif %}
@@ -113,5 +114,6 @@
     <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>
     <script src="{{ '/assets/js/site-controls.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>
     {% if is_home %}<script src="{{ '/assets/js/homepage.js' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}" defer></script>{% endif %}
+    {% if is_home %}<script src="{{ '/assets/js/hero-video.js' | relative_url }}?v={{ site.github.build_revision | default: 'hero-film-20261004' }}" defer></script>{% endif %}
   </body>
 </html>

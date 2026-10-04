@@ -1,6 +1,7 @@
 ---
-title: 歌回救星｜为歌回直播整理播放、歌单与歌词
-description: 认识 Singing Stream Savior 的设计初衷与主要功能
+title: 歌回救星 Singing Stream Savior｜免费歌回、歌杂直播软件
+description: 免费 Windows 歌回、歌杂直播软件，整合 BGM 与伴奏自动交接、人声效果切换、OBS 歌单与歌词同步，以及 UVR 人声消除。
+image: /assets/images/s3s-home-promo-poster.jpg
 lang: zh-CN
 translation_key: home
 ---

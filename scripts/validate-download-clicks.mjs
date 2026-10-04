@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { validateAnalyticsConfig } from "./validate-site-analytics.mjs";
+import { configuredBasePath } from './site-base-path.mjs';
 
 export function validateDownloadConfig(views, clicks) {
   const errors = [...validateAnalyticsConfig(views), ...validateAnalyticsConfig(clicks)];
@@ -75,7 +76,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   try {
     const views = JSON.parse(readFileSync(new URL("../_data/analytics.json", import.meta.url), "utf8"));
     const clicks = JSON.parse(readFileSync(new URL("../_data/download_clicks.json", import.meta.url), "utf8"));
-    const errors = validateRenderedDownloads(resolve(process.argv[2] || "_site"), views, clicks);
+    const errors = validateRenderedDownloads(resolve(process.argv[2] || "_site"), views, clicks, configuredBasePath());
     if (errors.length) throw new Error(errors.join("\n"));
     console.log(`Download click wiring validated; collection enabled=${clicks.enabled}. This does not verify the external counter.`);
   } catch (error) { console.error(error.message); process.exitCode = 1; }

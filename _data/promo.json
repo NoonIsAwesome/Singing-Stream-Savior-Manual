@@ -1,0 +1,46 @@
+{
+  "source": "/assets/videos/s3s-home-promo.mp4",
+  "poster": "/assets/images/s3s-home-promo-poster.jpg",
+  "upload_date": "2026-10-04",
+  "duration": "PT30S",
+  "zh-TW": {
+    "name": "歌回救星 Singing Stream Savior：30 秒功能示範",
+    "description": "真實軟體與 OBS 畫面展示 BGM 自動交接、人聲 Profile、歌詞樣式與版面同步。",
+    "caption": "30 秒看懂 BGM、人聲效果與 OBS 歌詞同步",
+    "replay": "有聲重播",
+    "captions": "繁體中文",
+    "fallback": "下載影片觀看"
+  },
+  "zh-CN": {
+    "name": "歌回救星 Singing Stream Savior：30 秒功能演示",
+    "description": "真实软件与 OBS 画面展示 BGM 自动交接、人声 Profile、歌词样式与布局同步。",
+    "caption": "30 秒了解 BGM、人声效果与 OBS 歌词同步",
+    "replay": "有声重播",
+    "captions": "简体中文",
+    "fallback": "下载视频观看"
+  },
+  "en": {
+    "name": "Singing Stream Savior: a 30-second feature film",
+    "description": "Real software and OBS captures demonstrate automatic BGM handover, Vocal Profiles, lyric styles and layout synchronization.",
+    "caption": "30 seconds of BGM, vocal effects and live OBS lyrics",
+    "replay": "Replay with sound",
+    "captions": "English",
+    "fallback": "Download the film"
+  },
+  "ja": {
+    "name": "Singing Stream Savior：30 秒の機能紹介",
+    "description": "実際のソフトと OBS の画面で、BGM の自動切り替え、ボーカル Profile、歌詞スタイルと配置の同期を紹介します。",
+    "caption": "BGM・声のエフェクト・OBS 歌詞同期を 30 秒で紹介",
+    "replay": "音声付きで再生",
+    "captions": "日本語",
+    "fallback": "動画をダウンロード"
+  },
+  "ko": {
+    "name": "Singing Stream Savior: 30초 기능 소개",
+    "description": "실제 소프트웨어와 OBS 화면으로 BGM 자동 전환, 보컬 Profile, 가사 스타일과 배치 동기화를 보여 줍니다.",
+    "caption": "BGM, 보컬 효과와 OBS 가사 동기화를 30초로 소개",
+    "replay": "소리 켜고 다시 재생",
+    "captions": "한국어",
+    "fallback": "영상 다운로드"
+  }
+}
