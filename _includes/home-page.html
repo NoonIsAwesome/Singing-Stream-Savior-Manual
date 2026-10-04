@@ -18,13 +18,13 @@
       <figure class="hero-visual">
         <div class="hero-film">
           <video data-hero-promo data-caption-language="{{ home_lang }}" muted playsinline controls preload="metadata" width="1280" height="720" poster="{{ promo.poster | relative_url }}" aria-label="{{ promo_copy.name | escape }}" aria-describedby="hero-film-description">
-            <source src="{{ promo.source | relative_url }}" type="video/mp4">
+            <source src="{{ promo.source | relative_url }}?v={{ site.github.build_revision | default: 'film-domain-20261005' }}" type="video/mp4">
             {% assign promo_languages = 'zh-TW,zh-CN,en,ja,ko' | split: ',' %}
             {% for promo_language in promo_languages %}
             {% capture caption_path %}/assets/videos/s3s-home-promo-{{ promo_language }}.vtt{% endcapture %}
             <track kind="subtitles" src="{{ caption_path | relative_url }}?v={{ site.github.build_revision | default: 'subtitles-20261004' }}" srclang="{{ promo_language }}" label="{{ promo[promo_language].captions | escape }}"{% if promo_language == home_lang %} default{% endif %}>
             {% endfor %}
-            <a href="{{ promo.source | relative_url }}">{{ promo_copy.fallback | escape }}</a>
+            <a href="{{ promo.source | relative_url }}?v={{ site.github.build_revision | default: 'film-domain-20261005' }}">{{ promo_copy.fallback | escape }}</a>
           </video>
         </div>
         <figcaption class="hero-film-caption"><span id="hero-film-description">{{ promo_copy.caption | escape }}</span><button class="hero-replay" type="button" data-hero-replay hidden><svg aria-hidden="true"><use href="#music"></use></svg>{{ promo_copy.replay | escape }}</button></figcaption>

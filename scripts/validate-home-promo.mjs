@@ -40,7 +40,9 @@ for (const lang of ['zh-TW', 'zh-CN', 'en', 'ja', 'ko']) {
   for (const attribute of ['muted', 'playsinline', 'controls']) assert.ok(new RegExp(`\\b${attribute}\\b`).test(video), `${page}: ${attribute}`);
   assert.ok(!/\b(?:autoplay|loop)\b/.test(video), `${page}: JS must check motion/data preferences before playing`);
   assert.ok(video.includes(`poster="${base}${promo.poster.slice(1)}"`), `${page}: real film poster`);
-  assert.ok(html.includes(`src="${base}${promo.source.slice(1)}"`), `${page}: film URL`);
+  const filmSource = html.match(/<source\b[^>]*\bsrc="([^"]+)"/)?.[1];
+  assert.equal(filmSource?.split('?')[0], `${base}${promo.source.slice(1)}`, `${page}: film URL`);
+  assert.ok(filmSource?.includes('?v='), `${page}: versioned film URL`);
   assert.equal((html.match(/<track\b/g) || []).length, 5, `${page}: translated captions`);
   const tracks = [...html.matchAll(/<track\b[^>]*>/g)].map(([tag]) => tag);
   const defaults = tracks.filter(tag => /\sdefault(?:\s|=|>)/.test(tag));
