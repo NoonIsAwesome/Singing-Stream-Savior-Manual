@@ -13,14 +13,14 @@ translation_key: lyrics
     <p class="chapter-quick-start__intro">可以搜尋線上歌詞，也可以直接匯入已準備好的 LRC。</p>
     <ol class="chapter-quick-start__steps">
       <li><div><strong>選擇歌曲</strong><span>在歌曲列表點該歌曲的「歌詞」圖示，或到「歌詞」頁按「管理歌詞…」。</span></div></li>
-      <li><div><strong>取得歌詞</strong><span>從右側搜尋 LRCLIB／YouTube 字幕，或按「選擇 LRC 檔案」匯入本機歌詞。</span></div></li>
+      <li><div><strong>取得歌詞</strong><span>從右側搜尋 LRCLIB／YouTube 字幕，或按「匯入歌詞檔案…」匯入本機歌詞。</span></div></li>
       <li><div><strong>預覽並附加</strong><span>確認文字與歌曲長度後，按「附加歌詞」。</span></div></li>
       <li><div><strong>播放確認</strong><span>播放伴奏，確認目前句會跟著進度醒目顯示；需要時再調整提前或延後。</span></div></li>
     </ol>
     <p class="chapter-quick-start__done"><strong>完成時：</strong>主畫面預覽、獨立歌詞視窗與 OBS 歌詞畫面都能使用這份歌詞。</p>
   </div>
   <figure class="manual-figure">
-    <a href="assets/images/2180/zh-TW/lyrics-settings.png"><img src="assets/images/2180/zh-TW/lyrics-settings.png" alt="歌曲設定的歌詞分頁，左側為歌詞預覽，右側為線上搜尋"></a>
+    <a href="assets/images/2180/zh-TW/lyrics-settings.png"><img src="assets/images/2180/zh-TW/lyrics-settings.png" alt="歌曲設定的歌詞分頁，提供歌詞匯入、搜尋與附加操作"></a>
     <figcaption>歌曲設定的歌詞分頁：可匯入 LRC、線上搜尋，選擇結果後附加到歌曲。</figcaption>
   </figure>
 </section>
@@ -59,7 +59,7 @@ translation_key: lyrics
 
 ### 匯入 LRC 與取消歌詞連結
 
-- **選擇 LRC 檔案：** 從電腦匯入自行準備的 LRC、SRT、VTT 或純文字歌詞。
+- **匯入歌詞檔案…：** 從電腦匯入自行準備的 LRC、SRT、VTT 或純文字歌詞。
 - **取消歌詞連結：** 移除目前歌曲與歌詞檔的關聯，不會刪除原始音訊。
 - **附加歌詞：** 選取並預覽線上結果後，將該份歌詞連結到歌曲。
 
@@ -71,7 +71,7 @@ translation_key: lyrics
 
 <figure class="manual-figure manual-figure--medium">
   <a href="assets/images/2180/zh-TW/lyrics-settings.png">
-    <img src="assets/images/2180/zh-TW/lyrics-settings.png" alt="已有歌詞的管理歌詞視窗，左下角提供選擇 LRC 檔案與取消歌詞連結">
+    <img src="assets/images/2180/zh-TW/lyrics-settings.png" alt="歌曲設定的歌詞分頁，提供歌詞匯入、搜尋與附加操作">
   </a>
   <figcaption>歌曲設定的歌詞分頁：可匯入 LRC、線上搜尋，選擇結果後附加到歌曲。</figcaption>
 </figure>

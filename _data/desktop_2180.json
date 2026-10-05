@@ -32,7 +32,7 @@
         "預覽時會暫停 BGM；停止或離開後依目前播放狀態恢復，避免覆蓋期間已改動的播放狀態。",
         "離開搜尋頁會停止預覽、取消未完成的請求並釋放相關播放資源。"
       ],
-      "caption": "YouTube 搜尋：左側選影片，右側預覽，下方選擇加入歌曲列表或 UVR 佇列。"
+      "caption": "YouTube 搜尋：左側選影片，右側預覽，下方選擇加入歌曲列表或 UVR 佇列。（示意搜尋資料）"
     },
     "appearance": {
       "title": "深色、淺色與跟隨 Windows",
@@ -82,7 +82,7 @@
         "Preview pauses BGM. Stopping or leaving restores it according to the current playback state, without overriding changes made during preview.",
         "Leaving the search page stops preview, cancels pending requests and releases the related playback resources."
       ],
-      "caption": "YouTube Search with results on the left, preview on the right and destination actions below."
+      "caption": "YouTube Search with results on the left, preview on the right and destination actions below. (example search data)"
     },
     "appearance": {
       "title": "Dark, Light and Follow Windows",
@@ -132,7 +132,7 @@
         "预览时会暂停 BGM；停止或离开后根据当前播放状态恢复，避免覆盖期间已更改的播放状态。",
         "离开搜索页面会停止预览、取消未完成的请求并释放相关播放资源。"
       ],
-      "caption": "YouTube 搜索：左侧选择视频，右侧预览，下方选择加入歌曲列表或 UVR 队列。"
+      "caption": "YouTube 搜索：左侧选择视频，右侧预览，下方选择加入歌曲列表或 UVR 队列。（示例搜索资料）"
     },
     "appearance": {
       "title": "深色、浅色与跟随 Windows",
@@ -182,7 +182,7 @@
         "プレビュー中は BGM を一時停止します。停止・ページ移動後は現在の再生状態に応じて復元し、途中で変更した状態を上書きしません。",
         "検索ページを離れるとプレビューを停止し、未完了の要求を取り消して関連再生リソースを解放します。"
       ],
-      "caption": "YouTube 検索：左側で動画を選び、右側でプレビューし、下側で追加先を選びます。"
+      "caption": "YouTube 検索：左側で動画を選び、右側でプレビューし、下側で追加先を選びます。（検索データの例）"
     },
     "appearance": {
       "title": "ダーク、ライトと Windows に従う設定",
@@ -232,7 +232,7 @@
         "미리 보기 중에는 BGM을 일시 정지합니다. 정지하거나 페이지를 떠나면 현재 재생 상태에 따라 복원하며 도중에 변경한 상태를 덮어쓰지 않습니다.",
         "검색 페이지를 떠나면 미리 보기를 중지하고 진행 중인 요청을 취소하며 관련 재생 리소스를 해제합니다."
       ],
-      "caption": "YouTube 검색: 왼쪽에서 영상을 선택하고 오른쪽에서 미리 본 뒤 아래에서 추가 위치를 선택합니다."
+      "caption": "YouTube 검색: 왼쪽에서 영상을 선택하고 오른쪽에서 미리 본 뒤 아래에서 추가 위치를 선택합니다. (검색 데이터 예시)"
     },
     "appearance": {
       "title": "어둡게, 밝게 및 Windows 설정 따르기",

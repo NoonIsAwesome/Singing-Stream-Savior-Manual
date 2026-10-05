@@ -67,7 +67,7 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
 
 ライブラリには「すべての曲」「お気に入り」「最近再生した曲」とカスタムプレイリストがあります。固定分類は削除できません。カスタムプレイリストは配信企画、ジャンル、イベントごとの整理に使用できます。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/2180/ja/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/ja/main-window.png' | relative_url }}" alt="すべての曲、お気に入り、最近再生した曲、カスタムプレイリストと曲テーブルを表示した曲ライブラリ"></a><figcaption>現在のフルモード：曲ライブラリ、プレイヤーと待機リスト。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/2180/ja/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/ja/main-window.png' | relative_url }}" alt="現在のフルモード：曲検索、プレイヤーと待機リスト"></a><figcaption>現在のフルモード：曲ライブラリ、プレイヤーと待機リスト。</figcaption></figure>
 
 曲を分類するには、1 曲または複数曲を選択して右クリックし、「プレイリストに追加」から「お気に入り」またはカスタムプレイリストを選びます。音源は複製されず、「すべての曲」からも削除されません。同じ曲を複数のプレイリストに登録できます。
 
@@ -81,7 +81,7 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
 
 曲の右クリックメニューは、「表示曲名を編集」「待機リストに追加」「プレイリストに追加」（お気に入り／カスタムプレイリスト）、現在の分類に応じた削除／分類から除外の順に並びます。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ja/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ja/song-settings.png' | relative_url }}" alt="右クリックメニューから表示曲名セルを編集している画面"></a><figcaption>情報タブで曲名を設定するか、右クリックメニューで表示曲名を編集できます。元ファイル名は変更しません。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ja/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ja/song-settings.png' | relative_url }}" alt="曲設定の情報タブ：曲名、演奏者、ジャンルと言語を編集"></a><figcaption>情報タブで曲名を設定するか、右クリックメニューで表示曲名を編集できます。元ファイル名は変更しません。</figcaption></figure>
 
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
   <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">見やすい曲カードと BGM プレイリスト</h2><p>曲リストはカード表示に統一され、BGM は引き続き再利用できるプレイリストに整理できます。</p></header>
@@ -103,7 +103,7 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
 
 曲のメニューから「ジャケットを埋め込む」を開き、検索結果またはローカル画像を選び、プレビューの読み込み後に「埋め込む」を押します。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ja/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ja/cover-settings.png' | relative_url }}" alt="オンライン検索結果と読み込み済みジャケットを表示した埋め込み画面"></a><figcaption>検索結果を選択し、左側のプレビューが読み込まれると埋め込み操作が有効になります。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ja/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ja/cover-settings.png' | relative_url }}" alt="曲設定のジャケットタブ：プレビューと画像検索"></a><figcaption>検索結果を選択し、左側のプレビューが読み込まれると埋め込み操作が有効になります。</figcaption></figure>
 
 BGM とカラオケ音源は別々に再生・音量・シークを操作できます。カラオケ側では再生速度と半音単位のキーを調整できます。難しい曲をゆっくり練習したいとき、当日の歌いやすいテンポに合わせたいとき、音域が高すぎる／低すぎる伴奏を自分に合うキーへ移したいときに便利で、別バージョンの音源を用意する必要はありません。
 
@@ -144,7 +144,7 @@ OBS のプレイリストテーマの現在曲表示が雑談の文字に変わ�
 
 > **歌詞の出所と利用許諾：** LRCLIB、YouTube 字幕などの検索元は歌詞を探すためのもので、歌詞の利用許諾を与えるものではありません。使用前に歌詞の出所、関連する権利、サービス規約を確認してください。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ja/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ja/lyrics-settings.png' | relative_url }}" alt="歌詞ファイルの読み込みと歌詞リンク解除を表示した歌詞管理画面"></a><figcaption>曲設定の歌詞タブ：LRC を読み込むかオンライン検索し、選択した歌詞を曲に関連付けます。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ja/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ja/lyrics-settings.png' | relative_url }}" alt="曲設定の歌詞タブ：インポート、検索と添付"></a><figcaption>曲設定の歌詞タブ：LRC を読み込むかオンライン検索し、選択した歌詞を曲に関連付けます。</figcaption></figure>
 
 {% include player-window-buttons.html %}
 
@@ -314,7 +314,7 @@ WAV／FLAC／MP3（320 kbps）、既定の 48 kHz または 44.1 kHz を選択�
 起動するたびにフルモードは 1600 × 900 で開きます。使用できる画面が狭い場合は、画面に収まるようウィンドウを縮小して開始します。開いた後は端を自由にドラッグしてサイズを変更でき、固定されません。`Ctrl + Shift + M` で切り替えられます。切り替わるのは表示する操作項目だけです。再生中の曲はそのまま続き、既存の予約順と OBS 画面もリセットされません。各モードのウィンドウ配置は個別に記憶されます。
 
 <div class="figure-grid">
-  <figure class="manual-figure"><a href="{{ '/assets/images/2180/ja/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/ja/main-window.png' | relative_url }}" alt="日本語のフルモード"></a><figcaption>現在のフルモード：曲ライブラリ、プレイヤーと待機リスト。</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/2180/ja/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/ja/main-window.png' | relative_url }}" alt="現在のフルモード：曲検索、プレイヤーと待機リスト"></a><figcaption>現在のフルモード：曲ライブラリ、プレイヤーと待機リスト。</figcaption></figure>
   <figure class="manual-figure"><a href="{{ '/assets/images/ja/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/compact-workspace.png' | relative_url }}" alt="日本語のコンパクトモード"></a><figcaption>コンパクトモードは選曲と配信中の操作を残します。</figcaption></figure>
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/ja/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ja/mini-workspace.png' | relative_url }}" alt="日本語のミニモード"></a><figcaption>ミニモードは予約リストの表示領域を広く取れます。</figcaption></figure>
 </div>

@@ -20,7 +20,7 @@ translation_key: library-and-playback
     <p class="chapter-quick-start__done"><strong>完成時：</strong>伴奏播放器會顯示歌名與進度；開始播放伴奏後，正在播放的 BGM 會自動暫停。</p>
   </div>
   <figure class="manual-figure">
-    <a href="assets/images/2180/main-window.png"><img src="assets/images/2180/main-window.png" alt="完整模式中的歌曲庫、歌曲表格、背景音樂、歌唱伴奏與待播清單"></a>
+    <a href="assets/images/2180/main-window.png"><img src="assets/images/2180/main-window.png" alt="新版完整模式中的歌曲卡片、搜尋欄、播放器與待播清單"></a>
     <figcaption>完整模式會同時顯示歌曲庫、兩個播放器，以及待播／已唱清單。</figcaption>
   </figure>
 </section>
@@ -38,7 +38,7 @@ translation_key: library-and-playback
 
 <figure class="manual-figure">
   <a href="assets/images/2180/main-window.png">
-    <img src="assets/images/2180/main-window.png" alt="完整歌曲庫，左側顯示全部歌曲、我的最愛、最近播放與兩個自訂歌單，右側顯示歌曲表格">
+    <img src="assets/images/2180/main-window.png" alt="新版完整模式中的歌曲卡片、搜尋欄、播放器與待播清單">
   </a>
   <figcaption>左側切換歌曲來源，右側會顯示該分類中的歌曲；搜尋欄只篩選目前選取的分類。</figcaption>
 </figure>
@@ -95,7 +95,7 @@ translation_key: library-and-playback
 
 <figure class="manual-figure manual-figure--medium">
   <a href="assets/images/2180/zh-TW/song-settings.png">
-    <img src="assets/images/2180/zh-TW/song-settings.png" alt="歌曲表格的顯示歌名欄位進入編輯狀態">
+    <img src="assets/images/2180/zh-TW/song-settings.png" alt="歌曲設定的資訊分頁，可編輯歌名、演出者、曲風與語言">
   </a>
   <figcaption>資訊分頁可設定歌曲名稱；也可從右鍵選單編輯顯示歌名。原始檔案不會因此重新命名。</figcaption>
 </figure>
@@ -160,7 +160,7 @@ Now Singing、待播與已唱；結束後再恢復原本的 BGM。建立的項�
 
 <figure class="manual-figure manual-figure--medium">
   <a href="assets/images/2180/zh-TW/cover-settings.png">
-    <img src="assets/images/2180/zh-TW/cover-settings.png" alt="歌曲設定的專輯封面分頁，左側為預覽，右側為圖片搜尋">
+    <img src="assets/images/2180/zh-TW/cover-settings.png" alt="歌曲設定的專輯封面分頁，提供預覽與圖片搜尋">
   </a>
   <figcaption>選取右側搜尋結果並等待左側預覽載入完成後，「嵌入」按鈕就會啟用。</figcaption>
 </figure>

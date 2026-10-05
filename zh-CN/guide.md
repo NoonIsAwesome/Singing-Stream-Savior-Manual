@@ -67,7 +67,7 @@ manual_bundle: true
 
 歌曲库包含全部歌曲、我的最爱、最近播放与自定义歌单。固定分类无法删除；自定义歌单可依直播企划、曲风或活动分类。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}" alt="完整歌曲库，左侧显示全部歌曲、我的最爱、最近播放与自定义歌单，右侧显示歌曲表格"></a><figcaption>新版完整模式的歌曲库、播放器与待播列表。图为繁体中文界面。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}" alt="新版完整模式的歌曲卡片、搜索、播放器与待播列表（繁体中文界面示例）"></a><figcaption>新版完整模式的歌曲库、播放器与待播列表。图为繁体中文界面。</figcaption></figure>
 
 要将歌曲加入分类，先选择一首或多首歌曲，按鼠标右键，展开“加入歌单”，再选择“我的最爱”或自定义歌单。这不会复制音频，也不会将歌曲移出“全部歌曲”；同一首歌可以加入多个歌单。
 
@@ -81,7 +81,7 @@ manual_bundle: true
 
 歌曲右键菜单依次提供“编辑显示歌名”“加入待播”“加入歌单”（我的最爱或自定义歌单），以及符合当前分类的删除／从分类移除操作。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/zh-CN/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/song-settings.png' | relative_url }}" alt="通过歌曲右键菜单编辑显示歌名"></a><figcaption>信息标签页可设置歌曲名称；也可从右键菜单编辑显示歌名。原始文件不会因此重命名。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/zh-CN/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/song-settings.png' | relative_url }}" alt="歌曲设置的信息标签页，可编辑歌名、演出者、曲风与语言"></a><figcaption>信息标签页可设置歌曲名称；也可从右键菜单编辑显示歌名。原始文件不会因此重命名。</figcaption></figure>
 
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
   <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">更直观的歌曲列表与 BGM 播放列表</h2><p>歌曲列表统一采用卡片显示；BGM 仍可整理成播放清单，按直播主题切换。</p></header>
@@ -103,7 +103,7 @@ manual_bundle: true
 
 在歌曲菜单打开“嵌入封面”，选择搜索结果或本地图片，等待预览完成后按“嵌入”。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/zh-CN/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/cover-settings.png' | relative_url }}" alt="显示搜索结果与封面预览的嵌入封面窗口"></a><figcaption>选择搜索结果并等待左侧封面预览载入完成后，即可嵌入。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/zh-CN/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/cover-settings.png' | relative_url }}" alt="歌曲设置的专辑封面标签页，提供预览与图片搜索"></a><figcaption>选择搜索结果并等待左侧封面预览载入完成后，即可嵌入。</figcaption></figure>
 
 BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还可以调整播放速度，并以半音为单位升降 Key：可放慢较难掌握的歌曲、配合练习节奏，或把音域太高／太低的伴奏调到更适合演唱的位置，不需要另外制作不同版本的音频。
 
@@ -144,7 +144,7 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 > **歌词来源与授权：** LRCLIB、YouTube 字幕等搜索来源提供的是歌词查找，不代表已取得歌词的使用授权。使用前请确认歌词来源、相关权利及服务规范。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/zh-CN/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/lyrics-settings.png' | relative_url }}" alt="管理歌词窗口中的导入歌词文件和取消歌词关联"></a><figcaption>歌曲设置的歌词标签页：可导入 LRC、在线搜索，选择结果后附加到歌曲。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/zh-CN/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/lyrics-settings.png' | relative_url }}" alt="歌曲设置的歌词标签页，提供导入、搜索与附加操作"></a><figcaption>歌曲设置的歌词标签页：可导入 LRC、在线搜索，选择结果后附加到歌曲。</figcaption></figure>
 
 {% include player-window-buttons.html %}
 
@@ -314,7 +314,7 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 每次启动时，完整模式会以 1600 × 900 打开；如果可用空间不足，窗口会先缩小以适应屏幕。打开后可以自由拖动边缘缩放，不会锁定窗口大小。快捷键为 `Ctrl + Shift + M`。切换模式只会改变画面上显示的控制项目；正在播放的歌曲会继续播放，原有待播顺序与 OBS 画面不会被重置。每种模式会记住各自的窗口配置。
 
 <div class="figure-grid">
-  <figure class="manual-figure"><a href="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}" alt="完整模式（繁体中文界面示例）"></a><figcaption>新版完整模式的歌曲库、播放器与待播列表。图为繁体中文界面。</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}" alt="新版完整模式的歌曲卡片、搜索、播放器与待播列表（繁体中文界面示例）"></a><figcaption>新版完整模式的歌曲库、播放器与待播列表。图为繁体中文界面。</figcaption></figure>
   <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/compact-workspace.png' | relative_url }}" alt="简体中文精简模式"></a><figcaption>精简模式保留选歌与直播时常用控制。</figcaption></figure>
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/zh-CN/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/mini-workspace.png' | relative_url }}" alt="简体中文迷你模式"></a><figcaption>迷你模式把更多垂直空间留给待播列表。</figcaption></figure>
 </div>

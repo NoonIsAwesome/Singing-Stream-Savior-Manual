@@ -88,7 +88,7 @@ The **Display title** is used by Reserve, History, and OBS. If it is blank, the 
 
 The song context menu is arranged for quick live use: **Edit display song name**, **Add to Reserve**, **Add to playlist** (Favorites or a custom playlist), then the delete/remove action appropriate to the selected collection.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/en/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/song-settings.png' | relative_url }}" alt="Display title cell open for inline editing from the song context menu"></a><figcaption>Edit the song title on the Information tab, or use the context menu to edit its Display title. This does not rename the original file.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/en/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/song-settings.png' | relative_url }}" alt="The Information tab in Song settings, with title, performers, genre and language tags"></a><figcaption>Edit the song title on the Information tab, or use the context menu to edit its Display title. This does not rename the original file.</figcaption></figure>
 
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
   <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">A clearer song view and a real BGM playlist</h2><p>Songs use one card presentation; BGM sources can still be organized into reusable playlists.</p></header>
@@ -120,7 +120,7 @@ Cover art is optional. It becomes especially useful with the **Card** and **CD**
 Open **Embed cover** from a local song’s context menu, select an online result or local image, wait for the preview to load, and choose **Embed**.
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/2180/en/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/cover-settings.png' | relative_url }}" alt="Embed cover window with preview and search results"></a>
+  <a href="{{ '/assets/images/2180/en/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/cover-settings.png' | relative_url }}" alt="The Artwork tab in Song settings, with preview and image search"></a>
   <figcaption>Select a search result and wait for the preview on the left; Embed then becomes available.</figcaption>
 </figure>
 
@@ -164,7 +164,7 @@ Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song�
 > **Lyrics sources and permissions:** LRCLIB, YouTube captions, and other search sources help you find lyrics; they do not grant permission to use them. Before use, check the lyric source, relevant rights, and service terms.
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/2180/en/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/lyrics-settings.png' | relative_url }}" alt="Manage lyrics window showing Import lyrics file and Unlink lyrics controls"></a>
+  <a href="{{ '/assets/images/2180/en/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/lyrics-settings.png' | relative_url }}" alt="The Lyrics tab in Song settings, with import, search and attach controls"></a>
   <figcaption>The Lyrics tab in Song settings: import an LRC file, search online, then attach the selected lyrics to the song.</figcaption>
 </figure>
 
@@ -342,7 +342,7 @@ Use the top-right mode button or `Ctrl + Shift + M`:
 - **Mini:** best when the songs and stream visuals are already prepared before going live. It hides the library and BGM player, leaving the karaoke controls, Reserve, and History; the Lyrics Window and YouTube buttons remain in the accompaniment player. Choose the next song directly from the prepared Reserve list. The separate Lyrics Window can be moved and its text size adjusted to fit around other streaming tools.
 
 <div class="figure-grid">
-  <figure class="manual-figure"><a href="{{ '/assets/images/2180/en/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/main-window.png' | relative_url }}" alt="Full workspace"></a><figcaption>The current Full workspace with the song library, players and Reserve.</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/2180/en/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/main-window.png' | relative_url }}" alt="The current Full workspace with song search, players and Reserve"></a><figcaption>The current Full workspace with the song library, players and Reserve.</figcaption></figure>
   <figure class="manual-figure"><a href="{{ '/assets/images/en/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/compact-workspace.png' | relative_url }}" alt="Compact workspace"></a><figcaption>Compact mode keeps song selection and live controls.</figcaption></figure>
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/en/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/mini-workspace.png' | relative_url }}" alt="Mini workspace"></a><figcaption>Mini mode leaves more vertical space for the queue.</figcaption></figure>
 </div>

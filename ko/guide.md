@@ -67,7 +67,7 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 
 라이브러리에는 모든 곡, 즐겨찾기, 최근 재생과 사용자 재생목록이 있습니다. 고정 분류는 삭제할 수 없으며, 사용자 재생목록은 방송 기획, 장르나 이벤트별로 곡을 정리할 때 사용합니다.
 
-<figure class="manual-figure"><a href="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}" alt="모든 곡, 즐겨찾기, 최근 재생, 사용자 재생목록과 곡 표가 보이는 전체 라이브러리"></a><figcaption>새 전체 모드의 곡 라이브러리, 플레이어와 대기 목록. 번체 중국어 화면 예시입니다。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}" alt="새 전체 모드의 곡 카드, 검색, 플레이어와 대기 목록(번체 중국어 화면 예시)"></a><figcaption>새 전체 모드의 곡 라이브러리, 플레이어와 대기 목록. 번체 중국어 화면 예시입니다。</figcaption></figure>
 
 곡을 분류하려면 한 곡 또는 여러 곡을 선택해 마우스 오른쪽 버튼을 누르고 **재생목록에 추가**에서 **즐겨찾기** 또는 사용자 재생목록을 고르세요. 음원은 복제되지 않고 모든 곡에서도 사라지지 않으며, 한 곡을 여러 재생목록에 넣을 수 있습니다.
 
@@ -81,7 +81,7 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 
 곡 오른쪽 클릭 메뉴는 **표시 곡명 편집**, **대기 목록에 추가**, **재생목록에 추가**(즐겨찾기 또는 사용자 재생목록), 현재 분류에 맞는 삭제/분류에서 제거 순서로 제공됩니다.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ko/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/song-settings.png' | relative_url }}" alt="오른쪽 클릭 메뉴에서 표시 제목 셀을 편집하는 화면"></a><figcaption>정보 탭이나 오른쪽 클릭 메뉴에서 표시 곡명을 편집할 수 있습니다. 원본 파일 이름은 바꾸지 않습니다.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ko/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/song-settings.png' | relative_url }}" alt="곡 설정의 정보 탭: 곡명, 아티스트, 장르와 언어 편집"></a><figcaption>정보 탭이나 오른쪽 클릭 메뉴에서 표시 곡명을 편집할 수 있습니다. 원본 파일 이름은 바꾸지 않습니다.</figcaption></figure>
 
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
   <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">더 직관적인 곡 카드와 BGM 재생목록</h2><p>곡 목록은 카드 표시로 통일되며 BGM은 계속 재사용 가능한 재생목록으로 정리할 수 있습니다.</p></header>
@@ -103,7 +103,7 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 
 곡 메뉴에서 **표지 삽입**을 열고 검색 결과나 로컬 이미지를 선택한 뒤 미리보기 로딩이 끝나면 삽입하세요.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ko/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/cover-settings.png' | relative_url }}" alt="검색 결과와 불러온 표지 미리보기가 있는 표지 삽입 창"></a><figcaption>검색 결과를 선택하고 왼쪽 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ko/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/cover-settings.png' | relative_url }}" alt="곡 설정의 앨범 표지 탭: 미리보기와 이미지 검색"></a><figcaption>검색 결과를 선택하고 왼쪽 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
 
 BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 재생 속도와 반음 단위 키도 조절할 수 있습니다. 어려운 곡을 천천히 연습하거나 라이브에서 편안한 템포에 맞출 때, 음역이 너무 높거나 낮은 반주를 자신에게 맞는 키로 옮길 때 유용하며 별도의 반주 파일을 만들 필요가 없습니다.
 
@@ -144,7 +144,7 @@ OBS 재생목록 테마의 현재 곡 영역이 대화 문구로 바뀌는 것�
 
 > **가사 출처와 이용 권한:** LRCLIB, YouTube 자막 등의 검색 출처는 가사를 찾는 데 도움을 주며 가사 이용 허락을 제공하지 않습니다. 사용하기 전에 가사 출처, 관련 권리와 서비스 규정을 확인하세요.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ko/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/lyrics-settings.png' | relative_url }}" alt="가사 파일 가져오기와 가사 연결 해제가 표시된 가사 관리 창"></a><figcaption>곡 설정의 가사 탭: LRC 파일을 가져오거나 온라인으로 검색한 뒤 선택한 가사를 곡에 연결합니다.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ko/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/lyrics-settings.png' | relative_url }}" alt="곡 설정의 가사 탭: 가져오기, 검색과 연결"></a><figcaption>곡 설정의 가사 탭: LRC 파일을 가져오거나 온라인으로 검색한 뒤 선택한 가사를 곡에 연결합니다.</figcaption></figure>
 
 {% include player-window-buttons.html %}
 
@@ -314,7 +314,7 @@ WAV/FLAC/MP3(320 kbps), 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니
 실행할 때마다 전체 모드는 1600 × 900으로 열립니다. 사용할 수 있는 공간이 부족하면 화면에 맞도록 창을 줄여서 시작합니다. 열린 뒤에는 가장자리를 자유롭게 드래그해 크기를 조절할 수 있으며 창 크기는 고정되지 않습니다. `Ctrl + Shift + M`으로 전환할 수 있습니다. 모드 전환은 화면에 보이는 조작 항목만 바꿉니다. 재생 중인 곡은 계속 재생되고 기존 대기 순서와 OBS 화면도 초기화되지 않습니다. 각 모드의 창 배치는 따로 기억합니다.
 
 <div class="figure-grid">
-  <figure class="manual-figure"><a href="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}" alt="전체 모드(번체 중국어 화면 예시)"></a><figcaption>새 전체 모드의 곡 라이브러리, 플레이어와 대기 목록. 번체 중국어 화면 예시입니다。</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}" alt="새 전체 모드의 곡 카드, 검색, 플레이어와 대기 목록(번체 중국어 화면 예시)"></a><figcaption>새 전체 모드의 곡 라이브러리, 플레이어와 대기 목록. 번체 중국어 화면 예시입니다。</figcaption></figure>
   <figure class="manual-figure"><a href="{{ '/assets/images/ko/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/compact-workspace.png' | relative_url }}" alt="한국어 간단 모드"></a><figcaption>간단 모드는 곡 선택과 방송 중 조작 기능을 유지합니다.</figcaption></figure>
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}" alt="한국어 미니 모드"></a><figcaption>미니 모드는 대기 목록을 위한 세로 공간을 더 확보합니다.</figcaption></figure>
 </div>
