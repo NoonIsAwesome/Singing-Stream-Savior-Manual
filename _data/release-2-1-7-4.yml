@@ -1,7 +1,7 @@
 release:
   version: "2.1.7.4"
   date: "2026-10-04"
-  latest: true
+  latest: false
   type:
     en: "Lyrics interface and ASIO diagnostics"
     zh-TW: "歌詞介面與 ASIO 診斷"

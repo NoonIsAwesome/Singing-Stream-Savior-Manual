@@ -179,6 +179,13 @@ published: true
 
 <p id="profile-chain-heading">效果器细节已移到独立的 Profile 章节。 <a href="{{ '/zh-CN/profiles.html#profile-chain-heading' | relative_url }}">前往 Profile（直播效果器）设置 →</a></p>
 
+### ASIO 错误与延迟诊断
+
+如果 ASIO 设备检查或开始采集失败，请记录失败阶段、原始 API 错误码、采样率与 Buffer、helper 超时或退出码，再到“帮助 → 导出诊断数据…”保存支持资料。导出不会自动上传；请在问题发生时保存，并附上当时的软件、音频接口与驱动版本，以及 OBS 启用了哪些音源。
+
+从 2.1.7.4 起，负的 driver version identifier 不再被当作 ASIO 能力检查失败的理由；声道数量、采样率与 Buffer 仍会检查。延迟诊断还提供 Formal queue 水位、处理与输出服务间隔等软件观测。Mic → Stream 是当前路径的软件估算；没有硬件时间戳时，不能据此确定 ADC 的实际采集延迟，也不能把估算值修正当作人声／伴奏错位已解决。
+
+
 ## 2.1.0.0 设置位置变更
 
 - **YouTube 下载**已移至 **设置 → 文件与项目**，与项目路径、媒体文件夹集中在同一页。

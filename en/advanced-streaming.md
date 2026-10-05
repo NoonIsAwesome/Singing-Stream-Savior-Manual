@@ -179,6 +179,13 @@ Monitoring is a separate headphone path. Dry Cue uses an independent software ca
 
 <p id="profile-chain-heading">Detailed effects are now in the separate Profile chapter. <a href="{{ '/en/profiles.html#profile-chain-heading' | relative_url }}">Open Profile settings (streaming effects) →</a></p>
 
+### ASIO errors and latency diagnostics
+
+If ASIO inspection or capture startup fails, note the failure stage, original API error code, sample rate and buffer, and any helper timeout or exit code. Use Help → Export diagnostic data… to save support information locally; it is not uploaded automatically. Capture it while the problem is happening and include the app, interface and driver versions and the audio sources enabled in OBS.
+
+Since 2.1.7.4, a negative driver version identifier is no longer a reason to reject ASIO capabilities; channel counts, sample rates and buffers are still validated. Timing diagnostics also include software observations of Formal queue depth, processing and output-service intervals. Mic → Stream is a software estimate for the active path. Without hardware timestamps it does not establish the ADC's actual capture latency, and a corrected estimate alone does not prove that vocal / accompaniment misalignment is resolved.
+
+
 ## Settings moved in 2.1.0.0
 
 - **YouTube downloads** moved to **Settings → Files &amp; Projects**, together with project and media-folder controls.

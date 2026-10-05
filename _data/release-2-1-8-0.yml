@@ -1,0 +1,74 @@
+release:
+  version: "2.1.8.0"
+  date: "2026-10-06"
+  latest: true
+  type:
+    en: "Song metadata, YouTube search and appearance"
+    zh-TW: "歌曲資料、YouTube 搜尋與外觀切換"
+    zh-CN: "歌曲资料、YouTube 搜索与外观切换"
+    ja: "曲情報、YouTube 検索と外観切り替え"
+    ko: "곡 정보, YouTube 검색 및 테마 전환"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.0"
+  summary:
+    en: "An awesome update (probably), at least I think it's awesome (⁎⁍̴̛ᴗ⁍̴̛⁎)"
+    zh-TW: "很讚讚更新（應該），至少我覺得很讚讚(⁎⁍̴̛ᴗ⁍̴̛⁎)"
+    zh-CN: "很赞赞更新（应该），至少我觉得很赞赞(⁎⁍̴̛ᴗ⁍̴̛⁎)"
+    ja: "めっちゃいいアップデート（たぶん）、少なくとも私はめっちゃいいと思っています(⁎⁍̴̛ᴗ⁍̴̛⁎)"
+    ko: "아주 멋진 업데이트(아마도), 적어도 저는 아주 멋지다고 생각해요(⁎⁍̴̛ᴗ⁍̴̛⁎)"
+  items:
+    en:
+      - "Song metadata: assign multiple singers / performers, reuse names saved in the project, and optionally write tags to local audio files."
+      - "Classification and search: new genre and language tags; search songs, performers, genres and languages, with keyword suggestions."
+      - "Song settings: information, album artwork and lyrics are combined in three tabs. Their individual status icons remain visible, and source icons distinguish local files from YouTube links."
+      - "New YouTube search page: search YouTube songs or backing tracks directly in the app, then add them to the song list or UVR queue. Adding to UVR only queues the item; start vocal removal from the UVR page."
+      - "Appearance: switch between Dark, Light and Follow Windows. Dark is the default; the Full window now defaults to 1600×900."
+      - "Removed the traditional song-list view because I think cards look better and are easier to use."
+      - "Slightly improved application startup time."
+      - "Sneaking in a random sentence. I wonder if anyone will notice."
+    zh-TW:
+      - "歌曲資料：支援多位歌手／演出者，重用專案中已設定的名稱，並可選擇寫入本機音訊檔標籤。"
+      - "分類與搜尋：新增曲風、語言標籤；搜尋支援歌曲、演出者、曲風、語言，以及關鍵字建議。"
+      - "歌曲設定介面：資訊、專輯封面、歌詞整合為三個分頁；保留各自的設定狀態圖示，並區分本機檔案與 YouTube 來源。"
+      - "新增YouTube 搜尋頁面：現在可以直接在頁面裡搜尋YouTube來源的歌曲或伴奏，可直接加入歌曲列表或 UVR 佇列。加入 UVR 只排入佇列，需到 UVR 頁面開始消除人聲。"
+      - "外觀切換：現在可以切換深色、淺色模式也跟隨 Windows設定，預設深色；完整模式預設調整為 1600×900。"
+      - "移除歌曲列表的傳統列表顯示模式，因為我覺得卡片顯示好看又好用。"
+      - "小幅改善軟體啟動的時間。"
+      - "偷塞一句廢話，不知道有沒有人會發現。"
+    zh-CN:
+      - "歌曲资料：支持多位歌手／演出者，复用项目中已设置的名称，并可选择写入本地音频文件标签。"
+      - "分类与搜索：新增曲风、语言标签；搜索支持歌曲、演出者、曲风、语言，以及关键词建议。"
+      - "歌曲设置界面：信息、专辑封面、歌词整合为三个标签页；保留各自的设置状态图标，并区分本地文件与 YouTube 来源。"
+      - "新增YouTube 搜索页面：现在可以直接在页面里搜索YouTube来源的歌曲或伴奏，可直接加入歌曲列表或 UVR 队列。加入 UVR 只排入队列，需到 UVR 页面开始消除人声。"
+      - "外观切换：现在可以切换深色、浅色模式以及跟随 Windows设置，默认深色；完整模式默认调整为 1600×900。"
+      - "移除歌曲列表的传统列表显示模式，因为我觉得卡片显示好看又好用。"
+      - "小幅改善软件启动的时间。"
+      - "偷塞一句废话，不知道有没有人会发现。"
+    ja:
+      - "曲情報：複数の歌手・演奏者を設定し、プロジェクトに保存した名前を再利用できます。任意でローカル音声ファイルにタグを書き込めます。"
+      - "分類と検索：ジャンルと言語のタグを追加しました。曲、演奏者、ジャンル、言語を検索でき、キーワード候補も表示します。"
+      - "曲設定：曲情報、アルバムアート、歌詞を三つのタブにまとめました。それぞれの設定状態アイコンを維持し、ローカルファイルと YouTube 音源を区別します。"
+      - "YouTube 検索ページを追加：アプリ内で YouTube の曲や伴奏を検索し、曲リストや UVR キューに追加できます。UVR への追加はキュー登録のみです。UVR ページでボーカル除去を開始してください。"
+      - "外観切り替え：ダーク、ライト、Windows に従う設定を選べます。既定はダークです。フルモードの既定サイズを 1600×900 に変更しました。"
+      - "従来の曲リスト表示を削除しました。カード表示のほうが見た目も使い勝手もいいと思うので。"
+      - "アプリの起動時間を少し改善しました。"
+      - "こっそりどうでもいい一文を入れてみました。誰か気づくかな。"
+    ko:
+      - "곡 정보: 여러 가수 / 연주자를 지정하고 프로젝트에 저장한 이름을 재사용할 수 있습니다. 선택한 경우 로컬 오디오 파일에 태그를 기록합니다."
+      - "분류와 검색: 장르와 언어 태그를 추가했습니다. 곡, 연주자, 장르 및 언어를 검색하고 검색어 제안을 볼 수 있습니다."
+      - "곡 설정: 정보, 앨범 표지 및 가사를 세 개의 탭으로 통합했습니다. 각 설정 상태 아이콘은 유지되며 로컬 파일과 YouTube 음원을 구분합니다."
+      - "YouTube 검색 페이지 추가: 앱에서 YouTube의 곡이나 반주를 검색하여 곡 목록이나 UVR 대기열에 바로 추가할 수 있습니다. UVR에 추가하면 대기열에만 등록됩니다. UVR 페이지에서 보컬 제거를 시작하세요."
+      - "외관 전환: 어둡게, 밝게 및 Windows 설정 따르기를 선택할 수 있습니다. 기본값은 어둡게이며 전체 모드의 기본 창 크기는 1600×900입니다."
+      - "카드가 더 보기 좋고 사용하기 편하다고 생각해서 기존 목록 표시 모드를 제거했습니다."
+      - "앱 시작 시간을 조금 개선했습니다."
+      - "쓸데없는 문장 하나를 몰래 넣어 봤어요. 누가 알아챌까요?"
+  emphasizedItems:
+    en:
+      - "An awesome update (probably), at least I think it's awesome (⁎⁍̴̛ᴗ⁍̴̛⁎)"
+    zh-TW:
+      - "很讚讚更新（應該），至少我覺得很讚讚(⁎⁍̴̛ᴗ⁍̴̛⁎)"
+    zh-CN:
+      - "很赞赞更新（应该），至少我觉得很赞赞(⁎⁍̴̛ᴗ⁍̴̛⁎)"
+    ja:
+      - "めっちゃいいアップデート（たぶん）、少なくとも私はめっちゃいいと思っています(⁎⁍̴̛ᴗ⁍̴̛⁎)"
+    ko:
+      - "아주 멋진 업데이트(아마도), 적어도 저는 아주 멋지다고 생각해요(⁎⁍̴̛ᴗ⁍̴̛⁎)"

@@ -20,9 +20,9 @@
       </div>
       <span class="release-entry__count">{{ localized_items | size }}{{ include.items_label }}</span>
     </header>
-    <p class="release-entry__summary">{{ localized_summary }}</p>
+    {% assign localized_emphasis = release.emphasizedItems[content_lang] | default: release.emphasizedItems.en %}
+    <p class="release-entry__summary">{% if localized_emphasis contains localized_summary %}<strong>{{ localized_summary }}</strong>{% else %}{{ localized_summary }}{% endif %}</p>
     <ul class="release-entry__items">
-      {% assign localized_emphasis = release.emphasizedItems[content_lang] | default: release.emphasizedItems.en %}
       {% for item in localized_items %}
         <li>{% if localized_emphasis contains item %}<strong>{{ item }}</strong>{% else %}{{ item }}{% endif %}</li>
       {% endfor %}
