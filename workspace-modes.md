@@ -24,7 +24,7 @@ translation_key: workspace-modes
     <p class="chapter-quick-start__done"><strong>切換方式：</strong>點右上角模式按鈕循環切換，或按右側倒三角形直接選擇。</p>
   </div>
   <figure class="manual-figure">
-    <a href="assets/images/full-workspace.png"><img src="assets/images/full-workspace.png" alt="完整模式顯示歌曲庫、播放器與待播清單"></a>
+    <a href="assets/images/2180/main-window.png"><img src="assets/images/2180/main-window.png" alt="完整模式顯示歌曲庫、播放器與待播清單"></a>
     <figcaption>完整模式適合直播前準備；直播中可再切換成精簡或迷你模式。</figcaption>
   </figure>
 </section>
@@ -33,7 +33,7 @@ translation_key: workspace-modes
 
 適合準備直播與調整設定：
 
-每次啟動時，完整模式會以 1920 × 1080 開啟；若可用空間不足，視窗會先縮小以符合螢幕。開啟後可以自由拖曳邊緣縮放，不會鎖定視窗大小。
+每次啟動時，完整模式會以 1600 × 900 開啟；若可用空間不足，視窗會先縮小以符合螢幕。開啟後可以自由拖曳邊緣縮放，不會鎖定視窗大小。
 
 - 顯示完整歌曲資料與來源欄位。
 - 顯示歌詞即時預覽。

@@ -30,7 +30,11 @@
   <p><strong>{{ player_window_copy.lyrics_title | escape }}</strong><br>{{ player_window_copy.lyrics_body | escape }}</p>
   <p>{{ player_window_copy.modes | escape }}</p>
   <p>{{ player_window_copy.viewer_help | escape }}</p>
-  {% include localized-release-screenshot.html name="lyrics-viewer.png" alt=player_window_copy.viewer_alt caption=player_window_copy.viewer_caption size="compact" %}
+  {% assign lyrics_reader_image = player_window_copy.viewer_image %}
+  <figure class="manual-figure manual-figure--compact">
+    <a href="{{ lyrics_reader_image | relative_url }}"><img src="{{ lyrics_reader_image | relative_url }}" alt="{{ player_window_copy.viewer_alt | escape }}" loading="lazy" decoding="async"></a>
+    <figcaption>{{ player_window_copy.viewer_caption | escape }}</figcaption>
+  </figure>
 </section>
 
 <h{{ window_heading }} id="youtube-video-window">{{ player_window_copy.youtube_section | escape }}</h{{ window_heading }}>

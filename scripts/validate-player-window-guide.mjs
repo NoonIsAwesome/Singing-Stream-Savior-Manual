@@ -32,7 +32,7 @@ for(const lang of ['zh-TW','zh-CN','en','ja','ko']) {
   assert.ok(html.includes(`<h${level} id="lyrics-window">${copy.lyrics_section}</h${level}>`));
   assert.ok(html.includes(`<h${level} id="youtube-video-window">${copy.youtube_section}</h${level}>`));
   assert.ok(html.slice(positions[3],positions[3]+240).includes(copy.obs_section),`${path}: OBS heading missing`);
-  const imagePath=`assets/images/${lang==='zh-TW'?'':lang+'/'}lyrics-viewer.png`;
+  const imagePath=copy.viewer_image.replace(/^\//,'');
   const viewer=new RegExp(`<img[^>]+src="${base}${imagePath.replaceAll('.','\\.')}"[^>]*>`, 'g');
   const viewerTags=[...html.matchAll(viewer)];
   assert.equal(viewerTags.length,1,`${path}: one real opened-window screenshot, not duplicated`);

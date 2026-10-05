@@ -1,4 +1,4 @@
-﻿---
+---
 title: Singing Stream Savior 2.1 User Manual
 description: English manual for Singing Stream Savior 2.1.7.4
 lang: en
@@ -74,7 +74,7 @@ Full mode is the default preparation workspace: content and settings on the left
 
 The library contains **All songs**, **Favorites**, **Recently played**, and removable custom playlists. Fixed collections cannot be deleted; use custom playlists to group songs by stream, genre, or event.
 
-<figure class="manual-figure"><a href="{{ '/assets/images/en/song-library.png' | relative_url }}"><img src="{{ '/assets/images/en/song-library.png' | relative_url }}" alt="Complete song library with All songs, Favorites, Recently played, custom playlists, and a populated song table"></a><figcaption>Select a collection on the left; the table and search field work within that selection.</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/2180/en/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/main-window.png' | relative_url }}" alt="The current Full workspace with song search, players and Reserve"></a><figcaption>The current Full workspace with the song library, players and Reserve.</figcaption></figure>
 
 To place songs in a collection, select one or more rows, right-click, open **Add to playlist**, and choose **Favorites** or a custom playlist. This does not duplicate the audio or remove it from All songs, and one song can belong to several playlists.
 
@@ -88,14 +88,19 @@ The **Display title** is used by Reserve, History, and OBS. If it is blank, the 
 
 The song context menu is arranged for quick live use: **Edit display song name**, **Add to Reserve**, **Add to playlist** (Favorites or a custom playlist), then the delete/remove action appropriate to the selected collection.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/en/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/en/display-title-edit.png' | relative_url }}" alt="Display title cell open for inline editing from the song context menu"></a><figcaption>Choose the first context-menu item to edit only the viewer-facing Display title; the source name remains intact.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/en/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/song-settings.png' | relative_url }}" alt="Display title cell open for inline editing from the song context menu"></a><figcaption>Edit the song title on the Information tab, or use the context menu to edit its Display title. This does not rename the original file.</figcaption></figure>
 
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
-  <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">A clearer song view and a real BGM playlist</h2><p>Switch the song library between the familiar table and a card view, then prepare reusable background music for different stream moods.</p></header>
-  <div class="manual-feature-update__copy"><h3>Song list display</h3><p><strong>The traditional table remains the default.</strong> Choose Card list under Settings → General → Song List Display when you want titles to be easier to scan. Cards keep the source, cover, and lyrics indicators; double-click plays the song, while the pencil icon edits its Display title.</p></div>
+  <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">A clearer song view and a real BGM playlist</h2><p>Songs use one card presentation; BGM sources can still be organized into reusable playlists.</p></header>
+  <div class="manual-feature-update__copy"><h3>Cards and song settings</h3><p>Version 2.1.8.0 removes the traditional-list switch. Cards show the title and performers, identify local audio or YouTube with source icons, and provide separate Information, Artwork and Lyrics actions. Double-click a song to play it.</p></div>
   <div class="manual-feature-update__copy"><h3>BGM playlist</h3><p>Keep multiple local or YouTube sources, add a note to each BGM, and drag items into order. The active track is highlighted. YouTube playlists can add either the current video or every item.</p><ul><li><strong>Repeat one (default)</strong>: loop the selected BGM.</li><li><strong>Repeat all</strong>: play in list order and continue from the beginning.</li><li><strong>Shuffle all</strong>: choose each next BGM randomly.</li></ul></div>
   {% include localized-release-screenshot.html name="bgm-playlist.png" alt="Expanded BGM playlist in 2.1" caption="The BGM list keeps notes, sources, and the playing item easy to identify." %}
 </section>
+
+{% include desktop-2180-guide.html section="song" %}
+
+{% include desktop-2180-guide.html section="youtube" suffix="-library" %}
+
 
 Use **+ Unaccompanied Performance** beside the search field for a cappella,
 self-accompanied, or other performances without a media file. Enter the public
@@ -115,7 +120,7 @@ Cover art is optional. It becomes especially useful with the **Card** and **CD**
 Open **Embed cover** from a local song’s context menu, select an online result or local image, wait for the preview to load, and choose **Embed**.
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/en/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/en/cover-dialog.png' | relative_url }}" alt="Embed cover window with preview and search results"></a>
+  <a href="{{ '/assets/images/2180/en/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/cover-settings.png' | relative_url }}" alt="Embed cover window with preview and search results"></a>
   <figcaption>Select a search result and wait for the preview on the left; Embed then becomes available.</figcaption>
 </figure>
 
@@ -148,6 +153,8 @@ The text replaces the current-song display in the OBS playlist theme **only whil
 <a id="lyrics"></a>
 ## {% include chapter-number.html key="lyrics" %} · Lyrics
 
+Click a song card’s Lyrics icon, or Manage Lyrics on the Lyrics page, to open the same Song settings window directly on its Lyrics tab. Information, artwork and lyrics are applied separately; switching tabs retains the current selection.
+
 Lyrics are optional. They can be used in a movable host-only **Lyrics window**, as an OBS lyric overlay for viewers, or both. Supported sources include LRC, SRT, VTT, plain text, YouTube captions, and LRCLIB.
 
 If no search result is suitable, do not attach one just to continue. Paste prepared lyrics into the [Lyrics Editor](#lyrics-editor), or import an LRC, SRT, VTT, or text file and mark the timing yourself.
@@ -157,8 +164,8 @@ Open **Manage lyrics…** from the song’s **Lyrics** page, or click that song�
 > **Lyrics sources and permissions:** LRCLIB, YouTube captions, and other search sources help you find lyrics; they do not grant permission to use them. Before use, check the lyric source, relevant rights, and service terms.
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="{{ '/assets/images/en/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-manager-linked.png' | relative_url }}" alt="Manage lyrics window showing Import lyrics file and Unlink lyrics controls"></a>
-  <figcaption>When lyrics are linked, the lower-left controls let you import another file or unlink the current one.</figcaption>
+  <a href="{{ '/assets/images/2180/en/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/lyrics-settings.png' | relative_url }}" alt="Manage lyrics window showing Import lyrics file and Unlink lyrics controls"></a>
+  <figcaption>The Lyrics tab in Song settings: import an LRC file, search online, then attach the selected lyrics to the song.</figcaption>
 </figure>
 
 {% include player-window-buttons.html %}
@@ -296,6 +303,8 @@ The status indicator appears at the lower-right only when enabled: green means c
 <a id="uvr-vocal-removal"></a>
 ## {% include chapter-number.html key="uvr-vocal-removal" %} · UVR vocal removal
 
+You can also select a video on YouTube Search and press Add to UVR queue. This only queues the item. Open the UVR page, select the model and output format, then press Start processing.
+
 ### Why vocal separation is included
 
 Preparing music for singing or practice often means moving between tools to convert files, separate tracks, and organize the results again. Singing Stream Savior brings those steps together to reduce repetitive work when you process material you have the right to use.
@@ -333,12 +342,12 @@ Use the top-right mode button or `Ctrl + Shift + M`:
 - **Mini:** best when the songs and stream visuals are already prepared before going live. It hides the library and BGM player, leaving the karaoke controls, Reserve, and History; the Lyrics Window and YouTube buttons remain in the accompaniment player. Choose the next song directly from the prepared Reserve list. The separate Lyrics Window can be moved and its text size adjusted to fit around other streaming tools.
 
 <div class="figure-grid">
-  <figure class="manual-figure"><a href="{{ '/assets/images/en/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/full-workspace.png' | relative_url }}" alt="Full workspace"></a><figcaption>Full mode keeps the complete library, players, and queue for preparation.</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/2180/en/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/main-window.png' | relative_url }}" alt="Full workspace"></a><figcaption>The current Full workspace with the song library, players and Reserve.</figcaption></figure>
   <figure class="manual-figure"><a href="{{ '/assets/images/en/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/compact-workspace.png' | relative_url }}" alt="Compact workspace"></a><figcaption>Compact mode keeps song selection and live controls.</figcaption></figure>
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/en/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/en/mini-workspace.png' | relative_url }}" alt="Mini workspace"></a><figcaption>Mini mode leaves more vertical space for the queue.</figcaption></figure>
 </div>
 
-At each startup, Full mode opens at 1920 × 1080; if the available space is smaller, the window starts reduced to fit the screen. After it opens, you can resize it freely; the window is not locked. Switching modes only changes which controls are visible. A song already playing continues, and the existing queue order and OBS scene are not reset. Each mode remembers its window size and layout.
+At each startup, Full mode opens at 1600 × 900; if the available space is smaller, the window starts reduced to fit the screen. After it opens, you can resize it freely; the window is not locked. Switching modes only changes which controls are visible. A song already playing continues, and the existing queue order and OBS scene are not reset. Each mode remembers its window size and layout.
 
 When the main window is not needed, its close button can minimize Singing Stream Savior to the Windows notification area instead of exiting. Playback continues in the background, while the tray menu and global shortcuts keep playback, Key, speed, Profile, microphone, Lyrics Window, and Meter controls available. Use **Exit Application** in the tray menu to close the app completely.
 
@@ -370,3 +379,5 @@ If lyrics cannot be found, shorten the search terms, check title/artist spelling
 The Recent Projects list automatically removes entries whose `.bgmsproj` file has been moved or deleted.
 
 {% include audio-diagnostics.html %}
+
+{% include desktop-2180-guide.html section="appearance" %}

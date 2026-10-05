@@ -1,0 +1,252 @@
+{
+  "zh-TW": {
+    "song": {
+      "title": "歌曲資訊、分類與搜尋",
+      "intro": "2.1.8.0 統一使用卡片式歌曲列表。歌手／演出者顯示在歌名下方；左側音訊檔或影片圖示可區分本機檔案與 YouTube 連結。",
+      "steps": [
+        "點歌曲卡片的「資訊」圖示，開啟歌曲設定的「資訊」分頁。",
+        "輸入新的演出者名稱後按「加入」，或直接點選目前專案已設定過的名字；一首歌可設定多位演出者。",
+        "點曲風與語言標籤即可多選；再次點已選的標籤會取消，也可新增自訂標籤。",
+        "按「儲存」套用歌曲資料並關閉資訊視窗。"
+      ],
+      "notes": [
+        "搜尋欄支援歌曲名稱、演出者、曲風與語言，並顯示已設定資料的關鍵字建議。建議不會自動開始播放歌曲。",
+        "資料儲存在目前專案；YouTube 來源也使用專案資料。曲風與語言不會寫入音訊檔。",
+        "本機音訊可選擇同步寫入演出者標籤；格式必須能通過寫入驗證，驗證失敗時不會覆蓋原檔。",
+        "資訊、封面與歌詞圖示各自保留設定狀態，點擊會直接切到同一視窗的對應分頁。一般播放器模式會隱藏 Profile 標籤。"
+      ],
+      "caption": "歌曲資訊：演出者可重用，曲風與語言可多選。",
+      "secondCaption": "搜尋會建議已設定的歌曲、演出者、曲風或語言關鍵字。"
+    },
+    "youtube": {
+      "title": "在軟體內搜尋 YouTube",
+      "intro": "「YouTube 搜尋」位於直播操作中「歌詞編輯」的右側。一次選取一部影片，確認後可直接加入歌曲列表或 UVR 佇列。",
+      "steps": [
+        "輸入歌名、演出者或關鍵字，選「全部」「伴奏」或「原曲」，再按搜尋。",
+        "查看影片標題與縮圖；向下捲動會載入更多結果。",
+        "選取一部影片後，可在右側預覽，使用播放、停止、進度及音量控制。",
+        "選「直接加入歌曲列表」，或按「加入 UVR 佇列」，到 UVR 頁面設定模型並按「開始處理」消除人聲。"
+      ],
+      "notes": [
+        "加入 UVR 只排入佇列，不會自動開始下載或消除人聲。",
+        "預覽時會暫停 BGM；停止或離開後依目前播放狀態恢復，避免覆蓋期間已改動的播放狀態。",
+        "離開搜尋頁會停止預覽、取消未完成的請求並釋放相關播放資源。"
+      ],
+      "caption": "YouTube 搜尋：左側選影片，右側預覽，下方選擇加入歌曲列表或 UVR 佇列。"
+    },
+    "appearance": {
+      "title": "深色、淺色與跟隨 Windows",
+      "intro": "預設維持深色。選單列最右側的一顆圖示表示目前選擇，點擊即可輪流切換外觀。",
+      "steps": [
+        "月亮代表深色、太陽代表淺色、螢幕代表跟隨 Windows。",
+        "點擊依序切換深色 → 淺色 → 跟隨 Windows；也可在一般設定選擇外觀。",
+        "淺色模式會調整獨立歌詞視窗的文字對比；OBS 主題與自訂歌詞色彩使用原本的設定。"
+      ],
+      "notes": [
+        "完整模式預設為 1600×900，實際大小會受螢幕可用範圍限制。",
+        "歌單外觀預覽改為開啟頁面時才建立，減少啟動及開啟專案時未使用的瀏覽器初始化。"
+      ],
+      "caption": "淺色歌詞視窗：目前句子加粗，其他句子仍清楚可讀；跟隨播放的說明放在按鈕 tooltip。"
+    }
+  },
+  "en": {
+    "song": {
+      "title": "Song information, tags and search",
+      "intro": "Version 2.1.8.0 uses one card-based song list. Singers / performers appear below the title; the audio-file or video icon identifies a local file or YouTube link.",
+      "steps": [
+        "Click a song card's Information icon to open the Information tab in Song settings.",
+        "Enter a new performer and press Add, or click a name already saved in this project. A song can have multiple performers.",
+        "Click genre and language tags to select several; click a selected tag again to remove it. Custom tags are supported.",
+        "Press Save to apply the song information and close the information window."
+      ],
+      "notes": [
+        "Search supports song titles, performers, genres and languages, with keyword suggestions from saved metadata. Choosing a suggestion does not start playback.",
+        "Metadata belongs to the current project, including YouTube sources. Genre and language tags are not written to audio files.",
+        "Local audio can optionally receive performer tags. The format must pass write verification; a failed verification does not replace the original file.",
+        "Information, artwork and lyrics retain separate status icons and open the matching tab in the same window. Player mode hides the Profile tag."
+      ],
+      "caption": "Song information with reusable performers and multiple genre / language tags.",
+      "secondCaption": "Search suggestions include saved song titles, performers, genres and languages. Traditional Chinese interface example."
+    },
+    "youtube": {
+      "title": "Search YouTube inside the app",
+      "intro": "YouTube Search is to the right of Lyrics Editor in the Live workspace. Select one video, preview it, then add it to the song list or UVR queue.",
+      "steps": [
+        "Enter a title, performer or keyword, select All, Instrumental or Original, then search.",
+        "Browse video titles and thumbnails. Scroll down to load more results.",
+        "Select one video to preview on the right, with Play, Stop, seek and volume controls.",
+        "Choose Add to song list, or Add to UVR queue. Open the UVR page, choose a model and press Start processing to remove vocals."
+      ],
+      "notes": [
+        "Adding to UVR only queues the item; it does not automatically start downloading or vocal removal.",
+        "Preview pauses BGM. Stopping or leaving restores it according to the current playback state, without overriding changes made during preview.",
+        "Leaving the search page stops preview, cancels pending requests and releases the related playback resources."
+      ],
+      "caption": "YouTube Search with results on the left, preview on the right and destination actions below."
+    },
+    "appearance": {
+      "title": "Dark, Light and Follow Windows",
+      "intro": "Dark remains the default. One icon at the right of the menu bar shows the current choice; click it to cycle appearance modes.",
+      "steps": [
+        "The moon means Dark, the sun means Light, and the monitor means Follow Windows.",
+        "Click to cycle Dark → Light → Follow Windows, or choose appearance in General settings.",
+        "Light mode adjusts the separate lyrics window's text contrast. OBS themes and custom lyrics colors keep their existing settings."
+      ],
+      "notes": [
+        "The Full window defaults to 1600×900, constrained by the screen's available area.",
+        "Playlist appearance preview is created when its page opens, reducing unused browser initialization during startup and project loading."
+      ],
+      "caption": "Light lyrics window: the current line is bold, other lines remain readable, and playback-follow guidance is in the button tooltip."
+    }
+  },
+  "zh-CN": {
+    "song": {
+      "title": "歌曲信息、分类与搜索",
+      "intro": "2.1.8.0 统一使用卡片式歌曲列表。歌手／演出者显示在歌名下方；左侧音频文件或视频图标可区分本地文件与 YouTube 链接。",
+      "steps": [
+        "点击歌曲卡片的“信息”图标，打开歌曲设置的“信息”标签页。",
+        "输入新演出者名称后按“加入”，或直接点击当前项目已设置过的名字；一首歌可设置多位演出者。",
+        "点击曲风与语言标签即可多选；再次点击已选标签会取消，也可新增自定义标签。",
+        "按“保存”应用歌曲资料并关闭信息窗口。"
+      ],
+      "notes": [
+        "搜索栏支持歌曲名称、演出者、曲风与语言，并显示已保存资料的关键词建议。选择建议不会自动播放歌曲。",
+        "资料保存在当前项目；YouTube 来源也使用项目资料。曲风与语言不会写入音频文件。",
+        "本地音频可选择同步写入演出者标签；格式须通过写入验证，验证失败时不会覆盖原文件。",
+        "信息、封面与歌词图标各自保留设置状态，点击会直接切到同一窗口的对应标签页。普通播放器模式会隐藏 Profile 标签。"
+      ],
+      "caption": "歌曲信息：演出者可复用，曲风与语言可多选。",
+      "secondCaption": "搜索会建议已设置的歌曲、演出者、曲风或语言关键词。图为繁体中文界面。"
+    },
+    "youtube": {
+      "title": "在软件内搜索 YouTube",
+      "intro": "“YouTube 搜索”位于直播操作中“歌词编辑”的右侧。一次选中一个视频，确认后可直接加入歌曲列表或 UVR 队列。",
+      "steps": [
+        "输入歌名、演出者或关键词，选择“全部”“伴奏”或“原曲”，然后搜索。",
+        "查看视频标题与缩略图；向下滚动会加载更多结果。",
+        "选中一个视频后，可在右侧预览，使用播放、停止、进度及音量控制。",
+        "选择“直接加入歌曲列表”，或按“加入 UVR 队列”，到 UVR 页面设置模型并按“开始处理”消除人声。"
+      ],
+      "notes": [
+        "加入 UVR 只排入队列，不会自动开始下载或消除人声。",
+        "预览时会暂停 BGM；停止或离开后根据当前播放状态恢复，避免覆盖期间已更改的播放状态。",
+        "离开搜索页面会停止预览、取消未完成的请求并释放相关播放资源。"
+      ],
+      "caption": "YouTube 搜索：左侧选择视频，右侧预览，下方选择加入歌曲列表或 UVR 队列。"
+    },
+    "appearance": {
+      "title": "深色、浅色与跟随 Windows",
+      "intro": "默认保持深色。菜单栏最右侧的一个图标表示当前选择，点击即可循环切换外观。",
+      "steps": [
+        "月亮代表深色，太阳代表浅色，显示器代表跟随 Windows。",
+        "点击依次切换深色 → 浅色 → 跟随 Windows；也可在常规设置选择外观。",
+        "浅色模式会调整独立歌词窗口的文字对比；OBS 主题与自定义歌词颜色保持原来的设置。"
+      ],
+      "notes": [
+        "完整模式默认为 1600×900，实际大小会受屏幕可用区域限制。",
+        "歌单外观预览改为打开页面时才创建，减少启动及打开项目时未使用的浏览器初始化。"
+      ],
+      "caption": "浅色歌词窗口：当前句子加粗，其他句子仍清晰可读；跟随播放说明位于按钮 tooltip。图为英文界面。"
+    }
+  },
+  "ja": {
+    "song": {
+      "title": "曲情報、タグと検索",
+      "intro": "2.1.8.0 の曲リストはカード表示に統一されました。曲名の下に歌手・演奏者を表示し、音声ファイルと動画のアイコンでローカル音源と YouTube リンクを区別します。",
+      "steps": [
+        "曲カードの情報アイコンを押すと、曲設定の情報タブが開きます。",
+        "新しい演奏者名を入力して追加するか、このプロジェクトに保存した名前を押します。複数の演奏者を設定できます。",
+        "ジャンルと言語のタグは複数選択できます。選択済みタグをもう一度押すと解除します。独自のタグも追加できます。",
+        "保存を押すと曲情報を適用し、情報ウィンドウを閉じます。"
+      ],
+      "notes": [
+        "曲名、演奏者、ジャンル、言語を検索でき、保存済み情報からキーワード候補を表示します。候補を選んでも再生は始まりません。",
+        "YouTube 音源を含む情報は現在のプロジェクトに保存します。ジャンルと言語は音声ファイルに書き込みません。",
+        "ローカル音源では任意で演奏者タグを書き込めます。形式の書き込み検証に失敗した場合は元ファイルを置き換えません。",
+        "情報、アートワーク、歌詞は個別の設定状態アイコンを維持し、同じウィンドウの対応タブを開きます。プレーヤーモードでは Profile タグを非表示にします。"
+      ],
+      "caption": "曲情報：保存済み演奏者名を再利用し、ジャンルと言語を複数設定できます。",
+      "secondCaption": "曲名、演奏者、ジャンル、言語の検索候補。繁体字中国語の画面例です。"
+    },
+    "youtube": {
+      "title": "アプリ内で YouTube を検索",
+      "intro": "ライブ操作の歌詞エディター右側に YouTube 検索があります。動画を一つ選び、確認後に曲リストまたは UVR キューへ追加できます。",
+      "steps": [
+        "曲名、演奏者またはキーワードを入力し、すべて・伴奏・原曲を選んで検索します。",
+        "タイトルとサムネイルを確認します。下へスクロールすると追加の結果を読み込みます。",
+        "動画を一つ選ぶと右側でプレビューできます。再生、停止、シーク、音量の操作に対応します。",
+        "曲リストへ直接追加するか、UVR キューへ追加します。UVR ページでモデルを選び、処理開始を押してボーカルを除去します。"
+      ],
+      "notes": [
+        "UVR への追加はキュー登録のみです。ダウンロードやボーカル除去は自動で開始しません。",
+        "プレビュー中は BGM を一時停止します。停止・ページ移動後は現在の再生状態に応じて復元し、途中で変更した状態を上書きしません。",
+        "検索ページを離れるとプレビューを停止し、未完了の要求を取り消して関連再生リソースを解放します。"
+      ],
+      "caption": "YouTube 検索：左側で動画を選び、右側でプレビューし、下側で追加先を選びます。"
+    },
+    "appearance": {
+      "title": "ダーク、ライトと Windows に従う設定",
+      "intro": "既定はダークです。メニューバー右端の一つのアイコンが現在の選択を表し、押すと外観が切り替わります。",
+      "steps": [
+        "月はダーク、太陽はライト、モニターは Windows に従う設定を表します。",
+        "ダーク → ライト → Windows に従う設定の順に切り替わります。一般設定でも選べます。",
+        "ライト表示では独立した歌詞ウィンドウの文字コントラストを調整します。OBS テーマと歌詞のカスタム色は維持します。"
+      ],
+      "notes": [
+        "フルモードの既定サイズは 1600×900 で、画面の使用可能な領域に制限されます。",
+        "プレイリスト外観プレビューをページ表示時に作成し、起動時やプロジェクトを開く際の不要なブラウザー初期化を減らします。"
+      ],
+      "caption": "ライト表示の歌詞ウィンドウ：現在行は太字で、ほかの行も読みやすく表示します。追従の説明はボタンのツールチップにあります。"
+    }
+  },
+  "ko": {
+    "song": {
+      "title": "곡 정보, 태그 및 검색",
+      "intro": "2.1.8.0의 곡 목록은 카드 표시로 통일되었습니다. 제목 아래에 가수 / 연주자를 표시하고, 오디오 파일과 동영상 아이콘으로 로컬 파일과 YouTube 링크를 구분합니다.",
+      "steps": [
+        "곡 카드의 정보 아이콘을 누르면 곡 설정의 정보 탭이 열립니다.",
+        "새 연주자 이름을 입력해 추가하거나 현재 프로젝트에 저장한 이름을 누릅니다. 한 곡에 여러 연주자를 지정할 수 있습니다.",
+        "장르와 언어 태그는 여러 개 선택할 수 있습니다. 선택한 태그를 다시 누르면 해제되며 사용자 태그도 추가할 수 있습니다.",
+        "저장을 누르면 곡 정보를 적용하고 정보 창을 닫습니다."
+      ],
+      "notes": [
+        "곡 제목, 연주자, 장르 및 언어를 검색하고 저장된 정보에서 검색어 제안을 표시합니다. 제안을 선택해도 재생은 시작하지 않습니다.",
+        "YouTube 음원을 포함한 정보는 현재 프로젝트에 저장합니다. 장르와 언어는 오디오 파일에 기록하지 않습니다.",
+        "로컬 음원에는 선택한 경우 연주자 태그를 기록합니다. 형식의 기록 검증이 실패하면 원본 파일을 교체하지 않습니다.",
+        "정보, 표지 및 가사는 각 설정 상태 아이콘을 유지하며 같은 창의 해당 탭을 엽니다. 플레이어 모드에서는 Profile 태그를 숨깁니다."
+      ],
+      "caption": "곡 정보: 저장한 연주자 이름을 재사용하고 장르와 언어 태그를 여러 개 지정합니다.",
+      "secondCaption": "곡, 연주자, 장르 및 언어의 검색어 제안. 번체 중국어 화면 예시입니다."
+    },
+    "youtube": {
+      "title": "앱 안에서 YouTube 검색",
+      "intro": "라이브 작업의 가사 편집기 오른쪽에 YouTube 검색이 있습니다. 동영상 하나를 선택해 확인한 뒤 곡 목록이나 UVR 대기열에 추가할 수 있습니다.",
+      "steps": [
+        "곡명, 연주자 또는 검색어를 입력하고 전체, 반주 또는 원곡을 선택해 검색합니다.",
+        "제목과 썸네일을 확인합니다. 아래로 스크롤하면 결과를 더 불러옵니다.",
+        "동영상 하나를 선택하면 오른쪽에서 미리 볼 수 있습니다. 재생, 정지, 탐색 및 음량 조절을 지원합니다.",
+        "곡 목록에 바로 추가하거나 UVR 대기열에 추가합니다. UVR 페이지에서 모델을 선택하고 처리 시작을 눌러 보컬을 제거합니다."
+      ],
+      "notes": [
+        "UVR에 추가하면 대기열에만 등록됩니다. 다운로드나 보컬 제거는 자동으로 시작하지 않습니다.",
+        "미리 보기 중에는 BGM을 일시 정지합니다. 정지하거나 페이지를 떠나면 현재 재생 상태에 따라 복원하며 도중에 변경한 상태를 덮어쓰지 않습니다.",
+        "검색 페이지를 떠나면 미리 보기를 중지하고 진행 중인 요청을 취소하며 관련 재생 리소스를 해제합니다."
+      ],
+      "caption": "YouTube 검색: 왼쪽에서 영상을 선택하고 오른쪽에서 미리 본 뒤 아래에서 추가 위치를 선택합니다."
+    },
+    "appearance": {
+      "title": "어둡게, 밝게 및 Windows 설정 따르기",
+      "intro": "기본값은 어둡게입니다. 메뉴 표시줄 오른쪽의 아이콘 하나가 현재 선택을 표시하며 누르면 외관을 전환합니다.",
+      "steps": [
+        "달은 어둡게, 태양은 밝게, 모니터는 Windows 설정 따르기를 뜻합니다.",
+        "어둡게 → 밝게 → Windows 설정 따르기 순으로 전환합니다. 일반 설정에서도 선택할 수 있습니다.",
+        "밝은 모드에서는 별도 가사 창의 글자 대비를 조정합니다. OBS 테마와 사용자 지정 가사 색상은 유지합니다."
+      ],
+      "notes": [
+        "전체 모드의 기본 크기는 1600×900이며 화면의 사용 가능 영역에 맞게 제한됩니다.",
+        "재생목록 외관 미리보기를 페이지를 열 때 생성하여 시작 및 프로젝트 열기 시 불필요한 브라우저 초기화를 줄입니다."
+      ],
+      "caption": "밝은 가사 창: 현재 줄은 굵게 표시하며 다른 줄도 잘 보입니다. 재생 따라가기 설명은 버튼 툴팁에 있습니다. 영어 화면 예시입니다."
+    }
+  }
+}

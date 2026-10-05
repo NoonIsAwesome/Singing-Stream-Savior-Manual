@@ -20,8 +20,8 @@ translation_key: lyrics
     <p class="chapter-quick-start__done"><strong>完成時：</strong>主畫面預覽、獨立歌詞視窗與 OBS 歌詞畫面都能使用這份歌詞。</p>
   </div>
   <figure class="manual-figure">
-    <a href="assets/images/lyrics-manager.png"><img src="assets/images/lyrics-manager.png" alt="管理歌詞視窗，左側為歌詞預覽，右側為線上搜尋結果"></a>
-    <figcaption>右側選擇候選歌詞，左側先確認內容，再按「附加歌詞」。</figcaption>
+    <a href="assets/images/2180/zh-TW/lyrics-settings.png"><img src="assets/images/2180/zh-TW/lyrics-settings.png" alt="歌曲設定的歌詞分頁，左側為歌詞預覽，右側為線上搜尋"></a>
+    <figcaption>歌曲設定的歌詞分頁：可匯入 LRC、線上搜尋，選擇結果後附加到歌曲。</figcaption>
   </figure>
 </section>
 
@@ -47,7 +47,7 @@ translation_key: lyrics
 
 ## 使用「管理歌詞」
 
-在歌曲的「歌詞」頁按「管理歌詞…」，或直接點選歌曲列表中該歌曲「歌詞」欄的圖示，都可以開啟管理歌詞視窗。你可以在這裡：
+點歌曲卡片的歌詞圖示，或在歌詞頁選擇管理歌詞，會開啟同一個「歌曲設定」視窗並直接切到「歌詞」分頁。資訊、專輯封面、歌詞各自套用；切換分頁保留目前選擇。你可以在這裡：
 
 - 搜尋 YouTube 字幕與 LRCLIB。
 - 匯入本機 LRC 或其他支援格式。
@@ -70,10 +70,10 @@ translation_key: lyrics
 如果搜尋結果都不適合，請不要勉強附加；改為將準備好的歌詞貼到歌詞編輯器，或匯入 LRC、SRT、VTT／純文字檔，再自行標記時間。
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="assets/images/lyrics-manager-linked.png">
-    <img src="assets/images/lyrics-manager-linked.png" alt="已有歌詞的管理歌詞視窗，左下角提供選擇 LRC 檔案與取消歌詞連結">
+  <a href="assets/images/2180/zh-TW/lyrics-settings.png">
+    <img src="assets/images/2180/zh-TW/lyrics-settings.png" alt="已有歌詞的管理歌詞視窗，左下角提供選擇 LRC 檔案與取消歌詞連結">
   </a>
-  <figcaption>已有歌詞時，左下角可重新匯入檔案或取消目前的歌詞連結。</figcaption>
+  <figcaption>歌曲設定的歌詞分頁：可匯入 LRC、線上搜尋，選擇結果後附加到歌曲。</figcaption>
 </figure>
 
 ## 自動搜尋

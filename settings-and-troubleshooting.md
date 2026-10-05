@@ -156,3 +156,5 @@ translation_key: settings-and-troubleshooting
 請保留最外層的 `Singing Stream Savior.exe` 與程式資料夾內其他檔案的原有位置，不要只移動其中一部分。若必須退回舊版，請把官方舊版完整 ZIP 解壓到**另一個資料夾**，先備份 `.bgmsproj` 與媒體再測試；不要用舊版直接覆蓋新版資料夾。
 
 若啟動器提示需要較新的啟動器，或自動更新仍無法完成，請改從本說明網站下載最新版完整 ZIP，解壓縮到新的資料夾，再用新版開啟原本的 `.bgmsproj`。不要混合覆蓋不同版本的程式檔案。
+
+{% include desktop-2180-guide.html section="appearance" %}

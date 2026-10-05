@@ -20,7 +20,7 @@ translation_key: library-and-playback
     <p class="chapter-quick-start__done"><strong>完成時：</strong>伴奏播放器會顯示歌名與進度；開始播放伴奏後，正在播放的 BGM 會自動暫停。</p>
   </div>
   <figure class="manual-figure">
-    <a href="assets/images/full-workspace.png"><img src="assets/images/full-workspace.png" alt="完整模式中的歌曲庫、歌曲表格、背景音樂、歌唱伴奏與待播清單"></a>
+    <a href="assets/images/2180/main-window.png"><img src="assets/images/2180/main-window.png" alt="完整模式中的歌曲庫、歌曲表格、背景音樂、歌唱伴奏與待播清單"></a>
     <figcaption>完整模式會同時顯示歌曲庫、兩個播放器，以及待播／已唱清單。</figcaption>
   </figure>
 </section>
@@ -37,8 +37,8 @@ translation_key: library-and-playback
 固定分類無法刪除；自訂歌單可依直播主題或歌回企劃分組。
 
 <figure class="manual-figure">
-  <a href="assets/images/song-library.png">
-    <img src="assets/images/song-library.png" alt="完整歌曲庫，左側顯示全部歌曲、我的最愛、最近播放與兩個自訂歌單，右側顯示歌曲表格">
+  <a href="assets/images/2180/main-window.png">
+    <img src="assets/images/2180/main-window.png" alt="完整歌曲庫，左側顯示全部歌曲、我的最愛、最近播放與兩個自訂歌單，右側顯示歌曲表格">
   </a>
   <figcaption>左側切換歌曲來源，右側會顯示該分類中的歌曲；搜尋欄只篩選目前選取的分類。</figcaption>
 </figure>
@@ -82,7 +82,7 @@ translation_key: library-and-playback
 
 「顯示歌名」是直播畫面、待播與已唱清單優先使用的名稱。若未填寫，程式會以檔名或 YouTube 標題作為備援，不會顯示空白歌曲。
 
-完整模式可查看來源或檔名；精簡模式會隱藏較佔寬度的來源欄位。
+卡片左側的音訊檔／影片圖示區分本機檔案與 YouTube，歌名下方顯示已設定的演出者。
 
 雙擊歌曲列會直接載入並播放歌曲，不會進入文字編輯。要修改名稱，請對歌曲按右鍵，選擇選單第一項「編輯顯示歌名」。輸入完成後按 `Enter` 套用，按 `Esc` 則取消這次編輯。這只會修改直播及清單使用的名稱，不會重新命名原始音訊檔案。
 
@@ -94,23 +94,20 @@ translation_key: library-and-playback
 4. **刪除／從目前歌單移除**：依目前所在分類移除關聯，或從歌曲庫刪除歌曲。
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="assets/images/display-title-edit.png">
-    <img src="assets/images/display-title-edit.png" alt="歌曲表格的顯示歌名欄位進入編輯狀態">
+  <a href="assets/images/2180/zh-TW/song-settings.png">
+    <img src="assets/images/2180/zh-TW/song-settings.png" alt="歌曲表格的顯示歌名欄位進入編輯狀態">
   </a>
-  <figcaption>從右鍵選單第一項開啟編輯後，編輯框只出現在「顯示歌名」欄；左側檔案名稱維持不變。</figcaption>
+  <figcaption>資訊分頁可設定歌曲名稱；也可從右鍵選單編輯顯示歌名。原始檔案不會因此重新命名。</figcaption>
 </figure>
 
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
   <header class="manual-feature-update__header">
     <p class="manual-feature-update__eyebrow">2.0.5.0</p>
     <h2 id="library-bgm-205-title">更直覺的歌曲列表與 BGM 播放清單</h2>
-    <p>歌曲庫現在可以在熟悉的傳統列表與卡片列表之間切換；背景音樂也能預先整理成清單，依直播主題快速切換。</p>
+    <p>歌曲列表統一採用卡片顯示；BGM 仍可整理成播放清單，依直播主題切換。</p>
   </header>
 
-  <div class="manual-feature-update__copy">
-    <h3>歌曲列表顯示</h3>
-    <p><strong>傳統列表仍是預設值</strong>；想更快辨認歌曲時，可在「設定 → 一般 → 歌曲列表顯示」改用卡片列表。卡片會突出顯示觀眾看到的歌名，同時保留來源、封面與歌詞狀態。雙擊卡片會播放歌曲，鉛筆圖示則用來編輯顯示歌名。</p>
-  </div>
+  <div class="manual-feature-update__copy"><h3>卡片顯示與歌曲設定</h3><p>2.1.8.0 已移除傳統列表切換。卡片顯示歌名與演出者，來源圖示區分本機音訊與 YouTube；資訊、封面及歌詞圖示可直接開啟對應設定分頁。雙擊歌曲即可播放。</p></div>
 
   <div class="manual-feature-update__copy">
     <h3>BGM 播放清單</h3>
@@ -129,6 +126,11 @@ translation_key: library-and-playback
     <figcaption>展開 BGM 清單後，可直接辨認每首背景音樂的備註與來源；藍色項目是目前正在播放的 BGM。</figcaption>
   </figure>
 </section>
+
+{% include desktop-2180-guide.html section="song" %}
+
+{% include desktop-2180-guide.html section="youtube" suffix="-library" %}
+
 
 ## 無伴奏演出
 
@@ -149,7 +151,7 @@ Now Singing、待播與已唱；結束後再恢復原本的 BGM。建立的項�
 
 > **封面使用提醒：** 封面搜尋僅協助查找圖片。將圖片用於公開直播或影片前，請確認相應的使用權限；也可以使用自己製作或已取得適當授權的圖片。
 
-本機音訊可透過歌曲右鍵選單開啟「嵌入封面」：
+點歌曲卡片的封面圖示，會在「歌曲設定」直接開啟「專輯封面」分頁；原有右鍵「嵌入封面」入口也使用此分頁：
 
 1. 輸入歌名與歌手後線上搜尋，或選擇本機圖片。
 2. 選取搜尋結果。
@@ -157,8 +159,8 @@ Now Singing、待播與已唱；結束後再恢復原本的 BGM。建立的項�
 4. 按「嵌入」寫入音訊標籤。
 
 <figure class="manual-figure manual-figure--medium">
-  <a href="assets/images/cover-dialog.png">
-    <img src="assets/images/cover-dialog.png" alt="嵌入封面視窗，左側顯示封面預覽，右側顯示搜尋結果">
+  <a href="assets/images/2180/zh-TW/cover-settings.png">
+    <img src="assets/images/2180/zh-TW/cover-settings.png" alt="歌曲設定的專輯封面分頁，左側為預覽，右側為圖片搜尋">
   </a>
   <figcaption>選取右側搜尋結果並等待左側預覽載入完成後，「嵌入」按鈕就會啟用。</figcaption>
 </figure>

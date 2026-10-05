@@ -1,4 +1,4 @@
-﻿---
+---
 title: Singing Stream Savior 2.1 사용자 설명서
 description: Singing Stream Savior 2.1.7.4 한국어 설명서
 lang: ko
@@ -67,7 +67,7 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 
 라이브러리에는 모든 곡, 즐겨찾기, 최근 재생과 사용자 재생목록이 있습니다. 고정 분류는 삭제할 수 없으며, 사용자 재생목록은 방송 기획, 장르나 이벤트별로 곡을 정리할 때 사용합니다.
 
-<figure class="manual-figure"><a href="{{ '/assets/images/ko/song-library.png' | relative_url }}"><img src="{{ '/assets/images/ko/song-library.png' | relative_url }}" alt="모든 곡, 즐겨찾기, 최근 재생, 사용자 재생목록과 곡 표가 보이는 전체 라이브러리"></a><figcaption>왼쪽에서 분류를 선택하면 오른쪽 표와 검색 대상이 함께 바뀝니다.</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}" alt="모든 곡, 즐겨찾기, 최근 재생, 사용자 재생목록과 곡 표가 보이는 전체 라이브러리"></a><figcaption>새 전체 모드의 곡 라이브러리, 플레이어와 대기 목록. 번체 중국어 화면 예시입니다。</figcaption></figure>
 
 곡을 분류하려면 한 곡 또는 여러 곡을 선택해 마우스 오른쪽 버튼을 누르고 **재생목록에 추가**에서 **즐겨찾기** 또는 사용자 재생목록을 고르세요. 음원은 복제되지 않고 모든 곡에서도 사라지지 않으며, 한 곡을 여러 재생목록에 넣을 수 있습니다.
 
@@ -81,14 +81,19 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 
 곡 오른쪽 클릭 메뉴는 **표시 곡명 편집**, **대기 목록에 추가**, **재생목록에 추가**(즐겨찾기 또는 사용자 재생목록), 현재 분류에 맞는 삭제/분류에서 제거 순서로 제공됩니다.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/ko/display-title-edit.png' | relative_url }}" alt="오른쪽 클릭 메뉴에서 표시 제목 셀을 편집하는 화면"></a><figcaption>오른쪽 클릭 메뉴의 첫 항목으로 방송에 표시할 제목만 편집하며, 왼쪽 원본 파일명은 유지됩니다.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ko/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/song-settings.png' | relative_url }}" alt="오른쪽 클릭 메뉴에서 표시 제목 셀을 편집하는 화면"></a><figcaption>정보 탭이나 오른쪽 클릭 메뉴에서 표시 곡명을 편집할 수 있습니다. 원본 파일 이름은 바꾸지 않습니다.</figcaption></figure>
 
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
-  <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">더 직관적인 곡 카드와 BGM 재생목록</h2><p>곡 라이브러리는 기존 표와 카드 표시를 전환할 수 있고, BGM은 방송 주제에 맞게 미리 정리해 빠르게 바꿀 수 있습니다.</p></header>
-  <div class="manual-feature-update__copy"><h3>곡 목록 표시</h3><p><strong>기본값은 기존 표 형식입니다.</strong> “설정 → 일반 → 곡 목록 표시”에서 카드 표시로 바꿀 수 있습니다. 표시 곡명을 강조하면서 음원, 커버와 가사 상태를 유지하며, 두 번 클릭은 재생, 연필 아이콘은 표시 곡명 편집입니다.</p></div>
+  <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">더 직관적인 곡 카드와 BGM 재생목록</h2><p>곡 목록은 카드 표시로 통일되며 BGM은 계속 재사용 가능한 재생목록으로 정리할 수 있습니다.</p></header>
+  <div class="manual-feature-update__copy"><h3>카드 표시와 곡 설정</h3><p>2.1.8.0에서는 기존 목록 표시 전환을 제거했습니다. 카드에 곡명과 연주자를 표시하고 음원 아이콘으로 로컬 오디오와 YouTube를 구분합니다. 정보, 표지 및 가사 아이콘으로 해당 설정 탭을 열고 두 번 클릭하면 곡을 재생합니다.</p></div>
   <div class="manual-feature-update__copy"><h3>BGM 재생목록</h3><p>여러 로컬／YouTube 음원을 저장하고, 각 BGM에 메모를 붙이며, 드래그로 순서를 바꿀 수 있습니다. 재생 중인 항목은 강조됩니다. YouTube 재생목록은 현재 영상만 또는 모든 항목을 추가할 수 있습니다.</p><ul><li><strong>한 곡 반복(기본값)</strong></li><li><strong>전체 반복</strong></li><li><strong>전체 무작위 반복</strong></li></ul></div>
   {% include localized-release-screenshot.html name="bgm-playlist.png" alt="2.1 BGM 재생목록" caption="메모, 음원과 현재 재생 항목을 바로 확인할 수 있습니다." %}
 </section>
+
+{% include desktop-2180-guide.html section="song" %}
+
+{% include desktop-2180-guide.html section="youtube" suffix="-library" %}
+
 
 아카펠라, 직접 연주 등 미디어 파일을 사용하지 않는 공연은 검색창 옆의 **+ 무반주 공연**에서 추가할 수 있습니다. 공개 표시 제목을 입력하고 수동 종료 또는 선택적인 예상 시간을 고르세요. 시간은 10초 단위 버튼과 마우스 휠로 조절할 수 있습니다. 시작하면 BGM을 일시 정지하고 Now Singing, 대기 목록과 완료 기록을 일반 곡처럼 갱신하며, 종료 후 이전 BGM을 다시 재생합니다. 항목은 전용 스마트 분류와 프로젝트에 저장되며 가짜 무음 파일을 만들지 않습니다.
 
@@ -98,7 +103,7 @@ Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라�
 
 곡 메뉴에서 **표지 삽입**을 열고 검색 결과나 로컬 이미지를 선택한 뒤 미리보기 로딩이 끝나면 삽입하세요.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/ko/cover-dialog.png' | relative_url }}" alt="검색 결과와 불러온 표지 미리보기가 있는 표지 삽입 창"></a><figcaption>검색 결과를 선택하고 왼쪽 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ko/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/cover-settings.png' | relative_url }}" alt="검색 결과와 불러온 표지 미리보기가 있는 표지 삽입 창"></a><figcaption>검색 결과를 선택하고 왼쪽 미리보기가 준비되면 삽입 버튼을 사용할 수 있습니다.</figcaption></figure>
 
 BGM과 반주는 각각 재생, 음량과 탐색을 제어할 수 있습니다. 반주는 재생 속도와 반음 단위 키도 조절할 수 있습니다. 어려운 곡을 천천히 연습하거나 라이브에서 편안한 템포에 맞출 때, 음역이 너무 높거나 낮은 반주를 자신에게 맞는 키로 옮길 때 유용하며 별도의 반주 파일을 만들 필요가 없습니다.
 
@@ -129,6 +134,8 @@ OBS 재생목록 테마의 현재 곡 영역이 대화 문구로 바뀌는 것�
 <a id="lyrics"></a>
 ## {% include chapter-number.html key="lyrics" %} · 가사 기능
 
+곡 카드의 가사 아이콘이나 가사 페이지의 가사 관리를 누르면 같은 곡 설정 창의 가사 탭이 열립니다. 정보, 앨범 표지 및 가사는 각각 적용하며 탭을 전환해도 현재 선택을 유지합니다.
+
 가사는 선택 기능입니다. 진행자 전용 **가사 창**, 시청자용 OBS 가사 오버레이 또는 둘 다 사용할 수 있습니다. LRC, SRT, VTT, 일반 텍스트, YouTube 자막과 LRCLIB를 지원합니다.
 
 적합한 검색 결과가 없으면 억지로 연결하지 마세요. 준비한 가사를 [가사 편집기](#lyrics-editor)에 붙여넣거나 LRC, SRT, VTT 또는 텍스트 파일을 가져와 직접 시간을 표시할 수 있습니다.
@@ -137,7 +144,7 @@ OBS 재생목록 테마의 현재 곡 영역이 대화 문구로 바뀌는 것�
 
 > **가사 출처와 이용 권한:** LRCLIB, YouTube 자막 등의 검색 출처는 가사를 찾는 데 도움을 주며 가사 이용 허락을 제공하지 않습니다. 사용하기 전에 가사 출처, 관련 권리와 서비스 규정을 확인하세요.
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/ko/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-manager-linked.png' | relative_url }}" alt="가사 파일 가져오기와 가사 연결 해제가 표시된 가사 관리 창"></a><figcaption>가사가 연결된 뒤에도 왼쪽 아래에서 다른 파일을 가져오거나 연결을 해제할 수 있습니다.</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/ko/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/lyrics-settings.png' | relative_url }}" alt="가사 파일 가져오기와 가사 연결 해제가 표시된 가사 관리 창"></a><figcaption>곡 설정의 가사 탭: LRC 파일을 가져오거나 온라인으로 검색한 뒤 선택한 가사를 곡에 연결합니다.</figcaption></figure>
 
 {% include player-window-buttons.html %}
 
@@ -268,6 +275,8 @@ OBS Studio 28 이상에서 **도구 > WebSocket 서버 설정**을 열고 서버
 <a id="uvr-vocal-removal"></a>
 ## {% include chapter-number.html key="uvr-vocal-removal" %} · UVR 보컬 제거
 
+YouTube 검색에서 영상을 선택하고 UVR 대기열에 추가할 수도 있습니다. 이 작업은 대기열 등록만 합니다. UVR 페이지에서 모델과 출력 형식을 설정한 뒤 처리 시작을 누르세요.
+
 ### 보컬 분리를 추가한 이유
 
 노래나 연습용 소재를 준비할 때 여러 도구를 오가며 파일을 변환하고 음원을 분리한 뒤 다시 정리해야 하는 경우가 많습니다. Singing Stream Savior는 이러한 작업을 한곳에 모아, 이용 권한을 확인한 소재를 처리할 때 반복 작업을 줄입니다.
@@ -302,10 +311,10 @@ WAV/FLAC/MP3(320 kbps), 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니
 - **간단 모드:** 곡 선택, 플레이어, **대기 목록**과 **부른 곡**을 유지하고 넓은 열과 큰 미리보기를 숨깁니다.
 - **미니 모드:** 방송 전에 부를 곡과 화면 설정을 마치고 **대기 목록**까지 준비한 스트리머에게 적합합니다. 라이브러리와 BGM을 숨기고 반주, **대기 목록**과 **부른 곡**을 표시하며 가사 창과 YouTube 버튼은 반주 플레이어에 남습니다. 방송 중에는 준비한 대기 목록에서 곡을 골라 바로 재생할 수 있습니다. 별도 가사 창은 자유롭게 이동하고 글자 크기를 조절할 수 있습니다.
 
-실행할 때마다 전체 모드는 1920 × 1080으로 열립니다. 사용할 수 있는 공간이 부족하면 화면에 맞도록 창을 줄여서 시작합니다. 열린 뒤에는 가장자리를 자유롭게 드래그해 크기를 조절할 수 있으며 창 크기는 고정되지 않습니다. `Ctrl + Shift + M`으로 전환할 수 있습니다. 모드 전환은 화면에 보이는 조작 항목만 바꿉니다. 재생 중인 곡은 계속 재생되고 기존 대기 순서와 OBS 화면도 초기화되지 않습니다. 각 모드의 창 배치는 따로 기억합니다.
+실행할 때마다 전체 모드는 1600 × 900으로 열립니다. 사용할 수 있는 공간이 부족하면 화면에 맞도록 창을 줄여서 시작합니다. 열린 뒤에는 가장자리를 자유롭게 드래그해 크기를 조절할 수 있으며 창 크기는 고정되지 않습니다. `Ctrl + Shift + M`으로 전환할 수 있습니다. 모드 전환은 화면에 보이는 조작 항목만 바꿉니다. 재생 중인 곡은 계속 재생되고 기존 대기 순서와 OBS 화면도 초기화되지 않습니다. 각 모드의 창 배치는 따로 기억합니다.
 
 <div class="figure-grid">
-  <figure class="manual-figure"><a href="{{ '/assets/images/ko/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/full-workspace.png' | relative_url }}" alt="한국어 전체 모드"></a><figcaption>전체 모드는 전체 라이브러리, 플레이어와 대기 목록을 표시합니다.</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/ko/main-window.png' | relative_url }}" alt="전체 모드(번체 중국어 화면 예시)"></a><figcaption>새 전체 모드의 곡 라이브러리, 플레이어와 대기 목록. 번체 중국어 화면 예시입니다。</figcaption></figure>
   <figure class="manual-figure"><a href="{{ '/assets/images/ko/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/compact-workspace.png' | relative_url }}" alt="한국어 간단 모드"></a><figcaption>간단 모드는 곡 선택과 방송 중 조작 기능을 유지합니다.</figcaption></figure>
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/ko/mini-workspace.png' | relative_url }}" alt="한국어 미니 모드"></a><figcaption>미니 모드는 대기 목록을 위한 세로 공간을 더 확보합니다.</figcaption></figure>
 </div>
@@ -340,3 +349,5 @@ Qt platform plugin 오류가 나오면 ZIP을 다시 내려받아 완전히 압�
 최근 프로젝트의 `.bgmsproj` 파일이 이동되거나 삭제된 경우 해당 항목은 목록에서 자동으로 제거됩니다.
 
 {% include audio-diagnostics.html %}
+
+{% include desktop-2180-guide.html section="appearance" %}

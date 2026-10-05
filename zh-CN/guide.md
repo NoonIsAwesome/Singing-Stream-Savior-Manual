@@ -1,4 +1,4 @@
-﻿---
+---
 title: 歌回救星 2.1 使用说明
 description: Singing Stream Savior 2.1.7.4 简体中文使用说明
 lang: zh-CN
@@ -67,7 +67,7 @@ manual_bundle: true
 
 歌曲库包含全部歌曲、我的最爱、最近播放与自定义歌单。固定分类无法删除；自定义歌单可依直播企划、曲风或活动分类。
 
-<figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/song-library.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/song-library.png' | relative_url }}" alt="完整歌曲库，左侧显示全部歌曲、我的最爱、最近播放与自定义歌单，右侧显示歌曲表格"></a><figcaption>在左侧选择分类后，右侧表格与搜索范围会一起切换。</figcaption></figure>
+<figure class="manual-figure"><a href="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}" alt="完整歌曲库，左侧显示全部歌曲、我的最爱、最近播放与自定义歌单，右侧显示歌曲表格"></a><figcaption>新版完整模式的歌曲库、播放器与待播列表。图为繁体中文界面。</figcaption></figure>
 
 要将歌曲加入分类，先选择一首或多首歌曲，按鼠标右键，展开“加入歌单”，再选择“我的最爱”或自定义歌单。这不会复制音频，也不会将歌曲移出“全部歌曲”；同一首歌可以加入多个歌单。
 
@@ -81,14 +81,19 @@ manual_bundle: true
 
 歌曲右键菜单依次提供“编辑显示歌名”“加入待播”“加入歌单”（我的最爱或自定义歌单），以及符合当前分类的删除／从分类移除操作。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/display-title-edit.png' | relative_url }}" alt="通过歌曲右键菜单编辑显示歌名"></a><figcaption>从右键菜单第一项打开编辑，只修改直播会显示的名称；左侧原始文件名保持不变。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/zh-CN/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/song-settings.png' | relative_url }}" alt="通过歌曲右键菜单编辑显示歌名"></a><figcaption>信息标签页可设置歌曲名称；也可从右键菜单编辑显示歌名。原始文件不会因此重命名。</figcaption></figure>
 
 <section class="manual-feature-update" aria-labelledby="library-bgm-205-title">
-  <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">更直观的歌曲列表与 BGM 播放列表</h2><p>歌曲库现在可切换传统列表与卡片列表；背景音乐也能预先整理成列表，配合直播主题快速切换。</p></header>
-  <div class="manual-feature-update__copy"><h3>歌曲列表显示</h3><p><strong>传统列表仍是默认值</strong>；可在“设置 → 一般 → 歌曲列表显示”改用卡片列表。卡片会突出显示观众看到的歌名，同时保留来源、封面与歌词状态。双击卡片会播放歌曲，铅笔图标则用于编辑显示歌名。</p></div>
+  <header class="manual-feature-update__header"><p class="manual-feature-update__eyebrow">2.0.5.0</p><h2 id="library-bgm-205-title">更直观的歌曲列表与 BGM 播放列表</h2><p>歌曲列表统一采用卡片显示；BGM 仍可整理成播放清单，按直播主题切换。</p></header>
+  <div class="manual-feature-update__copy"><h3>卡片显示与歌曲设置</h3><p>2.1.8.0 已移除传统列表切换。卡片显示歌名与演出者，来源图标区分本地音频与 YouTube；信息、封面及歌词图标可直接打开对应设置标签页。双击歌曲即可播放。</p></div>
   <div class="manual-feature-update__copy"><h3>BGM 播放列表</h3><p>可保存多首本地音频或 YouTube 音源，为每首 BGM 添加备注，并直接拖动调整顺序。正在播放的项目会清楚高亮；YouTube 播放列表可选择只加入当前视频或全部项目。</p><ul><li><strong>单曲循环（默认）</strong></li><li><strong>全部循环</strong></li><li><strong>全部随机循环</strong></li></ul></div>
   {% include localized-release-screenshot.html name="bgm-playlist.png" alt="2.1 展开的 BGM 播放列表" caption="可直接辨认备注、来源与正在播放的项目。" %}
 </section>
+
+{% include desktop-2180-guide.html section="song" %}
+
+{% include desktop-2180-guide.html section="youtube" suffix="-library" %}
+
 
 清唱、自弹自唱或其他不使用媒体文件的演出，可从搜索栏旁的“＋ 无伴奏演出”新增。输入观众会看到的显示歌名，再选择手动结束或可选的预计时间；时间按钮每次调整 10 秒，也支持鼠标滚轮。开始后会像普通伴奏一样暂停 BGM，并更新 Now Singing、待播与已唱；结束后恢复原本的 BGM。项目会保存到“无伴奏演出”智能分类与当前项目，不会建立假的静音音频文件。
 
@@ -98,7 +103,7 @@ manual_bundle: true
 
 在歌曲菜单打开“嵌入封面”，选择搜索结果或本地图片，等待预览完成后按“嵌入”。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/cover-dialog.png' | relative_url }}" alt="显示搜索结果与封面预览的嵌入封面窗口"></a><figcaption>选择搜索结果并等待左侧封面预览载入完成后，即可嵌入。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/zh-CN/cover-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/cover-settings.png' | relative_url }}" alt="显示搜索结果与封面预览的嵌入封面窗口"></a><figcaption>选择搜索结果并等待左侧封面预览载入完成后，即可嵌入。</figcaption></figure>
 
 BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还可以调整播放速度，并以半音为单位升降 Key：可放慢较难掌握的歌曲、配合练习节奏，或把音域太高／太低的伴奏调到更适合演唱的位置，不需要另外制作不同版本的音频。
 
@@ -129,6 +134,8 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 <a id="lyrics"></a>
 ## {% include chapter-number.html key="lyrics" %} · 歌词功能
 
+点击歌曲卡片的歌词图标，或在歌词页选择管理歌词，会打开同一个“歌曲设置”窗口并直接切到“歌词”标签页。信息、专辑封面、歌词分别应用；切换标签页保留当前选择。
+
 歌词可供主播在独立“歌词窗口”阅读，也可作为 OBS 歌词画面给观众观看。支持 LRC、SRT、VTT、纯文本、YouTube 字幕与 LRCLIB。
 
 如果搜索结果都不合适，不要为了继续而强行附加；请把准备好的歌词粘贴到[歌词编辑器](#lyrics-editor)，或导入 LRC、SRT、VTT／纯文本文件后自行标记时间。
@@ -137,7 +144,7 @@ BGM 与歌唱伴奏拥有独立播放、音量与进度控制。歌唱伴奏还�
 
 > **歌词来源与授权：** LRCLIB、YouTube 字幕等搜索来源提供的是歌词查找，不代表已取得歌词的使用授权。使用前请确认歌词来源、相关权利及服务规范。
 
-<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/zh-CN/lyrics-manager-linked.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-manager-linked.png' | relative_url }}" alt="管理歌词窗口中的导入歌词文件和取消歌词关联"></a><figcaption>已有歌词时，左下角仍可导入其他文件或取消当前关联。</figcaption></figure>
+<figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/zh-CN/lyrics-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/lyrics-settings.png' | relative_url }}" alt="管理歌词窗口中的导入歌词文件和取消歌词关联"></a><figcaption>歌曲设置的歌词标签页：可导入 LRC、在线搜索，选择结果后附加到歌曲。</figcaption></figure>
 
 {% include player-window-buttons.html %}
 
@@ -268,6 +275,8 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 <a id="uvr-vocal-removal"></a>
 ## {% include chapter-number.html key="uvr-vocal-removal" %} · UVR 人声消除
 
+也可到“YouTube 搜索”页面选择视频，按“加入 UVR 队列”。这一步只加入队列；回到 UVR 页面设置模型、输出格式，再按“开始处理”。
+
 ### 为什么加入人声分离？
 
 准备演唱或练习素材时，常常需要在多个工具之间转换格式、分离音轨，再重新整理文件。歌回救星将这些操作整合在一起，希望让大家处理有权使用的素材时少一些重复工作。
@@ -302,10 +311,10 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 - **精简模式：** 保留选歌、播放器、待播和已唱，隐藏宽列与大型预览。
 - **迷你模式：** 适合开播前已经完成待唱歌曲与画面设置，并已排好待播列表的主播。它会隐藏歌曲库与 BGM，只保留伴奏、待播和已唱；歌词窗口与 YouTube 按钮都保留在伴奏播放器中；直播中可直接从待播列表选择歌曲播放。歌词窗口可以自由移动并调整文字大小，方便配合其他直播软件安排位置。
 
-每次启动时，完整模式会以 1920 × 1080 打开；如果可用空间不足，窗口会先缩小以适应屏幕。打开后可以自由拖动边缘缩放，不会锁定窗口大小。快捷键为 `Ctrl + Shift + M`。切换模式只会改变画面上显示的控制项目；正在播放的歌曲会继续播放，原有待播顺序与 OBS 画面不会被重置。每种模式会记住各自的窗口配置。
+每次启动时，完整模式会以 1600 × 900 打开；如果可用空间不足，窗口会先缩小以适应屏幕。打开后可以自由拖动边缘缩放，不会锁定窗口大小。快捷键为 `Ctrl + Shift + M`。切换模式只会改变画面上显示的控制项目；正在播放的歌曲会继续播放，原有待播顺序与 OBS 画面不会被重置。每种模式会记住各自的窗口配置。
 
 <div class="figure-grid">
-  <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/full-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/full-workspace.png' | relative_url }}" alt="简体中文完整模式"></a><figcaption>完整模式保留完整歌曲库、播放器和待播列表。</figcaption></figure>
+  <figure class="manual-figure"><a href="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}"><img src="{{ '/assets/images/2180/zh-CN/main-window.png' | relative_url }}" alt="完整模式（繁体中文界面示例）"></a><figcaption>新版完整模式的歌曲库、播放器与待播列表。图为繁体中文界面。</figcaption></figure>
   <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/compact-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/compact-workspace.png' | relative_url }}" alt="简体中文精简模式"></a><figcaption>精简模式保留选歌与直播时常用控制。</figcaption></figure>
   <figure class="manual-figure manual-figure--portrait"><a href="{{ '/assets/images/zh-CN/mini-workspace.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/mini-workspace.png' | relative_url }}" alt="简体中文迷你模式"></a><figcaption>迷你模式把更多垂直空间留给待播列表。</figcaption></figure>
 </div>
@@ -340,3 +349,5 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 若最近项目中的 `.bgmsproj` 已被移动或删除，该失效项目会自动从列表移除。
 
 {% include audio-diagnostics.html %}
+
+{% include desktop-2180-guide.html section="appearance" %}
