@@ -14,13 +14,7 @@
     "update": "發現新版本時，啟動器會顯示版本變更與本次更新內容。按<strong>「立即更新」</strong>即可下載並套用更新，<strong>一般更新不需要重新下載整包 ZIP</strong>；按「稍後」則繼續使用目前版本。",
     "update_alt": "啟動器發現 2.1.7.3 新版本，顯示 2.1.7.2 到 2.1.7.3 的更新內容，以及稍後和立即更新按鈕",
     "update_caption": "更新提示範例（2.1.7.2 → 2.1.7.3）：按「立即更新」即可更新。截圖中的版本號僅為示例。",
-    "shortcut": "想從桌面啟動時，請為<strong>最外層的啟動器</strong>建立 Windows 捷徑，不要移動 EXE 本身。若舊捷徑指向內層主程式，請重新建立指向外層啟動器的捷徑。",
-    "recovery_title": "更新復原失敗時",
-    "recovery": "中斷更新尚未完整復原時，啟動器會保留備份並停止啟動。先關閉仍使用安裝檔案的程式，再重試。啟動器 1.2.1.2 起，錯誤畫面會顯示失敗檔案、復原階段與 Windows 錯誤碼，可按「複製錯誤資訊」回報。",
-    "recovery_replace": "若舊版啟動器仍無法開啟軟體，可下載最新啟動器。關閉軟體和啟動器，將下載的 EXE 改名為 Singing Stream Savior.exe，只替換最外層啟動器。保留 current.json、.s3s-update、內層程式資料夾及專案；新的啟動器會接續安全復原。若仍失敗，請回報複製的錯誤資訊。",
-    "recovery_download": "下載最新啟動器",
-    "recovery_alt": "啟動器復原錯誤範例，包含檔案、Windows 錯誤碼與複製錯誤資訊按鈕",
-    "recovery_caption": "啟動器 1.2.1.2 錯誤畫面範例；截圖中的檔案與錯誤碼為測試案例。"
+    "shortcut": "想從桌面啟動時，請為<strong>最外層的啟動器</strong>建立 Windows 捷徑，不要移動 EXE 本身。若舊捷徑指向內層主程式，請重新建立指向外層啟動器的捷徑。"
   },
   "en": {
     "extract": "Extract the complete ZIP to a normal folder. Do not run the app from the ZIP preview window.",
@@ -37,13 +31,7 @@
     "update": "When an update is available, the launcher shows the version change and release notes. Select <strong>Update now</strong> to download and apply it; <strong>normal updates do not require downloading the complete ZIP again</strong>. Select Later to continue with the installed version.",
     "update_alt": "Traditional Chinese update prompt for version 2.1.7.3, with release notes and Later and Update now buttons",
     "update_caption": "Update example (Traditional Chinese, 2.1.7.2 → 2.1.7.3): select Update now (立即更新). The version numbers are examples.",
-    "shortcut": "For desktop access, create a Windows shortcut to the <strong>outer launcher</strong> and keep the EXE in its original location. Replace any old shortcut that points to the inner app.",
-    "recovery_title": "If update recovery fails",
-    "recovery": "When an interrupted update has not been fully restored, the launcher keeps backups and blocks startup. Close programs still using the installation files, then retry. Launcher 1.2.1.2 shows the failed file, recovery stage and Windows error code; use Copy error details to report them.",
-    "recovery_replace": "If an older launcher still cannot open the app, download the latest launcher. Close the app and launcher, rename the downloaded EXE to Singing Stream Savior.exe, and replace only the outer launcher. Keep current.json, .s3s-update, the inner app folder and your projects; the new launcher resumes safe recovery. If it still fails, report the copied error details.",
-    "recovery_download": "Download the latest launcher",
-    "recovery_alt": "Launcher recovery error example showing the file, Windows error code and Copy error details button",
-    "recovery_caption": "Launcher 1.2.1.2 error example. The file and error code shown belong to a test case."
+    "shortcut": "For desktop access, create a Windows shortcut to the <strong>outer launcher</strong> and keep the EXE in its original location. Replace any old shortcut that points to the inner app."
   },
   "zh-CN": {
     "extract": "将下载的 ZIP 完整解压到普通文件夹，不要直接在 ZIP 预览窗口中运行程序。",
@@ -60,13 +48,7 @@
     "update": "发现新版本时，启动器会显示版本变化和更新内容。点击<strong>“立即更新”</strong>即可下载并应用更新，<strong>一般更新不需要重新下载完整 ZIP</strong>；点击“稍后”则继续使用当前版本。",
     "update_alt": "繁体中文更新提示，从 2.1.7.2 更新到 2.1.7.3，含更新内容、稍后和立即更新按钮",
     "update_caption": "更新示例（繁体中文，2.1.7.2 → 2.1.7.3）：点击“立即更新”即可更新。版本号仅为示例。",
-    "shortcut": "需要桌面入口时，请为<strong>最外层启动器</strong>创建 Windows 快捷方式，不要移动 EXE 本身。若旧快捷方式指向内层主程序，请重新创建指向外层启动器的快捷方式。",
-    "recovery_title": "更新恢复失败时",
-    "recovery": "中断的更新尚未完整恢复时，启动器会保留备份并停止启动。先关闭仍使用安装文件的程序，再重试。启动器 1.2.1.2 起，错误画面会显示失败文件、恢复阶段与 Windows 错误码，可按“复制错误信息”反馈。",
-    "recovery_replace": "若旧版启动器仍无法打开软件，可下载最新启动器。关闭软件和启动器，将下载的 EXE 改名为 Singing Stream Savior.exe，只替换最外层启动器。保留 current.json、.s3s-update、内层程序文件夹及项目；新启动器会继续安全恢复。若仍失败，请反馈复制的错误信息。",
-    "recovery_download": "下载最新启动器",
-    "recovery_alt": "启动器恢复错误示例，包含文件、Windows 错误码与复制错误信息按钮",
-    "recovery_caption": "启动器 1.2.1.2 错误画面示例；截图中的文件与错误码来自测试案例。"
+    "shortcut": "需要桌面入口时，请为<strong>最外层启动器</strong>创建 Windows 快捷方式，不要移动 EXE 本身。若旧快捷方式指向内层主程序，请重新创建指向外层启动器的快捷方式。"
   },
   "ja": {
     "extract": "ZIP 全体を通常のフォルダーへ展開します。ZIP のプレビュー画面から直接実行しないでください。",
@@ -83,13 +65,7 @@
     "update": "新しい版が見つかると、バージョンの変更と更新内容が表示されます。<strong>「今すぐ更新」</strong>でダウンロードと適用を行えます。<strong>通常の更新で ZIP 全体を再ダウンロードする必要はありません。</strong>「後で」を選ぶと現在の版を使い続けます。",
     "update_alt": "繁体字中国語の更新画面。2.1.7.2 から 2.1.7.3 への更新内容と、後で・今すぐ更新のボタン",
     "update_caption": "更新例（繁体字中国語、2.1.7.2 → 2.1.7.3）：「立即更新」が「今すぐ更新」です。バージョン番号は例です。",
-    "shortcut": "デスクトップから使う場合は、<strong>外側のランチャー</strong>の Windows ショートカットを作成し、EXE 自体は移動しないでください。内側のアプリを指す古いショートカットは、外側のランチャーを指すものに作り直してください。",
-    "recovery_title": "更新の復元に失敗した場合",
-    "recovery": "中断された更新を完全に復元できない場合、ランチャーはバックアップを保持し、起動を停止します。インストール先のファイルを使用しているアプリを閉じて再試行してください。ランチャー 1.2.1.2 では失敗したファイル、復元段階、Windows エラーコードを表示します。「エラー情報をコピー」で報告できます。",
-    "recovery_replace": "旧ランチャーで起動できない場合は最新版をダウンロードしてください。アプリとランチャーを閉じ、ダウンロードした EXE を Singing Stream Savior.exe に改名して、外側のランチャーだけを置き換えます。current.json、.s3s-update、内側のアプリフォルダーとプロジェクトは保持してください。新ランチャーが安全な復元を再開します。失敗が続く場合はコピーしたエラー情報を報告してください。",
-    "recovery_download": "最新ランチャーをダウンロード",
-    "recovery_alt": "ファイル、Windows エラーコードとエラー情報をコピーするボタンを表示する復元エラーの例",
-    "recovery_caption": "ランチャー 1.2.1.2 のエラー表示例。ファイルとエラーコードはテストケースのものです。"
+    "shortcut": "デスクトップから使う場合は、<strong>外側のランチャー</strong>の Windows ショートカットを作成し、EXE 自体は移動しないでください。内側のアプリを指す古いショートカットは、外側のランチャーを指すものに作り直してください。"
   },
   "ko": {
     "extract": "ZIP 전체를 일반 폴더에 압축 해제하세요. ZIP 미리 보기 창에서 프로그램을 직접 실행하지 마세요.",
@@ -106,12 +82,6 @@
     "update": "새 버전이 있으면 버전 변경과 업데이트 내용이 표시됩니다. <strong>‘지금 업데이트’</strong>를 선택하면 다운로드하고 적용합니다. <strong>일반 업데이트에는 전체 ZIP을 다시 다운로드할 필요가 없습니다.</strong> ‘나중에’를 선택하면 현재 버전을 계속 사용합니다.",
     "update_alt": "2.1.7.2에서 2.1.7.3으로 업데이트하는 번체 중국어 안내 창과 나중에 및 지금 업데이트 버튼",
     "update_caption": "업데이트 예시(번체 중국어, 2.1.7.2 → 2.1.7.3): ‘立即更新’가 ‘지금 업데이트’입니다. 버전 번호는 예시입니다.",
-    "shortcut": "바탕 화면에서는 <strong>바깥쪽 실행기</strong>를 가리키는 Windows 바로가기를 만들고 EXE 자체는 옮기지 마세요. 기존 바로가기가 안쪽 앱을 가리킨다면 바깥쪽 실행기를 가리키도록 다시 만드세요.",
-    "recovery_title": "업데이트 복구가 실패한 경우",
-    "recovery": "중단된 업데이트가 완전히 복원되지 않으면 런처는 백업을 유지하고 시작을 중지합니다. 설치 파일을 사용 중인 프로그램을 닫고 다시 시도하세요. 런처 1.2.1.2에서는 실패한 파일, 복구 단계와 Windows 오류 코드를 표시합니다. 오류 정보 복사 버튼으로 내용을 전달할 수 있습니다.",
-    "recovery_replace": "이전 런처에서 앱을 열 수 없다면 최신 런처를 다운로드하세요. 앱과 런처를 닫고 다운로드한 EXE 이름을 Singing Stream Savior.exe로 바꿔 바깥쪽 런처만 교체합니다. current.json, .s3s-update, 안쪽 앱 폴더와 프로젝트는 유지하세요. 새 런처가 안전한 복구를 다시 진행합니다. 계속 실패하면 복사한 오류 정보를 전달하세요.",
-    "recovery_download": "최신 런처 다운로드",
-    "recovery_alt": "파일, Windows 오류 코드와 오류 정보 복사 버튼이 표시된 복구 오류 예시",
-    "recovery_caption": "런처 1.2.1.2 오류 화면 예시입니다. 표시된 파일과 오류 코드는 테스트 사례입니다."
+    "shortcut": "바탕 화면에서는 <strong>바깥쪽 실행기</strong>를 가리키는 Windows 바로가기를 만들고 EXE 자체는 옮기지 마세요. 기존 바로가기가 안쪽 앱을 가리킨다면 바깥쪽 실행기를 가리키도록 다시 만드세요."
   }
 }

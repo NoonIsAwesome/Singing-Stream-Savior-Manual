@@ -38,15 +38,3 @@
 </figure>
 
 <p>{{ launcher_guide.shortcut }}</p>
-
-<section id="launcher-update-recovery">
-  <h3>{{ launcher_guide.recovery_title | escape }}</h3>
-  <p>{{ launcher_guide.recovery | escape }}</p>
-  <p>{{ launcher_guide.recovery_replace | escape }}</p>
-  <p><a href="https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v{{ site.data.resources.software.version }}/Singing-Stream-Savior-Launcher.exe">{{ launcher_guide.recovery_download | escape }}</a></p>
-  <figure class="manual-figure manual-figure--medium">
-    {% capture recovery_image %}/assets/images/2181/{{ launcher_lang }}/launcher-recovery.png{% endcapture %}
-    <a href="{{ recovery_image | relative_url }}"><img src="{{ recovery_image | relative_url }}" alt="{{ launcher_guide.recovery_alt | escape }}" width="780" height="620" loading="lazy" decoding="async"></a>
-    <figcaption>{{ launcher_guide.recovery_caption | escape }}</figcaption>
-  </figure>
-</section>

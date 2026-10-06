@@ -13,8 +13,7 @@
         "搜尋欄支援歌曲名稱、演出者、曲風與語言，並顯示已設定資料的關鍵字建議。建議不會自動開始播放歌曲。",
         "資料儲存在目前專案；YouTube 來源也使用專案資料。曲風與語言不會寫入音訊檔。",
         "本機音訊可選擇同步寫入演出者標籤；格式必須能通過寫入驗證，驗證失敗時不會覆蓋原檔。",
-        "資訊、封面與歌詞圖示各自保留設定狀態，點擊會直接切到同一視窗的對應分頁。一般播放器模式會隱藏 Profile 標籤。",
-        "附加封面或歌詞成功後，歌曲設定視窗也會關閉；取消或失敗保留視窗。其他分頁有未儲存變更時仍會詢問。"
+        "資訊、封面與歌詞圖示各自保留設定狀態，點擊會直接切到同一視窗的對應分頁。一般播放器模式會隱藏 Profile 標籤。"
       ],
       "caption": "歌曲資訊：演出者可重用，曲風與語言可多選。",
       "secondCaption": "搜尋會建議已設定的歌曲、演出者、曲風或語言關鍵字。"
@@ -31,9 +30,7 @@
       "notes": [
         "加入 UVR 只排入佇列，不會自動開始下載或消除人聲。",
         "預覽時會暫停 BGM；停止或離開後依目前播放狀態恢復，避免覆蓋期間已改動的播放狀態。",
-        "離開搜尋頁會停止預覽、取消未完成的請求並釋放相關播放資源。",
-        "伴奏搜尋依輸入文字調整多語關鍵字優先順序，包含伴奏、卡拉、カラオケ、オフボーカル、Karaoke、Vocal Off、Instrumental 等；已輸入的明確伴奏關鍵字會保留。",
-        "原曲優先找 YouTube Music 歌曲，結果不足或服務失敗時再搜尋一般 YouTube。"
+        "離開搜尋頁會停止預覽、取消未完成的請求並釋放相關播放資源。"
       ],
       "caption": "YouTube 搜尋：左側選影片，右側預覽，下方選擇加入歌曲列表或 UVR 佇列。（示意搜尋資料）"
     },
@@ -66,8 +63,7 @@
         "Search supports song titles, performers, genres and languages, with keyword suggestions from saved metadata. Choosing a suggestion does not start playback.",
         "Metadata belongs to the current project, including YouTube sources. Genre and language tags are not written to audio files.",
         "Local audio can optionally receive performer tags. The format must pass write verification; a failed verification does not replace the original file.",
-        "Information, artwork and lyrics retain separate status icons and open the matching tab in the same window. Player mode hides the Profile tag.",
-        "Successful cover or lyrics attachment also closes Song Settings. Cancellation or failure keeps it open; unsaved changes in other tabs still require confirmation."
+        "Information, artwork and lyrics retain separate status icons and open the matching tab in the same window. Player mode hides the Profile tag."
       ],
       "caption": "Song information with reusable performers and multiple genre / language tags.",
       "secondCaption": "Search suggestions include saved song titles, performers, genres and languages. Traditional Chinese interface example."
@@ -84,9 +80,7 @@
       "notes": [
         "Adding to UVR only queues the item; it does not automatically start downloading or vocal removal.",
         "Preview pauses BGM. Stopping or leaving restores it according to the current playback state, without overriding changes made during preview.",
-        "Leaving the search page stops preview, cancels pending requests and releases the related playback resources.",
-        "Instrumental search prioritizes multilingual terms from the query, including 伴奏, 卡拉, カラオケ, オフボーカル, Karaoke, Vocal Off and Instrumental. Explicit accompaniment qualifiers are retained.",
-        "Original prefers YouTube Music songs, falling back to regular YouTube when results are insufficient or the service fails."
+        "Leaving the search page stops preview, cancels pending requests and releases the related playback resources."
       ],
       "caption": "YouTube Search with results on the left, preview on the right and destination actions below. (example search data)"
     },
@@ -119,8 +113,7 @@
         "搜索栏支持歌曲名称、演出者、曲风与语言，并显示已保存资料的关键词建议。选择建议不会自动播放歌曲。",
         "资料保存在当前项目；YouTube 来源也使用项目资料。曲风与语言不会写入音频文件。",
         "本地音频可选择同步写入演出者标签；格式须通过写入验证，验证失败时不会覆盖原文件。",
-        "信息、封面与歌词图标各自保留设置状态，点击会直接切到同一窗口的对应标签页。普通播放器模式会隐藏 Profile 标签。",
-        "附加封面或歌词成功后，歌曲设置窗口也会关闭；取消或失败保留窗口。其他标签页有未保存更改时仍会询问。"
+        "信息、封面与歌词图标各自保留设置状态，点击会直接切到同一窗口的对应标签页。普通播放器模式会隐藏 Profile 标签。"
       ],
       "caption": "歌曲信息：演出者可复用，曲风与语言可多选。",
       "secondCaption": "搜索会建议已设置的歌曲、演出者、曲风或语言关键词。图为繁体中文界面。"
@@ -137,9 +130,7 @@
       "notes": [
         "加入 UVR 只排入队列，不会自动开始下载或消除人声。",
         "预览时会暂停 BGM；停止或离开后根据当前播放状态恢复，避免覆盖期间已更改的播放状态。",
-        "离开搜索页面会停止预览、取消未完成的请求并释放相关播放资源。",
-        "伴奏搜索依输入文字调整多语言关键词优先顺序，包含伴奏、卡拉、カラオケ、オフボーカル、Karaoke、Vocal Off、Instrumental 等；已输入的明确伴奏关键词会保留。",
-        "原曲优先找 YouTube Music 歌曲，结果不足或服务失败时再搜索普通 YouTube。"
+        "离开搜索页面会停止预览、取消未完成的请求并释放相关播放资源。"
       ],
       "caption": "YouTube 搜索：左侧选择视频，右侧预览，下方选择加入歌曲列表或 UVR 队列。（示例搜索资料）"
     },
@@ -172,8 +163,7 @@
         "曲名、演奏者、ジャンル、言語を検索でき、保存済み情報からキーワード候補を表示します。候補を選んでも再生は始まりません。",
         "YouTube 音源を含む情報は現在のプロジェクトに保存します。ジャンルと言語は音声ファイルに書き込みません。",
         "ローカル音源では任意で演奏者タグを書き込めます。形式の書き込み検証に失敗した場合は元ファイルを置き換えません。",
-        "情報、アートワーク、歌詞は個別の設定状態アイコンを維持し、同じウィンドウの対応タブを開きます。プレーヤーモードでは Profile タグを非表示にします。",
-        "カバーや歌詞の添付に成功すると楽曲設定も閉じます。キャンセルや失敗時は開いたままにし、他のタブの未保存変更は確認します。"
+        "情報、アートワーク、歌詞は個別の設定状態アイコンを維持し、同じウィンドウの対応タブを開きます。プレーヤーモードでは Profile タグを非表示にします。"
       ],
       "caption": "曲情報：保存済み演奏者名を再利用し、ジャンルと言語を複数設定できます。",
       "secondCaption": "曲名、演奏者、ジャンル、言語の検索候補。繁体字中国語の画面例です。"
@@ -190,9 +180,7 @@
       "notes": [
         "UVR への追加はキュー登録のみです。ダウンロードやボーカル除去は自動で開始しません。",
         "プレビュー中は BGM を一時停止します。停止・ページ移動後は現在の再生状態に応じて復元し、途中で変更した状態を上書きしません。",
-        "検索ページを離れるとプレビューを停止し、未完了の要求を取り消して関連再生リソースを解放します。",
-        "伴奏検索は入力に応じて 伴奏、卡拉、カラオケ、オフボーカル、Karaoke、Vocal Off、Instrumental などの多言語キーワードを優先します。明示的に入力した伴奏キーワードは保持します。",
-        "原曲検索は YouTube Music の楽曲を優先し、結果不足やサービスのエラー時は通常の YouTube でも検索します。"
+        "検索ページを離れるとプレビューを停止し、未完了の要求を取り消して関連再生リソースを解放します。"
       ],
       "caption": "YouTube 検索：左側で動画を選び、右側でプレビューし、下側で追加先を選びます。（検索データの例）"
     },
@@ -225,8 +213,7 @@
         "곡 제목, 연주자, 장르 및 언어를 검색하고 저장된 정보에서 검색어 제안을 표시합니다. 제안을 선택해도 재생은 시작하지 않습니다.",
         "YouTube 음원을 포함한 정보는 현재 프로젝트에 저장합니다. 장르와 언어는 오디오 파일에 기록하지 않습니다.",
         "로컬 음원에는 선택한 경우 연주자 태그를 기록합니다. 형식의 기록 검증이 실패하면 원본 파일을 교체하지 않습니다.",
-        "정보, 표지 및 가사는 각 설정 상태 아이콘을 유지하며 같은 창의 해당 탭을 엽니다. 플레이어 모드에서는 Profile 태그를 숨깁니다.",
-        "커버나 가사를 성공적으로 첨부하면 곡 설정도 닫힙니다. 취소나 실패 시 창을 유지하며 다른 탭의 저장하지 않은 변경은 확인합니다."
+        "정보, 표지 및 가사는 각 설정 상태 아이콘을 유지하며 같은 창의 해당 탭을 엽니다. 플레이어 모드에서는 Profile 태그를 숨깁니다."
       ],
       "caption": "곡 정보: 저장한 연주자 이름을 재사용하고 장르와 언어 태그를 여러 개 지정합니다.",
       "secondCaption": "곡, 연주자, 장르 및 언어의 검색어 제안. 번체 중국어 화면 예시입니다."
@@ -243,9 +230,7 @@
       "notes": [
         "UVR에 추가하면 대기열에만 등록됩니다. 다운로드나 보컬 제거는 자동으로 시작하지 않습니다.",
         "미리 보기 중에는 BGM을 일시 정지합니다. 정지하거나 페이지를 떠나면 현재 재생 상태에 따라 복원하며 도중에 변경한 상태를 덮어쓰지 않습니다.",
-        "검색 페이지를 떠나면 미리 보기를 중지하고 진행 중인 요청을 취소하며 관련 재생 리소스를 해제합니다.",
-        "반주 검색은 입력에 따라 伴奏, 卡拉, カラオケ, オフボーカル, Karaoke, Vocal Off, Instrumental 등 다국어 키워드를 우선합니다. 직접 입력한 반주 키워드는 유지합니다.",
-        "원곡은 YouTube Music 곡을 우선하며 결과가 부족하거나 서비스가 실패하면 일반 YouTube로 검색합니다."
+        "검색 페이지를 떠나면 미리 보기를 중지하고 진행 중인 요청을 취소하며 관련 재생 리소스를 해제합니다."
       ],
       "caption": "YouTube 검색: 왼쪽에서 영상을 선택하고 오른쪽에서 미리 본 뒤 아래에서 추가 위치를 선택합니다. (검색 데이터 예시)"
     },

@@ -9,9 +9,9 @@
   <ol>{% for step in desktop_copy.steps %}<li>{{ step | escape }}</li>{% endfor %}</ol>
   <ul>{% for note in desktop_copy.notes %}<li>{{ note | escape }}</li>{% endfor %}</ul>
   {% if include.section == 'song' %}
-    {% capture desktop_image %}/assets/images/2181/{{ desktop_image_locale }}/song-settings.png{% endcapture %}
+    {% capture desktop_image %}/assets/images/2180/{{ desktop_image_locale }}/song-settings.png{% endcapture %}
   {% elsif include.section == 'youtube' %}
-    {% capture desktop_image %}/assets/images/2181/{{ desktop_image_locale }}/youtube-search.png{% endcapture %}
+    {% capture desktop_image %}/assets/images/2180/{{ desktop_image_locale }}/youtube-search.png{% endcapture %}
   {% else %}
     {% capture desktop_image %}/assets/images/2180/{{ desktop_image_locale }}/light-lyrics.png{% endcapture %}
   {% endif %}
@@ -21,7 +21,7 @@
   </figure>
   {% if include.section == 'song' %}
   <figure class="manual-figure">
-    <a href="{{ '/assets/images/2181/search-suggestions.png' | relative_url }}"><img src="{{ '/assets/images/2181/search-suggestions.png' | relative_url }}" alt="{{ desktop_copy.secondCaption | escape }}" loading="lazy" decoding="async"></a>
+    <a href="{{ '/assets/images/2180/search-suggestions.png' | relative_url }}"><img src="{{ '/assets/images/2180/search-suggestions.png' | relative_url }}" alt="{{ desktop_copy.secondCaption | escape }}" loading="lazy" decoding="async"></a>
     <figcaption>{{ desktop_copy.secondCaption | escape }}</figcaption>
   </figure>
   {% endif %}
