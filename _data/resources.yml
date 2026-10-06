@@ -1,18 +1,18 @@
 ﻿# 發布正式檔案後，只要更新這裡的連結與版本即可。
 software:
-  version: "2.1.8.1"
-  launcher_version: "1.2.1.2"
-  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.1.8.1/Singing.Stream.Savior.2.1.8.1.zip"
-  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.1"
+  version: "2.1.8.0"
+  launcher_version: "1.2.1.1"
+  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.1.8.0/Singing.Stream.Savior.2.1.8.0.zip"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.0"
   file_size: "829 MB"
-  sha256: "8f8b3b47e7b1ada9d10201990c14a8fa90b4ad2ad531b7f89a6f6596bdea4531"
+  sha256: "858dcb87237e2d0088015fe368e8c45e2a40057ed7cd8c8c9d30548e683f2ab5"
   updated_at: "2026-10-06"
 
   # Permanent R2 mirror is bound to the exact official release bytes.
   mirror:
-    version: "2.1.8.1"
+    version: "2.1.8.0"
     provider: "r2"
-    url: "https://updates.noonisawesome.dev/releases/v2.1.8.1/Singing.Stream.Savior.2.1.8.1.zip"
+    url: "https://updates.noonisawesome.dev/releases/v2.1.8.0/Singing.Stream.Savior.2.1.8.0.zip"
 
 support:
   ecpay_url: "https://p.ecpay.com.tw/3604623"
