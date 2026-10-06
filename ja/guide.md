@@ -351,5 +351,6 @@ Qt platform plugin エラーが出る場合は ZIP を再ダウンロードし�
 {% include audio-diagnostics.html %}
 
 {% include launcher-recovery.html %}
+{% include youtube-troubleshooting.html %}
 
 {% include desktop-2180-guide.html section="appearance" %}

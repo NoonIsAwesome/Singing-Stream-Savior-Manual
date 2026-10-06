@@ -19,7 +19,7 @@ translation_key: settings-and-troubleshooting
       <a href="#files-and-projects"><strong>修改資料夾或下載格式</strong><span>專案、媒體、YouTube 與 UVR 輸出位置</span></a>
       <a href="#project-backup"><strong>備份或搬移專案</strong><span>一起保存 .bgmsproj、音訊與歌詞</span></a>
       <a href="#startup-error"><strong>程式無法啟動</strong><span>處理 Qt platform plugin 或解壓縮問題</span></a>
-      <a href="#youtube-troubleshooting"><strong>YouTube 無法播放</strong><span>檢查網路、連結與必要檔案</span></a>
+      <a href="#youtube-troubleshooting"><strong>YouTube 無法播放</strong><span>先等待自動備援，再排查或回報</span></a>
       <a href="#lyrics-troubleshooting"><strong>歌詞找不到或不同步</strong><span>搜尋、匯入與時間校正</span></a>
       <a href="#obs-troubleshooting"><strong>OBS 畫面沒有更新</strong><span>重新載入預覽與 Browser Source</span></a>
       <a href="#antivirus-false-positive"><strong>防毒軟體顯示警告</strong><span>核對官方來源與 SHA-256</span></a>
@@ -87,12 +87,7 @@ translation_key: settings-and-troubleshooting
 4. 如果仍然無法啟動，請刪除這份不完整的解壓縮結果，重新下載 ZIP 並再次完整解壓縮。
 5. 需要桌面捷徑時，請替最外層的 `Singing Stream Savior.exe` 建立 Windows 捷徑，不要直接移動檔案。
 
-## YouTube 無法解析或播放 {#youtube-troubleshooting}
-
-- 確認網路連線。
-- 確認連結是有效的 YouTube 影片或播放清單。
-- 稍候後重試；YouTube 端變更可能暫時影響解析。
-- 確認程式資料夾內容完整，沒有遺漏下載或解壓縮的檔案。
+{% include youtube-troubleshooting.html heading=2 %}
 
 ## 找不到歌詞 {#lyrics-troubleshooting}
 

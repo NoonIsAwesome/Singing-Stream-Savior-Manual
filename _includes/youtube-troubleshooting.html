@@ -1,0 +1,12 @@
+{% assign youtube_help_language = page.lang | default: 'zh-TW' %}
+{% assign youtube_help = site.data.youtube_troubleshooting[youtube_help_language] %}
+{% assign youtube_help_heading = include.heading | default: 3 %}
+{% capture youtube_support_url %}{% if youtube_help_language == 'zh-TW' %}/support.html{% else %}/{{ youtube_help_language }}/support.html{% endif %}{% endcapture %}
+<section id="youtube-troubleshooting">
+  <h{{ youtube_help_heading }}>{{ youtube_help.title | escape }}</h{{ youtube_help_heading }}>
+  <p>{{ youtube_help.intro | escape }}</p>
+  <p>{{ youtube_help.timing | escape }}</p>
+  <ol>{% for step in youtube_help.steps %}<li>{{ step | escape }}</li>{% endfor %}</ol>
+  <p>{{ youtube_help.report | escape }}</p>
+  <p><a href="{{ youtube_support_url | strip | relative_url }}#report-a-bug">{{ youtube_help.reportLink | escape }}</a></p>
+</section>

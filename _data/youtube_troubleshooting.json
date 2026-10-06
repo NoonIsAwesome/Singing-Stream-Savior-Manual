@@ -1,0 +1,62 @@
+{
+  "zh-TW": {
+    "title": "YouTube 無法解析或播放",
+    "intro": "按下播放後，幾秒內還沒有聲音，不一定代表解析失敗。直鏈解析或載入失敗時，軟體會自動重試或依情況改用備援播放；請先讓它完成準備。",
+    "timing": "10 秒不是最長等待時間。一般直鏈解析單次逾時為 8 秒，但後續重試、載入及備援會另外花時間；暫存音訊備援的下載階段最多可等待 120 秒，Web 備援的準備階段另有 30 秒期限。這些是各階段的期限，不是整段播放流程的固定上限。",
+    "steps": [
+      "按一次播放後，可先等待約 10–15 秒，觀察是否顯示載入中或正在準備備援。若仍在準備，請再稍候，不要反覆按播放或切換歌曲，以免重新開始準備。",
+      "若明確彈出無法播放的錯誤視窗、顯示播放失敗，或等待約 2–3 分鐘仍沒有開始播放，就需要進一步排查。2–3 分鐘是排查的參考時間，不是軟體固定的逾時判定；單靠等待秒數也不能確定問題出在解析、載入或播放。",
+      "確認網路連線正常，並試著在瀏覽器開啟同一支影片，確認來源仍可播放、沒有被刪除或限制。確認程式已完整解壓縮，沒有遺漏必要檔案；也可稍候後重試。"
+    ],
+    "report": "若等待備援後仍無法播放，且確認網路與影片來源正常，請記錄軟體版本、影片網址、發生位置（BGM／伴奏／搜尋預覽）、大約等待多久、畫面狀態及完整錯誤訊息或截圖，回報給作者。這些資訊有助於分辨解析失敗、載入逾時與備援播放失敗。",
+    "reportLink": "查看問題回報方式"
+  },
+  "zh-CN": {
+    "title": "YouTube 无法解析或播放",
+    "intro": "按下播放后，几秒内还没有声音，不一定代表解析失败。直链解析或加载失败时，软件会自动重试或按情况改用备用播放；请先让它完成准备。",
+    "timing": "10 秒不是最长等待时间。一般直链解析单次超时为 8 秒，但后续重试、加载及备用播放还需要时间；临时音频备用下载阶段最多可等待 120 秒，Web 备用播放的准备阶段另有 30 秒期限。这些是各阶段的期限，不是整个播放流程的固定上限。",
+    "steps": [
+      "点击一次播放后，可先等待约 10–15 秒，观察是否显示加载中或正在准备备用播放。如果仍在准备，请再稍候，不要反复点击播放或切换歌曲，以免重新开始准备。",
+      "如果明确弹出无法播放的错误窗口、显示播放失败，或等待约 2–3 分钟仍未开始播放，就需要进一步排查。2–3 分钟是排查的参考时间，不是软件固定的超时判定；单靠等待秒数也无法确定问题出在解析、加载还是播放。",
+      "确认网络连接正常，并在浏览器打开同一视频，确认来源仍可播放、没有被删除或限制。确认程序已完整解压，没有缺少必要文件；也可稍候后重试。"
+    ],
+    "report": "如果等待备用播放后仍无法播放，且确认网络及视频来源正常，请记录软件版本、视频网址、发生位置（BGM／伴奏／搜索预览）、大约等待多久、界面状态及完整错误消息或截图，向作者反馈。这些信息有助于区分解析失败、加载超时与备用播放失败。",
+    "reportLink": "查看问题反馈方式"
+  },
+  "en": {
+    "title": "YouTube cannot resolve or play",
+    "intro": "A few seconds of silence after pressing Play does not necessarily mean URL resolution failed. If resolving or loading a direct media URL fails, the app retries or attempts fallback playback as appropriate. Allow it to finish preparing first.",
+    "timing": "Ten seconds is not the maximum wait. A normal direct-URL resolution attempt has an 8-second timeout, but retries, loading, and fallback preparation take additional time. The temporary-audio fallback download can wait up to 120 seconds; Web fallback preparation has a separate 30-second deadline. These are deadlines for individual stages, not a fixed limit for the entire playback process.",
+    "steps": [
+      "Press Play once, then initially allow about 10–15 seconds. Check whether the app is loading or preparing fallback playback. If preparation is still in progress, allow more time; repeatedly pressing Play or switching songs can restart preparation.",
+      "Investigate if an explicit cannot-play dialog or playback-failed status appears, or playback still has not started after roughly 2–3 minutes. This is a troubleshooting guideline, not the app's fixed timeout. Elapsed time alone cannot identify whether resolution, loading, or playback failed.",
+      "Check your connection and open the same video in a browser to confirm it is still playable and has not been removed or restricted. Make sure the complete app package was extracted with no required files missing. You can also retry later."
+    ],
+    "report": "If playback still fails after allowing fallback to start and your connection and video source work normally, report the app version, video URL, affected player (BGM, accompaniment, or search preview), approximate waiting time, on-screen status, and the full error message or screenshot to the author. These details help distinguish resolution failures, loading timeouts, and fallback playback failures.",
+    "reportLink": "How to report a problem"
+  },
+  "ja": {
+    "title": "YouTube を解析・再生できない",
+    "intro": "再生を押して数秒間音が出なくても、URL の解析に失敗したとは限りません。直接メディア URL の解析や読み込みに失敗した場合、アプリは再試行するか、状況に応じて代替再生を試みます。まず準備が終わるまで待ってください。",
+    "timing": "10 秒が最大待ち時間ではありません。通常の直接 URL の解析は 1 回につき 8 秒でタイムアウトしますが、再試行・読み込み・代替再生の準備には別途時間がかかります。一時音声による代替再生のダウンロード段階は最大 120 秒、Web 代替再生の準備段階には別途 30 秒の期限があります。いずれも各段階の期限であり、再生処理全体の固定上限ではありません。",
+    "steps": [
+      "再生を一度押したら、まず 10～15 秒ほど待ち、読み込み中や代替再生の準備中か確認します。まだ準備中ならもう少し待ってください。再生を繰り返し押したり曲を切り替えたりすると、準備が最初からやり直されることがあります。",
+      "再生できないというエラー画面や再生失敗の表示が出る、または 2～3 分ほど待っても再生が始まらない場合は、原因を確認してください。2～3 分は対処を始める目安で、アプリの固定タイムアウトではありません。経過時間だけでは、解析・読み込み・再生のどこで失敗したかは判断できません。",
+      "ネット接続を確認し、同じ動画をブラウザーで開いて、削除や制限がなく再生できるか確認します。アプリの ZIP が完全に展開され、必要なファイルが欠けていないことも確認してください。時間を置いて再試行する方法もあります。"
+    ],
+    "report": "代替再生を待っても再生できず、接続と動画自体は正常な場合は、アプリのバージョン、動画 URL、発生箇所（BGM／伴奏／検索プレビュー）、おおよその待ち時間、画面の状態、エラー全文またはスクリーンショットを記録して作者に報告してください。解析失敗、読み込みのタイムアウト、代替再生の失敗を区別する手掛かりになります。",
+    "reportLink": "問題の報告方法"
+  },
+  "ko": {
+    "title": "YouTube 주소를 해석하거나 재생할 수 없음",
+    "intro": "재생을 누른 뒤 몇 초간 소리가 나지 않는다고 해서 주소 해석에 실패한 것은 아닙니다. 직접 미디어 주소의 해석이나 로딩에 실패하면 앱은 다시 시도하거나 상황에 따라 대체 재생을 시도합니다. 먼저 준비가 끝날 때까지 기다려 주세요.",
+    "timing": "10초가 최대 대기 시간은 아닙니다. 일반적인 직접 주소 해석은 한 번에 8초의 시간 제한이 있지만, 재시도와 로딩 및 대체 재생 준비에는 추가 시간이 필요합니다. 임시 오디오 대체 재생의 다운로드 단계는 최대 120초까지 기다릴 수 있고, Web 대체 재생 준비에는 별도로 30초의 제한이 있습니다. 각 단계의 제한이며 전체 재생 과정의 고정 상한은 아닙니다.",
+    "steps": [
+      "재생을 한 번 누르고 우선 약 10–15초 기다리며 로딩 중이나 대체 재생 준비 중인지 확인하세요. 아직 준비 중이라면 더 기다려 주세요. 재생을 반복해서 누르거나 곡을 바꾸면 준비가 다시 시작될 수 있습니다.",
+      "재생할 수 없다는 오류 창이나 재생 실패 상태가 표시되거나 약 2–3분을 기다려도 재생이 시작되지 않으면 원인을 확인하세요. 2–3분은 문제 확인을 위한 참고 시간이지 앱의 고정 시간 제한이 아닙니다. 대기 시간만으로는 주소 해석, 로딩, 재생 중 어느 단계에서 실패했는지 알 수 없습니다.",
+      "인터넷 연결을 확인하고 브라우저에서 같은 영상을 열어 삭제나 제한 없이 재생되는지 확인하세요. 앱의 전체 ZIP이 제대로 압축 해제되었으며 필요한 파일이 빠지지 않았는지도 확인하세요. 잠시 후 다시 시도할 수도 있습니다."
+    ],
+    "report": "대체 재생을 기다린 뒤에도 재생되지 않고 연결과 영상 자체는 정상이라면, 앱 버전, 영상 URL, 발생 위치(BGM／반주／검색 미리보기), 대략적인 대기 시간, 화면 상태 및 전체 오류 메시지나 스크린샷을 기록하여 제작자에게 알려 주세요. 주소 해석 실패, 로딩 시간 초과, 대체 재생 실패를 구분하는 데 도움이 됩니다.",
+    "reportLink": "문제 제보 방법"
+  }
+}
