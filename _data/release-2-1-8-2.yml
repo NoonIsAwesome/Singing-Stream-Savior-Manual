@@ -1,0 +1,48 @@
+release:
+  version: "2.1.8.2"
+  date: "2026-10-07"
+  latest: true
+  type:
+    en: "Updated Harmony, with improvements to the interface and startup experience."
+    zh-TW: "更新合音效果器，改善介面與啟動體驗。"
+    zh-CN: "更新和声效果器，改善界面与启动体验。"
+    ja: "ハーモニーエフェクトを更新し、画面表示と起動時の使い勝手を改善しました。"
+    ko: "화음 이펙트를 업데이트하고 화면 표시와 시작 경험을 개선했습니다."
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.2"
+  summary:
+    en: "Updated Harmony, with improvements to the interface and startup experience."
+    zh-TW: "更新合音效果器，改善介面與啟動體驗。"
+    zh-CN: "更新和声效果器，改善界面与启动体验。"
+    ja: "ハーモニーエフェクトを更新し、画面表示と起動時の使い勝手を改善しました。"
+    ko: "화음 이펙트를 업데이트하고 화면 표시와 시작 경험을 개선했습니다."
+  items:
+    en:
+      - "Harmony effect update: multiple harmony voices and improved pitch accuracy."
+      - "Improved the light-mode interface."
+      - "Fixed missing performer names in original-song YouTube search results."
+      - "Adjusted text sizes in parts of the interface."
+      - "Improved the startup loading screen."
+    zh-TW:
+      - "合音效果器更新：支援多聲部，改善合音音準。"
+      - "改善淺色模式的 UI。"
+      - "修正 YouTube 搜尋的原曲未顯示演出者的問題。"
+      - "調整部分 UI 文字大小。"
+      - "改善軟體 loading 畫面。"
+    zh-CN:
+      - "和声效果器更新：支持多声部，改善和声音准。"
+      - "改善浅色模式的 UI。"
+      - "修正 YouTube 搜索的原曲未显示演出者的问题。"
+      - "调整部分 UI 文字大小。"
+      - "改善软件加载画面。"
+    ja:
+      - "ハーモニーエフェクトを更新：複数のハーモニー音声に対応し、音程の精度を改善しました。"
+      - "ライトモードの UI を改善しました。"
+      - "YouTube の原曲検索でアーティスト名が表示されない問題を修正しました。"
+      - "一部の UI の文字サイズを調整しました。"
+      - "起動時の読み込み画面を改善しました。"
+    ko:
+      - "화음 이펙트 업데이트: 여러 화음 성부를 지원하고 음정 정확도를 개선했습니다."
+      - "라이트 모드 UI를 개선했습니다."
+      - "YouTube 원곡 검색에서 아티스트 이름이 표시되지 않는 문제를 수정했습니다."
+      - "일부 UI의 글자 크기를 조정했습니다."
+      - "시작 시 로딩 화면을 개선했습니다."

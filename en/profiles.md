@@ -42,12 +42,14 @@ Every built-in effect provides a live graph, Bypass control, and Help button. Si
 | Tone | **Air Enhancer** | Add presence, air, and sparkle, then level-match with Trim. |
 | Cleanup | **De-esser** | Control harsh S and SH consonants. |
 | Creative | **Voice Changer** | Change Pitch and Formant together for character or section effects. |
-| Pitch & voice | **Harmony** | Create a key-aware harmony above or below the lead, fading out when tracking is uncertain. |
+| Pitch & voice | **Harmony** | Create one or two key-aware harmony voices above or below the lead, fading out when tracking is uncertain. |
 | Pitch & voice | **Doubler** | Add two short, slightly detuned vocal layers for thickness and stereo width. |
 | Space | **Delay** | Add slap, KTV, or ballad-style echoes. |
 | Space | **Reverb** | Create rooms, plates, or longer airy ambience. |
 | Space | **Shimmer** | Add an octave-up halo to reverb tails for airy sections. |
 | Dynamics | **Limiter** | Catch sudden vocal peaks at the end of a Profile. |
+
+Harmony supports a single third or octave, a natural duet, and an upper or lower third with an octave. The natural duet adjusts its lower voice for smoother harmony. Start with a low Mix and confirm the song's key before singing.
 
 After the Profile, the complete stream still passes through the **Mix Bus Compressor**, **Stream Output Limiter**, and Master level. These belong to the overall output chain and do not rewrite the tone of an individual Profile. Final Limiter state is saved separately by mode: it is off by default in Normal Playback, on the first time Advanced Streaming Mode is used, and each mode remembers later manual changes independently.
 
