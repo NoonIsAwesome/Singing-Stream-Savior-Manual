@@ -52,6 +52,8 @@
 
 此資料夾預留給 GitHub Pages 說明書使用的介面截圖。
 
+`launcher-recovery-error.png`、`launcher-recovery-folder.png`、`launcher-recovery-application.png` 是使用者於 2026-10-06 提供的舊啟動器復原錯誤與 Windows 檔案總管畫面，用於辨識外層啟動器和內層主程式。各語言共用這組原始繁體中文截圖，並在教學明確標示截圖語言；不是新版啟動器的介面展示。
+
 建議圖片規格：
 
 - PNG 或 WebP。

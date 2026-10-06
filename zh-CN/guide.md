@@ -350,4 +350,6 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 
 {% include audio-diagnostics.html %}
 
+{% include launcher-recovery.html %}
+
 {% include desktop-2180-guide.html section="appearance" %}

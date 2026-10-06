@@ -350,4 +350,6 @@ Qt platform plugin 오류가 나오면 ZIP을 다시 내려받아 완전히 압�
 
 {% include audio-diagnostics.html %}
 
+{% include launcher-recovery.html %}
+
 {% include desktop-2180-guide.html section="appearance" %}

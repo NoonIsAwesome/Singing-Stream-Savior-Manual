@@ -1,0 +1,92 @@
+{
+  "zh-TW": {
+    "title": "啟動器顯示「更新復原需要處理，已停止啟動」",
+    "intro": "2026 年 10 月 6 日發布的啟動器 1.2.1.2，已修正中斷更新復原時，因短暫檔案占用或唯讀備份而無法繼續啟動的問題。若舊啟動器出現下圖訊息，且內層主程式仍完整、可以正常開啟，可依下列步驟更新啟動器。",
+    "errorCaption": "舊啟動器可能顯示「無法完整回復上一次中斷的更新；備份已保留」。這是更新復原未完成的訊息。",
+    "layout": "平常開啟的最外層 `Singing Stream Savior.exe` 是啟動器，負責檢查及安裝更新；下一層 `Singing Stream Savior` 資料夾裡的同名 EXE 才是主程式。兩者檔名相同，請用所在資料夾區分。",
+    "steps": [
+      "先關閉啟動器的錯誤視窗。",
+      "在原本的安裝資料夾裡，打開 `Singing Stream Savior` 資料夾（圖 2）。",
+      "執行裡面的 `Singing Stream Savior.exe`（圖 3）。這次會略過外層啟動器的更新／復原檢查，直接嘗試開啟主程式。不要移動 EXE 或其他檔案。",
+      "主程式成功開啟後，會在背景檢查並下載新版啟動器，不必先開專案。請保持網路連線，讓程式繼續開著，等到底部狀態列出現「啟動器已更新至 1.2.1.2；下次啟動時會使用新版。」或較新版本的成功提示。",
+      "確認更新成功後，正常關閉主程式，再從原本最外層的 `Singing Stream Savior.exe` 啟動。新版啟動器會重新處理未完成的復原／更新。"
+    ],
+    "folderCaption": "圖 2：在最外層安裝資料夾，打開選取的 Singing Stream Savior 資料夾。",
+    "exeCaption": "圖 3：執行內層資料夾的 Singing Stream Savior.exe；這是主程式。",
+    "fallback": "若內層主程式也無法開啟、沒有更新成功提示，或新版啟動器仍然報錯，請保留錯誤資訊與備份，不要刪除 `.s3s-update` 或自行修改更新狀態檔。先備份 `.bgmsproj`、音訊與歌詞，再將官方最新版完整 ZIP 解壓到另一個資料夾；不要覆蓋混用新舊程式檔案。此方式不能修復所有主程式損壞或安裝資料夾不完整的情況。",
+    "download": "下載最新版完整 ZIP",
+    "screenshots": "以下為使用者提供的繁體中文 Windows 畫面；其他語言的檔案與資料夾名稱相同。"
+  },
+  "zh-CN": {
+    "title": "启动器提示“更新恢复需要处理，已停止启动”",
+    "intro": "2026 年 10 月 6 日发布的启动器 1.2.1.2，已修正中断更新恢复时，因短暂文件占用或只读备份而无法继续启动的问题。如果旧启动器显示下图消息，且内层主程序仍完整、可以正常打开，可按以下步骤更新启动器。",
+    "errorCaption": "旧启动器可能提示无法完整恢复上一次中断的更新，备份已保留。这表示更新恢复尚未完成。",
+    "layout": "平时打开的最外层 `Singing Stream Savior.exe` 是启动器，负责检查及安装更新；下一层 `Singing Stream Savior` 文件夹里的同名 EXE 才是主程序。两者文件名相同，请按所在文件夹区分。",
+    "steps": [
+      "先关闭启动器的错误窗口。",
+      "在原安装文件夹里，打开 `Singing Stream Savior` 文件夹（图 2）。",
+      "运行里面的 `Singing Stream Savior.exe`（图 3）。这次会跳过外层启动器的更新／恢复检查，直接尝试打开主程序。不要移动 EXE 或其他文件。",
+      "主程序成功打开后，会在后台检查并下载新版启动器，不必先打开项目。保持网络连接及程序运行，等待底部状态栏提示启动器已更新至 1.2.1.2（或更新版本），下次启动时会使用新版。",
+      "确认更新成功后，正常关闭主程序，再从原本最外层的 `Singing Stream Savior.exe` 启动。新版启动器会重新处理尚未完成的恢复／更新。"
+    ],
+    "folderCaption": "图 2：在最外层安装文件夹，打开选中的 Singing Stream Savior 文件夹。",
+    "exeCaption": "图 3：运行内层文件夹中的 Singing Stream Savior.exe，这是主程序。",
+    "fallback": "如果内层主程序也无法打开、没有更新成功提示，或新版启动器仍然报错，请保留错误信息及备份，不要删除 `.s3s-update` 或自行修改更新状态文件。先备份 `.bgmsproj`、音频及歌词，再将官方最新版完整 ZIP 解压到另一个文件夹；不要混合覆盖新旧程序文件。此方法不能修复所有主程序损坏或安装文件夹不完整的情况。",
+    "download": "下载最新版完整 ZIP",
+    "screenshots": "以下是用户提供的繁体中文 Windows 截图；其他语言中的文件及文件夹名称相同。"
+  },
+  "en": {
+    "title": "Launcher stops because interrupted-update recovery needs attention",
+    "intro": "Launcher 1.2.1.2, released on October 6, 2026, fixes interrupted-update recovery failures caused by temporarily locked files or read-only backups. If an older launcher shows the message below and the inner application is still intact and can start, use these steps to update the launcher.",
+    "errorCaption": "The older launcher may report that it could not fully restore an interrupted update and has kept the backup. Recovery has not completed.",
+    "layout": "The outer `Singing Stream Savior.exe` you normally open is the launcher, which checks for and installs updates. The EXE with the same name inside the `Singing Stream Savior` folder is the main application. Distinguish them by their folder, not their filename.",
+    "steps": [
+      "Close the launcher's error window first.",
+      "Open the `Singing Stream Savior` folder inside your existing installation folder (Figure 2).",
+      "Run the inner `Singing Stream Savior.exe` (Figure 3). This temporarily bypasses the outer launcher's update/recovery checks and attempts to start the main application directly. Do not move the EXE or other files.",
+      "After the application starts successfully, it checks for and downloads a newer launcher in the background; opening a project is not required. Stay online and keep the application open until the bottom status bar confirms that the launcher has been updated to 1.2.1.2 or newer and will be used next time.",
+      "Once the update is confirmed, close the application normally and start the original outer `Singing Stream Savior.exe` again. The new launcher will retry the unfinished recovery/update."
+    ],
+    "folderCaption": "Figure 2: Open the selected Singing Stream Savior folder in the outer installation folder.",
+    "exeCaption": "Figure 3: Run Singing Stream Savior.exe inside that folder. This is the main application.",
+    "fallback": "If the inner application cannot start, no successful-update message appears, or the new launcher still reports an error, keep the error information and backups. Do not delete `.s3s-update` or manually edit update-state files. Back up your `.bgmsproj`, audio, and lyrics, then extract the latest official complete ZIP into a separate folder; do not mix old and new application files. This workaround cannot repair every damaged application or incomplete installation.",
+    "download": "Download the latest complete ZIP",
+    "screenshots": "These user-provided Windows screenshots are in Traditional Chinese. The file and folder names are the same in other languages."
+  },
+  "ja": {
+    "title": "更新の復元に対処が必要なため、ランチャーが起動を停止する",
+    "intro": "2026 年 10 月 6 日公開のランチャー 1.2.1.2 では、一時的なファイル使用中や読み取り専用のバックアップによって、中断した更新の復元に失敗する問題を修正しました。古いランチャーで下図のメッセージが出ても、内側のアプリ本体が完全で起動できる場合は、次の手順でランチャーを更新できます。",
+    "errorCaption": "古いランチャーでは、中断した更新を完全に復元できず、バックアップを保持したことが表示される場合があります。復元が完了していない状態です。",
+    "layout": "通常起動する一番外側の `Singing Stream Savior.exe` は、更新の確認とインストールを行うランチャーです。内側の `Singing Stream Savior` フォルダーにある同名の EXE がアプリ本体です。ファイル名ではなく、置かれているフォルダーで区別してください。",
+    "steps": [
+      "まずランチャーのエラー画面を閉じます。",
+      "現在のインストール先にある `Singing Stream Savior` フォルダーを開きます（図 2）。",
+      "その中の `Singing Stream Savior.exe` を実行します（図 3）。今回は外側のランチャーの更新・復元確認を一時的に経由せず、アプリ本体の起動を試みます。EXE や他のファイルを移動しないでください。",
+      "アプリ本体が起動すると、バックグラウンドで新しいランチャーを確認・ダウンロードします。プロジェクトを開く必要はありません。ネット接続とアプリの起動を維持し、下部のステータスバーでランチャーが 1.2.1.2 以降に更新され、次回起動時に使用されるという成功通知を確認します。",
+      "更新成功を確認したらアプリを通常どおり終了し、元の外側の `Singing Stream Savior.exe` を起動します。新しいランチャーが未完了の復元・更新を再度処理します。"
+    ],
+    "folderCaption": "図 2：外側のインストール先で、選択された Singing Stream Savior フォルダーを開きます。",
+    "exeCaption": "図 3：フォルダー内の Singing Stream Savior.exe を実行します。これがアプリ本体です。",
+    "fallback": "内側のアプリも起動できない、更新成功の通知が出ない、または新しいランチャーでもエラーが続く場合は、エラー情報とバックアップを保持してください。`.s3s-update` を削除したり、更新状態ファイルを手動で変更したりしないでください。`.bgmsproj`、音声、歌詞をバックアップしてから、公式の最新版の完全な ZIP を別のフォルダーに展開します。新旧のプログラムファイルを混在させないでください。この方法ですべての破損や不完全なインストールを修復できるわけではありません。",
+    "download": "最新版の完全な ZIP をダウンロード",
+    "screenshots": "以下はユーザー提供の繁体字中国語の Windows 画面です。ファイル名とフォルダー名は他の言語でも同じです。"
+  },
+  "ko": {
+    "title": "중단된 업데이트 복구에 조치가 필요하여 실행기가 시작을 중단함",
+    "intro": "2026년 10월 6일 공개된 실행기 1.2.1.2는 일시적인 파일 사용 중 상태나 읽기 전용 백업으로 인해 중단된 업데이트를 복구하지 못하던 문제를 수정했습니다. 이전 실행기에 아래 메시지가 표시되더라도 내부 앱이 온전하고 실행된다면 다음 방법으로 실행기를 업데이트할 수 있습니다.",
+    "errorCaption": "이전 실행기는 중단된 업데이트를 완전히 복구하지 못했으며 백업을 보관했다는 메시지를 표시할 수 있습니다. 복구가 완료되지 않은 상태입니다.",
+    "layout": "평소 여는 가장 바깥쪽 `Singing Stream Savior.exe`는 업데이트를 확인하고 설치하는 실행기입니다. 내부 `Singing Stream Savior` 폴더에 있는 같은 이름의 EXE가 앱 본체입니다. 파일 이름이 아닌 폴더 위치로 구분하세요.",
+    "steps": [
+      "먼저 실행기의 오류 창을 닫습니다.",
+      "기존 설치 폴더 안의 `Singing Stream Savior` 폴더를 엽니다(그림 2).",
+      "그 안의 `Singing Stream Savior.exe`를 실행합니다(그림 3). 이번에는 바깥쪽 실행기의 업데이트/복구 확인을 일시적으로 건너뛰고 앱 본체를 직접 시작합니다. EXE나 다른 파일을 옮기지 마세요.",
+      "앱 본체가 정상적으로 실행되면 백그라운드에서 새 실행기를 확인하고 다운로드합니다. 프로젝트를 먼저 열 필요는 없습니다. 인터넷 연결과 앱 실행을 유지하고, 하단 상태 표시줄에서 실행기가 1.2.1.2 이상으로 업데이트되어 다음 실행 시 사용된다는 성공 메시지를 확인하세요.",
+      "업데이트 성공을 확인한 후 앱을 정상적으로 종료하고, 원래의 바깥쪽 `Singing Stream Savior.exe`로 다시 실행합니다. 새 실행기가 완료되지 않은 복구/업데이트를 다시 처리합니다."
+    ],
+    "folderCaption": "그림 2: 바깥쪽 설치 폴더에서 선택된 Singing Stream Savior 폴더를 엽니다.",
+    "exeCaption": "그림 3: 해당 폴더 안의 Singing Stream Savior.exe를 실행합니다. 이것이 앱 본체입니다.",
+    "fallback": "내부 앱도 실행되지 않거나 업데이트 성공 메시지가 표시되지 않거나 새 실행기에서도 오류가 계속되면, 오류 정보와 백업을 보관하세요. `.s3s-update`를 삭제하거나 업데이트 상태 파일을 직접 수정하지 마세요. `.bgmsproj`, 오디오 및 가사를 백업한 다음 공식 최신 전체 ZIP을 별도 폴더에 압축 해제하세요. 이전 버전과 새 버전의 프로그램 파일을 섞어 덮어쓰지 마세요. 이 방법으로 모든 앱 손상이나 불완전한 설치를 복구할 수 있는 것은 아닙니다.",
+    "download": "최신 전체 ZIP 다운로드",
+    "screenshots": "아래는 사용자가 제공한 번체 중국어 Windows 화면입니다. 파일과 폴더 이름은 다른 언어에서도 같습니다."
+  }
+}

@@ -24,6 +24,7 @@ translation_key: settings-and-troubleshooting
       <a href="#obs-troubleshooting"><strong>OBS 畫面沒有更新</strong><span>重新載入預覽與 Browser Source</span></a>
       <a href="#antivirus-false-positive"><strong>防毒軟體顯示警告</strong><span>核對官方來源與 SHA-256</span></a>
       <a href="#safe-update"><strong>更新或啟動器問題</strong><span>安全取消、修復與重新下載</span></a>
+      <a href="#launcher-recovery"><strong>更新復原失敗，無法啟動</strong><span>開啟內層主程式，更新啟動器</span></a>
     </div>
   </div>
 </section>
@@ -156,5 +157,7 @@ translation_key: settings-and-troubleshooting
 請保留最外層的 `Singing Stream Savior.exe` 與程式資料夾內其他檔案的原有位置，不要只移動其中一部分。若必須退回舊版，請把官方舊版完整 ZIP 解壓到**另一個資料夾**，先備份 `.bgmsproj` 與媒體再測試；不要用舊版直接覆蓋新版資料夾。
 
 若啟動器提示需要較新的啟動器，或自動更新仍無法完成，請改從本說明網站下載最新版完整 ZIP，解壓縮到新的資料夾，再用新版開啟原本的 `.bgmsproj`。不要混合覆蓋不同版本的程式檔案。
+
+{% include launcher-recovery.html %}
 
 {% include desktop-2180-guide.html section="appearance" %}

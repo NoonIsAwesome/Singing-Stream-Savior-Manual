@@ -380,4 +380,6 @@ The Recent Projects list automatically removes entries whose `.bgmsproj` file ha
 
 {% include audio-diagnostics.html %}
 
+{% include launcher-recovery.html %}
+
 {% include desktop-2180-guide.html section="appearance" %}

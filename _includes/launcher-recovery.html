@@ -1,0 +1,24 @@
+{% assign recovery_language = page.lang | default: 'zh-TW' %}
+{% assign recovery_copy = site.data.launcher_recovery[recovery_language] %}
+{% capture recovery_download_url %}{% if recovery_language == 'zh-TW' %}/resources.html{% else %}/{{ recovery_language }}/resources.html{% endif %}{% endcapture %}
+<section id="launcher-recovery" class="manual-feature-update">
+  <h3>{{ recovery_copy.title | escape }}</h3>
+  <p>{{ recovery_copy.intro | escape }}</p>
+  <p>{{ recovery_copy.screenshots | escape }}</p>
+  <figure class="manual-figure manual-figure--medium">
+    <a href="{{ '/assets/images/launcher-recovery-error.png' | relative_url }}"><img src="{{ '/assets/images/launcher-recovery-error.png' | relative_url }}" alt="{{ recovery_copy.errorCaption | escape }}" loading="lazy" decoding="async"></a>
+    <figcaption>{{ recovery_copy.errorCaption | escape }}</figcaption>
+  </figure>
+  {{ recovery_copy.layout | markdownify }}
+  <ol>{% for step in recovery_copy.steps %}<li>{{ step | markdownify }}</li>{% endfor %}</ol>
+  <figure class="manual-figure manual-figure--medium">
+    <a href="{{ '/assets/images/launcher-recovery-folder.png' | relative_url }}"><img src="{{ '/assets/images/launcher-recovery-folder.png' | relative_url }}" alt="{{ recovery_copy.folderCaption | escape }}" loading="lazy" decoding="async"></a>
+    <figcaption>{{ recovery_copy.folderCaption | escape }}</figcaption>
+  </figure>
+  <figure class="manual-figure manual-figure--medium">
+    <a href="{{ '/assets/images/launcher-recovery-application.png' | relative_url }}"><img src="{{ '/assets/images/launcher-recovery-application.png' | relative_url }}" alt="{{ recovery_copy.exeCaption | escape }}" loading="lazy" decoding="async"></a>
+    <figcaption>{{ recovery_copy.exeCaption | escape }}</figcaption>
+  </figure>
+  {{ recovery_copy.fallback | markdownify }}
+  <p><a href="{{ recovery_download_url | strip | relative_url }}#software-download">{{ recovery_copy.download | escape }}</a></p>
+</section>
