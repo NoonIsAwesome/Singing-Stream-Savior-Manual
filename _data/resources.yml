@@ -2,7 +2,7 @@
 software:
   version: "2.1.8.1"
   launcher_version: "1.2.1.2"
-  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.1.8.1/Singing.Stream.Savior.2.1.8.1.zip"
+  download_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/download/v2.1.8.1/Singing.Stream.Savior.2.1.8.1-revision2.zip"
   release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.1"
   file_size: "829 MB"
   sha256: "2557b949ce28287eff88138785d1db0d229bd829abe619b695f990017e433e0a"
@@ -12,7 +12,7 @@ software:
   mirror:
     version: "2.1.8.1"
     provider: "r2"
-    url: "https://updates.noonisawesome.dev/releases/v2.1.8.1/Singing.Stream.Savior.2.1.8.1.zip"
+    url: "https://updates.noonisawesome.dev/releases/v2.1.8.1/Singing.Stream.Savior.2.1.8.1-revision2.zip"
 
 support:
   ecpay_url: "https://p.ecpay.com.tw/3604623"

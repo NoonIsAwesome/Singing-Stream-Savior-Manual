@@ -50,6 +50,13 @@ test("rendered validation covers all languages, independent config, loaders and 
       writeFileSync(join(root, "resources.html"), invalid);
       assert.ok(validateRenderedDownloads(root, views, clicks).length);
     }
+    const revised = permanent.replaceAll("9.9.9.9.zip", "9.9.9.9-revision2.zip");
+    writeFileSync(join(root, "resources.html"), revised);
+    assert.deepEqual(validateRenderedDownloads(root, views, clicks), []);
+    for (const invalid of [revised.replaceAll("-revision2.zip", "-unknown.zip"), revised.replaceAll("-revision2.zip", "-revision2.zip?secret=1")]) {
+      writeFileSync(join(root, "resources.html"), invalid);
+      assert.ok(validateRenderedDownloads(root, views, clicks).length);
+    }
     writeFileSync(join(root, "resources.html"), html);
     writeFileSync(join(root, "redirect.html"), '<meta http-equiv="refresh" content="0;url=index.html">');
     assert.deepEqual(validateRenderedDownloads(root, views, clicks), []);

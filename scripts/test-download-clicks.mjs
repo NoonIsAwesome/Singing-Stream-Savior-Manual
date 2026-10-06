@@ -33,6 +33,14 @@ function browser(options = {}) {
   run(); return { calls, dataset, timers, listeners, window, run, event, emit };
 }
 const r2 = "https://updates.noonisawesome.dev/releases/v2.1.7.3/Singing.Stream.Savior.2.1.7.3.zip";
+test("revision2 ZIP names work for GitHub and the R2 mirror", async () => {
+  const revisedMirror = r2.replace(".zip", "-revision2.zip");
+  for (const [url, provider] of [[href.replace(".zip", "-revision2.zip"), null], [revisedMirror, "r2"]]) {
+    const b = browser({dataset:{downloadClickMirrorUrl:revisedMirror}});
+    b.emit(b.event({target:{closest:()=>({href:url,getAttribute:()=>provider})}}));
+    await tick(); assert.equal(b.calls.length, 1);
+  }
+});
 test("approved R2 full ZIP shares the website click counter", async () => {
   const b = browser({dataset:{downloadClickMirrorUrl:r2}});
   b.emit(b.event({target:{closest:()=>({href:r2,getAttribute:name=>name==="data-download-source"?"r2":null})}}));
