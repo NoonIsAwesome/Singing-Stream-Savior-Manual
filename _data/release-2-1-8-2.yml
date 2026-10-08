@@ -1,7 +1,7 @@
 release:
   version: "2.1.8.2"
   date: "2026-10-07"
-  latest: true
+  latest: false
   type:
     en: "Updated Harmony, with improvements to the interface and startup experience."
     zh-TW: "更新合音效果器，改善介面與啟動體驗。"
