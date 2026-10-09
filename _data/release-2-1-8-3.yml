@@ -1,7 +1,7 @@
 release:
   version: "2.1.8.3"
   date: "2026-10-09"
-  latest: true
+  latest: false
   type:
     en: "Improved lyrics search, optional performer names in the overlay, and easier operation."
     zh-TW: "強化歌詞搜尋，新增歌單演出者顯示，並改善操作體驗。"

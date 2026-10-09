@@ -1,0 +1,48 @@
+release:
+  version: "2.1.8.4"
+  date: "2026-10-10"
+  latest: true
+  type:
+    en: "Improved song-list display, song tags, and Harmony."
+    zh-TW: "改善歌單顯示、歌曲標籤與合音效果器。"
+    zh-CN: "改善歌单显示、歌曲标签与合音效果器。"
+    ja: "歌リスト表示、曲タグ、ハーモニーエフェクトを改善しました。"
+    ko: "곡 목록 표시, 곡 태그 및 하모니 이펙트를 개선했습니다."
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.4"
+  summary:
+    en: "Improved song-list display, song tags, and Harmony."
+    zh-TW: "改善歌單顯示、歌曲標籤與合音效果器。"
+    zh-CN: "改善歌单显示、歌曲标签与合音效果器。"
+    ja: "歌リスト表示、曲タグ、ハーモニーエフェクトを改善しました。"
+    ko: "곡 목록 표시, 곡 태그 및 하모니 이펙트를 개선했습니다."
+  items:
+    en:
+      - "Improved performer display and layouts in several song-list themes, including Default and Transparent V1."
+      - "Fixed the positions of Now, Now Singing, and Set List in Pressed Garden."
+      - "Removed Pocket Singer from the built-in themes."
+      - "Custom song tags can now be removed, and newly added tags wrap correctly."
+      - "Added voice combinations and presets to Harmony."
+    zh-TW:
+      - "改善部分歌單主題的演出者顯示與排版，包含 Default 與 Transparent V1。"
+      - "修正 Pressed Garden 的 Now、Now Singing 與 Set List 文字位置。"
+      - "移除 Pocket Singer 內建主題。"
+      - "自訂歌曲標籤可移除，修正新增標籤後的換行顯示。"
+      - "合音效果器新增聲部組合與預設。"
+    zh-CN:
+      - "改善部分歌单主题的演出者显示与排版，包括 Default 与 Transparent V1。"
+      - "修正 Pressed Garden 的 Now、Now Singing 与 Set List 文字位置。"
+      - "移除 Pocket Singer 内置主题。"
+      - "自定义歌曲标签可移除，修正新增标签后的换行显示。"
+      - "合音效果器新增声部组合与预设。"
+    ja:
+      - "Default と Transparent V1 を含む一部の歌リストテーマで、アーティスト表示とレイアウトを改善しました。"
+      - "Pressed Garden の Now、Now Singing、Set List の文字位置を修正しました。"
+      - "標準搭載テーマから Pocket Singer を削除しました。"
+      - "カスタムの曲タグを削除できるようにし、タグ追加後の折り返し表示を修正しました。"
+      - "ハーモニーエフェクトに声部の組み合わせとプリセットを追加しました。"
+    ko:
+      - "Default와 Transparent V1을 포함한 일부 곡 목록 테마의 아티스트 표시와 레이아웃을 개선했습니다."
+      - "Pressed Garden의 Now, Now Singing, Set List 글자 위치를 수정했습니다."
+      - "기본 제공 테마에서 Pocket Singer를 제거했습니다."
+      - "사용자 지정 곡 태그를 제거할 수 있도록 하고 태그 추가 후 줄바꿈 표시를 수정했습니다."
+      - "하모니 이펙트에 성부 조합과 프리셋을 추가했습니다."

@@ -10,6 +10,9 @@
         "按「儲存」套用歌曲資料並關閉資訊視窗。"
       ],
       "notes": [
+        "2.1.8.4 起，自訂標籤可按滑鼠右鍵選「移除已儲存名稱」，從候選中移除並取消目前歌曲的選取；按「儲存」才生效，取消不會套用。",
+        "其他歌曲的標籤不受影響；若同名標籤仍被其他歌曲使用，該名稱可能繼續顯示。",
+        "新增標籤後會立即依寬度換行，不必重開視窗。",
         "搜尋欄支援歌曲名稱、演出者、曲風與語言，並顯示已設定資料的關鍵字建議。建議不會自動開始播放歌曲。",
         "資料儲存在目前專案；YouTube 來源也使用專案資料。曲風與語言不會寫入音訊檔。",
         "本機音訊可選擇同步寫入演出者標籤；格式必須能通過寫入驗證，驗證失敗時不會覆蓋原檔。",
@@ -63,6 +66,9 @@
         "Press Save to apply the song information and close the information window."
       ],
       "notes": [
+        "From 2.1.8.4, right-click a custom tag and choose Remove saved name to remove the saved suggestion and deselect it for the current song. Save applies the change; Cancel leaves it unchanged.",
+        "Other songs keep their tags. A name may still appear if another song uses it.",
+        "New tags wrap to fit the available width immediately, without reopening the window.",
         "Search supports song titles, performers, genres and languages, with keyword suggestions from saved metadata. Choosing a suggestion does not start playback.",
         "Metadata belongs to the current project, including YouTube sources. Genre and language tags are not written to audio files.",
         "Local audio can optionally receive performer tags. The format must pass write verification; a failed verification does not replace the original file.",
@@ -116,6 +122,9 @@
         "按“保存”应用歌曲资料并关闭信息窗口。"
       ],
       "notes": [
+        "从 2.1.8.4 起，右键点击自定义标签并选择“移除已保存名称”，可移除已保存候选并取消当前歌曲的选择；按“保存”才生效，取消不会应用。",
+        "其他歌曲的标签不受影响；如果同名标签仍被其他歌曲使用，该名称可能继续显示。",
+        "新增标签后会立即按可用宽度换行，无需重新打开窗口。",
         "搜索栏支持歌曲名称、演出者、曲风与语言，并显示已保存资料的关键词建议。选择建议不会自动播放歌曲。",
         "资料保存在当前项目；YouTube 来源也使用项目资料。曲风与语言不会写入音频文件。",
         "本地音频可选择同步写入演出者标签；格式须通过写入验证，验证失败时不会覆盖原文件。",
@@ -169,6 +178,9 @@
         "保存を押すと曲情報を適用し、情報ウィンドウを閉じます。"
       ],
       "notes": [
+        "2.1.8.4 以降、カスタムタグを右クリックして「保存済みの名前を削除」を選ぶと、保存した候補と現在の曲での選択を解除できます。「保存」で適用され、「キャンセル」では変更しません。",
+        "ほかの曲のタグは変わりません。同じ名前をほかの曲で使用している場合は、候補に残ることがあります。",
+        "新しいタグは追加直後に幅に合わせて折り返すため、ウィンドウを開き直す必要はありません。",
         "曲名、演奏者、ジャンル、言語を検索でき、保存済み情報からキーワード候補を表示します。候補を選んでも再生は始まりません。",
         "YouTube 音源を含む情報は現在のプロジェクトに保存します。ジャンルと言語は音声ファイルに書き込みません。",
         "ローカル音源では任意で演奏者タグを書き込めます。形式の書き込み検証に失敗した場合は元ファイルを置き換えません。",
@@ -222,6 +234,9 @@
         "저장을 누르면 곡 정보를 적용하고 정보 창을 닫습니다."
       ],
       "notes": [
+        "2.1.8.4부터 사용자 지정 태그를 오른쪽 클릭하고 ‘저장된 이름 제거’를 선택하면 저장된 후보를 제거하고 현재 곡의 선택을 해제할 수 있습니다. 저장을 누르면 적용되며 취소하면 변경하지 않습니다.",
+        "다른 곡의 태그는 바뀌지 않습니다. 같은 이름을 다른 곡에서 사용한다면 후보에 계속 표시될 수 있습니다.",
+        "새 태그는 추가하는 즉시 너비에 맞게 줄바꿈되므로 창을 다시 열 필요가 없습니다.",
         "곡 제목, 연주자, 장르 및 언어를 검색하고 저장된 정보에서 검색어 제안을 표시합니다. 제안을 선택해도 재생은 시작하지 않습니다.",
         "YouTube 음원을 포함한 정보는 현재 프로젝트에 저장합니다. 장르와 언어는 오디오 파일에 기록하지 않습니다.",
         "로컬 음원에는 선택한 경우 연주자 태그를 기록합니다. 형식의 기록 검증이 실패하면 원본 파일을 교체하지 않습니다.",
