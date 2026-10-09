@@ -1604,32 +1604,4 @@ html[data-theme="dark"] .hero-visual figcaption.hero-film-caption {
 .youtube .content-use-note p { max-width:none }
 .download-content-use { margin:18px 0 24px }
 
-/* Search questions give streamers a direct path to the relevant setup guide. */
 .feature-audience { max-width:70ch; line-height:1.85 }
-.home-faq .wrap {
-  display:grid;
-  grid-template-columns:minmax(200px,.7fr) minmax(0,1.6fr);
-  gap:72px;
-  align-items:start
-}
-.home-faq-list { min-width:0; max-width:760px }
-.home-faq details { border-bottom:1px solid var(--line) }
-.home-faq details:first-child { border-top:1px solid var(--line) }
-.home-faq summary {
-  padding:18px 0;
-  color:var(--ink);
-  font-size:17px;
-  font-weight:600;
-  line-height:1.65;
-  cursor:pointer;
-  overflow-wrap:anywhere
-}
-.home-faq summary::marker { color:var(--teal) }
-.home-faq summary:hover { color:var(--teal) }
-.home-faq summary:focus-visible { outline:2px solid var(--teal); outline-offset:5px }
-.home-faq-answer { padding:0 0 22px }
-.home-faq-answer p { max-width:70ch; font-size:16px; line-height:1.85 }
-.home-faq-answer .text-link { margin-top:12px; font-size:14px }
-@media(max-width:880px) {
-  .home-faq .wrap { grid-template-columns:1fr; gap:24px }
-}
