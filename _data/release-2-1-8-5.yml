@@ -1,0 +1,33 @@
+release:
+  version: "2.1.8.5"
+  date: "2026-10-10"
+  latest: true
+  type:
+    en: "Fixed lyric motion settings and Chinese character conversion."
+    zh-TW: "修正歌詞動態設定與繁簡轉換。"
+    zh-CN: "修复歌词动态设置与繁简转换。"
+    ja: "歌詞の動きの設定と中国語の文字変換を修正しました。"
+    ko: "가사 움직임 설정과 중국어 문자 변환을 수정했습니다."
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.5"
+  summary:
+    en: "Fixed lyric motion settings and Chinese character conversion."
+    zh-TW: "修正歌詞動態設定與繁簡轉換。"
+    zh-CN: "修复歌词动态设置与繁简转换。"
+    ja: "歌詞の動きの設定と中国語の文字変換を修正しました。"
+    ko: "가사 움직임 설정과 중국어 문자 변환을 수정했습니다."
+  items:
+    en:
+      - "Fixed an issue where the Windows reduced-motion setting affected animated lyric effects."
+      - "Fixed unintended wording changes during automatic conversion between Simplified and Traditional Chinese lyrics."
+    zh-TW:
+      - "修正 Windows 系統的「減少動態」設定連帶影響動態歌詞效果的問題。"
+      - "修正歌詞自動繁簡轉換造成部分字詞誤改的問題。"
+    zh-CN:
+      - "修复 Windows 系统的“减少动态”设置影响动态歌词效果的问题。"
+      - "修复歌词自动繁简转换造成部分字词误改的问题。"
+    ja:
+      - "Windows の「動きを減らす」設定が歌詞のアニメーションに影響する問題を修正しました。"
+      - "歌詞の中国語の簡体字・繁体字自動変換で、一部の語句が誤って置き換わる問題を修正しました。"
+    ko:
+      - "Windows의 ‘움직임 줄이기’ 설정이 가사 애니메이션 효과에 영향을 주는 문제를 수정했습니다."
+      - "가사의 중국어 간체·번체 자동 변환으로 일부 표현이 잘못 바뀌는 문제를 수정했습니다."

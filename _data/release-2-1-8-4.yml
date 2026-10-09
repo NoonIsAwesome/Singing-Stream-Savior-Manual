@@ -1,7 +1,7 @@
 release:
   version: "2.1.8.4"
   date: "2026-10-10"
-  latest: true
+  latest: false
   type:
     en: "Improved song-list display, song tags, and Harmony."
     zh-TW: "改善歌單顯示、歌曲標籤與合音效果器。"
