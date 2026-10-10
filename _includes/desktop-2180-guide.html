@@ -8,6 +8,7 @@
   <p>{{ desktop_copy.intro | escape }}</p>
   <ol>{% for step in desktop_copy.steps %}<li>{{ step | escape }}</li>{% endfor %}</ol>
   <ul>{% for note in desktop_copy.notes %}<li>{{ note | escape }}</li>{% endfor %}</ul>
+  {% if desktop_copy.caption %}
   {% if include.section == 'song' %}
     {% capture desktop_image %}/assets/images/2181/{{ desktop_image_locale }}/song-settings.png{% endcapture %}
   {% elsif include.section == 'youtube' %}
@@ -24,5 +25,6 @@
     <a href="{{ '/assets/images/2181/search-suggestions.png' | relative_url }}"><img src="{{ '/assets/images/2181/search-suggestions.png' | relative_url }}" alt="{{ desktop_copy.secondCaption | escape }}" loading="lazy" decoding="async"></a>
     <figcaption>{{ desktop_copy.secondCaption | escape }}</figcaption>
   </figure>
+  {% endif %}
   {% endif %}
 </section>

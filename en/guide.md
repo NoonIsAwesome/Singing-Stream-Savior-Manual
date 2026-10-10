@@ -1,4 +1,4 @@
-﻿---
+---
 title: Singing Stream Savior 2.1 User Manual
 description: English manual for Singing Stream Savior 2.1.8.5
 lang: en
@@ -56,6 +56,8 @@ Singing Stream Savior is a Windows desktop tool for singing streams. It combines
 
 {% include launcher-startup-guide.html %}
 
+{% include desktop-2180-guide.html section="startup" %}
+
 Create a project from **File > New project**, add songs, then save the `.bgmsproj` file. A project stores songs, display titles, queue order, lyric links, theme, and display settings. Sung history belongs to the current live session and is not written to a normal project save. If the app is interrupted unexpectedly, a recovery snapshot can restore the live-session progress when you restart. An asterisk in the window title means there are unsaved changes.
 
 ### Follow the first-use guide
@@ -86,7 +88,7 @@ In addition to choosing files from the import dialog, you can drag one or more l
 
 The **Display title** is used by Reserve, History, and OBS. If it is blank, the app falls back to the file name or YouTube title. Double-clicking a song row loads and plays it; it never opens text editing. To rename the viewer-facing title, right-click the song and choose the first item, **Edit display song name**. Press `Enter` to apply or `Esc` to cancel. This never renames the source audio file.
 
-The song context menu is arranged for quick live use: **Edit display song name**, **Add to Reserve**, **Add to playlist** (Favorites or a custom playlist), then the delete/remove action appropriate to the selected collection.
+The song context menu provides **Edit display song name**, **Add to Reserve**, **Add to playlist** (Favorites or a custom playlist), and the delete/remove action appropriate to the selected collection. From 2.1.8.6, it also offers performer, genre, and language tags: select multiple songs to edit them together, and keep the menu open to make several changes.
 
 <figure class="manual-figure manual-figure--medium"><a href="{{ '/assets/images/2180/en/song-settings.png' | relative_url }}"><img src="{{ '/assets/images/2180/en/song-settings.png' | relative_url }}" alt="The Information tab in Song settings, with title, performers, genre and language tags"></a><figcaption>Edit the song title on the Information tab, or use the context menu to edit its Display title. This does not rename the original file.</figcaption></figure>
 
@@ -193,10 +195,20 @@ Singing Stream Savior provides tools to import, edit, synchronize, and display l
 
 {% include feature-guide.html section="lyrics" %}
 
+### Modern Karaoke
+
+Version 2.1.8.6 adds Modern Karaoke, a single-line lyric style. Unsung text starts in soft gray and fills word by word with warm white as the song progresses.
+
+1. In **Live Controls → Lyrics**, select the Modern Karaoke style card to the right of Classic Karaoke.
+2. Adjust the font and sung text color. The unsung text color is a separate setting for Modern Karaoke. You can also enable a text outline and adjust its color and width.
+3. Select **Edit layout** above the preview, then drag the lyric block to move it or drag a corner handle to resize it. Preview and OBS use the same settings. Save the project to retain your changes.
+
 <a id="lyrics-layout-editor"></a>
 ### Move and resize lyric blocks in the preview
 
 In **2.1.3.2**, Basic Lyrics, Classic Karaoke, and Vertical Verse support layout editing. Open **Live Controls → Lyrics**, choose a style, and select **Edit layout** above the preview. Drag inside a lyric block to move it; drag a corner handle to resize it proportionally. The canvas stays **1920 × 1080 (16:9)**.
+
+Modern Karaoke also supports these layout controls from 2.1.8.6.
 
 An OBS lyric source already using this output updates **while you drag**; releasing the mouse or adding the source again is unnecessary. Center guides help alignment. Select Edit layout again or leave the page to exit editing without losing the position. The adjacent reset icon restores the layout. Save the project to retain changes. The checkerboard represents transparency and is not sent to OBS; the independent Lyrics window is unaffected.
 

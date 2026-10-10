@@ -1,7 +1,7 @@
 release:
   version: "2.1.8.5"
   date: "2026-10-10"
-  latest: true
+  latest: false
   type:
     en: "Fixed lyric motion settings and Chinese character conversion."
     zh-TW: "修正歌詞動態設定與繁簡轉換。"

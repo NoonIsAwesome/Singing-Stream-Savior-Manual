@@ -105,10 +105,20 @@ Singing Stream Savior 提供歌詞匯入、編輯、同步與顯示工具，不�
 
 {% include feature-guide.html section="lyrics" %}
 
+### Modern Karaoke
+
+2.1.8.6 新增單行 Modern Karaoke 歌詞樣式，未唱文字為柔灰，隨歌唱進度逐字填成暖白。
+
+1. 在「直播操作 → 歌詞」的樣式卡片中，選擇 Classic Karaoke 右側的 Modern Karaoke。
+2. 調整字型與已唱文字色；未唱文字色為 Modern Karaoke 專屬設定。也可開啟文字描邊，調整顏色與粗細。
+3. 按預覽上方的「編輯版面配置」，拖曳歌詞區塊調整位置，或拖曳角落控制點調整大小。預覽與 OBS 使用相同設定；儲存專案以保留調整。
+
 <a id="lyrics-layout-editor"></a>
 ### 在預覽中移動與縮放歌詞區塊
 
 從 **2.1.3.2** 起，Basic Lyrics、Classic Karaoke 與 Vertical Verse 都能直接在歌詞頁的預覽中調整位置與大小。
+
+2.1.8.6 新增的 Modern Karaoke 也支援以下操作。
 
 1. 在「直播操作 → 歌詞」選擇歌詞樣式，按預覽右上方的「編輯版面配置」。
 2. 拖曳歌詞區塊的外框內部來移動位置；拖曳角落的縮放控制點，等比例放大或縮小。調整的是歌詞區塊，畫布維持 `1920 × 1080`、`16:9`。

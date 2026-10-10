@@ -29,6 +29,8 @@ translation_key: getting-started
 
 {% include launcher-startup-guide.html %}
 
+{% include desktop-2180-guide.html section="startup" %}
+
 ## 建立新專案
 
 1. 開啟「檔案」選單。
