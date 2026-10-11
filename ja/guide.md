@@ -28,22 +28,7 @@ Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲�
 <a id="getting-started"></a>
 ## {% include chapter-number.html key="getting-started" %} · はじめに
 
-<section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
-  <div>
-    <p class="chapter-quick-start__eyebrow">初回起動</p>
-    <h2 id="getting-started-quick-start">5 分で最初の曲を再生して保存</h2>
-    <p class="chapter-quick-start__intro">次の手順でアプリを起動し、ループ再生する BGM を設定して最初のカラオケ音源をテストし、次回も使えるプロジェクトを保存できます。</p>
-    <ol class="chapter-quick-start__steps">
-      <li><div><strong>ZIP を完全に展開</strong><span>通常のフォルダーへ展開し、ZIP の中から直接実行しないでください。</span></div></li>
-      <li><div><strong>ランチャーを開く</strong><span>一番外側の <code>Singing Stream Savior.exe</code> をダブルクリックし、更新確認を経てアプリを開きます。</span></div></li>
-      <li><div><strong>プロジェクトを作成</strong><span>「ファイル &gt; 新規プロジェクト」を選びます。</span></div></li>
-      <li><div><strong>配信用 BGM を追加</strong><span>BGM プレイヤーでローカルファイルを選ぶか YouTube リンクを貼り付けます。ファイル／リンクをプレイヤーへ直接ドラッグすることもでき、読み込み後は自動的にループ再生します。</span></div></li>
-      <li><div><strong>1 曲追加して再生</strong><span>ローカル音源または 1 件の YouTube リンクを曲テーブルへドラッグし、その曲をダブルクリックします。</span></div></li>
-      <li><div><strong>プロジェクトを保存</strong><span>「ファイル &gt; 保存」を選び、<code>.bgmsproj</code> ファイルを作成します。</span></div></li>
-    </ol>
-    <p class="chapter-quick-start__done"><strong>完了の目印：</strong>BGM が読み込まれ、自動的にループ再生します。曲をダブルクリックするとカラオケプレイヤーに曲名と進行状況が表示され、BGM は自動的に一時停止します。プロジェクトを保存すると、ウィンドウタイトルの <code>*</code> が消えます。</p>
-  </div>
-</section>
+{% include first-song-quick-start.html %}
 
 {% include first-stream-check.html heading=3 %}
 

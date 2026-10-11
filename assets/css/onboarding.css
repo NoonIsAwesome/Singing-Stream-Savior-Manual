@@ -1,0 +1,83 @@
+/* Download and first-song refinements use the existing site tokens. */
+.inner-page .resource-hero--download {
+  margin:0 0 20px;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  overflow:visible;
+}
+.inner-page .resource-hero--download::after { display:none; }
+.inner-page .resource-hero--download h1 { margin:0; font-size:clamp(28px,4vw,40px); }
+.inner-page .resource-section--download { margin:0 0 48px; }
+.inner-page .resource-section--download .download-panel {
+  grid-template-columns:48px minmax(0,1fr) minmax(160px,190px);
+  align-items:start;
+  gap:16px;
+  padding:22px;
+}
+.inner-page .download-panel__copy { gap:5px; min-width:0; }
+.inner-page .download-panel__copy strong { font-size:18px; line-height:1.4; }
+.inner-page .download-panel__copy span { font-size:14px; line-height:1.6; overflow-wrap:anywhere; }
+.inner-page .manual-article .download-panel__safety { margin:7px 0 0; font-size:14px; line-height:1.6; color:var(--ink-800); }
+.inner-page .download-panel__safety a { white-space:nowrap; text-underline-offset:3px; }
+.inner-page .download-panel__actions { align-self:center; }
+.inner-page .download-panel__actions .resource-action { min-height:46px; }
+.inner-page .download-panel__checksum { grid-column:1/-1; border-top:1px solid var(--line); padding-top:10px; min-width:0; }
+.inner-page .download-panel__checksum summary { color:var(--muted); cursor:pointer; font-size:13px; width:fit-content; }
+.inner-page .download-panel__checksum code { display:block; margin-top:10px; font-size:12px; overflow-wrap:anywhere; white-space:normal; }
+.inner-page .download-next-step { margin:22px 0 30px; padding:0 0 22px; border-bottom:1px solid var(--line); }
+.inner-page .download-next-step a { font-size:18px; font-weight:700; color:var(--teal); text-underline-offset:4px; }
+.inner-page .manual-article .download-next-step p { margin:7px 0 0; color:var(--muted); font-size:15px; }
+.inner-page .system-requirements { margin:28px 0 32px; }
+.inner-page .manual-article .system-requirements h2,
+.inner-page .manual-article .download-open h2 { margin:0 0 14px; font-size:22px; }
+.inner-page .system-requirements dl { margin:0; }
+.inner-page .system-requirements__summary { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
+.inner-page .system-requirements dt { font-weight:700; color:var(--ink); }
+.inner-page .system-requirements dd { margin:5px 0 0; font-size:14px; line-height:1.7; color:var(--ink-800); }
+.inner-page .system-requirements .feature-requirements { margin-top:22px; border-top:1px solid var(--line); }
+.inner-page .feature-requirements > div { display:grid; grid-template-columns:125px minmax(0,1fr); gap:20px; padding:13px 0; border-bottom:1px solid var(--line); }
+.inner-page .feature-requirements dd { margin:0; }
+.inner-page .download-open { margin:30px 0; }
+.inner-page .download-security,
+.inner-page .onboarding-troubleshooting { margin:26px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; }
+.inner-page .download-security > summary,
+.inner-page .onboarding-troubleshooting > summary { font-weight:700; color:var(--ink); cursor:pointer; }
+.inner-page .download-security[open] > summary,
+.inner-page .onboarding-troubleshooting[open] > summary { margin-bottom:18px; }
+.inner-page .download-security .download-trust-note { border-left-width:1px; }
+.inner-page .download-security .smartscreen-guide { margin-top:22px; }
+.inner-page .download-security summary:focus-visible,
+.inner-page .onboarding-troubleshooting summary:focus-visible,
+.inner-page .download-panel__checksum summary:focus-visible { outline:3px solid var(--teal); outline-offset:5px; border-radius:3px; }
+.inner-page .chapter-quick-start .quick-start-figure { max-width:600px; margin:15px 0 7px; }
+.inner-page .quick-start-figure > a { display:block; }
+.inner-page .quick-start-figure img { width:100%; height:auto; border-radius:8px; background:#111418; }
+.inner-page .quick-start-figure figcaption { margin-top:9px; padding:0; }
+.inner-page .chapter-quick-start__steps .quick-start-figure figcaption span { display:block; font-size:14px; line-height:1.65; margin:4px 0; }
+.inner-page .quick-start-figure figcaption b { display:inline-block; color:var(--teal); min-width:1em; font-variant-numeric:tabular-nums; }
+.inner-page .quick-start-figure figcaption small { display:block; font-size:12px; margin-top:6px; color:var(--muted); }
+.inner-page .manual-article .quick-start-platform { font-size:14px; margin:16px 0 0; }
+.workflow-sequence { display:flex; flex-wrap:wrap; gap:10px 0; list-style:none; margin:20px 0 26px; padding:0; color:var(--ink); font-weight:650; line-height:1.7; }
+.workflow-sequence li { margin:0; padding:0; }
+.workflow-sequence li:not(:last-child)::after { content:'→'; color:var(--teal); padding:0 17px; }
+.home-page .flow-section { scroll-margin-top:100px; }
+@media (max-width:700px) {
+  .inner-page .system-requirements__summary { grid-template-columns:1fr; gap:15px; }
+  .inner-page .feature-requirements > div { grid-template-columns:1fr; gap:4px; }
+}
+@media (max-width:640px) {
+  .inner-page .resource-hero--download { margin-bottom:16px; }
+  .inner-page .resource-section--download .download-panel { grid-template-columns:42px minmax(0,1fr); gap:12px; padding:17px; }
+  .inner-page .download-panel__mark { width:42px; height:42px; }
+  .inner-page .download-panel__copy strong { font-size:16px; }
+  .inner-page .download-panel__copy span { font-size:13px; }
+  .inner-page .download-panel__actions { grid-column:1/-1; max-width:none; width:100%; }
+  .inner-page .download-panel__safety { font-size:13px; }
+  .inner-page .download-next-step a { font-size:17px; }
+  .inner-page .system-requirements { margin-top:24px; }
+  .inner-page .chapter-quick-start .quick-start-figure { margin-top:12px; }
+  .workflow-sequence { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 20px; font-size:14px; }
+  .workflow-sequence li:not(:last-child)::after { padding:0 0 0 8px; }
+}

@@ -1,0 +1,157 @@
+{
+  "zh-TW": {
+    "title": "5 分鐘完成第一次測試播放",
+    "intro": "照著下面做，就能開啟軟體、設定循環播放的 BGM、測試第一首伴奏，並保存下次可以繼續使用的專案。",
+    "steps": [
+      {
+        "title": "完整解壓縮",
+        "text": "將下載的 ZIP 解壓縮到一般資料夾，不要直接在 ZIP 裡執行程式。"
+      },
+      {
+        "title": "開啟啟動器",
+        "text": "在最外層資料夾雙擊「Singing Stream Savior.exe」，先經過更新檢查再開啟軟體。"
+      },
+      {
+        "title": "建立專案",
+        "text": "選擇「檔案 &gt; 新增專案」。"
+      },
+      {
+        "title": "加入直播 BGM",
+        "text": "從 BGM 播放器選擇本機檔案或貼上 YouTube 連結，也可直接把檔案／連結拖進播放器；載入後會自動開始循環播放。"
+      },
+      {
+        "title": "加入並播放一首歌",
+        "text": "把本機音訊或單一 YouTube 連結拖進歌曲表格，再雙擊該歌曲。"
+      },
+      {
+        "title": "儲存專案",
+        "text": "選擇「檔案 &gt; 儲存」，建立一個 <code>.bgmsproj</code> 檔案。"
+      }
+    ],
+    "done": "<strong>完成時：</strong>BGM 已載入並會自動循環；雙擊歌曲後，伴奏播放器會顯示歌名與進度，BGM 也會自動暫停。儲存專案後，視窗標題的 <code>*</code> 會消失。"
+  },
+  "zh-CN": {
+    "title": "5 分钟完成第一次测试播放",
+    "intro": "按照下面的步骤，即可打开软件、设置循环播放的 BGM、测试第一首伴奏，并保存下次可以继续使用的项目。",
+    "steps": [
+      {
+        "title": "完整解压 ZIP",
+        "text": "将文件解压到普通文件夹，不要直接在 ZIP 中运行软件。"
+      },
+      {
+        "title": "打开启动器",
+        "text": "在最外层文件夹双击 <code>Singing Stream Savior.exe</code>，先经过更新检查再打开软件。"
+      },
+      {
+        "title": "新建项目",
+        "text": "选择“文件 &gt; 新建项目”。"
+      },
+      {
+        "title": "添加直播 BGM",
+        "text": "从 BGM 播放器选择本地文件或粘贴 YouTube 链接，也可直接把文件／链接拖进播放器；载入后会自动开始循环播放。"
+      },
+      {
+        "title": "加入并播放一首歌",
+        "text": "把本地音频或单个 YouTube 链接拖进歌曲表格，再双击该歌曲。"
+      },
+      {
+        "title": "保存项目",
+        "text": "选择“文件 &gt; 保存”，建立一个 <code>.bgmsproj</code> 文件。"
+      }
+    ],
+    "done": "<strong>完成时：</strong>BGM 已载入并会自动循环；双击歌曲后，伴奏播放器会显示歌名与进度，BGM 也会自动暂停。保存项目后，窗口标题中的 <code>*</code> 会消失。"
+  },
+  "en": {
+    "title": "Play and save your first song in 5 minutes",
+    "intro": "Follow these steps to open the app, set a looping BGM, test one karaoke track, and save a project you can continue later.",
+    "steps": [
+      {
+        "title": "Extract the complete ZIP",
+        "text": "Extract it to a normal folder; do not run the app from inside the ZIP."
+      },
+      {
+        "title": "Open the launcher",
+        "text": "Double-click <code>Singing Stream Savior.exe</code> in the outermost folder to handle the update check and open the app."
+      },
+      {
+        "title": "Create a project",
+        "text": "Choose File &gt; New project."
+      },
+      {
+        "title": "Add your stream BGM",
+        "text": "Choose a local file or paste a YouTube link in the BGM player, or drag the file or link directly onto the player. It starts looping automatically after it loads."
+      },
+      {
+        "title": "Add and play one song",
+        "text": "Drag a local audio file or single YouTube link into the song table, then double-click the song."
+      },
+      {
+        "title": "Save the project",
+        "text": "Choose File &gt; Save and create a <code>.bgmsproj</code> file."
+      }
+    ],
+    "done": "<strong>You are done when:</strong> the BGM has loaded and loops automatically; double-clicking the song shows its title and progress in the karaoke player and pauses the BGM. After you save the project, the <code>*</code> disappears from the window title."
+  },
+  "ja": {
+    "title": "5 分で最初の曲を再生して保存",
+    "intro": "次の手順でアプリを起動し、ループ再生する BGM を設定して最初のカラオケ音源をテストし、次回も使えるプロジェクトを保存できます。",
+    "steps": [
+      {
+        "title": "ZIP を完全に展開",
+        "text": "通常のフォルダーへ展開し、ZIP の中から直接実行しないでください。"
+      },
+      {
+        "title": "ランチャーを開く",
+        "text": "一番外側の <code>Singing Stream Savior.exe</code> をダブルクリックし、更新確認を経てアプリを開きます。"
+      },
+      {
+        "title": "プロジェクトを作成",
+        "text": "「ファイル &gt; 新規プロジェクト」を選びます。"
+      },
+      {
+        "title": "配信用 BGM を追加",
+        "text": "BGM プレイヤーでローカルファイルを選ぶか YouTube リンクを貼り付けます。ファイル／リンクをプレイヤーへ直接ドラッグすることもでき、読み込み後は自動的にループ再生します。"
+      },
+      {
+        "title": "1 曲追加して再生",
+        "text": "ローカル音源または 1 件の YouTube リンクを曲テーブルへドラッグし、その曲をダブルクリックします。"
+      },
+      {
+        "title": "プロジェクトを保存",
+        "text": "「ファイル &gt; 保存」を選び、<code>.bgmsproj</code> ファイルを作成します。"
+      }
+    ],
+    "done": "<strong>完了の目印：</strong>BGM が読み込まれ、自動的にループ再生します。曲をダブルクリックするとカラオケプレイヤーに曲名と進行状況が表示され、BGM は自動的に一時停止します。プロジェクトを保存すると、ウィンドウタイトルの <code>*</code> が消えます。"
+  },
+  "ko": {
+    "title": "5분 안에 첫 곡 재생하고 저장하기",
+    "intro": "아래 순서대로 앱을 열고 반복 재생할 BGM을 설정한 뒤 반주 한 곡을 시험 재생하고, 다음에도 이어서 사용할 프로젝트를 저장할 수 있습니다.",
+    "steps": [
+      {
+        "title": "ZIP 전체 압축 해제",
+        "text": "일반 폴더에 완전히 풀고 ZIP 안에서 앱을 직접 실행하지 마세요."
+      },
+      {
+        "title": "실행기 열기",
+        "text": "가장 바깥쪽 <code>Singing Stream Savior.exe</code>를 두 번 클릭하여 업데이트 확인을 거친 뒤 앱을 엽니다."
+      },
+      {
+        "title": "프로젝트 만들기",
+        "text": "파일 &gt; 새 프로젝트를 선택합니다."
+      },
+      {
+        "title": "방송 BGM 추가",
+        "text": "BGM 플레이어에서 로컬 파일을 선택하거나 YouTube 링크를 붙여 넣으세요. 파일이나 링크를 플레이어로 직접 끌어다 놓을 수도 있으며, 불러오기가 끝나면 자동으로 반복 재생합니다."
+      },
+      {
+        "title": "곡 하나 추가하고 재생",
+        "text": "로컬 오디오 파일이나 YouTube 단일 영상 링크를 곡 표로 끌어다 놓고 해당 곡을 두 번 클릭합니다."
+      },
+      {
+        "title": "프로젝트 저장",
+        "text": "파일 &gt; 저장을 선택해 <code>.bgmsproj</code> 파일을 만듭니다."
+      }
+    ],
+    "done": "<strong>완료 확인:</strong> BGM을 불러오면 자동으로 반복 재생합니다. 곡을 두 번 클릭하면 반주 플레이어에 곡명과 진행 시간이 표시되고 BGM은 자동으로 일시 정지합니다. 프로젝트를 저장하면 창 제목의 <code>*</code>가 사라집니다."
+  }
+}

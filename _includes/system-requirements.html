@@ -1,0 +1,14 @@
+{% assign requirements = site.data.system_requirements %}
+<section class="system-requirements" aria-labelledby="system-requirements">
+  <h2 id="system-requirements">{{ o.requirements_title | escape }}</h2>
+  <dl class="system-requirements__summary">
+    <div><dt>{{ o.platform | escape }}</dt><dd>{{ o.platform_note | escape }}</dd></div>
+    <div><dt>{{ o.architecture | escape }}</dt><dd>{{ o.architecture_note | escape }}</dd></div>
+    <div><dt>{{ o.space | escape }}</dt><dd>{% if resources.software.version == requirements.measured_version %}{{ o.space_note | replace: '__UNPACKED__', requirements.unpacked_size | replace: '__TOTAL__', requirements.zip_plus_unpacked | escape }}{% else %}{{ o.space_pending | escape }}{% endif %} {{ o.space_extra | escape }}</dd></div>
+  </dl>
+  <dl class="feature-requirements">
+    <div><dt>{{ o.basic | escape }}</dt><dd>{{ o.basic_note | escape }}</dd></div>
+    <div><dt>{{ o.uvr | escape }}</dt><dd>{{ o.uvr_note | escape }}</dd></div>
+    <div><dt>{{ o.vocals | escape }}</dt><dd>{{ o.vocals_note | escape }}</dd></div>
+  </dl>
+</section>

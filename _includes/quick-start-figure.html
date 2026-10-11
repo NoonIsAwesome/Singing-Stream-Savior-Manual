@@ -1,0 +1,9 @@
+{% assign figure_copy = site.data.onboarding[quick_lang] %}
+{% assign alt_key = include.kind | append: '_alt' %}
+{% assign first_key = include.kind | append: '_1' %}
+{% assign second_key = include.kind | append: '_2' %}
+{% capture figure_path %}/assets/images/quick-start-{{ include.kind }}.svg{% endcapture %}
+<figure class="manual-figure quick-start-figure">
+  <a href="{{ figure_path | relative_url }}"><img src="{{ figure_path | relative_url }}" alt="{{ figure_copy[alt_key] | escape }}" width="{{ include.width }}" height="{{ include.height }}" loading="lazy" decoding="async"></a>
+  <figcaption><span><b>1</b> {{ figure_copy[first_key] | escape }}</span><span><b>2</b> {{ figure_copy[second_key] | escape }}</span><small>{{ figure_copy.screenshot_note | escape }}</small></figcaption>
+</figure>

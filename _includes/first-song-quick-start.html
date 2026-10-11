@@ -1,0 +1,18 @@
+{% assign quick_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign quick = site.data.first_song_quick_start[quick_lang] %}
+{% assign onboarding = site.data.onboarding[quick_lang] %}
+{% assign quick_download = site.data.homepage_links[quick_lang].resources %}
+<section class="chapter-quick-start chapter-quick-start--single" aria-labelledby="getting-started-quick-start">
+  <h2 id="getting-started-quick-start">{{ quick.title | escape }}</h2>
+  <p class="chapter-quick-start__intro">{{ quick.intro | escape }}</p>
+  <ol class="chapter-quick-start__steps">
+    {% for step in quick.steps %}
+    <li><div><strong>{{ step.title | escape }}</strong><span>{{ step.text }}</span>
+      {% if forloop.index == 4 %}{% include quick-start-figure.html kind='bgm' width=500 height=200 %}{% endif %}
+      {% if forloop.index == 5 %}{% include quick-start-figure.html kind='song' width=600 height=240 %}{% endif %}
+    </div></li>
+    {% endfor %}
+  </ol>
+  <p class="chapter-quick-start__done">{{ quick.done }}</p>
+  <p class="quick-start-platform"><a href="{{ quick_download | relative_url }}#system-requirements">{{ onboarding.platform_link | escape }} →</a></p>
+</section>

@@ -1,0 +1,9 @@
+{
+  "measured_version": "2.1.8.6",
+  "unpacked_size": "1.46 GB",
+  "zip_plus_unpacked": "2.33 GB",
+  "unpacked_bytes": 1457094546,
+  "zip_bytes": 871419318,
+  "tested_os": "Windows 11 x64",
+  "evidence": "Public release ZIP central directory; Windows 11 x64 release testing; UVR CPU/DirectML benchmark. No minimum CPU/RAM established."
+}
