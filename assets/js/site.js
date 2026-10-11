@@ -291,7 +291,7 @@
         return false;
       }
       try {
-        return /\.(?:avif|gif|jpe?g|png|webp)$/i.test(
+        return /\.(?:avif|gif|jpe?g|png|svg|webp)$/i.test(
           new URL(link.href, window.location.href).pathname
         );
       } catch {

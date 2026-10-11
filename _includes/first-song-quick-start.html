@@ -8,7 +8,7 @@
   <ol class="chapter-quick-start__steps">
     {% for step in quick.steps %}
     <li><div><strong>{{ step.title | escape }}</strong><span>{{ step.text }}</span>
-      {% if forloop.index == 4 %}{% include quick-start-figure.html kind='bgm' width=500 height=200 %}{% endif %}
+      {% if forloop.index == 4 %}{% include quick-start-figure.html kind='bgm' width=480 height=175 %}{% endif %}
       {% if forloop.index == 5 %}{% include quick-start-figure.html kind='song' width=600 height=240 %}{% endif %}
     </div></li>
     {% endfor %}

@@ -51,7 +51,7 @@
 .inner-page .download-security summary:focus-visible,
 .inner-page .onboarding-troubleshooting summary:focus-visible,
 .inner-page .download-panel__checksum summary:focus-visible { outline:3px solid var(--teal); outline-offset:5px; border-radius:3px; }
-.inner-page .chapter-quick-start .quick-start-figure { max-width:600px; margin:15px 0 7px; }
+.inner-page .chapter-quick-start .quick-start-figure { max-width:600px; margin:15px 0 7px; padding:0; background:transparent; border:0; border-radius:0; box-shadow:none; overflow:visible; }
 .inner-page .quick-start-figure > a { display:block; }
 .inner-page .quick-start-figure img { width:100%; height:auto; border-radius:8px; background:#111418; }
 .inner-page .quick-start-figure figcaption { margin-top:9px; padding:0; }
