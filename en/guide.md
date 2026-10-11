@@ -1,4 +1,4 @@
-﻿---
+---
 title: Singing Stream Savior 2.1 User Manual
 description: English manual for Singing Stream Savior 2.1.8.6
 lang: en

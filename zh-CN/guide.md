@@ -1,4 +1,4 @@
-﻿---
+---
 title: 歌回救星 2.1 使用说明
 description: Singing Stream Savior 2.1.8.6 简体中文使用说明
 lang: zh-CN

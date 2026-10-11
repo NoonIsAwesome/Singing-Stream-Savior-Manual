@@ -1,4 +1,4 @@
-﻿---
+---
 title: Singing Stream Savior 2.1 ユーザーマニュアル
 description: Singing Stream Savior 2.1.8.6 日本語マニュアル
 lang: ja
