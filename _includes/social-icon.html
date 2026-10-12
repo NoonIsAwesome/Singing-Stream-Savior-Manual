@@ -1,6 +1,6 @@
 {% assign raster_platforms = 'youtube,x,discord,twitch,instagram,threads,tiktok' | split: ',' %}
 {% if raster_platforms contains include.platform %}
-  {% assign icon_path = '/assets/images/social-v2/' | append: include.platform | append: '.png' %}
+  {% assign icon_path = '/assets/images/social-flat-v1/' | append: include.platform | append: '.png' %}
   <img class="social-links__image" src="{{ icon_path | relative_url }}" alt="" width="128" height="128" loading="lazy" decoding="async" aria-hidden="true">
 {% elsif include.platform == 'email' %}
   <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h18a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm9 8.1L20.2 6H3.8l8.2 6.1Zm-9 5.7h18V8.3l-8.4 6.2a1 1 0 0 1-1.2 0L3 8.3v9.5Z"/></svg>
