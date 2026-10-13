@@ -928,7 +928,7 @@ html[data-theme="dark"] .language option:checked {
 }
 .author-page .social-links a {
   display:grid;
-  grid-template-columns:38px minmax(0,1fr) 15px;
+  grid-template-columns:44px minmax(0,1fr) 15px;
   align-items:start;
   gap:13px;
   padding:22px 18px;
@@ -945,11 +945,11 @@ html[data-theme="dark"] .language option:checked {
   transform:translateY(-3px)
 }
 .author-page .social-links__code {
-  width:36px;
-  height:36px;
+  width:44px;
+  height:44px;
   display:grid;
   place-items:center;
-  background:var(--paper);
+  background:transparent;
   border:0;
   color:var(--teal);
   border-radius:9px
@@ -957,6 +957,17 @@ html[data-theme="dark"] .language option:checked {
 .author-page .social-links__code svg {
   width:21px;
   height:21px
+}
+.author-page .social-links__code .social-links__image {
+  display:block;
+  width:44px;
+  height:44px;
+  max-width:none;
+  margin:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  object-fit:contain
 }
 .author-page .social-links strong {
   display:block;

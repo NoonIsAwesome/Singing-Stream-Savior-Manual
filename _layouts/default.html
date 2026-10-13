@@ -68,6 +68,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/reader.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
     <link rel="stylesheet" href="{{ '/assets/css/lightbox.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
     <link rel="stylesheet" href="{{ '/assets/css/privacy.css' | relative_url }}?v={{ site.github.build_revision | default: 'privacy-20260921' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/onboarding.css' | relative_url }}?v={{ site.github.build_revision | default: 'onboarding-refinement' }}">
     <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_tw }}">
     <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_cn }}">
     <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}{{ alternate_en }}">
@@ -106,7 +107,7 @@
       </div>
       <button class="nav-backdrop" type="button" aria-label="{{ t.collapse_nav | escape }}" tabindex="-1" hidden></button>
     {% endif %}
-    <footer class="page-footer"><div class="wrap"><span>SINGING STREAM SAVIOR · 歌回救星</span><span>{{ design.footer }}</span><a href="{% if is_home %}{{ about_target | relative_url }}{% else %}{{ language_home | relative_url }}{% endif %}">{% if is_home %}{{ design.author }}{% else %}{{ design.home }}{% endif %} ↗</a>{% include privacy-footer.html %}</div></footer>
+    <footer class="page-footer"><div class="wrap"><span>SINGING STREAM SAVIOR · 歌回救星</span><span>{{ design.footer }}</span><a href="{% if is_home %}{{ about_target | relative_url }}{% else %}{{ language_home | relative_url }}{% endif %}">{% if is_home %}{{ design.author }}{% else %}{{ design.home }}{% endif %} →</a>{% include privacy-footer.html %}</div></footer>
     <script src="{{ '/assets/js/site-analytics.js' | relative_url }}?v={{ site.github.build_revision | default: 'analytics-20260921' }}" defer></script>
     {% if section == 'resources' %}<script src="{{ '/assets/js/download-mirror.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>{% endif %}
     <script src="{{ '/assets/js/download-clicks.js' | relative_url }}?v={{ site.github.build_revision | default: 'download-clicks-20260921' }}" defer></script>

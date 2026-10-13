@@ -1,5 +1,7 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign resources = site.data.resources %}
+{% assign o = site.data.onboarding[current_lang] %}
+{% if current_lang == 'zh-TW' %}{% assign first_song_target = '/getting-started.html#getting-started-quick-start' %}{% else %}{% capture first_song_target %}/{{ current_lang }}/guide.html#getting-started-quick-start{% endcapture %}{% endif %}
 {% assign release_data_key = resources.software.version | replace: '.', '-' | prepend: 'release-' %}
 {% assign download_release = site.data[release_data_key].release %}
 {% include download-mirror-config.html %}
@@ -222,30 +224,9 @@
   {% assign offline_text = 'Projects, settings, and audio processing remain on your computer. Only optional features such as YouTube, online lyric or cover searches, and update checks connect to the relevant third-party service.' %}
 {% endif %}
 
-<header class="resource-hero">
-  <p class="resource-eyebrow">{{ eyebrow }}</p>
-  <h1>{{ title }}</h1>
-  <p>{{ lead }}</p>
-</header>
+<header class="resource-hero resource-hero--download"><h1>{{ title }}</h1></header>
 
-<section class="resource-section" aria-labelledby="software-download">
-  <div class="resource-section__heading">
-    <span class="resource-index">01</span>
-    <div>
-      <h2 id="software-download">{{ software_title }}</h2>
-      <p>{{ software_text }}</p>
-    </div>
-  </div>
-  <aside class="download-trust-note" role="note">
-    <span aria-hidden="true">
-      <svg viewBox="0 0 24 24" focusable="false">
-        <path d="M12 3.7 21 20H3L12 3.7Z"></path>
-        <path d="M12 9v5.2"></path>
-        <path d="M12 17.2h.01"></path>
-      </svg>
-    </span>
-    <div><strong>{{ download_caution_title }}</strong><p>{{ download_caution_text }}</p></div>
-  </aside>
+<section class="resource-section resource-section--download" id="software-download" aria-label="{{ software_title | escape }}">
   <article class="download-panel">
     <div class="download-panel__mark" aria-hidden="true">
       <svg viewBox="0 0 32 32" focusable="false">
@@ -256,9 +237,9 @@
     </div>
     <div class="download-panel__copy">
       <strong>Singing Stream Savior</strong>
-      <span>Application {{ resources.software.version }} · Launcher {{ resources.software.launcher_version }}</span>
-      {% if resources.software.file_size != '' %}<small>{{ resources.software.file_size }}</small>{% endif %}
-      {% if resources.software.sha256 != '' %}<small class="download-panel__hash"><b>{{ hash_label }}</b><code>{{ resources.software.sha256 }}</code></small>{% endif %}
+      <span>Windows x64 · v{{ resources.software.version }} · Launcher {{ resources.software.launcher_version }}</span>
+      {% if resources.software.file_size != '' %}<small>{{ o.package | escape }} · {{ resources.software.file_size }}</small>{% endif %}
+      <p class="download-panel__safety">{{ o.unsigned | escape }} <a href="#download-security">{{ o.security_link | escape }} →</a></p>
     </div>
     {% if resources.software.download_url != '' %}
       <div class="download-panel__actions">
@@ -280,7 +261,12 @@
     {% else %}
       <span class="resource-status">{{ coming_soon }}</span>
     {% endif %}
+    {% if resources.software.sha256 != '' %}<details class="download-panel__checksum"><summary>{{ hash_label }}</summary><code>{{ resources.software.sha256 }}</code></details>{% endif %}
   </article>
+  <div class="download-next-step"><a href="{{ first_song_target | relative_url }}">{{ o.next | escape }} →</a><p>{{ o.next_hint | escape }}</p></div>
+  {% include system-requirements.html %}
+  <section class="download-open"><h2>{{ o.open_title | escape }}</h2><p>{{ software_text }}</p></section>
+
   {% if download_mirror_url != '' %}<p class="download-mirror-hint"{% if download_mirror.expires_at %} data-download-mirror-expires="{{ download_mirror.expires_at | escape }}"{% endif %}>{{ mirror_hint }}</p>{% endif %}
   <aside class="content-use-note download-content-use" role="note" aria-labelledby="download-content-use-title">
     <strong id="download-content-use-title">{{ content_usage.title | escape }}</strong>
@@ -302,6 +288,17 @@
       <p>{{ download_release.summary[current_lang] | escape }}</p>
     </div>
     <a class="resource-update__link" href="{{ changelog_target | relative_url }}">{{ release_notes_label }} <span aria-hidden="true">→</span></a>
+  </aside>
+  <details class="download-security" id="download-security"><summary>{{ o.security_link | escape }}</summary>
+  <aside class="download-trust-note" role="note">
+    <span aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false">
+        <path d="M12 3.7 21 20H3L12 3.7Z"></path>
+        <path d="M12 9v5.2"></path>
+        <path d="M12 17.2h.01"></path>
+      </svg>
+    </span>
+    <div><strong>{{ download_caution_title }}</strong><p>{{ download_caution_text }}</p></div>
   </aside>
   <section class="smartscreen-guide" aria-labelledby="smartscreen-guide-title">
     <div class="smartscreen-guide__heading">
@@ -336,6 +333,7 @@
       <article><strong>{{ offline_title }}</strong><p>{{ offline_text }}</p></article>
     </div>
   </section>
+  </details>
 </section>
 
 <section class="resource-section" aria-labelledby="operation-videos">
