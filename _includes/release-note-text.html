@@ -1,0 +1,31 @@
+{%- comment -%}
+  Release prose permits named HTTPS links only. All text and attribute values
+  are escaped; raw HTML, images, scripts and other Markdown stay literal.
+{%- endcomment -%}
+{%- capture note_backslash -%}\{%- endcapture -%}
+{%- assign note_chunks = include.text | default: '' | split: '[' -%}
+{{- note_chunks[0] | escape -}}
+{%- for note_chunk in note_chunks offset: 1 -%}
+  {%- assign note_parts = note_chunk | split: '](' -%}
+  {%- assign note_label = note_parts[0] -%}
+  {%- assign note_open = note_label | append: '](' -%}
+  {%- assign note_remaining = note_chunk | remove_first: note_open -%}
+  {%- assign note_url = note_remaining | split: ')' | first -%}
+  {%- assign note_close = note_url | append: ')' -%}
+  {%- assign note_tail = note_remaining | remove_first: note_close -%}
+  {%- assign note_scheme = note_url | slice: 0, 8 -%}
+  {%- assign note_url_size = note_url | size -%}
+  {%- assign note_previous = note_chunks[forloop.index0] | slice: -1, 1 -%}
+  {%- assign note_safe = false -%}
+  {%- if note_parts.size == 2 and note_label != empty and note_scheme == 'https://' and note_url_size > 8 and note_remaining contains ')' and note_previous != '!' -%}
+    {%- assign note_safe = true -%}
+    {%- if note_url contains ' ' or note_url contains '@' or note_url contains note_backslash or note_url contains '"' or note_url contains '<' or note_url contains '>' -%}
+      {%- assign note_safe = false -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- if note_safe -%}
+    <a href="{{ note_url | escape }}" rel="noopener noreferrer">{{ note_label | escape }}</a>{{- note_tail | escape -}}
+  {%- else -%}
+    [{{- note_chunk | escape -}}
+  {%- endif -%}
+{%- endfor -%}

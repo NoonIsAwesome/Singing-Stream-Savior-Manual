@@ -1,0 +1,65 @@
+# Publication date is pending final asset verification.
+release:
+  version: "2.1.8.7"
+  date: ""
+  latest: true
+  type:
+    en: "Application and launcher update"
+    zh-TW: "主程式與啟動器更新"
+    zh-CN: "主程序与启动器更新"
+    ja: "アプリとランチャーの更新"
+    ko: "앱 및 런처 업데이트"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.7"
+  summary:
+    en: "Fixed custom batch tags, improved project information, and added electronic Pitch Correction and the Simple Player theme."
+    zh-TW: "修正批量新增標籤、改善專案資訊顯示，新增電子修音人聲效果器與 Simple Player 播放器主題。"
+    zh-CN: "修正批量新增标签、改善项目信息显示，新增电子修音人声效果器与 Simple Player 播放器主题。"
+    ja: "一括編集のカスタムタグとプロジェクト情報表示を改善し、電子的なピッチ補正と Simple Player テーマを追加しました。"
+    ko: "일괄 편집의 사용자 지정 태그와 프로젝트 정보 표시를 개선하고, 전자적인 피치 보정과 Simple Player 테마를 추가했습니다."
+  items:
+    en:
+      - "I slept well over the weekend and went to an Omoinotake concert. So happy! Can I sneak in a recommendation for my debut cover here? Never mind, go listen to my [モラトリアム Cover](https://www.youtube.com/watch?v=JNTA1emNX-g) (*/ω＼*)"
+      - "Fixed typing and custom tag creation when batch editing performers, genres, or languages from the song list's right-click menu."
+      - "Improved project-screen language, tag information, and layout, and reduced repeated project-information loading."
+      - "Added the Pitch Correction vocal effect and the Electric Vocal Profile for a T-Pain-style electronic sound in hip-hop or EDM. Includes softer presets and a customizable live switch, Ctrl+Alt+T by default."
+      - "Added Simple Player, a compact phone-player-style theme with a water-blue default. Customize color, fonts, light/dark appearance, cover visibility, and Set List height from 4 to 12 rows. Completed songs appear in an automatically scrolling sheet that closes smoothly when the next accompaniment starts."
+      - "Launcher 1.2.2.0 adds clickable links, emoji and kaomoji, version-by-version update notes, independent announcements with images, and light/dark/system appearance. After future successful updates with this launcher, restore the immediately previous version from its retained, hash-checked local backup without downloading it again."
+      - "Complete downloads and runtime updates now include version-matched ASIO helper and OBS connector source packages, license texts, and build instructions."
+      - "Fixed a memory error when removing song lists or closing or resetting projects, reducing the risk of a crash. Fixed the Windows taskbar icon missing on first startup."
+    zh-TW:
+      - "週末好好地睡了一覺，然後去看了Omoinotake演唱會，非常快樂！（可不可以在這裡偷偷推薦我的出道Cover？不管，你們去聽一下我的[モラトリアム Cover](https://www.youtube.com/watch?v=JNTA1emNX-g)啦 (*/ω＼*) ）"
+      - "修正歌曲列表右鍵批量修改演出者、曲風、語言時，新增自訂標籤的輸入與建立錯誤。"
+      - "改善專案頁面的語言、標籤與資訊排列，並減少專案資訊的重複載入。"
+      - "新增「電子修音」（Pitch Correction／Autotune）人聲效果器與「我的聲音電電的」Profile，可用於嘻哈、電音歌曲的 T-Pain 效果。另提供柔和修音預設與可自訂快捷鍵的演出開關，預設 Ctrl＋Alt＋T。"
+      - "新增類似手機播放器的 Simple Player 主題，預設水藍色，可調整顏色、字型、深淺外觀、封面顯示與 4～12 列 Set List。已唱歌單會自動捲動，下一首伴奏開始時平滑收起。"
+      - "啟動器 1.2.2.0 支援可點擊連結、emoji 與顏文字、依版本分區的更新日誌、附圖的獨立公告，以及淺色／深色／跟隨系統外觀。之後透過此啟動器成功更新，便會保留更新前一版的本機備份，可在檔案雜湊驗證後直接回復，無須重新下載。"
+      - "完整下載包與 runtime 更新包現在均附上對應版本的 ASIO Helper、OBS connector 原始碼套件、授權全文與建置說明。"
+      - "修正移除歌曲列表、關閉或重設專案時的記憶體處理錯誤，降低可能發生崩潰的風險。 修正首次啟動時 Windows 工作列圖示未顯示的問題。"
+    zh-CN:
+      - "周末好好睡了一觉，然后去看了Omoinotake演唱会，非常开心！（能不能在这里偷偷推荐我的出道Cover？不管，你们去听一下我的[モラトリアム Cover](https://www.youtube.com/watch?v=JNTA1emNX-g)啦 (*/ω＼*) ）"
+      - "修正歌曲列表右键批量修改演出者、曲风、语言时，新增自定义标签的输入与创建错误。"
+      - "改善项目页面的语言、标签与信息排列，并减少项目信息的重复加载。"
+      - "新增电子修音（Pitch Correction／Autotune）人声效果器与「我的声音电电的」Profile，可用于嘻哈、电音歌曲的 T-Pain 效果。另提供柔和修音预设与可自定义快捷键的演出开关，默认 Ctrl＋Alt＋T。"
+      - "新增类似手机播放器的 Simple Player 主题，默认水蓝色，可调整颜色、字体、深浅外观、封面显示与 4～12 行 Set List。已唱歌单会自动滚动，下一首伴奏开始时平滑收起。"
+      - "启动器 1.2.2.0 支持可点击链接、emoji 与颜文字、按版本分区的更新日志、带图片的独立公告，以及浅色／深色／跟随系统外观。之后通过此启动器成功更新，便会保留更新前一版的本地备份，可在文件哈希验证后直接恢复，无须重新下载。"
+      - "完整下载包与 runtime 更新包现在均附上对应版本的 ASIO Helper、OBS connector 源代码包、许可证全文与构建说明。"
+      - "修正移除歌曲列表、关闭或重置项目时的内存处理错误，降低可能发生崩溃的风险。 修正首次启动时 Windows 任务栏图标未显示的问题。"
+    ja:
+      - "週末はよく眠って、Omoinotake のライブに行って、とても幸せでした！ここでデビュー Cover をこっそり紹介してもいいですか？やっぱり私の[モラトリアム Cover](https://www.youtube.com/watch?v=JNTA1emNX-g)を聴いてください (*/ω＼*)"
+      - "曲一覧の右クリックメニューから歌手・演奏者、ジャンル、言語を一括編集する際、カスタムタグの入力と作成で発生する不具合を修正しました。"
+      - "プロジェクト画面の言語、タグ情報、配置を改善し、同じプロジェクト情報の繰り返し読み込みを減らしました。"
+      - "Pitch Correction ボーカルエフェクトと Electric Vocal Profile を追加しました。ヒップホップや EDM で T-Pain 風の電子的な歌声にできます。穏やかなプリセットと、変更可能な演奏中の切り替えショートカットも用意しました。初期設定は Ctrl＋Alt＋T です。"
+      - "スマートフォンのプレーヤー風テーマ Simple Player を追加しました。初期色は水色で、色、フォント、明暗、カバー表示、4～12 行の Set List を調整できます。歌唱済みの一覧は自動スクロールし、次の伴奏が始まると滑らかに閉じます。"
+      - "ランチャー 1.2.2.0 はクリックできるリンク、emoji・顔文字、バージョン別の更新履歴、画像付きの独立したお知らせ、ライト／ダーク／システム設定に合わせる外観に対応しました。今後このランチャーで更新に成功すると、更新直前のバージョンのローカルバックアップを保持し、ファイルのハッシュ確認後に再ダウンロードせず復元できます。"
+      - "完全版のダウンロードと runtime 更新パッケージに、該当バージョンの ASIO Helper・OBS connector のソース、ライセンス全文、ビルド手順を同梱しました。"
+      - "曲一覧の削除やプロジェクトを閉じる・リセットする際のメモリ管理の不具合を修正し、クラッシュのリスクを減らしました。 初回起動時に Windows のタスクバーアイコンが表示されない問題を修正しました。"
+    ko:
+      - "주말에 푹 자고 Omoinotake 콘서트에 다녀와서 정말 행복했어요! 여기서 제 데뷔 Cover를 슬쩍 추천해도 될까요? 그냥 제 [モラトリアム Cover](https://www.youtube.com/watch?v=JNTA1emNX-g)를 들어주세요 (*/ω＼*)"
+      - "곡 목록의 오른쪽 클릭 메뉴에서 가수·연주자, 장르, 언어를 일괄 편집할 때 사용자 지정 태그를 입력하거나 만드는 오류를 수정했습니다."
+      - "프로젝트 화면의 언어, 태그 정보와 배치를 개선하고, 같은 프로젝트 정보를 반복해서 읽는 작업을 줄였습니다."
+      - "Pitch Correction 보컬 효과와 Electric Vocal Profile을 추가했습니다. 힙합이나 EDM에서 T-Pain 스타일의 전자적인 보컬을 만들 수 있습니다. 부드러운 프리셋과 변경 가능한 공연 중 전환 단축키도 제공합니다. 기본값은 Ctrl＋Alt＋T입니다."
+      - "스마트폰 플레이어 스타일의 Simple Player 테마를 추가했습니다. 기본색은 하늘색이며 색상, 글꼴, 밝고 어두운 모양, 커버 표시와 4～12행의 Set List를 조절할 수 있습니다. 부른 곡 목록은 자동으로 스크롤되고 다음 반주가 시작되면 부드럽게 닫힙니다."
+      - "런처 1.2.2.0에서 클릭 가능한 링크, emoji와 이모티콘, 버전별 업데이트 내역, 이미지가 포함된 독립 공지, 라이트／다크／시스템 모드를 지원합니다. 앞으로 이 런처로 업데이트에 성공하면 업데이트 직전 버전의 로컬 백업을 보관하며, 파일 해시를 확인한 뒤 다시 다운로드하지 않고 복원할 수 있습니다."
+
+      - "전체 다운로드와 runtime 업데이트 패키지에 해당 버전의 ASIO Helper 및 OBS connector 소스 코드, 라이선스 전문과 빌드 안내를 함께 제공합니다."
+      - "곡 목록을 제거하거나 프로젝트를 닫거나 초기화할 때의 메모리 관리 오류를 수정해 충돌 위험을 줄였습니다. 처음 실행할 때 Windows 작업 표시줄 아이콘이 표시되지 않는 문제를 수정했습니다."

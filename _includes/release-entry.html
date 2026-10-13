@@ -9,8 +9,8 @@
 <article class="release-entry{% if release.latest %} release-entry--latest{% endif %}" id="{{ version_anchor }}">
   <div class="release-entry__rail">
     <span class="release-entry__node" aria-hidden="true"></span>
-    <time datetime="{{ release.date }}">{{ release.date }}</time>
-    <span>{{ localized_type }}</span>
+    {% if release.date and release.date != empty %}<time datetime="{{ release.date | escape }}">{{ release.date | escape }}</time>{% endif %}
+    <span>{{ localized_type | escape }}</span>
   </div>
   <div class="release-entry__card">
     <header class="release-entry__header">
@@ -21,10 +21,10 @@
       <span class="release-entry__count">{{ localized_items | size }}{{ include.items_label }}</span>
     </header>
     {% assign localized_emphasis = release.emphasizedItems[content_lang] | default: release.emphasizedItems.en %}
-    <p class="release-entry__summary">{% if localized_emphasis contains localized_summary %}<strong>{{ localized_summary }}</strong>{% else %}{{ localized_summary }}{% endif %}</p>
+    <p class="release-entry__summary">{% if localized_emphasis contains localized_summary %}<strong>{% include release-note-text.html text=localized_summary %}</strong>{% else %}{% include release-note-text.html text=localized_summary %}{% endif %}</p>
     <ul class="release-entry__items">
       {% for item in localized_items %}
-        <li>{% if localized_emphasis contains item %}<strong>{{ item }}</strong>{% else %}{{ item }}{% endif %}</li>
+        <li>{% if localized_emphasis contains item %}<strong>{% include release-note-text.html text=item %}</strong>{% else %}{% include release-note-text.html text=item %}{% endif %}</li>
       {% endfor %}
     </ul>
     <a class="release-entry__link" href="{{ release.release_url }}" rel="noopener">
