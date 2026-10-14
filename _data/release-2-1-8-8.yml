@@ -1,0 +1,39 @@
+# Publication display date reviewed for October 15; exact publishedAt still comes only from the future GitHub Release API.
+release:
+  version: "2.1.8.8"
+  date: "2026-10-15"
+  latest: true
+  type:
+    en: "Playback, project recovery and import hotfix"
+    zh-TW: "播放、專案恢復與匯入修正"
+    zh-CN: "播放、项目恢复与导入修正"
+    ja: "再生・プロジェクト復元・読み込みの修正"
+    ko: "재생·프로젝트 복구·가져오기 수정"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.8"
+  summary:
+    en: "Fixed automatic singing Profile transitions and YouTube playlist imports, and strengthened interrupted-session project recovery."
+    zh-TW: "修正唱歌 Profile 自動切換與 YouTube 播放清單匯入，並加強未正常關閉時的專案恢復。"
+    zh-CN: "修正唱歌 Profile 自动切换与 YouTube 播放列表导入，并加强异常退出后的项目恢复。"
+    ja: "歌唱 Profile の自動切替と YouTube プレイリストの読み込みを修正し、異常終了後のプロジェクト復元を強化しました。"
+    ko: "노래용 Profile 자동 전환과 YouTube 재생목록 가져오기를 수정하고 비정상 종료 후 프로젝트 복구를 강화했습니다."
+  items:
+    en:
+      - "When automatic Profile switching is enabled, a song without a Profile tag uses your configured singing Profile instead of keeping the previous song's tag. Your song-specific and fixed Profile choices are preserved."
+      - "Added validated last-good project backups and safer interrupted-session recovery. Known version-field format errors can be repaired into a new copy while preserving the original; newer or incomplete formats are not forcibly converted."
+      - "Dragging a YouTube playlist into a custom playlist now adds the imported songs to that playlist. When dropping into All Songs, you can also create custom playlists with the YouTube playlist names, or choose to add only to All Songs."
+    zh-TW:
+      - "開啟 Profile 自動切換時，沒有指定 Profile 的歌曲會使用你設定的唱歌 Profile，不再延續上一首的歌曲 Profile。保留各歌曲指定及手動固定的 Profile 設定。"
+      - "新增完整驗證的上次有效專案備份，並加強未正常關閉時的專案恢復。已知的版本欄位格式錯誤可另存修復副本並保留原檔；不強制轉換較新的格式，也不猜測遺失內容。"
+      - "將 YouTube 播放清單拖入自訂歌單時，匯入的歌曲會加入指定歌單。拖入「全部歌曲」時，可選擇以 YouTube 播放清單名稱建立自訂歌單，或只加入「全部歌曲」。"
+    zh-CN:
+      - "启用 Profile 自动切换时，没有指定 Profile 的歌曲会使用你设置的唱歌 Profile，不再沿用上一首的歌曲 Profile。保留每首歌曲指定及手动固定的 Profile 设置。"
+      - "新增经过完整验证的上次有效项目备份，并加强异常退出后的项目恢复。已知的版本字段格式错误可另存修复副本并保留原文件；不强制转换较新的格式，也不猜测丢失内容。"
+      - "将 YouTube 播放列表拖入自定义歌单时，导入的歌曲会加入指定歌单。拖入「全部歌曲」时，可选择以 YouTube 播放列表名称创建自定义歌单，或只加入「全部歌曲」。"
+    ja:
+      - "Profile の自動切替が有効な場合、Profile が指定されていない曲には設定済みの歌唱 Profile を使用し、前の曲の指定を引き継がなくなりました。曲ごとの指定と手動で固定した Profile は維持されます。"
+      - "検証済みの直前の正常なプロジェクトのバックアップを追加し、異常終了後の復元を強化しました。既知のバージョン項目の形式エラーは元ファイルを保持して新しいコピーに修復できます。新しい形式を強制変換したり、失われた内容を推測して補ったりはしません。"
+      - "YouTube プレイリストをカスタムプレイリストにドロップすると、読み込んだ曲が指定先に追加されます。「すべての曲」にドロップした場合は、YouTube のプレイリスト名でカスタムプレイリストを作成するか、「すべての曲」だけに追加するかを選べます。"
+    ko:
+      - "Profile 자동 전환이 켜져 있을 때 Profile이 지정되지 않은 곡은 설정된 노래용 Profile을 사용하며 이전 곡의 지정을 이어받지 않습니다. 곡별 지정과 수동으로 고정한 Profile은 유지됩니다."
+      - "검증된 마지막 정상 프로젝트 백업을 추가하고 비정상 종료 후 복구를 강화했습니다. 알려진 버전 필드 형식 오류는 원본을 보존하면서 새 사본으로 복구할 수 있습니다. 더 새로운 형식을 강제로 변환하거나 손실된 내용을 추측해서 채우지 않습니다."
+      - "YouTube 재생목록을 사용자 지정 재생목록에 끌어 놓으면 가져온 곡이 지정한 목록에 추가됩니다. 「모든 노래」에 놓을 때는 YouTube 재생목록 이름으로 사용자 지정 목록을 만들거나 「모든 노래」에만 추가하도록 선택할 수 있습니다."

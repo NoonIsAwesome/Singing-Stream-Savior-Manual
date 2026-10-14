@@ -2,7 +2,7 @@
 release:
   version: "2.1.8.7"
   date: "2026-10-13"
-  latest: true
+  latest: false
   type:
     en: "Application and launcher update"
     zh-TW: "主程式與啟動器更新"
