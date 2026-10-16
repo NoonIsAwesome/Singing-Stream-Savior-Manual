@@ -1,0 +1,48 @@
+release:
+  version: "2.1.8.9"
+  date: "2026-10-16"
+  latest: true
+  type:
+    en: "Vertical theme and OBS song list improvements"
+    zh-TW: "直排主題與 OBS 歌單改善"
+    zh-CN: "竖排主题与 OBS 歌单改进"
+    ja: "縦書きテーマとOBS曲リストの改善"
+    ko: "세로 테마와 OBS 곡 목록 개선"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.9"
+  summary:
+    en: "New Vertical Notes theme for compact vertical song displays."
+    zh-TW: "新增適合縱向畫面的 Vertical Notes 歌單主題。"
+    zh-CN: "新增适合纵向画面的 Vertical Notes 歌单主题。"
+    ja: "コンパクトな縦書き表示向けのVertical Notesテーマを追加しました。"
+    ko: "작은 세로 화면에 맞는 Vertical Notes 테마를 추가했습니다."
+  items:
+    en:
+      - "Current titles stay in one vertical track and scroll only when needed. Title and artist reading space grows with theme height, up to1080px. History and upcoming songs fill measured columns; history uses up to1–8 columns, collapses unused space and reverses column order with Left/Right layouts."
+      - "Adjust section fonts or restore the theme font, numbering, headings and history visibility. Background color and opacity are independent of black/white text; background starts fully transparent."
+      - "Simple Player opens Set List after a manual stop and includes every played song, including repeated titles and manually stopped songs."
+      - "An OBS song list already open when you start a newer app automatically refreshes to show updated content. Height adjustments keep the Vertical Notes preview steady."
+      - "Fixes long backup paths and preserves source aliases and foreign-project data when saving compatible copies."
+    zh-TW:
+      - "目前歌名固定單一直欄，過長才捲到最後再循環；歌名與演出者顯示範圍隨主題高度增加，最高1080px。已唱與待唱依文字高度排欄；已唱最多1–8欄、空欄收合，切換靠左／靠右時已唱欄位順序也隨之反轉。"
+      - "各區可選字型或還原主題預設、調整編號及標題／已唱顯示；底色與透明度獨立設定，預設全透明，文字可切黑／白。"
+      - "修正 Simple Player 手動停止後未展開 Set List，以及遺漏手動停止歌曲的問題；重複演唱的同名歌曲也會完整保留。"
+      - "先開OBS再開新版程式時，歌單會自動載入新版顯示內容，並改善調整主題高度時的預覽抖動。"
+      - "修正長路徑備份，並在另存相容副本時保留來源別名與外來專案資料。"
+    zh-CN:
+      - "当前歌名固定单一直栏，过长才滚动到末尾再循环；歌名与演出者显示范围随主题高度增加，最高1080px。已唱与待唱按文字高度排栏；已唱最多1–8栏、空栏收合，切换靠左／靠右时已唱栏位顺序也随之反转。"
+      - "各区域可选字体或恢复主题默认、调整编号及标题／已唱显示；背景色与透明度独立设置，默认全透明，文字可切换黑／白。"
+      - "修复 Simple Player 手动停止后未展开 Set List，以及遗漏手动停止歌曲的问题；重复演唱的同名歌曲也会完整保留。"
+      - "先打开OBS再打开新版程序时，歌单会自动加载新版显示内容，并改善调整主题高度时的预览抖动。"
+      - "修复长路径备份，并在另存兼容副本时保留来源别名与外来项目数据。"
+    ja:
+      - "現在の曲名は縦書き1列を保ち、長い場合だけ末尾までスクロールして繰り返します。曲名と歌手の表示範囲は最大1080pxのテーマ高さに応じて広がります。履歴と待機曲は文字の高さで列に配置し、履歴は最大1–8列、未使用列を折りたたみ、左右の配置に応じて列の順序も反転します。"
+      - "領域別フォントとテーマ既定値、番号、見出しと履歴の表示を設定できます。背景色と不透明度は黒／白の文字と独立し、背景は初期値で完全透明です。"
+      - "Simple Playerで手動停止後にSet Listが開かない問題と、停止した曲が履歴から欠ける問題を修正。同名の再演も保持します。"
+      - "OBSを先に開いてから新しいアプリを起動した場合、曲リストは新しい表示内容に自動更新されます。テーマの高さ変更時のプレビューの揺れも改善しました。"
+      - "長いバックアップパスを修正し、互換コピーの保存時にソース別名と外部プロジェクトのデータを保持します。"
+    ko:
+      - "현재 곡명은 세로쓰기1열을 유지하고 긴 경우에만 끝까지 스크롤한 후 반복합니다. 곡명과 가수 표시 영역은 최대1080px의 테마 높이에 따라 늘어납니다. 기록과 대기 곡은 글자 높이로 열을 배치하며 기록은 최대1–8열, 빈 열은 접고 좌우 배치에 따라 열 순서도 반전합니다."
+      - "영역별 글꼴 및 테마 기본값,번호,제목과 기록 표시를 설정합니다. 배경색과 불투명도는 검정／흰색 글자와 독립적이며 기본 배경은 완전 투명입니다."
+      - "Simple Player에서 수동 정지 후 Set List가 열리지 않거나 정지한 곡이 누락되는 문제를 수정했습니다. 같은 제목의 반복 공연도 보존합니다."
+      - "OBS를 먼저 열고 새 앱을 시작하면 곡 목록이 새 표시 내용으로 자동 갱신됩니다. 테마 높이 변경 시 미리보기 흔들림도 개선했습니다."
+      - "긴 백업 경로를 수정하고 호환 사본 저장 시 소스 별칭과 외부 프로젝트 데이터를 보존합니다."

@@ -2,7 +2,7 @@
 release:
   version: "2.1.8.8"
   date: "2026-10-15"
-  latest: true
+  latest: false
   type:
     en: "Playback, project recovery and import hotfix"
     zh-TW: "播放、專案恢復與匯入修正"
