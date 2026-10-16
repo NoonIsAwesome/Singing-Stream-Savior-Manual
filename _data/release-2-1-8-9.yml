@@ -1,7 +1,7 @@
 release:
   version: "2.1.8.9"
   date: "2026-10-16"
-  latest: true
+  latest: false
   type:
     en: "Vertical theme and OBS song list improvements"
     zh-TW: "直排主題與 OBS 歌單改善"

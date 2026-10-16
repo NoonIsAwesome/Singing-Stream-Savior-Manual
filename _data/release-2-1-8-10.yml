@@ -1,0 +1,28 @@
+release:
+  version: "2.1.8.10"
+  date: "2026-10-17"
+  latest: true
+  type:
+    en: "Performance improvements"
+    zh-TW: "效能改善"
+    zh-CN: "性能改进"
+    ja: "パフォーマンス改善"
+    ko: "성능 개선"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.10"
+  summary:
+    en: "Uses the CPU more efficiently for dynamic lyrics, reducing the load on your computer."
+    zh-TW: "改善動態歌詞的 CPU 使用率，減少電腦效能負擔。"
+    zh-CN: "改善动态歌词的 CPU 使用率，减少电脑性能负担。"
+    ja: "動的な歌詞表示の CPU 使用を効率化し、パソコンの負荷を減らします。"
+    ko: "동적 가사의 CPU 사용률을 개선해 컴퓨터의 부담을 줄입니다."
+  items:
+    en:
+      - "Uses the CPU more efficiently for dynamic lyrics, reducing the load on your computer."
+    zh-TW:
+      - "改善動態歌詞的 CPU 使用率，減少電腦效能負擔。"
+    zh-CN:
+      - "改善动态歌词的 CPU 使用率，减少电脑性能负担。"
+    ja:
+      - "動的な歌詞表示の CPU 使用を効率化し、パソコンの負荷を減らします。"
+    ko:
+      - "동적 가사의 CPU 사용률을 개선해 컴퓨터의 부담을 줄입니다."
