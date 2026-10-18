@@ -1,3 +1,4 @@
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign tools_data = site.data.other_tools %}
 {% assign tools_ui = tools_data.ui[current_lang] | default: tools_data.ui.en %}
 <header class="tools-heading">

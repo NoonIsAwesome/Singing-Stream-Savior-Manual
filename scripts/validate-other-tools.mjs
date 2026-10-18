@@ -7,6 +7,7 @@ export const toolData = JSON.parse(readFileSync(new URL('../_data/other_tools.js
 export const toolLocales = ['zh-TW', 'zh-CN', 'en', 'ja', 'ko'];
 const route = locale => `${locale === 'zh-TW' ? '' : locale + '/'}other-tools.html`;
 const attribute = (tag, name) => tag.match(new RegExp(`\\s${name}=["']([^"']*)["']`, 'i'))?.[1] || '';
+const plainText = html => html.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").trim();
 
 // 驗證實際產出的頁面，防止誤接手冊或歌回救星下載點。 / Validate rendered routes and keep tool downloads separate from the S3S guide.
 export function validateOtherTools(root, base = '/') {
@@ -19,7 +20,9 @@ export function validateOtherTools(root, base = '/') {
     const links = tags.filter(tag => /^<a\b/i.test(tag));
     if (attribute(tags.find(tag => /^<html\b/i.test(tag)) || '', 'lang') !== locale)
       errors.push(`${page}: incorrect language`);
-    if ((html.match(/<h1\b/g) || []).length !== 1 || !html.includes(toolData.ui[locale].title))
+    const titles = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)];
+    // 導覽文字不能代替頁面標題的翻譯。 / A translated navigation label must not hide an untranslated page heading.
+    if (titles.length !== 1 || plainText(titles[0][1]) !== toolData.ui[locale].title)
       errors.push(`${page}: missing localized title`);
     if (/class=["'][^"']*(?:guide-sidebar|reader-toolbar|chapter-navigation)/.test(html))
       errors.push(`${page}: tools must not appear inside the software manual`);

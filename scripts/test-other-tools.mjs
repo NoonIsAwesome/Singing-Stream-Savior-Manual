@@ -50,6 +50,12 @@ function withFixture(change, check) {
   } finally { rmSync(root, { recursive:true, force:true }); }
 }
 test('rendered tools validator accepts all localized routes', () => withFixture(html => html, errors => assert.deepEqual(errors, [])));
+test('localized navigation cannot hide an English fallback page heading', () => withFixture((html, locale) => html
+  .replace(/<h1>[\s\S]*?<\/h1>/, `<h1>${toolData.ui.en.title}</h1>`)
+  .replace('</html>', `<nav><span>${toolData.ui[locale].title}</span></nav></html>`), errors => {
+    assert.equal(errors.length, 4);
+    assert.ok(errors.every(error => error.endsWith(': missing localized title')));
+  }));
 test('rendered tools validator detects accidental guide navigation', () => withFixture(html => html.replace('aria-current="page" href="/', 'aria-current="page" href="/guide/'), errors => assert.equal(errors.length, 5)));
 test('rendered tools validator detects stale or absent download integrity details', () => withFixture(html => html.replace(toolData.tools[0].sha256, 'stale'), errors => assert.equal(errors.length, 5)));
 test('rendered tools validator detects missing source and translation routes', () => withFixture(html => html.replace(`href="${toolData.tools[0].repository}"`, 'href="#"').replace('data-lang="ja"', 'data-lang="invalid"'), errors => assert.equal(errors.length, 10)));
