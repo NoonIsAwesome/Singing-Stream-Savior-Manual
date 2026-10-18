@@ -4,8 +4,8 @@
       "title": "其他工具",
       "lead": "Noon 製作的實用小工具。下載使用，也歡迎查看原始碼。",
       "download": "下載 Windows 版",
-      "download_source": "GitHub Release · EXE",
-      "mirror": "備用下載點",
+      "download_source": "Cloudflare R2 · EXE",
+      "mirror": "GitHub 備用下載",
       "source": "查看開源專案",
       "platform": "Windows 64 位元",
       "features": "可以做什麼",
@@ -15,15 +15,16 @@
       "details": "下載檔案資訊與 SHA-256",
       "filename": "檔名",
       "size": "大小",
-      "screenshot": "FanArtDownloader 淺色介面，包含標籤搜尋、作者媒體補抓與下載紀錄。",
-      "screenshot_caption": "介面預覽：繁體中文淺色模式，標籤為示例。"
+      "screenshot": "FanArtDownloader 淺色模式的下載設定分頁，包含標籤搜尋、作者媒體補抓與下載位置。",
+      "screenshot_caption": "介面預覽：繁體中文淺色模式，標籤為示例。",
+      "github_download_source": "GitHub Release · EXE"
     },
     "zh-CN": {
       "title": "其他工具",
       "lead": "Noon 制作的实用小工具。欢迎下载使用，也可以查看源代码。",
       "download": "下载 Windows 版",
-      "download_source": "GitHub Release · EXE",
-      "mirror": "备用下载点",
+      "download_source": "Cloudflare R2 · EXE",
+      "mirror": "GitHub 备用下载",
       "source": "查看开源项目",
       "platform": "Windows 64 位",
       "features": "可以做什么",
@@ -33,15 +34,16 @@
       "details": "下载文件信息与 SHA-256",
       "filename": "文件名",
       "size": "大小",
-      "screenshot": "FanArtDownloader 浅色界面，包含标签搜索、作者媒体补抓与下载记录。",
-      "screenshot_caption": "界面预览：繁体中文浅色模式，标签为示例。"
+      "screenshot": "FanArtDownloader 浅色模式的下载设置页，包含标签搜索、作者媒体补抓和下载位置。",
+      "screenshot_caption": "界面预览：繁体中文浅色模式，标签为示例。",
+      "github_download_source": "GitHub Release · EXE"
     },
     "en": {
       "title": "Other tools",
       "lead": "Useful tools made by Noon. Download an app or explore its source code.",
       "download": "Download for Windows",
-      "download_source": "GitHub Release · EXE",
-      "mirror": "Backup download",
+      "download_source": "Cloudflare R2 · EXE",
+      "mirror": "Backup download on GitHub",
       "source": "View source on GitHub",
       "platform": "Windows 64-bit",
       "features": "What it does",
@@ -51,15 +53,16 @@
       "details": "Download details and SHA-256",
       "filename": "File",
       "size": "Size",
-      "screenshot": "FanArtDownloader in light mode with tag search, author media backfill and download history.",
-      "screenshot_caption": "Interface preview: Traditional Chinese in light mode, with example tags."
+      "screenshot": "FanArtDownloader’s Download settings tab in light mode, with tag search, author media backfill and the download folder.",
+      "screenshot_caption": "Interface preview: Traditional Chinese in light mode, with example tags.",
+      "github_download_source": "GitHub Release · EXE"
     },
     "ja": {
       "title": "その他のツール",
       "lead": "Noon が制作した便利なツールです。ダウンロードとソースコードを公開しています。",
       "download": "Windows 版をダウンロード",
-      "download_source": "GitHub Release · EXE",
-      "mirror": "予備のダウンロード先",
+      "download_source": "Cloudflare R2 · EXE",
+      "mirror": "GitHub から予備ダウンロード",
       "source": "GitHub でソースを見る",
       "platform": "Windows 64 ビット",
       "features": "できること",
@@ -69,15 +72,16 @@
       "details": "ファイル情報と SHA-256",
       "filename": "ファイル名",
       "size": "サイズ",
-      "screenshot": "タグ検索、作者のメディア補完、ダウンロード履歴を表示した FanArtDownloader のライト画面。",
-      "screenshot_caption": "画面プレビュー：繁体字中国語・ライトモード。タグは入力例です。"
+      "screenshot": "タグ検索、作者メディアの補完、保存先を設定する FanArtDownloader のライトモードのダウンロード設定タブ。",
+      "screenshot_caption": "画面プレビュー：繁体字中国語・ライトモード。タグは入力例です。",
+      "github_download_source": "GitHub Release · EXE"
     },
     "ko": {
       "title": "다른 도구",
       "lead": "Noon이 만든 유용한 도구입니다. 앱을 다운로드하거나 소스 코드를 살펴보세요.",
       "download": "Windows 버전 다운로드",
-      "download_source": "GitHub Release · EXE",
-      "mirror": "보조 다운로드",
+      "download_source": "Cloudflare R2 · EXE",
+      "mirror": "GitHub 보조 다운로드",
       "source": "GitHub 소스 코드 보기",
       "platform": "Windows 64비트",
       "features": "주요 기능",
@@ -87,8 +91,9 @@
       "details": "다운로드 파일 정보 및 SHA-256",
       "filename": "파일명",
       "size": "크기",
-      "screenshot": "태그 검색, 작성자 미디어 보완 수집, 다운로드 기록을 표시한 FanArtDownloader의 밝은 화면.",
-      "screenshot_caption": "화면 미리보기: 번체 중국어 및 밝은 모드. 태그는 입력 예시입니다."
+      "screenshot": "태그 검색, 작성자 미디어 보완 수집과 저장 폴더를 설정하는 FanArtDownloader 라이트 모드의 다운로드 설정 탭.",
+      "screenshot_caption": "화면 미리보기: 번체 중국어 및 밝은 모드. 태그는 입력 예시입니다.",
+      "github_download_source": "GitHub Release · EXE"
     }
   },
   "tools": [
@@ -98,9 +103,9 @@
       "version": "3.0.0.0",
       "repository": "https://github.com/NoonIsAwesome/XFanArtDownloader",
       "filename": "XFanArtDownloader.exe",
-      "bytes": 62260336,
-      "sha256": "d949b99011391bc0dafa2b87430c3dbb731d7a988fed8fab0d1064477c215317",
-      "mirror_url": "",
+      "bytes": 62287569,
+      "sha256": "4381989fb1ccb79d9f66a82e1e60e3561d41dc9a7a2e19aa58a4ee7cbe5fc6d3",
+      "mirror_url": "https://github.com/NoonIsAwesome/XFanArtDownloader/releases/download/v3.0.0.0/XFanArtDownloader.exe",
       "text": {
         "zh-TW": {
           "summary": "把 X 上的 FanArt 圖片與影片，依指定標籤收集到電腦。",
@@ -178,7 +183,8 @@
           "limits": "gallery-dl로 X에서 접근 가능한 콘텐츠를 수집합니다. X가 반환하지 않거나 삭제된 작품, 계정에 보기 권한이 없는 게시물은 모두 수집된다고 보장할 수 없습니다. 창작자의 권리와 플랫폼 규칙을 존중해 주세요."
         }
       },
-      "screenshot": "/assets/images/other-tools-fanart-3.0.png"
+      "screenshot": "/assets/images/other-tools-fanart-3.0.png",
+      "download_url": "https://downloads.noonisawesome.dev/fanart-downloader/3.0.0.0/XFanArtDownloader.exe"
     }
   ]
 }

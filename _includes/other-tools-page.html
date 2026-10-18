@@ -9,7 +9,10 @@
 {% comment %}版本、檔案與連結由單一資料檔提供。 / Keep release metadata in one data file for all languages.{% endcomment %}
 {% for tool in tools_data.tools %}
   {% assign tool_text = tool.text[current_lang] | default: tool.text.en %}
-  {% capture tool_download %}{{ tool.repository }}/releases/download/v{{ tool.version }}/{{ tool.filename }}{% endcapture %}
+  {% capture tool_release_download %}{{ tool.repository }}/releases/download/v{{ tool.version }}/{{ tool.filename }}{% endcapture %}
+  {% assign tool_download = tool.download_url | default: tool_release_download %}
+  {% assign tool_download_source = tools_ui.github_download_source %}
+  {% if tool.download_url and tool.download_url != empty %}{% assign tool_download_source = tools_ui.download_source %}{% endif %}
   <section class="tool-entry" id="{{ tool.id | escape }}" aria-labelledby="{{ tool.id | escape }}-title">
     <div class="tool-intro">
       <div class="tool-title">
@@ -25,7 +28,7 @@
         <a class="tool-source" href="{{ tool.repository | escape }}" rel="noopener">{{ tools_ui.source | escape }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5H5v14h14v-3M13 5h6v6M19 5l-9 9"/></svg></a>
         {% if tool.mirror_url and tool.mirror_url != empty %}<a class="tool-source" href="{{ tool.mirror_url | escape }}" data-tool-download="{{ tool.id | escape }}" rel="noopener">{{ tools_ui.mirror | escape }}</a>{% endif %}
       </div>
-      <p class="tool-download-source">{{ tools_ui.download_source | escape }} · {{ tool.bytes | divided_by: 1048576.0 | round: 1 }} MiB</p>
+      <p class="tool-download-source">{{ tool_download_source | escape }} · {{ tool.bytes | divided_by: 1048576.0 | round: 1 }} MiB</p>
     </div>
 
     {% if tool.screenshot %}
