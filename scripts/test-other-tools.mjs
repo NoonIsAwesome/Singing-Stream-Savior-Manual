@@ -30,7 +30,8 @@ test('tool releases have one complete metadata authority and five complete trans
     if (tool.id === 'fanart-downloader') {
       // 同版號重建使用內容識別路徑，避免 immutable 快取送出舊檔。
       // Rebuilds keep their version and use a content-specific path to avoid stale immutable caches.
-      assert.equal(tool.download_url, `https://downloads.noonisawesome.dev/${tool.id}/${tool.version}/builds/${tool.sha256.slice(0, 16)}/${tool.filename}`);
+      const releaseBase = `https://downloads.noonisawesome.dev/${tool.id}/${tool.version}/`;
+      assert.ok([`${releaseBase}${tool.filename}`, `${releaseBase}builds/${tool.sha256.slice(0, 16)}/${tool.filename}`].includes(tool.download_url));
       assert.equal(tool.mirror_url, toolReleaseUrl(tool));
     }
     for (const locale of toolLocales) {

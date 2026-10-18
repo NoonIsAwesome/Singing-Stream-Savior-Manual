@@ -100,18 +100,18 @@
     {
       "id": "fanart-downloader",
       "name": "FanArtDownloader",
-      "version": "3.0.0.0",
+      "version": "3.0.0.1",
       "repository": "https://github.com/NoonIsAwesome/XFanArtDownloader",
       "filename": "XFanArtDownloader.exe",
-      "bytes": 62289835,
-      "sha256": "0e20c39a0a97946ded4a118932b402be41c76ac87f8fda21bd74cb0918ec9d65",
-      "mirror_url": "https://github.com/NoonIsAwesome/XFanArtDownloader/releases/download/v3.0.0.0/XFanArtDownloader.exe",
+      "bytes": 62297759,
+      "sha256": "5d4598dfc803aeed294d4e801120fd1e175e814875e40e6504025e4f54478413",
+      "mirror_url": "https://github.com/NoonIsAwesome/XFanArtDownloader/releases/download/v3.0.0.1/XFanArtDownloader.exe",
       "text": {
         "zh-TW": {
           "summary": "把 X 上的 FanArt 圖片與影片，依指定標籤收集到電腦。",
           "features": [
             "一次搜尋多個完整標籤，並從已發現作者的媒體頁補抓相同標籤的作品。",
-            "貼上貼文網址，下載符合目標標籤的作品；也可補抓同作者在該討論串的媒體留言。",
+            "貼上貼文網址，下載符合目標標籤的作品；也可補抓同作者在該討論串的媒體留言。 同作者留言補抓預設關閉，需要時可開啟（會多花一些時間載入）。",
             "以 SQLite 記錄下載進度、避免重複下載；支援中斷續抓、紀錄篩選與選取項目重新下載。"
           ],
           "steps": [
@@ -126,7 +126,7 @@
           "summary": "按指定标签，将 X 上的 FanArt 图片与视频收集到电脑。",
           "features": [
             "一次搜索多个完整标签，并从已发现作者的媒体页补抓相同标签的作品。",
-            "粘贴帖子链接，下载符合目标标签的作品；还可补抓同一作者在该讨论串的媒体回复。",
+            "粘贴帖子链接，下载符合目标标签的作品；还可补抓同一作者在该讨论串的媒体回复。 同一作者回复补抓默认关闭，需要时可开启（会多花一些时间加载）。",
             "使用 SQLite 记录下载进度、避免重复下载；支持中断续抓、记录筛选和选中项目重新下载。"
           ],
           "steps": [
@@ -141,7 +141,7 @@
           "summary": "Collect FanArt images and videos from X on your computer using the tags you choose.",
           "features": [
             "Search multiple exact tags and backfill matching works from discovered authors’ media pages.",
-            "Paste post URLs to download works matching your target tags. Also collect media replies by the same author in those threads.",
+            "Paste post URLs to download works matching your target tags. Also collect media replies by the same author in those threads. Same-author reply backfill is off by default; enable it when needed (takes extra time to load).",
             "Keep progress in SQLite, avoid duplicates, resume unfinished sources, filter history and download selected items again."
           ],
           "steps": [
@@ -156,7 +156,7 @@
           "summary": "指定したタグを使って、X の FanArt 画像・動画をパソコンに収集します。",
           "features": [
             "複数の完全一致タグを検索し、見つかった作者のメディアページから同じタグの作品を補完します。",
-            "投稿 URL を貼り付けて、指定タグに一致する作品をダウンロード。同じスレッド内にある同一作者のメディア付き返信も収集できます。",
+            "投稿 URL を貼り付けて、指定タグに一致する作品をダウンロード。同じスレッド内にある同一作者のメディア付き返信も収集できます。 同一作者の返信の追加収集は初期設定でオフです。必要な場合に有効にできます（読み込みに時間がかかります）。",
             "SQLite で進捗を記録し、重複を防止。中断した収集の再開、履歴の絞り込み、選択した項目の再ダウンロードに対応します。"
           ],
           "steps": [
@@ -171,7 +171,7 @@
           "summary": "지정한 태그로 X의 FanArt 이미지와 동영상을 컴퓨터에 모읍니다.",
           "features": [
             "여러 태그를 정확히 일치하는 방식으로 검색하고, 발견한 작성자의 미디어 페이지에서 같은 태그의 작품을 보완 수집합니다.",
-            "게시물 URL을 붙여 넣어 대상 태그와 일치하는 작품을 다운로드합니다. 같은 스레드에 있는 동일 작성자의 미디어 답글도 수집할 수 있습니다.",
+            "게시물 URL을 붙여 넣어 대상 태그와 일치하는 작품을 다운로드합니다. 같은 스레드에 있는 동일 작성자의 미디어 답글도 수집할 수 있습니다. 동일 작성자 답글 추가 수집은 기본적으로 꺼져 있습니다. 필요할 때 켤 수 있습니다 (불러오는 데 시간이 더 걸립니다).",
             "SQLite로 진행 상황을 기록하고 중복을 방지합니다. 중단한 수집 재개, 기록 필터, 선택 항목 다시 다운로드를 지원합니다."
           ],
           "steps": [
@@ -184,7 +184,7 @@
         }
       },
       "screenshot": "/assets/images/other-tools-fanart-3.0.png",
-      "download_url": "https://downloads.noonisawesome.dev/fanart-downloader/3.0.0.0/builds/0e20c39a0a97946d/XFanArtDownloader.exe"
+      "download_url": "https://downloads.noonisawesome.dev/fanart-downloader/3.0.0.1/XFanArtDownloader.exe"
     }
   ]
 }
