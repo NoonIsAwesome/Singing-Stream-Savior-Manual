@@ -103,8 +103,8 @@
       "version": "3.0.0.0",
       "repository": "https://github.com/NoonIsAwesome/XFanArtDownloader",
       "filename": "XFanArtDownloader.exe",
-      "bytes": 62289802,
-      "sha256": "423cc567f1f2076261684b58b52b590667bee5a64bea01fc0612f7beb88e7083",
+      "bytes": 62289835,
+      "sha256": "0e20c39a0a97946ded4a118932b402be41c76ac87f8fda21bd74cb0918ec9d65",
       "mirror_url": "https://github.com/NoonIsAwesome/XFanArtDownloader/releases/download/v3.0.0.0/XFanArtDownloader.exe",
       "text": {
         "zh-TW": {
@@ -184,7 +184,7 @@
         }
       },
       "screenshot": "/assets/images/other-tools-fanart-3.0.png",
-      "download_url": "https://downloads.noonisawesome.dev/fanart-downloader/3.0.0.0/builds/423cc567f1f20762/XFanArtDownloader.exe"
+      "download_url": "https://downloads.noonisawesome.dev/fanart-downloader/3.0.0.0/builds/0e20c39a0a97946d/XFanArtDownloader.exe"
     }
   ]
 }
