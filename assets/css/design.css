@@ -1605,3 +1605,14 @@ html[data-theme="dark"] .hero-visual figcaption.hero-film-caption {
 .download-content-use { margin:18px 0 24px }
 
 .feature-audience { max-width:70ch; line-height:1.85 }
+
+/* 四個導覽入口在較窄視窗換行，保留下載與語言控制。 / Wrap the expanded navigation without hiding download or language controls. */
+@media (max-width:1100px) {
+  .site-header .nav { flex-wrap:wrap; padding-block:15px; row-gap:12px }
+  .site-header .nav-links { order:3; width:100%; justify-content:center; flex-wrap:wrap; gap:4px 24px }
+  .site-header .nav-links a { display:inline-flex; align-items:center; min-height:36px }
+  .site-header .nav-actions { margin-left:auto }
+}
+@media (max-width:580px) {
+  .site-header .nav-links { column-gap:16px }
+}

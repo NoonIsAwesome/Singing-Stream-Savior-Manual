@@ -1,7 +1,7 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign t = site.data.i18n[current_lang] %}
 {% assign section = page.translation_key | default: 'home' %}
-{% assign standalone_sections = "resources,changelog,about,support,advanced-streaming,audio-routing,profiles,open-source,privacy" | split: "," %}
+{% assign standalone_sections = "resources,changelog,about,support,advanced-streaming,audio-routing,profiles,open-source,privacy,other-tools" | split: "," %}
 {% if current_lang == 'zh-TW' %}
   {% assign language_home = '/' %}
 {% else %}
@@ -47,11 +47,13 @@
   {% assign resources_target = '/resources.html' %}
   {% assign about_target = '/about.html' %}
   {% assign support_target = '/support.html' %}
+  {% assign other_tools_target = '/other-tools.html' %}
 {% else %}
   {% capture guide_target %}/{{ current_lang }}/guide.html#getting-started{% endcapture %}
   {% capture resources_target %}/{{ current_lang }}/resources.html{% endcapture %}
   {% capture about_target %}/{{ current_lang }}/about.html{% endcapture %}
   {% capture support_target %}/{{ current_lang }}/support.html{% endcapture %}
+  {% capture other_tools_target %}/{{ current_lang }}/other-tools.html{% endcapture %}
 {% endif %}
 {% include download-mirror-config.html %}
 <!doctype html>
@@ -69,6 +71,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/lightbox.css' | relative_url }}?v={{ site.github.build_revision | default: 'redesign-20260908' }}">
     <link rel="stylesheet" href="{{ '/assets/css/privacy.css' | relative_url }}?v={{ site.github.build_revision | default: 'privacy-20260921' }}">
     <link rel="stylesheet" href="{{ '/assets/css/onboarding.css' | relative_url }}?v={{ site.github.build_revision | default: 'onboarding-refinement' }}">
+    {% if section == 'other-tools' %}<link rel="stylesheet" href="{{ '/assets/css/other-tools.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
     <link rel="alternate" hreflang="zh-TW" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_tw }}">
     <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}{{ alternate_zh_cn }}">
     <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}{{ alternate_en }}">
@@ -82,7 +85,7 @@
     {% seo %}
     {% endif %}
   </head>
-  <body class="{% if is_home %}home-page{% elsif section == 'about' %}inner-page author-page{% else %}inner-page docs-page{% endif %}"
+  <body class="{% if is_home %}home-page{% elsif section == 'about' %}inner-page author-page{% elsif section == 'other-tools' %}inner-page tools-page{% else %}inner-page docs-page{% endif %}"
     data-analytics-provider="{{ site.data.analytics.provider | escape }}" data-analytics-host="{{ site.data.analytics.production_host | escape }}"
     data-analytics-base-path="{{ site.baseurl | append: '/' | escape }}" data-counter-enabled="{{ site.data.analytics.enabled | jsonify | escape }}"
     data-counter-workspace="{{ site.data.analytics.workspace | strip | escape }}" data-counter-name="{{ site.data.analytics.counter | strip | escape }}"
@@ -94,6 +97,8 @@
     {% include site-header.html %}
     {% if is_home %}
       {{ content }}
+    {% elsif section == 'other-tools' %}
+      <main id="guide-content" tabindex="-1" class="tools-main wrap">{{ content }}</main>
     {% elsif section == 'about' %}
       <main id="guide-content" tabindex="-1" class="author-main"><article class="manual-article">{{ content }}</article></main>
     {% elsif section == 'privacy' %}

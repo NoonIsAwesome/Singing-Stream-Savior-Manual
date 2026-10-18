@@ -73,7 +73,7 @@ test("duplicate initialization or same event never counts twice, later clicks st
   const b=browser();b.run();assert.equal(b.listeners.click.length,1);
   const e=b.event();b.emit(e);b.emit(e);b.emit(b.event());await tick();assert.equal(b.calls.length,2);
 });
-for(const bad of ["/Singing-Stream-Savior-Manual/resources.html",href.replace(".zip",".exe"),href.replace(".zip","-LGPL-Relink-Kit.zip"),href.replace("NoonIsAwesome","other"),href.replace("github.com","github.com.evil.example"),"https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/latest",href.replace("Singing.Stream.Savior.2.1.5.4.zip","Runtime.zip"),"javascript:alert(1)",href.replace("https:","http:")]) test(`not a package: ${bad}`,async()=>{
+for(const bad of ["/Singing-Stream-Savior-Manual/resources.html","https://github.com/NoonIsAwesome/XFanArtDownloader/releases/download/v3.0.0.0/XFanArtDownloader.exe",href.replace(".zip",".exe"),href.replace(".zip","-LGPL-Relink-Kit.zip"),href.replace("NoonIsAwesome","other"),href.replace("github.com","github.com.evil.example"),"https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/latest",href.replace("Singing.Stream.Savior.2.1.5.4.zip","Runtime.zip"),"javascript:alert(1)",href.replace("https:","http:")]) test(`not a package: ${bad}`,async()=>{
   const b=browser();b.emit(b.event({target:{closest:()=>({href:bad,getAttribute:()=>null})}}));await tick();assert.equal(b.calls.length,0);
 });
 test("future releases and latest/download package URLs work",async()=>{

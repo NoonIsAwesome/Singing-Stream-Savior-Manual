@@ -1,0 +1,60 @@
+{% assign tools_data = site.data.other_tools %}
+{% assign tools_ui = tools_data.ui[current_lang] | default: tools_data.ui.en %}
+<header class="tools-heading">
+  <h1>{{ tools_ui.title | escape }}</h1>
+  <p>{{ tools_ui.lead | escape }}</p>
+</header>
+
+{% comment %}版本、檔案與連結由單一資料檔提供。 / Keep release metadata in one data file for all languages.{% endcomment %}
+{% for tool in tools_data.tools %}
+  {% assign tool_text = tool.text[current_lang] | default: tool.text.en %}
+  {% capture tool_download %}{{ tool.repository }}/releases/download/v{{ tool.version }}/{{ tool.filename }}{% endcapture %}
+  <section class="tool-entry" id="{{ tool.id | escape }}" aria-labelledby="{{ tool.id | escape }}-title">
+    <div class="tool-intro">
+      <div class="tool-title">
+        <img src="{{ '/assets/images/singing-stream-savior-brand.png' | relative_url }}" width="64" height="64" alt="" loading="lazy">
+        <div>
+          <h2 id="{{ tool.id | escape }}-title">{{ tool.name | escape }}</h2>
+          <p class="tool-meta"><span>v{{ tool.version | escape }}</span><span>{{ tools_ui.platform | escape }}</span></p>
+        </div>
+      </div>
+      <p class="tool-summary">{{ tool_text.summary | escape }}</p>
+      <div class="tool-actions">
+        <a class="button" href="{{ tool_download | escape }}" data-tool-download="{{ tool.id | escape }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>{{ tools_ui.download | escape }}</a>
+        <a class="tool-source" href="{{ tool.repository | escape }}" rel="noopener">{{ tools_ui.source | escape }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5H5v14h14v-3M13 5h6v6M19 5l-9 9"/></svg></a>
+        {% if tool.mirror_url and tool.mirror_url != empty %}<a class="tool-source" href="{{ tool.mirror_url | escape }}" data-tool-download="{{ tool.id | escape }}" rel="noopener">{{ tools_ui.mirror | escape }}</a>{% endif %}
+      </div>
+      <p class="tool-download-source">{{ tools_ui.download_source | escape }} · {{ tool.bytes | divided_by: 1048576.0 | round: 1 }} MiB</p>
+    </div>
+
+    {% if tool.screenshot %}
+      <figure class="tool-visual">
+        <a href="{{ tool.screenshot | relative_url }}"><img src="{{ tool.screenshot | relative_url }}" width="1280" height="880" alt="{{ tools_ui.screenshot | escape }}" loading="lazy"></a>
+        <figcaption>{{ tools_ui.screenshot_caption | escape }}</figcaption>
+      </figure>
+    {% endif %}
+    <div class="tool-body">
+      <div class="tool-capabilities">
+        <h3>{{ tools_ui.features | escape }}</h3>
+        <ul>{% for feature in tool_text.features %}<li>{{ feature | escape }}</li>{% endfor %}</ul>
+      </div>
+      <div class="tool-start">
+        <h3>{{ tools_ui.start | escape }}</h3>
+        <ol>{% for step in tool_text.steps %}<li>{{ step | escape }}</li>{% endfor %}</ol>
+      </div>
+    </div>
+
+    <div class="tool-notes">
+      <section aria-labelledby="{{ tool.id | escape }}-privacy"><h3 id="{{ tool.id | escape }}-privacy">{{ tools_ui.privacy | escape }}</h3><p>{{ tool_text.privacy | escape }}</p></section>
+      <section aria-labelledby="{{ tool.id | escape }}-limits"><h3 id="{{ tool.id | escape }}-limits">{{ tools_ui.limits | escape }}</h3><p>{{ tool_text.limits | escape }}</p></section>
+    </div>
+    <details class="tool-file-details">
+      <summary>{{ tools_ui.details | escape }}</summary>
+      <dl>
+        <div><dt>{{ tools_ui.filename | escape }}</dt><dd><code>{{ tool.filename | escape }}</code></dd></div>
+        <div><dt>{{ tools_ui.size | escape }}</dt><dd>{{ tool.bytes }} bytes</dd></div>
+        <div><dt>SHA-256</dt><dd><code class="tool-checksum">{{ tool.sha256 | escape }}</code></dd></div>
+      </dl>
+    </details>
+  </section>
+{% endfor %}

@@ -144,7 +144,8 @@ test("source templates expose support only in the manual sidebar", () => {
   const header = readFileSync(new URL('../_includes/site-header.html', import.meta.url), 'utf8');
   const about = readFileSync(new URL('../_includes/about-page.html', import.meta.url), 'utf8');
   const sidebar = readFileSync(new URL('../_includes/guide-sidebar.html', import.meta.url), 'utf8');
-  assert.equal((header.match(/<a\b/g) || []).length, 5, 'brand, three navigation items, download');
+  assert.equal((header.match(/<a\b/g) || []).length, 6, 'brand, four navigation items, download');
+  assert.match(header, /href="{{ other_tools_target \| relative_url }}"/);
   assert.doesNotMatch(header, /support_target|support\.html|site\.data\.support/);
   assert.doesNotMatch(about, /support_copy|support_page_target|creator-support-title|SUPPORT/);
   assert.match(about, /id="social-links"/);

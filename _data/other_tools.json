@@ -1,0 +1,184 @@
+{
+  "ui": {
+    "zh-TW": {
+      "title": "其他工具",
+      "lead": "Noon 製作的實用小工具。下載使用，也歡迎查看原始碼。",
+      "download": "下載 Windows 版",
+      "download_source": "GitHub Release · EXE",
+      "mirror": "備用下載點",
+      "source": "查看開源專案",
+      "platform": "Windows 64 位元",
+      "features": "可以做什麼",
+      "start": "開始使用",
+      "privacy": "登入與資料",
+      "limits": "收集範圍",
+      "details": "下載檔案資訊與 SHA-256",
+      "filename": "檔名",
+      "size": "大小",
+      "screenshot": "FanArtDownloader 淺色介面，包含標籤搜尋、作者媒體補抓與下載紀錄。",
+      "screenshot_caption": "介面預覽：繁體中文淺色模式，標籤為示例。"
+    },
+    "zh-CN": {
+      "title": "其他工具",
+      "lead": "Noon 制作的实用小工具。欢迎下载使用，也可以查看源代码。",
+      "download": "下载 Windows 版",
+      "download_source": "GitHub Release · EXE",
+      "mirror": "备用下载点",
+      "source": "查看开源项目",
+      "platform": "Windows 64 位",
+      "features": "可以做什么",
+      "start": "开始使用",
+      "privacy": "登录与数据",
+      "limits": "收集范围",
+      "details": "下载文件信息与 SHA-256",
+      "filename": "文件名",
+      "size": "大小",
+      "screenshot": "FanArtDownloader 浅色界面，包含标签搜索、作者媒体补抓与下载记录。",
+      "screenshot_caption": "界面预览：繁体中文浅色模式，标签为示例。"
+    },
+    "en": {
+      "title": "Other tools",
+      "lead": "Useful tools made by Noon. Download an app or explore its source code.",
+      "download": "Download for Windows",
+      "download_source": "GitHub Release · EXE",
+      "mirror": "Backup download",
+      "source": "View source on GitHub",
+      "platform": "Windows 64-bit",
+      "features": "What it does",
+      "start": "Get started",
+      "privacy": "Login and local data",
+      "limits": "Collection limits",
+      "details": "Download details and SHA-256",
+      "filename": "File",
+      "size": "Size",
+      "screenshot": "FanArtDownloader in light mode with tag search, author media backfill and download history.",
+      "screenshot_caption": "Interface preview: Traditional Chinese in light mode, with example tags."
+    },
+    "ja": {
+      "title": "その他のツール",
+      "lead": "Noon が制作した便利なツールです。ダウンロードとソースコードを公開しています。",
+      "download": "Windows 版をダウンロード",
+      "download_source": "GitHub Release · EXE",
+      "mirror": "予備のダウンロード先",
+      "source": "GitHub でソースを見る",
+      "platform": "Windows 64 ビット",
+      "features": "できること",
+      "start": "使い始める",
+      "privacy": "ログインとデータ",
+      "limits": "収集できる範囲",
+      "details": "ファイル情報と SHA-256",
+      "filename": "ファイル名",
+      "size": "サイズ",
+      "screenshot": "タグ検索、作者のメディア補完、ダウンロード履歴を表示した FanArtDownloader のライト画面。",
+      "screenshot_caption": "画面プレビュー：繁体字中国語・ライトモード。タグは入力例です。"
+    },
+    "ko": {
+      "title": "다른 도구",
+      "lead": "Noon이 만든 유용한 도구입니다. 앱을 다운로드하거나 소스 코드를 살펴보세요.",
+      "download": "Windows 버전 다운로드",
+      "download_source": "GitHub Release · EXE",
+      "mirror": "보조 다운로드",
+      "source": "GitHub 소스 코드 보기",
+      "platform": "Windows 64비트",
+      "features": "주요 기능",
+      "start": "시작하기",
+      "privacy": "로그인 및 로컬 데이터",
+      "limits": "수집 범위",
+      "details": "다운로드 파일 정보 및 SHA-256",
+      "filename": "파일명",
+      "size": "크기",
+      "screenshot": "태그 검색, 작성자 미디어 보완 수집, 다운로드 기록을 표시한 FanArtDownloader의 밝은 화면.",
+      "screenshot_caption": "화면 미리보기: 번체 중국어 및 밝은 모드. 태그는 입력 예시입니다."
+    }
+  },
+  "tools": [
+    {
+      "id": "fanart-downloader",
+      "name": "FanArtDownloader",
+      "version": "3.0.0.0",
+      "repository": "https://github.com/NoonIsAwesome/XFanArtDownloader",
+      "filename": "XFanArtDownloader.exe",
+      "bytes": 62260336,
+      "sha256": "d949b99011391bc0dafa2b87430c3dbb731d7a988fed8fab0d1064477c215317",
+      "mirror_url": "",
+      "text": {
+        "zh-TW": {
+          "summary": "把 X 上的 FanArt 圖片與影片，依指定標籤收集到電腦。",
+          "features": [
+            "一次搜尋多個完整標籤，並從已發現作者的媒體頁補抓相同標籤的作品。",
+            "貼上貼文網址，下載符合目標標籤的作品；也可補抓同作者在該討論串的媒體留言。",
+            "以 SQLite 記錄下載進度、避免重複下載；支援中斷續抓、紀錄篩選與選取項目重新下載。"
+          ],
+          "steps": [
+            "下載 EXE，放進自己的資料夾後開啟。",
+            "在軟體開啟的專用瀏覽器中登入 X，關閉該視窗後儲存登入狀態。",
+            "填入目標標籤，可選擇加上貼文網址；選擇下載位置，再開始收集。"
+          ],
+          "privacy": "下載紀錄與專用瀏覽器的登入資料保存在本機。Cookie 能代表你的登入身分，請勿分享 data 資料夾；可從軟體清除本機登入資料。清除本機資料不等於撤銷 X 伺服器上的工作階段。",
+          "limits": "透過 gallery-dl 收集 X 可存取的內容。X 未回傳、已刪除或無權限查看的作品，無法保證收齊。請尊重作者權利與平台規範。"
+        },
+        "zh-CN": {
+          "summary": "按指定标签，将 X 上的 FanArt 图片与视频收集到电脑。",
+          "features": [
+            "一次搜索多个完整标签，并从已发现作者的媒体页补抓相同标签的作品。",
+            "粘贴帖子链接，下载符合目标标签的作品；还可补抓同一作者在该讨论串的媒体回复。",
+            "使用 SQLite 记录下载进度、避免重复下载；支持中断续抓、记录筛选和选中项目重新下载。"
+          ],
+          "steps": [
+            "下载 EXE，放入自己的文件夹后打开。",
+            "在软件打开的专用浏览器中登录 X，关闭该窗口后保存登录状态。",
+            "填写目标标签，也可添加帖子链接；选择下载位置，再开始收集。"
+          ],
+          "privacy": "下载记录与专用浏览器的登录数据保存在本机。Cookie 能代表你的登录身份，请勿分享 data 文件夹；可在软件中清除本机登录数据。清除本机数据不等于撤销 X 服务器上的会话。",
+          "limits": "通过 gallery-dl 收集 X 可访问的内容。X 未返回、已删除或无权查看的作品，无法保证收齐。请尊重作者权利与平台规则。"
+        },
+        "en": {
+          "summary": "Collect FanArt images and videos from X on your computer using the tags you choose.",
+          "features": [
+            "Search multiple exact tags and backfill matching works from discovered authors’ media pages.",
+            "Paste post URLs to download works matching your target tags. Also collect media replies by the same author in those threads.",
+            "Keep progress in SQLite, avoid duplicates, resume unfinished sources, filter history and download selected items again."
+          ],
+          "steps": [
+            "Download the EXE, place it in your own folder and open it.",
+            "Sign in to X in the app’s dedicated browser. Close that window, then save the login state in the app.",
+            "Enter target tags and optionally add post URLs. Choose a download folder and start collecting."
+          ],
+          "privacy": "Download history and the dedicated browser’s login data stay on your computer. Cookies can grant access to your account: do not share the data folder. You can clear local login data in the app; this does not revoke sessions on X’s servers.",
+          "limits": "Uses gallery-dl to collect content accessible on X. Collection cannot be guaranteed for works X does not return, deleted works or posts your account cannot access. Respect creators’ rights and the platform’s rules."
+        },
+        "ja": {
+          "summary": "指定したタグを使って、X の FanArt 画像・動画をパソコンに収集します。",
+          "features": [
+            "複数の完全一致タグを検索し、見つかった作者のメディアページから同じタグの作品を補完します。",
+            "投稿 URL を貼り付けて、指定タグに一致する作品をダウンロード。同じスレッド内にある同一作者のメディア付き返信も収集できます。",
+            "SQLite で進捗を記録し、重複を防止。中断した収集の再開、履歴の絞り込み、選択した項目の再ダウンロードに対応します。"
+          ],
+          "steps": [
+            "EXE をダウンロードし、自分のフォルダーに置いて起動します。",
+            "アプリが開く専用ブラウザーで X にログインします。そのウィンドウを閉じてから、アプリでログイン状態を保存します。",
+            "対象タグを入力し、必要に応じて投稿 URL を追加します。保存先を選んで収集を開始します。"
+          ],
+          "privacy": "履歴と専用ブラウザーのログイン情報はパソコン内に保存されます。Cookie はアカウントへのアクセスに使えるため、data フォルダーを共有しないでください。アプリからローカルのログイン情報を削除できますが、X サーバー上のセッションは取り消されません。",
+          "limits": "gallery-dl で X のアクセス可能なコンテンツを収集します。X が返さない作品、削除済みの作品、閲覧権限のない投稿は、すべて収集できるとは限りません。作者の権利とプラットフォームのルールを尊重してください。"
+        },
+        "ko": {
+          "summary": "지정한 태그로 X의 FanArt 이미지와 동영상을 컴퓨터에 모읍니다.",
+          "features": [
+            "여러 태그를 정확히 일치하는 방식으로 검색하고, 발견한 작성자의 미디어 페이지에서 같은 태그의 작품을 보완 수집합니다.",
+            "게시물 URL을 붙여 넣어 대상 태그와 일치하는 작품을 다운로드합니다. 같은 스레드에 있는 동일 작성자의 미디어 답글도 수집할 수 있습니다.",
+            "SQLite로 진행 상황을 기록하고 중복을 방지합니다. 중단한 수집 재개, 기록 필터, 선택 항목 다시 다운로드를 지원합니다."
+          ],
+          "steps": [
+            "EXE를 다운로드하고 개인 폴더에 넣어 실행합니다.",
+            "앱이 여는 전용 브라우저에서 X에 로그인합니다. 해당 창을 닫은 뒤 앱에서 로그인 상태를 저장합니다.",
+            "대상 태그를 입력하고 필요하면 게시물 URL을 추가합니다. 저장 폴더를 선택한 다음 수집을 시작합니다."
+          ],
+          "privacy": "다운로드 기록과 전용 브라우저의 로그인 데이터는 컴퓨터에 저장됩니다. 쿠키로 계정에 접근할 수 있으므로 data 폴더를 공유하지 마세요. 앱에서 로컬 로그인 데이터를 지울 수 있지만 X 서버의 세션까지 해제되지는 않습니다.",
+          "limits": "gallery-dl로 X에서 접근 가능한 콘텐츠를 수집합니다. X가 반환하지 않거나 삭제된 작품, 계정에 보기 권한이 없는 게시물은 모두 수집된다고 보장할 수 없습니다. 창작자의 권리와 플랫폼 규칙을 존중해 주세요."
+        }
+      },
+      "screenshot": "/assets/images/other-tools-fanart-3.0.png"
+    }
+  ]
+}
