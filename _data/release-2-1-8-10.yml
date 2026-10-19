@@ -1,7 +1,7 @@
 release:
   version: "2.1.8.10"
   date: "2026-10-17"
-  latest: true
+  latest: false
   type:
     en: "Performance improvements"
     zh-TW: "效能改善"
