@@ -1,6 +1,6 @@
 ---
 title: Singing Stream Savior 2.1 ユーザーマニュアル
-description: Singing Stream Savior 2.1.8.11 日本語マニュアル
+description: Singing Stream Savior 2.1.8.12 日本語マニュアル
 lang: ja
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 ユーザーマニュアル
 
-Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.8.11** に対応しています。
+Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.8.12** に対応しています。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと拡大プレビューを開けます。</figcaption></figure>
 
@@ -229,7 +229,7 @@ Singing Stream Savior は歌詞の読み込み、編集、同期、表示のた�
   </figure>
 </div>
 
-Card は縦型ジャケットカード、CD は円盤風の表示になります。「OBSへドラッグ」を押したまま OBS へドロップするとローカル Browser Source を直接作成できます。配信中などにドロップできない場合は、同じボタンをクリックしてソースのパスをコピーし、OBS で Browser Source を追加して URL 欄へ貼り付け、1920 × 1080 に設定してください。「ローカルファイル」は有効にしません。どちらの方法にも WebSocket は不要です。
+Card は縦型ジャケットカード、CD は円盤風の表示になります。「OBSへドラッグ」を押したまま OBS へドロップするとローカル Browser Source を直接作成できます。配信中などにドロップできない場合は、同じボタンをクリックしてソースのパスをコピーし、OBS で Browser Source を追加し、「ローカルファイル」を有効にして「参照」をクリックします。ファイル選択画面にコピーしたパスを貼り付け、1920 × 1080 に設定してください。どちらの方法にも WebSocket は不要です。
 
 テーマのキャンバスは、OBS での使い方を制限するものではありません。自分の配信レイアウトに合わせて、Browser Source を自由に拡大縮小・クロップ・配置できます。Default は特に自由な組み合わせに向いています。プレビューの破線で示された文字領域を目安に、Now Singing や Set List など必要な部分を OBS で切り出し、自作背景の好きな位置に配置してください。透明・装飾テーマも、全体構図のまま使うか一部だけを切り出すかを自由に選べます。OBS のクロップはそのシーン内の表示範囲だけを変え、テーマや曲データは変更しません。
 

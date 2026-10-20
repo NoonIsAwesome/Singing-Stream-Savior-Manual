@@ -1,6 +1,6 @@
 ---
 title: Singing Stream Savior 2.1 User Manual
-description: English manual for Singing Stream Savior 2.1.8.11
+description: English manual for Singing Stream Savior 2.1.8.12
 lang: en
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 User Manual
 
-Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.8.11**.
+Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.8.12**.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>
@@ -257,7 +257,7 @@ Under **Playlist Appearance**, select a theme card and inspect Now Singing, Set 
   </figure>
 </div>
 
-Card places cover art in a vertical card; CD crops it into a disc. Cover art is not required for playback or other themes. Hold and drag **Drag to OBS** to create a local Browser Source directly. If OBS does not accept a drop while streaming, click the same button to copy the source path, add an OBS Browser Source, paste it into the URL field, and set the size to 1920 × 1080. Do not enable **Local file**. Neither method requires OBS WebSocket.
+Card places cover art in a vertical card; CD crops it into a disc. Cover art is not required for playback or other themes. Hold and drag **Drag to OBS** to create a local Browser Source directly. If OBS does not accept a drop while streaming, click the same button to copy the source path, add an OBS Browser Source, enable **Local file**, click **Browse**, and paste the copied path into the file picker. Set the size to 1920 × 1080. Neither method requires OBS WebSocket.
 
 The theme canvas does not restrict how the Browser Source must be used. In OBS, freely resize, crop, and position it to fit your own stream layout. Default is especially suitable as a flexible base: use the dashed text-area guides in the preview to crop out the Now Singing, Set List, or other blocks you want, then place them over your own background. Transparent and illustrated themes may be kept as a complete composition or cropped to selected parts. OBS cropping changes only that scene source; it does not modify the theme or song data.
 

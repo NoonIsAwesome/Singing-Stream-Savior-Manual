@@ -1,6 +1,6 @@
 ---
 title: Singing Stream Savior 2.1 사용자 설명서
-description: Singing Stream Savior 2.1.8.11 한국어 설명서
+description: Singing Stream Savior 2.1.8.12 한국어 설명서
 lang: ko
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # Singing Stream Savior 2.1 사용자 설명서
 
-Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.1.8.11** 버전을 기준으로 합니다.
+Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.1.8.12** 버전을 기준으로 합니다.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 확대 미리보기를 열 수 있습니다.</figcaption></figure>
 
@@ -229,7 +229,7 @@ Singing Stream Savior는 가사를 가져오고, 편집하고, 동기화하고, 
   </figure>
 </div>
 
-Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니다. **OBS로 드래그**를 누른 채 OBS에 놓으면 로컬 Browser Source를 바로 만들 수 있습니다. 방송 중 드롭이 되지 않으면 같은 버튼을 클릭해 소스 경로를 복사하고, OBS에서 Browser Source를 추가해 URL 칸에 붙여 넣은 뒤 1920 × 1080으로 설정하세요. **로컬 파일**은 선택하지 않습니다. 두 방법 모두 WebSocket이 필요 없습니다.
+Card는 세로 표지 카드, CD는 원형 디스크로 표지를 보여 줍니다. **OBS로 드래그**를 누른 채 OBS에 놓으면 로컬 Browser Source를 바로 만들 수 있습니다. 방송 중 드롭이 되지 않으면 같은 버튼을 클릭해 소스 경로를 복사하고, OBS에서 Browser Source를 추가하고 **로컬 파일**을 선택한 뒤 **찾아보기**를 클릭하세요. 파일 선택 창에 복사한 경로를 붙여 넣고 1920 × 1080으로 설정하세요. 두 방법 모두 WebSocket이 필요 없습니다.
 
 테마 캔버스는 OBS에서의 사용 방식을 제한하지 않습니다. 자신의 방송 레이아웃에 맞게 Browser Source를 자유롭게 확대·축소하고 자르거나 배치할 수 있습니다. Default는 자유롭게 조합하는 기본 화면으로 특히 적합합니다. 미리보기의 점선 텍스트 영역을 기준으로 Now Singing, Set List 등 필요한 블록만 OBS에서 잘라 내고 직접 만든 배경의 원하는 위치에 놓으세요. 투명 또는 장식 테마도 전체 구도를 유지하거나 필요한 부분만 사용할 수 있습니다. OBS 자르기는 해당 장면 소스의 표시 범위만 바꾸며 테마나 곡 데이터는 수정하지 않습니다.
 

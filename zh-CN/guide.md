@@ -1,6 +1,6 @@
 ---
 title: 歌回救星 2.1 使用说明
-description: Singing Stream Savior 2.1.8.11 简体中文使用说明
+description: Singing Stream Savior 2.1.8.12 简体中文使用说明
 lang: zh-CN
 translation_key: home
 manual_bundle: true
@@ -8,7 +8,7 @@ manual_bundle: true
 
 # 歌回救星 2.1 使用说明
 
-歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.8.11**。
+歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.1.8.12**。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/lyrics-reading-preview.png' | relative_url }}" alt="完整模式中的歌词设置、OBS 预览、播放器和待播列表"></a><figcaption>完整模式适合开播前整理歌曲、歌词与 OBS 画面。点击图片可放大预览。</figcaption></figure>
 
@@ -229,7 +229,7 @@ Singing Stream Savior 提供歌词导入、编辑、同步与显示工具，不�
   </figure>
 </div>
 
-Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正常播放不要求封面。按住“拖放至 OBS”并拖进 OBS，可直接建立本地 Browser Source。若直播中无法拖入，可单击同一个按钮复制来源路径，在 OBS 新增 Browser Source 后粘贴到网址栏，并设置为 1920 × 1080；不必勾选“本地文件”。两种方式都不需要启用 WebSocket。
+Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正常播放不要求封面。按住“拖放至 OBS”并拖进 OBS，可直接建立本地 Browser Source。若直播中无法拖入，可单击同一个按钮复制来源路径，在 OBS 新建 Browser Source，勾选“本地文件”，点击“浏览”，再将复制的路径粘贴到文件选择窗口，并设置为 1920 × 1080。两种方式都不需要启用 WebSocket。
 
 主题画布不会限制 Browser Source 的使用方式。可以在 OBS 中按照自己的直播版面自由缩放、裁切与定位。Default 特别适合作为可自由组合的基础版面：参考预览中的虚线文字区域，沿虚线裁切想保留的 Now Singing、Set List 等区块，再放到自制背景的合适位置。透明与精致主题可以保留完整构图，也可以只裁取需要的部分。OBS 裁切只会改变当前场景中来源的显示范围，不会修改主题或歌曲资料。
 

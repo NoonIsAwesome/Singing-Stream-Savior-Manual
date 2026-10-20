@@ -1,0 +1,33 @@
+release:
+  version: "2.1.8.12"
+  date: "2026-10-20"
+  latest: true
+  type:
+    en: "Performance improvement"
+    zh-TW: "效能改善"
+    zh-CN: "性能改善"
+    ja: "パフォーマンスの改善"
+    ko: "성능 개선"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.1.8.12"
+  summary:
+    en: "Performance improvement"
+    zh-TW: "效能改善"
+    zh-CN: "性能改善"
+    ja: "パフォーマンスの改善"
+    ko: "성능 개선"
+  items:
+    en:
+      - "Performance improvement: optimizes song playback, switching and stopping to reduce interface response delays."
+      - "Updates the first-use tour to explain the new Lyrics Window location, YouTube Search, manual lyrics editing, UVR vocal removal, and accompaniment pitch adjustment."
+    zh-TW:
+      - "改善效能：優化歌曲播放、切換與停止時的處理，減少介面操作延遲。"
+      - "更新首次使用導覽，介紹「歌詞視窗」的新位置、YouTube 搜尋、手動歌詞編輯、UVR 人聲消除與伴奏升降調。"
+    zh-CN:
+      - "改善性能：优化歌曲播放、切换与停止时的处理，减少界面操作延迟。"
+      - "更新首次使用导览，介绍“歌词窗口”的新位置、YouTube 搜索、手动歌词编辑、UVR 人声分离与伴奏升降调。"
+    ja:
+      - "パフォーマンス改善：楽曲の再生・切り替え・停止時の処理を最適化し、画面操作の遅延を軽減します。"
+      - "初回ガイドを更新し、歌詞ウィンドウの新しい場所、YouTube 検索、歌詞の手動編集、UVR ボーカル除去、伴奏のキー調整を紹介します。"
+    ko:
+      - "성능 개선: 곡 재생, 전환 및 정지 시 처리를 최적화하여 인터페이스 조작 지연을 줄였습니다."
+      - "첫 사용 안내를 업데이트하여 가사 창의 새 위치, YouTube 검색, 직접 가사 편집, UVR 보컬 제거 및 반주 키 조정 기능을 소개합니다."
