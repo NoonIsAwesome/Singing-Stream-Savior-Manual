@@ -9,7 +9,14 @@ translation_key: audience-requests
 
 Starting with 2.2.0.0, viewers can browse your songbook online and request songs. You review each request before it enters **Reserve**. **This feature is free. Administrator approval is required to prevent abuse and server overload.** Ordinary local playback does not require activation or administrator approval.
 
+Screenshots show the Traditional Chinese interface and example data. The application email address is hidden; a real application still requires it. Select an image to enlarge it.
+
 ## First use: apply for activation
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/01-activation.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/01-activation.png' | relative_url }}" alt="1. Before activation, choose Apply for audience requests on the Audience Requests tab." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>1. Before activation, choose Apply for audience requests on the Audience Requests tab.</figcaption>
+</figure>
 
 1. Open **Audience Requests** in the app and choose **Apply for audience requests**. Until activation, the application screen covers this tab's online controls.
 2. Enter a unique streamer ID, name, brief introduction, channel URL, email and Discord ID. The ID accepts 3–50 lowercase letters, digits, hyphens or underscores. Use an `https://` channel URL.
@@ -17,9 +24,25 @@ Starting with 2.2.0.0, viewers can browse your songbook online and request songs
 4. Review the application, then confirm submission. Submitted details cannot be edited directly, so check your contact information first.
 5. Wait for administrator review, then select **Check activation status**. The request controls appear after approval and connection. Do not submit duplicate applications while waiting.
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/02-application-form-redacted.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/02-application-form-redacted.png' | relative_url }}" alt="2. Fill in streamer details, the channel URL and contact information, then review the application. The email is hidden in this screenshot; the channel URL and other example details are retained." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>2. Fill in streamer details, the channel URL and contact information, then review the application. The email is hidden in this screenshot; the channel URL and other example details are retained.</figcaption>
+</figure>
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/03-application-pending.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/03-application-pending.png' | relative_url }}" alt="3. After submission, wait for administrator approval and use Check activation status. There is no need to apply again." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>3. After submission, wait for administrator approval and use Check activation status. There is no need to apply again.</figcaption>
+</figure>
+
+
 The app generates and saves the device identity on this computer. You do not need to create, record or type a login password. Later starts connect automatically using the saved identity.
 
 ## Publish a songbook and open a session
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/04-session-ready.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/04-session-ready.png' | relative_url }}" alt="4. Once approved and connected, check the public name and current project. No session is open here and the published count is zero; Start online requests publishes the songbook." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>4. Once approved and connected, check the public name and current project. No session is open here and the published count is zero; Start online requests publishes the songbook.</figcaption>
+</figure>
 
 1. Open the project you will sing from. Check song titles, performers and categories.
 2. In **Audience Requests**, check your public name and optionally set a profile image and session name. A blank session name uses today's date.
@@ -27,13 +50,29 @@ The app generates and saves the device identity on this computer. You do not nee
 4. Copy the viewer link displayed by the app into your stream description, chat or social post. Share the complete generated link; viewers do not need S3S installed.
 5. Open that link to check the viewer page. Viewers can search or filter songs, enter a nickname and optional message, and confirm their request.
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/05-session-open.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/05-session-open.png' | relative_url }}" alt="5. After starting a session, check the published count and timestamps, then copy the viewer request link to share it. This example has 112 published songs." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>5. After starting a session, check the published count and timestamps, then copy the viewer request link to share it. This example has 112 published songs.</figcaption>
+</figure>
+
+
 The published catalog contains song titles, performers, durations, genres, languages, custom playlist categories and request availability. Publishing it does not upload your local audio files, source paths, lyrics or voice-effect settings. The viewer website receives requests; it does not play your local accompaniment for viewers.
 
 After editing songs or switching projects, check the source and choose **Update song list**. **A local edit does not mean the website has already changed.** Check the published song count and last-update time. The local songbook/lyric links used by OBS are different from the viewer request link.
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/06-viewer-songbook.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/06-viewer-songbook.png' | relative_url }}" alt="6. This is the public songbook website that viewers see. They can browse categories, search or filter, save favorites and select Request beside a song." width="1273" height="1259" loading="lazy" decoding="async"></a>
+  <figcaption>6. This is the public songbook website that viewers see. They can browse categories, search or filter, save favorites and select Request beside a song.</figcaption>
+</figure>
+
 ## Review requests and arrange Reserve
 
 New requests produce a notification count on Audience Requests. Open the tab or **Review pending** to read the song, viewer and message. Filter by all requests in this session, pending, accepted or rejected.
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/07-review-request.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/07-review-request.png' | relative_url }}" alt="7. New requests appear in the tab and pending-review count. Open the review window, check the song, viewer and message, then choose Accept or Reject." width="1596" height="928" loading="lazy" decoding="async"></a>
+  <figcaption>7. New requests appear in the tab and pending-review count. Open the review window, check the song, viewer and message, then choose Accept or Reject.</figcaption>
+</figure>
 
 | Action or status | Result |
 | --- | --- |
@@ -41,6 +80,12 @@ New requests produce a notification count on Audience Requests. Open the tab or 
 | Reject | Keeps the review result without adding the song to Reserve. |
 | Reserve | Use the usual drag-to-reorder and playback controls alongside manually added songs. |
 | Playing / sung | Playback progress is separate from the review result. Accepted does not mean completed. |
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/08-accepted-reserve.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/08-accepted-reserve.png' | relative_url }}" alt="8. Accepting changes the review status to Accepted and adds the song to Reserve on the right. It is still waiting for playback; accepting does not start the song." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>8. Accepting changes the review status to Accepted and adds the song to Reserve on the right. It is still waiting for playback; accepting does not start the song.</figcaption>
+</figure>
+
 
 Playback happens in the desktop app. Keep the current project's audio sources available; if a file was moved or deleted, or a YouTube source is unavailable, fix the source before playback. See [Library and playback]({{ '/en/guide.html' | relative_url }}#library-and-playback) for Reserve controls.
 

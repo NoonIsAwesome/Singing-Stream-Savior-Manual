@@ -9,7 +9,14 @@ translation_key: audience-requests
 
 2.2.0.0부터 시청자가 웹에서 곡 목록을 보고 신청할 수 있습니다. 스트리머가 수락하면 **Reserve(재생 대기)**에 들어갑니다. **무료 기능이며, 악용으로 인한 서버 부하를 막기 위해 사용 전에 관리자 승인이 필요합니다.** 일반 로컬 재생에는 신청이 필요하지 않습니다.
 
+스크린샷은 번체 중국어 UI와 예시 데이터를 사용합니다. 신청 화면의 이메일 주소는 숨겼지만 실제 신청 시에는 입력해야 합니다. 이미지를 선택하면 확대할 수 있습니다.
+
 ## 처음 사용하기: 활성화 신청
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/01-activation.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/01-activation.png' | relative_url }}" alt="1. 승인 전에는 시청자 신청곡 탭의 사용 신청 버튼으로 활성화를 신청합니다." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>1. 승인 전에는 시청자 신청곡 탭의 사용 신청 버튼으로 활성화를 신청합니다.</figcaption>
+</figure>
 
 1. 앱의 **시청자 신청곡**에서 사용 신청을 엽니다. 승인 전에는 온라인 기능 대신 신청 화면이 이 탭을 덮습니다.
 2. 다른 사람과 중복되지 않는 스트리머 ID, 이름, 간단한 소개, 채널 URL, 이메일, Discord ID를 입력합니다. ID는 소문자 영문·숫자·하이픈·밑줄 3–50자로 정하고 채널 URL은 `https://`로 시작해야 합니다.
@@ -17,9 +24,25 @@ translation_key: audience-requests
 4. 신청 내용을 확인한 다음 제출합니다. 제출 후에는 바로 수정할 수 없으므로 연락처를 먼저 확인하세요.
 5. 관리자 검토를 기다린 후 활성화 상태를 확인합니다. 승인되고 연결이 완료되면 기능이 표시됩니다. 검토 중에 중복 신청할 필요는 없습니다.
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/02-application-form-redacted.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/02-application-form-redacted.png' | relative_url }}" alt="2. 스트리머 정보, 채널 URL과 연락처를 입력한 뒤 신청 내용을 확인합니다. 이 이미지에서는 이메일 주소만 숨겼으며 채널 URL과 공개 이름 등은 예시로 남겼습니다." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>2. 스트리머 정보, 채널 URL과 연락처를 입력한 뒤 신청 내용을 확인합니다. 이 이미지에서는 이메일 주소만 숨겼으며 채널 URL과 공개 이름 등은 예시로 남겼습니다.</figcaption>
+</figure>
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/03-application-pending.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/03-application-pending.png' | relative_url }}" alt="3. 제출 후 관리자 심사를 기다리고 활성화 상태 확인 버튼을 누릅니다. 같은 신청을 반복해서 제출할 필요는 없습니다." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>3. 제출 후 관리자 심사를 기다리고 활성화 상태 확인 버튼을 누릅니다. 같은 신청을 반복해서 제출할 필요는 없습니다.</figcaption>
+</figure>
+
+
 앱이 장치 인증 정보를 만들어 이 PC에 저장합니다. 로그인 비밀번호를 직접 만들거나 기록하고 입력할 필요가 없습니다. 다음 실행부터 저장된 정보로 자동 연결합니다.
 
 ## 곡 목록 공개와 회차 시작
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/04-session-ready.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/04-session-ready.png' | relative_url }}" alt="4. 승인되어 연결되면 공개 이름과 현재 프로젝트를 확인합니다. 아직 회차가 시작되지 않아 공개 곡 수는 0입니다. 온라인 신청을 시작하면 곡 목록이 공개됩니다." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>4. 승인되어 연결되면 공개 이름과 현재 프로젝트를 확인합니다. 아직 회차가 시작되지 않아 공개 곡 수는 0입니다. 온라인 신청을 시작하면 곡 목록이 공개됩니다.</figcaption>
+</figure>
 
 1. 노래할 프로젝트를 열고 곡명, 아티스트와 분류를 확인합니다.
 2. 시청자 신청곡 탭에서 공개 이름을 확인하고 필요하면 프로필 이미지와 회차 이름을 설정합니다. 회차 이름을 비우면 오늘 날짜를 사용합니다.
@@ -27,13 +50,29 @@ translation_key: audience-requests
 4. 앱에 표시된 시청자 링크를 복사해 방송 설명, 채팅이나 소셜 게시물에 공유합니다. 생성된 전체 링크를 사용하세요. 시청자는 S3S를 설치할 필요가 없습니다.
 5. 링크를 열어 실제 시청자 화면을 확인합니다. 시청자는 곡을 검색·필터링하고 닉네임과 선택 메시지를 입력한 뒤 내용을 확인해 신청합니다.
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/05-session-open.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/05-session-open.png' | relative_url }}" alt="5. 회차 시작 후 공개 곡 수와 갱신·시작 시간을 확인하고 시청자 신청 링크를 복사해 공유합니다. 이 예시에서는 112곡을 공개했습니다." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>5. 회차 시작 후 공개 곡 수와 갱신·시작 시간을 확인하고 시청자 신청 링크를 복사해 공유합니다. 이 예시에서는 112곡을 공개했습니다.</figcaption>
+</figure>
+
+
 공개되는 정보는 곡명, 아티스트, 길이, 장르, 언어, 사용자 재생 목록 분류와 신청 가능 상태 등입니다. 로컬 오디오 파일, 원본 경로, 가사나 보컬 효과 설정은 업로드하지 않습니다. 이 웹사이트는 신청곡 접수용이며 시청자가 PC의 반주를 듣는 플레이어가 아닙니다.
 
 곡을 수정하거나 프로젝트를 바꾼 뒤에는 대상을 확인하고 곡 목록을 업데이트하세요. **로컬 수정만으로 웹에 반영되지는 않습니다.** 공개 곡 수와 마지막 업데이트 시간을 확인할 수 있습니다. OBS에 사용하는 로컬 곡 목록·가사 링크와 시청자 신청 링크는 다릅니다.
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/06-viewer-songbook.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/06-viewer-songbook.png' | relative_url }}" alt="6. 시청자가 보는 공개 곡 목록 웹페이지입니다. 분류 전환, 검색·필터와 즐겨찾기를 사용하고 곡 옆의 신청 버튼으로 신청할 수 있습니다." width="1273" height="1259" loading="lazy" decoding="async"></a>
+  <figcaption>6. 시청자가 보는 공개 곡 목록 웹페이지입니다. 분류 전환, 검색·필터와 즐겨찾기를 사용하고 곡 옆의 신청 버튼으로 신청할 수 있습니다.</figcaption>
+</figure>
+
 ## 신청곡 검토와 재생 대기
 
 새 신청곡이 오면 알림 수가 표시됩니다. 해당 탭이나 검토 대기 화면에서 곡명, 시청자와 메시지를 확인하고 이번 회차 전체, 대기, 수락, 거절로 필터링할 수 있습니다.
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/07-review-request.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/07-review-request.png' | relative_url }}" alt="7. 새 신청은 탭과 검토 대기 수에 표시됩니다. 검토 창에서 곡, 시청자와 메시지를 확인한 뒤 수락하거나 거절합니다." width="1596" height="928" loading="lazy" decoding="async"></a>
+  <figcaption>7. 새 신청은 탭과 검토 대기 수에 표시됩니다. 검토 창에서 곡, 시청자와 메시지를 확인한 뒤 수락하거나 거절합니다.</figcaption>
+</figure>
 
 | 작업 또는 상태 | 결과 |
 | --- | --- |
@@ -41,6 +80,12 @@ translation_key: audience-requests
 | 거절 | 검토 결과를 보관하고 Reserve에는 추가하지 않습니다. |
 | Reserve | 수동으로 추가한 곡과 함께 드래그로 순서를 바꾸고 기존 재생 기능을 사용합니다. |
 | 재생 중 / 부른 곡 | 재생 상태와 검토 결과는 별개입니다. 수락은 노래 완료를 뜻하지 않습니다. |
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/08-accepted-reserve.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/08-accepted-reserve.png' | relative_url }}" alt="8. 수락하면 검토 상태가 수락됨으로 바뀌고 오른쪽 재생 대기에도 곡이 추가됩니다. 아직 재생 대기 상태이며 수락만으로 재생이 시작되지는 않습니다." width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>8. 수락하면 검토 상태가 수락됨으로 바뀌고 오른쪽 재생 대기에도 곡이 추가됩니다. 아직 재생 대기 상태이며 수락만으로 재생이 시작되지는 않습니다.</figcaption>
+</figure>
+
 
 재생은 데스크톱 앱에서 이루어집니다. 현재 프로젝트의 음원을 사용할 수 있어야 합니다. 파일을 이동·삭제했거나 YouTube 음원을 사용할 수 없다면 먼저 음원을 수정하세요. 대기 목록 조작은 [라이브러리와 재생]({{ '/ko/guide.html' | relative_url }}#library-and-playback)을 참고하세요.
 

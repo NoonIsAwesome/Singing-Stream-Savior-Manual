@@ -9,7 +9,14 @@ translation_key: audience-requests
 
 从 2.2.0.0 起，观众可以在网页查看你的歌单并提出点歌，再由你审核是否加入“待播”。**功能免费；为避免滥用增加服务器负担，使用前需要申请并经管理员开通。** 普通本地播放不需要申请。
 
+截图使用繁体中文界面与示例数据；申请画面的电子邮箱已隐藏，实际申请时仍需填写。点击图片可放大查看。
+
 ## 第一次使用：申请开通
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/01-activation.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/01-activation.png' | relative_url }}" alt="1．尚未开通时，在“观众点歌”选择“申请开通观众点歌”开始申请。" width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>1．尚未开通时，在“观众点歌”选择“申请开通观众点歌”开始申请。</figcaption>
+</figure>
 
 1. 在软件打开“观众点歌”，选择“申请开通观众点歌”。未开通时，申请画面会覆盖这个分页的在线功能。
 2. 填写主播 ID、名称、个人简介、频道网址、电子邮箱及 Discord ID。主播 ID 不可与他人重复，使用 3–50 个小写英文字母、数字、连字符或下划线；频道网址须以 `https://` 开头。
@@ -17,9 +24,25 @@ translation_key: audience-requests
 4. 检查申请内容后确认提交。提交后不能直接编辑申请内容，请先检查联系方式是否正确。
 5. 等待管理员审核，再点击“检查开通状态”。通过并完成连接后才会显示点歌功能；审核中不必重复申请。
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/02-application-form-redacted.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/02-application-form-redacted.png' | relative_url }}" alt="2．填写主播资料、频道与联系方式，再选择“检查申请内容…”。本图的电子邮箱已隐藏；频道网址、公开名称等信息保留作为示例。" width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>2．填写主播资料、频道与联系方式，再选择“检查申请内容…”。本图的电子邮箱已隐藏；频道网址、公开名称等信息保留作为示例。</figcaption>
+</figure>
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/03-application-pending.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/03-application-pending.png' | relative_url }}" alt="3．提交后会显示“申请已送出”。等待管理员审核，再选择“检查开通状态”，无需重复申请。" width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>3．提交后会显示“申请已送出”。等待管理员审核，再选择“检查开通状态”，无需重复申请。</figcaption>
+</figure>
+
+
 设备身份由软件生成并保存在这台电脑，不需要自行创建、记录或输入登录密码。之后启动时会使用已保存的身份自动连接。
 
 ## 公开歌单并开始一场点歌
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/04-session-ready.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/04-session-ready.png' | relative_url }}" alt="4．开通并连接后，确认公开名称与当前项目。图中尚未开始场次，公开歌曲数为 0；选择“开启在线点歌”才会公开歌单。" width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>4．开通并连接后，确认公开名称与当前项目。图中尚未开始场次，公开歌曲数为 0；选择“开启在线点歌”才会公开歌单。</figcaption>
+</figure>
 
 1. 打开准备演唱的项目，确认歌曲名称、演出者与分类。
 2. 回到“观众点歌”，确认公开名称，按需设置头像与场次名称。场次名称留空会使用当天日期。
@@ -27,13 +50,29 @@ translation_key: audience-requests
 4. 将软件显示的观众点歌链接复制到直播简介、聊天室或社交平台。请分享软件生成的完整链接，观众不需要安装 S3S。
 5. 打开链接检查观众看到的页面。观众可搜索、筛选歌曲，填写昵称与选填留言，确认后提出点歌。
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/05-session-open.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/05-session-open.png' | relative_url }}" alt="5．场次开始后，检查已发布歌曲数、上次更新与场次开始时间，再复制“观众点歌链接”分享。图中已发布 112 首歌曲。" width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>5．场次开始后，检查已发布歌曲数、上次更新与场次开始时间，再复制“观众点歌链接”分享。图中已发布 112 首歌曲。</figcaption>
+</figure>
+
+
 公开的是歌名、演出者、歌曲长度、曲风、语言、自定义歌单分类与可点歌状态等歌单数据；不会因此上传本地音频文件、来源路径、歌词或人声效果设置。网站是点歌入口，观众不会通过它收听你的本地伴奏。
 
 修改歌曲或切换项目后，请确认来源，再点击“更新歌单”。**本地修改不等于网站已经更新**；可查看公开歌曲数与上次更新时间。OBS 使用的本地歌单／歌词链接与观众点歌链接不同。
 
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/06-viewer-songbook.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/06-viewer-songbook.png' | relative_url }}" alt="6．这是观众看到的公开歌单网页。观众可切换分类、搜索或筛选、加入收藏，再选择歌曲旁的“点歌”提交申请。" width="1273" height="1259" loading="lazy" decoding="async"></a>
+  <figcaption>6．这是观众看到的公开歌单网页。观众可切换分类、搜索或筛选、加入收藏，再选择歌曲旁的“点歌”提交申请。</figcaption>
+</figure>
+
 ## 审核点歌与安排待播
 
 收到点歌后，“观众点歌”会显示通知数量。打开分页或“审核待处理”，查看歌名、观众与留言，可按本场全部、待审核、已接受、已拒绝筛选。
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/07-review-request.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/07-review-request.png' | relative_url }}" alt="7．收到新点歌时，分页与待审核按钮会显示数量。打开审核窗口，确认歌曲、观众及留言，再选择“接受”或“拒绝”。" width="1596" height="928" loading="lazy" decoding="async"></a>
+  <figcaption>7．收到新点歌时，分页与待审核按钮会显示数量。打开审核窗口，确认歌曲、观众及留言，再选择“接受”或“拒绝”。</figcaption>
+</figure>
 
 | 操作或状态 | 结果 |
 | --- | --- |
@@ -41,6 +80,12 @@ translation_key: audience-requests
 | 拒绝 | 保留审核结果，不加入待播。 |
 | 待播 | 沿用拖动排序与播放操作，与手动加入的歌曲一起安排。 |
 | 播放／已唱 | 播放进度与审核结果分开显示；接受不代表已经唱完。 |
+
+<figure class="manual-figure">
+  <a href="{{ '/assets/images/2200/audience-requests/08-accepted-reserve.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/08-accepted-reserve.png' | relative_url }}" alt="8．接受后，审核状态变为“已接受”，歌曲也加入右侧待播列表。此时仍在等待播放，不会因为接受就自动开唱。" width="1602" height="932" loading="lazy" decoding="async"></a>
+  <figcaption>8．接受后，审核状态变为“已接受”，歌曲也加入右侧待播列表。此时仍在等待播放，不会因为接受就自动开唱。</figcaption>
+</figure>
+
 
 播放仍由桌面软件执行。请保持当前项目的音源可用；若文件移动、删除或 YouTube 来源无法使用，先修正音源。待播操作请参考[歌曲库与播放]({{ '/zh-CN/guide.html' | relative_url }}#library-and-playback)。
 
