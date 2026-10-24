@@ -80,19 +80,19 @@
     "number": 10
   },
   {
-    "key": "settings-and-troubleshooting",
-    "label": "settings",
-    "group": "tools",
-    "standalone": false,
-    "keywords": "settings backup restore no sound echo crackle delay OBS microphone 設定 设置 備份 备份 還原 还原 無聲 无声 回音 爆音 延遲 延迟 麥克風 麦克风 設定 バックアップ 音が出ない ノイズ 遅延 설정 백업 소리 지연",
-    "number": 11
-  },
-  {
     "key": "audience-requests",
     "label": "audience_requests",
     "group": "tools",
     "standalone": true,
     "keywords": "audience song request songbook streamer Studio approval session identity backup 觀眾 观众 點歌 点歌 主播 審核 审核 開通 开通 場次 场次 備份 备份 リクエスト 配信者 承認 시청자 신청곡 스트리머 승인",
+    "number": 11
+  },
+  {
+    "key": "settings-and-troubleshooting",
+    "label": "settings",
+    "group": "tools",
+    "standalone": false,
+    "keywords": "settings backup restore no sound echo crackle delay OBS microphone 設定 设置 備份 备份 還原 还原 無聲 无声 回音 爆音 延遲 延迟 麥克風 麦克风 設定 バックアップ 音が出ない ノイズ 遅延 설정 백업 소리 지연",
     "number": 12
   },
   {
