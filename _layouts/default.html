@@ -112,7 +112,7 @@
       </div>
       <button class="nav-backdrop" type="button" aria-label="{{ t.collapse_nav | escape }}" tabindex="-1" hidden></button>
     {% endif %}
-    <footer class="page-footer"><div class="wrap"><span>SINGING STREAM SAVIOR · 歌回救星</span><span>{{ design.footer }}</span><a href="{% if is_home %}{{ about_target | relative_url }}{% else %}{{ language_home | relative_url }}{% endif %}">{% if is_home %}{{ design.author }}{% else %}{{ design.home }}{% endif %} →</a>{% include privacy-footer.html %}</div></footer>
+    <footer class="page-footer"><div class="wrap"><span>SINGING STREAM SAVIOR · 歌回救星</span><span>{{ design.footer }}</span><a href="{% if is_home %}{{ about_target | relative_url }}{% else %}{{ language_home | relative_url }}{% endif %}">{% if is_home %}{{ design.author }}{% else %}{{ design.home }}{% endif %} →</a><a href="{{ site.data.community.discord_url | escape }}" rel="noopener noreferrer">{{ site.data.community[current_lang].label | escape }}</a>{% include privacy-footer.html %}</div></footer>
     <script src="{{ '/assets/js/site-analytics.js' | relative_url }}?v={{ site.github.build_revision | default: 'analytics-20260921' }}" defer></script>
     {% if section == 'resources' %}<script src="{{ '/assets/js/download-mirror.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>{% endif %}
     <script src="{{ '/assets/js/download-clicks.js' | relative_url }}?v={{ site.github.build_revision | default: 'download-clicks-20260921' }}" defer></script>

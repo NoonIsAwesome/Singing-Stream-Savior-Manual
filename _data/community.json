@@ -1,0 +1,33 @@
+{
+  "discord_url": "https://discord.gg/3ST7NyCSrT",
+  "zh-TW": {
+    "nav": "Discord",
+    "label": "Discord 社群",
+    "intro": "使用問題、問題回報或功能許願，歡迎到社群交流。",
+    "join": "加入 Discord 社群"
+  },
+  "zh-CN": {
+    "nav": "Discord",
+    "label": "Discord 社区",
+    "intro": "使用问题、问题反馈或功能愿望，欢迎到社区交流。",
+    "join": "加入 Discord 社区"
+  },
+  "en": {
+    "nav": "Discord",
+    "label": "Discord community",
+    "intro": "Ask questions, report issues, and share ideas with the community.",
+    "join": "Join the Discord community"
+  },
+  "ja": {
+    "nav": "Discord",
+    "label": "Discord コミュニティ",
+    "intro": "使い方の質問、不具合の報告、機能の要望をコミュニティで共有できます。",
+    "join": "Discord コミュニティに参加"
+  },
+  "ko": {
+    "nav": "Discord",
+    "label": "Discord 커뮤니티",
+    "intro": "사용 질문, 문제 제보, 기능 아이디어를 커뮤니티에서 나눠 보세요.",
+    "join": "Discord 커뮤니티 참여"
+  }
+}

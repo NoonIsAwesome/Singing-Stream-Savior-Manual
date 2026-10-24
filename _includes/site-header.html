@@ -6,6 +6,7 @@
       <a href="{{ guide_target | relative_url }}"{% unless is_home or section == 'about' or section == 'support' or section == 'privacy' or section == 'other-tools' %} aria-current="page"{% endunless %}>{{ design.guide }}</a>
       <a href="{{ other_tools_target | relative_url }}"{% if section == 'other-tools' %} aria-current="page"{% endif %}>{{ site.data.other_tools.ui[current_lang].title | escape }}</a>
       <a href="{{ about_target | relative_url }}"{% if section == 'about' %} aria-current="page"{% endif %}>{{ design.author }}</a>
+      <a href="{{ site.data.community.discord_url | escape }}" rel="noopener noreferrer">{{ site.data.community[current_lang].nav | escape }}</a>
     </nav>
     <div class="nav-actions">
       <div class="language-picker">
