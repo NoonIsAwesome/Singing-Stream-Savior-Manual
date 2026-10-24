@@ -1,14 +1,16 @@
 ---
-title: Singing Stream Savior 2.1 User Manual
-description: English manual for Singing Stream Savior 2.1.8.12
+title: Singing Stream Savior 2.2 User Manual
+description: English manual for Singing Stream Savior 2.2.0.0
 lang: en
 translation_key: home
 manual_bundle: true
 ---
 
-# Singing Stream Savior 2.1 User Manual
+# Singing Stream Savior 2.2 User Manual
 
-Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.1.8.12**.
+Singing Stream Savior is a Windows desktop tool for singing streams. It combines your song library, BGM, karaoke tracks, queue, lyrics, vocal processing, audio routing, and OBS output in one workflow. This manual covers version **2.2.0.0**.
+
+**New in 2.2:** [Audience requests and Streamer Studio]({{ '/en/audience-requests.html' | relative_url }}) explains free activation, publishing a songbook, reviewing requests and mobile management. This optional online feature is separate from the local playback steps below.
 
 <figure class="manual-figure">
   <a href="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/en/lyrics-reading-preview.png' | relative_url }}" alt="Full workspace with lyric settings, OBS lyric preview, players, and queue"></a>

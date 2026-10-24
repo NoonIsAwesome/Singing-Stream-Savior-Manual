@@ -1,7 +1,7 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
 {% assign t = site.data.i18n[current_lang] %}
 {% assign section = page.translation_key | default: 'home' %}
-{% assign standalone_sections = "resources,changelog,about,support,advanced-streaming,audio-routing,profiles,open-source,privacy,other-tools" | split: "," %}
+{% assign standalone_sections = "resources,changelog,about,support,advanced-streaming,audio-routing,profiles,audience-requests,open-source,privacy,other-tools" | split: "," %}
 {% if current_lang == 'zh-TW' %}
   {% assign language_home = '/' %}
 {% else %}

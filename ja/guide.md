@@ -1,14 +1,16 @@
 ---
-title: Singing Stream Savior 2.1 ユーザーマニュアル
-description: Singing Stream Savior 2.1.8.12 日本語マニュアル
+title: Singing Stream Savior 2.2 ユーザーマニュアル
+description: Singing Stream Savior 2.2.0.0 日本語マニュアル
 lang: ja
 translation_key: home
 manual_bundle: true
 ---
 
-# Singing Stream Savior 2.1 ユーザーマニュアル
+# Singing Stream Savior 2.2 ユーザーマニュアル
 
-Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.1.8.12** に対応しています。
+Singing Stream Savior は、歌枠配信向けの Windows アプリです。曲ライブラリ、BGM、カラオケ音源、待機リスト、歌詞、ボーカル処理、オーディオルーティング、OBS 出力を一つの操作画面にまとめます。本書は **2.2.0.0** に対応しています。
+
+**2.2 の新機能：** [視聴者リクエストと配信者 Studio]({{ '/ja/audience-requests.html' | relative_url }})では、無料の利用申請、曲目一覧の公開、リクエスト審査、スマートフォンでの管理を説明します。以下のローカル再生手順とは別の任意機能です。
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ja/lyrics-reading-preview.png' | relative_url }}" alt="歌詞設定、OBS プレビュー、プレイヤー、待機リストを表示したフルモード"></a><figcaption>フルモードは配信前の曲・歌詞・OBS 画面の準備に適しています。画像を選ぶと拡大プレビューを開けます。</figcaption></figure>
 

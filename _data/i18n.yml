@@ -23,6 +23,7 @@ zh-TW:
   version: 版本
   download_windows: 下載 Windows 版
   nav:
+    audience_requests: 觀眾點歌與主播後台
     home: 軟體介紹
     getting_started: 開始使用
     library: 歌曲庫與播放
@@ -67,6 +68,7 @@ zh-CN:
   version: 版本
   download_windows: 下载 Windows 版
   nav:
+    audience_requests: 观众点歌与主播后台
     home: 软件介绍
     getting_started: 开始使用
     library: 歌曲库与播放
@@ -111,6 +113,7 @@ en:
   version: Version
   download_windows: Download for Windows
   nav:
+    audience_requests: Audience requests and Studio
     home: About the app
     getting_started: Getting started
     library: Library and playback
@@ -155,6 +158,7 @@ ja:
   version: バージョン
   download_windows: Windows 版をダウンロード
   nav:
+    audience_requests: 視聴者リクエストと Studio
     home: アプリ紹介
     getting_started: はじめに
     library: 曲ライブラリと再生
@@ -199,6 +203,7 @@ ko:
   version: 버전
   download_windows: Windows용 다운로드
   nav:
+    audience_requests: 시청자 신청곡과 Studio
     home: 앱 소개
     getting_started: 시작하기
     library: 곡 라이브러리와 재생

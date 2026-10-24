@@ -88,6 +88,14 @@
     "number": 11
   },
   {
+    "key": "audience-requests",
+    "label": "audience_requests",
+    "group": "tools",
+    "standalone": true,
+    "keywords": "audience song request songbook streamer Studio approval session identity backup 觀眾 观众 點歌 点歌 主播 審核 审核 開通 开通 場次 场次 備份 备份 リクエスト 配信者 承認 시청자 신청곡 스트리머 승인",
+    "number": 12
+  },
+  {
     "key": "resources",
     "label": "resources",
     "group": "resources",

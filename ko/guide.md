@@ -1,14 +1,16 @@
 ---
-title: Singing Stream Savior 2.1 사용자 설명서
-description: Singing Stream Savior 2.1.8.12 한국어 설명서
+title: Singing Stream Savior 2.2 사용자 설명서
+description: Singing Stream Savior 2.2.0.0 한국어 설명서
 lang: ko
 translation_key: home
 manual_bundle: true
 ---
 
-# Singing Stream Savior 2.1 사용자 설명서
+# Singing Stream Savior 2.2 사용자 설명서
 
-Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.1.8.12** 버전을 기준으로 합니다.
+Singing Stream Savior는 노래 방송을 위한 Windows 앱입니다. 곡 라이브러리, BGM, 반주, 대기 목록, 가사, 보컬 처리, 오디오 라우팅과 OBS 출력을 하나의 흐름으로 관리합니다. 이 설명서는 **2.2.0.0** 버전을 기준으로 합니다.
+
+**2.2 새 기능:** [시청자 신청곡과 스트리머 Studio]({{ '/ko/audience-requests.html' | relative_url }})에서 무료 활성화 신청, 곡 목록 공개, 신청 검토와 모바일 관리를 안내합니다. 아래 로컬 재생 절차와 별개인 선택 기능입니다.
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}"><img src="{{ '/assets/images/ko/lyrics-reading-preview.png' | relative_url }}" alt="가사 설정, OBS 미리보기, 플레이어와 대기 목록을 표시한 전체 모드"></a><figcaption>전체 모드는 방송 전에 곡, 가사와 OBS 화면을 준비할 때 적합합니다. 이미지를 누르면 확대 미리보기를 열 수 있습니다.</figcaption></figure>
 
