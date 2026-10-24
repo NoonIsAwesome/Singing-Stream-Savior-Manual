@@ -13,66 +13,23 @@ translation_key: audience-requests
 
 ## 初回：利用を申請する
 
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/2200/audience-requests/01-activation.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/01-activation.png' | relative_url }}" alt="1．承認前は「視聴者リクエスト」の申請ボタンから利用を申請します。" width="1602" height="932" loading="lazy" decoding="async"></a>
-  <figcaption>1．承認前は「視聴者リクエスト」の申請ボタンから利用を申請します。</figcaption>
-</figure>
-
-1. アプリの「視聴者リクエスト」で利用申請を開きます。承認前は、このタブのオンライン機能の代わりに申請画面が表示されます。
-2. 配信者 ID、名前、自己紹介、チャンネル URL、メール、Discord ID を入力します。ID は他の配信者と重複しないものを指定し、半角小文字・数字・ハイフン・アンダースコアの 3～50 文字を使います。チャンネル URL は `https://` で始めてください。
-3. 名前は**配信で使う名前にし、本名は入力しないでください**。紹介は簡単で構いません。メールと Discord ID はマネージャーや会社の連絡先でも構いません。申請メッセージは任意です。迷ったら作者を褒めていただいても！
-4. 内容確認の画面で連絡先などを確認して送信します。送信後は直接編集できません。
-5. 管理者の審査を待ち、「開通状況を確認」で結果を確認します。承認されて接続が完了すると機能が表示されます。審査中の再申請は不要です。
-
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/2200/audience-requests/02-application-form-redacted.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/02-application-form-redacted.png' | relative_url }}" alt="2．配信者情報、チャンネルURL、連絡先を入力し、申請内容を確認します。画像ではメールアドレスだけを非表示にし、チャンネルURLや公開名などは例として残しています。" width="1602" height="932" loading="lazy" decoding="async"></a>
-  <figcaption>2．配信者情報、チャンネルURL、連絡先を入力し、申請内容を確認します。画像ではメールアドレスだけを非表示にし、チャンネルURLや公開名などは例として残しています。</figcaption>
-</figure>
-
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/2200/audience-requests/03-application-pending.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/03-application-pending.png' | relative_url }}" alt="3．送信後は管理者の審査を待ち、利用状況の確認ボタンを押します。同じ申請を繰り返す必要はありません。" width="1602" height="932" loading="lazy" decoding="async"></a>
-  <figcaption>3．送信後は管理者の審査を待ち、利用状況の確認ボタンを押します。同じ申請を繰り返す必要はありません。</figcaption>
-</figure>
-
+{% include audience-request-steps.html group='application' %}
 
 アプリが端末の認証情報を生成し、この PC に保存します。ログイン用パスワードの作成・メモ・入力は不要です。次回以降は保存済みの情報で自動接続します。
 
 ## 曲目一覧を公開して配信回を開始する
 
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/2200/audience-requests/04-session-ready.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/04-session-ready.png' | relative_url }}" alt="4．承認されて接続したら、公開名と現在のプロジェクトを確認します。この画像ではまだ配信回を開始しておらず、公開曲数は0です。オンライン受付を開始すると曲目一覧を公開します。" width="1602" height="932" loading="lazy" decoding="async"></a>
-  <figcaption>4．承認されて接続したら、公開名と現在のプロジェクトを確認します。この画像ではまだ配信回を開始しておらず、公開曲数は0です。オンライン受付を開始すると曲目一覧を公開します。</figcaption>
-</figure>
-
-1. 歌う予定のプロジェクトを開き、曲名・アーティスト・分類を確認します。
-2. 視聴者リクエストの公開名を確認し、必要に応じて画像と配信回の名前を設定します。配信回の名前が空欄なら当日の日付を使います。
-3. オンラインリクエストの開始を押して確認します。**現在のプロジェクト**の曲目一覧を公開し、今回のリクエスト受付を開始します。
-4. アプリに表示された視聴者用リンクをコピーし、配信概要欄やチャットなどで共有します。生成されたリンク全体を共有してください。視聴者に S3S のインストールは不要です。
-5. リンクを開き、実際の視聴者ページを確認します。視聴者は曲を検索・絞り込みし、ニックネームと任意のメッセージを入力して、確認後にリクエストします。
-
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/2200/audience-requests/05-session-open.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/05-session-open.png' | relative_url }}" alt="5．配信回の開始後、公開曲数と更新・開始時刻を確認し、視聴者向けリンクをコピーして共有します。この例では112曲を公開しています。" width="1602" height="932" loading="lazy" decoding="async"></a>
-  <figcaption>5．配信回の開始後、公開曲数と更新・開始時刻を確認し、視聴者向けリンクをコピーして共有します。この例では112曲を公開しています。</figcaption>
-</figure>
-
+{% include audience-request-steps.html group='catalog' %}
 
 公開するのは曲名、アーティスト、長さ、ジャンル、言語、独自プレイリスト分類、リクエスト可否などです。ローカル音源、ファイルパス、歌詞、ボーカルエフェクト設定はアップロードしません。このサイトはリクエスト受付用であり、視聴者が PC の伴奏を聴くためのプレーヤーではありません。
 
 曲の編集やプロジェクト変更後は、対象を確認して曲目一覧を更新してください。**ローカルで編集しただけでは Web に反映されません。** 公開曲数と最終更新時刻を確認できます。OBS 用のローカルセットリスト・歌詞リンクと、視聴者用リンクは別のものです。
 
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/2200/audience-requests/06-viewer-songbook.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/06-viewer-songbook.png' | relative_url }}" alt="6．視聴者向けの公開曲目一覧です。分類の切り替え、検索や絞り込み、お気に入りの登録ができ、各曲のリクエストボタンから申請できます。" width="1273" height="1259" loading="lazy" decoding="async"></a>
-  <figcaption>6．視聴者向けの公開曲目一覧です。分類の切り替え、検索や絞り込み、お気に入りの登録ができ、各曲のリクエストボタンから申請できます。</figcaption>
-</figure>
-
 ## 承認して再生待ちに入れる
 
 新しいリクエストが届くと通知数が表示されます。このタブや審査待ちの画面で曲名・視聴者・メッセージを確認し、今回の全件、審査待ち、承認済み、拒否済みで絞り込めます。
 
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/2200/audience-requests/07-review-request.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/07-review-request.png' | relative_url }}" alt="7．新しいリクエストはタブと未承認件数に表示されます。確認ウィンドウで曲名、視聴者、メッセージを確認し、承認または拒否します。" width="1596" height="928" loading="lazy" decoding="async"></a>
-  <figcaption>7．新しいリクエストはタブと未承認件数に表示されます。確認ウィンドウで曲名、視聴者、メッセージを確認し、承認または拒否します。</figcaption>
-</figure>
+{% include audience-request-steps.html group='review' %}
 
 | 操作・状態 | 動作 |
 | --- | --- |
@@ -80,12 +37,6 @@ translation_key: audience-requests
 | 拒否 | 審査結果を残し、Reserve には追加しません。 |
 | Reserve | 手動で追加した曲と一緒に、通常のドラッグ並べ替え・再生操作を使えます。 |
 | 再生中・歌唱済み | 再生状況と承認結果は別です。承認は歌唱完了を意味しません。 |
-
-<figure class="manual-figure">
-  <a href="{{ '/assets/images/2200/audience-requests/08-accepted-reserve.png' | relative_url }}"><img src="{{ '/assets/images/2200/audience-requests/08-accepted-reserve.png' | relative_url }}" alt="8．承認すると状態が承認済みになり、右側の再生待ちにも曲が入ります。まだ再生待ちの状態で、承認しただけでは再生は始まりません。" width="1602" height="932" loading="lazy" decoding="async"></a>
-  <figcaption>8．承認すると状態が承認済みになり、右側の再生待ちにも曲が入ります。まだ再生待ちの状態で、承認しただけでは再生は始まりません。</figcaption>
-</figure>
-
 
 再生するのは PC のアプリです。ファイルの移動・削除や YouTube 音源の利用不可がある場合、先に音源を修正してください。基本操作は[ライブラリと再生]({{ '/ja/guide.html' | relative_url }}#library-and-playback)を参照してください。
 

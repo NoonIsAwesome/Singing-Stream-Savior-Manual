@@ -1,0 +1,14 @@
+{% assign audience_steps_lang = page.lang | default: site.lang | default: 'zh-TW' %}
+{% assign audience_steps = site.data.audience_request_steps[audience_steps_lang][include.group] %}
+<ol class="chapter-quick-start__steps">
+  {% for step in audience_steps %}
+  {% assign shot = site.data.audience_request_steps.images[step.image] %}
+  {% capture shot_path %}/assets/images/2200/audience-requests/{{ shot.file }}{% endcapture %}
+  <li><div><strong>{{ step.title | escape }}</strong><span>{{ step.text | escape }}</span>
+    <figure class="manual-figure">
+      <a href="{{ shot_path | relative_url }}"><img src="{{ shot_path | relative_url }}" alt="{{ step.alt | escape }}" width="{{ shot.width }}" height="{{ shot.height }}" loading="lazy" decoding="async"></a>
+      <figcaption>{{ step.caption | escape }}</figcaption>
+    </figure>
+  </div></li>
+  {% endfor %}
+</ol>
