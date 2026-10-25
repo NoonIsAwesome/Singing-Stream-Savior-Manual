@@ -2,7 +2,7 @@ release:
   version: "2.2.0.0"
   date: "2026-10-24"
   publishedAt: "2026-10-24T04:30:48Z"
-  latest: true
+  latest: false
   type:
     en: "Audience song requests"
     zh-TW: "觀眾點歌"
