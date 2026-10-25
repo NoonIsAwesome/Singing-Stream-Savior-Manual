@@ -29,3 +29,9 @@
 ```
 
 - 有 `.cmd` 包裝時，再以 `cmd.exe /d /c` 實際執行一次，確認參數、相對路徑、中文輸出與視窗停留行為。
+
+## 正式發布的日誌入口核對
+
+新增 `_data/release-<版本>.yml` 並更新 resources 後，須一併更新 `_includes/changelog-page.html` 的 current_release、保留前一版的 include，並調整 release_count；新增資料檔不會自動加入目前的手動日誌清單。核對 resources 的 updated_at 為本次發布日期，publishedAt 使用正式 GitHub Release API 的真實 UTC 時間。
+
+不得只以 metadata 同步成功當成網站已完成。保留既有 rendered-site assertions，必須等指定提交的 Pages build／deployment 成功，再核對五語正式日誌的唯一 latest、第一個版本及版本範圍。

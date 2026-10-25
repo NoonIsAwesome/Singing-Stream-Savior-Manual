@@ -1,5 +1,6 @@
 {% assign current_lang = page.lang | default: site.lang | default: 'zh-TW' %}
-{% assign current_release = site.data["release-2-2-0-0"].release %}
+{% assign current_release = site.data["release-2-2-0-1"].release %}
+{% assign previous_product_release_2200 = site.data["release-2-2-0-0"].release %}
 {% assign previous_product_release_21812 = site.data["release-2-1-8-12"].release %}
 {% assign previous_product_release_21811 = site.data["release-2-1-8-11"].release %}
 {% assign previous_product_release_21810 = site.data["release-2-1-8-10"].release %}
@@ -45,7 +46,7 @@
 {% assign previous_feature_release = site.data["release-2-1-0-1"].release %}
 {% assign previous_major_release = site.data["release-2-1-0-0"].release %}
 {% assign releases = site.data.releases.releases %}
-{% assign release_count = releases | size | plus: 45 %}
+{% assign release_count = releases | size | plus: 46 %}
 {% if current_lang == 'zh-TW' %}
   {% assign content_lang = 'zh-TW' %}
   {% assign eyebrow = 'RELEASE HISTORY · FROM NEWEST' %}
@@ -101,6 +102,7 @@
 
 <section class="release-timeline" aria-label="{{ title }}">
   {% include release-entry.html release=current_release content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
+  {% include release-entry.html release=previous_product_release_2200 content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
   {% include release-entry.html release=previous_product_release_21812 content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
   {% include release-entry.html release=previous_product_release_21811 content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
   {% include release-entry.html release=previous_product_release_21810 content_lang=content_lang latest_label=latest_label release_link=release_link items_label=items_label %}
