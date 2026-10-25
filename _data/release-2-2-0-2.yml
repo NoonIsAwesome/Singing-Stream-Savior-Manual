@@ -1,0 +1,39 @@
+release:
+  version: "2.2.0.2"
+  date: "2026-10-26"
+  publishedAt: "2026-10-25T19:42:41Z"
+  latest: true
+  type:
+    en: "Reserve, lyrics and identity recovery improvements"
+    zh-TW: "待播、歌詞與身分還原改善"
+    zh-CN: "待播、歌词与身份还原改善"
+    ja: "再生待ち・歌詞・ID復元の改善"
+    ko: "재생 대기·가사·ID 복원 개선"
+  release_url: "https://github.com/NoonIsAwesome/Singing-Stream-Savior-Updates/releases/tag/v2.2.0.2"
+  summary:
+    en: "Improvements to Reserve, lyrics and streamer identity recovery."
+    zh-TW: "改善待播與歌詞處理，讓新電腦可直接還原主播身分。"
+    zh-CN: "改善待播与歌词处理，让新电脑可直接还原主播身份。"
+    ja: "再生待ち・歌詞・配信者IDの復元を改善しました。"
+    ko: "재생 대기, 가사 처리 및 스트리머 ID 복원을 개선했습니다."
+  items:
+    en:
+      - "Improve Reserve completion handling to keep newly added songs in the queue."
+      - "Improve lyrics handling to preserve your latest changes."
+      - "Restore your streamer identity backup directly on a new computer."
+    zh-TW:
+      - "改善待播歌曲的完成判定，避免誤移除新加入的歌曲。"
+      - "改善歌詞套用流程，保留使用者最新的歌詞設定。"
+      - "新電腦可直接還原主播身分備份。"
+    zh-CN:
+      - "改善待播歌曲的完成判定，避免误移除新加入的歌曲。"
+      - "改善歌词应用流程，保留用户最新的歌词设置。"
+      - "新电脑可直接还原主播身份备份。"
+    ja:
+      - "再生待ちの完了判定を改善し、新しく追加した曲が誤って削除されないようにしました。"
+      - "歌詞の適用処理を改善し、最新の設定が保持されるようにしました。"
+      - "新しいパソコンで配信者IDのバックアップを直接復元できます。"
+    ko:
+      - "재생 대기 완료 처리를 개선해 새로 추가한 곡이 잘못 삭제되지 않도록 했습니다."
+      - "가사 적용 과정을 개선해 사용자의 최신 설정을 유지합니다."
+      - "새 컴퓨터에서 스트리머 ID 백업을 바로 복원할 수 있습니다."
