@@ -2,7 +2,7 @@ release:
   version: "2.2.0.1"
   date: "2026-10-25"
   publishedAt: "2026-10-25T00:49:49Z"
-  latest: true
+  latest: false
   type:
     en: "Playback and project-opening fixes"
     zh-TW: "播放與專案開啟修正"

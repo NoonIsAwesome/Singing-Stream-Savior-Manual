@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync } from "node:fs";
+import { mkdtempSync, mkdirSync, readFileSync, readdirSync, writeFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { validateBuiltSite, parseCurrentReleaseMetadata } from "./validate-built-site.mjs";
@@ -73,6 +73,16 @@ rejects("rejects duplicate latest articles", current + current, "expected exactl
 rejects("rejects duplicate current IDs even without two latest classes", current + `<article class="release-entry" id="${currentId}"></article>`, "not the rendered current release");
 rejects("rejects a current release hidden below an old entry", old + current, "not the rendered current release");
 rejects("rejects a similarly named CSS class", current.replace("release-entry--latest", "release-entry--latest-other"), "not the rendered current release");
+test("committed release data has one latest matching the download metadata", () => {
+  const dataRoot = new URL("../_data/", import.meta.url);
+  const latestFiles = readdirSync(dataRoot).filter((name) =>
+    /^release-.*\.yml$/.test(name)
+    && /^  latest:[ \t]*true[ \t]*(?:#[^\n]*)?$/m.test(
+      readFileSync(new URL(name, dataRoot), "utf8").replace(/\r\n?/g, "\n")));
+  assert.deepEqual(latestFiles, [`release-${currentVersion.replaceAll(".", "-")}.yml`],
+    "Demote the previous release's latest flag when adding the current release");
+});
+
 test("release fixture agrees with the download metadata", () => {
   assert.ok(current.includes(`id="${currentId}"`));
   assert.ok(resources.includes(`  version: "${currentVersion}"`));
