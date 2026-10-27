@@ -6,6 +6,9 @@ translation_key: library-and-playback
 
 # 歌曲庫、歌單與播放器
 
+[新版影片與音量平衡教學]({{ '/video-and-volume.html' | relative_url }})
+
+
 <section class="chapter-quick-start" aria-labelledby="library-quick-start">
   <div>
     <p class="chapter-quick-start__eyebrow">最快開始</p>
