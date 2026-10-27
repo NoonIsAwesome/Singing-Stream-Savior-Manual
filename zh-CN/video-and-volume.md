@@ -1,10 +1,10 @@
 ---
-title: 视频播放与歌曲音量平衡
+title: 视频播放与 OBS 采集
 lang: zh-CN
 translation_key: video-and-volume
 ---
 
-# 视频播放与歌曲音量平衡
+# 视频播放与 OBS 采集
 
 2.2.1.0 起，可播放 MP4／MOV 合唱视频，并为每首歌保存增益与抠像参数。
 
@@ -15,6 +15,12 @@ translation_key: video-and-volume
 <li><div><strong>在 OBS 获取透明画面</strong><span>选择干净捕获，再在 OBS 新增窗口捕获，选择视频画面 — 干净捕获。捕获方式选择 Windows 10（1903 或更新版本），窗口标题必须匹配。</span></div></li>
 </ol>
 
+{% include video-output-guide-images.html kind='controls' %}
+
+{% include video-output-guide-images.html kind='key' %}
+
+{% include video-output-guide-images.html kind='obs' %}
+
 在下方放置背景来源以确认透明。棋盘格只是编辑参考；自带透明通道的 MOV 无需色度键，但 MOV 扩展名并不保证存在透明通道。
 
 按 Esc 或右键返回操作界面，也可从主播放器重新打开视频画面。可将窗口放在其他窗口后方，不要依赖最小化进行捕获。
@@ -23,7 +29,7 @@ translation_key: video-and-volume
 
 ## 歌曲音量平衡
 
-在设置中开启自动平衡歌曲音量。默认 −20 LUFS-I 是伴奏的起始参考，不是 YouTube 上传标准；功能默认关闭。分析完成后下次播放才应用，不会在演唱途中突然调整。
+在设置中开启自动平衡歌曲音量。默认 −18 LUFS-I 是伴奏的起始参考，不是 YouTube 上传标准；功能默认关闭。分析完成后下次播放才应用，不会在演唱途中突然调整。
 
 增益显示合计，展开后可查看自动补偿和手动微调。每次调整 0.5 dB，重置只清除手动值。手动增益随项目保存，BGM 不受影响。
 

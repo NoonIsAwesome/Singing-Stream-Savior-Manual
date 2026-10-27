@@ -24,6 +24,7 @@ zh-TW:
   download_windows: 下載 Windows 版
   nav:
     audience_requests: 觀眾點歌與主播後台
+    video_playback: 影片播放與 OBS 擷取
     home: 軟體介紹
     getting_started: 開始使用
     library: 歌曲庫與播放
@@ -69,6 +70,7 @@ zh-CN:
   download_windows: 下载 Windows 版
   nav:
     audience_requests: 观众点歌与主播后台
+    video_playback: 视频播放与 OBS 采集
     home: 软件介绍
     getting_started: 开始使用
     library: 歌曲库与播放
@@ -114,6 +116,7 @@ en:
   download_windows: Download for Windows
   nav:
     audience_requests: Audience requests and Studio
+    video_playback: Video playback and OBS capture
     home: About the app
     getting_started: Getting started
     library: Library and playback
@@ -159,6 +162,7 @@ ja:
   download_windows: Windows 版をダウンロード
   nav:
     audience_requests: 視聴者リクエストと Studio
+    video_playback: 動画再生と OBS キャプチャ
     home: アプリ紹介
     getting_started: はじめに
     library: 曲ライブラリと再生
@@ -204,6 +208,7 @@ ko:
   download_windows: Windows용 다운로드
   nav:
     audience_requests: 시청자 신청곡과 Studio
+    video_playback: 동영상 재생과 OBS 캡처
     home: 앱 소개
     getting_started: 시작하기
     library: 곡 라이브러리와 재생

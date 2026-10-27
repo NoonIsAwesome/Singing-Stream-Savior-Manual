@@ -1,10 +1,10 @@
 ---
-title: Video playback and song volume balance
+title: Video playback and OBS capture
 lang: en
 translation_key: video-and-volume
 ---
 
-# Video playback and song volume balance
+# Video playback and OBS capture
 
 From 2.2.1.0, play MP4/MOV duet videos and save gain and chroma key settings separately for each song.
 
@@ -15,6 +15,12 @@ From 2.2.1.0, play MP4/MOV duet videos and save gain and chroma key settings sep
 <li><div><strong>Transparent video in OBS</strong><span>Select Clean capture in S3S, then add an OBS Window Capture source for Video screen — Clean capture. Choose Windows 10 (1903 and up) and require the window title to match.</span></div></li>
 </ol>
 
+{% include video-output-guide-images.html kind='controls' %}
+
+{% include video-output-guide-images.html kind='key' %}
+
+{% include video-output-guide-images.html kind='obs' %}
+
 Place a background source underneath to check transparency. The checkerboard is only an editing aid. A MOV that already contains alpha needs no chroma key; the MOV extension alone does not guarantee alpha.
 
 Press Esc or use the context menu to return to controls. You can also reopen Video screen from the main player. Keep the window behind other windows when needed; do not rely on minimizing it for capture.
@@ -23,7 +29,7 @@ Keep your existing S3S audio source in OBS; do not capture the same video audio 
 
 ## Song volume balance
 
-Enable automatic song volume balance in Settings. The default −20 LUFS-I is a starting point for accompaniment, not a YouTube upload requirement. The feature is off by default; completed analysis applies on the next playback, never suddenly during a song.
+Enable automatic song volume balance in Settings. The default −18 LUFS-I is a starting point for accompaniment, not a YouTube upload requirement. The feature is off by default; completed analysis applies on the next playback, never suddenly during a song.
 
 Gain shows the total. Expand it to see automatic compensation and manual trim. Each step is 0.5 dB; reset clears only manual trim. Manual gain is saved with the project. BGM is unaffected.
 

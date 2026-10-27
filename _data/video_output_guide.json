@@ -1,0 +1,87 @@
+{
+  "zh-TW": {
+    "controls_image": "/assets/images/2210/video-output-zh_TW.png",
+    "controls_alt": "影片視窗的播放控制、輸出尺寸、色度鍵與乾淨擷取",
+    "controls_caption": "實際影片視窗；上方使用測試畫面，數字標示主要操作位置。",
+    "steps": [
+      "播放／暫停與停止，和主播放器同步。",
+      "拖曳進度可跳轉播放位置。",
+      "選擇輸出尺寸。",
+      "設定並保存這支影片的色度鍵參數。",
+      "切換乾淨擷取；按 Esc 或右鍵返回。"
+    ],
+    "key_image": "/assets/images/2210/chroma-settings-zh_TW.png",
+    "key_alt": "每支影片的色度鍵設定",
+    "key_caption": "每支影片分別保存參數；原生透明 MOV 通常不需啟用色度鍵。",
+    "obs_alt": "OBS 視窗擷取的新版擷取方式與標題匹配設定",
+    "obs_caption": "Windows 10 與 Windows 11 都選「Windows 10（1903 或更新版本）」。不要選 BitBlt；視窗標題選必須相符，並選取「影片畫面 — 乾淨擷取」。"
+  },
+  "en": {
+    "controls_image": "/assets/images/2210/video-output-en.png",
+    "controls_alt": "Video controls, output size, chroma key and clean capture",
+    "controls_caption": "Actual video window with a test clip. Numbers identify the main controls.",
+    "steps": [
+      "Play/pause and stop stay synchronized with the main player.",
+      "Seek with the progress slider.",
+      "Choose the output size.",
+      "Adjust and save chroma key for this video.",
+      "Enter clean capture; press Esc or right-click to return."
+    ],
+    "key_image": "/assets/images/2210/chroma-settings-en.png",
+    "key_alt": "Per-video chroma key settings",
+    "key_caption": "Settings are saved separately for each video. A MOV with native alpha usually needs no chroma key.",
+    "obs_alt": "OBS modern capture method and title matching",
+    "obs_caption": "On both Windows 10 and Windows 11 choose Windows 10 (1903 and up), not BitBlt. Require the title to match and select Video screen — Clean capture."
+  },
+  "zh-CN": {
+    "controls_image": "/assets/images/2210/video-output-zh_CN.png",
+    "controls_alt": "视频窗口的播放控制、输出尺寸、色度键与干净采集",
+    "controls_caption": "实际视频窗口；上方使用测试画面，数字标示主要操作位置。",
+    "steps": [
+      "播放／暂停与停止同步主播放器。",
+      "拖动进度可跳转。",
+      "选择输出尺寸。",
+      "调整并保存当前视频的色度键。",
+      "进入干净采集；Esc 或右键返回。"
+    ],
+    "key_image": "/assets/images/2210/chroma-settings-zh_CN.png",
+    "key_alt": "每个视频的色度键设置",
+    "key_caption": "各视频分别保存参数；原生透明 MOV 通常无需色度键。",
+    "obs_alt": "OBS 窗口采集的新版方式与标题匹配",
+    "obs_caption": "Windows 10 和 Windows 11 都选择 Windows 10（1903 或更新版本），不要选 BitBlt。标题须匹配，并选中视频画面 — 干净采集。"
+  },
+  "ja": {
+    "controls_image": "/assets/images/2210/video-output-ja_JP.png",
+    "controls_alt": "動画の再生操作・出力サイズ・クロマキー・クリーンキャプチャ",
+    "controls_caption": "実際の動画ウィンドウです。テスト映像を使用し、番号で主な操作位置を示しています。",
+    "steps": [
+      "再生・一時停止・停止はメインプレーヤーと同期します。",
+      "スライダーで再生位置を変更します。",
+      "出力サイズを選びます。",
+      "動画別にクロマキーを設定・保存します。",
+      "クリーンキャプチャへ切り替えます。Esc または右クリックで戻れます。"
+    ],
+    "key_image": "/assets/images/2210/chroma-settings-ja_JP.png",
+    "key_alt": "動画別クロマキー設定",
+    "key_caption": "動画ごとに保存します。アルファ付き MOV は通常クロマキー不要です。",
+    "obs_alt": "OBS の新しいキャプチャ方式とタイトル一致設定",
+    "obs_caption": "Windows 10 と Windows 11 の両方で Windows 10（1903 以降）を選びます。BitBlt は選びません。タイトル完全一致で、動画画面のクリーンキャプチャ用ウィンドウを指定します。"
+  },
+  "ko": {
+    "controls_image": "/assets/images/2210/video-output-ko_KR.png",
+    "controls_alt": "동영상 재생, 출력 크기, 크로마 키와 클린 캡처",
+    "controls_caption": "테스트 영상을 표시한 실제 동영상 창입니다. 숫자는 주요 조작 위치를 나타냅니다.",
+    "steps": [
+      "재생·일시 정지·정지는 메인 플레이어와 동기화됩니다.",
+      "슬라이더로 재생 위치를 이동합니다.",
+      "출력 크기를 선택합니다.",
+      "동영상별 크로마 키를 조절하고 저장합니다.",
+      "클린 캡처로 전환합니다. Esc 또는 우클릭으로 돌아옵니다."
+    ],
+    "key_image": "/assets/images/2210/chroma-settings-ko_KR.png",
+    "key_alt": "동영상별 크로마 키 설정",
+    "key_caption": "동영상마다 따로 저장됩니다. 알파 채널 MOV에는 보통 크로마 키가 필요 없습니다.",
+    "obs_alt": "OBS의 새 캡처 방식과 제목 일치 설정",
+    "obs_caption": "Windows 10과 Windows 11 모두 Windows 10(1903 이상)을 선택하세요. BitBlt는 선택하지 않습니다. 제목을 정확히 일치시키고 동영상 화면의 클린 캡처 창을 고릅니다."
+  }
+}

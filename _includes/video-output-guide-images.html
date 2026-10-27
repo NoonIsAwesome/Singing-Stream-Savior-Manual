@@ -1,0 +1,15 @@
+{% assign video_copy = site.data.video_output_guide[page.lang] %}
+{% if include.kind == 'controls' %}
+<figure class="manual-figure manual-figure--medium">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 374 666 172" width="666" height="172" style="display:block;width:100%;height:auto;overflow:hidden" role="img" aria-label="{{ video_copy.controls_alt | escape }}">
+<image href="{{ video_copy.controls_image | relative_url }}" x="0" y="0" width="666" height="548"/>
+<g fill="none" stroke="#70cfff" stroke-width="2"><rect x="10" y="389" width="79" height="39" rx="7"/><rect x="92" y="396" width="532" height="24" rx="5"/><rect x="10" y="443" width="105" height="32" rx="5"/><rect x="123" y="443" width="147" height="32" rx="5"/><rect x="539" y="443" width="115" height="32" rx="5"/></g>
+<g fill="#0755a8" stroke="#ffffff" stroke-width="1.5"><circle cx="28" cy="384" r="10"/><circle cx="370" cy="385" r="10"/><circle cx="62" cy="435" r="10"/><circle cx="174" cy="435" r="10"/><circle cx="608" cy="435" r="10"/></g>
+<g fill="#ffffff" font-family="Arial,sans-serif" font-size="14" font-weight="700" text-anchor="middle"><text x="28" y="389">1</text><text x="370" y="390">2</text><text x="62" y="440">3</text><text x="174" y="440">4</text><text x="608" y="440">5</text></g></svg>
+<figcaption>{{ video_copy.controls_caption | escape }}</figcaption></figure>
+<ol>{% for step in video_copy.steps %}<li>{{ step | escape }}</li>{% endfor %}</ol>
+{% elsif include.kind == 'key' %}
+<figure class="manual-figure manual-figure--compact"><img src="{{ video_copy.key_image | relative_url }}" alt="{{ video_copy.key_alt | escape }}" loading="lazy" decoding="async"><figcaption>{{ video_copy.key_caption | escape }}</figcaption></figure>
+{% elsif include.kind == 'obs' %}
+<figure class="manual-figure manual-figure--medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="115 526 710 94" width="710" height="94" style="display:block;width:100%;height:auto;overflow:hidden" role="img" aria-label="{{ video_copy.obs_alt | escape }}"><image href="{{ '/assets/images/2210/obs-window-method-reference.png' | relative_url }}" x="0" y="0" width="982" height="812"/><g fill="none" stroke="#70cfff" stroke-width="3"><rect x="234" y="534" width="578" height="33" rx="4"/><rect x="234" y="577" width="578" height="33" rx="4"/></g></svg><figcaption>{{ video_copy.obs_caption | escape }}</figcaption></figure>
+{% endif %}
