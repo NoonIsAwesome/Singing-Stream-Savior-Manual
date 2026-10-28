@@ -1,6 +1,6 @@
 ---
 title: 歌回救星 2.2 使用说明
-description: Singing Stream Savior 2.2.0.2 简体中文使用说明
+description: Singing Stream Savior 2.2.1.0 简体中文使用说明
 lang: zh-CN
 translation_key: home
 manual_bundle: true
@@ -11,7 +11,7 @@ manual_bundle: true
 [新版视频与音量平衡教程]({{ '/zh-CN/video-and-volume.html' | relative_url }})
 
 
-歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.2.0.2**。
+歌回救星（Singing Stream Savior）是为歌回直播设计的 Windows 工具，将歌曲库、BGM、歌唱伴奏、待播、歌词、音频路由、人声效果与 OBS 画面整合在同一套流程中。本说明适用于 **2.2.1.0**。
 
 **2.2 新功能：** [观众点歌与主播后台]({{ '/zh-CN/audience-requests.html' | relative_url }})说明免费开通申请、公开歌单、审核点歌与手机管理；这是选用的在线功能，与下方本地播放流程分开。
 

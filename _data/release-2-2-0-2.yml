@@ -2,7 +2,7 @@ release:
   version: "2.2.0.2"
   date: "2026-10-26"
   publishedAt: "2026-10-25T19:42:41Z"
-  latest: true
+  latest: false
   type:
     en: "Reserve, lyrics and identity recovery improvements"
     zh-TW: "待播、歌詞與身分還原改善"
