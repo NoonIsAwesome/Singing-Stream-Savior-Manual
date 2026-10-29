@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { join, resolve, dirname } from "node:path";
+import { tmpdir } from "node:os";
+import { validateRenderedDownloads } from "./validate-download-clicks.mjs";
 import { test } from "node:test";
 import { runInNewContext } from "node:vm";
 const source = readFileSync(new URL("../assets/js/download-clicks.js", import.meta.url), "utf8");
@@ -134,3 +137,58 @@ test("GigaFile URL requires the explicit gigafile source marker",async()=>{
   const b=browser({dataset:{downloadClickMirrorUrl:gigafile}});b.emit(b.event({target:{closest:()=>gigafileLink(gigafile,"github")}}));await tick();assert.equal(b.calls.length,0);
 });
 test("missing body is harmless",()=>{browser({noBody:true});});
+
+
+const digestMirror = r2.replace("/Singing.", "/sha256/" + "a".repeat(64) + "/Singing.");
+test("exact configured SHA-addressed R2 ZIP counts once", async () => {
+  const b = browser({ dataset: { downloadClickMirrorUrl: digestMirror } });
+  b.emit(b.event({ target: { closest: () => ({ href: digestMirror, getAttribute: () => "r2" }) } }));
+  await tick(); assert.equal(b.calls.length, 1);
+});
+for (const bad of [
+  digestMirror.replace("a".repeat(64), "a".repeat(63)),
+  digestMirror.replace("a".repeat(64), "a".repeat(65)),
+  digestMirror.replace("a".repeat(64), "A".repeat(64)),
+  digestMirror.replace("/sha256/", "/other/"),
+  digestMirror.replace(".zip", ".s3spack"),
+  digestMirror + "?x=1",
+]) test("reject malformed SHA-addressed mirror " + bad, async () => {
+  const b = browser({ dataset: { downloadClickMirrorUrl: bad } });
+  b.emit(b.event({ target: { closest: () => ({ href: bad, getAttribute: () => "r2" }) } }));
+  await tick(); assert.equal(b.calls.length, 0);
+});
+test("different valid SHA does not bypass exact configured URL", async () => {
+  const b = browser({ dataset: { downloadClickMirrorUrl: digestMirror } });
+  const other = digestMirror.replace("a".repeat(64), "b".repeat(64));
+  b.emit(b.event({ target: { closest: () => ({ href: other, getAttribute: () => "r2" }) } }));
+  await tick(); assert.equal(b.calls.length, 0);
+});
+test("rendered five-language validator accepts flat and SHA R2 URLs and rejects malformed SHA", () => {
+  const root = mkdtempSync(join(tmpdir(), "s3s-download-sha-"));
+  const views = JSON.parse(readFileSync(new URL("../_data/analytics.json", import.meta.url), "utf8"));
+  const clicks = JSON.parse(readFileSync(new URL("../_data/download_clicks.json", import.meta.url), "utf8"));
+  try {
+    mkdirSync(join(root, "assets/js"), { recursive: true });
+    writeFileSync(join(root, "assets/js/download-clicks.js"), source);
+    for (const mirror of [r2, digestMirror, digestMirror.replace("a".repeat(64), "a".repeat(63))]) {
+      for (const prefix of ["", "en", "ja", "ko", "zh-CN"]) {
+        mkdirSync(join(root, prefix), { recursive: true });
+        writeFileSync(join(root, prefix, "resources.html"), '<body data-download-counter-enabled="' + clicks.enabled
+          + '" data-download-counter-name="' + clicks.counter.trim() + '" data-counter-workspace="' + clicks.workspace.trim()
+          + '" data-counter-name="' + views.counter.trim() + '" data-download-click-mirror-url="' + mirror
+          + '"><a href="' + href + '">GitHub</a><a data-download-source="r2" href="' + mirror
+          + '">R2</a><script defer src="/Singing-Stream-Savior-Manual/assets/js/download-clicks.js"></script></body>');
+      }
+      const errors = validateRenderedDownloads(root, views, clicks);
+      if (mirror === r2 || mirror === digestMirror) assert.deepEqual(errors, []);
+      else {
+        assert.equal(errors.length, 5);
+        assert.ok(errors.every(message => message.includes("backup link and click allowlist must match")));
+      }
+    }
+  } finally {
+    const target = resolve(root);
+    assert.equal(dirname(target), resolve(tmpdir()));
+    rmSync(target, { recursive: true, force: true });
+  }
+});

@@ -57,7 +57,7 @@ export function validateRenderedDownloads(root, views, clicks, base = "/Singing-
         const r2 = attr(mirrorLinks[0] || "", "data-download-source") === "r2";
         valid = url.protocol === "https:" && !url.username && !url.password && !url.port && !url.search && !url.hash
           && (r2 ? url.hostname === "updates.noonisawesome.dev"
-            && /^\/releases\/v\d+(?:\.\d+){3}\/Singing\.Stream\.Savior\.\d+(?:\.\d+){3}(?:-revision2)?\.zip$/.test(url.pathname)
+            && /^\/releases\/v\d+(?:\.\d+){3}\/(?:sha256\/[0-9a-f]{64}\/)?Singing\.Stream\.Savior\.\d+(?:\.\d+){3}(?:-revision2)?\.zip$/.test(url.pathname)
             : /^\d+\.gigafile\.(?:nu|jp)$/.test(url.hostname) && url.pathname !== "/");
       } catch { /* malformed mirror must fail the build */ }
       if (!valid || mirrorLinks.length !== 1 || attr(mirrorLinks[0] || "", "href") !== mirror)

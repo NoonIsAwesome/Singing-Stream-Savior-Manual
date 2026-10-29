@@ -38,7 +38,7 @@
       const actual = new URL(href, window.location.href);
       const allowed = (url) => url.protocol === "https:" && !url.username && !url.password
         && !url.port && !url.search && !url.hash && (provider === "r2"
-          ? url.hostname === "updates.noonisawesome.dev" && /^\/releases\/v\d+(?:\.\d+){3}\/Singing\.Stream\.Savior\.\d+(?:\.\d+){3}(?:-revision2)?\.zip$/.test(url.pathname)
+          ? url.hostname === "updates.noonisawesome.dev" && /^\/releases\/v\d+(?:\.\d+){3}\/(?:sha256\/[0-9a-f]{64}\/)?Singing\.Stream\.Savior\.\d+(?:\.\d+){3}(?:-revision2)?\.zip$/.test(url.pathname)
           : /^\d+\.gigafile\.(?:nu|jp)$/i.test(url.hostname) && url.pathname !== "/");
       return allowed(expected) && allowed(actual) && expected.href === expectedText && actual.href === expected.href;
     } catch { return false; }
