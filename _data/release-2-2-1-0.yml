@@ -2,7 +2,7 @@ release:
   version: "2.2.1.0"
   date: "2026-10-29"
   publishedAt: "2026-10-29T04:52:10Z"
-  latest: true
+  latest: false
   type:
     en: "Video playback, song volume balance and White Orbit"
     zh-TW: "影片播放、歌曲音量平衡與 White Orbit"
