@@ -1,0 +1,20 @@
+{% assign video_entry_lang = page.lang | default: 'zh-TW' %}
+{% assign video_entry_copy = site.data.player_window_buttons[video_entry_lang] %}
+<h2 id="video-window-entry">{{ video_entry_copy.video_entry_title | escape }}</h2>
+<p>{{ video_entry_copy.video_entry_intro | escape }}</p>
+<figure class="manual-figure manual-figure--medium">
+  <a href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" aria-label="{{ video_entry_copy.full_image | escape }}">
+    <svg class="player-window-zoom" xmlns="http://www.w3.org/2000/svg" viewBox="1048 224 456 292" width="684" height="438" style="display:block;width:100%;height:auto;overflow:hidden" role="img" aria-label="{{ video_entry_copy.video_entry_alt | escape }}">
+      <image href="{{ '/assets/images/demo-lyrics-preview.png' | relative_url }}" x="0" y="0" width="1510" height="940" />
+      <g fill="none" stroke="#70cfff" stroke-width="3">
+        <rect x="1451" y="262" width="36" height="36" rx="7" />
+        <path d="M1469 252V260" />
+      </g>
+      <circle cx="1469" cy="240" r="12" fill="#0755a8" stroke="#ffffff" stroke-width="1.5" />
+      <text x="1469" y="246" fill="#ffffff" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">2</text>
+    </svg>
+  </a>
+  <figcaption>{{ video_entry_copy.video_entry_caption | escape }}</figcaption>
+</figure>
+<p>{{ video_entry_copy.video_entry_body | escape }}</p>
+

@@ -10,10 +10,12 @@ translation_key: video-and-volume
 
 <ol class="chapter-quick-start__steps">
 <li><div><strong>加入影片</strong><span>將 MP4／MOV 拖進歌曲列表，或按「匯入伴奏」選取檔案。</span></div></li>
-<li><div><strong>播放與預覽</strong><span>播放後按「影片畫面」。聲音由主播放器處理；影片視窗的播放、停止與進度拉桿控制同一個播放器。</span></div></li>
+<li><div><strong>播放與預覽</strong><span>播放後按伴奏播放器標題列右上角的「影片畫面」圖示（原 YouTube 影片視窗按鈕，位置見下圖）。聲音由主播放器處理；影片視窗的播放、停止與進度拉桿控制同一個播放器。</span></div></li>
 <li><div><strong>設定每支影片</strong><span>到「歌曲設定 → 影片」選擇色度鍵背景色、相似性、平滑與溢色抑制。儲存設定及專案，每支影片分別保留參數。</span></div></li>
 <li><div><strong>在 OBS 取得透明畫面</strong><span>在軟體按「乾淨擷取」，再新增 OBS「視窗擷取」，選「影片畫面 — 乾淨擷取」。擷取方式選 Windows 10（1903 或更新版本），視窗標題須相符。</span></div></li>
 </ol>
+
+{% include video-window-entry.html %}
 
 {% include video-output-guide-images.html kind='controls' %}
 

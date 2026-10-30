@@ -10,10 +10,12 @@ translation_key: video-and-volume
 
 <ol class="chapter-quick-start__steps">
 <li><div><strong>동영상 추가</strong><span>MP4/MOV를 곡 목록에 놓거나 반주 가져오기로 파일을 선택합니다.</span></div></li>
-<li><div><strong>재생과 미리보기</strong><span>재생 후 동영상 화면을 엽니다. 소리는 메인 플레이어에서 처리하며 동영상 창의 재생, 정지, 탐색도 같은 플레이어를 제어합니다.</span></div></li>
+<li><div><strong>재생과 미리보기</strong><span>재생 후 반주 플레이어 제목 표시줄 오른쪽 위의 동영상 화면 아이콘(기존 YouTube 영상 버튼, 아래 그림 참조)을 누르세요. 소리는 메인 플레이어에서 처리하며 동영상 창의 재생, 정지, 탐색도 같은 플레이어를 제어합니다.</span></div></li>
 <li><div><strong>동영상별 설정</strong><span>곡 설정 → 동영상에서 키 색상, 유사도, 부드러움, 색 번짐 억제를 조절합니다. 설정과 프로젝트를 저장하면 동영상마다 따로 유지됩니다.</span></div></li>
 <li><div><strong>OBS에서 투명 화면 캡처</strong><span>S3S에서 클린 캡처로 전환한 뒤 OBS 창 캡처에서 동영상 화면의 클린 캡처 창을 선택합니다. 방식은 Windows 10(1903 이상), 창 제목은 정확히 일치하도록 설정합니다.</span></div></li>
 </ol>
+
+{% include video-window-entry.html %}
 
 {% include video-output-guide-images.html kind='controls' %}
 

@@ -10,10 +10,12 @@ translation_key: video-and-volume
 
 <ol class="chapter-quick-start__steps">
 <li><div><strong>添加视频</strong><span>将 MP4／MOV 拖入歌曲列表，或通过导入伴奏选择文件。</span></div></li>
-<li><div><strong>播放与预览</strong><span>播放后打开视频画面。声音由主播放器处理；视频窗口的播放、停止与进度滑块控制同一个播放器。</span></div></li>
+<li><div><strong>播放与预览</strong><span>播放后点击伴奏播放器标题栏右上角的视频画面图标（原 YouTube 视频窗口按钮，位置见下图）。声音由主播放器处理；视频窗口的播放、停止与进度滑块控制同一个播放器。</span></div></li>
 <li><div><strong>设置每个视频</strong><span>在歌曲设置 → 视频中设置色度键颜色、相似性、平滑和溢色抑制。保存设置及项目后，每个视频分别保留参数。</span></div></li>
 <li><div><strong>在 OBS 获取透明画面</strong><span>选择干净捕获，再在 OBS 新增窗口捕获，选择视频画面 — 干净捕获。捕获方式选择 Windows 10（1903 或更新版本），窗口标题必须匹配。</span></div></li>
 </ol>
+
+{% include video-window-entry.html %}
 
 {% include video-output-guide-images.html kind='controls' %}
 

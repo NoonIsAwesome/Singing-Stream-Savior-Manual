@@ -43,7 +43,7 @@ translation_key: lyrics
 
 有時間標記的歌詞可跟隨伴奏進度，自動捲動並醒目顯示目前句。
 
-「歌詞視窗」與「YouTube 影片」按鈕固定在**伴奏播放器標題列的右上角**，不是歌詞頁面的按鈕。請參考下方的[按鈕位置放大圖與開啟方式](#player-window-buttons)。
+「歌詞視窗」與「影片畫面」（原「YouTube 影片」）按鈕固定在**伴奏播放器標題列的右上角**，不是歌詞頁面的按鈕。請參考下方的[按鈕位置放大圖與開啟方式](#player-window-buttons)。
 
 ## 使用「管理歌詞」
 
@@ -93,9 +93,9 @@ translation_key: lyrics
 
 <figure class="manual-figure">
   <a href="assets/images/demo-lyrics-preview.png">
-    <img src="assets/images/demo-lyrics-preview.png" alt="歌詞頁的 OBS 即時預覽；獨立歌詞視窗與 YouTube 影片的入口位於右側伴奏播放器標題列" loading="lazy" decoding="async">
+    <img src="assets/images/demo-lyrics-preview.png" alt="歌詞頁的 OBS 即時預覽；獨立歌詞視窗與影片畫面（YouTube／MP4／MOV）的入口位於右側伴奏播放器標題列" loading="lazy" decoding="async">
   </a>
-  <figcaption>左側歌詞頁用來調整與預覽 OBS 顯示效果；要開啟自己閱讀的歌詞視窗或 YouTube 畫面，請使用右側伴奏播放器的兩個圖示（見上方放大圖）。</figcaption>
+  <figcaption>左側歌詞頁用來調整與預覽 OBS 顯示效果；要開啟自己閱讀的歌詞視窗或影片畫面（YouTube／MP4／MOV），請使用右側伴奏播放器的兩個圖示（見上方放大圖）。</figcaption>
 </figure>
 
 

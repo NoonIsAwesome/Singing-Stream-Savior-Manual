@@ -10,10 +10,12 @@ translation_key: video-and-volume
 
 <ol class="chapter-quick-start__steps">
 <li><div><strong>動画を追加</strong><span>MP4／MOV を曲一覧へドロップするか、伴奏の読み込みから選択します。</span></div></li>
-<li><div><strong>再生とプレビュー</strong><span>再生後に動画画面を開きます。音声はメインプレーヤーが担当し、動画画面の再生・停止・シークも同じプレーヤーを操作します。</span></div></li>
+<li><div><strong>再生とプレビュー</strong><span>再生後、伴奏プレイヤーのタイトルバー右上にある動画画面アイコン（旧 YouTube 動画ボタン、下図参照）を押します。音声はメインプレーヤーが担当し、動画画面の再生・停止・シークも同じプレーヤーを操作します。</span></div></li>
 <li><div><strong>動画ごとに設定</strong><span>曲の設定 → 動画でキー色・類似度・滑らかさ・色かぶり抑制を調整します。設定とプロジェクトを保存すると、動画別に保持されます。</span></div></li>
 <li><div><strong>OBS で透明な映像を取得</strong><span>S3S でクリーンキャプチャに切り替え、OBS のウィンドウキャプチャで動画画面のクリーンキャプチャ用ウィンドウを選びます。方式は Windows 10（1903 以降）、タイトルは完全一致にします。</span></div></li>
 </ol>
+
+{% include video-window-entry.html %}
 
 {% include video-output-guide-images.html kind='controls' %}
 
