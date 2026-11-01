@@ -2,7 +2,7 @@ release:
   version: "2.2.1.1"
   date: "2026-10-30"
   publishedAt: "2026-10-30T03:29:02Z"
-  latest: true
+  latest: false
   type:
     en: "Frequency Orbit fixes and theme preview improvements"
     zh-TW: "Frequency Orbit 修正與主題預覽改善"
