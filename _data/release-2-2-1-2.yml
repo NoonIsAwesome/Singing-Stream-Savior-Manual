@@ -2,7 +2,7 @@ release:
   version: "2.2.1.2"
   date: "2026-11-01"
   publishedAt: "2026-11-01T11:16:05Z"
-  latest: true
+  latest: false
   type:
     en: "Bubble Drift, multilingual fonts and playback controls"
     zh-TW: "新增 Bubble Drift、多語字型與播放控制"
