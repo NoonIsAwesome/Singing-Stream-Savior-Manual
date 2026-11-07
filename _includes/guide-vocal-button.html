@@ -1,0 +1,11 @@
+{% assign guide_button = site.data.guide_vocal_button[page.lang] | default: site.data.guide_vocal_button['zh-TW'] %}
+{% assign guide_heading = include.level | default: 3 %}
+<h{{ guide_heading }} id="guide-vocal-button">{{ guide_button.title | escape }}</h{{ guide_heading }}>
+<p>{{ guide_button.location | escape }}</p>
+<figure class="manual-figure manual-figure--compact">
+  <a href="{{ '/assets/images/en/guide-vocal-player-button.png' | relative_url }}"><img src="{{ '/assets/images/en/guide-vocal-player-button.png' | relative_url }}" width="440" height="227" alt="{{ guide_button.alt | escape }}" loading="lazy" decoding="async"></a>
+  <figcaption>{{ guide_button.caption | escape }}</figcaption>
+</figure>
+<ol>{% for step in guide_button.steps %}<li>{{ step | escape }}</li>{% endfor %}</ol>
+<p><strong>{{ guide_button.missing_title | escape }}</strong> {{ guide_button.missing | escape }}</p>
+<p>{{ guide_button.routing | escape }}</p>

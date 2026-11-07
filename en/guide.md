@@ -329,6 +329,8 @@ Enable **Keep Vocal track for guide vocal monitoring** in UVR before processing.
 
 The accompaniment player shows a guide vocal icon only for supported paired tracks. Turn it on to hear the guide through monitoring; it is never included in the Stream or OBS mix. Use Meter or the icon's context menu to adjust its volume or mute it. It follows the accompaniment's Key, speed, seeking, and loops, and turns off when you change songs.
 
+{% include guide-vocal-button.html level=4 %}
+
 
 
 <figure class="manual-figure"><a href="{{ '/assets/images/en/uvr-guide-vocal-2150.png' | relative_url }}"><img src="{{ '/assets/images/en/uvr-guide-vocal-2150.png' | relative_url }}" alt="Keep the Vocal track in UVR to use the separated voice for guide vocal monitoring." loading="lazy" decoding="async"></a><figcaption>Keep the Vocal track in UVR to use the separated voice for guide vocal monitoring.</figcaption></figure>

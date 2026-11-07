@@ -24,6 +24,7 @@
 - `uvr-completed-redacted.png`：UVR 完成處理並可匯入歌曲列表（輸出資料夾路徑已永久遮蔽）
 - `uvr-imported-redacted.png`：UVR 伴奏已匯入歌曲列表（輸出資料夾路徑已永久遮蔽）
 - `karaoke-mode-play-once.svg`：伴奏播放器的單次播放圖示
+- `en/guide-vocal-player-button.png`：實際 Qt 伴奏播放器的 440×227 原像素裁切，標示導唱圖示所在位置；介面為英文，五語圖說明確標記。來源為隔離靜音配對／null-output fixture，沒有使用者音訊或設定。
 - `karaoke-mode-repeat-one.svg`：伴奏播放器的單曲循環圖示
 - `karaoke-mode-reserve-sequential.svg`：伴奏播放器的全曲依序自動播放圖示
 - `karaoke-mode-reserve-shuffle.svg`：伴奏播放器的全曲隨機播放圖示

@@ -301,6 +301,8 @@ WAV/FLAC/MP3(320 kbps), 기본 48 kHz 또는 44.1 kHz를 선택할 수 있습니
 
 지원되는 음원 쌍이 있는 곡에만 반주 플레이어의 가이드 보컬 아이콘이 나타납니다. 켜면 모니터에서만 들리며 Stream이나 OBS 믹스에는 포함되지 않습니다. Meter 또는 아이콘의 우클릭 메뉴로 음량과 음소거를 조절하세요. 반주의 Key, 속도, 탐색과 반복을 따르며 곡을 바꾸면 꺼집니다.
 
+{% include guide-vocal-button.html level=4 %}
+
 
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ko/uvr-guide-vocal-2150.png' | relative_url }}"><img src="{{ '/assets/images/ko/uvr-guide-vocal-2150.png' | relative_url }}" alt="UVR에서 보컬 트랙을 유지하면 분리된 음성을 가이드 보컬로 모니터할 수 있습니다." loading="lazy" decoding="async"></a><figcaption>UVR에서 보컬 트랙을 유지하면 분리된 음성을 가이드 보컬로 모니터할 수 있습니다.</figcaption></figure>

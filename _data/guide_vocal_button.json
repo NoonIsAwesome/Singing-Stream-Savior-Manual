@@ -1,0 +1,72 @@
+{
+  "zh-TW": {
+    "title": "導唱按鈕：跟著原唱練習",
+    "location": "在伴奏播放器右上角，找「耳機＋音符」圖示；它位於「歌詞視窗」與 YouTube 按鈕左側。這是伴奏播放器的控制項。",
+    "alt": "伴奏播放器實圖，右上方最左邊的耳機加音符圖示為導唱按鈕",
+    "caption": "實際 Qt 伴奏播放器（英文介面）。右上角三顆按鈕由左至右為：導唱、歌詞視窗、YouTube。",
+    "steps": [
+      "處理歌曲前，在 UVR 勾選「保留人聲音軌供導唱監聽」，完成後將配對的伴奏匯入歌曲列表。",
+      "載入這首歌並等待音軌準備完成；按一下導唱圖示開啟，再按一次關閉。換歌時會重新關閉。",
+      "在導唱圖示上按滑鼠右鍵，可調整獨立音量、靜音並查看音量 Meter；也可從 Meter 面板調整。導唱音量與伴奏音量分開。"
+    ],
+    "missing_title": "找不到導唱按鈕？",
+    "missing": "按鈕只在歌曲已連結可用的 Vocal 人聲音軌、且音軌準備完成後顯示。只有伴奏檔、未保留人聲，或人聲檔被移動／刪除，都可能讓按鈕不出現；請確認 UVR 保留選項及配對檔案。",
+    "routing": "導唱會跟隨伴奏的升降 Key、速度、跳轉與循環。進階直播模式下，導唱只送到自己的監聽，不會混入程式送往 Stream／OBS 的聲音。"
+  },
+  "en": {
+    "title": "Guide vocal button: practise with the original vocal",
+    "location": "Look for the headphones-and-note icon at the top right of the accompaniment player, to the left of the Lyrics Window and YouTube buttons.",
+    "alt": "Actual accompaniment player with the headphones-and-note guide vocal button at the top right, left of the other two buttons",
+    "caption": "Actual Qt accompaniment player in English. The three top-right buttons are Guide vocal, Lyrics Window, and YouTube, from left to right.",
+    "steps": [
+      "Before processing in UVR, enable Keep Vocal track for guide vocal monitoring. Import the finished paired accompaniment into the song list.",
+      "Load that song and wait for its tracks to be ready. Click the guide vocal icon to turn it on; click again to turn it off. Changing songs turns it off.",
+      "Right-click the guide vocal icon for its separate volume, mute, and Meter. You can also use the Meter panel. Guide volume is independent of accompaniment volume."
+    ],
+    "missing_title": "Cannot see the button?",
+    "missing": "It appears only after the song has a usable linked Vocal track and track preparation has finished. An accompaniment without retained vocals, or a Vocal file that was moved or deleted, may leave it hidden. Check the UVR retention option and the paired files.",
+    "routing": "Guide vocal follows the accompaniment's key, speed, seeking, and loops. In Advanced Streaming, it goes only to your monitor and is excluded from the app's Stream/OBS mix."
+  },
+  "zh-CN": {
+    "title": "导唱按钮：跟着原唱练习",
+    "location": "在伴奏播放器右上角，找到「耳机＋音符」图标；它位于「歌词窗口」和 YouTube 按钮左侧。",
+    "alt": "实际伴奏播放器，右上方最左边的耳机加音符图标为导唱按钮",
+    "caption": "实际 Qt 伴奏播放器（英文界面）。右上角三个按钮从左到右为：导唱、歌词窗口、YouTube。",
+    "steps": [
+      "处理前在 UVR 勾选「保留人声音轨供导唱监听」，完成后将配对伴奏导入歌曲列表。",
+      "加载歌曲并等待音轨准备完成。点击导唱图标开启，再点一次关闭；换歌时会重新关闭。",
+      "右键点击导唱图标，可调整独立音量、静音并查看 Meter，也可从 Meter 面板调整。导唱音量与伴奏音量分开。"
+    ],
+    "missing_title": "找不到导唱按钮？",
+    "missing": "只有歌曲已关联可用的 Vocal 人声音轨且准备完成后才会显示。只有伴奏、未保留人声，或人声文件被移动／删除，都可能让按钮不出现；请检查 UVR 保留选项和配对文件。",
+    "routing": "导唱跟随伴奏的 Key、速度、跳转和循环。进阶直播模式下，它只送到自己的监听，不会进入程序发送到 Stream／OBS 的混音。"
+  },
+  "ja": {
+    "title": "ガイドボーカルボタン：原曲の歌声で練習",
+    "location": "伴奏プレーヤー右上の「ヘッドホン＋音符」アイコンです。歌詞ウィンドウと YouTube ボタンの左側にあります。",
+    "alt": "実際の伴奏プレーヤー。右上の3つのボタンの左端にあるヘッドホンと音符がガイドボーカル",
+    "caption": "実際の Qt 伴奏プレーヤー（英語表示）。右上は左からガイドボーカル、歌詞ウィンドウ、YouTube です。",
+    "steps": [
+      "UVR の処理前に「ガイドボーカルのモニター用にボーカルトラックを保持」を有効にし、完成した音源ペアの伴奏を曲リストに取り込みます。",
+      "曲を読み込み、トラックの準備が終わったらアイコンをクリックしてオンにします。もう一度クリックするとオフになり、曲の切り替え時にもオフになります。",
+      "アイコンを右クリックすると専用の音量、ミュート、Meter を操作できます。Meter パネルからも調整でき、伴奏とは別の音量です。"
+    ],
+    "missing_title": "ボタンが表示されない場合",
+    "missing": "利用可能な Vocal トラックが曲にリンクされ、準備が完了した場合だけ表示されます。ボーカルを保持しなかった場合や、Vocal ファイルを移動・削除した場合は、UVR の保持設定と音源ペアを確認してください。",
+    "routing": "伴奏のキー、速度、再生位置、ループに追従します。高度な配信モードでは自分のモニターにだけ送られ、アプリから Stream／OBS に送るミックスには入りません。"
+  },
+  "ko": {
+    "title": "가이드 보컬 버튼: 원곡 보컬과 함께 연습",
+    "location": "반주 플레이어 오른쪽 위의 ‘헤드폰＋음표’ 아이콘입니다. 가사 창과 YouTube 버튼 왼쪽에 있습니다.",
+    "alt": "실제 반주 플레이어 오른쪽 위 세 버튼 중 왼쪽의 헤드폰과 음표가 가이드 보컬 버튼",
+    "caption": "실제 Qt 반주 플레이어의 영어 화면입니다. 오른쪽 위 버튼은 왼쪽부터 가이드 보컬, 가사 창, YouTube입니다.",
+    "steps": [
+      "UVR 처리 전에 ‘가이드 보컬 모니터링을 위해 보컬 트랙 유지’를 켜고, 완료된 음원 쌍의 반주를 곡 목록으로 가져오세요.",
+      "곡을 불러오고 트랙 준비가 완료되면 아이콘을 클릭해 켭니다. 다시 클릭하면 꺼지며, 곡을 바꿀 때도 꺼집니다.",
+      "아이콘을 우클릭하면 독립 음량, 음소거, Meter를 사용할 수 있습니다. Meter 패널에서도 조절할 수 있으며 반주 음량과 별개입니다."
+    ],
+    "missing_title": "버튼이 보이지 않나요?",
+    "missing": "사용 가능한 Vocal 트랙이 연결되어 준비가 완료된 곡에만 나타납니다. 보컬을 보관하지 않았거나 Vocal 파일을 이동·삭제했다면 UVR의 보관 옵션과 음원 쌍을 확인하세요.",
+    "routing": "반주의 Key, 속도, 탐색, 반복을 따릅니다. 고급 방송 모드에서는 자신의 모니터로만 보내며 앱이 Stream／OBS로 보내는 믹스에는 포함하지 않습니다."
+  }
+}

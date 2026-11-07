@@ -65,6 +65,8 @@ translation_key: uvr-vocal-removal
 
 在 UVR 勾選「保留人聲音軌供導唱監聽」。分離完成後匯入伴奏，程式會一起連結對應的 Vocal 音軌。只有支援的配對歌曲會在伴奏播放器顯示導唱圖示；導唱只送到監聽，不會進入 Stream 或 OBS。可用 Meter 或圖示的右鍵選單調整獨立音量與靜音。導唱會跟隨伴奏的 Key、速度、跳轉與循環，換歌時會重新關閉。
 
+導唱按鈕是伴奏播放器右上角的「耳機＋音符」圖示，位於歌詞視窗與 YouTube 按鈕左側。[查看按鈕實圖、開關與音量調整方式]({{ '/library-and-playback.html' | relative_url }}#guide-vocal-button)。
+
 「匯入歌曲列表」只會把實際的伴奏檔加入歌曲庫；啟用導唱保留時，對應的人聲檔也會保留在輸出資料夾供監聽。所有歌曲都完成後，也可以一次全部匯入。
 
 <div class="figure-grid">

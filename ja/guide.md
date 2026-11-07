@@ -301,6 +301,8 @@ WAV／FLAC／MP3（320 kbps）、既定の 48 kHz または 44.1 kHz を選択�
 
 対応する音源ペアがある曲だけ、伴奏プレーヤーにガイドボーカルのアイコンが表示されます。有効にするとモニターでのみ聴こえ、Stream や OBS のミックスには入りません。Meter またはアイコンの右クリックメニューで音量とミュートを調整できます。伴奏のキー、速度、再生位置、ループに追従し、曲を変えるとオフになります。
 
+{% include guide-vocal-button.html level=4 %}
+
 
 
 <figure class="manual-figure"><a href="{{ '/assets/images/ja/uvr-guide-vocal-2150.png' | relative_url }}"><img src="{{ '/assets/images/ja/uvr-guide-vocal-2150.png' | relative_url }}" alt="UVR でボーカルトラックを保持すると、分離した歌声をガイドとしてモニターできます。" loading="lazy" decoding="async"></a><figcaption>UVR でボーカルトラックを保持すると、分離した歌声をガイドとしてモニターできます。</figcaption></figure>

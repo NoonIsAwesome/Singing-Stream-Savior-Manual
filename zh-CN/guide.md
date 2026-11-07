@@ -301,6 +301,8 @@ Card 使用直向封面卡片，CD 使用圆形唱片效果；其他主题与正
 
 只有支持配对音轨的歌曲才会在伴奏播放器显示导唱图标。开启后只在监听中听到导唱，不会进入 Stream 或 OBS 混音。可用 Meter 或图标右键菜单调整独立音量和静音。导唱会跟随伴奏的 Key、速度、跳转和循环，换歌时自动关闭。
 
+{% include guide-vocal-button.html level=4 %}
+
 
 
 <figure class="manual-figure"><a href="{{ '/assets/images/zh-CN/uvr-guide-vocal-2150.png' | relative_url }}"><img src="{{ '/assets/images/zh-CN/uvr-guide-vocal-2150.png' | relative_url }}" alt="在 UVR 保留人声音轨，将分离后的人声用于导唱监听。" loading="lazy" decoding="async"></a><figcaption>在 UVR 保留人声音轨，将分离后的人声用于导唱监听。</figcaption></figure>
